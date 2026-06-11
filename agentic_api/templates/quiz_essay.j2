@@ -1,0 +1,65 @@
+[TASK]
+Generate EXACTLY 5 essay questions in JSON format.
+Never generate more or fewer.
+
+[OUTPUT_SCHEMA]
+{
+  "pertanyaan": [
+    {
+      "id": "e1",
+      "soal": "[Essay question sentence]",
+      "rubrik": "[High-score grading criteria]",
+      "stimulus": "[Introductory narrative or problem context]",
+      "image_path": "[Fill with image path from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]",
+      "penjelasan": "[Explanation for the correct answer]"
+    }
+  ]
+}
+[CRITICAL JSON RULES]
+- DO NOT use words like "Stimulus:" or "Question:" inside the "soal" field. The "soal" field must ONLY contain the actual question sentence.
+- STRICTLY PROHIBITED to create questions that highly depend on Images/Tables/Graphs. NEVER use phrases like "Based on the image above...", or "Look at the following table...". Every question MUST be answerable without visual aids!
+- Even if there are image references in the Context, ignore them and create independent theoretical questions.
+{% if image_context %}
+[MULTIMODAL IMAGE CONTEXT]
+{{ image_context }}
+
+*** ABSOLUTE INSTRUCTION FOR IMAGES ***
+The reference text above has markers like [Referensi File Gambar: filename.png] right above the text describing the image.
+Select ONE image path that is most relevant to the question you are creating, and put it in the `image_path` field in the JSON structure.
+DO NOT use markdown image syntax `![img](path)` inside the question. Just fill the raw URL path in the `image_path` field.
+{% endif %}
+
+[LEVEL_CONFIGURATION]
+{{ level_config }}
+
+[SUBJECT_CONFIGURATION]
+{{ subject_config }}
+
+[LEARNING_CONTEXT]
+{{ rag_context }}
+
+[ATP_ALIGNMENT]
+{{ atp }}
+
+Prioritize ATP objectives as curriculum constraints.
+
+[QUESTION_DESIGN_RULES]
+- Frame questions around real Indonesian scenarios.
+- Avoid simple recall questions ("Sebutkan", "Apa definisi").
+- Require students to explain "Mengapa" or "Bagaimana".
+- Do not make the question overly convoluted.
+
+[RUBRIC_REQUIREMENTS]
+- Keep rubrics concise and actionable.
+- Define exactly what constitutes a high-score answer.
+
+[EXPLANATION_REQUIREMENTS]
+- Keep explanation direct and focused on the key concepts.
+- Use clear cause-effect logic.
+
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.

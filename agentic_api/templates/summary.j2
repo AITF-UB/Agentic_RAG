@@ -1,0 +1,34 @@
+Provide a brief summary in 1-2 paragraphs regarding the student's learning performance in this session.
+IMPORTANT RULE: PROHIBITED from providing any introductory or concluding text. Output MUST ONLY be pure JSON.
+MANDATORY RAW JSON OUTPUT:
+{ "summary_text": "<your summary text here>" }
+Session Data:
+Student Name: {{ req.siswa }}
+Subject: {{ req.mapel_label }}
+Element: {{ req.elemen_label }}
+Material ID: {{ req.materi_id }}
+Duration: {{ req.durasi_menit }} minutes
+Overall Quiz Results:
+{% for quiz in req.hasil_quiz %}
+- Type: {{ quiz.tipe }}, Level: {{ quiz.level }}, Score: {{ quiz.nilai }}
+{% endfor %}
+
+{% if req.last_quiz %}
+Last Quiz:
+- MC Score: {{ req.last_quiz.nilai_mc }}
+- Essay Score: {{ req.last_quiz.nilai_essay }}
+- Aggregation: {{ req.last_quiz.agregasi }}
+{% endif %}
+
+Detected Emotions: {{ req.emosi_sesi | join(", ") }}
+
+Violations:
+{% if req.violations|length > 0 %}
+{% for v in req.violations %}
+- {{ v.detail }} at {{ v.terjadi_at }}
+{% endfor %}
+{% else %}
+No violations.
+{% endif %}
+
+Use the data above to create an empathetic and constructive summary of the student's progress. Use Indonesian for the summary text itself, but the output structure MUST be JSON.

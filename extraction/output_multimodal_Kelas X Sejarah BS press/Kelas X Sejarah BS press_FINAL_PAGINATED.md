@@ -1,0 +1,5397 @@
+# Kelas X Sejarah BS press
+
+*Diekstrak: 18 May 2026, 21:06*
+
+---
+
+
+
+---
+## 📄 Halaman 1
+
+
+### Sejarah Indonesia Sejarah Indonesia
+
+
+<br>
+
+
+---
+## 📄 Halaman 2
+
+
+### Hak Cipta © 201 7 pada Kementerian Pendidikan dan Kebudayaan Dilindungi Undang-Undang
+
+Disklaimer: Buku ini merupakan buku siswa yang dipersiapkan Pemerintah dalam rangka implementasi Kurikulum 2013. Buku siswa ini disusun dan ditelaah oleh berbagai pihak di bawah koordinasi Kementerian Pendidikan dan Kebudayaan, dan dipergunakan dalam tahap awal penerapan Kurikulum 2013. Buku ini merupakan 'dokumen hidup' yang senantiasa diperbaiki,  diperbaharui,  dan  dimutakhirkan  sesuai  dengan  dinamika  kebutuhan  dan perubahan zaman. Masukan dari berbagai kalangan yang dialamatkan kepada penulis dan laman http://buku.kemdikbud.go.id atau melalui email buku@kemdikbud.go.id diharapkan dapat meningkatkan kualitas buku ini.
+
+
+### Katalog Dalam Terbitan (KDT)
+
+Indonesia. Kementerian Pendidikan dan Kebudayaan.
+
+Sejarah Indonesia/ Kementerian Pendidikan dan Kebudayaan.-- . Edisi Revisi Jakarta: Kementerian Pendidikan dan Kebudayaan, 201 7 .
+
+viii, 280 hlm. : ilus. ; 25 cm.
+
+Untuk SMA/MA/SMK/MAK Kelas X ISBN  978-602-427-122-0 (jilid lengkap) ISBN  978-602-427-123-7 (jilid 1)
+
+- Sejarah Indonesia -- Studi dan Pengajaran
+I. Judul
+
+- Kementerian Pendidikan dan Kebudayaan
+959.8
+
+Penulis
+
+:  Restu Gunawan, Amurwani Dwi Lestariningsih, dan Sardiman.
+
+Penelaah
+
+:  Mohammad Iskandar, Hariyono, Mumuh Muhsin Z., dan Baha' Uddin.
+
+Penyelia Penerbitan :  Pusat Kurikulum dan Perbukuan, Balitbang, Kemendikbud.
+
+Cetakan Ke-1, 2013 ISBN 978-602-282-108-3 (jilid 1)
+
+ISBN 978-602-282-498-5 (jilid 1b) Edisi Revisi
+
+Cetakan Ke-2, 2014 ISBN 978-602-282-497-8 (jilid 1a) Edisi Revisi
+
+
+<br>
+
+
+---
+## 📄 Halaman 3
+
+
+### KATA PENGANTAR
+
+Puji  syukur  alhamdullilah  kita  panjatkan  ke  hadirat  Tuhan Yang Maha Esa karena atas berkat dan rahmatNya sehingga buku pelajaran Sejarah kelas X kurikulum 2013 dapat terselesaikan. Buku yang ada di tangan anda ini sudah beberapa kali mengalami revisi. Mungkin muncul pertanyaan dari para siswa apa perbedaan buku Kurikulum  13  (K  13)  dengan  buku  kurikulum  sebelumnya?  Ada beberapa hal yang perlu diketahui oleh siswa dan para pemangku kepentingan  yang  berhubungan  dengan  pembelajaran  sejarah. Dalam K 13 ini diharapkan siswa tidak hanya menghafal, tetapi juga mampu melakukan penulisan dan mendiskripsikan setiap peristiwa sejarah yang terjadi. Selain itu, siswa diharapkan dapat mengaitkan berbagai  peristiwa  di  daerahnya  dengan  peristiwa  yang  terjadi tingkat  nasional  maupun  global.  Oleh  karena  itu  kemampuan melakukan  analisis  berbagai  peristiwa  sejarah  sangat  diperlukan. Untuk itu  siswa  diwajibkan  selain  membaca  buku  ini,  juga  harus mencari sumber-sumber rujukan lain yang relevan. Dengan mempelajari  sejarah,  diharapkan  siswa  bisa  mengambil  nilai-nilai setiap peristiwa sejarah yang terjadi untuk memperkuat rasa cinta tanah air, bangga dan meningkatkan nasionalisme.
+
+Terwujudnya  buku  ini  tidak  terlepas  dari  peran  beberapa penulis  sebelumnya.  Untuk  itu  kami  mengucapkan  terima  kasih kepada Prof. Dr. Wasino; Dr. Agus Mulyana; Prof, Dr. Mestika Zed, Drs. Wahdini Purba, M.Pd. Terima kasih pula kepada Prof. Dr. Hamid Hassan, Prof. Dr.Taufik Abdullah, Dr. Anhar Gonggong yang telah membaca draft naskah buku ini dan memberi beberapa masukan penting untuk perbaikan naskah ini. Kepada para penelaah Prof. Dr. Haryono, Dr. Muh. Iskandar, Dr. Mumuh Muhsin yang ditunjuk oleh Pusat Kurikulum dan Perbukuan Kemendikbud kami ucapkan terima kasih atas segala masukannya. Terima kasih kepada Tim dari Puskurbuk  yang  telah  bekerja  sejak  tahun  2012  sampai  dengan 2016 untuk mendampingi penyelesaian buku ini.
+
+
+<br>
+
+
+---
+## 📄 Halaman 4
+
+Buku ini sudah beberapa kali dilakukan revisi dan perbaikan. Namun demikian masih ada kekurangan. Oleh karena itu masukan dari  berbagai  pihak  sangat  diharapkan  untuk  perbaikan  di  masa mendatang. Untuk mendiskusikan berbagai hal yang dikira belum jelas  atau  memerlukan klarifikasi, kami siap untuk mendiskusikan lebih lanjut.  Selamat belajar sejarah, untuk merancang masa depan yang lebih baik.
+
+Jakarta; Januari 2016
+
+Penulis
+
+
+<br>
+
+
+---
+## 📄 Halaman 5
+
+
+### DAFTAR ISI
+
+
+<br>
+
+
+---
+## 📄 Halaman 6
+
+...................................
+
+
+<br>
+
+
+---
+## 📄 Halaman 8
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p008_001.png)
+
+> **Deskripsi Visual:** Gambar ini menunjukkan sebuah makam di sebuah pemakaman. Makam tersebut terbuat dari batu dan memiliki bentuk yang unik dengan desain yang menarik. Makam ini dikelilingi oleh tanah hijau yang rimbun dan berwarna-warni, menunjukkan bahwa pemakaman ini mungkin berada di daerah yang memiliki iklim yang lembab dan sejuk. Di sekitar makam ini, terdapat beberapa pohon yang tumbuh dengan baik, menciptakan suasana yang tenang dan damai. Gambar ini menunjukkan bahwa makam ini merupakan tempat peristirahatan bagi seseorang yang telah meninggal dunia.
+
+Sumber: Direktorat Geograi Sejarah. 2009. Atlas Prasejarah Indonesia. Jakarta: Kementerian Kebudayaan dan Pariwisata.
+
+Gambar 1.1 Waruga
+
+
+<br>
+
+
+---
+## 📄 Halaman 9
+
+
+### Bab I
+
+
+### Menelusuri Peradaban Awal di Kepulauan Indonesia
+
+Indonesia  terletak  di  persimpangan  tiga  lempeng  benua -ketiganya bertemu di sini -menciptakan tekanan sangat besar pada lapisan kulit  bumi.  Akibatnya,  lapisan  kulit  bumi  di  wilayah  ini  terdesak ke atas, membentuk paparan-paparan yang luas dan beberapa pegunungan  yang  sangat  tinggi.  Seluruh  wilayah  ini  sangat rentan terhadap gempa hebat dan letusan gunung api dahsyat yang kerap mengakibatkan kerusakan parah. Hal ini terlihat dari beberapa catatan geologis. Gempa dan tsunami mengerikan yang dialami  Aceh belum lama ini hanyalah episode terakhir dari seluruh rangkaian peristiwa panjang dalam masa prasejarah dan sejarah.
+
+(Arysio Santos, 2010)
+
+K utipan di atas menunjukkan bahwa keberadaan tanah air kita tidak  dapat  dilepaskan  dari  rangkaian  peristiwa  alam  yang sudah terjadi sejak zaman dahulu. Jadi, dinamika sejarah yang telah bermula sejak manusia ada, jika dirunut hingga sekarang, kita akan menemukan bahwa kesinambungan sejarah tidak mudah terputus, meskipun segala macam perubahan telah terjadi.
+
+
+<br>
+
+
+---
+## 📄 Halaman 10
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p010_002.png)
+
+> **Deskripsi Visual:** Gambar ini adalah diagram yang menunjukkan hubungan antara asal-usul nenek moyang bangsa Indonesia dengan perkembangan teknologi dan corak kehidupan masyarakat pada periode tertentu. Diagram ini dibagi menjadi empat bagian utama:
+
+1. **Asal-usul Nenek Moyang Bangsa Indonesia**:
+   - Berawal dari sebelum mengenal tulisan.
+   - Terbentuknya Kepulauan Indonesia.
+   - Meninggalkan Manusia Purba Indonesia.
+
+2. **Corak Kehidupan Masyarakat Pada Akar**:
+   - Pola Hunian.
+   - Berburu-Meramu sampai Bercocok Tanam.
+   - Sistem Kepercayaan.
+
+3. **Perkembangan Teknologi**:
+   - Antara Batu dan Tulang.
+   - Antara Pantai dan Gunung.
+   - Mengenal Api.
+   - Sebuah Revolusi.
+   - Konsep Ruang Pada Hunian.
+
+4. **Dilahirkan dari**:
+   - Dari Asal-usul Nenek Moyang.
+   - Corak Kehidupan Masyarakat Pada Akar.
+   - Perkembangan Teknologi.
+
+Elemen-elemen utama dalam diagram ini adalah asal-usul nenek moyang, corak kehidupan masyarakat, perkembangan teknologi, dan proses dilahirkan dari kombinasi tersebut. Relasi antara elemen-elemen ini menunjukkan hubungan kronologis dan evolusi dari asal-usul nenek moyang hingga perkembangan teknologi.
+
+Teks, angka, atau label penting yang terlihat meliputi:
+- "Peta Konsep" di bagian atas.
+- Nama-nama elemen seperti "Asal-usul Nenek Moyang", "Corak Kehidupan Masyarakat", "Perkembangan Teknologi", dan "Dilahirkan dari".
+- Angka yang menunjukkan urutan perkembangan teknologi (batu, tulang, api, revolusi).
+
+Informasi kunci yang dapat diambil pembaca meliputi:
+- Hubungan antara asal-usul nenek moyang, corak kehidupan masyarakat, dan perkembangan teknologi.
+- Proses evolusi dari
+
+
+<br>
+
+
+---
+## 📄 Halaman 11
+
+A.
+
+
+### TUJUAN PEMBELAJARAN
+
+Setelah mempelajari uraian ini, diharapkan kamu dapat:
+
+- mengenali corak kehidupan masyarakat praaksara
+- melacak asal usul nenek moyang bangsa Indonesia
+- menganalisis perkembangan teknologi pada masa praaksara
+
+### Sebelum Mengenal Tulisan
+
+
+###  Mengamati Lingkungan
+
+Di era modern ini, jika kalian menengok peralatan dapur masa kini  di  beberapa  daerah  perdesaan  mungkin  masih  menemukan peralatan  masak  yang  terbuat  dari  batu.  Misalnya  alat  untuk menghaluskan  bumbu  masak.  Di  Jawa  disebut  sebagai  cobek mungkin  di  daerah  lain  mempunyai  nama  yang  berbeda-beda. Jadi  meskipun  kini  kehidupan  sudah  modern  ternyata  masih  ada peralatan  manusia  pada  masa  praaksara  yang  masih  bertahan sampai  sekarang.  Untuk  mengetahui  apa,  siapa,  dan  bagaimana kehidupan  manusia  zaman  praaksara  kamu  dapat  mempelajari bacaan berikut ini.
+
+
+<br>
+
+
+---
+## 📄 Halaman 12
+
+Manusia purba tidak mengenal tulisan dalam kebudayaannya. Periode  kehidupan  ini  dikenal  dengan  zaman  praaksara.  Masa praaksara berlangsung sangat lama jauh melebihi periode kehidupan manusia yang sudah mengenal tulisan. Oleh karena itu, untuk dapat memahami perkembangan kehidupan manusia pada zaman praaksara kita perlu mengenali tahapan-tahapannya.
+
+
+###  Memahami Teks
+
+Sebelum mengenali tahapan-tahapan atau  pembabakan perkembangan  kehidupan  dan  kebudayaan  zaman  praaksara, perlu kamu ketahui lebih dalam yang dimaksud zaman praaksara. Praaksara adalah istilah untuk menggantikan istilah prasejarah.
+
+Penggunaan istilah prasejarah untuk menggambarkan perkembangan kehidupan dan budaya manusia saat belum mengenal tulisan kurang tepat. Pra berarti  sebelum  dan sejarah adalah  peristiwa  yang  terjadi  pada  masa  lalu  yang  berhubungan dengan aktivitas dan perilaku manusia, sehingga prasejarah berarti sebelum ada sejarah. Sebelum ada sejarah berarti sebelum ada  aktivitas  kehidupan  manusia.  Dalam  kenyataannya  sekalipun belum mengenal tulisan, makhluk yang dinamakan manusia sudah memiliki sejarah dan sudah menghasilkan kebudayaan. Oleh karena itu, para ahli mempopulerkan istilah praaksara untuk menggantikan istilah prasejarah.
+
+Praaksara  berasal  dari  dua  kata,  yakni pra yang  berarti sebelum dan aksara yang berarti tulisan. Dengan demikian, zaman praaksara  adalah  masa  kehidupan  manusia  sebelum  mengenal tulisan. Ada istilah yang mirip dengan istilah praaksara, yakni istilah nirleka . Nir berarti tanpa dan leka berarti tulisan. Karena belum ada tulisan maka untuk mengetahui sejarah dan hasil-hasil kebudayaan manusia adalah dengan melihat beberapa sisa peninggalan yang dapat  kita  temukan.  Kapan  waktu  dimulainya  zaman  praaksara?
+
+
+<br>
+
+
+---
+## 📄 Halaman 13
+
+Kapan zaman praaksara itu berakhir? Zaman praaksara dimulai sudah tentu  sejak  manusia  ada.  Itulah  titik  dimulainya  masa  praaksara. Zaman praaksara berakhir setelah manusia mulai mengenal tulisan. Pertanyaan yang  sulit untuk  dijawab  adalah  kapan  tepatnya manusia  itu  mulai  ada  di  bumi  ini  sebagai  pertanda  dimulainya zaman praaksara? Sampai sekarang para ahli belum dapat secara pasti menunjuk waktu kapan mulai ada manusia di muka bumi ini. Untuk menjawab pertanyaan itu kamu perlu memahami kronologi perjalanan kehidupan  di  permukaan  bumi  yang  rentang waktunya sangat panjang. Bumi yang kita huni sekarang  diperkirakan  mulai  terbentuk  sekitar 2.500 juta tahun yang lalu.
+
+Untuk memperkaya pengetahuan tentang hal ini, kamu bisa membaca Koentjaraningrat. Manusia dan Kebudayaan Indonesia dan Habib Mustopo, dkk. Sejarah 1.
+
+Bagaimana kalau kita ingin melakukan kajian tentang kehidupan zaman praaksara? Untuk menyelidiki zaman praaksara, para sejarawan harus menggunakan  metode  penelitian ilmu arkeologi  dan  juga  ilmu  alam  seperti  geologi  dan  biologi.  Ilmu arkeologi  adalah  bidang  ilmu  yang  mengkaji  bukti-bukti  atau jejak  tinggalan  fisik,  seperti  lempeng  artefak,  monumen,  candi dan sebagainya. Berikutnya menggunakan  ilmu geologi dan percabangannya,  terutama  yang  berkenaan  dengan  pengkajian usia  lapisan  bumi,  dan  biologi  berkenaan  dengan  kajian  tentang ragam hayati ( biodiversitas ) makhluk hidup.
+
+Mengingat jauhnya jarak waktu masa praaksara dengan kita sekarang, maka tidak jarang orang mempersoalkan apa perlunya kita belajar tentang zaman praaksara yang sudah lama ditinggalkan oleh manusia modern. Pandangan seperti ini sungguh menyesatkan, sebab tentu ada hubungannya dengan kekinian kita. Beberapa di antaranya akan dikemukakan berikut ini.
+
+
+<br>
+
+
+---
+## 📄 Halaman 14
+
+Data etnografi yang menggambarkan kehidupan masyarakat praaksara ternyata masih berlangsung sampai sekarang. Entah itu pola hunian, pola pertanian subsistensi, teknologi tradisional dan konsepsi kepercayaan tentang hubungan harmoni antara manusia dan alam, bahkan kebiasaan memelihara hewan seperti anjing dan kucing di lingkungan manusia modern perkotaan. Demikian pula kebiasaan bertani  merambah hutan dengan motode 'tebang lalu bakar' ( slash  and  burn )  untuk memenuhi kebutuhan secukupnya masih  ada  hingga  kini.  Namun,  kebiasaan  merambah  hutan  dan hidup  berpindah-pindah  pada  masa  lampau  tidak  menimbulkan malapetaka asap yang mengganggu penerbangan domestik. Selain itu,  juga  mengganggu  bandara  negara  tetangga  Singapura  dan Malaysia seperti yang sering terjadi akhir-akhir ini. Teknologi manusia modernlah  yang  mampu  melakukan  perambahan  hutan  secara besar-besaran,  entah  itu  untuk  perkebunan  atau  pertambangan, dan  permukiman real  estate sehingga  menimbulkan  malapetaka kabut asap dan kerusakan lingkungan.
+
+Arti  penting  dari  pembelajaran  tentang  sejarah  kehidupan zaman praaksara  pertama-tama  adalah  kesadaran  akan  asal  usul manusia. Tumbuhan memiliki akar. Semakin tinggi tumbuhan itu, semakin  dalam  pula  akarnya  menghunjam  ke  bumi  hingga  tidak mudah  tumbang  dari  terpaan  angin  badai  atau  bencana  alam lainnya. Demikian pula halnya dengan manusia. Semakin berbudaya seseorang  atau  kelompok  masyarakat,  semakin  dalam  pula  kesadaran kolektifnya  tentang  asal  usul  dan  penghargaan  terhadap  tradisi. Jika  tidak  demikian, manusia yang melupakan budaya bangsanya akan mudah terombang-ambing oleh terpaan budaya asing yang lebih  kuat,  sehingga  dengan  sendirinya  kehilangan  identitas  diri. Jadi bangsa yang gampang meninggalkan tradisi nenek moyangnya akan  mudah  didikte  oleh  budaya  dominan  dari  luar  yang  bukan miliknya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 15
+
+Kita bisa belajar  banyak  dari  keberhasilan  dan  capaian prestasi terbaik dari pendahulu kita. Sebaliknya kita juga belajar dari kegagalan mereka yang telah menimbulkan malapetaka bagi dirinya atau bagi banyak orang. Untuk memetik pelajaran dari uraian ini, dapat  kita  katakan  bahwa  nilai  terpenting  dalam  pembelajaran sejarah tentang zaman praaksara, dan sesudahnya ada dua yaitu sebagai inspirasi untuk pengembangan nalar kehidupan dan sebagai peringatan. Selebihnya kecerdasan dan pikiran-pikiran kritislah yang akan menerangi kehidupan masa kini dan masa depan.
+
+Sekarang muncul pertanyaan, sejak kapan zaman praaksara berakhir? Sudah barang tentu zaman praaksara itu berakhir setelah kehidupan manusia mulai mengenal tulisan. Terkait dengan masa berakhirnya zaman praaksara masing-masing tempat akan berbeda. Penduduk  di  Kepulauan  Indonesia  baru  memasuki  masa  aksara sekitar abad ke-5 M. Hal ini jauh lebih terlambat bila dibandingkan di  tempat  lain  misalnya  Mesir  dan  Mesopotamia  yang  sudah mengenal tulisan  sejak sekitar tahun 3000 SM. Fakta-fakta masa aksara  di  Kepulauan  Indonesia  dihubungkan  dengan  temuan prasasti peninggalan kerajaan tua seperti Kerajaan Kutai di Muara Kaman, Kalimantan Timur.
+
+
+<br>
+
+
+---
+## 📄 Halaman 16
+
+
+### Uji Kompetensi
+
+- Mengapa  istilah  praaksara  lebih  tepat  dibandingkan  dengan istilah  prasejarah  untuk  menggambarkan  kehidupan  manusia sebelum mengenal tulisan?
+- Secara metodologis bagaimana kita dapat mengetahui kehidupan manusia sebelum mengenal tulisan?
+- Mesir mengakhiri zaman praaksara sekitar tahun 3000 SM, tetapi di Indonesia baru abad ke-5 M. Mengapa demikian?
+- Apa saja pelajaran yang dapat kita peroleh dari belajar kehidupan pada zaman praaksara?
+
+### B. Terbentuknya Kepulauan Indonesia
+
+
+###  Mengamati lingkungan
+
+Bumi  kita  yang  terhampar  luas  ini  diciptakan  Tuhan  Yang Maha Pencipta untuk kehidupan dan kepentingan hidup manusia. Di bumi ini hidup berbagai flora dan fauna serta tempat bersemainya manusia dengan keturunannya. Di bumi ini kita bisa menyaksikan keindahan  alam,  kita  bisa  beraktivitas  dan  berikhtiar  memenuhi kebutuhan hidup kita. Namun harus dipahami bahwa bumi kita juga sering menimbulkan bencana. Sebagai contoh munculnya aktivitas lempeng  bumi  yang  kemudian  melahirkan  gempa  baik  tektonis maupun vulkanis,  bahkan  sampai  menimbulkan  tsunami.  Sebagai contoh tentu kamu masih ingat gempa dan tsunami yang terjadi di
+
+
+<br>
+
+
+---
+## 📄 Halaman 17
+
+Aceh, gempa di Yogyakarta, di Papua dan beberapa daerah lain, termasuk  beberapa  gunung  api  meletus.  Bencana  tersebut  telah mengakibatkan ribuan nyawa hilang dan harta benda melayang.
+
+Fenomena  alam  yang  terjadi  itu  merupakan  bagian  tak terpisahkan dari aktivitas panjang bumi kita sejak proses terjadinya alam semesta ratusan, ribuan, bahkan juta tahun yang lalu. Proses tersebut secara geologis mengalami beberapa tahapan atau pembabakan waktu.  Berikut  ini  kita  mencoba  menelaah  tentang pembabakan waktu alam secara geologis dan terbentuknya Kepulauan Indonesia terbentuk.
+
+
+###  Memahami Teks
+
+Ada banyak teori dan penjelasan tentang penciptaan bumi, mulai  dari  mitos  sampai  kepada  penjelasan  agama  dan  ilmu pengetahuan. Kali ini kamu belajar sejarah sebagai cabang keilmuan, pembahasannya  adalah  pendekatan  ilmu pengetahuan, yakni asumsi-asumsi ilmiah, yang kiranya juga tidak perlu bertentangan dengan  ajaran  agama.  Salah  satu  di  antara  teori  ilmiah  tentang terbentuknya bumi adalah Teori  'Dentuman Besar' ( Big  Bang ), yang  dikemukakan  oleh  sejumlah  ilmuwan,  misalnya  ilmuwan besar Inggris, Stephen Hawking. Teori ini menyatakan bahwa alam semesta  mulanya  berbentuk  gumpalan  gas  yang  mengisi  seluruh ruang  jagat  raya.  Jika  digunakan  teleskop  besar  Mount  Wilson untuk  mengamatinya  akan  terlihat  ruang  jagat  raya  itu  luasnya mencapai radius 500 juta tahun cahaya. Gumpalan gas itu suatu saat meledak dengan satu dentuman yang amat dahsyat. Setelah itu,  materi yang terdapat di alam semesta mulai berdesakan satu sama lain dalam kondisi suhu dan kepadatan yang sangat tinggi, sehingga hanya tersisa energi berupa proton, neutron dan elektron, yang bertebaran ke seluruh arah.
+
+
+<br>
+
+
+---
+## 📄 Halaman 18
+
+Ledakan  dahsyat  itu  menimbulkan  gelembung-gelembung alam  semesta  yang  menyebar  dan  menggembung  ke  seluruh penjuru, sehingga membentuk galaksi, bintang-bintang, matahari, planet-planet, bumi, bulan dan meteorit. Bumi kita hanyalah salah satu titik kecil saja di antara tata surya yang mengisi jagat semesta. Di samping itu banyak planet lain termasuk bintang-bintang yang menghiasi langit yang tak terhitung jumlahnya. Boleh jadi ukurannya jauh lebih besar dari planet bumi. Bintang-bintang berkumpul dalam suatu  gugusan,  meskipun  antarbintang  berjauhan  letaknya  di angkasa. Ada juga ilmuwan astronomi yang mengibaratkan galaksi bintang-bintang  itu  tak  ubahnya  seperti  sekumpulan  anak  ayam, yang tak mungkin dipisahkan dari induknya. Jadi di mana ada anak ayam di situ pasti ada induknya. Seperti halnya dengan anak-anak ayam, bintang-bintang di angkasa tak mungkin gemerlap sendirian tanpa  disandingi  dengan  bintang  lainnya.  Sistem  alam  semesta dengan semua benda langit sudah tersusun secara menakjubkan dan masing-masing beredar secara teratur dan rapi pada sumbunya masing-masing.
+
+Selanjutnya proses evolusi alam semesta itu memakan waktu kosmologis  yang  sangat  lama  sampai  berjuta  tahun.  Terjadinya evolusi  bumi  sampai  adanya  kehidupan  memakan  waktu  yang sangat panjang. Ilmu paleontologi membaginya dalam enam tahap waktu geologis. Masing-masing ditandai oleh peristiwa alam yang menonjol, seperti munculnya gunung-gunung, benua, dan makhluk hidup yang paling sederhana. Sedangkan proses evolusi bumi dibagi menjadi beberapa periode sebagai berikut.
+
+- 1 .  Azoikum (Yunani: a =  tidak; zoon =  hewan),  yaitu  zaman sebelum adanya kehidupan. Pada saat ini bumi baru terbentuk dengan  suhu  yang  relatif  tinggi.  Waktunya  lebih  dari  satu miliar tahun lalu.
+- Palaezoikum , yaitu zaman purba tertua. Pada masa ini sudah meninggalkan fosil flora dan fauna. Berlangsung kira-kira 350 juta tahun.
+
+<br>
+
+
+---
+## 📄 Halaman 19
+
+- Mesozoikum ,  yaitu  zaman  purba  tengah.  Pada  masa  ini hewan mamalia (menyusui),  hewan  amfibi,  burung  dan tumbuhan berbunga mulai ada. Lamanya kira-kira 140 juta tahun.
+- Neozoikum , yaitu zaman purba baru, yang dimulai sejak 60 juta tahun yang lalu. Zaman ini dapat dibagi lagi menjadi dua tahap ( Tersier dan Kuarter ).  Zaman es mulai menyusut dan makhluk-makhluk tingkat tinggi dan manusia mulai hidup.
+Merujuk pada tarikh bumi di atas, sejarah Kepulauan Indonesia terbentuk melalui proses yang panjang dan rumit. Sebelum bumi didiami  manusia,  kepulauan  ini  hanya  diisi  flora  dan  fauna  yang masih  sangat  kecil  dan  sederhana.  Alam  juga  harus  menjalani evolusi  terus-menerus  untuk  menemukan  keseimbangan  agar mampu  menyesuaikan  diri  dengan  perubahan  kondisi  alam  dan iklim,  sehingga  makhluk  hidup  dapat  bertahan  dan  berkembang biak mengikuti seleksi alam.
+
+Gugusan  kepulauan  ataupun  wilayah  maritim  seperti  yang kita  temukan  sekarang  ini  terletak  di  antara  dua  benua  dan  dua samudra, antara Benua Asia di utara dan Australia di selatan, antara Samudra  Hindia  di  barat  dan  Samudra  Pasifik  di  belahan  timur. Faktor letak ini memainkan peran strategis sejak zaman kuno sampai sekarang.  Namun  sebelum  itu  marilah  kita  sebentar  berkenalan dengan kondisi alamnya, terutama unsur-unsur geologi atau unsurunsur  geodinamika  yang  sangat  berperan  dalam  pembentukan Kepulauan Indonesia.
+
+Menurut  para  ahli  bumi,  posisi  pulau-pulau  di  Kepulauan Indonesia terletak di atas tungku api yang bersumber dari magma dalam perut bumi. Inti perut bumi tersebut berupa lava cair bersuhu sangat tinggi. Makin ke dalam tekanan dan suhunya semakin tinggi. Pada suhu yang tinggi itu material-material akan meleleh sehingga material di bagian dalam bumi selalu berbentuk cairan panas. Suhu tinggi ini  terus-menerus bergejolak mempertahankan cairan sejak
+
+
+<br>
+
+
+---
+## 📄 Halaman 20
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p020_003.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan struktur fisik mineral batu bara. Ilustrasi ini memperlihatkan tiga lapisan utama batu bara:
+
+1. Lapisan atas (Ataskerater) dengan suhu inti sekitar 1.500°C.
+2. Lapisan tengah (Mesosfer) dengan suhu inti sekitar 3.000°C.
+3. Lapisan bawah (Bewah) dengan suhu inti sekitar 4.800°C.
+
+Ilustrasi ini menunjukkan bahwa batu bara memiliki struktur yang kompleks, dengan lapisan-lapisan yang berbeda memiliki suhu inti yang berbeda. Ini menunjukkan bahwa proses pembentukan batu bara melibatkan perubahan suhu dan tekanan yang sangat tinggi selama periode panjang waktu. Informasi ini penting untuk memahami proses pembentukan batu bara dan bagaimana struktur fisik mineralnya mempengaruhi sifat-sifat kimia dan fisika batu bara.
+
+
+### Gambar 1.2
+
+Lapisan bumi, mulai dari bagian inti dalam sampai bagian kerak bumi jutaan tahun lalu. Ketika ada celah lubang keluar, cairan tersebut keluar berbentuk lava cair. Ketika lava mencapai  permukaan  bumi,  suhu menjadi  lebih dingin dari ribuan derajat menjadi hanya bersuhu normal sekitar 30 derajat. Pada suhu ini cairan lava akan membeku membentuk batuan beku atau kerak. Keberadaan  kerak  benua  (daratan) dan kerak samudra selalu bergerak secara dinamis akibat tekanan magma dari perut bumi. Pergerakan unsur-unsur geodinamika ini dikenal sebagai kegiatan tektonis.
+
+Sebagian  wilayah  Kepulauan Indonesia  merupakan  titik  temu  di antara tiga lempeng, yaitu Lempeng Indo-Australia  di  selatan,  Lempeng Eurasia di utara dan Lempeng Pasifik di timur. Pergerakan lempenglempeng tersebut dapat berupa subduksi  (pergerakan  lempeng  ke atas), obduksi (pergerakan lempeng ke  bawah)  dan  kolisi  (tumbukan lempeng). Pergerakan lain dapat berupa  pemisahan  atau divergensi (tabrakan)  lempeng-lempeng. Pergerakan mendatar berupa pergeseran lempeng-lempeng tersebut  masih  terus  berlangsung  hingga  sekarang.  Perbenturan lempeng-lempeng tersebut  menimbulkan  dampak  yang  berbedabeda.  Namun  semuanya  telah  menyebabkan  wilayah  Kepulauan Indonesia secara tektonis merupakan wilayah yang sangat aktif dan labil hingga rawan gempa sepanjang waktu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 21
+
+Pada  masa Paleozoikum (masa  kehidupan  tertua)  keadaan geografis Kepulauan Indonesia belum terbentuk seperti sekarang ini. Di kala itu wilayah ini masih merupakan bagian dari samudra yang sangat luas, meliputi hampir seluruh bumi. Pada fase berikutnya, yaitu  pada  akhir  masa Mesozoikum ,  sekitar  65  juta  tahun  lalu, kegiatan tektonis itu menjadi sangat aktif menggerakkan lempenglempeng  Indo-Australia,  Eurasia  dan  Pasifik.  Kegiatan  ini  dikenal sebagai fase tektonis ( orogenesa  larami ), sehingga menyebabkan daratan terpecah-pecah. Benua Eurasia menjadi pulau-pulau  yang terpisah  satu  dengan lainnya. Sebagian di antaranya bergerak ke selatan membentuk  pulau-pulau Sumatra, Jawa, Kalimantan, Sulawesi serta pulau-pulau di Nusa Tenggara Barat dan Kepulauan Banda. Hal yang sama juga terjadi pada Benua Australia. Sebagian pecahannya  bergerak  ke  utara  membentuk  pulau-pulau  Timor, Kepulauan Nusa Tenggara Timur dan sebagian Maluku Tenggara. Pergerakan pulau-pulau hasil pemisahan dari kedua benua tersebut telah  mengakibatkan  wilayah  pertemuan  keduanya  sangat  labil. Kegiatan  tektonis  yang  sangat  aktif  dan  kuat  telah  membentuk rangkaian Kepulauan Indonesia pada masa Tersier sekitar 65 juta tahun lalu.
+
+Sebagian besar daratan Sumatra, Kalimantan, dan Jawa telah tenggelam menjadi laut dangkal sebagai akibat terjadinya proses kenaikan permukaan laut atau transgresi . Sulawesi pada masa itu sudah  mulai  terbentuk,  sementara  Papua  sudah  mulai  bergeser ke utara, meski masih didominasi oleh cekungan sedimentasi laut dangkal  berupa  paparan  dengan  terbentuknya  endapan  batu gamping.  Pada  kala Pliosen sekitar  lima  juta  tahun  lalu,  terjadi pergerakan tektonis yang sangat kuat, yang mengakibatkan terjadinya  proses  pengangkatan  permukaan  bumi  dan  kegiatan vulkanis. Ini pada gilirannya menimbulkan tumbuhnya (atau mungkin  lebih  tepat  terbentuk)  rangkaian  perbukitan  struktural seperti  perbukitan  besar  (gunung),  dan  perbukitan  lipatan  serta rangkaian  gunung  api  aktif  sepanjang  gugusan  perbukitan  itu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 22
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p022_004.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan struktur geologis bumi. Gambar ini memperlihatkan beberapa lempeng tektonik utama di permukaan bumi, termasuk lempeng Amerika Selatan, lempeng Afrika, lempeng Australia, lempeng Indo-Australia, dan lempeng Pasifik. Lempeng-teknik ini dikelilingi oleh lempeng tektonik lainnya, seperti lempeng Indo-Australia dan lempeng Pasifik. Lempeng-teknik ini bergerak dan bertabrakan dengan lempeng-teknik lainnya, yang menyebabkan aktivitas gempa bumi dan tsunami. Gambar ini juga menunjukkan bagaimana lempeng-teknik ini bergerak dan bertabrakan dengan lempeng-teknik lainnya, yang menyebabkan aktivitas gempa bumi dan tsunami. Gambar ini juga menunjukkan bagaimana lempeng-teknik ini bergerak dan bertabrakan dengan lempeng-teknik lainnya, yang menyebabkan aktivitas gempa bumi dan tsunami.
+
+Sumber : Tauik Abdullah dan A.B Lapian (ed). 2012. Indonesia Dalam Arus Sejarah, Jilid I. Jakarta: PT Ichtiar Baru van Hoeve.
+
+Kegiatan  tektonis  dan  vulkanis  terus  aktif  hingga  awal  masa Pleistosen , yang dikenal sebagai kegiatan tektonis Plio-Pleistosen . Kegiatan tektonis ini berlangsung di seluruh Kepulauan Indonesia.
+
+Gunung api aktif dan rangkaian perbukitan struktural tersebar di sepanjang bagian barat Pulau Sumatra, berlanjut ke sepanjang Pulau Jawa ke arah timur hingga Kepulauan Nusa Tenggara serta Kepulauan Banda. Kemudian terus membentang sepanjang Sulawesi Selatan dan Sulawesi Utara. Pembentukan daratan yang semakin luas  itu  telah  membentuk  Kepulauan  Indonesia  pada  kedudukan pulau-pulau  seperti  sekarang  ini.  Hal  itu  telah  berlangsung  sejak kala Pliosen hingga  awal Pleistosen (1,8  juta  tahun  lalu).  Jadi pulau-pulau  di  kawasan  Kepulauan  Indonesia  ini  masih  terus bergerak  secara  dinamis,  sehingga  tidak  heran  jika  masih  sering terjadi gempa, baik vulkanis maupun tektonis.
+
+
+<br>
+
+
+---
+## 📄 Halaman 23
+
+Letak Kepulauan Indonesia yang berada pada deretan gunung api membuatnya menjadi daerah dengan tingkat keanekaragaman flora  dan  fauna  yang  sangat  tinggi.  Kekayaan  alam  dan  kondisi geografis  ini  telah  mendorong  lahirnya  penelitian  dari  bangsabangsa lain. Dari sekian banyak penelitian terhadap flora dan fauna tersebut yang paling terkenal di antaranya adalah penelitian Alfred Russel Wallace yang membagi Indonesia dalam dua wilayah yang berbeda  berdasarkan  ciri  khusus  baik  fauna  maupun  floranya. Pembagian  itu  adalah  Paparan  Sahul  di  sebelah  timur,  Paparan Sunda di sebelah barat. Zona di antara paparan tersebut kemudian dikenal sebagai wilayah Wallacea yang merupakan  pembatas fauna yang  membentang  dari  Selat  Lombok  hingga Selat  Makassar  ke  arah  utara.  Fauna-fauna yang  berada  di  sebelah  barat  garis  pembatas itu disebut dengan Indo-Malayan region . Di sebelah  timur  disebut  dengan Australia Malayan region .  Garis  itulah  yang  kemudian kita kenal dengan Garis Wallacea.
+
+Untuk memperkaya pengetahuan tentang hal ini, kamu bisa membaca buku Alfred Russel Wallace. Kepulauan Nusantara.
+
+Merujuk  pada  tarikh  bumi  di  atas,  keberadaan  manusia  di muka bumi dimulai pada zaman Kuarter sekitar 600.000 tahun lalu atau disebut juga zaman es. Dinamakan zaman es karena selama itu es dari kutub berkali-kali meluas sampai menutupi sebagian besar permukaan bumi dari Eropa Utara, Asia Utara dan Amerika Utara Peristiwa itu terjadi karena panas bumi tidak tetap, adakalanya  naik dan adakalanya turun. Jika ukuran panas bumi turun dratis maka es  akan  mencapai  luas  yang  sebesar-besarnya  dan  air  laut  akan turun  atau  disebut  zaman Glasial .  Sebaliknya  jika  ukuran  panas naik, maka es akan mencair, dan permukaan air laut akan naik yang disebut zaman Interglasial . Zaman Glasial dan zaman Interglasial ini berlangsung silih berganti selama zaman Diluvium (Pleistosen) . Hal  ini  menimbulkan  berbagai  perubahan  iklim  di  seluruh  dunia, yang  kemudian  mempengaruhi  keadaan  bumi  serta  kehidupan yang ada diatasnya termasuk manusia, sedangkan zaman Aluvium (Holosen) berlangsung  kira-kira  20.000  tahun  yang  lalu  hingga sekarang ini.
+
+
+<br>
+
+
+---
+## 📄 Halaman 24
+
+Sejak zaman ini mulai terlihat secara nyata adanya perkembangan kehidupan manusia, meskipun dalam taraf yang sangat sederhana baik  fisik  maupun  kemampuan  berpikirnya.  Namun  demikian dalam  rangka  untuk  mempertahankan  diri  dan  keberlangsungan kehidupannya, secara lambat laun manusia mulai mengembangkan kebudayaan.  Beruntung  kita  bangsa  Indonesia  memiliki  temuan bermacam-macam jenis manusia purba beserta hasil-hasil kebudayaannya,  sehingga  sejak  akhir  abad  ke-19  para  ilmuwan tertarik untuk melakukan kajian di negeri kita.
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p024_005.png)
+
+> **Deskripsi Visual:** Gambar ini adalah diagram yang menunjukkan lokasi beberapa pulau di Indonesia dan sekitarnya. Diagram ini memperlihatkan pulau-pulau seperti Sumatra, Jawa, Kalimantan, Sulawesi, dan beberapa pulau kecil lainnya di Lautan Indonesia. Pulau-pulau tersebut diberi label dengan nama-nama mereka, seperti "Sunda", "Borneo", "New Guinea", dan "Sarawak". Di sekeliling pulau-pulau tersebut, ada garis-garis yang menunjukkan arah pergerakan atau pergerakan geologis, yang menunjukkan bahwa beberapa pulau tersebut bergerak atau bergerak ke arah yang berbeda. Ini menunjukkan bahwa lokasi dan posisi pulau-pulau di Indonesia telah berubah seiring waktu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 25
+
+
+### Uji Kompetensi
+
+- Kita  wajib  bersyukur  karena  Tuhan  Yang Maha Pencipta telah menciptakan bumi kita ini dengan arif dan bijaksana serta penuh kasih sayang kepada makhluk ciptaan-Nya. Coba beri penjelasan mengenai  pernyataan  di  atas,  kamu  dapat  berdiskusi  dengan anggota kelompok!
+- Menurut  kamu  nilai-nilai  apa  yang  dapat  dipetik  dari  proses terbentuknya pulau-pulau di Kepulauan Indonesia?
+- Hikmah apa yang dapat kita peroleh dengan bertempat tinggal di wilayah yang sering terjadi bencana alam?
+- Di setiap daerah tentu ada cerita rakyat ataupun dongeng yang berkaitan dengan bencana alam seperti gempa maupun gunung meletus. Coba kamu cari dan tuliskan dalam bentuk cerita 3 - 4 halaman, kemudian diskusikan!
+- Sebutkan bencana alam yang pernah terjadi di daerahmu dan di Indonesia!
+
+---
+**📊 Tabel**
+
+![Tabel](extracted_assets/table_p025_006.png)
+
+Tabel ini berisi informasi tentang jenis bencana alam, jumlah korban jiwa atau benda, dan tahun kejadian. Topik utama tabel adalah bencana alam dan dampaknya. Kolom-kolom yang ada adalah Jenis bencana alam, Jumlah korban jiwa atau benda, dan Tahun kejadian. Data penting yang terlihat adalah bahwa banyak bencana alam terjadi di berbagai tahun, dengan jumlah korban yang beragam. Ini menunjukkan bahwa bencana alam dapat terjadi kapan saja dan memiliki dampak yang berbeda-beda tergantung pada jenis bencana dan lokasinya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 26
+
+
+### C. Mengenal Manusia Purba
+
+
+###  Mengamati lingkungan
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p026_007.png)
+
+> **Deskripsi Visual:** Gambar ini adalah diagram yang menunjukkan struktur dan komposisi dari berbagai lapisan tanah. Diagram ini membagi tanah menjadi beberapa lapisan berdasarkan tinggi dan jenis material yang ada. Pada bagian atas, terdapat lapisan tanah yang dikenal sebagai aktiva talihan, yang terdiri dari tanah asli dan material nonkalsium. Lapisan ini kemudian dikelilingi oleh lapisan endapan-revase, yang terdiri dari material nonkalsium dan material kalsium.
+
+Lapisan berikutnya adalah lapisan granit bank, yang terdiri dari material granit. Di bawah granit bank, terdapat lapisan campuran filter, yang terdiri dari material filter dan material kalsium. Lapisan ini kemudian dikelilingi oleh lapisan lingungan rawa, yang terdiri dari material filter dan material kalsium.
+
+Terakhir, ada lapisan lingungan tambahan, yang terdiri dari material filter dan material kalsium. Seluruh struktur ini dikelilingi oleh lapisan bawah, yang terdiri dari material filter dan material kalsium. 
+
+Teks, angka, atau label penting yang terlihat pada diagram ini meliputi tinggi lapisan, jenis material, dan nama lapisan. Informasi kunci yang dapat diambil pembaca adalah bahwa struktur tanah ini terdiri dari berbagai lapisan dengan komposisi material yang berbeda-beda, mulai dari tanah asli hingga material kalsium.
+
+
+### Gambar 1.5
+
+Litologi, Stratigrafi dan Lingkungan Purba Sangiran
+
+Pernahkah  kamu  mendengar tentang Situs Manusia Purba Sangiran? Kini Situs Manusia Purba  Sangiran  telah  ditetapkan oleh UNESCO  sebagai warisan budaya  dunia,  tentu  ini  sangat membanggakan bangsa Indonesia. Pengakuan tersebut didasari berbagai pertimbangan yang kompleks. Satu di antaranya karena di wilayah tersebut tersimpan ribuan peninggalan manusia purba yang menunjukkan proses  kehidupan  manusia  dari masa lalu. Sangiran telah menjadi sentral  bagi  kehidupan  manusia purba.  Berbagai  penelitian  dari para ahli juga dilakukan di sekitar Sangiran. Beberapa temuan fosil di  Sangiran  telah  mendorong  para  ahli  untuk  terus  melakukan penelitian termasuk di luar Sangiran.
+
+Dari Sangiran kita mengenal beberapa jenis manusia purba di Indonesia. Setelah ditetapkan sebagai warisan dunia, Situs Manusia Purba  Sangiran  dikembangkan  sebagai  pusat  penelitian  dalam negeri  dan  luar  negeri,  serta  sebagai  tempat  wisata.  Selain  itu Sangiran juga memberi manfaat kepada masyarakat di sekitarnya, karena pariwisata di daerah tersebut.
+
+
+<br>
+
+
+---
+## 📄 Halaman 27
+
+Untuk memahami jenis dan ciri-ciri manusia purba di Indonesia mari kita telaah bacaan berikut ini.
+
+
+###  Memahami Teks
+
+Peninggalan manusia purba untuk sementara ini yang paling banyak  ditemukan  berada  di  Pulau  Jawa.  Meskipun  di  daerah lain juga ada, para peneliti belum berhasil menemukan tinggalan tersebut  atau  masih  sedikit  yang  berhasil  ditemukan,  misalnya  di Flores. Di bawah ini akan dipaparkan beberapa penemuan penting fosil manusia di beberapa tempat.
+
+
+### 1. Sangiran
+
+Perjalanan kisah perkembangan manusia di Kepulauan Indonesia tidak dapat kita lepaskan dari keberadaan bentangan luas perbukitan  tandus  yang  berada  di  perbatasan  Kabupaten  Sragen dan Kabupaten Karanganyar. Lahan itu dikenal dengan nama Situs Sangiran. Di dalam buku Harry Widianto dan Truman Simanjuntak, Sangiran Menjawab Dunia diterangkan  bahwa Sangiran merupakan sebuah  kompleks  situs  manusia  purba  dari  Kala  Pleistosen  yang paling lengkap dan  paling  penting di Indonesia, dan bahkan di Asia.  Lokasi  tersebut  merupakan  pusat  perkembangan  manusia dunia,  yang  memberikan  petunjuk  tentang  keberadaan  manusia sejak 150.000 tahun yang lalu. Situs Sangiran itu mempunyai luas delapan  kilometer  pada  arah  utara-selatan  dan  tujuh  kilometer arah timur-barat.  Situs  Sangiran  merupakan  suatu  kubah  raksasa yang berupa cekungan besar di pusat kubah akibat adanya erosi di bagian puncaknya. Kubah raksasa itu diwarnai dengan perbukitan yang bergelombang. Kondisi deformasi geologis itu menyebabkan tersingkapnya berbagai lapisan batuan yang mengandung fosil-fosil manusia purba dan binatang, termasuk artefak. Berdasarkan materi tanahnya, Situs Sangiran berupa endapan lempung hitam dan pasir fluvio-vulkanik,  tanahnya  tidak  subur  dan  terkesan  gersang  pada musim kemarau.
+
+
+<br>
+
+
+---
+## 📄 Halaman 28
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p028_008.png)
+
+> **Deskripsi Visual:** Maaf, sebagai asisten AI, saya tidak memiliki kemampuan untuk melihat atau menginterpretasikan gambar. Saya dirancang untuk membantu dengan pertanyaan teks dan informasi lainnya. Jika Anda memiliki pertanyaan tentang konten tertentu dalam buku pelajaran, saya akan dengan senang hati membantu menjawabnya.
+
+Gambar 1.6 Von Koenigswald.
+
+Gambar 1.7 Sertifikat the Sangiran early man
+
+Sangiran  pertama  kali  ditemukan  dan  diteliti oleh  P.E.C.  Schemulling  tahun  1864,  dengan  laporan penemuan  fosil  vertebrata  dari  Kalioso,  bagian  dari wilayah  Sangiran.  Semenjak  dilaporkan  Schemulling situs  itu  seolah-olah  terlupakan  dalam  waktu  yang lama. Eugene Dubois juga pernah datang ke Sangiran, akan tetapi ia kurang tertarik dengan temuan-temuan di  wilayah  Sangiran.  Pada  1934,  Gustav  Heindrich Ralph  von    Koenigswald  menemukan  artefak  litik  di wilayah  Ngebung  yang  terletak  sekitar  dua  kilometer di barat laut kubah Sangiran. Artefak litik itulah yang kemudian menjadi temuan penting bagi Situs Sangiran. Semenjak penemuan von Koenigswald, Situs Sangiran menjadi sangat terkenal berkaitan dengan penemuanpenemuan  fosil Homo erectus secara  sporadis  dan berkesinambungan. Homo erectus adalah takson paling penting dalam sejarah manusia, sebelum masuk pada tahapan manusia Homo sapiens , manusia modern.
+
+Situs Sangiran tidak hanya memberikan gambaran  tentang  evolusi  fisik  manusia  saja,  akan tetapi juga memberikan  gambaran  nyata tentang evolusi budaya, binatang, dan juga lingkungan. Beberapa  fosil  yang  ditemukan  dalam  seri  geologisstratigrafis  yang  diendapkan  tanpa  terputus  selama lebih    dari    dua    juta    tahun,  menunjukkan  tentang hal  itu.  Situs  Sangiran  telah  diakui  sebagai  salah  satu pusat  evolusi  manusia  di  dunia.  Situs  itu  ditetapkan secara resmi sebagai Warisan Dunia pada 1996, yang tercantum  dalam  nomor  593  Daftar  Warisan  Dunia ( World  Heritage  List ) UNESCO.
+
+
+<br>
+
+
+---
+## 📄 Halaman 29
+
+Perhatikan baik-baik gambar fosil manusia purba di samping. Fosil itu juga disebut sebagai  Sangiran  17  sesuai  dengan  nomor  seri penemuannya.  Fosil  itu  merupakan  fosil Homo erectus yang terbaik di Sangiran. Ia ditemukan di endapan  pasir  fluvio-volkanik  di  Pucang,  bagian wilayah  Sangiran.  Fosil  itu  merupakan  dua  di antara Homo  erectus di dunia yang masih lengkap dengan mukanya. Satu ditemukan di Sangiran dan satu lagi di Afrika.
+
+
+### 2.     Trinil, Ngawi, Jawa Timur
+
+Sebelum penemuannya di Trinil, Eugene Dubois mengawali temuan Pithecantropus  erectus di  Desa  Kedungbrubus,  sebuah desa terpencil di daerah Pilangkenceng, Madiun, Jawa Timur. Desa itu berada tepat di tengah hutan jati di lereng selatan Pegunungan Kendeng. Pada saat Dubois meneliti dua horizon/lapisan berfosil di Kedungbrubus  ditemukan  sebuah  fragmen  rahang  yang  pendek dan sangat kekar, dengan sebagian prageraham yang masih tersisa. Prageraham itu menunjukkan ciri gigi manusia bukan gigi kera, sehingga diyakini bahwa  fragmen  rahang  bawah  tersebut  milik rahang  hominid.  Pithecantropus  itu  kemudian dikenal dengan Pithecantropus A.
+
+Trinil adalah sebuah desa di pinggiran Bengawan Solo, masuk wilayah administrasi    Kabupaten    Ngawi,    Jawa    Timur. Tinggalan  purbakala  telah  lebih  dulu  ditemukan di  daerah  ini    jauh    sebelum  von  Koenigswald menemukan Sangiran pada 1934. Ekskavasi yang dilakukan    oleh    Eugene  Dubois  di  Trinil  telah membawa  penemuan    sisa-sisa    manusia  purba
+
+Gambar 1.9 Kedungbrubus
+
+
+<br>
+
+
+---
+## 📄 Halaman 30
+
+Gambar 1.10 Eugene Dubois banyak mengabadikan hidupnya untuk menggali fosil manusia purba yang  sangat  berharga  bagi  dunia  pengetahuan. Penggalian Dubois dilakukan pada endapan alluvial Bengawan  Solo.  Dari  lapisan  ini  ditemukan  atap tengkorak Pithecanthropus erectus , dan beberapa buah tulang paha (utuh dan fragmen) yang menunjukkan pemiliknya telah berjalan tegak.
+
+Tengkorak Pithecanthropus erectus dari Trinil sangat pendek tetapi memanjang ke  belakang.  Volume  otaknya  sekitar  900  cc, di    antara  otak  kera  (600  cc)  dan  otak  manusia modern  (1.200-1.400  cc).  Tulang  kening  sangat menonjol dan di bagian belakang mata, terdapat penyempitan yang sangat jelas, menandakan otak yang belum berkembang. Pada bagian  belakang kepala terlihat bentuk yang meruncing yang diduga pemiliknya merupakan perempuan. Berdasarkan kaburnya sambungan  perekatan  antartulang  kepala,  ditafsirkan  inividu  ini telah mencapai usia dewasa.
+
+Selain tempat-tempat di atas, peninggalan manusia purba tipe ini juga ditemukan di Perning, Mojokerto, Jawa Timur; Ngandong, Blora,  Jawa  Tengah;  dan  Sambungmacan,  Sragen,  Jawa  Tengah. Temuan berupa tengkorak anak-anak berusia sekitar 5 tahun oleh penduduk yang  sedang  membantu  penelitian  Koenigswald  dan  Duyfjes perlu  untuk  dipertimbangkan.  Temuan  itu  menjadi  bahan  diskusi yang menarik bagi para ilmuwan. Metode pengujian penanggalan potasium-argon  yang  digunakan  oleh  Teuku  Jakob  dan  Curtis terhadap batu apung yang terdapat di sekitar fosil tengkorak itu menunjukkan angka 1,9 atau kurang lebih 0,4 juta tahun. Pengujian juga dilakukan dengan mengambil sampel endapan batu apung dari dalam tengkorak dan menunjukkan angka 1,81 juta tahun. Hasil uji  penanggalan-penanggalan  tersebut  menjadi  perdebatan  para
+
+
+<br>
+
+
+---
+## 📄 Halaman 31
+
+ahli dan perlu untuk dikaji lebih lanjut.  Bila penanggalan itu benar, maka tengkorak anak Homo  erectus dari  Perning,  Mojokerto  ini merupakan individu Homo erectus tertua di Indonesia. Adakah di antara kamu yang tertarik untuk melakukan pengujian ini?
+
+Temuan Homo erectus juga ditemukan di Ngandong, yaitu sebuah  desa  di  tepian  Bengawan  Solo,  Kabupaten  Blora,  Jawa Tengah.  Tengkorak Homo erectus Ngandong  berukuran  besar dengan volume otak rata-rata 1.100 cc. Ciri-ciri ini menunjukkan Homo  erectus ini  lebih  maju  bila  dibandingkan  dengan Homo erectus yang  ada  di  Sangiran.  Manusia  Ngandong  diperkirakan berumur antara 300.000-100.000 tahun.
+
+Berdasarkan  beberapa  penelitian  yang  dilakukan  oleh  para ahli,  dapatlah direkonstruksi  beberapa jenis manusia purba yang pernah hidup di zaman praaksara.
+
+
+### 1.  Jenis Meganthropus
+
+Jenis manusia purba ini terutama berdasarkan penelitian von  Koenigswald  di  Sangiran  tahun  1936  dan  1941  yang menemukan fosil rahang manusia berukuran besar. Dari hasil rekonstruksi ini kemudian para ahli menamakan jenis manusia ini  dengan  sebutan Meganthropus  paleojavanicus ,  artinya manusia raksasa dari Jawa. Jenis manusia purba ini memiliki ciri  rahang  yang  kuat  dan  badannya  tegap.  Diperkirakan makanan jenis manusia ini adalah tumbuh-tumbuhan. Masa hidupnya diperkirakan pada zaman Pleistosen Awal.
+
+
+### 2.  Jenis Pithecanthropus
+
+Jenis  manusia  ini  didasarkan  pada  penelitian  Eugene Dubois tahun 1890 di dekat Trinil, sebuah desa di pinggiran Bengawan  Solo,  di  wilayah  Ngawi.  Setelah  direkonstruksi terbentuk  kerangka  manusia,  tetapi  masih  terlihat  tanda-
+
+
+<br>
+
+
+---
+## 📄 Halaman 32
+
+Uraian mengenai jenis-jenis manusia ini selengkapnya dapat juga dibaca pada buku Harry Widianto dan Truman Simanjuntak, Sangiran Menjawab Dunia tanda  kera.  Oleh  karena  itu  jenis  ini  dinamakan Pithecanthropus  erectus ,  artinya    manusia  kera yang  berjalan  tegak.  Jenis  ini  juga  ditemukan  di Mojokerto, sehingga disebut Pithecanthropus mojokertensis .  Jenis  manusia  purba    yang  juga terkenal sebagai rumpun Homo erectus ini paling banyak ditemukan di Indonesia.  Diperkirakan jenis manusia purba ini hidup dan berkembang sekitar zaman Pleistosen Tengah.
+
+
+### 3. Jenis Homo
+
+Fosil  jenis  Homo  ini  pertama  diteliti  oleh von  Reitschoten  di  Wajak.  Penelitian  dilanjutkan oleh Eugene Dubois bersama kawan-kawan dan  menyimpulkan  sebagai  jenis  Homo.  Ciri-ciri jenis  manusia  Homo ini muka lebar, hidung dan mulutnya  menonjol.  Dahi  juga  masih  menonjol, sekalipun tidak semenonjol jenis Pithecanthropus. Bentuk fisiknya tidak jauh berbeda dengan manusia sekarang. Hidup dan perkembangan jenis manusia ini sekitar 40.000 - 25.000 tahun yang lalu.  Tempat-tempat  penyebarannya  tidak  hanya di Kepulauan Indonesia, tetapi juga di Filipina dan Cina Selatan.
+
+Homo sapiens artinya 'manusia sempurna' baik dari segi fisik, volume  otak  maupun  postur  badannya  yang  secara  umum  tidak jauh  berbeda  dengan  manusia  modern.  Kadang-kadang Homo sapiens juga  diartikan  dengan 'manusia bijak' karena telah lebih maju dalam berpikir dan menyiasati tantangan alam. Bagaimanakah mereka  muncul  ke  bumi  pertama  kali  dan  kemudian  menyebar dengan cepat ke berbagai penjuru dunia hingga saat ini? Para ahli paleoanthropologi dapat melukiskan perbedaan morfologis antara
+
+
+<br>
+
+
+---
+## 📄 Halaman 33
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p033_014.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan evolusi manusia dari fosil prasejarah ke manusia modern. Ilustrasi ini melibatkan berbagai fosil yang diperlihatkan dalam urutan waktu yang bertahap, mulai dari fosil prasejarah yang lebih awal hingga manusia modern. Setiap fosil memiliki tingkat perkembangan fisik yang berbeda, yang menunjukkan perubahan yang terjadi seiring waktu.
+
+Elemen utama dalam ilustrasi ini adalah fosil-fosil manusia dari berbagai periode evolusi. Fosil-fosil tersebut diperlihatkan dalam urutan waktu yang bertahap, dari fosil prasejarah yang lebih awal hingga manusia modern. Setiap fosil memiliki tingkat perkembangan fisik yang berbeda, yang menunjukkan perubahan yang terjadi seiring waktu.
+
+Teks, angka, atau label penting yang terlihat dalam ilustrasi ini adalah nama-nama fosil yang diberikan untuk setiap fosil, seperti P.3, J.3, J.5, L.3, L.6, L.8, dan manusia modern. Label-label ini membantu pembaca untuk memahami hubungan antara fosil-fosil tersebut dan bagaimana mereka berkaitan dengan evolusi manusia.
+
+Informasi kunci yang dapat diambil pembaca dari ilustrasi ini adalah bahwa manusia telah melewati berbagai tahap perkembangan fisik seiring waktu, dari fosil prasejarah yang lebih awal hingga manusia modern. Ilustrasi ini juga menunjukkan bahwa perkembangan ini terjadi secara bertahap dan tidak secara langsung.
+
+Gambar 1.12 Evolusi manusia
+
+Homo  sapiens dengan  pendahulunya, Homo erectus .  Rangka Homo sapiens kurang  kekar posturnya  dibandingkan Homo erectus .  Salah  satu  alasannya  karena  tulang  belulangnya  tidak setebal dan sekompak Homo erectus.
+
+Hal ini mengindikasikan bahwa secara fisik Homo sapiens jauh  lebih  lemah  dibanding sang  pendahulu  tersebut.  Di  lain  pihak,  ciri-ciri morfologis  maupun  biometriks Homo sapiens menunjukkan karakter yang lebih berevolusi dan  lebih  modern  dibandingkan  dengan Homo erectus .  Sebagai  misal,  karakter  evolutif  yang paling  signifikan  adalah  bertambahnya  kapasitas otak. Homo  sapiens mempunyai  kapasitas  otak yang jauh lebih besar (rata-rata 1.400 cc),  dengan atap tengkorak yang jauh lebih bundar dan lebih tinggi dibandingkan dengan Homo erectus yang mempunyai  tengkorak panjang dan rendah, dengan kapasitas otak 1.000 cc.
+
+
+<br>
+
+
+---
+## 📄 Halaman 34
+
+Segi-segi morfologis dan tingkatan kepurbaannya menunjukkan  ada  perbedaan  yang  sangat  nyata  antara  kedua spesies dalam genus Homo tersebut. Homo sapiens akhirnya tampil sebagai  spesies  yang  sangat  tangguh  dalam  beradaptasi  dengan lingkungannya, dan dengan cepat menghuni berbagai permukaan dunia ini.
+
+Berdasarkan bukti-bukti penemuan, sejauh ini manusia modern awal di Kepulauan Indonesia dan Asia Tenggara paling tidak telah hadir sejak 45.000 tahun yang lalu. Dalam perkembangannya, kehidupan manusia modern  ini dapat dikelompokkan dalam tiga tahap, yaitu (i)  kehidupan  manusia  modern  awal  yang kehadirannya  hingga  akhir  zaman  es  (sekitar  12.000  tahun  lalu), kemudian  dilanjutkan  oleh  (ii)  kehidupan  manusia  modern  yang lebih belakangan, dan berdasarkan karakter fisiknya dikenal sebagai  ras  Austromelanesoid.  (iii)  mulai  di  sekitar  4000  tahun lalu  muncul  penghuni  baru  di  Kepulauan  Indonesia  yang  dikenal sebagai penutur bahasa Austronesia. Berdasarkan karakter fisiknya, makhluk manusia ini tergolong dalam ras Mongolid.
+
+Beberapa spesimen (penggolongan) manusia Homo sapiens dapat dikelompokkan sebagai berikut,
+
+
+### a. Manusia Wajak
+
+Manusia  Wajak  ( Homo wajakensis ) merupakan satu-satunya temuan di Indonesia  yang  untuk  sementara  dapat disejajarkan perkembangannya dengan manusia modern  awal dari akhir Kala Pleistosen. Pada tahun 1889, manusia Wajak ditemukan oleh B.D. van Rietschoten di  sebuah  ceruk  di  lereng  pegunungan karst  di  barat  laut  Campurdarat,  dekat Tulungagung, Jawa Timur. Sartono Kartodirjo (dkk) menguraikan tentang
+
+
+<br>
+
+
+---
+## 📄 Halaman 35
+
+temuan itu, berupa tengkorak, termasuk fragmen rahang bawah, dan  beberapa  buah  ruas  leher.  Temuan  Wajak  itu  adalah Homo sapiens .  Mukanya  datar  dan  lebar,  akar  hidungnya  lebar  dan bagian mulutnya menonjol sedikit. Dahinya agak miring dan di atas matanya ada busur kening nyata. Tengkorak ini diperkirakan milik seorang  perempuan  berumur  30  tahun  dan  mempunyai  volume otak  1.630  cc.  Wajak  kedua  ditemukan  oleh  Dubois  pada  tahun 1890  di  tempat  yang  sama.  Temuan  berupa  fragmen-fragmen tulang  tengkorak,  rahang  atas  dan  rahang  bawah,  serta  tulang paha  dan  tulang  kering.  Pada  tengkorak  ini  terlihat  juga  busur kening yang nyata. Pada tengkorak laki-laki perlekatan otot sangat nyata. Langit-langit juga dalam. Rahang bawah besar dengan gigigigi yang besar pula. Kalau menutup gigi muka atas mengenai gigi muka bawah. Dari tulang pahanya dapat diketahui bahwa tinggi tubuhnya kira-kira 173 cm.
+
+Dengan  demikian  dapat  dikatakan  bahwa  manusia  wajak bertubuh  tinggi  dengan  isi  tengkorak  yang  besar.  Wajak  sudah termasuk Homo sapiens ,  jadi  sangat  berbeda  ciri-cirinya  dengan Pithecanthropus. Manusia Wajak mempunyai ciri-ciri baik Mongoloid maupun Austromelanesoid. Diperkirakan dari manusia Wajak  inilah  sub-ras  Melayu  Indonesia  dan  turut  pula  berevolusi menjadi ras Austromelanesoid sekarang. Hal itu dapat dilihat dari ciri  tengkoraknya  yang  sedang  atau  agak  lonjong  itu  berbentuk agak  persegi  di  tengah-tengah  atap  tengkoraknya  dari  muka  ke belakang. Muka cenderung lebih Mongoloid, oleh karena sangat datar dan pipinya sangat menonjol ke samping. Beberapa ciri lain juga memperlihatkan ciri-ciri kedua ras di atas.
+
+Temuan Wajak menunjukkan pada kita bahwa sekitar 40.000 tahun yang lalu Indonesia sudah didiami oleh Homo sapiens yang rasnya  sukar  dicocokkan  dengan  ras-ras  pokok  yang  terdapat sekarang, sehingga manusia Wajak dapat dianggap sebagai suatu ras  tersendiri.  Manusia  Wajak    tidak  langsung  berevolusi  dari Pithecanthropus, tetapi mungkin tahapan Homo neanderthalensis
+
+
+<br>
+
+
+---
+## 📄 Halaman 36
+
+yang belum ditemukan di Indonesia ataupun dari Homo neanderthalensis di  tempat Pithecanthropus erectus ataupun satu ras yang mungkin berevolusi ke arah Homo yang ditemukan di Indonesia.
+
+Manusia Wajak itu tidak hanya mendiami Kepulauan Indonesia bagian Barat saja, akan tetapi juga di sebagian Kepulauan Indonesia bagian Timur. Ras Wajak ini merupakan penduduk Homo sapiens yang kemudian menurunkan ras-ras yang kemudian kita kenal sekarang. Melihat ciri-ciri Mongoloidnya lebih banyak, maka ia  lebih  dekat  dengan  sub-ras  Melayu-Indonesia.  Hubungannya dengan ras  Australoid  dan  Melanesoid  sekarang  lebih  jauh,  oleh karena kedua sub-ras ini baru mencapai bentuknya yang sekarang di tempatnya yang baru.  Mungkin juga ras Austromelanesoid yang dahulu berasal dari ras Wajak.
+
+
+### b. Manusia Liang Bua
+
+Pengumuman tentang penemuan manusia Homo loresiensis pada tahun 2004 menggemparkan dunia ilmu pengetahuan. Sisasisa manusia ditemukan di sebuah gua Liang Bua oleh tim peneliti gabungan  Indonesia  dan  Australia.  Sebuah  gua  permukiman  di Flores. Liang Bua bila diartikan secara harfiah merupakan sebuah gua yang dingin. Sebuah gua yang sangat lebar dan tinggi dengan permukaan tanah yang datar, merupakan tempat bermukim yang nyaman bagi manusia pada masa praaksara. Hal itu bisa dilihat dari kondisi lingkungan sekitar gua yang sangat indah, yang berada di sekitar bukit dengan kondisi tanah yang datar di depannya. Liang Bua merupakan sebuah temuan manusia modern awal dari akhir masa Pleistosen di Indonesia yang menakjubkan yang diharapkan dapat menyibak asal usul manusia di Kepulauan Indonesia.
+
+Manusia Liang Bua ditemukan oleh Peter Brown dan Mike J. Morwood bersama-sama dengan Tim dari Pusat Penelitian Arkeologi Nasional pada bulan September 2003 lalu. Temuan itu dianggap sebagai penemuan spesies baru yang kemudian diberi nama Homo loresiensis ,  sesuai  dengan  tempat  ditemukannya  fosil  Manusia Liang Bua.
+
+
+<br>
+
+
+---
+## 📄 Halaman 37
+
+Pada tahun 1950-an, sebenarnya Manusia Liang Bua telah memberikan data-data tentang adanya kehidupan praaksara. Saat Th. Verhoeven lebih dahulu menemukan beberapa fragmen tulang manusia di Liang Bua, ia menemukan tulang iga yang berasosiasi dengan berbagai alat serpih dan gerabah. Tahun 1965, ditemukan tujuh  buah  rangka  manusia  beserta  beberapa  bekal  kubur  yang antara lain berupa beliung dan barang-barang gerabah. Diperkirakan Liang  Bua  merupakan  sebuah  situs  neolitik  dan  paleometalik. Manusia Liang Bua mempunyai ciri tengkorak yang panjang dan rendah,  berukuran  kecil,  dengan  volume  otak  380  cc.  Kapasitas kranial tersebut berada jauh di bawah Homo  erectus (1.000 cc), manusia modern Homo sapiens (1.400 cc), dan bahkan berada di bawah volume otak simpanse (450 cc).
+
+Pada tahun 1970, R.P Soejono dari Pusat Penelitian Arkeologi Nasional melanjutkan penelitian beberapa kerangka manusia yang ditemukan di lapisan atas, temuan itu sebanding dengan temuantemuan rangka manusia sebelumnya.  Hasil temuan itu menunjukkan bahwa Manusia Liang Bua secara kronologis menunjukkan hunian dari fase zaman Paleolitik, Mesolitik, Neolitik, dan Paleolitik.
+
+
+<br>
+
+
+---
+## 📄 Halaman 38
+
+Menurut Teuku Jacob, Manusia  Liang Bua secara kultural berada dalam  konteks  zaman  Mesolitik,  dengan  ciri  Australomelanesid, yaitu  bentuk  tengkorak  yang  memanjang.  Tahun  2003  diadakan penggalian  oleh  R.P.  Soejono  dan  Mike  J.  Morwood,  kerja  sama antara Pusat Penelitian Arkeologi Nasional dengan University of New England,  Australia.  Penggalian  itu  menghasilkan  temuan  berupa sisa  manusia tidak kurang dari enam individu yang menunjukkan aspek morfologis dan postur yang sejenis dengan Liang Bua 1, yang mempunyai kesamaan dengan alat-alat batu dan sisa-sisa binatang komodo dan spesies kerdil gajah purba jenis stegodon. Temuan itu sempat menjadi bahan perdebatan mengenai status taksonominua, benarkah Manusia Liang Bua itu termasuk dalam spesies baru, yaitu Homo lorensiensis , atau sebagai satu jenis spesies yang telah ada di kalangan genus Homo?
+
+Dalam pengamatan yang lebih mendalam terhadap manusia Flores itu, ternyata ada percampuran antara karakter kranial yang cukup menonjol antara karakter Homo erectus dan Homo sapiens . Seluruh karakter kranio-fasial dari Manusia Liang Bua 1 (LB1) dan Liang Bua 6 (LB6) menunjukkan dominasi karakter arkaik yang sering ditemukan pada Homo erectus , walaupun beberapa aspek modern Homo sapiens juga sangat terlihat jelas. Namun demikian, karakter Homo sapiens hendaknya dilihat sebagai atribut tingkatan evolusi dalam spesies ini. Bila dikaitkan dengan masa hidup Manusia Liang Bua sekitar 18.000 tahun yang lalu, maka LB 1 dan LB 6 seharusnya dipandang sebagai satu dari variasi Homo sapiens.
+
+
+### 3. Perdebatan Antara Pithecantropus ke Homo Erectus
+
+Penemuan  fosil-fosil  Pithecanthropus  oleh  Dubois  dihubungkan dengan teori evolusi manusia yang dituliskan oleh Charles Darwin. Harry  Widianto  menuliskan  perdebatan  itu  seperti  berikut.  Fosil Pithecanthropus oleh Dubois yang dipublikasikan pada tahun 1894
+
+
+<br>
+
+
+---
+## 📄 Halaman 39
+
+dalam berbagai majalah ilmiah melahirkan perdebatan. Dalam publikasinya itu Dubois menyatakan bahwa, menurut teori evolusi  Darwin, Pithecanthropus  erectus adalah  peralihan  kera  ke  manusia.  Kera merupakan  moyang  manusia.  Pernyataan Dubois itu kemudian menjadi perdebatan, apakah benar atap tengkorak dengan volume  kecil, gigi-gigi  berukuran  besar, dan  tulang  paha  yang  berciri  modern  itu berasal dari satu individu? Sementara orang menduga bahwa tengkorak tersebut merupakan tengkorak seekor gibon, gigi-gigi merupakan milik Pongo sp., dan tulang  pahanya  milik  manusia  modern? Lima puluh tahun kemudian terbukti bahwa gigi-gigi tersebut memang berasal
+
+dari gigi Pongo Sp., berdasarkan ciri-cirinya yang berukuran besar, akar gigi yang kuat dan terbuka, dentikulasi yang tidak individual, dan permukaan occlusal yang sangat berkerut-kerut.
+
+Perdebatan itu kemudian berlanjut hingga ke Eropa, ketika Dubois  mempresentasikan  penemuan  tersebut  dalam  seminar internasional  zoologi  pada  tahun  1895  di  Leiden,  Belanda,  dan dalam pameran publik British  Zoology  Society di  London. Setelah seminar  dan  pameran  itu  banyak  ahli  yang  tidak  ingin  melihat temuannya itu lagi. Dubois pun kemudian menyimpan semua hasil temuannya itu, hingga pada tahun 1922 temuan itu mulai diteliti oleh  Franz  Weidenreich.  Temuan-temuan  Dubois  itu  menandai munculnya  sebuah  kajian  ilmu  paleoantropologi  telah  lahir  di Indonesia.
+
+Tahun  1920-an  merupakan  periode  yang    luar  biasa  bagi teori  evolusi  manusia.  Teori  itu  terus  menjadi  perdebatan,  para ahli  paleontologi  berbicara  tentang  ontogenesis  dan  heterokroni.
+
+
+<br>
+
+
+---
+## 📄 Halaman 40
+
+Seorang teman Dubois, Bolk melakukan formulasi teori foetalisasi yang  sangat  terkenal.  Dubois  telah  melakukan  penemuan  fosil missing-link . Sementara Bolk menemukan modalitas evolusi dengan menafsirkan bahwa peralihan dari kera ke manusia terjadi melalui  perpanjangan  perkembangan  fetus.  Dubois  dan  Bolk kemudian bertemu dalam jalur evolutif dari Heackle yang sangat terkenal, bahwa filogenesa dan ontogenesis sama sekali tidak dapat dipisahkan.  Penemuan-penemuan  kemudian  bertambah  gencar sejak tahun 1927. Penemuan situs Zhoukoudian di dekat Beijing, menghasilkan sejumlah besar fosil-fosil manusia, yang diberi nama Sinanthropus pekinensis. Tengkorak-tengkorak fosil beserta tulang  paha  tersebut  menunjukkan  ciri-ciri  yang  sama  dengan Pithecanthropus  erectus .
+
+Seorang ahli biologi menyatakan bahwa standar zoologis tidak dimungkinkan  memisahkan Pithecantropus  erectus dan Sinanthropus pekinensis dengan genus yang berbeda dengan manusia modern. Pithecanthropus adalah satu tahapan dalam proses evolusi ke arah Homo  sapiens dengan  kapasitas  tengkorak  yang  kecil.  Karena itulah  perbedaan  itu  hanya  perbedaan  species  bukan  perbedaan genus. Dalam pandangan ini maka Pithecanthrotus erectus harus diletakkan  dalam  genus  Homo,  dan  untuk  mempertahankan species aslinya, dinamakan Homo erectus . Maka berakhirlah debat panjang  mengenai  Pithecanthropus  dari  Dubois  dalam  sejarah perkembangan  manusia  yang  berjalan  puluhan  tahun.  Saat  ini Pithecanthropus  diterima  sebagai  hominid  dari  Jawa,  bagian  dari Homo erectus.
+
+
+<br>
+
+
+---
+## 📄 Halaman 41
+
+
+### Uji Kompetensi
+
+- Mengapa para ahli banyak melakukan penelitian manusia purba di bantaran sungai?
+- Mengapa hasil penelitian Dubois di Trinil disebut sebagai jenis Pithecanthropus erectus (kera yang berjalan tegak)?
+- Menurut  pendapat  kamu,  bagaimana  manusia  purba  bisa menyebar ke dalam wilayah Kepulauan Indonesia bahkan sampai ke luar wilayah Kepulauan Indonesia?
+- Buatlah  karya  ilmiah  (2-3  halaman)  dengan  tajuk,  Sangiran Laboratorium Manusia Purba!
+- Coba  kamu  inventarisir  berbagai  situs  dan  tinggalan  manusia purba di daerah kamu masing-masing.
+
+---
+**📊 Tabel**
+
+![Tabel](extracted_assets/table_p041_020.png)
+
+Tabel ini berisi informasi tentang beberapa situs atau lokasi tertentu, termasuk nama situs, fungsi mereka pada masa lalu dan sekarang, serta lokasinya di kota, kecamatan, atau kabupaten. Topik utama tabel ini adalah perubahan fungsi dan lokasi dari beberapa situs atau lokasi tertentu. Kolom-kolom yang ada meliputi nomor, nama situs, fungsi pada masa lalu, fungsi pada masa sekarang, dan lokasi (kecamatan, kabupaten, atau kota). Data penting yang terlihat adalah bahwa beberapa situs memiliki fungsi yang berbeda pada masa lalu dan sekarang, dan lokasinya juga berubah dari satu daerah ke daerah lain.
+
+
+<br>
+
+
+---
+## 📄 Halaman 42
+
+
+### D. Asal  Usul  dan  Persebaran  Nenek    Moyang  Bangsa Indonesia
+
+
+###  Mengamati Lingkungan
+
+Coba  kamu  cermati  bahwa  banyaknya  suku  bangsa  di Indonesia  jelas  memunculkan  keberagaman  bahasa  daerah,  dan kebudayaan yang berlaku dalam praktik-praktik kehidupan seharihari.  Bayangkan  saja  ada  lebih  dari  500  suku  bangsa  Indonesia. Sungguh  merupakan  kekayaan  bangsa  yang  tidak  dimiliki  oleh negara lain. Namun demikian kekayaan ini akan menjadi masalah jika  kita  tidak  pandai  mengelola  perbedaan  yang  ada.  Tentu ini  berkaitan  pula  dengan  asal  mula  kedatangan  suku  bangsa dan  waktu  kedatangan  mereka.  Oleh  karena  itu,  penting  untuk mengetahui  bagaimana  proses  dan  dinamika  nenek  moyang Indonesia  sehingga  terbentuk  keragaman  budayanya.  Untuk  itu kamu harus mempelajarinya, agar kita bisa saling menghargai dan menghormati setiap perbedaan yang ada.
+
+
+###  Memahami Teks
+
+Menurut Sarasin bersaudara, penduduk asli Kepulauan Indonesia  adalah  ras  berkulit  gelap  dan  bertubuh  kecil.  Mereka mulanya tinggal di Asia bagian tenggara. Ketika zaman es mencair dan air laut naik hingga terbentuk Laut Cina Selatan dan Laut Jawa, sehingga memisahkan pegunungan vulkanik Kepulauan Indonesia dari daratan utama. Beberapa penduduk asli Kepulauan Indonesia tersisa  dan  menetap  di  daerah-daerah  pedalaman,  sedangkan daerah pantai dihuni oleh penduduk pendatang. Penduduk asli itu disebut sebagai suku bangsa Vedda oleh Sarasin. Ras yang masuk dalam kelompok ini adalah suku bangsa Hieng di Kamboja, Miaotse, Yao-Jen di Cina, dan Senoi di Semenanjung Malaya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 43
+
+Beberapa  suku  bangsa  seperti  Kubu,  Lubu,  Talang  Mamak  yang tinggal  di  Sumatra  dan  Toala  di  Sulawesi  merupakan  penduduk tertua di Kepulauan Indonesia. Mereka mempunyai hubungan erat dengan nenek moyang Melanesia masa kini dan orang Vedda yang saat ini masih terdapat di Afrika, Asia Selatan, dan Oceania. Vedda itulah  manusia  pertama yang datang ke pulau-pulau yang sudah berpenghuni. Mereka membawa budaya perkakas batu. Kedua ras Melanesia dan Vedda hidup dalam budaya mesolitik.
+
+Pendatang berikutnya membawa  budaya  baru yaitu budaya neolitik.  Para  pendatang  baru  itu  jumlahnya  jauh  lebih  banyak daripada penduduk asli. Mereka datang dalam dua tahap. Mereka itu oleh Sarasin disebut sebagai Proto Melayu dan Deutro Melayu. Kedatangan mereka terpisah diperkirakan lebih dari 2.000 tahun yang lalu.
+
+
+### 1.  Proto Melayu
+
+Proto Melayu diyakini sebagai nenek moyang orang Melayu Polinesia yang tersebar dari Madagaskar sampai pulau-pulau paling timur  di  Pasifik.  Mereka  diperkirakan  datang  dari  Cina  bagian selatan.  Ras  Melayu  ini  mempunyai  ciri-ciri  rambut  lurus,  kulit kuning  kecoklatan-coklatan,  dan  bermata  sipit.  Dari  Cina  bagian selatan (Yunan) mereka bermigrasi ke Indocina dan Siam, kemudian ke Kepulauan Indonesia. Mereka itu mula-mula menempati pantaipantai Sumatera Utara, Kalimantan Barat, dan Sulawesi Barat. Ras Proto Melayu membawa peradaban batu di Kepulauan Indonesia. Ketika datang para imigran baru, yaitu Deutero Melayu (Ras Melayu Muda) mereka berpindah masuk ke pedalaman dan mencari tempat baru ke hutan-hutan sebagai tempat huniannya. Ras Proto Melayu itu pun kemudian mendesak keberadaan penduduk asli. Kehidupan di dalam hutan-hutan menjadikan mereka terisolasi dari dunia luar, sehingga memudarkan peradaban mereka. Penduduk asli dan ras proto  melayu  itu  pun  kemudian  melebur.  Mereka  itu  kemudian menjadi suku bangsa Batak, Dayak, Toraja, Alas, dan Gayo.
+
+
+<br>
+
+
+---
+## 📄 Halaman 44
+
+Kehidupan  mereka  yang  terisolasi  itu  menyebabkan  ras Proto Melayu sedikit mendapat pengaruh dari kebudayaan Hindu maupun  Islam  dikemudian  hari.  Para  ras  Proto  Melayu  itu  kelak mendapat pengaruh Kristen sejak mereka mengenal para penginjil yang  masuk  ke  wilayah  mereka  untuk  memperkenalkan  agama Kristen dan peradaban baru dalam kehidupan mereka. Persebaran suku  bangsa  Dayak  hingga  ke  Filipina  Selatan,  Serawak,  dan Malaka  menunjukkan  rute  perpindahan  mereka  dari  Kepulauan Indonesia. Sementara suku bangsa Batak yang mengambil rute ke barat menyusuri pantai-pantai Burma dan Malaka Barat. Beberapa kesamaan bahasa yang digunakan oleh suku bangsa Karen di Burma banyak mengandung kemiripan dengan bahasa Batak.
+
+
+### 2.  Deutero Melayu
+
+Deutero  Melayu  merupakan  ras  yang  datang  dari  Indocina bagian  utara.  Mereka  membawa  budaya  baru  berupa  perkakas dan senjata besi di Kepulauan Indonesia, atau Kebudayaan Dongson.  Mereka  seringkali  disebut  juga  orang-orang  Dongson. Peradaban mereka lebih tinggi daripada ras Proto Melayu. Mereka dapat membuat  perkakas  dari perunggu. Peradaban  mereka ditandai dengan keahlian mengerjakan logam dengan sempurna. Perpindahan mereka ke Kepulauan Indonesia dapat dilihat dari rute persebaran alat-alat yang mereka tinggalkan di beberapa kepulauan di  Indonesia,  yaitu  berupa  kapak  persegi  panjang.  Peradaban  ini dapat dijumpai di Malaka, Sumatera, Kalimantan, Filipina, Sulawesi, Jawa, dan Nusa Tenggara Timur.
+
+Dalam bidang pengolahan tanah mereka mempunyai kemampuan  untuk  membuat  irigasi  pada  tanah-tanah  pertanian yang berhasil mereka ciptakan, dengan membabat hutan terlebih dahulu. Ras Deutero Melayu juga mempunyai peradaban pelayaran lebih maju dari pendahulunya karena petualangan mereka sebagai pelaut dibantu dengan penguasaan mereka terhadap ilmu perbintangan. Perpindahan ras Deutero Melayu juga menggunakan jalur  pelayaran  laut.  Sebagian  dari  ras  Deutero  Melayu  ada  yang mencapai Kepulauan Jepang, bahkan kelak ada yang hingga sampai Madagaskar.
+
+
+<br>
+
+
+---
+## 📄 Halaman 45
+
+Kedatangan  ras  Deutero  Melayu  di  Kepulauan  Indonesia makin  lama  semakin  banyak.  Mereka  pun  kemudian  berpindah mencari tempat baru ke hutan-hutan sebagai tempat hunian baru. Pada akhirnya Proto dan Deutero Melayu membaur dan selanjutnya menjadi penduduk di Kepulauan Indonesia. Pada masa selanjutnya mereka sulit untuk dibedakan. Proto Melayu meliputi penduduk di Gayo dan Alas di Sumatra bagian utara, serta Toraja di Sulawesi. Sementara itu, semua penduduk di Kepulauan Indonesia, kecuali penduduk Papua dan yang tinggal  di  sekitar  pulau-pulau  Papua, adalah ras Deutero Melayu.
+
+
+### 3.  Melanesoid
+
+Ras  lain  yang  terdapat  di  Kepulauan  Indonesia  adalah  ras Melanesoid. Mereka tersebar di lautan Pasifik di pulau-pulau yang letaknya  sebelah  Timur  Irian  dan  Benua  Australia.  Di  Kepulauan Indonesia mereka tinggal di Papua Barat, Ambon, Maluku Utara, dan  Nusa  Tenggara  Timur.  Bersama  dengan  Papua-Nugini  dan Bismarck,  Solomon,  New  Caledonia  dan  Fiji,  Vanuatu,  mereka tergolong rumpun Melanesoid.
+
+Pada mulanya kedatangan Bangsa Melanesoid di Kepulauan Indonesia berawal saat zaman es terakhir, yaitu tahun 70.000 SM. Pada  saat  itu  Kepulauan  Indonesia  belum  berpenghuni.  Ketika suhu turun hingga mencapai kedinginan maksimal, air laut menjadi beku. Permukaan laut menjadi lebih rendah 100 m dibandingkan permukaan  saat  ini.  Pada  saat  itulah  muncul  pulau-pulau  baru. Adanya  pulau-pulau  itu  memudahkan  makhluk  hidup  berpindah dari Asia menuju kawasan Oseania.
+
+Bangsa Melanesoid melakukan perpindahan ke timur hingga ke Papua, selanjutnya ke Benua  Australia,  yang  sebelumnya merupakan satu kepulauan yang terhubung dengan Papua. Bangsa Melanesoid  saat itu hingga mencapai 100 ribu jiwa meliputi wilayah Papua dan Australia. Peradaban bangsa Melanesoid  dikenal dengan paleolitikum.
+
+
+<br>
+
+
+---
+## 📄 Halaman 46
+
+Pada saat masa es berakhir dan air laut mulai naik lagi pada tahun 5000 S.M. Kepulauan Papua dan Benua Australia terpisah seperti yang dapat kita lihat saat ini. Pada saat itu jumlah penduduk mencapai 0,25 juta dan pada tahun 500 S.M. mencapai 0,5 juta jiwa.
+
+Asal mula bangsa Melanesia, yaitu Proto Melanesia merupakan penduduk pribumi  di  Jawa.  Mereka  adalah  manusia  Wajak  yang tersebar  ke  timur  dan  menduduki  Papua,  sebelum  zaman  es berakhir dan sebelum kenaikan permukaan laut yang terjadi pada saat  itu.  Di  Papua  manusia  Wajak  hidup  berkelompok-kelompok kecil  di  sepanjang  muara-muara  sungai.  Mereka  hidup  dengan menangkap ikan di sungai dan meramu tumbuh-tumbuhan serta akar-akaran, serta berburu di hutan belukar. Tempat tinggal mereka berupa  perkampungan-perkampungan  yang  terbuat  dari  bahanbahan  yang  ringan.  Rumah-rumah  itu  sebenarnya  hanya  berupa kemah  atau  tadah  angin,  yang  sering  didirikan  menempel  pada dinding gua yang besar. Kemah-kemah dan tadah angin itu hanya digunakan sebagai tempat untuk tidur dan berlindung, sedangkan aktivitas lainnya dilakukan di luar rumah.
+
+Bangsa Proto Melanesoid terus terdesak oleh bangsa Melayu. Mereka yang belum sempat mencapai Kepulauan Papua melakukan percampuran  dengan  ras  baru  itu.  Percampuran  bangsa  Melayu dengan Melanesoid menghasilkan keturunan Melanesoid-Melayu, saat  ini  mereka  merupakan  penduduk  Nusa  Tenggara  Timur  dan Maluku.
+
+
+### 4. Negrito dan Weddid
+
+Sebelum  kedatangan  kelompok-kelompok  Melayu  tua  dan muda,  negeri  kita  sudah  terlebih  dulu  kemasukan  orang-orang Negrito dan Weddid. Sebutan Negrito diberikan oleh orang-orang Spanyol karena yang mereka jumpai itu berkulit hitam mirip dengan jenis-jenis Negro. Sejauh mana kelompok Negrito itu bertalian darah dengan jenis-jenis Negro yang terdapat di Afrika serta Kepulauan Melanesia (Pasifik), demikian pula bagaimana sejarah perpindahan mereka, belum banyak diketahui dengan pasti.
+
+
+<br>
+
+
+---
+## 📄 Halaman 47
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p047_021.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan peta geografis Asia Tenggara. Peta ini menampilkan beberapa pulau besar seperti Sumatra, Borneo, dan Java, serta beberapa pulau kecil lainnya. Terdapat juga beberapa garis yang menghubungkan pulau-pulau tersebut, mungkin menunjukkan jalur perjalanan atau hubungan geografis antara mereka.
+
+Elemen utama yang ditampilkan adalah pulau-pulau di Asia Tenggara, dengan garis yang menghubungkannya. Pulau-pulau tersebut tampak jelas dengan warna-warna yang berbeda untuk membedakan antara mereka.
+
+Teks, angka, atau label penting tidak terlihat pada gambar ini karena ia hanya berupa peta tanpa teks atau angka tambahan.
+
+Informasi kunci yang dapat diambil pembaca melalui gambar ini adalah bahwa Asia Tenggara terdiri dari beberapa pulau besar dan kecil, serta hubungan geografis antara mereka.
+
+Gambar 1.18 Peta jalur masuk Ras Melanesia
+
+Kelompok  Weddid  terdiri  atas  orang-orang  dengan  kepala mesocephal dan letak mata yang dalam sehingga nampak seperti berang; kulit mereka coklat tua dan tinggi rata-rata lelakinya 155 cm. Weddid artinya jenis Wedda yaitu bangsa yang terdapat di Pulau Ceylon  (Srilanka).  Persebaran  orang-orang  Weddid  di  Nusantara cukup luas, misalnya di Palembang dan Jambi (Kubu), di Siak (Sakai) dan di Sulawesi pojok tenggara (Toala, Tokea dan Tomuna).
+
+Untuk lebih jelasnya kamu dapat membaca buku Daldjoeni yang berjudul Geograi Kesejarahan II di Indonesia
+
+Periode migrasi itu berlangsung berabad-abad, kemungkinan mereka berasal dalam satu kelompok ras yang sama dan dengan budaya  yang  sama  pula.  Mereka  itulah  nenek  moyang  orang Indonesia saat ini.
+
+Sekitar 170 bahasa yang digunakan di Kepulauan Indonesia adalah bahasa Austronesia (Melayu-Polinesia). Bahasa itu kemudian dikelompokkan menjadi dua oleh Sarasin, yaitu Bahasa Aceh dan bahasa-bahasa di pedalaman Sumatra, Kalimantan, dan Sulawesi.
+
+
+<br>
+
+
+---
+## 📄 Halaman 48
+
+Kelompok  kedua  adalah  bahasa  Batak,  Melayu,  Jawa,  dan  Bali. Kelompok bahasa kedua itu mempunyai hubungan dengan bahasa Malagi di Madagaskar dan Tagalog di Luzon. Persebaran geografis kedua bahasa itu menunjukkan bahwa penggunanya adalah pelautpelaut  pada  masa  dahulu  yang  sudah  mempunyai  peradaban lebih  maju.  Di  samping  bahasa-bahasa  itu,  juga  terdapat  bahasa Halmahera Utara dan Papua yang digunakan di pedalaman Papua dan bagian utara Pulau Halmahera.
+
+Untuk lebih jelasnya kamu dapat membaca buku Bernard H.M. Vlekke , Nusantara: Sejarah Indonesia
+
+Dalam bahasan di atas kita telah membahas tentang teori asal usul nenek moyang Indonesia.  Selama ini kita ketahui bahwa Proto Melayu, Deutero Melayu, dan Melanesoid tidak menunjukkan hubungan geneologis, bahkan ada yang berpendapat keberadaan mereka  ada  karena  pergantian  populasi.  Namun  berdasarkan penelitian  baru  yang  melibatkan  ahli  arkeologi,  genetika,  dan bahasa, ternyata asal-usul nenek moyang Indonesia berasal dari persamaan budaya, bahasa, dan dua atau lebih populasi keturunan sehingga menghasilkan teori baru yaitu Teori Out of Africa dan Out of Taiwan.
+
+
+### 5.  Teori Out of Africa dan Out of Taiwan
+
+Dalam tinjauan akademis yang komprehensif tentang asalusul  nenek  moyang  Indonesia,  maka  terlihatlah  bahwa  betapa eratnya  keterkaitan  dinamika  sejarah  Melanesia  dengan  bumi Nusantara. Mungkin kita akan bertanya, siapakah yang dimaksud dengan  Melanesia  itu?  Kata  Melanesia    diperkenalkan  pertama kali  oleh  Dumont  d'Urville    seorang  penjelajah  berkebangsaan
+
+
+<br>
+
+
+---
+## 📄 Halaman 49
+
+Prancis  untuk  menyebut  wilayah  etnik  penduduk  yang  berkulit hitam dan berambut keriting di kawasan Pasifik, dalam pertemuan Geography Society of Paris pada tanggal 27 Desember 1831.
+
+Menurut  Harry  Truman,  pada  sekitar  60.000  tahun  yang lalu ada sekelompok orang yang dengan semangat keberaniannya melintasi selat-selat dan laut hingga mencapai Kepulauan Nusantara.  Mereka  adalah  Homo  sapiens  yang  dalam  buku literatur disebut sebagai Manusia Modern Awal. Ketika berangkat dari tanah asalnya yaitu Afrika, mereka tidak mempunyai tempat tujuan.  Teori  ini  oleh  para  ahli  disebut  sebagai  Teori  Out  of Africa.  Dalam  pikiran  mereka  yang  ada  hanyalah,  bagaimana mereka  dapat  menemukan  ladang  kehidupan  baru  yang  lebih menjanjikan. Mereka beruntung dalam pengembaraannya segala rintangan  alam  dapat  diatasi,  dari  generasi  ke  genarasi  mereka mencapai  wilayah-wilayah  penghidupan  yang  baru.  Di  tempat baru  itu  mereka  mengeksplorasi  sumberdaya  lingkungan  yang tersedia  untuk  mempertahankan  hidup.  Mereka  meramu  dari berbagai umbi-umbian dan buah-buahan yang ada di wilayah itu. Hewan-hewan  juga  diburu  untuk  memenuhi  kebutuhan  hidup mereka. Untuk keperluan itu maka dibuatlah peralatan dari batu dan bahan organik, seperti kayu dan bambu.
+
+Waktu  terus  berlalu,  perubahan  alam  karena  iklim  dan geografi juga populasi yang terus bertambah, mendorong mereka untuk mencari wilayah hunian baru. Perlahan tetapi pasti mereka mengembara  mencari  tempat  hunian  baru.  Mereka  kemudian menyebar hingga ke wilayah timur Kepulauan Indonesia, bahkan meluas hingga mencapai Melanesia Barat dan Australia, wilayah geografi hunian mereka pun semakin meluas.
+
+Pengalaman  yang  diperoleh  selama  mereka  mengembara itu  menjadi  pengetahuan,  yang  selanjutnya  pengetahuan  itu diturunkan  dari  generasi  ke  generasi.  Kemampuan  berlayar  dan membuat rakit, serta teknik-teknik membuat alat transportasi laut
+
+
+<br>
+
+
+---
+## 📄 Halaman 50
+
+yang lebih  kuat  dan  nyaman.  Begitu  pula  dengan  pengetahuan perbintangan untuk menunjukkan arah saat berlayar. Pengalaman untuk menaklukkan ekosistem daratan, sehingga mereka mampu untuk menyesuaikan diri dengan kondisi ekologi yang berbedabeda.  Pengalaman  itu  menjadi  pengetahuan-pengetahuan  baru untuk memanfaatkan sumber daya yang ada di lingkungan yang baru.
+
+Pada saat berakhirnya zaman es sekitar 12.000 tahun yang lalu, menyebabkan perubahan besar dalam berbagai hal. Kenaikan muka  laut  yang  dratis  mendorong  penduduk  di  Kepulauan Indonesia  melakukan  persebaran  ke  berbagai  arah.  Persebaran mereka ini juga telah merubah peta hunian mereka. Kondisi alam yang  saat  itu  mendukung,  semakin  meyakinkan  mereka  untuk menetap  di  tempat  hunian  yang  baru  itu.  Alam  tropis  dengan biodiversitasnya menyediakan kebutuhan hidup sehingga populasi terus meningkat.
+
+Para ahli menggolongkan mereka sebagai Ras Australomelanesid.  Mereka  kemudian  hidup  menyebar  ke  guagua. Seiring dengan semakin berkembangnya zaman, kebutuhan nenek moyang kita ini juga semakin meningkat. Teknologi untuk mempermudah  kehidupan  mereka  juga  semakin  berkembang. Peralatan  dari  batu  semakin  beragam,  peralatan  dari  bahan organik  pun  semakin  berkembang  sesuai  dengan  kebutuhan mereka.  Keanekaragaman  dalam  peralatan  manusia  pada  saat itu semakin mendorong produktivitas hingga semakin membawa kemajuan dalam berbagai bidang. Kemajuan dalam bidang seni pada saat itu ditandai dengan lukisan-lukisan cadas yang terdapat di dinding gua-gua yang memanifestasikan kekayaan alam pikiran. Kepercayaan pada kehidupan sesudah mati juga terkonsepsi dalam perilaku kubur terhadap orang yang meninggal.
+
+Kemudian  pada  sekitar  4000  -  3000  tahun  yang  lalu, Kepulauan  Indonesia  kedatangan  orang-orang  baru.  Mereka  ini membawa budaya baru yang seringkali disebut  dengan  budaya Neolitik.  Budaya  ini  sering  dicirikan  dengan  kehidupan  yang
+
+
+<br>
+
+
+---
+## 📄 Halaman 51
+
+menetap dan domestikasi hewan dan tanaman. Pendatang yang berbicara dengan tutur Austronesia ini diperkirakan datang dari Taiwan  dengan  kedatangan  awal  Sulawesi  juga  kemungkinan Kalimantan. Dari sinilah mereka kemudian menyebar ke berbagai pelosok  Kepulauan  Nusantara.  Pendatang  yang  lain  tampaknya berasal dari Asia Tenggara Daratan. Mereka menggunakan bahasa Austroasiatik.  Mereka  ini  dapat  mencapai  Kepulauan  Nusantara bagian  barat  melalui  Malaysia.  Teori  inilah  yang  seringkali  oleh para  ahli  disebut  sebagai  teori  Out  of  Taiwan.  Pertemuan  para pendatang ini dengan populasi Australomelanesia pun tak dapat dielakkan,  sehingga  terjadi  kohabitasi.  Adaptasi  dan  interaksi diantara sesama pun terjadi hingga mereka melakukan perkawinan campuran.    Interaksi  budaya  dan  dalam  beberapa  hal  silang genetika pun tak dapat dihindari. Proses interaksi yang berlanjut memperlihatkan keturunan Ras Australomelanesid yang sekarang lebih dikenal sebagai populasi Melanesia.
+
+Pendapat  Harry Truman  tersebut dikuatkan oleh hasil penelitian  yang  dilakukan  oleh  Herawati  Sudoyo.  Dalam  studi genetika terbaru menunjukkan bahwa, genetika manusia Indonesia saat ini kebanyakan adalah campuran, berasal dari dua atau lebih populasi moyang. Secara gradual, presentasi genetikan Austronesia lebih dominan di bagian timur Indonesia. Sekalipun kecil  porsinya,  genetika  Papua  ada  hampir  di  seluruh  wilayah bagian barat Indonesia. Hal ini menunjukkan, bahwa di masa lalu terjadi percampuran genetika dibandingkan penggantian populasi.
+
+Demikian pula dari sudut penggunaan bahasa, Kepulauan Indonesia  yang  mempunyai  lebih  dari  700  etnis,  dengan  706 bahasa  daerah  dapat  digolongkan  dalam  dua  bagian,  yaitu penutur Austronesia dan non-Austronesia atau lebih sering disebut sebagai Papua. Multamia RMT Lauder menjelaskan bahwa telah  terjadi  pinjam-meminjam  leksikal  antara  bahasa-bahasa non-Austronesia dengan Austronesia. Diperkirakan lebih dari 30 % dari  semua  bahasa  yang  hidup  saat  ini  adalah  bahasa  Non-
+
+
+<br>
+
+
+---
+## 📄 Halaman 52
+
+Austronesia.  Rumpun  bahasa  Austronesia  cenderung  ditemukan di daerah pesisir, tetapi ini tidak selalu. Bahasa Austronesia juga dapat ditemukan di daerah pedalaman Papua Nugini.
+
+Gambaran  itu  menunjukkan  adanya  pola  migrasi  yang kompleks tetapi jelas, yaitu dari barat ke timur. Berdasarkan data itu  nyatalah  bahwa hubungan Austronesia dan Non-Austronesia bagaikan  sebuah  kain  tenun  yang  benang-benangnya  saling terjalin indah.
+
+
+### Uji Kompetensi
+
+Coba  kamu  identifikasikan  peninggalan  sejarah  berupa benda dan karya seni yang dapat dikategorikan sebagai tinggalan masa  proto  sejarah.  Adakah  manfaat  dari  peninggalan  tersebut bagi  kehidupan  manusia  sekarang?  Menurut  pendapat  kamu, bagaimana  peninggalan  tersebut  bisa  menyebar  ke  berbagai wilayah di Indonesia bahkan sampai ke luar wilayah Indonesia?
+
+Untuk mengerjakan soal di atas maka kamu dapat melakukan beberapa tahapan sebagai berikut:
+
+- Identifikasi  permasalahan yang menurut kamu menarik untuk diteliti, yaitu merumuskan masalah (biasanya dalam bentuk kalimat pertanyaan), seperti dimanakah manusia praaksara biasanya tinggal? Bagaimana mereka bisa mempertahankan kehidupannya? dan  lain-lain  sebagainya,  kamu  dapat  mendiskusikan  dengan teman-teman kamu!
+- Setelah  itu  carilah  sumber-sumber  yang  menjelaskan  tentang permasalahan  yang  akan  diteliti.  Caranya  dengan  mencari  dari internet,  buku-buku  bacaan,  kliping  koran,  foto-foto,  ilustrasi dan  wawancara  dengan  tokoh  masyarakat  yang  kamu  anggap mengetahui permasalahan.
+
+<br>
+
+
+---
+## 📄 Halaman 53
+
+- Setelah  kamu  temukan  sumber-sumber  tersebut,  lakukan perbandingan antara sumber yang satu dengan yang lain untuk mencari  kebenaran.  Jika  dari  bacaan  terdapat  dua  atau  lebih sumber  yang  menyatakan  hal  yang  sama  maka  bisa  saja  kita anggap sumber tersebut mendekati kebenaran.
+- Apabila di daerah tempat tinggal kamu terdapat peninggalan sejarah  yang  diduga  tinggalan  masa  praaksara,  kamu  bersama teman-teman dapat mengunjungi situs tersebut untuk meyakinkan pendapat kamu. Setelah itu barulah kamu rumuskan dalam bentuk tulisan yang runtut sekitar 3 - 5 lembar tulisan.
+
+<br>
+
+
+---
+## 📄 Halaman 54
+
+
+### E.  Corak kehidupan Masyarakat Masa Praaksara
+
+
+### 1. Pola Hunian
+
+
+###  Mengamati Lingkungan
+
+Coba  kamu  amati  baik-baik  gambar  di  atas.  Gambar  itu menunjukkan salah satu pola hunian masyarakat praaksara. Mengapa memilih tinggal di gua? Untuk memahami pola hunian manusia purba kamu dapat mengkaji uraian berikut.
+
+
+###  Memahami Teks
+
+Dalam buku Indonesia  Dalam  Arus  Sejarah ,  Jilid  I  diterangkan tentang  pola  hunian  manusia  purba  yang  memperlihatkan  dua karakter  khas  hunian  purba  yaitu,  (1)  kedekatan  dengan  sumber air  dan  (2)  kehidupan  di  alam  terbuka.  Pola  hunian  itu  dapat dilihat dari letak geografis situs-situs serta kondisi lingkungannya. Beberapa contoh yang menunjukkan pola hunian seperti itu adalah situs-situs  purba  di  sepanjang  aliran  Bengawan  Solo  (Sangiran, Sambungmacan, Trinil, Ngawi, dan Ngandong) merupakan contoh-
+
+
+<br>
+
+
+---
+## 📄 Halaman 55
+
+contoh  dari  adanya  kecenderungan  manusia  purba  menghuni lingkungan di pinggir sungai. Kondisi itu dapat dipahami mengingat keberadaan  air  memberikan  beragam  manfaat.  Air  merupakan kebutuhan pokok bagi manusia. Air juga diperlukan oleh tumbuhan maupun binatang. Keberadaan air pada suatu lingkungan mengundang hadirnya berbagai binatang untuk hidup di sekitarnya. Begitu pula dengan tumbuh-tumbuhan, air memberikan kesuburan bagi tanaman. Keberadaan air juga dimanfaatkan manusia sebagai sarana penghubung dalam memenuhi kebutuhan hidupnya. Melalui sungai,  manusia  dapat  melakukan  mobilitas  dari  satu  tempat  ke tempat yang lainnya.
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p055_023.png)
+
+> **Deskripsi Visual:** Gambar ini adalah jenis diagram, yang menunjukkan jalur atau rute perjalanan dari lokasi awal hingga lokasi akhir. Di bagian atas, ada nama-nama lokasi yang berada di jalur tersebut, seperti "Sukabumi" dan "Pendem". Jalur tersebut melintasi sungai dengan beberapa jembatan yang menghubungkan dua pesisir. Di sepanjang jalur, terdapat beberapa titik yang mungkin merupakan titik tujuan atau tempat penting, yang ditandai dengan bintang merah. Gambar ini juga menunjukkan bahwa ada sebuah jembatan yang disebut sebagai "Blackstone Dam di Sukabumi Selatan", yang tampaknya merupakan titik penting dalam jalur tersebut. Jarak antara lokasi-lokasi di jalur tersebut tampaknya cukup jauh, menunjukkan bahwa perjalanan ini mungkin cukup panjang dan membutuhkan waktu yang cukup lama untuk diselesaikan.
+
+Sumber : Harry Widianto dan Truman Simanjuntak. 2011. Jejak Langkah Setelah Sangiran. Jawa Tengah: Balai Pelastarian Situs Manusia Purba Sangiran.
+
+
+### 2. Dari Berburu-Meramu sampai Bercocok  Tanam
+
+
+###  Mengamati Lingkungan
+
+Sering  kali  kita  mendengar  aktivitas  pembukaan  lahan  di beberapa daerah di Indonesia. Hal ini bertujuan untuk membuka lahan baru untuk pertanian, perumahan atau untuk kegiatan industri dalam  rangka  meningkatkan  kesejahteraan  hidup.  Sebenarnya nenek moyang kita juga sudah melakukan hal serupa. Pola hidup
+
+
+<br>
+
+
+---
+## 📄 Halaman 56
+
+berpindah-pindah  dan  melakukan  aktivitas  bercocok  tanam  demi kelangsungan hidup mereka. Bagaimana pendapat kamu mengenai kesamaan aktivitas dari dua kehidupan manusia yang terpisah jarak jutaan tahun tersebut? Untuk mendapatkan pemahaman tentang aktivitas  bercocok  tanam  manusia  purba  di  Kepulauan  Indonesia silahkan telaah bacaan berikut.
+
+
+###  Memahami Teks
+
+Mencermati hasil penelitian baik yang berwujud fosil maupun artefak lainnya, diperkirakan manusia zaman praaksara mula-mula hidup dengan cara berburu dan meramu. Hidup mereka umumnya masih  tergantung  pada  alam.  Untuk  mempertahankan  hidupnya mereka menerapkan pola hidup nomaden atau berpindah-pindah tergantung  dari  bahan  makanan  yang  tersedia.  Alat-alat  yang digunakan terbuat dari batu yang masih sederhana. Hal ini terutama berkembang  pada  manusia  Meganthropus  dan  Pithecanthropus. Tempat-tempat yang dituju oleh komunitas itu umumnya lingkungan dekat sungai, danau, atau sumber air lainnya termasuk di daerah pantai. Mereka beristirahat misalnya di bawah pohon besar. Mereka juga membuat atap dan sekat tempat istirahat itu dari daun-daunan.
+
+Masa manusia purba berburu dan meramu itu sering disebut dengan masa food  gathering .  Mereka hanya mengumpulkan dan menyeleksi  makanan  karena  belum  dapat  mengusahakan  jenis tanaman untuk dijadikan bahan makanan. Dalam perkembangannya mulai  ada  sekelompok  manusia  purba  yang  bertempat  tinggal sementara, misalnya di gua-gua, atau di tepi pantai.
+
+Peralihan  Zaman  Mesolitikum  ke  Neolitikum  menandakan adanya  revolusi  kebudayaan  dari food gathering menuju food producing dengan Homo  sapien sebagai pendukungnya. Mereka tidak hanya mengumpulkan makanan tetapi mencoba memproduksi makanan dengan menanam. Kegiatan bercocok tanam dilakukan ketika  mereka  sudah  mulai  bertempat  tinggal,  walaupun  masih bersifat  sementara.  Mereka  melihat  biji-bijian  sisa  makanan  yang
+
+
+<br>
+
+
+---
+## 📄 Halaman 57
+
+tumbuh di tanah setelah tersiram air hujan. Pelajaran inilah yang kemudian  mendorong  manusia  purba  untuk  melakukan  cocok tanam. Apa yang mereka lakukan di sekitar tempat tinggalnya, lama kelamaan tanah di sekelilingnya habis, dan mengharuskan pindah. mencari tempat yang dapat ditanami. Ada yang membuka hutan dengan menebang pohon-pohon untuk membuka lahan bercocok tanam. Waktu itu juga sudah ada pembukaan lahan dengan cara membakar hutan. Bagaimana pendapat kamu tentang hal ini dan kira-kira  apa bedanya dengan pembakaran hutan yang dilakukan oleh manusia modern sekarang ini?
+
+Kegiatan manusia bercocok tanam terus mengalami perkembangan.  Peralatan  pokoknya  adalah  jenis  kapak  persegi dan kapak lonjong. Kemudian berkembang ke alat lain yang lebih baik. Dengan dibukanya lahan dan tersedianya air yang cukup maka terjadilah  persawahan  untuk  bertani.  Hal  ini  berkembang  karena saat itu, yakni sekitar tahun 2000 - 1500 S.M ketika mulai terjadi perpindahan  orang-orang  dari  rumpun  bangsa  Austronesia  dari Yunnan  ke  Kepulauan  Indonesia.  Begitu  juga  kegiatan  beternak juga mengalami perkembangan. Seiring kedatangan orang- orang  dari  Yunan  yang  kemudian dikenal sebagai nenek moyang kita  itu,  maka  kegiatan  pelayaran dan  perdagangan  mulai  dikenal. Dalam waktu singkat kegiatan perdagangan dengan sistem barter mulai berkembang. Kegiatan bertani  juga  semakin  berkembang karena mereka sudah mulai bertempat tinggal menetap.
+
+
+### 3. Sistem Kepercayaan
+
+Sebagai manusia yang beragama tentu kamu sering mendengarkan ceramah dari guru maupun tokoh agama. Dalam ceramah-ceramah  tersebut  sering  dikatakan  bahwa  hidup  hanya
+
+Untuk lebih lengkapnya kamu bisa membaca buku Marwati Djoened Poesponegoro, Sejarah Nasional Indonesia I , dan Sardiman AM dan Kusriyantinah, Sejarah Nasional dan Sejarah Umum .
+
+
+<br>
+
+
+---
+## 📄 Halaman 58
+
+sebentar sehingga tidak boleh berbuat menentang ajaran agama, misalnya tidak boleh menyakiti orang lain, tidak boleh rakus, bahkan melakukan tindak korupsi yang merugikan negara dan orang lain. Karena itu dalam hidup ini manusia harus bekerja keras dan berbuat sebaik  mungkin,  saling  menolong.  Kita  semua  mestinya  takut kepada Tuhan Yang Maha Esa bila berbuat dosa karena melanggar perintah agama, atau menyakiti orang lain.
+
+Nenek moyang kita mengenal kepercayaan kehidupan setelah mati. Mereka percaya pada kekuatan lain yang maha kuat di luar dirinya. Mereka selalu menjaga diri agar setelah mati tetap dihormati. Berikut ini kita akan menelaah  sistem kepercayaan manusia zaman praaksara,  yang  menjadi  nenek  moyang  kita.  Perwujudan kepercayaannya  dituangkan  dalam  berbagai  bentuk  diantaranya karya seni. Satu di antaranya berfungsi sebagai bekal untuk orang yang  meninggal.  Tentu  kamu  masih  ingat  tentang  perhiasan yang digunakan sebagai bekal kubur. Seiring dengan bekal kubur ini,    pada  zaman  purba  manusia  mengenal  penguburan  mayat. Pada saat inilah manusia mengenal sistem kepercayaan. Sebelum meninggal manusia menyiapkan dirinya dengan membuat berbagai bekal kubur, dan juga tempat penguburan yang menghasilkan karya seni cukup bagus pada masa sekarang. Untuk itulah kita mengenal dolmen, sarkofagus, menhir dan lain sebagainya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 59
+
+
+###  Memahami Teks
+
+Masyarakat zaman praaksara terutama periode zaman Neolitikum  sudah  mengenal  sistem  kepercayaan.  Mereka  sudah memahami  adanya  kehidupan  setelah  mati.  Mereka  meyakini bahwa roh seseorang yang telah meninggal akan hidup di alam lain. Oleh karena itu, roh orang yang sudah meninggal akan senantiasa dihormati oleh sanak kerabatnya. Terkait  dengan  itu  maka kegiatan ritual yang paling menonjol adalah upacara penguburan orang  meninggal.  Dalam  tradisi  penguburan  ini,  jenazah  orang yang  telah  meninggal  dibekali  berbagai  benda  dan  peralatan kebutuhan sehari-hari, misalnya barang-barang perhiasan, periuk dan lain-lain yang dikubur bersama mayatnya. Hal ini dimaksudkan agar perjalanan arwah orang yang meninggal selamat dan terjamin dengan baik. Dalam upacara penguburan ini semakin kaya orang yang meninggal maka upacaranya juga semakin mewah. Barangbarang berharga yang ikut dikubur juga semakin banyak.
+
+Selain upacara-upacara penguburan, juga ada upacaraupacara pesta untuk mendirikan bangunan suci. Mereka percaya manusia  yang  meninggal  akan  mendapatkan  kebahagiaan  jika mayatnya  ditempatkan  pada  susunan  batu-batu  besar,  misalnya pada peti batu atau sarkofagus.
+
+Batu-batu  besar  ini  menjadi  lambang  perlindungan  bagi manusia  yang  berbudi  luhur  juga  memberi  peringatan  bahwa kebaikan  kehidupan  di  akhirat  hanya  akan  dapat  dicapai  sesuai dengan  perbuatan  baik  selama  hidup  di  dunia.  Hal  ini  sangat tergantung pada kegiatan upacara kematian yang pernah dilakukan untuk menghormati leluhurnya. Oleh karena itu, upacara kematian merupakan  manifestasi  dari  rasa  bakti  dan  hormat  seseorang terhadap  leluhurnya  yang  telah  meninggal.  Sistem  kepercayaan masyarakat  praaksara  yang  demikian  itu  telah  melahirkan  tradisi megalitik  (zaman  megalitikum  =  zaman  batu  besar).  Mereka mendirikan  bangunan  batu-batu  besar  seperti  menhir,  dolmen, punden  berundak,  dan  sarkofagus. Pada zaman  praaksara,
+
+
+<br>
+
+
+---
+## 📄 Halaman 60
+
+seorang  dapat  dilihat  kedudukan  sosialnya  dari cara  penguburannya.  Bentuk  dan  bahan  wadah kubur  dapat  digunakan  sebagai  petunjuk  status sosial seseorang. Penguburan dengan sarkofagus misalnya, memerlukan jumlah tenaga kerja yang lebih  banyak  dibandingkan  dengan  penguburan tanpa  wadah.  Dengan  kata  lain,  pengelolaan tenaga kerja juga sering digunakan sebagai indikator stratifikasi sosial seseorang dalam masyarakat.
+
+Sistem kepercayaan dan tradisi batu besar seperti dijelaskan di atas, telah mendorong berkembangnya kepercayaan animisme. Kepercayaan animisme merupakan sebuah sistem kepercayaan  yang  memuja  roh  nenek  moyang. Di samping animisme, muncul juga kepercayaan dinamisme. Menurut kepercayaan dinamisme ada benda-benda tertentu yang diyakini memiliki kekuatan gaib, sehingga benda itu sangat dihormati dan dikeramatkan.
+
+Seiring dengan perkembangan pelayaran, masyarakat zaman praaksara akhir juga mulai mengenal sedekah laut. Sudah barang tentu kegiatan upacara ini lebih banyak dikembangkan di kalangan para  nelayan.  Bentuknya  mungkin  semacam  selamatan  apabila ingin berlayar jauh, atau mungkin saat memulai pembuatan perahu. Sistem kepercayaan nenek moyang kita ini sampai sekarang masih dapat kita temui dibeberapa daerah.
+
+
+<br>
+
+
+---
+## 📄 Halaman 61
+
+
+### Uji Kompetensi
+
+- Pembukaan  lahan  yang  dilakukan  oleh  nenek  moyang  kita dengan penebangan pohon sebenarnya termasuk kearifan lokal yang perlu dijadikan pelajaran. Bagaimana pendapat dan sikap kamu tentang pernyataan tersebut? Bagaimana pula pendapat kamu tentang aktivitas pembukaan lahan dengan membakar hutan seperti yang dilakukan sekarang ini?
+- Buatlah analisis tentang hubungan antara pola tempat tinggal dengan bercocok tanam!
+- Coba kamu identifikasi alat-alat bercocok tanam pada periode tersebut! Berikan nama alat, fungsi, dan gambar!
+- Mengapa manusia purba itu banyak yang tinggal di tepi sungai?
+- Jelaskan pola kehidupan nomaden manusia purba!
+- Manusia purba juga memasuki fase bertempat tinggal sementara, misalnya di gua, mengapa demikian?
+- Apa kira-kira alasan bagi manusia purba memilih tinggal di tepi pantai?
+- Jelaskan kaitan antara manusia yang sudah bertempat tinggal tetap dengan adanya sistem kepercayaan!
+- Adakah  hubungan  antara  sistem  kepercayaan  masyarakat dengan pola mata pencaharian? Jelaskan!
+- Buatlah  sebuah  proyek  belajar  dengan  melakukan  penelitian tentang  tradisi  megalitik  dan  kepercayaan  animisme  yang sekarang masih tersisa di daerah kamu.
+
+<br>
+
+
+---
+## 📄 Halaman 62
+
+
+### F.   Perkembangan Teknologi
+
+
+###  Memahami  Teks
+
+Perlu kamu  ketahui  bahwa  sekalipun  belum  mengenal tulisan  manusia  purba  sudah  mengembangkan  kebudayaan  dan teknologi.  Teknologi  waktu  itu  bermula  dari  teknologi  bebatuan yang digunakan sebagai alat untuk memenuhi kebutuhan. Dalam praktiknya  peralatan  atau  teknologi  bebatuan  tersebut  dapat berfungsi serba guna. Pada tahap paling awal alat yang digunakan masih bersifat kebetulan dan seadanya serta bersifat trial and error. Mula-mula  mereka  hanya  menggunakan  benda-benda  dari  alam terutama batu. Teknologi bebatuan pada zaman ini berkembang dalam  kurun  waktu  yang  begitu  panjang.  Oleh  karena  itu,  para ahli kemudian membagi kebudayaan zaman batu di era praaksara ini  menjadi  beberapa  zaman  atau  tahap  perkembangan.  Dalam buku R. Soekmono, Pengantar Sejarah Kebudayaan Indonesia I, dijelaskan bahwa kebudayaan zaman batu ini dibagi menjadi tiga yaitu, Paleolitikum, Mesolitikum dan Neolitikum.
+
+Coba  amati  gambar  di  samping. Gambar  apa  dan  untuk  apa  kira-kira? Gambar itu merupakan gambar peralatan rumah  tangga  yang  sudah  sangat  lama dikenal di lingkungan ibu rumah tangga di Indonesia, apalagi di Jawa. Yang jelas peralatan itu terbuat dari batu  yang merupakan warisan nenek moyang. Peralatan  dari  batu  ini  sampai  sekarang masih digunakan oleh masyarakat kita
+
+Berikut  ini  kita  akan  membahas tentang  teknologi  bebatuan  yang  telah dikembangkan sejak kehidupan manusia purba.
+
+
+<br>
+
+
+---
+## 📄 Halaman 63
+
+
+### 1. Antara Batu dan Tulang
+
+Peralatan pertama yang digunakan oleh manusia purba adalah alat-alat dari batu yang seadanya dan juga dari tulang. Peralatan ini berkembang pada zaman Paleolitikum atau zaman batu tua. Zaman batu tua ini bertepatan dengan zaman Neozoikum terutama pada akhir zaman Tersier dan awal zaman Kuarter. Zaman ini berlangsung sekitar  600.000  tahun  yang  lalu.  Zaman  ini  merupakan  zaman yang sangat penting karena terkait dengan munculnya kehidupan baru, yakni munculnya jenis manusia purba. Zaman ini dikatakan zaman batu tua karena hasil kebudayaan terbuat dari batu yang relatif masih sederhana dan kasar. Kebudayaan zaman Paleolitikum ini  secara  umum  ini  terbagi  menjadi  Kebudayaan  Pacitan  dan Kebudayaan Ngandong.
+
+
+### a. Kebudayaan Pacitan
+
+Kebudayaan ini berkembang di daerah Pacitan, Jawa Timur. Beberapa  alat  dari  batu  ditemukan  di  daerah  ini.  Seorang  ahli, von  Koeningwald  dalam  penelitiannya  pada  tahun  1935  telah menemukan beberapa hasil teknologi bebatuan atau alat-alat dari batu di Sungai Baksoka dekat Punung. Alat batu itu masih kasar, dan bentuk ujungnya agak runcing, tergantung kegunaannya. Alat batu ini  sering  disebut  dengan  kapak  genggam  atau  kapak  perimbas. Kapak ini digunakan untuk menusuk binatang atau menggali tanah saat mencari umbi-umbian. Di samping kapak perimbas, di Pacitan juga  ditemukan  alat  batu  yang  disebut  dengan chopper sebagai alat penetak. Di Pacitan juga ditemukan alat-alat serpih.
+
+Alat-alat  itu  oleh  Koenigswald    digolongkan  sebagai  alatalat  'paleolitik',  yang  bercorak  'Chellean',  yakni  suatu  tradisi yang berkembang pada tingkat awal paleolitik di Eropa. Pendapat Koenigswald ini kemudian dianggap kurang tepat.
+
+
+<br>
+
+
+---
+## 📄 Halaman 64
+
+Gambar  1.24 Kapak  perimbas  (chopper): Alat batu inti atau serpih yang dicirikan oleh tajaman monofasial  yang  membulat,  lonjong,  atau  lurus, dihasilkan  melalui  pangkasan  pada  satu  bidang dari sisi ujung (distal) ke arah pangkal (proksimal). Ciri  yang  membedakan  kapak  perimbas  dengan serut  adalah  ukuran  dimana  serut  yang  kasar dan masif digolongkan sebagai kapak perimbas, sementara yang halus dan kecil digolongkan serut.
+
+Gambar 1.25 Pahat genggam (hand adze): Alat batu  inti  yang  dicirikan  oleh  bentuk  alat  yang persegi atau bujur sangkar dengan tajaman yang tegak  lurus  pada  sumbu  alat.  Selain  itu  dikenal pula Kapak  genggam  awal  (proto-hand  axe), Kapak genggam (hand axe).
+
+setelah Movius berhasil menyatakan temuan di Punung itu sebagai salah  satu  corak  perkembangan  kapak  perimbas  di  Asia  Timur. Tradisi  kapak  perimbas  yang  ditemukan  di  Punung  itu  kemudian dikenal dengan nama 'Budaya Pacitan'. Budaya itu dikenal sebagai tingkat perkembangan budaya batu awal di Indonesia.
+
+Kapak  perimbas  itu  tersebar  di  wilayah  Sumatera  Selatan, Kalimantan Timur, Sulawesi Selatan, Bali, Flores, dan Timor.  Daerah Punung  merupakan  daerah  yang  terkaya  akan  kapak  perimbas dan  hingga  saat  ini  merupakan  tempat  penemuan  terpenting di  Indonesia.  Pendapat  para  ahli  condong  kepada  jenis  manusia Pithecanthropus  atau  keturunan-keturunannya  sebagai  pencipta budaya Pacitan. Pendapat ini sesuai dengan pendapat tentang umur budaya Pacitan yang diduga dari tingkat akhir Plestosin Tengah atau awal permulaan Plestosin Akhir.
+
+
+<br>
+
+
+---
+## 📄 Halaman 65
+
+
+### b. Kebudayaan Ngandong
+
+Kebudayaan Ngandong berkembang di daerah Ngandong  dan  juga  Sidorejo,  dekat  Ngawi.  Di  daerah  ini banyak ditemukan alat-alat dari batu dan juga alat-alat dari tulang. Alat-alat dari tulang ini berasal dari tulang binatang dan tanduk rusa yang diperkirakan digunakan sebagai penusuk  atau  belati.  Selain  itu,  ditemukan  juga  alat-alat seperti tombak yang bergerigi. Di Sangiran juga ditemukan alat-alat dari batu, bentuknya indah seperti kalsedon .  Alatalat ini sering disebut dengan lakes.
+
+Sebaran  artefak  dan  peralatan  paleolitik  cukup  luas sejak dari daerah-daerah di Sumatra, Kalimantan, Sulawesi, Bali, Nusa Tenggara Barat (NTB), Nusa Tenggara Timur (NTT), dan Halmahera.
+
+
+<br>
+
+
+---
+## 📄 Halaman 66
+
+
+### 2. Antara Pantai dan Gua
+
+Zaman  batu  terus  berkembang  memasuki  zaman  batu madya atau batu tengah yang dikenal zaman Mesolitikum. Hasil kebudayaan batu madya ini sudah lebih maju apabila dibandingkan hasil kebudayaan zaman Paleolitikum (batu tua). Sekalipun demikian, bentuk dan hasil-hasil kebudayaan zaman Paleolitikum tidak serta merta punah tetapi mengalami penyempurnaan. Bentuk lakes dan alat-alat dari tulang terus mengalami perkembangan. Secara garis besar kebudayaan Mesolitikum ini terbagi menjadi dua kelompok besar yang ditandai lingkungan tempat tinggal, yakni di pantai dan di gua .
+
+
+<br>
+
+
+---
+## 📄 Halaman 67
+
+
+### a.  Kebudayaan Kjokkenmoddinger.
+
+Kjokkenmoddinger istilah dari bahasa Denmark, kjokken berarti dapur  dan modding dapat  diartikan  sampah  ( kjokkenmoddinger =  sampah  dapur).  Dalam  kaitannya  dengan  budaya  manusia, kjokkenmoddinger merupakan  tumpukan  timbunan  kulit  siput dan kerang yang menggunung di sepanjang pantai Sumatra Timur antara Langsa di Aceh sampai Medan. Dengan kjokkenmoddinger ini dapat memberi informasi bahwa manusia purba zaman Mesolitikum umumnya bertempat tinggal di tepi pantai. Pada tahun 1925 Von Stein Callenfels melakukan penelitian di bukit kerang itu dan menemukan jenis kapak genggam ( chopper ) yang berbeda dari chopper yang ada di zaman Paleolitikum .  Kapak  genggam yang ditemukan di bukit kerang di pantai Sumatra Timur ini diberi nama pebble atau  lebih  dikenal  dengan  Kapak  Sumatra.  Kapak  jenis pebble ini terbuat dari batu kali yang pecah, sisi luarnya dibiarkan begitu saja dan sisi bagian dalam dikerjakan sesuai dengan keperluannya. Di samping kapak jenis pebble juga ditemukan jenis kapak pendek dan  jenis  batu  pipisan  (batu-batu  alat  penggiling).  Di  Jawa  batu pipisan ini umumnya untuk menumbuk dan menghaluskan jamu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 68
+
+Gambar 1.30 Batu Pipisan
+
+
+### b. Kebudayaan Abris Sous Roche
+
+Kebudayaan abris sous roche merupakan hasil kebudayaan yang ditemukan di gua-gua. Hal ini mengindikasikan bahwa manusia purba pendukung kebudayaan ini tinggal di gua-gua. Kebudayaan ini  pertama  kali  dilakukan  penelitian  oleh  Von  Stein  Callenfels  di Gua Lawa dekat Sampung, Ponorogo. Penelitian dilakukan tahun 1928  sampai  1931.  Beberapa  hasil  teknologi  bebatuan  yang ditemukan misalnya ujung panah, lakes , batu penggilingan. Juga ditemukan alat-alat dari tulang dan tanduk rusa. Kebudayaan abris sous roche ini banyak ditemukan misalnya di Besuki, Bojonegoro, juga di daerah Sulawesi Selatan seperti di Lamoncong.
+
+Untuk mengetahui lebih dalam tentang Kebudayaan Kjokkenmoddinger dan Kebudayaan Abris Sous Roche ini kamu dapat membaca buku R. Soekmono , Pengantar Sejarah Kebudayaan I
+
+Gambar 1.31 Kapak Genggam
+
+
+<br>
+
+
+---
+## 📄 Halaman 69
+
+
+### 3. Mengenal  Api
+
+
+###  Mengamati Lingkungan
+
+Bagi manusia, api merupakan faktor penting dalam kehidupan. Sebelum ditemukan teknologi listrik, aktivitas manusia sehari-hari  hampir  dapat  dipastikan  tidak  dapat  terlepas  dari  api untuk  memasak.  Pelajaran  dan  pengetahuan  apa  yang  kamu peroleh melalui uraian tersebut?
+
+
+###  Memahami Teks
+
+Bagi  manusia  purba,  proses  penemuan  api  merupakan bentuk inovasi yang sangat penting. Berdasarkan data arkeologi, penemuan  api  kira-kira  terjadi  pada  400.000  tahun  yang  lalu. Penemuan pada periode manusia Homo  erectus .  Api  digunakan untuk menghangatkan diri dari cuaca dingin. Dengan api kehidupan menjadi  lebih  bervariasi  dan  berbagai  kemajuan  akan  dicapai. Teknologi  api    dapat  dimanfaatkan  manusia  untuk  berbagai  hal. Di  samping  itu  penemuan  api  juga  memperkenalkan  manusia pada teknologi  memasak  makanan,  yaitu  memasak  dengan  cara
+
+
+<br>
+
+
+---
+## 📄 Halaman 70
+
+membakar  dan  menggunakan  bumbu  dengan  ramuan  tertentu. Manusia  juga  menggunakan  api  sebagai  senjata.  Api  pada  saat itu  digunakan  manusia  untuk  menghalau  binatang  buas  yang menyerangnya.  Api  dapat  juga  dijadikan  sumber  penerangan. Melalui pembakaran pula manusia dapat menaklukkan alam, seperti membuka  lahan  untuk  garapan  dengan  cara  membakar  hutan. Kebiasaan bertani dengan menebang lalu bakar ( slash  and  burn ) adalah kebiasaan kuno yang tetap berkembang sampai sekarang.
+
+Pada awalnya pembuatan api dilakukan dengan cara membenturkan dan  menggosokkan  benda  halus  yang  mudah  terbakar  dengan benda padat lain. Sebuah batu yang keras, misalnya batu api, jika dibenturkan ke batuan keras lainnya akan menghasilkan percikan api.  Percikan  tersebut  kemudian  ditangkap  dengan  dedaunan kering, lumut atau material lain yang kering hingga menimbulkan api. Pembuatan api juga dapat dilakukan dengan menggosok suatu benda  terhadap  benda  lainnya,  baik  secara  berputar,  berulang, atau  bolak-balik.  Sepotong  kayu  keras  misalnya,  jika  digosokkan pada  kayu  lainnya  akan  menghasilkan  panas  karena  gesekan  itu kemudian menimbulkan api.
+
+Penelitian-penelitian arkeologi di Indonesia sejauh ini belum menemukan  sisa  pembakaran  dari  periode  ini.  Namun  bukan berarti  manusia  purba  di  kala  itu  belum  mengenal  api.  Sisa  api yang tertua ditemukan di Chesowanja, Tanzania, dari sekitar 1,4 juta tahun lalu, yaitu berupa tanah liat kemerahan bersama dengan sisa tulang binatang. Akan tetapi belum dapat dipastikan apakah manusia purba membuat api atau mengambilnya dari sumber api alam (kilat, aktivitas vulkanik, dll). Hal yang sama juga ditemukan di  China  (Yuanmao,  Xihoudu,  Lantian),  di  mana  sisa  api  berusia sekitar  1  juta  tahun  lalu.  Namun  belum  dapat  dipastikan  apakah itu api alam atau buatan manusia. Teka-teki ini masih belum dapat terpecahkan, sehingga belum dipastikan apakah bekas tungku api di  Tanzania  dan  Cina  itu  merupakan  hasil  buatan  manusia  atau pengambilan dari sumber api alam.
+
+
+<br>
+
+
+---
+## 📄 Halaman 71
+
+
+### 4. Sebuah Revolusi
+
+Perkembangan  zaman  batu  yang  dapat  dikatakan  paling penting dalam kehidupan manusia adalah zaman batu baru atau neolitikum. Pada  zaman neolitikum yang  juga  dapat  dikatakan sebagai zaman batu muda. Pada zaman ini telah terjadi 'revolusi kebudayaan', yaitu terjadinya perubahan pola hidup manusia.  Pola hidup food  gathering digantikan  dengan  pola food producing. Hal  ini  seiring  dengan  terjadinya  perubahan  jenis  pendukung kebudayannya.  Pada  zaman  ini  telah  hidup  jenis Homo  sapiens sebagai pendukung kebudayaan zaman batu baru. Mereka mulai  mengenal  bercocok  tanam  dan  beternak  sebagai  proses untuk  menghasilkan  atau  memproduksi  bahan  makanan.  Hidup bermasyarakat  dengan  bergotong  royong  mulai  dikembangkan. Hasil kebudayaan yang terkenal di zaman neolitikum ini secara garis besar dibagi menjadi dua tahap perkembangan.
+
+
+### a.      Kebudayaan Kapak Persegi
+
+Nama kapak persegi berasal dari penyebutan oleh  von  Heine  Geldern.  Penamaan  ini  dikaitkan dengan bentuk alat tersebut. Kapak persegi ini  berbentuk    persegi  panjang  dan  ada  juga yang  berbentuk  trapesium.  Ukuran  alat  ini  juga bermacam-macam.  Kapak  persegi yang besar sering disebut dengan beliung atau pacul (cangkul), bahkan  sudah  ada  yang  diberi  tangkai  sehingga persis seperti cangkul zaman sekarang. Sementara yang berukuran kecil  dinamakan tarah atau tatah . Penyebaran  alat-alat  ini  terutama  di  Kepulauan Indonesia  bagian  barat,  seperti  Sumatra,  Jawa dan Bali. Diperkirakan sentra-sentra teknologi kapak persegi ini ada di Lahat (Palembang), Bogor,
+
+Gambar 1.33 Kapak persegi
+
+Gambar 1.34 Batu asahan
+
+
+<br>
+
+
+---
+## 📄 Halaman 72
+
+Sukabumi,  Tasikmalaya  (Jawa  Barat),  kemudian  Pacitan-Madiun, dan di Lereng Gunung Ijen (Jawa Timur). Yang menarik, di Desa Pasirkuda dekat Bogor juga ditemukan batu asahan. Kapak persegi ini cocok sebagai alat pertanian.
+
+Gambar 1.35 Kapak lonjong
+
+Gambar 1.3 6 Gerabah
+
+
+### b. Kebudayaan Kapak Lonjong
+
+Nama kapak lonjong ini disesuaikan dengan bentuk penampang  alat ini yang berbentuk lonjong. Bentuk  keseluruhan  alat  ini  lonjong seperti bulat telur. Pada ujung yang lancip ditempatkan tangkai dan pada bagian ujung yang lain  diasah  sehingga  tajam.  Kapak  yang  ukuran besar  sering  disebut walzenbeil dan  yang  kecil dinamakan kleinbeil. Penyebaran jenis kapak lonjong  ini  terutama  di  Kepulauan  Indonesia bagian timur, misalnya di daerah Papua, Seram, dan Minahasa.
+
+Pada zaman Neolitikum, di samping berkembangnya jenis kapak batu juga ditemukan barang-barang  perhiasan, seperti gelang dari batu, juga alat-alat gerabah atau tembikar.
+
+Perlu kamu ketahui bahwa manusia purba waktu itu  sudah  memiliki  pengetahuan  tentang kualitas  bebatuan  untuk  peralatan.  Penemuan dari  berbagai  situs  menunjukkan  bahan  yang paling  sering  dipergunakan  adalah  jenis  batuan kersikan ( siliciied stones ), seperti gamping kersikan,  tufa  kersikan,  kalsedon,  dan  jasper. Jenis-jenis  batuan  ini  di  samping  keras,  sifatnya
+
+
+<br>
+
+
+---
+## 📄 Halaman 73
+
+yang retas dengan pecahan yang cenderung tajam dan  tipis,  sehingga  memudahkan  pengerjaan. Di  beberapa  situs  yang  mengandung  fosil-fosil kayu,  seperti  di  Kali  Baksoka  (Jawa  Timur)  dan Kali  Ogan  (Sumatra  Selatan)  tampak  ada  upaya pemanfaatan  fosil  untuk  bahan  peralatan.  Pada saat  lingkungan  tidak  menyediakan  bahan  yang baik,  ada  kecenderungan  untuk  memanfaatkan batuan yang tersedia di sekitar hunian, walaupun kualitasnya  kurang  baik.  Contoh  semacam  ini dapat diamati pada situs  Kedunggamping  di sebelah  timur  Pacitan,  Cibaganjing  di  Cilacap, dan Kali Kering di Sumba yang pada umumnya menggunakan bahan andesit untuk peralatan.
+
+
+### c. Perkembangan Zaman Logam
+
+Mengakhiri  zaman  batu  masa  Neolitikum maka  dimulailah  zaman  logam.  Sebagai  bentuk masa  perundagian.  Zaman  logam  di  Kepulauan Indonesia  ini  agak  berbeda  bila  dibandingkan dengan  yang  ada  di  Eropa.  Di  Eropa  zaman logam ini  mengalami  tiga  fase,  zaman  tembaga, perunggu dan besi. Di Kepulauan Indonesia hanya  mengalami  zaman  perunggu  dan  besi. Zaman  perunggu  merupakan    fase  yang  sangat penting  dalam  sejarah.  Beberapa  contoh  bendabenda kebudayaan perunggu itu antara lain: kapak corong, nekara, moko, berbagai barang perhiasan. Beberapa benda hasil kebudayaan zaman logam ini juga  terkait  dengan  praktik  keagamaan  misalnya nekara.
+
+Gambar 1.38 Nekara
+
+
+<br>
+
+
+---
+## 📄 Halaman 74
+
+
+### 5. Konsep Ruang pada Hunian (Arsitektur)
+
+Menurut  Kostof,  arsitektur  telah  mulai  ada  pada  saat  manusia mampu mengolah lingkungan hidupnya. Pembuatan tanda-tanda di alam yang membentang tak terhingga itu untuk membedakan dengan wilayah lainnya.  Tindakan  untuk  membuat  tanda  pada  suatu  tempat  itu  dapat dikatakan sebagai bentuk awal dari arsitektur. Pada saat itu manusia sudah mulai merancang sebuat tempat.
+
+Bentuk arsitektur  pada  masa  praaksara  dapat  dilihat  dari  tempat hunian  manusia  pada  saat  itu.  Mungkin  kita  sulit  membayangkan  atau menyimpulkan  bentuk  rumah  dan  bangunan  yang  berkembang  pada masa praaksara saat itu. Dari pola mata pencaharian manusia yang sudah mengenal berburu dan melakukan pertanian sederhana dengan ladang berpindah memungkinkan adanya pola pemukiman yang telah menetap. Gambar-gambar dinding goa tidak hanya mencerminkan kehidupan seharihari, tetapi juga kehidupan spiritual. Cap-cap tangan dan lukisan di goa
+
+yang banyak ditemukan di Papua, Maluku, dan Sulawesi Selatan dikaitkan dengan ritual penghormatan atau pemujaan nenek moyang, kesuburan, dan inisiasi. Gambar dinding yang tertera pada goa-goa mengambarkan pada  jenis  binatang  yang  diburu  atau  binatang  yang  digunakan  untuk membantu  dalam  perburuan.  Anjing  adalah  binatang  yang  digunakan oleh manusia praaksara untuk berburu binatang.
+
+
+<br>
+
+
+---
+## 📄 Halaman 75
+
+Bentuk pola hunian dengan menggunakan penadah angin, menghasilkan  pola  menetap  pada manusia masa itu. Pola hunian itu sampai  saat  ini  masih  digunakan  oleh Suku Bangsa Punan yang tersebar di  Kalimantan.  Bentuk  hunian  itu merupakan  bagian bentuk awal arsitektur di luar tempat hunian di goa. Secara  sederhana  penadah angin merupakan suatu konsep tata ruangan yang memberikan secara  implisit  memberikan  batas
+
+Gambar 1.40 Gambaran hunian manusia purba
+
+ruang. Pada kehidupan dengan masyarakat berburu yang masih sangat tergantung pada alam, mereka lebih mengikut ritme dan bentuk geografis alam.  Dengan  demikian  konsep  ruang  mereka  masih  kurang  bersifat geometris  teratur.  Pola  garis  lengkung  tak  teratur  seperti  aliran  sungai, dan pola spiral  seperti  route  yang  ditempuh  mungkin  adalah  citra  pola ruang utama mereka. Ruang demikian belum mengutamakan arah utama. Secara sederhana dapatlah  kita lihat bahwa, pada masa praaksara konsep tata ruang, atau yang saat ini kita kenal dengan arsitektur itu sudah mereka kenal.
+
+
+<br>
+
+
+---
+## 📄 Halaman 76
+
+
+### Uji Kompetensi
+
+- Coba  kamu  diskusikan,  mengapa  manusia  purba  membuat peralatan dari bahan batu, kayu, dan tulang?
+- Peralatan  yang  dibuat  oleh  manusia  purba  dari  batu  dapat digunakan  sebagai  alat  serba  guna,  coba  jelaskan  dan  beri contoh!
+- Coba  kamu  inventarisir  alat-alat  manusia  purba  pada  zaman batu dan masukkan ke dalam tabel di bawah ini:
+- Setelah selesai mengisi tabel di atas, kamu lukiskan dalam bentuk peta persebaran peralatan manusia purba!
+
+---
+**📊 Tabel**
+
+![Tabel](extracted_assets/table_p076_049.png)
+
+Tabel ini berisi informasi tentang 7 alat yang digunakan dalam kegiatan tertentu. Topik utamanya adalah daerah temuan dan kegunaan alat tersebut. Kolom-kolom yang ada meliputi nomor urut (No.), nama alat, kegunaan, daerah temuan, dan gambar/lukisan. Data penting yang terlihat adalah bahwa setiap baris memiliki informasi lengkap tentang satu alat, termasuk nama, kegunaannya, daerah asalnya, dan jika ada, gambar atau lukisan yang menunjukkan alat tersebut. Ini membantu dalam memahami bagaimana alat-alat tersebut digunakan dan diapa daerah asalnya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 77
+
+
+### Kesimpulan
+
+Setelah  membaca  secara  keseluruhan  bab  ini  marilah  kita sama-sama  menyimpulkan  nilai-nilai  apa  yang  dapat  dipetik  dari kehidupan masa lalu itu untuk kehidupan pada masa kini dan masa mendatang.
+
+- Untuk mempelajari sejarah awal manusia ahli sejarah bergantung pada disiplin arkeologi, geologi dan biologi dan cabang-cabang ilmu lainnya. Masa praaksara terbentang dari penemuan manusia pertama di planet bumi ini hingga ditemukannya tulisan. Cerita sejarahnya mulai sejak sekitar 500.000 atau barangkali sekitar 250.000 tahun lalu.
+- Pengetahuan tentang kehidupan manusia praaksara menyediakan jawaban tentang asal-usul manusia dan kemanusiaan, serta  keberadaan  manusia  di  dunia  dalam  mencapai impiannya dan rintangan-rintangan yang dihadapinya. Sebagai sebuah  bangsa,  pembelajaran  mengenai  kehidupan  manusia praaksara  hendaknya  menggugah  kita  untuk  memperbarui pertanyaan klasik seperti, dari manakah  kita berasal dan bagaimana evolusi perjalanan hidup manusia di masa lalu hingga mencapai suatu tahap sejarah ke tahap berikutnya?
+- Semakin sadar kita tentang asal usul dan evolusi yang dijalani nenek moyang di masa lampau, hendaknya semakin ingat pula kita tentang tugas dan tanggung jawab sebagai seorang peserta didik yang akan membangun bangsa ini.
+- Nenek moyang orang Indonesia di masa lampau telah menjalani sejarah yang amat panjang dan berat dengan segala tantangan zaman yang dihadapi pada masanya. Mereka telah mengalami evolusi atau transformasi sedemikian rupa yaitu, dari nomaden ke  kehidupan  menetap,  dari  mengumpulkan  makanan  dan berburu menjadi penghasil bahan makanan, dari ketergantungan
+
+<br>
+
+
+---
+## 📄 Halaman 78
+
+total  pada  alam  dan  teknologi  dalam  bentuk  manual  kepada upaya menciptakan alat yang kian lama kian canggih, dan dari hidup  berkelompok berdasarkan sistem kepemimpinan primus interpares ke susunan masyarakat yang lebih teratur. Semua itu berlangsung dengan cara yang tak mudah dan memakan waktu yang lama, bahkan ribuan tahun.
+
+- Perubahan-perubahan  itu  tidak  mengalir  begitu  saja,  tetapi dimulai dari refleksi berpikir dan gagasan hasil interaksi mereka  dengan  alam  sekitar.  Kondisi  lingkungan  yang  berat mengajarkan bagaimana, misalnya, membuat alat yang tepat  untuk  memecahkan  persoalan  yang  dihadapi.  Dalam masyarakat,  generasi  yang  lebih  tua  meneruskan  tradisi  dan pengalaman  kolektifnya  kepada  yang  lebih  muda.  Dengan akumulasi pengalaman kolektif itu mereka belajar meningkatkan pengetahuan dan keterampilan.
+- Pencapaian prestasi yang diraih manusia modern dewasa ini telah mengubah dunia dengan cara yang mungkin tak terbayangkan oleh nenek moyang mereka di masa silam. Kehidupan modern dibayar dengan harga besarnya energi yang telah dikuras oleh manusia, baik itu yang tidak terbarui (antara lain minyak bumi, gas,  dan  batubara)  maupun  yang  terbarui  (air,  kayu,  hutan dan lain-lain). Karena itu, seorang ahli ilmu hayat Tim Flannery menyebut  manusia Homo sapiens zaman  modern  berbeda dengan nenek moyang mereka, karena mereka tidak lain adalah 'pemangsa masa depan'. Julukan ini  tidak  salah  apabila  kita menghitung  kembali  kerusakan  lingkungan  yang  diakibatkan oleh  eksploitasi  manusia  hingga  saat  ini.  Bahkan,  sumberdaya alami (antara lain tambang mineral, bahan bakar fosil, keindahan alam, hutan tropis, dan sumber daya lautan) yang seharusnya bukan menjadi hak manusia saat ini, tetapi warisan bagi anakcucu di masa mendatang, sudah mulai dimanfaatkan atau malah sudah dimakan habis.
+
+<br>
+
+
+---
+## 📄 Halaman 79
+
+- Kekayaan sumber kearifan lokal zaman praaksara menyediakan inspirasi dan sekaligus peringatan bagi generasi kita bagaimana hubungan  harmoni  antara  manusia  dan  alam  tidak  perlu menimbulkan  malapetaka  bagi  manusia  lain.  Kekayaan  alam pikir  manusia  praaksara  jelas  merupakan  kearifan  lokal  yang harus terus menerus digali lagi dan bukan diremehkan. Mitosmitos  tentang  awal  penciptaan  dunia  dan  asal-usul  manusia dengan  cerita  yang  berbeda-beda  di  berbagai  suku  bangsa, tidak  hanya  mengandung  nilai  pelajaran  di  dalamnya,  tetapi juga, kalau ditelusuri lebih jauh, membawa  pesan-pesan rasional yang sering disampaikan secara simbolik. Maka, di saat manusia modern hidup semakin individualistik, semakin terasa pula  kebutuhan  untuk  menegakkan  nilai-nilai  kearifan  lokal. Entah itu yang namanya  berupa gotong royong, kekeluargaan dan  kebersamaan.  Itulah  kebiasaan  nenek  moyang,  misalnya, dalam  rangka  membangun  kampung,  mendirikan  bangunanbangunan  dari  batu  besar  atau  megalitik.  Tidak  jarang  pula para pemimpin kelompok sosial mengadakan pesta jasa sebagai bukti  bahwa  mereka  dapat  memberikan  kesejahteraan  bagi anggota masyarakatnya. Semua anggota masyarakat ikut terlibat dan secara bersama-sama melaksanakan upacaraupacara. Masyarakat yang telah merasakan kesejahteraan yang diberikan pemimpin akan membalas jasa itu dengan bergotong royong mengangkut dan mendirikan batu tegak (prasasti) bagi pemimpinnya. Di masa lampau, sifat gotong royong itu, tidak saja  terlihat  dalam  mendirikan bangunan megalitik tetapi juga untuk pendirian rumah, upacara syukuran panen, serta upacara kematian.  Apa  pun  bentuknya,  pengalaman  kolektif  manusia praaksara  adalah  akar  tunggang  dari  budaya  Nusantara,  yang tentunya  dapat  memperkuat budaya Indonesia modern dalam mengarungi globalisasi abad ke-21 ini.
+
+<br>
+
+
+---
+## 📄 Halaman 80
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p080_050.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan relief batu dari arca Hindu yang menggambarkan adegan kehidupan sehari-hari. Relief ini terdiri dari beberapa elemen utama:
+
+1. **Adegan Kehidupan Sehari-Hari**: Relief ini menampilkan berbagai adegan yang mungkin terkait dengan kehidupan sehari-hari, termasuk perburuan, pertarungan, dan aktivitas sosial.
+
+2. **Elemen Utama dan Relasinya**: 
+   - **Pemburu**: Dua orang pemburu yang sedang berlari dan memburu hewan.
+   - **Pertarungan**: Seorang pria yang sedang bertarung dengan seekor hewan.
+   - **Aktivitas Sosial**: Seorang pria yang sedang berbicara dengan seorang wanita.
+   - **Tempat**: Relief ini juga menunjukkan struktur seperti rumah atau bangunan tradisional.
+
+3. **Teks, Angka, atau Label Penting**: Gambar ini tidak memiliki teks, angka, atau label yang jelas, sehingga informasi spesifik tentang konteks atau detail adegan tidak dapat dilihat.
+
+4. **Informasi Kunci yang Bisa Diambil Pembaca**: Gambar ini memberikan gambaran umum tentang kehidupan sehari-hari dan aktivitas sosial pada masa lalu, serta menunjukkan peran dan hubungan antar individu dalam masyarakat tersebut.
+
+Dengan demikian, gambar ini menawarkan wawasan tentang kehidupan sosial dan budaya pada masa lalu melalui relief batu yang menggambarkan berbagai adegan kehidupan sehari-hari.
+
+Gambar 2.1 Relief yang mengambarkan aktivitas pandai logam
+
+
+<br>
+
+
+---
+## 📄 Halaman 81
+
+
+### Bab II
+
+
+### Pedagang, Penguasa dan Pujangga pada Masa Klasik (Hindu-Buddha)
+
+Masa Hindu-Buddha berlangsung selama kurang lebih 12 abad. Pembabakan  masa  Hindu-Buddha  terbagi  menjadi  tiga,  yaitu periode  pertumbuhan,  perkembangan,  dan  keruntuhan.  Pada  abad ke-16 agama Islam mulai mendominasi Nusantara. Namun, tidak berarti  pengaruh  kebudayaan Hindu-Buddha hilang tergantikan kebudayaan Islam. Agama Islam mengakomodasi peninggalan Hindu-Buddha, tentunya dengan melakukan modiikasi agar tetap berselang beberapa abad, wujud peradaban Hindu-Buddha masih  dapat  kita  saksikan  hingga  sekarang,  misalnya  dalam perwujudan sastra dan arsitektur.
+
+(Taufik Abdullah (ed), 2012)
+
+Kutipan  di  atas  menunjukkan  perkembangan  Kebudayaan Hindu-Buddha  sudah  berlangsung  sangat  lama  dan  meluas  di seluruh Kepulauan Indonesia. Kebudayaan yang sangat monumental adalah  mulai  dikenalnya  tulisan.  Oleh  karena  itu  dalam  bab  ini kita  akan  mengenal  lebih  lanjut  tentang  penduduk  di  Kepulauan Indonesia  ketika  sudah  mengenal  tulisan  dan  kebudayaannya mulai berkembang. Terutama sewaktu pengaruh-pengaruh budaya Hindu-Buddha masuk ke Kepulauan Indonesia. Masa ini sering kali disebut juga dengan masa klasik, yaitu awal masuknya unsur-unsur budaya  India  di  Kepulauan  Indonesia.  Pada  tahapan  ini  banyak kemajuan yang dicapai dalam pemikiran dan hasil-hasil budaya baik dalam bentuk benda, maupun budaya tak benda. Masa klasik juga diartikan  sebagai  pertimbangan  banyaknya  capaian  budaya  pada masa Hindu-Buddha itu yang masih tetap dihargai dan ditafsirkan ulang  hingga  saat  ini  meskipun  pengaruh  budaya  Hindu-Buddha sudah mulai memudar dan digantikan oleh budaya lain.
+
+
+<br>
+
+
+---
+## 📄 Halaman 82
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p082_051.png)
+
+> **Deskripsi Visual:** Gambar ini adalah diagram yang menunjukkan hubungan antara pedagang, pengusaha, dan pujangga pada masa klasik Hindu Buddha. Diagram ini terdiri dari empat bagian utama:
+
+1. **Terbentuk Melalui Pengaruh Hindu-Buddha**: Ini menunjukkan bahwa pedagang, pengusaha, dan pujangga berkembang melalui pengaruh Hindu-Buddha.
+
+2. **Membentuk Jaringan Perdagangan dan Pelayaran Nusantara**: Dari pengaruh tersebut, terbentuk jaringan perdagangan dan pelayaran di Nusantara.
+
+3. **Membentuk Kerajaan pada Masa Hindu-Buddha**: Jaringan ini juga membentuk kerajaan pada masa Hindu-Buddha.
+
+4. **Akulturasi Kebudayaan Nusantara dan Hindu-Buddha**: Proses ini mengakibatkan akulturasi kebudayaan Nusantara dan Hindu-Buddha.
+
+5. **Membentuk Budaya Baru**: Akulturasi ini membentuk budaya baru.
+
+6. **Semua Bangunan Seni Rupa dan ukir, Seni Sastra dan Aksara, Sistem Koperasi, dan Sistem Pemerintahan**: Budaya baru ini mencakup berbagai aspek seperti seni, sastra, aksara, sistem koperasi, dan sistem pemerintahan.
+
+7. **Saling Mempengaruhi**: Semua aspek ini saling mempengaruhi satu sama lain.
+
+Informasi kunci yang dapat diambil pembaca adalah bahwa pedagang, pengusaha, dan pujangga berkembang melalui pengaruh Hindu-Buddha, yang kemudian membentuk jaringan perdagangan dan pelayaran, kerajaan, dan akulturasi kebudayaan, yang akhirnya menciptakan budaya baru dengan berbagai aspek.
+
+
+<br>
+
+
+---
+## 📄 Halaman 83
+
+
+### TUJUAN PEMBELAJARAN
+
+Setelah mempelajari uraian ini, diharapkan kamu dapat:
+
+- Menganalisis pengaruh Hindu-Buddha di Indonesia
+- Mengenali kerajaan pada masa Hindu-Buddha
+- Mendeskripsikan jaringan perdagangan dan pelayaran Nusantara
+- Mengalanisis akulturasi Kebudayaan Nusantara dan Hindu
+
+### A. Pengaruh Budaya India
+
+
+###  Mengamati Lingkungan
+
+Gambar 2.2 Candi Prambanan
+
+Perhatikan gambar di atas. Tentu kamu pernah membaca atau  bahkan  datang  untuk  melihat  kemegahan  candi  Borobudur dan  candi  Prambanan.  Kedua  candi  ini  merupakan  peninggalan masa Hindu-Buddha dan berlokasi di Jawa Tengah.
+
+
+<br>
+
+
+---
+## 📄 Halaman 84
+
+Candi Borobudur terletak di Kota Magelang, Jawa Tengah. Dari bentuk arsitekturnya candi itu merupakan candi Buddha. Candi yang  megah  itu  pernah  menjadi  satu  di  antara  tujuh  keajaiban dunia.  Kamu  tentu  bangga  dengan  peninggalan  budaya  itu  dan harus dapat merawat peninggalan yang sangat berharga tersebut. Tidak jauh dari candi Borobudur, terdapat candi Prambanan. Candi Hindu  itu  terletak  di  perbatasan  Daerah  Istimewa  Yogyakarta dengan  Klaten,  Jawa  Tengah.  Kedua  candi  yang  megah  itu merupakan bukti  perkembangan  agama  dan  kebudayaan  HinduBuddha  di  Indonesia.  Apa  kamu  pernah  membaca  cerita  rakyat tentang  Rara  Jonggrang  dan  Bandung  Bondowoso?  Cerita  itu yang melatarbelakangi terjadinya candi Prambanan. Benarkah hal tersebut terjadi nyata ataukah hanya sebuah mitos belaka? Kamu dapat mendiskusikannya bersama teman-teman.
+
+Dua mahakarya itu  merupakan  bukti-bukti  pencapaian  yang  luar biasa pada Dinasti Syailendra. Setelah masa dinasti tersebut surut, pusat  kebudayaan  dan  politik  kerajaan  pindah  ke  Jawa  bagian timur. Di Jawa bagian timur itu kemudian berdirilah kerajaan yang diperintah oleh keturunan Raja Mataram yang bernama Mpu Sindok. Beberapa  sumber  sejarah  yang  berasal  dari  Cina  menyebutkan tentang adanya hubungan perkawinan antara raja Jawa dan Bali pada masa pemerintahannya.
+
+Sementara  itu,  di  Sumatra  terdapat  kerajaan  yang  sangat terkenal, yaitu Sriwijaya. Kerajaan yang handal menjalin hubungan dengan  dunia  internasional  melalui  jaringan  perdagangan  dan kemaritimannya.  Dalam  masa  itulah  para  pedagang  datang  dari India,  Cina  dan  Arab  untuk  meramaikan  Sriwijaya.  Saat  Sumatra berada di bawah Dinasti Syailendra, kerajaan itu dapat menguasai kerajaan-kerajaan  lain  di  sepanjang  Selat  Malaka.  Pada  masa  itu pula hubungan dengan India dan Cina berkembang pesat. Bahkan hubungan itu  sangat  berpengaruh  dalam  perkembangan  budaya pada  masa  itu,  bahkan  hingga  saat  ini  pengaruh  kedua  budaya itu masih dapat kita temui. Kehebatan Sriwijaya juga ditunjukkan dengan adanya 'dharma' (sumbangan) dari Raja Sriwijaya untuk
+
+
+<br>
+
+
+---
+## 📄 Halaman 85
+
+mendirikan asrama di Nalanda, India. Sriwijaya pun menjadi pusat belajar  agama  Buddha  pada  masa  itu.  Sumber-sumber  Tibet  dan Nepal menyebutkan, seorang pendeta Buddha yang bernama Atisa, belajar  Agama  Buddha  di  Sriwijaya  selama  12  tahun,  atas  saran I-tsing, seorang musafir dari Cina yang lebih dahulu pernah singgah di Sriwijaya.
+
+Jika  mengunjungi Candi Prambanan atau candi Borobudur, kamu  akan  melihat  kisah  dalam  dunia  wayang.  Kamu  mungkin pernah mendengar tentang wayang, atau bahkan ada yang suka menonton  pertunjukan  wayang.  Wayang  sudah  dikenal  oleh nenek  moyang  kita  sejak  masa  Hindu-Buddha.  Melalui  wayang kisah Mahabharata dipentaskan. Kisah yang hingga saat ini masih populer adalah kisah Bharatayudha . Kisah ini menceritakan tentang perang  saudara  antara  Kurawa  dan  Pandawa,  tentang  kebaikan yang mengalahkan kejahatan. Cerita itu merupakan saduran dari India. Seorang pujangga Jawa diperintahkan oleh Jayabaya untuk menulis  cerita  itu  dalam  versi  Jawa.  Jayabaya  adalah  Raja  Kediri yang kekuasaannya tidak dapat ditentang oleh kerajaan-kerajaan lain. Raja ini pula yang dikenal karena kehebatan ramalannya. Selain Mahabharata juga  dikenal  cerita  tentang Ramayana .  Dari  kisah Ramayana itulah disebutkan adanya Jawadwipa, pulau yang kaya dengan tambang emas dan perak.
+
+Nama  Jawadwipa  juga  sudah  dikenal  oleh  seorang  ahli geografi  Yunani,  Ptolomeus,  pada  awal  tarikh  Masehi  dengan nama 'Labadiu'. Jadi nama Kepulauan Indonesia sudah ditulis dan dikenal oleh penulis Barat jauh pada masa awal Masehi. Ptolomeus menyebutkan bahwa Pulau Labadiu artinya Pulau Padi atau dikenal pula dengan Jawadwipa.
+
+Nah, bagaimanakah agama Hindu dan Buddha dapat masuk di Kepulauan Indonesia? Banyak ahli yang berpendapat tentang itu. Pada bab ini kita akan belajar tentang masuk dan berkembangnya pengaruh-pengaruh  India  dan  Cina,  serta  capaian-capaian  yang dilakukan  para  penguasa  pada  masa  itu  dan  proses  masuknya
+
+
+<br>
+
+
+---
+## 📄 Halaman 86
+
+agama Hindu dan Buddha. Pada saat ini pula peranan pedagang, penguasa,  dan  pujangga  sangat  terlihat  dari  bukti-bukti  capaian budaya yang hingga kini masih dapat kita jumpai.
+
+
+###  Memahami  Teks
+
+Satu  di  antara  bangsa  yang  berinteraksi  dengan  penduduk kepulauan  di  Indonesia  adalah  bangsa  India.  Interaksi  itu  terjalin sejalan dengan meluasnya hubungan perdagangan antara India dan Cina. Hubungan itu yang mendorong pedagang-pedagang India dan Cina datang ke kepulauan di Indonesia. Menurut van Leur, barang yang  diperdagangkan  dalam  pasar  internasional  saat  itu  adalah barang komoditas yang bernilai tinggi. Barang-barang itu berupa logam mulia, perhiasan, berbagai barang pecah belah, serta bahan baku yang diperlukan untuk kerajinan. Dua komoditas penting yang menjadi primadona pada awal masa sejarah di Kepulauan Indonesia adalah gaharu dan kapur barus. Kedua komoditas itu merupakan bahan baku pewangi yang paling digemari oleh bangsa India dan Cina. Interaksi dengan kedua bangsa itu membawa perubahan pada bentuk tata negara di beberapa daerah di Kepulauan Indonesia. Juga perubahan dalam susunan kemasyarakatan dan sistem kepercayaan. Sejak saat itu pula pengaruh-pengaruh Hindu-Buddha berkembang di Indonesia.
+
+Untuk memperdalam kajian tentang hal ini kamu dapat membaca buku Vlekke, Nusantara: Sejarah Indonesia.
+
+
+<br>
+
+
+---
+## 📄 Halaman 87
+
+Tanda-tanda tertua adanya pengaruh kebudayaan Hindu di Indonesia berupa prasasti-prasasti yang ditemukan di daerah Sungai Cisedane, dekat Kota Bogor saat ini. Juga di Jawa Barat dekat Kota Jakarta. Selain itu kita juga dapat melihat peninggalan kebudayaan Hindia itu di sepanjang pantai Kalimantan Timur, yaitu di daerah Muarakaman,  Kutai.  Menurut  para  ahli  sejarah  kuno,  kerajaankerajaan yang disebut dalam prasasti-prasasti itu adalah kerajaan Indonesia  asli,  yang  hidup  makmur  bersumber  dari  perdagangan dengan  negara-negara  di  India  Selatan.  Interaksi  dengan  orangorang dari negara lain itulah  yang  kemudian mempengaruh cara pandang para raja-raja saat itu untuk mengadopsi konsep-konsep Hindu dengan cara mengundang para ahli dan para pendeta dari golongan  Brahmana  (pendeta)  di  India  Selatan  yang  beragama Wisnu atau Brahma.
+
+Beberapa bukti menunjukkan, setelah budaya India masuk, terjadi  banyak perubahan dalam tatanan kehidupan. Berdasarkan bukti-bukti  yang  ditemukan,  kerajaan  tertua  di  Muarakaman, Kalimatan  Timur,  yaitu  Kerajaan  Kutai  mendapat  pengaruh  yang kuat  dari  budaya  India  yaitu  budaya  yang  dikembangkan  oleh Bangsa  Arya  di  lembah  Sungai  Indus.  Percampuran  budaya  itu kemudian melahirkan kerajaan yang bersifat Hindu di Nusantara. Baik itu yang mencakup dalam sistem religi, sistem kemasyarakatan, dan bentuk pemerintahan. Suatu hal yang sangat penting dalam pengaruh Hindu adalah adanya konsepsi mengenai susunan negara yang amat hirarkis dengan pembagian-pembagian dan fraksi-fraksi yang digolongkan ke dalam empat atau delapan bagian besar yang bersifat  sederajat  dan  tersusun  secara  simetris.  Semua  bagianbagian itu diorientasikan ke atas, yaitu sang raja dianggap sebagai keturunan dewa. Raja dianggap keramat dan puncak dari segala hal dalam negara dan pusat alam semesta.
+
+
+<br>
+
+
+---
+## 📄 Halaman 88
+
+Kebudayaan Hindu di zaman itu mempunyai kekuatan yang besar dan serupa dengan zaman modern saat ini, seperti kebudayaan Barat  ataupun  kebudayaan  Korea  yang  hampir  mempengaruhi seluruh kehidupan semua bangsa-bangsa di dunia. Demikian halnya dengan kebudayaan intelektual agama Hindu pada masa itu yang mempunyai pengaruh kuat di Asia Tenggara.
+
+Sebelum  kebudayaan  India  masuk,  pemerintahan  desa  dipimpin oleh  seorang  kepala  suku  yang  dipilih  oleh  anggota  masyarakat. Seorang kepala  suku  merupakan  orang  pilihan  yang  mengetahui tentang adat istiadat dan upacara pemujaan roh nenek moyangnya dengan baik. Ia juga dianggap sebagai wakil nenek moyangnya. Ia harus dapat melindungi keselamatan dan kesejahteraan rakyatnya. Karena  itulah  larangan  dan  perintahnya  dipatuhi  oleh  warganya. Setelah  masuknya  budaya  India,  terjadi  perubahan.  Kedudukan kepala  suku  digantikan  oleh  raja  seperti  halnya  di  India.  Raja memiliki kekuasaan yang sangat besar. Kedudukan raja tidak lagi dipilih oleh rakyatnya, akan tetapi diturunkan secara turun temurun. Raja merupakan penjelmaan dewa yang seringkali disembah oleh rakyatnya.  Para  Brahmana  agama  Hindu  tidak  dibebani  untuk menyebarkan agama Hindu di Indonesia. Pada dasarnya seseorang tidak dapat menjadi Hindu, tetapi seseorang itu lahir sebagai Hindu. Mengingat  hal  tersebut,  maka  menjadi  menarik  dengan  adanya agama Hindu di Indonesia. Bagaimana dapat terjadi bahwa orangorang Indonesia yang pasti pada mulanya tidak dilahirkan sebagai Hindu dapat beragama Hindu.
+
+Demikian pula dengan sistem kemasyarakatan. Sistem kemasyarakatan  yang  dikembangkan  oleh  bangsa  Arya  yang berkembang di Lembah Sungai Indus adalah sistem kasta. Sistem kasta  mengatur  hubungan  sosial  bangsa  Arya  dengan  bangsabangsa yang ditaklukkannya. Sistem ini membedakan masyarakat berdasarkan fungsinya. Golongan Brahmana (pendeta) menduduki
+
+
+<br>
+
+
+---
+## 📄 Halaman 89
+
+golongan pertama. Ksatria (bangsawan, prajurit) menduduki golongan kedua. Waisya (pedagang dan petani) menduduki golongan  ketiga, sedangkan  Sudra  (rakyat biasa)  menduduki golongan  terendah  atau  golongan  keempat.  Sistem  kepercayaan dan  kasta  menjadi  dasar  terbentuknya  kepercayaan  terhadap Hinduisme. Penggolongan seperti inilah yang disebut caturwarna.
+
+Awal hubungan dagang antara penduduk  Kepulauan  Nusantara  dan  India bertepatan dengan perkembangan pesat dari agama  Buddha.  Pendeta-pendeta  Buddha menyebarkan  ajarannya  ke  seluruh  penjuru dunia melalui jalur perdagangan tanpa menghitungkan kesulitan-kesulitan yang ditempuhnya. Mereka mendaki Himalaya untuk menyebarkan ajaran Buddha di Tibet. Dari Tibet mereka melanjutkan ke arah utara hingga sampai ke Cina. Kedatangan mereka itu  biasanya  disampaikan  terlebih  dahulu, sehingga ketika tiba di tempat tujuan mereka  dapat  bertemu  dengan  kalangan istana. Mereka biasanya mengajarkan agama dengan penuh ketekunan. Mereka juga membentuk sebuah sanggha dengan biksubiksu setempat, sehingga muncul suatu ikatan    langsung  dengan  India,  tanah  suci agama Buddha. Kedatangan para biksu dari India ke negara-negara lain itu, memunculkan keinginan  para  penduduk  daerah  setempat untuk  pergi  ke  India  mempelajari  agama Buddha  lebih  lanjut.  Para  biksu  lokal  itu kemudian kembali dengan membawa kitabkitab  suci,  relik,  dan  kesan-kesan.  Bosch
+
+Gambar 2.3 Arca Buddha dan Bodhisattwa dari sabong pelangi
+
+
+<br>
+
+
+---
+## 📄 Halaman 90
+
+Gambar 2.5 Arca Buddha menyebut  gejala  ini  dengan  'arus  balik'. Pengaruh Buddha di Indonesia dapat dijumpai pada beberapa temuan arkeologis. Satu bukti adalah ditemukannya arca Buddha terbuat dari perunggu di daerah Sempaga, Sulawesi  Selatan.  Menurut  ciri-cirinya,  arca Sempaga memperlihatkan langgam seni arca Amarawati  dari  India  Selatan.  Arca  sejenis juga  ditemukan  di  daerah  Jember,  Jawa Timur dan daerah Bukit Siguntang, Sumatra Selatan.  Di  daerah  Kota  Bangun,  Kutai, Kalimantan Timur, juga ditemukan arca Buddha.  Arca  Buddha  itu  memperlihatkan ciri  seni  area  dari  India  Utara.  Kalau begitu kapan kebudayaan Hindu-Buddha dari India itu masuk ke Kepulauan Indonesia?
+
+Terdapat  berbagai  pendapat  mengenai  proses  masuknya Hindu-Buddha atau sering disebut Hinduisasi. Sampai saat ini masih ada perbedaan pendapat mengenai cara dan jalur proses masuk dan berkembangnya pengaruh Hindu-Buddha di Kepulauan Indonesia. Beberapa pendapat (teori) tersebut dijelaskan pada uraian berikut:
+
+Pertama , sering disebut dengan teori Ksatria . Dalam kaitan ini  R.C. Majundar berpendapat, bahwa munculnya kerajaan atau pengaruh Hindu di Kepulauan Indonesia disebabkan oleh peranan kaum ksatria atau para prajurit India. Para prajurit diduga melarikan diri  dari  India  dan  mendirikan  kerajaan-kerajaan  di  Kepulauan Indonesia dan Asia Tenggara pada umumnya. Namun, teori Ksatria yang dikemukakan oleh R.C. Majundar ini kurang disertai dengan bukti-bukti yang mendukung. Selama ini belum ada ahli yang dapat menemukan bukti-bukti yang menunjukkan adanya ekspansi dari prajurit-prajurit  India  ke  Kepulauan  Indonesia.  Kekuatan  teori  ini terletak pada semangat petualangan para kaum ksatria.
+
+
+<br>
+
+
+---
+## 📄 Halaman 91
+
+Kedua , teori Waisya . Teori ini terkait dengan pendapat N.J. Krom  yang  mengatakan  bahwa  kelompok  yang  berperan  dalam dalam  penyebaran  Hindu-Buddha  di  Asia  Tenggara,  termasuk Indonesia  adalah  kaum  pedagang.  Pada  mulanya  para  pedagang India  berlayar  untuk  berdagang.  Pada  saat  itu  jalur  perdagangan ditempuh  melalui  lautan  yang  menyebabkan  mereka  tergantung pada  musim  angin  dan  kondisi  alam.  Bila  musim  angin  tidak memungkinkan  maka  mereka  akan  menetap  lebih  lama  untuk menunggu  musim  baik.  Para  pedagang  India  pun  melakukan perkawinan  dengan  penduduk  pribumi  dan  melalui  perkawinan tersebut mereka mengembangkan kebudayaan India. Menurut G. Coedes, yang memotivasi para pedagang India untuk datang ke Asia Tenggara  adalah  keinginan  untuk  memperoleh  barang  tambang terutama emas dan hasil hutan.
+
+Ketiga , teori Brahmana . Teori tersebut sesuai dengan pendapat J.C. van Leur bahwa Hinduisasi di Kepulauan Indonesia disebabkan  oleh  peranan  kaum  Brahmana.  Pendapat  van  Leur didasarkan atas temuan-temuan prasasti yang menggunakan bahasa Sansekerta  dan  huruf  Pallawa.  Bahasa  dan  huruf  tersebut  hanya dikuasai oleh kaum Brahmana. Selain itu, adanya kepentingan dari para penguasa untuk mengundang para Brahmana India. Mereka diundang ke Asia Tenggara untuk keperluan upacara keagamaan. Seperti pelaksanaan  upacara inisiasi yang dilakukan oleh para kepala suku agar mereka menjadi golongan ksatria. Pandangan ini sejalan dengan pendapat yang dikemukan oleh Paul Wheatly bahwa para penguasa  lokal  di  Asia  Tenggara  sangat  berkepentingan  dengan kebudayaan India guna mengangkat status sosial mereka.
+
+Keempat ,  teori  yang  dinamakan  teori Arus  Balik .  Teori  ini lebih  menekankan pada peranan bangsa Indonesia sendiri dalam proses penyebaran kebudayaan Hindu-Buddha di Indonesia. Artinya, orang-orang  di  Kepulauan  Indonesia  terutama  para  tokohnya yang pergi ke India. Di India mereka belajar hal ihwal agama dan kebudayaan Hindu-Buddha. Setelah kembali mereka mengajarkan
+
+
+<br>
+
+
+---
+## 📄 Halaman 92
+
+dan menyebarkan ajaran agama itu kepada masyarakatnya. Pandangan  ini  dapat  dikaitkan  dengan  pandangan  F.D.K.  Bosch yang menyatakan bahwa proses Indianisasi di Kepulauan Indonesia dilakukan  oleh  kelompok  tertentu,  mereka  itu  terdiri  atas  kaum terpelajar yang mempunyai semangat untuk menyebarkan agama Buddha. Kedatangan mereka disambut baik oleh tokoh masyarakat. Selanjutnya  karena  tertarik  dengan  ajaran  Hindu-Buddha  mereka pergi ke India untuk memperdalam ajaran itu. Lebih lanjut Bosch mengemukakan bahwa proses Indianisasi adalah suatu pengaruh yang kuat terhadap kebudayaan lokal.
+
+Berdasarkan teori-teori yang dikemukan di atas dapat ditarik suatu  kesimpulan  bahwa  masyarakat  di  Kepulauan  Indonesia telah  mencapai  tingkatan  tertentu  sebelum  munculnya  kerajaan
+
+Untuk memahami lebih lanjut kamu dapat membaca buku Taufik Abdullah dan Adrian B. Lapian (ed) Indonesia Dalam Arus Sejarah, jilid II.
+
+yang bersifat Hindu-Buddha. Melalui proses akulturisasi,  budaya  yang  dianggap  sesuai dengan  karakteristik masyarakat diterima dengan menyesuaikan pada budaya masyarakat setempat pada masa itu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 93
+
+
+### Uji Kompetensi
+
+Nah,  bagaimana  selanjutnya    dengan  persebaran  agama  HinduBuddha?  Beberapa  bukti  arkeologis  menunjukkan  perkembangan masuknya agama Hindu-Buddha di Kepulauan Indonesia. Pengaruh Hindu ditemukan pada abad ke-5 Masehi. Prasasti yang ditemukan di Kutai dan Tarumanegara yang menyebutkan sapi sebagai hewan persembahan menunjukkan bahwa agama Hindu berkembang di daerah itu. Juga adanya penyebutan Dewa Trimurti yaitu, Brahma, Wisnu, dan Siwa.
+
+- Menurut  pendapat  kamu  teori  atau  pendapat  mana  yang paling kuat terkait dengan masuknya budaya Hindu-Buddha? Jelaskan!
+- Jelaskan  kelemahan  dan  kelebihan  masing-masing  teori  atau pendapat tersebut!
+- Mengapa  rakyat  Indonesia  mudah  menerima  ajaran  HinduBuddha?
+
+### Tugas
+
+Setelah kamu memahami kehidupan masyarakat awal HinduBuddha,  coba  amati  dan  perhatikanlah  daerah  di  sekitar  tempat tinggal kamu. Apakah masih ada pengaruh-pengaruh budaya masa Hindu-Buddha yang masih dilakukan?  Buatlah  kelompok  dengan temanmu dan buatlah catatan atas permasalahan berikut ini:
+
+- Apa  bentuk  pengaruh  budaya  Hindu-Buddha  yang  masih dilakukan masyarakat setempat?
+- Siapa yang membawa budaya Hindu-Buddha tersebut?
+- Siapa pendukung budaya Hindu-Buddha tersebut saat ini?
+
+<br>
+
+
+---
+## 📄 Halaman 94
+
+
+### B. Kerajaan-Kerajaan pada Masa Hindu-Buddha
+
+Coba kamu identifikasi beberapa peninggalan budaya HinduBuddha  dalam  bentuk  budaya  benda/fisik  maupun  budaya  tak benda/non fisik di lingkungan sekitarmu!
+
+
+###  Mengamati Lingkungan
+
+Gambar 2.6 Makam ini dipercaya oleh masyarakat sebagai makam Patih Gajah Mada terletak dalam pemakaman Selaparang, Lombok Timur, Nusa Tenggara Barat.
+
+Mungkin kamu pernah mendengar atau malah sudah pernah berkunjung di suatu tempat yang disebut Trowulan di Mojokerto. Kompleks  Trowulan  inilah  yang  diperkirakan  dulu  menjadi  pusat pemerintahan  Kerajaan  Majapahit.  Beberapa  situs  yang  dapat kita  temukan  sekarang  misalnya  ada  pendhopo,  segaran,  Candi Bajang Ratu dan sebagainya. Kamu bayangkan Majapahit tempo dulu merupakan kerajaan yang luas dan sudah menjalin kerja sama dengan  kerajaan-kerajaan  di  luar  Kepulauan  Indonesia.  Bahkan Mohammad  Yamin  menyebut  Kerajaan  Majapahit  itu  sebagai Kerajaan Nasional kedua. Bayangkan pula tokoh besar seperti Patih Gajah Mada dan Raja Hayam Wuruk yang berhasil mempersatukan Nusantara.  Bahkan  hingga  saat  ini  kebesaran  Patih  Gajah  Mada masih  melekat  dalam  ingatan  kita,  hingga  makam  Patih  Gajah Mada oleh masyakarat Lombok Timur dipercaya berada di kompleks pemakaman Raja Selaparang. Cerita kebesaran Patih Gajah Mada juga  terdapat  di  daerah  lain.  Nah,  itulah  kisah  menarik  Kerajaan Majapahit,  satu  di  antara  kerajaan-kerajaan  Hindu-Buddha  yang ada di Nusantara. Berikut ini kita akan mempelajari perkembangan beberapa kerajaan Hindu-Buddha.
+
+
+<br>
+
+
+---
+## 📄 Halaman 95
+
+
+###  Memahami Teks
+
+
+### 1. Kerajaan Kutai
+
+Bicara  soal  perkembangan  Kerajaan  Kutai,  tidak  lepas  dari sosok  Raja  Mulawarman.  Kamu  perlu  memahami  keberadaan Kerajaan  Kutai,  karena  Kerajaan  Kutai  ini  dipandang  sebagai kerajaan Hindu-Buddha  yang  pertama  di  Indonesia. Kerajaan Kutai diperkirakan terletak di daerah Muarakaman di tepi Sungai Mahakam, Kalimantan Timur. Sungai Mahakam merupakan sungai yang cukup besar dan memiliki beberapa anak sungai. Daerah di sekitar  tempat  pertemuan  antara  Sungai  Mahakam  dengan  anak sungainya  diperkirakan  merupakan  letak  Muarakaman  dahulu. Sungai  Mahakam  dapat  dilayari  dari  pantai  sampai  masuk  ke Muarakaman,  sehingga  baik  untuk  perdagangan.  Inilah  posisi yang sangat menguntungkan untuk meningkatkan perekonomian masyarakat.  Sungguh  Tuhan  Yang  Maha  Esa  menciptakan  alam semesta dan tanah air Indonesia itu begitu kaya dan strategis. Hal ini perlu kita syukuri.
+
+Untuk memahami perkembangan Kerajaan Kutai itu, tentu memerlukan sumber sejarah yang dapat menjelaskannya. Sumber sejarah  Kutai  yang  utama  adalah prasasti  yang  disebut  yupa,  yaitu  berupa batu bertulis. Yupa  juga sebagai tugu peringatan  dari  upacara  kurban.  Yupa  ini dikeluarkan pada masa pemerintahan Raja Mulawarman. Prasasti Yupa ditulis dengan huruf pallawa dan bahasa sanskerta. Dengan  melihat  bentuk  hurufnya,  para ahli berpendapat bahwa yupa dibuat sekitar abad ke-5 M.
+
+
+<br>
+
+
+---
+## 📄 Halaman 96
+
+Hal menarik dalam prasasti itu adalah disebutkannya  nama  kakek  Mulawarman yang bernama Kudungga. Kudungga berarti penguasa lokal yang setelah terkena pengaruh Hindu-Buddha daerahnya berubah menjadi kerajaan. Walaupun sudah  mendapat  pengaruh  Hindu-Buddha namanya tetap Kudungga berbeda dengan puteranya yang bernama Aswawarman dan cucunya yang bernama Mulawarman. Oleh karena itu yang terkenal sebagai wangsakerta  adalah  Aswawarman.  Coba pelajaran  apa  yang  dapat  kamu  peroleh dengan  persoalan nama  di dalam satu keluarga Kudungga itu?
+
+Satu di antara yupa  itu  memberi informasi penting tentang silsilah Raja Mulawarman. Diterangkan bahwa Kudungga    mempunyai  putra  bernama Aswawarman. Raja Aswawarman dikatakan seperti  Dewa  Ansuman  (Dewa  Matahari). Aswawarman mempunyai tiga anak, tetapi yang  terkenal  adalah  Mulawarman.  Raja Mulawarman  dikatakan  sebagai  raja  yang terbesar di Kutai. Ia pemeluk agama HinduSiwa yang setia. Tempat sucinya dinamakan Waprakeswara. Ia juga dikenal sebagai raja yang sangat dekat dengan kaum Brahmana  dan  rakyat.  Raja  Mulawarman sangat dermawan. Ia mengadakan kurban emas dan 20.000 ekor lembu untuk para Brahmana. Oleh karena itu, sebagai rasa terima kasih  dan  peringatan  mengenai  upacara  kurban,  para  Brahmana mendirikan sebuah yupa.
+
+
+<br>
+
+
+---
+## 📄 Halaman 97
+
+Pada  masa  pemerintahan  Mulawarman,  Kutai  mengalami zaman keemasan. Kehidupan ekonomi pun mengalami perkembangan. Kutai terletak di tepi sungai, sehingga masyarakatnya  melakukan  pertanian.  Selain  itu,  mereka  banyak yang melakukan perdagangan. Bahkan diperkirakan sudah terjadi hubungan  dagang  dengan  luar.  Jalur  perdagangan  internasional dari  India  melewati  Selat  Makassar,  terus  ke  Filipina  dan  sampai di  Cina.  Dalam  pelayarannya  dimungkinkan  para  pedagang  itu singgah terlebih dahulu di Kutai. Dengan demikian, Kutai semakin ramai dan rakyat hidup makmur.
+
+Satu di antara yupa di Kerajaan Kutai berisi keterangan  yang  artinya:'Sang  Mulawarman, raja  yang  mulia  dan  terkemuka,  telah  memberi sedekah 20.000 ekor sapi kepada para brahmana yang seperti api, (bertempat) di dalam tanah yang sangat suci (bernama) Waprakeswara'.
+
+
+### Uji Kompetensi
+
+- Bila  benar  Kudungga  adalah  penduduk  pribumi,  bagaimana  agama Hindu dapat masuk di Kerajaan Kutai? Hubungkanlah jawabanmu dengan  teori  tentang  proses  masuk  dan  berkembangnya  agama dan kebudayaan Hindu di Nusantara.
+- Bacalah dengan cermat keterangan di yupa itu. Bila isi yupa itu diartikan secara harfiah,Raja Mulawarman memberikan hadiah sapi sebanyak 20.000 ekor kepada para brahmana, artinya pada abad ke-5 telah ada suatu peternakan yang sangat maju. Permasalahan yang  muncul  adalah  benarkah  pada  saat  itu  peternakan  sudah begitu majunya, sehingga dengan mudah memberikan 20.000 ekor sapi. Diskusikan dengan teman-teman sekelas kamu!
+Untuk memperdalam masalah ini, kamu dapat membaca buku Taufik Abdullah dan Adrian B. Lapian . Indonesia dalam Arus Sejarah, jilid II .
+
+
+<br>
+
+
+---
+## 📄 Halaman 98
+
+
+### 2. Kerajaan Tarumanegara
+
+Sejarah  tertua  yang  berkaitan  dengan  pengendalian  banjir dan sistem pengairan adalah pada masa Kerajaan Tarumanegara. Untuk mengendalikan banjir dan usaha pertanian yang diduga di wilayah Jakarta saat ini, maka Raja Purnawarman menggali Sungai Candrabaga.  Setelah  selesai  melakukan  penggalian  sungai  maka raja  mempersembahkan  1.000  ekor  lembu  kepada  brahmana. Berkat  sungai  itulah  penduduk  Tarumanegara  menjadi  makmur. Siapakah Raja Purnawarman itu?
+
+Purnawarman adalah raja terkenal dari Tarumanegara. Perlu  kamu  pahami  bahwa  setelah  Kerajaan  Kutai  berkembang di  Kalimantan  Timur,  di  Jawa  bagian  barat  muncul  Kerajaan Tarumanegara. Kerajaan ini terletak tidak jauh dari pantai utara Jawa bagian  barat.  Berdasarkan  prasasti-prasasti  yang  ditemukan  letak pusat Kerajaan Tarumanegara diperkirakan berada di antara Sungai Citarum dan Cisadane. Kalau mengingat namanya Tarumanegara, dan kata taruma mungkin berkaitan dengan kata tarum yang artinya nila. Kata tarum dipakai sebagai nama sebuah sungai di Jawa Barat, yakni  Sungai  Citarum.  Mungkin  juga  letak  Tarumanegara  dekat dengan  aliran  Sungai  Citarum.  Kemudian  berdasarkan  prasasti Tugu, Purbacaraka memperkirakan pusat Kerajaan Tarumanegara ada di daerah Bekasi.
+
+Sumber sejarah Tarumanegara yang utama adalah beberapa prasasti  yang  telah  ditemukan.  Berkaitan  dengan  perkembangan Kerajaan  Tarumanegara,  telah  ditemukan  tujuh  buah  prasasti. Prasasti-prasasti  itu  berhuruf  Pallawa  dan  berbahasa  Sanskerta. Prasasti itu adalah:
+
+
+<br>
+
+
+---
+## 📄 Halaman 99
+
+
+### 1. Prasasti Tugu
+
+Inskripsi yang dikeluarkan oleh Purnawarman ini ditemukan di Kampung Batu Tumbuh, Desa Tugu, dekat Tanjung Priok, Jakarta. Dituliskan  dalam  lima  baris  tulisan  beraksara  Pallawa  dan  bahasa Sanskerta. Inskripsi tersebut isinya sebagai berikut:
+
+'Dulu (kali yang bernama) Candrabhaga telah digali oleh maharaja yang mulia dan mempunyai lengan kencang dan kuat, (yakni Raja Purnawarman),  untuk  mengalirkannya  ke  laut, setelah  (kali  ini)  sampai  di  istana  kerajaan  yang termashur.  Pada  tahun  ke-22  dari  tahta  Yang Mulia Raja Purnawarman yang berkilauan-kilauan karena  kepandaian  dan  kebijaksanaannya  serta menjadi panji-panji segala raja, (maka sekarang) beliau  memerintahkan  pula  menggali  kali  yang permai dan berair jernih, Gomati namanya, seteleh kali itu mengalir di tengah-tengah tanah kediaman  Yang  Mulia  Sang  Pandeta  Nenekda (Sang Purnawarman). Pekerjaan ini dimulai pada hari  yang  baik,  tanggal  delapan  paroh  gelap bulan Phalguna dan  selesai  pada  tanggal  13 paroh terang bulan Caitra , jadi hanya dalam 21 hari  saja,  sedang  galian  itu  panjangnya  6.122 busur  (±  11  km).  Selamatan  baginya  dilakukan oleh brahmana disertai persembahan 1.000 ekor sapi'.
+
+
+### 2. Prasasti Ciaruteun
+
+Prasasti  ini  ditemukan  di  Kampung  Muara,  Desa  Ciaruteun Hilir,  Cibungbulang,  Bogor.  Prasasti  terdiri  atas  dua  bagian,  yaitu Inskripsi A yang dipahatkan dalam empat baris tulisan berakasara Pallawa  dan  bahasa  Sanskerta,  dan  Inskripsi  B  yang  terdiri  atas
+
+
+<br>
+
+
+---
+## 📄 Halaman 100
+
+Gambar 2.11 Prasasti Ciaruteun
+
+satu baris tulisan yang belum dapat dibaca dengan  jelas. Inskripsi ini disertai pula gambar sepasang telapak kaki. Inskripsi A isinya sebagai berikut:
+
+'ini  (bekas)  dua  kaki,  yang  seperti  kaki Dewa Wisnu, ialah kaki Yang Mulia Sang Purnawarman, raja di negeri Taruma, raja yang gagah berani di dunia'.
+
+Beberapa sarjana telah berusaha membaca inskripsi B, namun hasilnya belum memuaskan.  Inskrispi  B  ini  dibaca  oleh J.L.A.  Brandes  sebagai Cri  Tji  aroe?  Eun waca (Cri Ciaru?eun wasa) , sedangkan H. Kern  membacanya Purnavarmma-padam yang berarti 'telapak kaki Purnawarman'.
+
+
+### 3. Prasasti Kebon  Kopi
+
+Prasasti ini ditemukan di Kampung  Muara,  Desa  Ciaruetun  Hilir, Cibungbulang, Bogor. Prasastinya dipahatkan  dalam  satu  baris  yang  diapit oleh dua buah pahatan telapak kaki gajah. Isinya sebagai berikut:
+
+'Di sini tampak sepasang telapak kaki…… yang seperti (telapak kaki) Airawata, gajah penguasa Taruma (yang) agung dalam…… dan (?) kejayaan'.
+
+
+<br>
+
+
+---
+## 📄 Halaman 101
+
+
+### 4. Prasasti Muara Cianten
+
+Terletak  di  muara  Kali  Cianten, Kampung Muara,  Desa  Ciaruteun  Hilir, Cibungbulan, Bogor. Inskripsi ini belum dapat  dibaca.  Inskripsi  ini  dipahatkan dalam bentuk 'aksara' yang menyerupai sulur-suluran, dan oleh para ahli disebut aksara ikal.
+
+
+### 5. Prasasti Jambu (Pasir Koleangkak)
+
+Terletak  di  sebuah  bukit  (pasir) Koleangkak, Desa Parakan  Muncang, Nanggung, Bogor. Inskripsinya dituliskan dalam  dua  baris  tulisan  dengan  aksara Pallawa  dan  bahasa  Sansekerta.  Isinya sebagai berikut:
+
+Gambar 2.13 Prasasti Kebon Kopi II
+
+'Gagah, mengagumkan dan jujur terhadap tugasnya, adalah  pemimpin  manusia  yang  tiada  taranya,  yang termashur Sri Purnawarman, yang sekali waktu (memerintah) di Tarumanegara dan yang baju zirahnya yang  terkenal  tiada  dapat  ditembus  senjata  musuh. Ini  adalah  sepasang  telapak  kakinya,  yang  senantiasa berhasil  menggempur  musuh,  hormat  kepada  para pangeran, tetapi merupakan duri dalam daging musuhmusuhnya'.
+
+
+<br>
+
+
+---
+## 📄 Halaman 102
+
+
+### 6. Prasasti Cidanghiang (Lebak)
+
+Terletak di tepi kali Cidanghiang, Desa Lebak, Munjul, Banten Selatan. Dituliskan dalam dua baris tulisan beraksara Pallawa dan bahasa Sanskerta. Isinya sebagai berikut:
+
+'Inilah (tanda) keperwiraan, keagungan, dan keberanian yang sesungguhnya dari Raja Dunia, Yang Mulia Purnwarman, yang menjadi panji sekalian raja-raja.
+
+
+### 7. Prasasti Pasir Awi
+
+Inskripsi ini terdapat di sebuah bukit bernama Pasir Awi, di  kawasan  perbukitan  Desa  Sukamakmur,  Jonggol,  Bogor, Inskripsi  prasasti  ini  tidak  dapat  dibaca  karena  inskripsi  ini lebih berupa gambar (piktograf) dari pada tulisan. Di bagian atas inskripsi terdapat sepasang telapak kaki.
+
+
+### Pemerintahan dan Kehidupan Masyarakat
+
+Kerajaan Tarumanegara mulai berkembang pada abad ke-5 M. Raja yang sangat terkenal adalah Purnawarman. Ia dikenal  sebagai  raja  yang  gagah  berani  dan  tegas.  Ia  juga dekat dengan para brahmana, pangeran, dan rakyat. Ia raja yang jujur, adil, dan arif dalam memerintah. Daerahnya cukup luas sampai ke daerah Banten. Kerajaan Tarumanegara telah menjalin  hubungan  dengan  kerajaan  lain,  misalnya  dengan Cina.
+
+Dalam  kehidupan  agama,  sebagian  besar  masyarakat Tarumanegara memeluk agama Hindu. Sedikit yang beragama Buddha  dan masih  ada  yang  mempertahankan  agama nenek moyang (animisme). Berdasarkan berita dari Fa-Hien, di  To-lo-mo  (Tarumanegara)  terdapat  tiga  agama,  yakni agama  Hindu,  agama  Buddha  dan  kepercayaan  animisme.
+
+
+<br>
+
+
+---
+## 📄 Halaman 103
+
+Raja  memeluk  agama  Hindu.  Sebagai  bukti,  pada  prasasti Ciaruteun  ada  tapak  kaki  raja  yang  diibaratkan  tapak  kaki Dewa Wisnu. Sumber Cina lainnya menyatakan bahwa, pada masa Dinasti  T'ang  terjadi  hubungan  perdagangan  dengan Jawa. Barang-barang  yang  diperdagangkan  adalah  kulit penyu, emas, perak, cula badak, dan gading gajah. Dituliskan pula bahwa penduduk daerah itu pandai membuat minuman keras yang terbuat dari bunga kelapa.
+
+Rakyat Tarumanegara hidup aman  dan  tenteram. Pertanian merupakan mata pencaharian pokok. Di samping itu, perdagangan juga berkembang. Kerajaan Tarumanegara mengadakan hubungan dagang dengan Cina dan India.
+
+Untuk memajukan bidang pertanian, raja memerintahkan pembangunan irigasi dengan cara menggali sebuah saluran sepanjang 6112 tumbak (±11 km). Saluran itu disebut dengan Sungai Gomati. Saluran itu selain berfungsi sebagai irigasi juga untuk mencegah bahaya banjir.
+
+
+<br>
+
+
+---
+## 📄 Halaman 104
+
+
+### Uji Kompetensi
+
+Prasasti Jambu ( Pasir Koleangkak) terletak di sebuah bukit, di Desa Parakan Muncang, Nanggung, Bogor. Prasasti ini ditulis dalam dua  baris  tulisan  dengan  aksara  Pallawa  dan  bahasa  Sanskerta. Isinya sebagainya berikut:
+
+'Gagah,  mengagumkan  dan  jujur  terhadap  tugasnya,  adalah pemimpin  manusia yang tiada taranya, yang termasyhur Sri Purnawarman,  yang  sekali  waktu  (memerintah)  di  Tarumanegara dan  baju  zirahnya  yang  terkenal  tiada  dapat  ditembus  senjata musuh.  Ini  adalah  sepasang  telapak  kakinya  yang  senantiasa berhasil menggempur musuh, hormat kepada para pangeran, tetapi merupakan duri dalam daging musuh-musuhnya'.
+
+Bagaimana pendapat kamu tentang isi teks di atas? Apakah pola kepemimpinan  tokoh  yang  dijelaskan  pada  teks  tersebut  masih sesuai dengan pemimpin ideal saat ini?
+
+
+<br>
+
+
+---
+## 📄 Halaman 105
+
+
+### 3. Kerajaan Kalingga
+
+Ratu Sima adalah penguasa di Kerajaan Kalingga. Ia digambarkan  sebagai  seorang  pemimpin  wanita  yang  tegas  dan taat terhadap peraturan yang berlaku dalam kerajaan itu. Kerajaan Kalingga atau Holing, diperkirakan terletak di Jawa bagian tengah. Nama Kalingga berasal dari Kalinga, nama sebuah kerajaan di India Selatan.  Menurut  berita  Cina,  di  sebelah  timur  Kalingga  ada  Poli  (Bali  sekarang),  di  sebelah  barat  Kalingga  terdapat  To-po-Teng (Sumatra).  Sementara  di  sebelah  utara  Kalingga  terdapat  Chenla  (Kamboja)  dan  sebelah  selatan  berbatasan  dengan  samudra. Oleh karena itu, lokasi Kerajaan Kalingga diperkirakan terletak di Kecamatan  Keling,    Jepara,  Jawa  Tengah  atau  di  sebelah  utara Gunung Muria.
+
+Sumber  utama  mengenai  Kerajaan  Kalingga  adalah  berita Cina, misalnya berita dari Dinasti T'ang. Sumber lain adalah Prasasti Tuk Mas di lereng Gunung Merbabu. Melalui berita Cina, banyak hal yang kita ketahui tentang perkembangan Kerajaan Kalingga dan kehidupan masyarakatnya. Kerajaan Kalingga berkembang kira-kira abad ke-7 sampai ke-9 M.
+
+
+### Pemerintahan dan Kehidupan Masyarakat
+
+Raja  yang  paling  terkenal  pada  masa  Kerajaan Kalingga  adalah  seorang  raja  wanita  yang  bernama Ratu  Sima.  Ia  memerintah  sekitar  tahun  674  M.  Ia dikenal  sebagai  raja  yang  tegas,  jujur,  dan  sangat bijaksana.  Hukum  dilaksanakan  dengan  tegas  dan seadil-adilnya. Rakyat patuh terhadap semua peraturan
+
+
+<br>
+
+
+---
+## 📄 Halaman 106
+
+yang  berlaku.  Untuk  mencoba  kejujuran  rakyatnya, Ratu  Sima  pernah  mencobanya,  dengan  meletakkan pundi-pundi  di  tengah  jalan.  Ternyata  sampai  waktu yang lama tidak ada yang mengusik pundi-pundi itu.
+
+Akan tetapi, pada suatu hari ada anggota keluarga istana yang sedang jalan-jalan, menyentuh kantong pundi-pundi dengan kakinya. Hal ini diketahui Ratu Sima. Anggota keluarga istana itu dinilai salah dan harus diberi hukuman mati. Akan tetapi atas usul persidangan para menteri, hukuman itu diperingan dengan hukuman potong kaki. Kisah ini menunjukkan, begitu tegas  dan  adilnya  Ratu  Sima.  Ia  tidak  membedakan  antara rakyat dan anggota kerabatnya sendiri.
+
+Agama  utama  yang  dianut  oleh  penduduk  Kalingga pada umumnya adalah Buddha. Agama Buddha berkembang pesat. Bahkan pendeta Cina yang bernama Hwi-ning datang di Kalingga dan tinggal selama tiga tahun. Selama di Kalingga, ia  menerjemahkan  kitab  suci  agama  Buddha  Hinayana  ke dalam bahasa Cina. Dalam usaha menerjemahkan kitab itu Hwi-ning dibantu oleh seorang pendeta bernama Janabadra.
+
+Kepemimpinan raja yang adil, menjadikan rakyat hidup teratur,  aman,dan  tenteram.  Mata  pencaharian  penduduk pada umumnya adalah bertani, karena wilayah Kalingga subur untuk pertanian. Di samping itu, penduduk juga melakukan perdagangan.
+
+Kerajaan Kalingga mengalami kemunduran kemungkinan  akibat  serangan  Sriwijaya  yang  menguasai perdagangan. Serangan tersebut mengakibatkan pemerintahan Kijen menyingkir ke Jawa bagian timur atau mundur  ke  pedalaman  Jawa  bagian  tengah  antara  tahun 742 -755 M.
+
+
+<br>
+
+
+---
+## 📄 Halaman 107
+
+
+### Uji Kompetensi
+
+- Dari bacaan di atas, bagaimana pendapatmu tentang kepemimpinan seorang wanita di Indonesia?
+- Bagaimana  pendapatmu  dengan  hukuman  yang  diterapkan oleh Ratu Sima kepada kerabatnya sendiri? Bagaimana dengan pelaksaan hukum di negeri kita saat ini?
+- Coba  kamu  buat  peta  letak  Kerajaan  Holing  atau  Kalingga berada saat itu!
+
+<br>
+
+
+---
+## 📄 Halaman 108
+
+
+### 4. Kerajaan Sriwijaya
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p108_064.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan wilayah Indonesia dengan beberapa bagian yang diberi warna berbeda. Wilayah Indonesia terdiri dari pulau-pulau besar seperti Sumatra, Jawa, Kalimantan, dan Sulawesi, serta pulau-pulau kecil lainnya. Wilayah-wilayah tersebut dikelilingi oleh Laut Tenggara Selatan dan Laut Tenggara Barat. 
+
+Elemen-elemen utama yang ditampilkan dalam gambar ini adalah wilayah Indonesia, Laut Tenggara Selatan, dan Laut Tenggara Barat. Wilayah Indonesia terbagi menjadi beberapa bagian dengan warna berbeda, yang mungkin menunjukkan provinsi-provinsi atau daerah-daerah tertentu. Laut Tenggara Selatan dan Laut Tenggara Barat mengelilingi wilayah Indonesia.
+
+Teks, angka, atau label penting yang terlihat dalam gambar ini tidak ada, karena gambar ini hanya berupa peta atau ilustrasi tanpa teks atau angka yang spesifik.
+
+Informasi kunci yang dapat diambil pembaca dari gambar ini adalah bahwa Indonesia memiliki banyak pulau dan terletak di antara Laut Tenggara Selatan dan Laut Tenggara Barat.
+
+Sejak permulaan tarikh Masehi, hubungan dagang antara India dengan Kepulauan Indonesia sudah ramai.  Daerah  pantai  timur  Sumatra menjadi jalur perdagangan yang ramai dikunjungi para pedagang. Kemudian, muncul pusat-pusat perdagangan yang berkembang  menjadi  pusat  kerajaan. Kerajaan-kerajaan kecil di pantai Sumatra bagian timur sekitar abad ke7,  antara  lain  Tulangbawang,  Melayu, dan Sriwijaya. Dari ketiga kerajaan itu, yang  kemudian  berhasil  berkembang dan mencapai kejayaannya adalah Sriwijaya. Kerajaan Melayu juga sempat berkembang, dengan pusatnya di Jambi.
+
+
+<br>
+
+
+---
+## 📄 Halaman 109
+
+Pada tahun 692 M, Sriwijaya mengadakan ekspansi ke daerah sekitar  Melayu.  Melayu  dapat  ditaklukkan  dan  berada  di  bawah kekuasaan Sriwijaya. Letak pusat Kerajaan Sriwijaya ada berbagai pendapat. Ada yang berpendapat bahwa pusat Kerajaan Sriwijaya di Palembang, ada yang berpendapat di Jambi, bahkan ada yang berpendapat di luar Indonesia. Akan tetapi, pendapat yang banyak didukung  oleh  para  ahli,  pusat  Kerajaan  Sriwijaya  berlokasi  di Palembang, di dekat pantai dan di tepi Sungai Musi. Ketika pusat Kerajaan Sriwijaya di Palembang mulai menunjukkan kemunduran, Sriwijaya berpindah ke Jambi.
+
+Sumber  sejarah  Kerajaan  Sriwijaya  yang  penting  adalah prasasti. Prasasti-prasasti itu ditulis dengan huruf Pallawa. Bahasa yang dipakai Melayu Kuno. Beberapa prasasti itu antara lain sebagai berikut.
+
+
+### 1.  Prasasti Kedukan Bukit
+
+Prasasti Kedukan Bukit ditemukan di tepi Sungai Tatang, dekat Palembang. Prasasti ini berangka tahun 605 Saka (683 M). Isinya antara lain menerangkan bahwa seorang bernama Dapunta Hyang mengadakan perjalanan  suci  ( siddhayatra )  dengan menggunakan perahu. Ia berangkat dari Minangatamwan dengan membawa tentara 20.000 personel.
+
+
+### 2.  Prasasti Talang Tuo
+
+Prasasti  Talang  Tuo  ditemukan  di  sebelah  barat Kota  Palembang  di  daerah  Talang  Tuo.  Prasasti ini berangka tahun 606  Saka (684 M). Isinya menyebutkan tentang pembangunan sebuah taman yang disebut Sriksetra. Taman ini dibuat oleh Dapunta Hyang Sri Jayanaga.
+
+
+<br>
+
+
+---
+## 📄 Halaman 110
+
+
+### 3. Prasasti Telaga Batu
+
+Prasasti Telaga Batu ditemukan di Palembang.  Prasasti  ini  tidak  berangka tahun.  Isinya  terutama  tentang  kutukankutukan  yang  menakutkan  bagi  mereka yang berbuat kejahatan.
+
+
+### 4. Prasasti Kota Kapur
+
+Prasasti Kota Kapur ditemukan di Pulau Bangka,  berangka  tahun  608  Saka  (656 M).  Isinya  terutama  permintaan  kepada para dewa untuk menjaga kedatuan Sriwijaya,  dan  menghukum  setiap  orang yang bermaksud jahat.
+
+
+### 5. Prasasti Karang Berahi
+
+Prasasti  Karang  Berahi  ditemukan  di Jambi, berangka tahun 608 saka (686 M). Isinya sama dengan isi Prasasti Kota Kapur. Beberapa prasasti yang lain, yakni Prasasti Ligor  berangka  tahun  775  M  ditemukan di Ligor, Semenanjung Melayu, dan Prasasti Nalanda di India Timur. Di samping prasasti-prasasti tersebut, berita Cina juga merupakan sumber sejarah Sriwijaya yang penting. Misalnya berita dari I-tsing, yang pernah tinggal di Sriwijaya.
+
+Sumber : Bambang Budi Utomo. 2010. Atlas Sejarah Indonesia Masa Klasik (HinduBuddha), Jakarta: Kementerian Kebudayaan dan Pariwisata.
+
+Kapur
+
+
+### Perkembangan Kerajaan Sriwijaya
+
+Ada beberapa faktor yang mendorong perkembangan Sriwijaya antara lain:
+
+- a . Letak geografis dari Kota Palembang. Palembang sebagai pusat  pemerintahan  terletak  di  tepi  Sungai  Musi.  Di depan  muara  Sungai  Musi  terdapat  pulau-pulau  yang
+
+<br>
+
+
+---
+## 📄 Halaman 111
+
+berfungsi sebagai pelindung pelabuhan di Muara Sungai Musi.  Keadaan  seperti  ini  sangat  tepat  untuk  kegiatan pemerintahan dan pertahanan. Kondisi itu pula menjadikan Sriwijaya sebagai jalur perdagangan internasional dari India ke Cina, atau sebaliknya. Juga kondisi sungai-sungai yang besar, perairan laut yang cukup tenang, serta penduduknya yang berbakat sebagai pelaut ulung.
+
+- Runtuhnya  Kerajaan  Funan  di  Vietnam  akibat  serangan Kamboja.  Hal  ini  telah  memberi  kesempatan  Sriwijaya untuk cepat berkembang sebagai negara maritim.
+
+### Perkembangan Politik dan Pemerintahan
+
+Kerajaan Sriwijaya mulai berkembang pada abad ke-7  M. Pada  awal  perkembangannya,  raja  disebut dengan  Dapunta  Hyang.  Dalam  Prasasti  Kedukan  Bukit dan  Talang  Tuo  telah  ditulis  sebutan  Dapunta  Hyang. Pada abad ke-7, Dapunta Hyang banyak melakukan usaha perluasan daerah.
+
+
+<br>
+
+
+---
+## 📄 Halaman 112
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p112_069.png)
+
+> **Deskripsi Visual:** Gambar ini adalah foto yang menunjukkan struktur arsitektur tradisional, mungkin sebuah candi atau monumen Buddha. Struktur ini memiliki lapisan berlapis yang menunjukkan tingkat tinggi yang berbeda, dengan tiang-tiang yang menjulang ke atas. Atapnya tampak seperti puncak bintang atau bunga lotus, yang biasanya digunakan dalam arsitektur Buddha. Latar belakangnya tampak hijau, mungkin menunjukkan taman atau hutan sekitar. Teks, angka, atau label penting tidak terlihat pada gambar ini. Informasi kunci yang dapat diambil pembaca adalah bahwa struktur ini mungkin merupakan bagian dari situs Buddha atau agama Buddha, dan mungkin memiliki nilai sejarah atau budaya.
+
+Gambar 2.20 Stupa Mahligai dalam kompleks Stupa Muara Takus merupakan tinggalan Kerajaan Sriwijaya
+
+Daerah-daerah yang berhasil dikuasai antara lain sebagai berikut.
+
+- Tulang-Bawang yang terletak di daerah Lampung.
+- Daerah  Kedah  yang  terletak  di  pantai  barat Semenanjung Melayu. Daerah ini sangat penting  artinya  bagi  usaha  pengembangan perdagangan dengan India.  Menurut  I-tsing, penaklukan Sriwijaya atas Kedah berlangsung antara tahun 682-685 M.
+- Pulau  Bangka  yang  terletak  di  pertemuan jalan  perdagangan  internasional,  merupakan daerah yang sangat penting. Daerah ini dapat  dikuasai  Sriwijaya  pada  tahun  686  M berdasarkan  prasasti  Kota  Kapur.  Sriwijaya juga diceritakan berusaha menaklukkan Bhumi Java yang tidak setia kepada Sriwijaya. Bhumi Java yang dimaksud adalah Jawa, khususnya Jawa bagian barat.
+- Daerah  Jambi  terletak  di  tepi  Sungai  Batanghari. Daerah ini memiliki kedudukan yang penting, terutama  untuk  memperlancar  perdagangan di pantai timur Sumatra. Penaklukan ini dilaksanakan  kira-kira  tahun  686  M  (Prasasti Karang Berahi).
+- Tanah Genting Kra merupakan tanah genting  bagian  utara  Semenanjung  Melayu. Kedudukan Tanah Genting Kra sangat penting. Jarak antara pantai barat dan pantai timur di tanah genting sangat dekat, sehingga para  pedagang  dari  Cina  berlabuh  dahulu di  pantai  timur  dan  membongkar  barang dagangannya untuk diangkut dengan pedati ke  pantai  barat.  Kemudian  mereka  berlayar ke  India.  Penguasaan  Sriwijaya  atas  Tanah Genting Kra dapat diketahui dari Prasasti Ligor yang berangka tahun 775 M.
+
+<br>
+
+
+---
+## 📄 Halaman 113
+
+Gambar 2.21 Salah satu candi di Kompleks Muaro Jambi
+
+- Kerajaan Kalingga dan Mataram Kuno. Menurut berita  Cina,  diterangkan  adanya  serangan  dari barat,  sehingga  mendesak  Kerajaan  Kalingga pindah ke sebelah timur. Diduga yang melakukan serangan adalah Sriwijaya. Sriwijaya ingin menguasai  Jawa  bagian  tengah  karena  pantai utara Jawa bagian tengah juga merupakan jalur perdagangan yang penting.
+Sriwijaya terus melakukan perluasan daerah, sehingga Sriwijaya  menjadi  kerajaan  yang  besar.  Untuk  lebih  memperkuat pertahanannya, pada tahun 775 M dibangunlah sebuah pangkalan di daerah Ligor. Waktu itu yang menjadi raja adalah Darmasetra.
+
+Raja yang terkenal dari Kerajaan Sriwijaya adalah Balaputradewa.  Ia  memerintah  sekitar  abad  ke-9  M.  Pada  masa pemerintahannya, Sriwijaya berkembang pesat dan mencapai zaman keemasan. Balaputradewa adalah keturunan dari Dinasti Syailendra, yakni putra dari Raja Samaratungga dengan Dewi Tara dari Sriwijaya. Hal  tersebut  diterangkan  dalam  Prasasti  Nalanda.  Balaputradewa adalah  seorang  raja  yang  besar  di  Sriwijaya.  Raja  Balaputradewa
+
+
+<br>
+
+
+---
+## 📄 Halaman 114
+
+menjalin hubungan erat dengan Kerajaan Benggala yang saat itu diperintah  oleh  Raja  Dewapala  Dewa.  Raja  ini  menghadiahkan sebidang  tanah  kepada  Balaputradewa  untuk  pendirian  sebuah asrama bagi para pelajar dan siswa yang sedang belajar di Nalanda, yang  dibiayai  oleh  Balaputradewa,  sebagai  'dharma'.  Hal  itu tercatat dengan baik dalam prasasti Nalanda, yang saat ini berada di  Universitas  Nawa  Nalanda,  India.  Bahkan  bentuk  asrama  itu mempunyai kesamaan arsitektur dengan candi Muara Jambi, yang berada di Provinsi Jambi saat ini. Hal tersebut menandakan Sriwijaya memperhatikan ilmu pengetahuan, terutama pengetahuan agama Buddha dan bahasa Sanskerta bagi generasi mudanya.
+
+Pada  tahun  990  M  yang  menjadi  Raja  Sriwijaya  adalah  Sri Sudamaniwarmadewa.  Pada  masa  pemerintahan  raja  itu  terjadi serangan Raja Darmawangsa  dari  Jawa  bagian  Timur.  Akan tetapi, serangan itu berhasil digagalkan oleh tentara Sriwijaya. Sri Sudamaniwarmadewa  kemudian  digantikan  oleh  putranya  yang bernama  Marawijayottunggawarman.  Pada  masa  pemerintahan Marawijayottunggawarman, Sriwijaya membina hubungan dengan Raja  Rajaraya  I  dari  Colamandala.  Pada  masa  itu,  Sriwijaya  terus mempertahankan kebesarannya.
+
+Pada masa kejayaannya, wilayah kekuasaan Sriwijaya cukup luas. Daerah-daerah kekuasaannya antara lain Sumatra dan pulaupulau sekitar Jawa bagian barat, sebagian Jawa bagian tengah, sebagian Kalimantan, Semenanjung Melayu, dan hampir seluruh perairan Nusantara. Bahkan Muhammad Yamin menyebutkan Sriwijaya sebagai negara nasional yang pertama.
+
+
+<br>
+
+
+---
+## 📄 Halaman 115
+
+Untuk mengurus setiap daerah kekuasaan Sriwijaya, dipercayakan kepada  seorang  Rakryan  (wakil  raja  di  daerah).  Dalam  hal  ini Sriwijaya sudah mengenal struktur pemerintahan.
+
+Tentang struktur ini kamu dapat membaca buku Sardiman AM dan Kusriyantinah, Sejarah Nasional dan Sejarah Umum
+
+
+### Perkembangan Ekonomi
+
+Pada mulanya penduduk Sriwijaya hidup dengan bertani. Akan tetapi karena Sriwijaya terletak di tepi Sungai  Musi  dekat  pantai,  maka  perdagangan  menjadi cepat  berkembang.  Perdagangan  kemudian  menjadi  mata pencaharian  pokok.  Perkembangan  perdagangan  didukung oleh  keadaan  dan  letak  Sriwijaya  yang  strategis.  Sriwijaya terletak  di  persimpangan  jalan  perdagangan  internasional. Para  pedagang Cina yang akan ke India singgah dahulu di Sriwijaya, begitu juga para pedagang dan India yang akan ke Cina. Di Sriwijaya para pedagang melakukan bongkar muat barang dagangan. Dengan demikian, Sriwijaya semakin ramai dan berkembang menjadi pusat perdagangan. Sriwijaya mulai menguasai  perdagangan  nasional  maupun  internasional  di kawasan  perairan  Asia  Tenggara.  Perairan  di  Laut  Natuna,
+
+Selat Malaka, Selat Sunda, dan Laut Jawa  berada  di  bawah  kekuasaan Sriwijaya.
+
+Tampilnya Sriwijaya sebagai pusat perdagangan, memberikan kemakmuran bagi rakyat dan negara Sriwijaya.  Kapal-kapal  yang  singgah dan melakukan bongkar muat, harus membayar pajak. Dalam kegiatan perdagangan,  Sriwijaya  mengekspor gading, kulit, dan beberapa jenis binatang liar, sedangkan barang
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p115_071.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan tumbuhan dan serangga. Gambar ini menggambarkan tumbuhan dengan daun berbentuk seperti bulu dan batang yang ramping. Di sebelah kanan, ada serangga yang tampak seperti kupu-kupu dengan sayap berwarna putih dan bulu-bulu hitam. Ilustrasi ini mungkin digunakan untuk menjelaskan tentang tumbuhan dan serangga dalam alam liar.
+
+
+<br>
+
+
+---
+## 📄 Halaman 116
+
+Gambar 2.23 Arca Buddha Kota Cina impornya  antara  lain  beras,  rempah-rempah, kayu  manis,  kemenyan,  emas,  gading,  dan binatang.
+
+Perkembangan perdagangan tersebut telah memperkuat kedudukan Sriwijaya sebagai kerajaan maritim. Kerajaan maritim adalah kerajaan yang mengandalkan perekonomiannya dari kegiatan perdagangan dan hasil-hasil laut. Untuk  memperkuat  kedudukannya,  Sriwijaya membentuk armada angkatan laut yang kuat. Melalui  armada  angkatan  laut  yang  kuat  Sriwijaya mampu mengawasi perairan di Nusantara. Hal ini  sekaligus  merupakan  jaminan  keamanan bagi para pedagang yang ingin berdagang dan berlayar di wilayah perairan Sriwijaya.
+
+Kehidupan  beragama  di  Sriwijaya  sangat  semarak.  Bahkan Sriwijaya menjadi pusat agama Buddha Mahayana di seluruh wilayah  Asia  Tenggara.  Diceritakan  oleh  I-tsing,  bahwa  di Sriwijaya tinggal ribuan pendeta dan pelajar agama Buddha. Salah  seorang  pendeta  Buddha  yang  terkenal  adalah  Sakyakirti. Banyak pelajar asing yang datang ke Sriwijaya untuk belajar bahasa Sanskerta. Kemudian mereka belajar agama Buddha di Nalanda, India. Antara tahun 1011 - 1023 datang seorang pendeta agama Buddha dari Tibet bernama Atisa untuk lebih memperdalam pengetahuan agama Buddha.
+
+Dalam kaitannya dengan perkembangan agama dan kebudayaan Buddha, di Sriwijaya ditemukan beberapa peninggalan. Misalnya, candi Muara Takus, yang ditemukan dekat  Sungai  Kampar  di  daerah  Riau.  Kemudian  di  daerah Bukit Siguntang ditemukan arca Buddha. Pada tahun 1006 Sriwijaya juga telah membangun wihara sebagai tempat suci agama  Buddha  di  Nagipattana,  India  Selatan.  Hubungan Sriwijaya dengan India Selatan waktu itu sangat erat.
+
+
+<br>
+
+
+---
+## 📄 Halaman 117
+
+Gambar 2.24 Kompleks Muara Jambi
+
+Bangunan  lain  yang  sangat  penting  adalah  Biaro  Bahal yang ada di Padang Lawas, Tapanuli Selatan. Di tempat ini pula terdapat bangunan wihara.
+
+Kerajaan Sriwijaya akhirnya mengalami kemunduran karena beberapa hal antara lain :
+
+- Keadaan sekitar Sriwijaya berubah, tidak lagi dekat dengan pantai.  Hal  ini  disebabkan  aliran  Sungai  Musi,  Ogan,  dan Komering  banyak  membawa  lumpur.  Akibatnya.  Sriwijaya tidak baik untuk perdagangan.
+- Banyak  daerah  kekuasaan  Sriwijaya  yang  melepaskan  diri. Hal ini disebabkan terutama karena melemahnya angkatan laut Sriwijaya, sehingga pengawasan semakin sulit.
+- Dari segi politik, beberapa kali Sriwijaya mendapat serangan dari kerajaan-kerajaan lain. Tahun 1017 M Sriwijaya  mendapat  serangan  dari  Raja  Rajendracola  dari Colamandala, namun Sriwijaya masih dapat bertahan. Tahun 1025  serangan  itu  diulangi,  sehingga  Raja  Sriwijaya,  Sri Sanggramawijayattunggawarman ditahan oleh pihak Kerajaan Colamandala. Tahun 1275, Raja Kertanegara dari Singhasari melakukan Ekspedisi Pamalayu. Hal itu menyebabkan daerah Melayu lepas. Tahun 1377 armada angkatan laut Majapahit menyerang Sriwijaya. Serangan ini mengakhiri riwayat Kerajaan Sriwijaya.
+
+<br>
+
+
+---
+## 📄 Halaman 118
+
+
+### Uji Kompetensi
+
+- Mengapa Kerajaan Sriwijaya disebut sebagai kerajaan maritim?
+- Mengapa Selat Malaka mempunyai peranan penting pada masa Kerajaan Sriwijaya?
+- Unsur-unsur apa saja yang harus dikuasai, agar sebuah kerajaan mampu menjadi kerajaan maritim?
+- Setujukah  kamu  dengan  sebutan  Sriwijaya  sebagai  kerajaan nasional pertama? Diskusikan dengan teman-teman!
+- Jika pada abad ke-7 saja Sriwijaya bisa menjadi kerajaan maritim hebat,  mengapa  sekarang  kita  belum  mampu  mengulangi kejayaan di lautan saat ini, apa yang perlu diperbaiki? Diskusikan dan uraikan jawaban kamu!
+- Apa yang menyebabkan Kerajaan Sriwijaya mengalami kemunduran?
+- Buatlah peta daerah pengaruh kekuasaan Kerajaan Sriwijaya!
+
+### 5. Kerajaan Mataram Kuno
+
+Pada pertengahan abad ke-8 di Jawa bagian tengah berdiri sebuah kerajaan baru. Kerajaan itu kita kenal dengan nama Kerajaan Mataram Kuno. Mengenai letak dan pusat Kerajaan Mataram Kuno tepatnya  belum  dapat  dipastikan.  Ada  yang  menyebutkan  pusat kerajaan di Medang dan terletak di Poh Pitu. Sementara itu letak Poh Pitu sampai sekarang belum jelas. Keberadaan lokasi kerajaan itu dapat diterangkan berada di sekeliling pegunungan, dan sungaisungai.  Di  sebelah  utara  terdapat  Gunung  Merapi,  Merbabu,
+
+
+<br>
+
+
+---
+## 📄 Halaman 119
+
+Sumbing,  dan  Sindoro;  di  sebelah  barat  terdapat  Pegunungan Serayu; di sebelah timur terdapat Gunung Lawu, serta di sebelah selatan berdekatan dengan Laut Selatan dan Pegunungan Seribu. Sungai-sungai yang ada, misalnya Sungai Bogowonto, Elo, Progo, Opak, dan Bengawan Solo. Letak Poh Pitu mungkin di antara Kedu sampai sekitar Prambanan.
+
+Untuk mengetahui perkembangan Kerajaan Mataram Kuno dapat  digunakan  sumber  yang  berupa  prasasti.  Ada  beberapa prasasti yang berkaitan dengan  Kerajaan Mataram  Kuno  di antaranya Prasasti Canggal, Prasasti Kalasan, Prasasti Klura, Prasasti Kedu atau Prasasti Balitung. Di samping beberapa prasasti tersebut, sumber  sejarah  untuk  Kerajaan  Mataram  Kuno  juga  berasal  dari berita Cina.
+
+Gambar 2.25 salah satu situs liangan, sisa peninggalan Mataram Kuno.
+
+
+<br>
+
+
+---
+## 📄 Halaman 120
+
+
+### Perkembangan Pemerintahan
+
+Sebelum Sanjaya berkuasa di Mataram Kuno, di Jawa sudah  berkuasa  seorang  raja  bernama  Sanna.  Menurut prasasti Canggal yang berangka tahun 732 M, diterangkan bahwa Raja Sanna telah digantikan oleh Sanjaya. Raja Sanjaya adalah putra Sanaha, saudara perempuan dari Sanna.
+
+Dalam  Prasasti  Sojomerto  yang  ditemukan  di  Desa Sojomerto, Kabupaten Batang, disebut nama Dapunta Syailendra yang beragama Syiwa (Hindu). Diperkirakan Dapunta Syailendra berasal dari Sriwijaya  dan  menurunkan Dinasti  Syailendra  yang  berkuasa  di  Jawa  bagian  tengah. Dalam hal ini Dapunta Syailendra diperkirakan yang menurunkan Sanna, sebagai raja di Jawa.
+
+Sanjaya  tampil  memerintah  Kerajaan  Mataram  Kuno pada tahun 717 - 780 M. Ia melanjutkan kekuasaan Sanna. Sanjaya kemudian melakukan penaklukan terhadap raja-raja kecil bekas bawahan Sanna yang melepaskan diri. Setelah itu, pada tahun 732 M Raja Sanjaya mendirikan bangunan suci
+
+
+<br>
+
+
+---
+## 📄 Halaman 121
+
+sebagai tempat pemujaan. Bangunan ini berupa lingga dan berada  di  atas  Gunung  Wukir  (Bukit  Stirangga).  Bangunan suci  itu  merupakan  lambang  keberhasilan  Sanjaya  dalam menaklukkan raja-raja lain.
+
+Raja Sanjaya bersikap arif, adil dalam memerintah,  dan  memiliki  pengetahuan luas.  Para  pujangga  dan  rakyat  hormat kepada rajanya. Oleh karena itu, di bawah pemerintahan Raja Sanjaya, kerajaan menjadi aman dan tenteram. Rakyat hidup makmur. Mata pencaharian penting adalah pertanian dengan hasil utama padi. Sanjaya  juga  dikenal  sebagai  raja  yang paham akan isi kitab-kitab suci. Bangunan suci dibangun oleh Sanjaya untuk pemujaan lingga  di  atas  Gunung  Wukir, sebagai lambang telah ditaklukkannya raja-raja kecil di sekitarnya  yang  dulu mengakui kemaharajaan Sanna.
+
+Gambar 2.27 Candi Kalasan
+
+Setelah Raja Sanjaya wafat, ia digantikan oleh putranya bernama Rakai Panangkaran. Panangkaran mendukung adanya perkembangan agama Buddha. Dalam Prasasti Kalasan yang berangka  tahun  778,  Raja  Panangkaran  telah  memberikan hadiah tanah dan memerintahkan membangun sebuah candi untuk Dewi Tara dan sebuah biara untuk para pendeta agama Buddha.  Tanah  dan  bangunan  tersebut  terletak  di  Kalasan. Prasasti Kalasan juga menerangkan bahwa Raja Panangkaran disebut dengan nama Syailendra Sri Maharaja Dyah Pancapana Rakai Panangkaran. Raja Panangkaran kemudian memindahkan pusat pemerintahannya ke arah timur.
+
+Raja Panangkaran dikenal sebagai penakluk yang gagah berani  bagi  musuh-musuh  kerajaan.  Daerahnya  bertambah luas. Ia juga disebut sebagai permata dari Dinasti Syailendra.
+
+
+<br>
+
+
+---
+## 📄 Halaman 122
+
+Agama Buddha Mahayana waktu itu berkembang pesat. Ia juga memerintahkan didirikannya bangunan-bangunan suci. Misalnya, Candi Kalasan dan arca Manjusri.
+
+Setelah kekuasaan Penangkaran berakhir, timbul persoalan dalam keluarga Syailendra, karena adanya perpecahan  antara  anggota  keluarga  yang  sudah  memeluk agama Buddha dengan keluarga yang masih memeluk agama Hindu  (Syiwa).  Hal  ini  menimbulkan  perpecahan  di  dalam pemerintahan Kerajaan Mataram Kuno. Satu  pemerintahan dipimpin  oleh  tokoh-tokoh  kerabat  istana  yang  menganut agama Hindu berkuasa di daerah Jawa bagian utara. Kemudian keluarga yang terdiri atas  tokoh-tokoh  yang  beragama Buddha  berkuasa  di  daerah  Jawa  bagian  selatan.  Keluarga Syailendra  yang  beragama  Hindu  meninggalkan  bangunanbangunan candi di Jawa bagian utara. Misalnya, candi-candi kompleks  Pegunungan  Dieng  (Candi  Dieng)  dan  kompleks Candi Gedongsongo. Kompleks Candi Dieng memakai namanama tokoh wayang seperti Candi Bima, Puntadewa, Arjuna, dan Semar.
+
+Sementara  yang  beragama Buddha meninggalkan candi-candi seperti  Candi  Ngawen,  Mendut,  Pawon  dan  Borobudur.  Candi Borobudur diperkirakan mulai dibangun oleh Samaratungga pada tahun  824  M.  Pembangunan  kemudian  dilanjutkan  pada  zaman Pramudawardani dan Pikatan.
+
+Perpecahan di dalam keluarga Syailendra tidak berlangsung lama. Keluarga itu akhirnya bersatu kembali. Hal ini ditandai dengan perkawinan  Rakai  Pikatan  dan  keluarga  yang  beragama  Hindu dengan Pramudawardani, putri dari Samaratungga. Perkawinan itu terjadi  pada  tahun  832  M.  Setelah  itu,  Dinasti  Syailendra  bersatu kembali di bawah pemerintahan Raja Pikatan.
+
+
+<br>
+
+
+---
+## 📄 Halaman 123
+
+
+### Candi Borobudur Mahakarya Dynasti Syailendra
+
+Sumber  :  Bambang  Budi  Utomo.  2010.  Atlas  Sejarah  Indonesia  Masa  Klasik  (HinduBuddha). Jakarta: Kementerian Kebudayaan dan Pariwisata.
+
+Pada  awal  abad  ke-21,  kita  sering  mendengarkan  dan membicarakan  tentang kebudayaan lokal  dalam  menghadapi globalisasi. Setidaknya hal itu sudah dialami oleh bangsa kita sejak abad  ke-8,  atau  bahkan  jauh  ke  masa  lampau.  Bukti  nyata  dari itu  adalah Candi Borobudur, yang kemudian dikukuhkan sebagai Warisan Budaya Dunia oleh UNESCO, pada tahun 1991
+
+Candi Borobudur didirikan oleh Raja  Samaratungga dari  Dinasti Syailendra pada abad ke-9. Candi itu terletak di antara dua bukit, tepatnya  di  Desa  Borobudur,  Kecamatan  Borobudur,  Kabupaten Magelang.  Candi  Borobudur  yang  terletak  pada  satu  garis  lurus dengan Candi Pawon dan Candi Mendut dipandang sebagai satu kesatuan. Letak candi seperti ini sesuai dengan aturan yang disebut dalam kitab-kitab pedoman para seniman agama di India. kitab itu disebut dengan Vastusastra . Suatu kitab yang menjelaskan tentang bangunan suci agama Hindu. Namun demikian, aturan-aturannya juga digunakan sebagai desain bangunan suci agama Buddha.
+
+
+<br>
+
+
+---
+## 📄 Halaman 124
+
+Borobudur  merupakan  karya  yang  unik.  Susunan  Candi Borobudur berbeda dengan susunan candi di India. Pada umumnya susunan  candi  di  India  berdiri  di  atas  fondasi  yang  tertanam  di dalam tanah. Fondasi tersebut berdenah dengan jari-jari delapan. Di titik tengah terdapat tiang yang dibuat tembus ke atas permukaan tanah,  dan  diteruskan  menjadi  tongkat  dengan  payung.  Candi Borobudur  didirikan  langsung  di  atas  bukit  tanpa  fondasi  yang ditanam di dalam tanah seperti yang terdapat di India. Dilihat dari susunannya, Candi Borobudur merupakan sebuah teras-stupa. Kaki stupa berbentuk undak teras persegi, disusul teras mengalir yang dihiasi stupa. Susunan candi ini memperlihatkan kuatnya pengaruh kebudayaan Jawa pada abad ke-8.
+
+Bangunan ini dinamai Bhumisambharabhudara yang artinya adalah  bukit  peningkatan  kebijakan  setelah  melampaui  sepuluh tingkat Boddhisattwa. Borobudur sendiri terdiri atas sepuluh tingkatan,  yang  dapat  dipahami  sebagai  lambang  ke-10,  jalan Boddhisattwa. Candi itu berbentuk bujur sangkar, dengan ukuran 123 m x 123 m di bagian kakinya. Bentuk bangunan seperti itu dapat ditafsirkan sebagai bentuk mandala. Tinggi Candi Borobudur adalah  35,4  m.  Secara  vertikal  Candi  Borobudur  terdiri  dari  dua pola,  yaitu  pola  undak-undak  persegi  dan  pola  bangun  vertikal. Karena bentuknya itulah Candi Borobudur dapat dipahami sebagai sebuah stupa yang besar.
+
+Dalam  agama  Buddha  stupa  merupakan  perwujudan  dari makrokosmos  yang  terdiri  atas  tiga  tingkatan,  yaitu kamadatu, rupadatu, dan arupadatu. Kamadatu merupakan  alam  bawah, bagian ini berada di bagian bawah Candi Borobudur. Pada kamadatu terdapat relief karmawibangga ,  yaitu  suatu hukum sebab akibat, yang merupakan hasil perbuatan manusia. Arupadatu adalah alam atas, yaitu tempat para dewa. Bagian ini berada pada tingkat ketiga, termasuk stupa induk berada di atas rupadatu. Cara membaca relief pada dinding Candi Barobudur searah dengan jarum jam. Sebagai candi pemujaan, Borobudur mempunyai hubungan dengan Candi Mendut dan Candi Pawon. Ketiga candi itu menunjukkan proses suatu ritual keagamaan. Mula-mula ritual keagamaan dilakukan di Candi Mendut. Kemudian dilakukan persiapan di Candi Pawon dan puncak ritual keagamaan dilakukan di Candi Borobudur.
+
+
+<br>
+
+
+---
+## 📄 Halaman 125
+
+Dari  arca  dan  relief  yang  terdapat  pada  dinding  dan  pagar candi  menunjukkan  bahwa  Candi  Borobudur  sebagai  bangunan berciri agama Buddha aliran Mahayana. Dari arca dan relief itu juga dapat dilihat adanya penyatuan ajaran Mahayana dan Tantrayana, sesuai filsafat Yogacara. Dalam  relief itu tergambar  tentang kehidupan  sehari-hari  di  Jawa,  seperti  cara  berpakaian,  rumah tinggal,  candi,  alat  berburu,  alat-alat  keperluan  sehari-hari,  serta jenis-jenis tanaman.
+
+Dalam Kitab  Sang  Hyang  Kamahayanikan  Mantranaya , pada  abad  ke-10,  Mpu  Sindok  dari  Dinasti  Isyana  menyebarkan ajaran  dari  India,  yaitu  agama  Buddha.  Ajaran  itu  disebarkan  di Jawa dan disesuaikan dengan pengetahuan penduduk pada saat itu. Lebih jauh lagi hasil pengetahuan itu diwujudkan dalam bentuk bangunan candi oleh penduduk Jawa, bukan oleh penduduk India. Candi itu kemudian digunakan sebagai sarana ibadah mereka. Bukti itu ditunjukkan dengan tidak adanya Kampung Keling yang berada di sekitar Candi Borobudur. Bukti lainnya itu ditemukannya tulisan yang memakai huruf Jawa kuno, dengan bahasa Sanskerta , dengan tidak menggunakan tata bahasa Sanskerta.
+
+Gambar 2.29 Rupadhatu
+
+Gambar 2.30 Kamadhatu
+
+
+<br>
+
+
+---
+## 📄 Halaman 126
+
+Setelah Samaratungga wafat, anaknya dengan Dewi Tara yang bernama Balaputradewa menunjukkan sikap menentang terhadap Pikatan.  Kemudian  terjadi  perang  perebutan  kekuasaan  antara Pikatan  dengan Balaputradewa. Dalam perang ini Balaputradewa membuat  benteng  pertahanan  di  perbukitan  di  sebelah  selatan Prambanan. Benteng ini sekarang kira kenal dengan Candi Boko. Dalam  pertempuran,  Balaputradewa  terdesak  dan  melarikan  diri ke  Sumatra.  Balaputradewa  kemudian  menjadi  raja  di  Kerajaan Sriwijaya.
+
+Kerajaan Mataram Kuno daerahnya bertambah luas. Kehidupan  agama  berkembang  pesat  tahun  856  Rakai  Pikatan turun takhta dan digantikan oleh Kayuwangi atau Dyah Lokapala. Kayuwangi kemudian digantikan oleh Dyah Balitung. Raja Balitung merupakan raja  yang  terbesar.  Ia  memerintah  pada  tahun  898  911 M dengan gelar Sri Maharaja Rakai Wafukura Dyah Balitung Sri  Dharmadya Mahasambu. Pada pemerintahan Balitung bidangbidang  politik,  pemerintahan,  ekonomi,  agama,  dan  kebudayaan
+
+
+<br>
+
+
+---
+## 📄 Halaman 127
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p127_082.png)
+
+> **Deskripsi Visual:** Gambar ini menunjukkan sebuah kompleks arsitektur tradisional yang tampak seperti candi atau kuil, dengan struktur yang kompleks dan detail yang rumit. Kompleks ini terletak di atas sebuah bukit dengan pemandangan gunung di latar belakang. Arsitekturnya mencerminkan gaya tradisional dengan elemen-elemen seperti tiang-tiang tinggi, pilar-pilar besar, dan ornamen yang rumit.
+
+Elemen utama yang terlihat adalah struktur arsitektur utama yang berdiri tegak di tengah-tengah gambar, dengan dua bangunan utama yang saling berhadapan. Di sekelilingnya, terdapat beberapa bangunan sampingan yang lebih kecil. Gunung yang tampak di latar belakang memberikan nuansa alam yang tenang dan menambah keindahan keseluruhan gambar.
+
+Teks, angka, atau label penting tidak terlihat pada gambar ini. Namun, informasi kunci yang dapat diambil pembaca meliputi ukuran dan desain arsitektur yang rumit, serta posisi kompleks arsitektur di atas bukit dengan pemandangan gunung yang indah.
+
+mengalami  kemajuan.  Ia  telah  membangun  Candi  Prambanan sebagai  candi  yang  anggun  dan  megah.  Relief-reliefnya  sangat indah.
+
+Sesudah pemerintahan Balitung berakhir, Kerajaan Mataram mulai mengalami kemunduran. Raja yang berkuasa setelah Balitung adalah Daksa, Tulodong, dan Wawa.  Beberapa  faktor yang menyebabkan  kemunduran  Mataram  Kuno  antara  lain  adanya bencana alam dan ancaman dari musuh yaitu Kerajaan Sriwijaya.
+
+
+### Uji Kompetensi
+
+- Carilah  dari  kliping  koran  atau  juga  dari  internet,  peninggalan candi-candi pada masa Sanjaya maupun Syailendra dan ceritakan!
+- Nilai-nilai apa yang dapat kamu peroleh dari kehidupan beragama pada  masa  Mataram  Kuno?  Diskusikan  dan  tunjukkan  buktibukti sejarahnya.
+
+<br>
+
+
+---
+## 📄 Halaman 128
+
+
+### Pesona Legenda Candi Prambanan
+
+Gambar 2.33 Candi Prambanan
+
+Roro  jonggrang  adalah  seorang  putri  semata  wayang  Raja Boko, Penguasa Kerajaan Medang Kamulan. Karena kecantikannya, seorang pangeran bernama Bandung Bondowoso berniat menyuntingnya sebagai istri. Raja Boko mengabulkan permintaan Bandung  Bondowoso,  bila  pangeran  itu  dapat  mengalahkannya. Bandung  Bondowoso  ternyata  dapat  mengalahkan  Raja  Boko. Namun  Roro  jonggrang  tidak  mau  dipersunting  oleh  pembunuh ayahnya, ia pun tidak berani untuk menolak. Roro jonggrang pun memberikan  syarat  pada  Bandung  untuk  membuat  seribu  candi lengkap dengan arcanya dalam waktu semalam.
+
+Bandung Bandowoso dengan dibantu sepasukan jin, hampir dapat meyelesaikan permintaan Roro jonggrang. Saat mendengar suara  kokok  ayam  bersautan  dan  melihat    langit  di  ufuk  timur memerah, para jin itu melarikan diri sebelum pekerjaannya selesai.  Melihat  tipu  daya  Lara  Jonggrong,  Bandung  Bondowoso mengutuknya  menjadi arca batu yang ke seribu untuk melengkapi jumlah keseluruhan arca.
+
+
+<br>
+
+
+---
+## 📄 Halaman 129
+
+Tentu kamu pernah mendengar cerita rakyat yang menceritakan  tentang  asal  mula  Candi  Prambanan  itu.  Cerita itu  hingga  kini  masih  berkembang  di  daerah  sekitar  Prambanan. Roro jonggrang sering kali diwujudkan sebagai arca Durga Mahisasuramawardini yang berada di bilik utara Candi Siwa. Roro jonggrang  secara  harfiah  diartikan  sebagai  seorang  gadis  cantik semampai.  Pada  kompleks  percandian,  sosok  Roro  jonggrang diwujudkan pada bangunan  paling tinggi dari keseluruhan Candi Prambanan. Dari kondisi itu kita dapat menafsirkan, bahwa legenda Bandung Bondowoso itu muncul sebagai cerita rakyat penduduk Prambanan  saat  Candi  Siwa  masih  berdiri  kokoh.  Jadi  Candi Prambanan merupakan sebuah karya monumen kejayaan Mataram Kuno yang berdiri tinggi tegak di dataran Prambanan yang subur. Kawasan Candi Prambanan sejak tahun 1991 ditetapkan sebagai situs  cagar  budaya  dunia  oleh  UNESCO.  Bagi  bangsa  Indonesia pengakuan itu sangat membanggakan.
+
+Candi  Prambanan  dibangun  pada  abad  ke-9  Masehi  atas perintah  raja,  pada  masa  puncak  kejayaan  Dinasti  Sanjaya.  Pada masa itulah ia mendirikan Candi Prambanan menurut model candicandi  Syailendra.  Candi  Prambanan  terletak  di  Desa  Prambanan. Candi  itu  pertama  ditemukan  oleh  Calons  pada  tahun  1733  M. Bangunan candi itu dibangun untuk sebuah dharma bagi agama Hindu. Candi Prambanan merupakan bangunan suci agama Hindu yang ditujukan untuk memperkuat keberadaan agama itu di wilayah selatan Jawa. Candi itu dibangun atas perintah Raja Rakai Pikatan. Kompleks Prambanan terdiri atas Candi Siwa, Candi Hamsa, Candi Wisnu, Candi Nandi, Candi Garuda dan dua buah Candi Apit yang semuanya berada di halaman pertama. Delapan candi penjaga arah mata angin dan kurang lebih 200 candi perwara yang mengelilingi inti pusat.
+
+Candi  utama  adalah  Candi  Siwa  dengan  empat  ruangan. Ruang  utama  berisi  patung  Siwa  sebagai  mahadewa.  Di  sebelah utara terdapat Roro jonggrang atau Siwa sebagai Durga Mahesasuramawardini.  Bagian  timur  terdapat  patung  Ganesa. Pada dinding Candi Siwa itu terdapat relief Ramayana, yang berisi tentang titisan Wisnu hingga Rama menyeberang ke lautan. Cara membaca relief pada candi itu searah dengan jarum jam. Candi itu digunakan hanya sebagai tempat pemujaan.
+
+
+<br>
+
+
+---
+## 📄 Halaman 130
+
+Candi  kedua  yang  terbesar  adalah  Candi  Brahma.  Dalam candi  ini  terdapat  patung  Brahma.  Juga  terdapat  relief  yang menggambarkan  epik  Ramayana.  Pada  bagian  ini  menceritakan tentang Rama menyerang Alengka dan Sinta membakar diri, atau dikenal  dengan  cerita  'pati  obong'.  Candi  ketiga  adalah  Candi Wisnu  yang  terdapat  arca  Wisnu  di  dalamnya.  Dalam  dinding candi  ini  terdapat  relief  yang  menceritakan  tentang  Kernayana. Candi  Prambanan  merupakan  candi  termegah  pada  saat  itu, kemegahannya tersohor hingga sampai ke Asia Tenggara.
+
+Candi  Sewu  yang  berada  di  sekeliling  Candi  Prambanan mempunyai  latar  belakang  agama  Buddha.  Hal  itu  dilihat  dari arsitektur bentuk candi yang bentuk seperti stupa daripada Candi Prambanan. Di samping bentuknya juga dicirikan dengan puncak candi yang berbentuk stupa. Puncak candi itu merupakan satu di antara lambang dari agama Buddha.
+
+Candi itu kurang lebih terdiri atas 240 bangunan. Bangunan candi sendiri dibangun dalam areal seluas kurang lebih 49.284 m. Candi itu  diresmikan oleh Rakai Kayuwangi, pada tahun 778 Saka (856 Masehi). Dalam Prasasti Siwagraha tertuliskan tentang pembuatan Candi Prambanan. Candi dan gapuranya dikerjakan oleh beratusratus pekerja.
+
+Dari segi arsitektur bangunan, Candi Prambanan dan Candi Sewu  masih  menampakkan  ciri-ciri  arsitektur  Buddhis.  Teknik pembangunan  candi itu dengan menggunakan  ikatan pada setiap  bata-batanya.  Keistimewaan  bangunan  itu  terletak  pada bentuk  candi  yang  menjulang  tinggi  pada  tanah  datar.  Candi Prambanan  merupakan  candi  tertinggi  dengan  bentuk  menara. Candi Prambanan berada dalam kawasan yang memiliki kepadatan bangunan  candi  yang  beragam.  Khususnya  pada  bagian  sisi timur  Kali  Opak,  terdapat  Candi  Bubrah,  Lumbung,  dan  Sewu. Keempat candi besar yang berderat itu memiliki kesatuan mandala. Kedekatan  letak  Candi  Prambanan  dengan  candi-candi  agama Buddha  menunjukkan  adanya  toleransi  antara  penduduk  yang beragama Hindu dengan penduduk yang beragama Buddha pada masa Mataram Kuno itu.
+
+Sumber: Inajati  Adrisijanti  dan  Andi  Putranto  (ed).  2009. Membangun Kembali Prambanan. Yogyakarta: Balai Pelestarian Peninggalan Purbakala
+
+
+<br>
+
+
+---
+## 📄 Halaman 131
+
+
+### Kekuasaan Dinasti Isyana
+
+Pertentangan di antara keluarga Mataram, tampaknya terus berlangsung hingga masa pemerintahan Mpu Sindok pada tahun 929 M. Pertikaian yang tidak pernah berhenti menyebabkan Mpu Sindok memindahkan ibu kota kerajaan dari Medang ke Daha (Jawa Timur)  dan  mendirikan  dinasti  baru  yaitu  Dinasti  Isyanawangsa. Di  samping  pertentangan  keluarga,  pemindahan  pusat  kerajaan juga  dikarenakan  kerajaan  mengalami  kehancuran  akibat  letusan Gunung Merapi. Berdasarkan prasasti, pusat pemerintahan Keluarga Isyana  terletak  di  Tamwlang.  Letak  Tamwlang  diperkirakan  dekat Jombang, sebab di Jombang masih ada desa yang namanya mirip, yakni desa Tambelang. Daerah kekuasaannya meliputi Jawa  bagian timur, Jawa bagian tengah, dan Bali.
+
+Setelah  Mpu  Sindok  meninggal,  ia  digantikan  oleh  anak perempuannya  bernama  Sri  Isyanatunggawijaya.  Ia  naik  takhta dan kawin dengan Sri Lokapala. Dari perkawinan ini lahirlah putra yang  bernama  Makutawangsawardana.  Makutawangsawardana naik takhta menggantikan ibunya. Kemudian pemerintahan dilanjutkan oleh Dharmawangsa Tguh yang memeluk agama Hindu aliran Waisya. Pada masa pemerintahannya, Dharmawangsa Tguh memerintahkan untuk menyadur kitab Mahabarata dalam bahasa Jawa Kuno. Setelah Dharmawangsa Tguh turun takhta ia digantikan oleh Raja Airlangga, yang saat itu usianya masih 16 tahun. Hancurnya kerajaan  Dharmawangsa  menyebabkan  Airlangga  berkelana  ke hutan. Selama di hutan ia hidup bersama pendeta sambil mendalami agama. Airlangga kemudian dinobatkan oleh pendeta agama Hindu dan Buddha sebagai raja. Begitulah kehidupan agama pada masa Mataram Kuno. Meskipun mereka berbeda aliran dan keyakinan, penduduk Mataram Kuno tetap menghargai perbedaan yang ada.
+
+
+<br>
+
+
+---
+## 📄 Halaman 132
+
+Setelah dinobatkan sebagai raja, Airlangga segera mengadakan pemulihan hubungan baik dengan Sriwijaya, bahkan membantu Sriwijaya ketika  diserang  Raja  Colamandala  dari  India Selatan.  Pada  tahun  1037  M,  Airlangga  berhasil  mempersatukan kembali daerah-daerah yang pernah dikuasai oleh Dharmawangsa, meliputi  seluruh  Jawa  Timur.  Airlangga  kemudian  memindahkan ibu kota kerajaannya dari Daha ke Kahuripan.
+
+Pada tahun 1042, Airlangga mengundurkan diri dari takhta kerajaan,  lalu  hidup  sebagai  pertapa  dengan  nama  Resi  Gentayu (Djatinindra). Menjelang akhir pemerintahannya Airlangga menyerahkan kekuasaanya pada putrinya Sangrama Wijaya TunggaDewi.  Namun,  putrinya  itu  menolak  dan  memilih  untuk  menjadi seorang petapa dengan nama Ratu Giriputri.
+
+Airlangga  memerintahkan  Mpu  Bharada  untuk  membagi dua  kerajaan.  Kerajaan  itu  adalah  Kediri  dan  Janggala.  Hal  itu dilakukan  untuk  mencegah  terjadinya  perang  saudara  di  antara kedua putranya yang lahir dari selir. Kerajaan Janggala di sebelah timur diberikan kepada putra sulungnya yang bernama Garasakan (Jayengrana), dengan ibu kota di Kahuripan (Jiwana). Wilayahnya meliputi  daerah  sekitar  Surabaya  sampai  Pasuruan,  dan  Kerajaan Panjalu (Kediri). Kerajaan Kediri di sebelah barat diberikan kepada putra bungsunya yang bernama Samarawijaya (Jayawarsa) dengan ibu kota di Kediri (Daha), meliputi daerah sekitar Kediri dan Madiun.
+
+Kerajaan  Kediri  adalah  kerajaan  pertama  yang  mmpunyai sistem administrasi kewilayahan negara berjenjang. Hierarki kewilayahan dibagi atas tiga jenjang. Struktur paling bawah dikenal dengan thani (desa). Desa ini terbagi menjadi bagian-bagian yang lebih kecil lagi yang dipimpin oleh seorang duwan. Setingkat lebih tinggi di atasnya disebut wisaya, yaitu sekumpulan dari desa-desa. Tingkatan  paling  tinggi  yaitu  negara  atau  kerajaan  yang  disebut dengan bhumi.
+
+
+<br>
+
+
+---
+## 📄 Halaman 133
+
+
+### Uji Kompetensi
+
+- Berdasarkan bacaan di atas nilai-nilai apa yang dapat kamu petik dari kepemimpinan Airlangga?
+- Setujukah  kamu  dengan  cara  Airlangga  membagi  kerajaan seperti disebutkan di atas? Uraikan alasan pendapatmu.
+Sebutkan nama, letak dan fungsi candi yang kamu ketahui. Carilah
+
+
+---
+**📊 Tabel**
+
+![Tabel](extracted_assets/table_p133_084.png)
+
+Tabel ini berisi informasi tentang empat candi, masing-masing dengan nama, lokasi, dan fungsi. Topik utama tabel adalah candi, yang merupakan struktur bersejarah yang biasanya dibangun untuk tujuan religius atau budaya. Kolom-kolomnya mencakup nama candi, lokasinya, dan fungsi mereka. Data penting yang terlihat menunjukkan bahwa setiap candi memiliki identitas unik, berada di tempat yang berbeda, dan memiliki tujuan yang berbeda pula. Misalnya, Candi 1 mungkin berada di lokasi tertentu dan memiliki fungsi tertentu, sedangkan Candi 2 mungkin berada di lokasi lain dan memiliki fungsi lain. Ini menunjukkan bahwa setiap candi memiliki keunikan sendiri dan memiliki peran yang penting dalam sejarah dan budaya masyarakatnya.
+
+
+### 6. Kerajaan Kediri
+
+Kehidupan  politik  pada  bagian  awal  di  Kerajaan  Kediri ditandai dengan perang saudara antara Samarawijaya yang berkuasa di Panjalu dan Panji Garasakan yang berkuasa di Jenggala. Mereka  tidak  dapat  hidup  berdampingan.  Pada  tahun  1052  M terjadi  peperangan  perebutan  kekuasaan  di  antara  kedua  belah pihak.  Pada  tahap  pertama  Panji  Garasakan  dapat  mengalahkan Samarawijaya,  sehingga  Panji  Garasakan  berkuasa.  Di  Jenggala kemudian  berkuasa  raja-raja  pengganti  Panji  Garasakan.  Tahun
+
+
+<br>
+
+
+---
+## 📄 Halaman 134
+
+1059 M yang memerintah adalah Samarotsaha. Akan tetapi setelah itu tidak terdengar berita mengenal Kerajaan Panjalu dan Jenggala. Baru pada tahun 1104 M tampil Kerajaan Panjalu sebagai rajanya Jayawangsa. Kerajaan ini lebih dikenal dengan nama Kerajaan Kediri dengan ibu kotanya di Daha.
+
+Tahun 1117 M Bameswara tampil sebagai Raja Kediri. Prasasti yang  ditemukan,  antara  lain  Prasasti  Padlegan  (1117  M)  dan Panumbangan (1120 M). Isinya yang penting tentang pemberian status perdikan untuk beberapa desa.
+
+Pada tahun 1135 M tampil raja yang sangat terkenal, yakni Raja Jayabaya. Ia meninggalkan tiga prasasti penting, yakni Prasasti Hantang atau Ngantang (1135 M), Talan (1136 M) dan Prasasti Desa Jepun (1144 M). Prasasti Hantang memuat tulisan panjalu jayati , artinya  panjalu  menang.  Hal  itu  untuk  mengenang  kemenangan Panjalu atas Jenggala. Jayabaya telah berhasil mengatasi berbagai kekacauan di kerajaan.
+
+Di kalangan masyarakat Jawa, nama Jayabaya sangat dikenal karena adanya Ramalan atau Jangka Jayabaya. Pada masa pemerintahan Jayabaya telah digubah Kitab Baratayuda oleh Mpu Sedah dan kemudian dilanjutkan oleh Mpu Panuluh.
+
+
+### Perkembangan Politik, Sosial, dan Ekonomi
+
+Sampai masa awal pemerintahan Jayabaya, kekacauan akibat pertentangan dengan Janggala terus berlangsung.Baru pada tahun 1135 M Jayabaya berhasil  memadamkan kekacauan itu.  Sebagai bukti, adanya kata-kata panjalu  jayati pada  Prasasti  Hantang. Setelah kerajaan  stabil,  Jayabaya  mulai  menata  dan  mengembangkan kerajaannya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 135
+
+Kehidupan  Kerajaan  Kediri  menjadi  teratur.  Rakyat  hidup makmur. Mata pencaharian yang penting adalah pertanian dengan hasil utamanya padi. Pelayaran dan perdagangan juga berkembang. Hal ini ditopang oleh Angkatan Laut Kediri yang cukup tangguh. Armada laut Kediri mampu menjamin keamanan perairan Nusantara. Di  Kediri  telah  ada  Senopati  Sarwajala  (panglima  angkatan  laut). Bahkan  Sriwijaya  yang  pernah  mengakui  kebesaran  Kediri,  yang telah mampu  mengembangkan  pelayaran dan perdagangan. Barang perdagangan di Kediri antara lain emas, perak, gading, kayu cendana, dan pinang. Kesadaran rakyat tentang pajak sudah tinggi. Rakyat menyerahkan barang atau sebagian hasil buminya kepada pemerintah.
+
+Menurut berita Cina, dan kitab Ling-wai-tai-ta diterangkan bahwa  dalam  kehidupan  sehari-hari  orang-orang  memakai  kain sampai di bawah lutut. Rambutnya diurai. Rumah-rumah mereka bersih  dan  teratur,  lantainya  ubin  yang  berwarna  kuning  dan hijau.  Dalam  perkawinan,  keluarga  pengantin  wanita  menerima mas  kawin  berupa  emas.  Rajanya  berpakaian  sutera,  memakai sepatu, dan perhiasan emas. Rambutnya disanggul ke atas. Kalau bepergian, Raja naik gajah atau kereta yang diiringi oleh 500 sampai 700 prajurit.
+
+Di bidang kebudayaan, yang menonjol adalah perkembangan seni  sastra  dan  pertunjukan  wayang.  Di  Kediri  dikenal  adanya wayang panji .
+
+Beberapa karya sastra yang terkenal, sebagai berikut.
+
+
+### 1.  Kitab Baratayuda
+
+Kitab  Baratayudha ditulis  pada  zaman  Jayabaya,  untuk memberikan  gambaran  terjadinya  perang  saudara  antara Panjalu melawan Jenggala. Perang saudara itu digambarkan dengan  perang  antara Kurawa dengan Pandawa yang masing-masing merupakan keturunan Barata .
+
+
+<br>
+
+
+---
+## 📄 Halaman 136
+
+
+### 2.  Kitab Kresnayana
+
+Kitab Kresnayana ditulis oleh Mpu Triguna pada zaman Raja Jayaswara. Isinya mengenai perkawinan antara Kresna dan Dewi Rukmini .
+
+
+### 3.  Kitab Smaradahana
+
+Kitab Smaradahana ditulis pada zaman Raja Kameswari oleh Mpu Darmaja . Isinya menceritakan tentang sepasang suami istri Smara dan Rati yang menggoda Dewa Syiwa yang sedang bertapa. Smara dan Rail kena kutuk dan mati terbakar oleh api  ( dahana )  karena  kesaktian  Dewa  Syiwa.  Akan  tetapi, kedua suami istri itu dihidupkan lagi dan menjelma sebagai Kameswara dan permaisurinya.
+
+
+### 4.  Kitab Lubdaka
+
+Kitab  Lubdaka ditulis  oleh Mpu  Tanakung pada  zaman Raja Kameswara. Isinya tentang seorang pemburu bernama Lubdaka.  Ia  sudah  banyak  membunuh.  Pada  suatu  ketika ia  mengadakan  pemujaan  yang  istimewa  terhadap  Syiwa, sehingga  rohnya  yang  semestinya  masuk  neraka,  menjadi masuk surga.
+
+Raja yang terakhir di Kerajaan Kediri adalah Kertajaya atau Dandang Gendis. Pada masa pemerintahannya, terjadi pertentangan antara raja dan para pendeta atau kaum brahmana, karena Kertajaya berlaku sombong dan berani melanggar adat. Hal ini memperlemah pemerintahan di Kediri. Para brahmana kemudian mencari perlindungan kepada Ken Arok yang merupakan penguasa di Tumapel. Pada tahun 1222 M, Ken Arok dengan dukungan kaum brahmana  menyerang  Kediri.  Kediri  dapat  dikalahkan  oleh  Ken Arok.
+
+
+<br>
+
+
+---
+## 📄 Halaman 137
+
+
+### 7. Kerajaan Singhasari
+
+
+### Raja-Raja yang Memerintah Singhasari
+
+
+### a. Ken Arok (1222 - 1227 M)
+
+Setelah  berakhirnya  Kerajaan  Kediri,  kemudian  berkembang Kerajaan  Singhasari.  Pusat  Kerajaan  Singhasari  kira-kira  terletak  di dekat  Kota  Malang,  Jawa  Timur.  Kerajaan  ini didirikan oleh Ken Arok. Ken Arok berhasil tampil sebagai raja, walaupun ia berasal dari kalangan rakyat biasa. Menurut kitab Pararaton , Ken Arok adalah anak seorang petani dari Desa Pangkur, di sebelah timur Gunung Kawi, daerah Malang. Ibunya bernama Ken Endok.
+
+Diceritakan, bahwa pada waktu masih bayi, Ken Arok diletakkan oleh ibunya di sebuah makam. Bayi ini kemudian ditemukan oleh seorang pencuri,  bernama  Lembong.  Akibat  dari  didikan dan lingkungan keluarga pencuri, maka Ken Arok tumbuh  menjadi  seorang  penjahat  yang  sering menjadi buronan  pemerintah  Kerajaan  Kediri. Suatu ketika Ken Arok berjumpa dengan pendeta Lohgawe. Ken Arok mengatakan ingin menjadi orang baik-baik. Kemudian dengan perantaraan Lohgawe,  Ken  Arok  diabdikan  kepada  seorang Akuwu (bupati) Tumapel, bernama Tunggul Ametung.
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p137_085.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan dua patung yang dipamerkan di sebuah museum. Patung-patung ini tampak sangat mirip, dengan bentuk tubuh manusia yang berdiri tegak, memegang sesuatu di tangan kanan mereka. Kedua patung memiliki rambut panjang dan pakaian tradisional, yang menunjukkan bahwa mereka mungkin merupakan figur dari budaya tertentu. Di sekeliling patung-patung tersebut ada beberapa bunga putih kecil yang tampak seperti bunga lotus, yang biasanya digunakan sebagai simbol keindahan dan keagungan dalam budaya Asia. Gambar ini menunjukkan bagaimana patung-patung ini dipersembahkan untuk penonton, menunjukkan bahwa mereka memiliki nilai seni dan sejarah yang tinggi.
+
+Setelah beberapa lama mengabdi di Tumapel,  Ken  Arok  mmpunyai  keinginan  untuk memperistri  Ken  Dedes,  yang  sudah  menjadi  istri Tunggul  Ametung.  Kemudian  timbul  niat  buruk dari Ken Arok untuk membunuh Tunggul Ametung agar Ken Dedes dapat diperistri olehnya. Ternyata
+
+Untuk lebih lengkapnya kamu dapat membaca buku Marwati Djoened Poesponegoro. Sejarah Nasional Indonesia Jilid II.
+
+
+<br>
+
+
+---
+## 📄 Halaman 138
+
+benar,  Tunggul  Ametung  dapat  dibunuh  oleh  Ken  Arok  dengan keris Mpu Gandring . Setelah Tunggul Ametung terbunuh, Ken Arok menggantikan sebagai penguasa di Tumapel dan memperistri Ken Dedes. Pada waktu diperistri Ken Arok, Ken Dedes sudah mengandung tiga bulan, hasil perkawinan dengan Tunggul Ametung.
+
+Pada waktu itu Tumapel hanya daerah bawahan Raja Kertajaya dari  Kediri.  Ken  Arok  ingin  menjadi  raja,  maka  ia  merencanakan menyerang  Kediri.  Pada  tahun  1222  M  Ken  Arok  atas  dukungan para  pendeta melakukan serangan ke Kediri. Raja Kertajaya dapat ditaklukkan oleh Ken Arok dalam pertmpurannya di Ganter, dekat Pujon,  Malang.  Setelah  Kediri  berhasil  ditaklukkan,  maka  seluruh wilayah Kediri dipersatukan dengan Tumapel dan lahirlah Kerajaan Singhasari.
+
+Setelah berdiri Kerajaan Singhasari, Ken Arok tampil sebagai raja pertama. Ken Arok sebagai raja bergelar Sri Ranggah Rajasa Sang Amurwabumi . Ken Arok memerintah selama lima tahun. Pada tahun  1227  M  Ken  Arok  dibunuh  oleh  seorang  pengalasan  atau pesuruh dan Batil , atas perintah Anusapati. Anusapati adalah putra Ken Dedes dengan Tunggul Ametung. Jenazah Ken Arok dicandikan di Kagenengan dalam  bangunan  perpaduan  Syiwa-Buddha.  Ken Arok  meninggalkan  beberapa  putra.  Bersama  Ken  Umang,  Ken Arok memiliki empat putra, yaitu Panji Tohjoyo, Panji Sudatu, Panji Wregola, dan Dewi Rambi. Bersama Ken Dedes, Ken Arok mmpunyai putra bernama Mahesa Wongateleng.
+
+
+### b. Anusapati
+
+Tahun 1227 M Anusapati naik takhta Kerajaan Singhasari. Ia memerintah selama 21 tahun. Akan tetapi, ia belum banyak berbuat untuk pembangunan kerajaan.
+
+Lambat laun berita tentang pembunuhan Ken Arok sampai  pula  kepada  Tohjoyo  (putra  Ken  Arok).  Oleh  karena  ia mengetahui pembunuh ayahnya adalah Anusapati, maka Tohjoyo
+
+
+<br>
+
+
+---
+## 📄 Halaman 139
+
+ingin  membalas  dendam,  yaitu  membunuh Anusapati. Tohjoyo mengetahui bahwa Anusapati memiliki kesukaan menyabung ayam maka ia mengajak Anusapati untuk menyabung ayam.  Pada  saat  menyabung  ayam,  Tohjoyo berhasil membunuh Anusapati. Anusapati dicandikan di Candi Kidal dekat Kota Malang sekarang. Anusapati  meninggalkan  seorang putra bernama Ronggowuni.
+
+
+### c. Tohjoyo (1248 M)
+
+Setelah  berhasil  membunuh  Anusapati, Tohjoyo  naik  takhta.  Masa  pemerintahannya sangat singkat, Ronggowuni yang merasa berhak atas takhta kerajaan, menuntut takhta kepada  Tohjoyo.  Ronggowuni  dalam  hal  ini dibantu  oleh  Mahesa  Cempaka,  putra  dari Mahesa  Wongateleng.  Menghadapi  tuntutan ini,  maka  Tohjoyo  mengirim  pasukannya  di
+
+bawah  Lembu  Ampal  untuk  melawan  Ronggowuni.  Kemudian terjadi  pertmpuran  antara  pasukan  Tohjoyo  dengan  pengikut Ronggowuni. Dalam pertmpuran tersebut Lembu Ampal berbalik memihak Ronggowuni. Serangan  pengikut  Ronggowuni  semakin kuat  dan  berhasil  menduduki  istana  Singhasari.  Tohjoyo  berhasil meloloskan diri dan akhirnya meninggal di daerah Katang Lumbang akibat luka-luka yang dideritanya.
+
+
+### d. Ronggowuni (1248 - 1268 M)
+
+Ronggowuni naik takhta Kerajaan Singhasari tahun 1248 M. Ronggowuni bergelar Sri Jaya Wisnuwardana . Dalam memerintah ia didampingi oleh Mahesa Cempaka yang berkedudukan sebagai Ratu Anggabaya . Mahesa Cempaka bergelar Narasimhamurti . Di samping itu, pada tahun 1254 M Wisnuwardana juga mengangkat putranya  yang  bernama  Kertanegara  sebagai raja  muda atau Yuwaraja . Pada saat itu Kertanegara masih sangat muda.
+
+
+<br>
+
+
+---
+## 📄 Halaman 140
+
+Singhasari di bawah pemerintahan Ronggowuni dan Mahesa Cempaka  hidup  dalam  keadaan  aman  dan  tenteram.  Rakyat hidup  dengan  bertani  dan  berdagang.  Kehidupan  rakyat  juga mulai terjamin.  Raja  memerintahkan untuk membangun benteng pertahanan di Canggu Lor .
+
+Tahun 1268 M, Ronggowuni meninggal dunia dan dicandikan di dua tempat, yaitu sebagai Syiwa di Waleri dan sebagai Buddha Amogapasa di Jajagu .  Jajagu  kemudian  dikenal  dengan  Candi Jago. Bentuk Candi Jago sangat menarik, yaitu kaki candi bertingkat tiga  dan  tersusun  berundak-undak.  Reliefnya  datar  dan  gambar orangnya menyerupai wayang kulit di Bali. Tokoh satria selalu diikuti dengan punakawan. Tidak lama kemudian Mahesa Cempaka pun meninggal dunia. Ia dicandikan di Kumeper dan Wudi Kucir .
+
+
+### e. Kertanegara (1268 - 1292 M)
+
+Tahun  1268  M  Kertanegara  naik  takhta  menggantikan Ronggowuni.  Ia  bergelar Sri  Maharajadiraja  Sri  Kertanegara . Kertanegara  merupakan  raja  yang  paling  terkenal  di  Singhasari. Ia  bercita-cita,  Singhasari  menjadi  kerajaan  yang  besar.  Untuk mewujudkan cita-citanya, maka Kertanegara melakukan berbagai usaha.
+
+
+### Perluasan Daerah Singhasari
+
+Kertanegara menginginkan wilayah Singhasari hingga meliputi seluruh Nusantara. Beberapa daerah berhasil ditaklukkan, misalnya Bali, Kalimantan Barat Daya, Maluku, Sunda, dan Pahang. Penguasaan daerah-daerah di luar Jawa yang  merupakan  pelaksanaan  politik  luar  negeri  bertujuan untuk mengimbangi pengaruh Kubilai Khan dari Cina. Pada tahun  1275  M  Raja  Kertanegara  mengirimkan  Ekspedisi Pamalayu  di  bawah  pimpinan  Mahesa  Anabrang  ( Kebo Anabrang ).  Sasaran dari ekspedisi  ini  untuk  menguasai Sriwijaya.  Akan  tetapi,  untuk  menguasainya  harus  melalui daerah  sekitarnya  termasuk  bersahabat  dan  menanamkan pengaruh Singhasari di Melayu. Sebagai tanda persahabatan,
+
+
+<br>
+
+
+---
+## 📄 Halaman 141
+
+Kertanegara menghadiahkan patung Amogapasa kepada penguasa Melayu. Ekspedisi Pamalayu diharapkan akan menggoyahkan Sriwijaya.
+
+Dalam rangka memperkuat politik  luar  negeranya,  Kertanegara menjalin hubungan dengan kerajaan-kerajaan lain di luar Kepulauan Indonesia. Misalnya deng  an Raja Jayasingawarman  III dan  Kerajaan  Campa.  Bahkan  Raja Jayasingawarman III memperistri salah  seorang  saudara  permpuan dari Kertanegara.
+
+Kertanegara memandang Cina sebagai saingan. Berkali-kali utusan Kaisar  Cina  memaksa  Kertanegara agar mengakui kekuasaan Cina, tetapi ditolak oleh Kertanegara. Terakhir pada tahun 1289 M datang utusan Cina yang dipimpin oleh  Mengki.  Kertanegara  marah, Mengki disakiti dan disuruh kembali ke  Cina.  Hal  inilah  yang  membuat marah  Kaisar  Cina  yang  bernama Kubilai Khan. Ia merencanakan membalas tindakan Kertanegara.
+
+Gambar 2.36 Arca Bhairawa sebagai perwujudan Raja Kertanegara dari Candi Singosari
+
+
+### Perkembangan Politik dan Pemerintahan
+
+Untuk menciptakan pemerintahan yang kuat dan teratur, Kertanegara telah membentuk badan-badan pelaksana.  Raja  sebagai  penguasa  tertinggi.  Kemudian  raja mengangkat tim penasihat yang terdiri atas Rakryan i Hino, Rakryan i Sirikan, dan Rakryan i Halu. Untuk membantu raja
+
+
+<br>
+
+
+---
+## 📄 Halaman 142
+
+dalam pelaksanaan pemerintahan, diangkat beberapa pejabat tinggi  kerajaan  yang  terdiri  atas  Rakryan  Mapatih,  Rakryan Demung dan Rakryan Kanuruhan. Selain itu, ada pegawaipegawai rendahan.
+
+Untuk  menciptakan  stabilitas  politik  dalam  negeri, Kertanegara melakukan penataan di lingkungan para pejabat. Orang-orang yang tidak setuju dengan cita-cita Kertanegara diganti. Sebagai contoh, Patih Raganata (Kebo Arema) diganti oleh  Aragani  dan  Banyak  Wide  dipindahkan  ke  Madura, menjadi Bupati Sumenep dengan nama Arya Wiraraja.
+
+
+### Kehidupan Agama
+
+Pada  masa  pemerintahan  Kertanegara,  agama  Hindu maupun Buddha berkembang dengan baik. Bahkan terjadi Sinkretisme antara  agama  Hindu  dan  Buddha,  menjadi bentuk Syiwa-Buddha .  Sebagai  contoh,  berkembangnya aliran Tantrayana . Kertanegara sendiri penganut aliran Tantrayana .
+
+Usaha untuk memperluas wilayah dan mencari dukungan dari berbagai daerah terus dilakukan oleh Kertanegara.  Banyak  pasukan  Singhasari  yang  dikirim  ke berbagai daerah antara lain ke tanah Melayu. Oleh karena itu,  kekuatan  ibu  kota  kerajaan  berkurang.  Keadaan  ini diketahui  oleh  pihak-pihak  yang  tidak  senang  terhadap kekuasaan Kertanegara. Pihak yang tidak senang itu antara lain Jayakatwang, penguasa Kediri. Ia berusaha menjatuhkan kekuasaan Kertanegara.
+
+Saat yang dinantikan oleh Jayakatwang ternyata telah tiba. Istana Kerajaan  Singhasari  dalam  keadaan  lemah. Pasukan kerajaan hanya tersisa sebagian kecil. Pada saat itu, Kertanegara sedang melakukan upacara keagamaan dengan pesta pora, sehingga Kertanegara benar-benar lengah. Tibatiba,  Jayakatwang  menyerbu  istana  Kertanegara.  Serangan
+
+
+<br>
+
+
+---
+## 📄 Halaman 143
+
+Jayakatwang dibagi menjadi dua arah.  Sebagian  kecil  pasukan  Kediri menyerang dari arah utara untuk memancing pasukan Singhasari keluar dari pusat kerajaan. Sementara  itu induk  pasukan  Kediri  bergerak  dan menyerang  dari  arah  selatan.  Untuk menghadapi  serangan  Jayakatwang, Kertanegara mengirimkan pasukan yang  ada  di  bawah  pimpinan  Raden Wijaya dan Pangeran Ardaraja. Ardaraja adalah anak Jayakatwang dan menantu dari Kertanegara. Pasukan Kediri yang datang dari arah utara  dapat  dikalahkan  oleh  pasukan Raden Wijaya Akan tetapi, pasukan inti dengan leluasa masuk dan menyerang istana, sehingga berhasil menewaskan Kertanegara. Peristiwa ini terjadi pada tahun  1292  M.  Raden  Wijaya  dan pengikutnya kemudian meloloskan diri setelah mengetahui istana kerajaan dihancurkan oleh pasukan Kediri. Sedangkan Ardaraja membalik dan bergabung dengan pasukan Kediri.
+
+Untuk lebih lengkapnya kamu dapat membaca buku Marwati Djoened Poesponegoro. Sejarah Nasional  Indonesia  Jilid  II dan Nugroho Notosusanto ddk. Sejarah Nasional Indonesia 2 Untuk Sekolah Lanjutan Tingkat Atas.
+
+Gambar 2.37 Arca Joko Dolok dipercaya sebagai perwujudan Kertanegara
+
+Jenazah Kertanegara kemudian dicandikan di dua tempat, yaitu di Candi Jawi di Pandaan dan di Candi Singosari, di daerah Singosari, Malang. Sebagai raja yang besar, nama Kertanegara diabadikan di berbagai tempat. Bahkan di Surabaya ada sebuah arca Kertanegara yang menyerupai bentuk arca Buddha. Arca  Kertanegara  itu  dinamakan  arca Joko  Dolok .  Dengan terbunuhnya Kertanegara maka berakhirlah Kerajaan Singhasari.
+
+
+<br>
+
+
+---
+## 📄 Halaman 144
+
+
+### 8. Kerajaan Majapahit
+
+Setelah  Singhasari  jatuh,  berdirilah  Kerajaan  Majapahit  yang berpusat di Jawa Timur, antara abad ke-14 - ke-15 M. Berdirinya kerajaan ini sebenarnya  sudah  direncanakan  oleh  Kertarajasa Jayawarddhana  (Raden  Wijaya).  Ia  me  mpunyai  tugas  untuk melanjutkan  kemegahan  Singhasari  yang  saat  itu  sudah  hampir runtuh.  Saat  itu  dengan  dibantu  oleh  Arya  Wiraraja  seorang penguasa Madura, Raden Wijaya membuka hutan di wilayah yang disebut  dalam  kitab  Pararaton  sebagai  'hutannya  orang  Trik'. Desa  itu  dinamai  Majapahit,  yang  namanya  diambil  dari  buah
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p144_089.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan sebuah patung Buddha. Patung tersebut berdiri tegak dengan posisi tangan yang menunjukkan pose meditasi. Patung Buddha memiliki wajah yang rupawan dengan mata yang menatap ke depan, serta rambut yang diikat menjadi topi. Pakaian Buddha terlihat formal dengan baju panjang dan celana pendek. Di sebelah kanan patung Buddha, terdapat dua orang pria yang tampak seperti penjaga atau pelayan. Mereka berdiri dengan posisi yang rapi, menghadap ke arah patung Buddha. Gambar ini menunjukkan hubungan antara Buddha sebagai pusat keagamaan dan para pelayan sebagai simbol kehormatan dan kepercayaan. Informasi kunci yang dapat diambil dari gambar ini adalah bahwa Buddha merupakan simbol keagamaan dan kehormatan dalam budaya tersebut.
+
+maja,  dan  rasa  'pahit'  dari  buah  tersebut. Ketika  pasukan  Mongol  tiba,  Raden  Wijaya bersekutu  dengan  pasukan  Mongol  untuk bertmpur melawan Jayakatwang. Setelah berhasil menjatuhkan  Jayakatwang,  Raden Wijaya  berbalik  menyerang  pasukan  Mongol sehingga  memaksa  mereka  menarik  pulang kembali pasukannya.
+
+Pada  masa  pemerintahannya  Raden Wijaya mengalami pemberontakan yang dilakukan oleh sahabat-sahabatnya yang pernah mendukung perjuangan dalam mendirikan Majapahit. Setelah Raden Wijaya wafat, ia digantikan oleh putranya Jayanegara. Jayanegara dikenal sebagai raja yang kurang bijaksana  dan  lebih  suka  bersenang-senang. Kondisi itulah yang menyebabkan pembantupembantunya melakukan pemberontakan.
+
+Di  antara  pemberontakan  tersebut, yang dianggap paling berbahaya adalahpemberontakan Kuti. Pada saat itu, pasukan  Kuti  berhasil  menduduki  ibu  kota negara. Jayanegara terpaksa  menyingkir  ke  Desa
+
+
+<br>
+
+
+---
+## 📄 Halaman 145
+
+Badander di bawah perlindungan pasukan  Bhayangkara  pimpinan Gajah Mada. Gajah Mada kemudian menyusun strategi dan berhasil menghancurkan pasukan Kuti. Atas jasa-jasanya, Gajah  Mada  diangkat  sebagai Patih Kahuripan (1319-1321 M) dan Patih Kediri (1322-1330 M).
+
+Kerajaan Majapahit penuh dengan intrik  politik  dari  dalam kerajaan itu sendiri. Kondisi yang sama juga terjadi menjelang keruntuhan Majapahit. Masa
+
+pemerintahan  Tribhuwanattunggadewi  Jayawisnuwarddani  adalah pembentuk kemegahan kerajaan. Tribhuwana berkuasa di Majapahit sampai kematian ibunya pada tahun 1350. Ia diteruskan oleh putranya, Hayam Wuruk. Pada masa Hayam Wuruk itulah Majapahit berada di puncak kejayaannya. Hayam Wuruk disebut juga Rajasanagara. Ia memerintah Majapahit dari tahun 1350 hingga 1389 M.
+
+Pada  masa  pemerintahan  Raja  Hayam  Wuruk  dan  Patih  Gajah Mada,  Majapahit  mencapai  zaman  keemasan.  Wilayah  kekuasaan Majapahit sangat luas, bahkan melebihi luas wilayah Republik Indonesia sekarang.  Oleh  karena  itu,  Muhammad  Yamin  menyebut  Majapahit dengan sebutan negara nasional kedua di Indonesia. Seluruh kepulauan di  Indonesia  berada di bawah kekuasaan Majapahit. Hal ini memang tidak  dapat  dilepaskan  dari  kegigihan  Gajah  Mada.  Sumpah  Palapa, ternyata  benar-benar  dilaksanakan.  Dalam  melaksanakan  cita-citanya, Gajah Mada didukung oleh beberapa tokoh, misalnya Adityawarman dan Laksamana Nala. Di bawah pimpinan Laksamana Nala Majapahit membentuk angkatan laut yang sangat kuat. Tugas utamanya adalah mengawasi seluruh perairan yang ada di Nusantara. Di bawah pemerintahan  Hayam  Wuruk,  Majapahit  mengalami  kemajuan  di berbagai bidang.
+
+
+<br>
+
+
+---
+## 📄 Halaman 146
+
+Untuk memahami lebih lanjut kamu dapat membaca buku Endang Kristinah dan Aris Soviyani, Mutiara-Mutiara Majapahit; Trowulan, Situs Kota Majapahit; dan Taufik Abdullah dan Adrian B. Lapian, Indonesia Dalam Arus Sejarah, Jilid II.
+
+Menurut Kakawin Nagarakertagama pupuh XIII-XV, daerah  kekuasaan  Majapahit  meliputi Sumatra, Semenanjung Malaya, Kalimantan, Sulawesi,  Kepulauan  Nusa  Tenggara,  Maluku, Papua, Tumasik (Singapura) dan sebagian Kepulauan Filipina. Majapahit juga memiliki hubungan dengan Campa, Kamboja, Siam, Birma bagian selatan, dan Vietnam, dan bahkan mengirim duta-dutanya ke Tiongkok.
+
+
+### SUMPAH PALAPA
+
+Pada saat diangkat sebagai Mahapatih Gajah Mada bersumpah bahwa  ia  tidak  akan  beristirahat  ( amukti  palapa )  jika  belum dapat  menyatukan  seluruh  Nusantara.  Sumpah  itu  kemudian dikenal dengan Sumpah Palapa sebagai berikut :
+
+'Lamun  huwus  kalah  Nusantara  isun  amukti  palapa,  amun kalah  ring  Gurun,  ring  seran,  Tanjungpura,  ring  Haru,  ring Pahang, Dompo,ring Bali, Sunda, Palembang, Tumasik, saman isun amukti palapa'.
+
+
+### Artinya:
+
+'Setelah  tunduk  Nusantara,  saya  akan  beristirahat;  Sesudah kalah Gurun seran, Tanjungpura, Haru, Pahang, Dompo, Bali, Sunda, Palembang, Tumasik, barulah saya akan beristirahat'
+
+
+<br>
+
+
+---
+## 📄 Halaman 147
+
+
+### Politik dan Pemerintahan
+
+Majapahit telah mengembangkan sistem pemerintahan yang  teratur.  Raja  memegang  kekuasaan  tertinggi.  Dalam melaksanakan  pemerintahan,  raja  dibantu  oleh  berbagai badan atau pejabat berikut.
+
+- Rakryan  Mahamantri  Katrini ,  dijabat  oleh  para  putra raja, terdiri atas Rakryan i Hino, Rakryan i Sirikan, dan Rakryan i Halu .
+- Dewan Pelaksana terdiri atas Rakryan Mapatih atau Patih Mangkabumi , Rakryan Tumenggung , Rakryan Demung , Rakryan  Rangga dan Rakryan Kanuruhan . Kelima pejabat  ini  dikenal  sebagai Sang Panca ring Wilwatika . Di antara kelima pejabat itu Rakryan Mapatih atau Patih Mangkubumi merupakan pejabat yang paling penting. Ia menduduki  tempat  sebagai perdana  menteri .  Bersama sama raja, ia menjalankan kebijakan pemerintahan. Selain itu  terdapat  pula  dewan  pertimbangan  yang  disebut dengan Batara Sapta Prabu.
+Struktur  tersebut  ada  di  pemerintah  pusat.  Di  setiap daerah  yang  berada  di  bawah  raja-raja,  dibuatkan  pula struktur yang mirip.
+
+Untuk  menciptakan  pemerintahan  yang  bersih  dan berwibawa, dibentuklah badan peradilan yang disebut dengan Saptopapati . Selain itu disusun pula kitab hukum oleh Gajah Mada yang disebut Kitab Kutaramanawa . Gajah Mada memang seorang negarawan yang mumpuni. Ia memahami pemerintahan strategi perang dan hukum.
+
+Untuk mengatur kehidupan beragama dibentuk badan atau  pejabat  yang  disebut Dharmadyaksa . Dharmadyaksa adalah  pejabat  tinggi  kerajaan  yang  khusus  menangani persoalan keagamaan. Di Majapahit dikenal ada dua Dharmadyaksa sebagai berikut.
+
+
+<br>
+
+
+---
+## 📄 Halaman 148
+
+- Dharmadyaksa ring Kasaiwan ,  mengurusi agama Syiwa (Hindu),
+- Dharmadyaksa ring Kasogatan , mengurusi agama Buddha.
+Dalam menjalankan tugas, masing-masing Dharmadyaksa dibantu oleh pejabat keagamaan yang diberi sebutan Sang Pamegat.
+
+Kehidupan beragama di Majapahit berkembang semarak.  Pemeluk  yang  beragama  Hindu  maupun  Buddha saling bersatu. Pada masa itu pun sudah dikenal semboyan Bhinneka Tunggal Ika , artinya, sekalipun berbeda-beda baik Hindu maupun Buddha pada hakikatnya adalah satu jua. Kemudian secara umum kita artikan berbeda-beda akhirnya satu jua
+
+Gambar 2.40 Surya Majapahit
+
+Berkat kepemimpinan Hayam Wuruk dan  Gajah  Mada,  kehidupan  politik,  dan stabilitas nasional Majapahit terjamin. Hal  ini  disebabkan  pula  karena  kekuatan tentara  Majapahit  dan  angkatan  lautnya sehingga  semua  perairan  nasional  dapat diawasi.
+
+Majapahit  juga  menjalin  hubungan dengan kerajaan lain. Hubungan dengan Siam,  Birma,  Kamboja,  Anam,  India,  dan Cina  berlangsung  dengan  baik.  Dalam membina  hubungan  dengan  luar  negeri, Majapahit mengenal motto Mitreka Satata , artinya negara sahabat.
+
+
+<br>
+
+
+---
+## 📄 Halaman 149
+
+
+### Kehidupan Sosial Ekonomi
+
+Di  bawah  pemerintahan  Raja  Hayam  Wuruk,  rakyat Majapahit hidup aman dan tenteram. Hayam Wuruk sangat memperhatikan rakyatnya.  Keamanan  dan  kemakmuran rakyat diutamakan.  Untuk  itu dibangun  jalan-jalan  dan jembatan-jembatan.  Dengan  demikian  lalu  lintas  menjadi lancar. Hal ini mendukung kegiatan keamanan dan kegiatan  perekonomian,  terutama  perdagangan.  Lalu  lintas perdagangan yang paling penting melalui sungai. Misalnya,
+
+Sungai Bengawan Solo dan Sungai Brantas. Akibatnya desa-desa di tepi sungai  dan  yang  berada  di  muara serta  di  tepi  pantai,  berkembang menjadi  pusat-pusat  perdagangan. Hal itu menyebabkan terjadinya arus bolak-balik para pedagang yang menjajakan barang dagangannya dari  daerah  pantai  atau  muara  ke pedalaman atau sebaliknya. Bahkan di daerah pantai berkembang perdagangan  antar  daerah,  antar pulau,  bahkan  dengan  pedagang dari luar. Kemudian timbullah kota-kota pelabuhan sebagai pusat  pelayaran  dan  perdagangan. Beberapa kota pelabuhan yang penting pada zaman Majapahit, antara lain Canggu, Surabaya, Gresik,  Sedayu,  dan  Tuban.  Pada waktu itu banyak pedagang dari luar seperti dari Cina India, dan Siam.
+
+Adanya pelabuhan-pelabuhan tersebut mendorong munculnya kelompok bangsawan kaya. Mereka
+
+
+<br>
+
+
+---
+## 📄 Halaman 150
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p150_094.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan kapal perang kuno dengan detail yang rinci. Kapal tersebut memiliki empat set kajang (kayu penyangga) yang membentuk struktur utama kapal, serta berbagai sistem navigasi seperti kruang (ruang untuk navigasi) dan kajang-kajang lainnya. Kapal ini tampak besar dan kompleks, menunjukkan kemampuan teknologi perahu laut pada masa lalu. Ilustrasi ini mungkin digunakan untuk menggambarkan konsep dasar kapal perang atau untuk memperjelas konsep tentang teknologi perahu laut pada masa lalu.
+
+Gambar 2.43
+
+menguasai pemasaran bahan-bahan dagangan pokok dari dan ke daerah-daerah Indonesia Timur dan Malaka.
+
+Kegiatan pertanian juga dikembangkan. Sawah  dan  ladang  dikerjakan  secukupnya dan dikerjakan secara bergiliran. Hal ini maksudnya  agar tanah tetap subur dan tidak  kehabisan  lahan  pertanian.  Tanggultanggul di sepanjang sungai diperbaiki untuk mencegah bahaya banjir.
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p150_095.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan dua orang yang sedang berjalan di sekitar sebuah bangunan. Bangunan tersebut memiliki struktur yang kompleks dengan banyak detail arsitektur, termasuk atap yang melengkung dan dinding yang dipenuhi relief. Dua orang tersebut tampak berjalan dengan tenang, mungkin sedang berjalan-jalan atau berkeliling. Ilustrasi ini menunjukkan suasana yang tenang dan damai, dengan elemen-elemen arsitektur yang mencerminkan keindahan dan kekayaan budaya tempat tersebut. Teks, angka, atau label penting tidak terlihat pada gambar ini. Informasi kunci yang dapat diambil pembaca adalah bahwa gambar ini mungkin digunakan untuk menggambarkan arsitektur atau budaya suatu tempat tertentu.
+
+Gambar 2.44 Relief mengemas padi
+
+
+### Perkembangan Sastra dan Budaya
+
+Pada  masa  pemerintahan  Hayam  Wuruk,  bidang  sastra mengalami  kemajuan.  Karya  sastra  yang  paling  terkenal  pada zaman Majapahit adalah Kitab Negarakertagama . Kitab ini ditulis oleh Mpu Prapanca pada tahun 1365 M. Di samping menunjukkan kemajuan  di  bidang  sastra, Negarakertagama juga  merupakan sumber sejarah Majapahit. Kitab lain yang penting adalah Sutasoma .
+
+
+<br>
+
+
+---
+## 📄 Halaman 151
+
+Kitab ini disusun oleh Mpu Tantular. Kitab Sutasoma memuat katakata  yang  sekarang  menjadi  semboyan  negara  Indonesia,  yakni Bhinneka Tunggal Ika . Di samping itu, Mpu Tantular juga menulis kitab Arjunawiwaha .
+
+Sutasoma 139,4d-5d
+
+Hyan Buddha tan pabi lawan siwarajadewa rwanekadhatu  winuwus  wara  Buddhawisma  bhineki rakwa rinapankenapanarwanosen manka  n jiwatwa kalawan  siwatatwa  tunggal bhineka  ika  tan  hanna dharma mangruwa
+
+Artinya : 'Dewa Buddha tidak berbeda dengan Siwa. Mahadewa di antara dewa-dewa. Keduanya dikatakan mengandung banyak unsur  Buddha  yang  boleh  dikatakan  tidak  terpisahkan  dapat begitu  saja  dipisahkan  menjadi  dua?  Jiwa  Jina  dan  Jiwa  Siwa adalah satu dalam hukum tidak terdapat dualisme.
+
+Bidang seni bangunan juga berkembang. Banyak bangunan candi  telah  dibuat.  Misalnya  Candi  Penataran  dan  Sawentar  di daerah Blitar, Candi Tigawangi dan Surawana di dekat Pare, Kediri, serta Candi Tikus di Trowulan.
+
+Keruntuhan Majapahit lebih  disebabkan oleh ketidakpuasan sebagian besar keluarga raja, setelah turunnya Hayam Wuruk. Perang Paregreg telah melemahkan unsur-unsur kejayaan  Majapahit.  Meskipun  peperangan berakhir, Majapahit terus mengalami kelemahan karena raja yang berkuasa tidak mampu  lagi  mengembalikan  kejayaannya. Unsur  lain  yang  menyebabkan  runtuhnya Majapahit adalah semakin meluasnya pengaruh Islam pada saat itu.
+
+Gambar 2.45 Candi Tikus
+
+
+<br>
+
+
+---
+## 📄 Halaman 152
+
+Kemajuan  peradaban  Majapahit  itu  tidak  hilang  dengan runtuhnya kerajaan itu. Pencapaian itu terus dipertahankan hingga masa perkembangan Islam di Jawa. Peninggalan peradaban Majapahit juga dapat kita saksikan pada perkembangan lingkup  kebudayaan  Bali  pada  saat  ini.  Kebudayaan  yang  masih dikembangkan  hingga  masa  Islam  adalah  cerita  wayang  yang berasal  dari  epos  India  yaitu  Mahabharata  dan  Ramayana,  serta kisah asmara Raden Panji dengan Sekar Taji (Galuh Candrakirana). Selain itu dapat kita saksikan juga pada unsur arsitekturnya bentuk atap tumpang, seni ukir sulur-suluran dan tanaman melata, senjata keris, lokasi keramat, dan masih banyak lagi.
+
+
+### Uji Kompetensi
+
+Dalam catatan  sejarah,  Kerajaan  Majapahit  dikenal  sebagai kerajaan  besar  yang  mampu  menguasai  hampir  seluruh  pulau  di Nusantara,  melampaui  luas  wilayah  Negara  Kesatuan  Republik Indonesia  saat  ini.  Kitab Negarakertagama mencatat  puluhan daerah yang menyerahkan upeti kepada Kerajaan Majapahit.
+
+- Apa  pelajaran  yang  dapat  kamu  petik  dari  belajar  tentang perkembangan Kerajaan Majapahit?
+- Bagaimanakah Gajah Mada dapat menyatukan wilayah Nusantara?
+- Bagaimana  penilaianmu  tentang  Sumpah  Amukti  Palapa  dari Gajah Mada? Buatlah jawaban dalam 3-4 halaman!
+- Buatlah  peta  wilayah  Nusantara  pada  abad  ke-10  sampai  15 Masehi.
+
+<br>
+
+
+---
+## 📄 Halaman 153
+
+
+### 9. Kerajaan Buleleng dan Kerajaan Dinasti Warmadewa di Bali
+
+Menurut berita Cina di sebelah timur Kerajaan Kalingga ada daerah Po-li atau Dwa-pa-tan yang dapat disamakan dengan Bali. Adat istiadat di Dwa-pa-tan sama dengan kebiasaan orang-orang Kaling.  Misalnya,  penduduk  biasa  menulisi  daun  lontar.  Bila  ada orang  meninggal,  mayatnya  dihiasi  dengan  emas  dan  ke  dalam mulutnya dimasukkan sepotong emas, serta diberi bau-bauan yang harum. Kemudian mayat itu dibakar. Hal itu menandakan Bali telah berkembang.
+
+Dalam  sejarah  Bali,  nama  Buleleng  mulai  terkenal  setelah periode  kekuasaan  Majapahit.  Pada  waktu  di  Jawa  berkembang kerajaan-kerajaan Islam, di Bali juga berkembang sejumlah kerajaan. Misalnya Kerajaan Gelgel, Klungkung, dan Buleleng yang didirikan oleh I  Gusti  Ngurak  Panji  Sakti,  dan  selanjutnya  muncul  kerajaan yang  lain.  Nama  Kerajaan  Buleleng  semakin  terkenal,  terutama setelah zaman penjajahan Belanda di Bali. Pada waktu itu pernah terjadi perang rakyat Buleleng melawan Belanda.
+
+Pada zaman kuno, sebenarnya Buleleng sudah berkembang. Pada masa perkembangan Kerajaan Dinasti Warmadewa, Buleleng diperkirakan menjadi salah satu daerah kekuasaan Dinasti Warmadewa.  Sesuai  dengan  letaknya  yang  ada  di  tepi  pantai, Buleleng  berkembang  menjadi  pusat  perdagangan  laut.  Hasil pertanian dari pedalaman diangkut lewat darat menuju Buleleng. Dari  Buleleng  barang  dagangan  yang  berupa  hasil  pertanian seperti  kapas,  beras,  asam,  kemiri,  dan  bawang  diangkut  atau diperdagangkan  ke  pulau  lain  (daerah  seberang).  Perdagangan dengan  daerah  seberang  mengalami  perkembangan  pesat  pada masa Dinasti Warmadewa yang diperintah oleh Anak Wungsu. Hal ini dapat dibuktikan dengan adanya kata-kata pada prasasti yang disimpan di Desa Sembiran yang berangka tahun 1065 M.
+
+
+<br>
+
+
+---
+## 📄 Halaman 154
+
+Kata-kata  yang  dimaksud  berbunyi, 'mengkana  ya  hana banyaga  sakeng  sabrangjong,  bahitra,  rumunduk  i  manasa... ' Artinya, andai kata ada saudagar dari seberang yang datang dengan jukung bahitra berlabuh di manasa...'
+
+Untuk memahami lebih lanjut kamu dapat membaca buku Marwati Djoened Poesponoro. Sejarah Nasional Indonesia jilid II; dan Proyek Penelitian dan Pencatatan Kebudayaan , Indonesia Sejarah Daerah Bali.
+
+Sistem  perdagangannya  ada  yang  menggunakan  sistem barter, ada yang sudah dengan alat tukar (uang). Pada waktu itu sudah dikenal beberapa jenis alat tukar (uang), misalnya ma, su dan piling.
+
+Dengan  perkembangan  perdagangan  laut  antarpulau  di zaman  kuno  secara  ekonomis  Buleleng  memiliki  peranan  yang penting  bagi  perkembangan  kerajaan-kerajaan  di  Bali  misalnya pada masa Kerajaan Dinasti Warmadewa.
+
+
+### 10. Kerajaan Tulang Bawang
+
+Dari sumber-sumber sejarah Cina, kerajaan awal yang terletak di daerah Lampung adalah kerajaan yang disebut Bawang atau  Tulang  Bawang.  Berita  Cina  tertua  yang  berkenaan  dengan daerah Lampung berasal dari abad ke-5, yaitu dari kitab Liu-sungShu, sebuah kitab sejarah dari masa pemerintahan Kaisar Liu Sung (420-479).  Kitab  ini  di  antaranya  mengemukakan  bahwa  pada tahun 499 M sebuah kerajaan yang terletak di wilayah Nusantara bagian  barat  bernama  P'u-huang  atau  P'o-huang  mengirimkan utusan  dan  barang-barang  upeti  ke  negeri  Cina.  Lebih  lanjut kitab Liu-sung-Shu mengemukakan  bahwa  Kerajaan  P'o-huang menghasilkan lebih dari 41 jenis barang yang diperdagangkan ke Cina. Hubungan diplomatik dan perdagangan antara P'o-huang dan Cina berlangsung terus sejak pertengahan abad ke-5 sampai abad ke-6, seperti halnya dua kerajaan lain di Nusantara yaitu Kerajaan Ho-lo-tan dan Kan-t'o-li.
+
+
+<br>
+
+
+---
+## 📄 Halaman 155
+
+Dalam sumber sejarah Cina yang lain, yaitu kitab T'ai-p'inghuang-yu-chi yang  ditulis  pada  tahun  976-983  M,  disebutkan sebuah kerajaan bernama T'o-lang-p'p-huang yang oleh G. Ferrand disarankan  untuk  diidentifikasikan  dengan  Tulang  Bawang  yang terletak di daerah pantai tenggara Pulau Sumatera, di selatan sungai Palembang  (Sungai  Musi).  L.C.  Damais  menambahkan  bahwa lokasi  T'o-lang  P'o-huang  tersebut  terletak  di  tepi  pantai  seperti dikemukakan di dalam Wu-pei-chih , 'Petunjuk Pelayaran'. Namun, di  samping itu Damais kemudian memberikan pula kemungkinan lain mengenai lokasi dan identifikasi P'o-huang atau 'Bawang' itu dengan sebuah nama tempat bernama Bawang (Umbul Bawang) yang sekarang terletak di daerah Kabupaten Lampung Barat, yaitu di daerah Kecamatan Balik Bukit di sebelah utara Liwah. Tidak jauh dari desa Bawang ini, yaitu di desa Hanakau, sejak tahun 1912 telah ditemukan  sebuah  inskripsi  yang  dipahatkan  pada  sebuah  batu tegak, dan tidak jauh dari tempat tersebut dalam waktu beberapa tahun terakhir  ini  masih  ditemukan  pula  tiga  buah  inskripsi  batu yang lainnya.
+
+
+### 11. Kerajaan Kota Kapur
+
+Dari hasil penelitian arkeologi yang dilakukan di Kota Kapur, Pulau Bangka, pada tahun 1994, diperoleh suatu petunjuk tentang kemungkinan adanya sebuah pusat kekuasaan di daerah itu sejak masa sebelum munculnya Kerajaan Sriwijaya. Pusat kekuasaan ini meninggalkan  temuan-temuan  arkeologi  berupa  sisa-sisa  sebuah bangunan  candi  Hindu  (Waisnawa)  terbuat  dari  batu  bersama dengan arca-arca batu, di antaranya dua buah arca Wisnu dengan gaya seperti arca-arca Wisnu yang ditemukan di Lembah Mekhing, Semenanjung Malaka, dan Cibuaya, Jawa Barat, yang berasal dari masa sekitar abad ke-5 dan ke-7 Masehi. Sebelumnya di situs Kota Kapur selain telah ditemukan sebuah inskripsi batu dari Kerajaan Sriwijaya  yang  berangka  tahun  608  Saka  (=686  Masehi),  telah
+
+
+<br>
+
+
+---
+## 📄 Halaman 156
+
+Gambar 2.46 Reruntuhan Kota Kapur
+
+ditemukan  pula  peninggalan-peninggalan  yang  lain  di  antaranya sebuah arca Wisnu dan sebuah arca Durga Mahisasuramardhini. Dari peninggalan-peninggalan arkeologi tersebut nampaknya kekuasaan di Pulau Bangka pada waktu itu bercorak Hindu-Waisnawa, seperti halnya di Kerajaan Tarumanegara di Jawa Barat.
+
+Temuan lain yang penting dari  situs  Kota  Kapur  ini  adalah peninggalan  berupa  benteng  pertahanan  yang  kokoh  berbentuk dua  buah  tanggul  sejajar  terbuat  dari  timbunan  tanah,  masingmasing  panjangnya  sekitar  350  meter  dan  1200  meter  dengan ketinggian sekitar 2-3 meter. Penanggalan dari tanggul benteng ini menunjukkan masa antara tahun 530 M sampai 870 M. Benteng pertahanan tersebut yang telah dibangun sekitar pertengahan abad ke-6  M tersebut agaknya telah berperan pula dalam menghadapi ekspansi  Sriwijaya  ke  Pulau  Bangka  menjelang  akhir  abad  ke-7 M.  Penguasaan  Pulau  Bangka  oleh  Sriwijaya  ini  ditandai  dengan
+
+
+<br>
+
+
+---
+## 📄 Halaman 157
+
+Gambar 2.47 Temuan piring di situs Kota Kapur
+
+dipancangkannya inskripsi Sriwijaya di Kota Kapur yang berangka tahun  608  Saka  (=686  Masehi),  yang  isinya  mengidentifikasikan dikuasainya  wilayah  ini  oleh  Sriwijaya.  Penguasaan  Pulau  Bangsa oleh Sriwijaya ini agaknya berkaitan dengan peranan Selat Bangsa sebagai  pintu  gerbang  selatan  dari  jalur  pelayaran  niaga  di  Asia Tenggara  pada  waktu  itu.  Sejak  dikuasainya  Pulau  Bangka  oleh Sriwijaya pada tahun 686 maka berakhirlah kekuasaan awal yang ada di Pulau Bangka.
+
+
+<br>
+
+
+---
+## 📄 Halaman 158
+
+
+### Uji Kompetensi
+
+Coba  kamu  diskusikan  peninggalan  arkeologis  di  daerah  tempat kamu  tinggal  yang  berhubungan  atau  diduga  berkaitan  dengan kerajaan Hindu - Buddha. Kamu dapat membentuk kelompok yang terdiri  atas  4  -  5  orang,  kemudian  buatlah  tulisan  singkat  antara 4-5 halaman. Setelah itu diskusikan di antara kelompok tersebut. Semua anggota kelompok harus mengemukakan pendapatnya. Bila di  sekitar  tempat tinggalmu tidak ditemukan tinggalan arkeologis masa Hindu-Budha, kamu  dapat mencari di daerah/provinsi/ kabupaten/kota yang dekat dengan tempat tinggalmu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 159
+
+Kamu tentu sudah akrab dengan istilah globalisasi. Globalisasi  berasal  dari  kata global yang  secara  harfiah  berarti umum  atau  mendunia.  Globalisasi  merupakan  suatu  kondisi  di mana  perbedaaan  jarak  dan  letak  geografis  bukan  lagi  menjadi penghalang.  Dunia  seakan  tanpa  batas,  sehingga  makin  dekat dan  menyebar  luas.  Sejarah  mencatat  globalisasi  sudah  dimulai sejak  ribuan  tahun  lalu.  Seperti  yang  dikutip  dari  buku  Anthony Reid, Jaringan Perdagangan Global Asia Tenggara, perdagangan internasional  telah  memunculkan  pusat-pusat  pemukiman  baru dan memungkinkan terbentuknya jaringan Nusantara. Melanjutkan pembahasan  pada  semester  sebelumnya,  uraian  berikut  akan membahas  mengenai  integrasi  jaringan  Nusantara  melalui  jalur perdagangan dan akulturasi yang terjadi akibat integrasi tersebut.
+
+
+### C.    Terbentuknya Jaringan Nusantara Melalui Perdagangan
+
+
+### Memahami teks
+
+Pusat-pusat integrasi Nusantara berlangsung melalui penguasaan laut. Pusat-pusat integrasi itu selanjutnya ditentukan oleh  keahlian  dan  kepedulian  terhadap  laut,  sehingga  terjadi perkembangan baru, setidaknya dalam dua hal,  yaitu  (i)  pertumbuhan jalur perdagangan yang melewati lokasi-lokasi strategis di pinggir pantai,  dan  (ii)  kemampuan  mengendalikan  (kontrol)  politik  dan militer para penguasa tradisional (raja-raja) dalam menguasai jalur utama dan pusat-pusat perdagangan di Nusantara. Jadi, prasyarat untuk  dapat  menguasai  jalur  dan  pusat  perdagangan  ditentukan oleh  dua  hal  penting  yaitu  perhatian  atau  cara  pandang,  dan kemampuan menguasai lautan.
+
+Jalur-jalur  perdagangan  yang  berkembang  di  Nusantara sangat  ditentukan  oleh  kepentingan  ekonomi  pada  saat  itu  dan perkembangan rute perdagangan dalam setiap masa yang berbedabeda. Jika pada masa praaksara hegemoni budaya dominan datang dari pendukung budaya Austronesia di Asia Tenggara Daratan, maka pada masa perkembangan Hindu-Buddha di Nusantara terdapat dua kekuatan peradaban besar, yaitu Cina di utara dan India di bagian
+
+
+<br>
+
+
+---
+## 📄 Halaman 160
+
+barat daya. Keduanya merupakan dua kekuatan super power pada masanya dan mempunyai pengaruh amat besar terhadap penduduk di  Kepulauan Indonesia. Bagaimanapun, peralihan rute perdagangan dunia  ini  telah  membawa  berkah  tersendiri  bagi  masyarakat  dan suku bangsa di Nusantara. Mereka secara langsung terintegrasi ke dalam  jaringan  perdagangan  dunia  pada  masa  itu.  Selat  Malaka menjadi  penting  sebagai  pintu  gerbang  yang  menghubungkan antara pedagang-pedagang Cina dan pedagang-pedagang India.
+
+Pada masa itu, Selat Malaka merupakan jalur penting dalam pelayaran dan perdagangan bagi pedagang yang melintasi bandarbandar penting di sekitar Samudra Indonesia dan Teluk Persia. Selat itu merupakan jalan laut yang menghubungkan Arab dan India di sebelah  barat  laut  Nusantara,  dan  dengan  Cina  di  sebelah  timur laut Nusantara. Jalur ini merupakan pintu gerbang pelayaran yang dikenal dengan nama 'jalur sutra'. Penamaan ini digunakan sejak abad ke-1 M hingga abad ke-16 M, dengan komoditas kain sutera yang  dibawa  dari  Cina  untuk  diperdagangkan  di  wilayah  lain. Ramainya rute pelayaran ini mendorong timbulnya bandar-bandar penting di sekitar jalur, antara lain Samudra Pasai, Malaka, dan Kota Cina (Sumatra Utara sekarang).
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p160_099.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan aktivitas perahu di laut. Gambar ini menggambarkan beberapa perahu dengan berbagai ukuran dan bentuk, termasuk kapal besar dengan layar besar, perahu kecil, dan perahu tradisional. Perahu-perahu tersebut tampak berlayar di atas air yang cerah, dengan latar belakang pemandangan pantai dan gunung. Ilustrasi ini mungkin digunakan untuk membantu pembaca memahami konsep tentang perahu dan aktivitas nelayan.
+
+Elemen-elemen utama dalam gambar ini meliputi perahu-perahu yang berlayar, air laut yang cerah, dan pemandangan pantai dengan gunung. Relasi antara elemen-elemen ini adalah bahwa perahu-perahu tersebut berlayar di atas air, sementara pemandangan pantai dan gunung menjadi latar belakang. 
+
+Teks, angka, atau label penting yang terlihat dalam gambar ini tidak ada, karena gambar ini hanya menggambarkan objek-objek tanpa teks atau angka tambahan.
+
+Informasi kunci yang dapat diambil pembaca dari gambar ini adalah bahwa aktivitas perahu di laut merupakan bagian dari kehidupan nelayan dan pentingnya perahu dalam kegiatan nelayan. Gambar ini juga menunjukkan keindahan alam seperti laut dan pemandangan pantai.
+
+Gambar 2.49 Pelayaran dan Perdagangan internasional melalui Selat Malaka.
+
+
+<br>
+
+
+---
+## 📄 Halaman 161
+
+Kehidupan  penduduk  di  sepanjang  Selat  Malaka  menjadi lebih  sejahtera  oleh  proses  integrasi  perdagangan  dunia  yang melalui  jalur  laut  tersebut.  Mereka  menjadi  lebih  terbuka  secara sosial ekonomi untuk menjalin hubungan niaga dengan pedagangpedagang asing yang melewati jalur itu. Di samping itu, masyarakat setempat juga semakin terbuka oleh pengaruhpengaruh  budaya  luar.  Kebudayaan  India  dan Cina ketika itu jelas sangat berpengaruh terhadap masyarakat  di sekitar Selat  Malaka.  Bahkan sampai saat ini pengaruh budaya terutama India masih dapat kita jumpai pada masyarakat sekitar Selat Malaka.
+
+Untuk memahami lebih lanjut  kamu  dapat  membaca buku Sartono Kartodirdjo. Pengantar Sejarah Indonesia  Baru  1500-1900: Dari Emporium sampai Empirium.
+
+Selama  masa  Hindu-Buddha  di  samping  kian  terbukanya jalur niaga Selat Malaka dengan perdagangan dunia internasional, jaringan  perdagangan  dan  budaya  antarbangsa  dan  penduduk di  Kepulauan  Indonesia  juga  berkembang  pesat  terutama  karena terhubung  oleh  jaringan  Laut  Jawa  hingga  Kepulauan  Maluku. Mereka secara tidak langsung juga terintegrasikan dengan jaringan ekonomi dunia yang berpusat di sekitar Selat Malaka, dan sebagian di pantai barat Sumatra seperti Barus. Komoditas penting yang menjadi  barang  perdagangan  pada  saat  itu adalah  rempah-rempah,  seperti  kayu  manis, cengkih, dan pala.
+
+Pertumbuhan jaringan dagang internasional dan antarpulau telah melahirkan kekuatan politik baru di Nusantara. Peta politik di Jawa dan Sumatra abad ke-7, seperti ditunjukkan oleh D.G.E. Hall, bersumber dari catatan  pengunjung  Cina  yang  datang  ke Sumatra. Dua negara di Sumatra disebutkan, Mo-lo-yeu (Melayu) di pantai timur, tepatnya di Jambi sekarang di muara Sungai Batanghari. Agak ke selatan dari itu terdapat
+
+Sumber: Pameran Sejarah-Budaya Asia Tenggara:  Sriwijaya,  sebuah  Kejayaan  masa lalu di Asia Tenggara, 2011, Kementerian Kebudayaan dan Pariwisata, Direktorat Jenderal Sejarah  dan  Purbakala,  Direktorat Tinggalan Purbakala.
+
+
+<br>
+
+
+---
+## 📄 Halaman 162
+
+Gambar 2.51 Relief terakota yang menggambarkan paras muka Arab atau
+
+Persia
+
+Che-li-fo-che , pengucapan cara Cina untuk kata bahasa  Sanskerta , Sriwijaya.  Di  Jawa  terdapat tiga  kerajaan  utama,  yaitu  di  ujung  barat  Jawa, terdapat  Tarumanegara,  dengan  rajanya  yang terkemuka Purnawarman, di Jawa bagian tengah ada Ho-ling (Kalingga), dan di Jawa bagian timur ada Singhasari dan Majapahit.
+
+Selama  periode  Hindhu-Buddha,  kekuatan besar Nusantara yang memiliki kekuatan integrasi secara  politik,  sejauh  ini  dihubungkan  dengan kebesaran  Kerajaan  Sriwijaya, Singhasari,  dan Majapahit.  Kekuatan  integrasi  secara  politik  di sini  maksudnya  adalah  kemampuan  kerajaankerajaan  tradisional  tersebut  dalam  menguasai wilayah-wilayah yang luas di Nusantara di bawah kontrol politik secara longgar dan menempatkan wilayah kekuasaannya itu sebagai kesatuankesatuan politik di bawah  pengawasan  dari kerajaan-kerajaan tersebut. Dengan demikian pengintegrasian  antarpulau  secara  lambat  laun mulai terbentuk.
+
+Kerajaan  utama  yang  disebutkan  di  atas berkembang dalam periode yang berbeda-beda. Kekuasaan mereka mampu mengontrol sejumlah wilayah Nusantara melalui berbagai bentuk media.  Selain  dengan  kekuatan  dagang,  politik, juga kekuatan budayanya, termasuk bahasa. Interelasi  antara  aspek-aspek  kekuatan  tersebut yang membuat mereka berhasil mengintegrasikan Nusantara dalam pelukan kekuasaannya. Kerajaan-kerajaan  tersebut  berkembang  menjadi kerajaan  besar  yang  menjadi  representasi  pusatpusat kekuasaan yang kuat dan mengontrol kerajaan-kerajaan yang lebih kecil di Nusantara.
+
+
+<br>
+
+
+---
+## 📄 Halaman 163
+
+Hubungan pusat dan daerah hanya dapat berlangsung  dalam  bentuk  hubungan  hak  dan kewajiban  yang  saling  menguntungkan  ( mutual beneit ).  Keuntungan  yang  diperoleh  dari  pusat kekuasaan antara lain, berupa pengakuan simbolik seperti kesetiaan dan pembayaran upeti berupa  barang-barang  yang  digunakan  untuk kepentingan kerajaan, serta barang-barang yang dapat diperdagangkan dalam jaringan perdagangan internasional. Sebaliknya kerajaankerajaan  kecil  memperoleh  perlindungan  dan rasa aman, sekaligus kebanggaan atas hubungan tersebut. Jika pusat kekuasaan sudah tidak memiliki  kemampuan  dalam  mengontrol  dan melindungi  daerah  bawahannya,  maka  sering terjadi pembangkangan dan sejak itu kerajaan besar terancam disintegrasi. Kerajaan-kerajaan kecil lalu melepaskan diri dari ikatan politik dengan kerajaankerajaan besar lama dan beralih loyalitasnya dengan  kerajaan  lain  yang  memiliki  kemampuan mengontrol dan lebih bisa melindungi kepentingan mereka.  Sejarah  Indonesia  masa  Hindu-Buddha ditandai oleh proses integrasi dan disintegrasi semacam  itu.  Namun  secara  keseluruhan  proses integrasi  yang  lambat  laun  itu  kian  mantap  dan kuat, sehingga kian mengukuhkan Nusantara sebagai negeri kepulauan yang dipersatukan oleh kekuatan politik dan perdagangan.
+
+
+<br>
+
+
+---
+## 📄 Halaman 164
+
+
+### Uji Kompetensi
+
+- Jelaskan  bagaimana  peranan  Sriwijaya  dan  Majapahit  dalam proses integrasi antarpulau pada masa Hindu-Buddha!
+- Buatlah  peta  jaringan  perdagangan  pada  masa  Sriwijaya  dan masa Majapahit!
+- Komoditas  apa  yang  menarik  bagi  kaum  pedagang  untuk mendatangi  pelabuhan  yang  ada  di  Kepulauan  Indonesia? Bandingkan  dengan  perdagangan  saat  ini,  komoditas  apakah yang diminati dalam perdagangan internasional?
+- Carilah pelabuhan yang terdekat dengan kota yang ada di sekitar daerah tempat tinggalmu. Bagaimanakah menurut pendapatmu tentang pelabuhan itu?
+- Pada pembahasan ini kita telah membahas tentang peran laut pada masa Hindu-Buddha.  Apa pendapatmu tentang peran laut pada saat ini bagi negara Indonesia? Buatlah dalam bentuk esai sekitar 3-4 halaman!
+Kompas selama dua hari berturut-turut (30-31 Maret 2013) membuat liputan tentang jelajah kuliner. Mari kita simak artikel itu bersama-sama:
+
+'Orang India Selatan datang bergelombang ke Sumatra sejak ribuan tahun silam. Jejak migrasi itu antara lain terekam di antara harum bumbu kari dan keagungan Kuil Shri Mariamman di Medan, Sumatra  Utara.  Kuil  itu  adalah  tapal  sejarah  gelombang  terbesar kedatangan  orang  India  Selatan  ke  Sumatra  demi  rempah  dan kapur barus, gelombang terbesar orang India pada tahun 1880-an didatangkan Kuypers dan Nienhuys sebagai buruh perkebunan'.
+
+
+<br>
+
+
+---
+## 📄 Halaman 165
+
+- Setelah  kamu  mencermati  cuplikan  artikel  di  atas,  bagaimana kesan kamu tentang bacaan di atas?
+- Menurut kamu bagaimanakah pengaruh budaya India itu dapat diterima oleh penduduk saat itu?
+- Coba kamu gali jenis kuliner yang terdapat di sekitar kamu yang mendapat pengaruh dari India!
+- Bagaimanakah proses masuk dan berkembangnya kuliner yang mendapat pengaruh India itu di sekitar kamu?
+- Apakah saat ini masih ada pengaruh budaya India yang masih melekat dalam kehidupan kita sehari-hari? Berilah contohnya!
+- Budaya Cina juga membawa pengaruh pada kuliner kita saat ini. Coba kamu identifikasi, pengaruh budaya Cina pada kuliner di sekitar tempat tinggalmu!
+
+### D. Akulturasi Kebudayaan Nusantara dan Hindu-Buddha
+
+Akulturasi kebudayaan  yaitu suatu proses  percampuran antara  unsur-unsur  kebudayaan  yang  satu  dengan  kebudayaan yang  lain,  sehingga  membentuk  kebudayaan  baru.  Kebudayaan baru yang merupakan  hasil percampuran itu masing-masing tidak kehilangan kepribadian/ciri khasnya. Oleh karena itu, untuk dapat berakulturasi, masing-masing kebudayaan harus seimbang. Begitu  juga  untuk  kebudayaan  Hindu-Buddha  dari  India  dengan kebudayaan Indonesia asli.
+
+Contoh  hasil  akulturasi  antara  kebudayaan  Hindu-Buddha dengan kebudayaan Indonesia asli sebagai berikut.
+
+
+<br>
+
+
+---
+## 📄 Halaman 166
+
+
+### 1. Seni Bangunan
+
+Bentuk-bentuk bangunan candi di Indonesia pada umumnya merupakan  bentuk  akulturasi  antara  unsur-unsur  budaya  HinduBuddha  dengan  unsur  budaya  Indonesia  asli.  Bangunan  yang megah,  patung-patung  perwujudan  dewa  atau  Buddha,  serta bagian-bagian  candi  dan  stupa  adalah  unsur-unsur  dari  India. Bentuk  candi-candi  di  Indonesia  pada  hakikatnya  adalah  punden berundak yang merupakan unsur Indonesia asli. Candi Borobudur merupakan salah satu contoh dari bentuk akulturasi tersebut.
+
+
+### 2. Seni Rupa dan Seni Ukir
+
+Masuknya  pengaruh  India  juga  membawa  perkembangan dalam bidang seni  rupa,  seni  pahat,  dan  seni  ukir.  Hal  ini  dapat
+
+
+<br>
+
+
+---
+## 📄 Halaman 167
+
+dilihat  pada  relief  atau  seni  ukir  yang  dipahatkan  pada  bagian dinding-dinding  candi.  Misalnya,  relief  yang  dipahatkan  pada dinding-dinding  pagar  langkan  di  Candi  Borobudur  yang  berupa pahatan  riwayat  Sang  Buddha.  Di  sekitar  Sang  Buddha  terdapat lingkungan alam Indonesia seperti rumah panggung dan burung merpati.
+
+Gambar 2.57 Relief binatang pada Candi Borobudur
+
+Pada  relief  kala  makara  pada  candi  dibuat  sangat  indah. Hiasan  relief  kala  makara,  dasarnya  adalah  motif  binatang  dan tumbuh-tumbuhan.  Hal  semacam  ini  sudah  dikenal  sejak  masa sebelum Hindu. Binatang-binatang itu dipandang suci, maka sering diabadikan dengan cara di lukis.
+
+
+### 3.      Seni Pertunjukan
+
+Menurut  J.L.A  Brandes,  gamelan  merupakan  satu  diantara seni pertunjukan asli yang dimiliki oleh bangsa Indonesia sebelum masuknya  unsur-unsur  budaya  India.  Selama  waktu  berabadabad gamelan juga mengalami perkembangan dengan masuknya unsur-unsur budaya baru baik dalam bentuk maupun kualitasnya. Gambaran mengenai bentuk gamelan Jawa kuno masa Majapahit dapat dilihat pada beberapa sumber, antara lain prasasti dan kitab kesusastraan. Macam-macam gamelan dapat dikelompokkan dalam chordaphones, aerophones, membranophones, tidophones, dan xylophones .
+
+
+<br>
+
+
+---
+## 📄 Halaman 168
+
+
+### 4. Seni Sastra dan Aksara
+
+Pengaruh  India  membawa  perkembangan  seni  sastra  di Indonesia. Seni sastra waktu itu ada yang berbentuk prosa dan ada yang berbentuk tembang (puisi). Berdasarkan isinya, kesusastraan dapat  dikelompokkan  menjadi  tiga,  yaitu  tutur  (pitutur  kitab keagamaan), kitab hukum, dan wiracarita (kepahlawanan). Bentuk wiracarita  ternyata  sangat  terkenal  di  Indonesia,  terutama  kitab Ramayana dan Mahabarata .  Kemudian  timbul  wiracarita  hasil gubahan dari para pujangga Indonesia. Misalnya, Baratayuda yang digubah oleh Mpu Sedah dan Mpu Panuluh. Juga munculnya ceritacerita Carangan.
+
+Berkembangnya karya sastra terutama yang bersumber dari Mahabarata dan Ramayana , melahirkan seni pertunjukan wayang kulit  (wayang  purwa).  Pertunjukan  wayang  kulit  di  Indonesia, khususnya di Jawa sudah begitu mendarah daging. Isi dan cerita pertunjukan wayang banyak mengandung nilai-nilai yang bersifat edukatif  (pendidikan).  Cerita  dalam  pertunjukan  wayang  berasal dari  India,  tetapi  wayangnya  asli  dari  Indonesia.  Seni  pahat  dan ragam  luas  yang  ada  pada  wayang  disesuaikan  dengan  seni  di Indonesia.
+
+
+<br>
+
+
+---
+## 📄 Halaman 169
+
+Di  samping  bentuk  dan  ragam  hias  wayang, muncul  pula  tokoh-tokoh  pewayangan  yang  khas Indonesia. Misalnya tokoh-tokoh punakawan seperti Semar,  Gareng,  dan  Petruk.  Tokoh-tokoh  ini  tidak ditemukan di  India.  Perkembangan  seni  sastra  yang sangat cepat didukung oleh penggunaan huruf pallawa,  misalnya  dalam  karya-karya  sastra  Jawa Kuno. Pada prasasti-prasasti yang ditemukan terdapat unsur India dengan unsur budaya Indonesia. Misalnya, ada prasasti dengan huruf Nagari (India) dan huruf Bali Kuno (Indonesia).
+
+
+### 5. Sistem Kepercayaan
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p169_110.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menampilkan sebuah makhluk mitologis tradisional Asia Tenggara, yang dikenal sebagai Naga. Makhluk ini memiliki ekor panjang yang bergerigi, tubuh berbulu, dan mulut yang besar dengan gigi berbentuk tajam. Naga ini tampak seperti sedang berdiri dengan posisi yang tegar, menunjukkan kekuatan dan keberanian.
+
+Elemen-elemen utama dalam gambar meliputi Naga, ekor, bulu, dan mulut. Ekor Naga tampak sangat panjang dan bergerigi, menunjukkan kekuatan fisik makhluk tersebut. Bulu-bulu yang halus dan berkilau tampak di sepanjang tubuh Naga, menambahkan detail estetika pada penampilannya. Mulut Naga yang besar dan bergerigi menunjukkan kekuatan dan keberanian, serta mungkin juga menunjukkan kemampuan untuk mengeluarkan suara yang kuat.
+
+Teks, angka, atau label penting tidak terlihat dalam gambar ini. Namun, informasi kunci yang dapat diambil pembaca meliputi penampilan Naga, karakteristik ekornya, dan posisi tubuhnya yang tegar. Gambar ini mungkin digunakan untuk membantu pembaca memahami konsep atau karakteristik Naga dalam konteks budaya atau mitologi.
+
+Sejak masa praaksara, orang-orang di Kepulauan Indonesia sudah  mengenal  simbol-simbol  yang  bermakna  filosofis.  Sebagai contoh, kalau ada orang meninggal, di dalam kuburnya disertakan benda-benda.  Di  antara benda-benda  itu ada lukisan  orang naik  perahu,  ini  memberikan  makna  bahwa  orang  yang  sudah meninggal tersebut rohnya akan melanjutkan perjalanan ke tempat tujuan yang membahagiakan yaitu alam baka. Masyarakat waktu itu sudah percaya adanya kehidupan sesudah mati, yakni sebagai roh halus. Oleh karena itu, roh nenek moyang dipuja oleh orang yang masih hidup (animisme).
+
+Setelah  masuknya  pengaruh  India  kepercayaan  terhadap roh halus tidak punah. Misalnya dapat dilihat pada fungsi candi. Fungsi candi atau kuil di India adalah sebagai tempat pemujaan. Di  Indonesia,  di  samping  sebagai  tempat  pemujaan,  candi  juga sebagai makam raja atau untuk menyimpan abu jenazah raja yang telah meninggal. Itulah sebabnya peripih tempat penyimpanan abu jenazah raja didirikan patung raja dalam bentuk mirip dewa yang dipujanya.  Ini  jelas  merupakan  perpaduan  antara  fungsi  candi  di India dengan tradisi pemakaman dan pemujaan roh nenek moyang di Indonesia.
+
+
+<br>
+
+
+---
+## 📄 Halaman 170
+
+Bentuk bangunan lingga dan yoni juga merupakan tempat pemujaan terutama bagi orang-orang Hindu penganut Syiwaisme. Lingga  adalah  lambang  Dewa  Syiwa.  Secara  filosofis  lingga  dan yoni adalah lambang kesuburan dan lambang kemakmuran. Lingga lambang laki-laki dan yoni lambang perempuan.
+
+
+### 6. Sistem Pemerintahan
+
+Setelah  datangnya  pengaruh  India  di  Kepulauan  Indonesia, dikenal adanya sistem pemerintahan secara sederhana. Pemerintahan yang dimaksud adalah semacam pemerintah di suatu desa atau daerah tertentu. Rakyat mengangkat seorang pemimpin atau semacam kepala suku. Orang yang dipilih sebagai pemimpin biasanya orang yang sudah tua (senior), arif, dapat membimbing, memiliki  kelebihan-kelebihan  tertentu  termasuk  dalam  bidang ekonomi,  berwibawa,  serta  memiliki  semacam  kekuatan  gaib (kesaktian).  Setelah  pengaruh  India  masuk,  maka  pemimpin  tadi diubah menjadi raja dan wilayahnya disebut kerajaan. Hal ini secara jelas terjadi di Kutai.
+
+Salah  satu  bukti  akulturasi  dalam  bidang  pemerintahan, misalnya  seorang  raja  harus  berwibawa  dan  dipandang  memiliki kekuatan  gaib  seperti  pada  pemimpin  masa  sebelum  HinduBuddha.  Karena  raja  memiliki  kekuatan  gaib,  maka  oleh  rakyat raja dipandang dekat dengan dewa. Raja kemudian disembah, dan kalau sudah meninggal, rohnya dipuja-puja.
+
+
+### 7.      Arsitektur
+
+Bentuk  alkulturasi  budaya  lain  yang  dapat  dilihat  hingga saat ini adalah arsitektur pada bangunan-bangunan keagamanan. Bangunan keagamaan berupa candi atau arca sangat dikenal pada masa Hindu-Buddha. Hal ini terlihat pada sosok bangunan sakral peninggalan Hindu seperti Candi Sewu, Candi Gedungsongo, dan masih banyak lagi. Juga bangunan pertapaan - wihara merupakan bangunan  berundak.  Bangunan  ini  dapat  dilihat  pada  beberapa Candi  Plaosan,  Candi  Jalatunda,  Candi  Tikus,  dan  masih  banyak lagi.  Bentuk  lain  berupa  stupa  berundak  yang  dapat  dilihat  pada
+
+
+<br>
+
+
+---
+## 📄 Halaman 171
+
+bangunan  Borobudur.  Di  samping  itu  juga  terdapat  bangunan Gua, seperti Gua Selomangkleng Kediri, dan Gua Gajah. Bangunan lainnya dapat berupa gapura paduraksa seperti Candi Bajangratu, Candi  Jedong,  dan  Candi  Plumbangan.  Untuk  memahami  lebih lanjut  baca  buku  Agus  A.  Munandar, Sejarah Kebudayaan Indonesia .
+
+Bangunan suci berundak itu sebenarnya sudah berkembang subur dalam zaman praaksara, sebagai penggambaran dari alam semesta yang bertingkat-tingkat. Tingkat paling atas adalah tempat persemayaman roh nenek moyang. Punden berundak itu menjadi sarana  khusus  untuk  persembahyangan  dalam  rangka  pemujaan terhadap roh nenek moyang.
+
+Pemikiran  dasar  dan  filsafat  yang  melandasi  kepercayaan ini  terus  hidup  di  dalam  alam  kehidupan,  meskipun  tidak  begitu tampil di permukaan. Sebagai lokal genius yang menentukan arah perkembangan kebudayaan Indonesia dalam mengolah pengaruh Hindu-Buddha  maka  unsur-unsur  praaksara  itu  makin  nampak pengaruhnya. Ungkapan-ungkapan seperti candi, misalnya dipahami maknanya hanya sebagai pemujaan roh nenek moyang. Alas atau kaki candi berbentuk persegi/bujursangkar, berketinggian menyerupai batur dan dicapai melalui tangga yang langsung dapat menuju  bilik  candi.  Di  tengah  kaki  candi  terdapat  perigi  tempat menanam peripih. Bagian kaki candi disimbolkan sebagai Bhurloka dalam ajaran Hindu atau Kamaloka dalam ajaran Buddha.
+
+Denah bagian tubuh candi pada umumnya berdimensi lebih kecil dari alasnya, sehingga membentuk serambi. Bagian tubuh ini dapat berbentuk kubus atau silinder yang berisi satu atau empat bilik.  Pada  candi  Hindu  lubang  perigi  yang  ditutup  yoni  terdapat di tengah bilik utama, dinding luar terdapat relung-relung yang isi arca. Pada bagian atas setiap pintu masuk candi dihiasi kepala kala yang dikenal sebagai banaspati, yaitu lambang penjaga.
+
+
+<br>
+
+
+---
+## 📄 Halaman 172
+
+Bagian atap candi selalu terdiri atas susunan tingkatan yang mengecil ke atas, dan diakhiri dengan mahkota. Mahkota ini dapat berupa  stupa,  lingga,  ratna,  atau  berbentuk  kubus.  Bagian  atap candi  disimbolkan  sebagai  tempat  persemayaman  dewa.  Khusus untuk candi-candi Buddha menggunakan stupa sebagai elemennya.
+
+Secara keseluruhan candi menggambarkan hubungan makrokosmos atau alam semesta yang dibagi menjadi tiga, yaitu alam bawah tempat manusia yang masih mempunyai nafsu, alam antara  tempat  manusia  telah  meninggalkan  keduniawian  dan dalam  keadaan  suci  menemui  Tuhannya,  dan  alam  atas  tempatdewa-dewa.
+
+
+### Uji Kompetensi
+
+- Buatlah  ringkasan  tulisan  tentang  bab  ini  dalam  dua  format berbeda:  (i)  dalam  bentuk  bagan  atau  skema-skema  dengan keterangan  singkat  dan  (ii)  narasi  tentang  bagan  pada  tugas pertama  sekitar  satu  sampai  dua  halaman  untuk  membantu menjelaskan keringkasan dalam tugas pertama (bagan)! Carilah bahan bacaan terkait dengan pembahasan ini!
+- Buatlah pertanyaan kritis mengenai tahap-tahap sejarah HinduBuddha  sejak  zaman  praaksara  hingga  terbentuknya  sistem organisasi kenegaraan (kerajaan) tradisional yang tersebar di  Nusantara.  Masing-masing  peserta  didik  diminta  memilih dan membuat deskripsi profil salah satu kerajaan tersebut dan menyusun pertanyaan-pertanyaan kritis dalam kaitannya dengan kepemimpinannya,  ketatanegaraannya  dan  kisah  sukses  serta kegagalannya.  Bagaimana pendapat kamu tentang hipotesis ahli mengenai hubungan budaya Hindu-Buddha dengan Nusantara? Diskusikan hasil tulisan kamu!
+
+<br>
+
+
+---
+## 📄 Halaman 173
+
+- Cobalah eksplorasi (jelajah) apakah sisa-sisa kebudayaan material ( material culture ) dan kebudayaan kerohanian ( spiritual culture ) masa  Hindu-Buddha  masih  ada  di  lingkungan  tempat  tinggal kamu  atau  di  kampung  asal  nenek  atau  orang  tua  kamu? Deskripsikan bentuk-bentuk peninggalan itu dan adakah sesuatu (gagasan) yang berharga jika dikaitkan dengan masa sekarang?
+- Tulis  tugasmu  dalam  satu  esei  pendek.  Terbitkan  dalam  koran lokal atau majalah sekolah!
+
+### Kesimpulan
+
+- Sejak  semula  tampak  bahwa  letak  geografis  Nusantara  (yang kemudian  menjadi  Indonesia)  memainkan  peran  utama  sejak zaman praaksara. Faktor geografis ini tampaknya merupakan faktor permanen dalam perjalanan sejarah Indonesia sepanjang masa. Peran itu  ditunjukkan  di  zaman  Hindu-Buddha,  ketika  jalur  utama  dalam pelayaran  samudra  semakin  pesat  dan  mengintegrasikan  daerah antarpulau.  Kondisi  demikian  didukung  dengan  keterlibatan  nenek moyang kita secara aktif  dalam  perdagangan laut,  dan  mengarungi lautan. Ini pada gilirannya telah menumbuhkan kekuatan ekonomi dan politik  yang  besar  di  Nusantara  sehingga  mampu  mengintegrasikan wilayah-wilayah di Nusantara terutama era Kerajaan Sriwijaya, Singhasari dan Majapahit.
+- Silang  budaya  Nusantara  di  zaman  praaksara  terlihat  jelas  ketika pengaruh budaya Austronesia masuk. Sebagian besar dimungkinkan berkat  posisi  silang  letak  geografis  Nusantara  (di  antara  dua  benua dan dua samudra). Sekali lagi pola itu diulangi lewat integrasi budaya dominan  seperti  Hindu-Buddha.  Sumbangan  terbesar  dari  zaman Hindu-Buddha ialah  membebaskan Nusantara dari  zaman  praaksara
+
+<br>
+
+
+---
+## 📄 Halaman 174
+
+dan memberi jalan bagi kemajuan ilmu pengetahuan dan teknologi untuk zamannya. Budaya tulis tetap merupakan bagian penting dalam perkembangan  peradaban  sampai  hari  ini.  Meskipun  sekarang  kita sudah mengenal media cyber (media maya), budaya tulisan tidak akan pernah ditinggalkan dan bahkan akan semakin maju apabila generasi kita semakin menguasai bahasa tulis.
+
+- Interaksi antara budaya Nusantara dengan budaya dominan HinduBuddha waktu itu, menunjukkan budaya Indonesia bukanlah penerima yang pasif, melainkan aktif. Jadi terjadi upaya seleksi ( ilter ) tanpa perlu merendahkan, apa lagi mengucilkan budaya asli nenek moyang yang sebelumnya. Proses inilah yang dinamakan proses 'akulturasi budaya'. Bangsa Indonesia juga melahirkan modifikasi-modifikasi lokal genius, yaitu semacam kritik dan mempertanyakan budaya yang lama sambil memperbarui  dan  memperkuatnya  sehingga  mampu  menghasilkan peradaban tinggi ( great tradition ) hasil modifikasi dari interaksi budaya asli Kepulauan Indonesia dengan budaya Hindu-Buddha.
+- Tumbuhnya  negara-negara  tradisional  (kerajaan)  yang  bercorak Hindu-Buddha tidak hanya mewariskan peninggalan-peninggalan sejarah dengan peradaban yang lebih tinggi dari masa nenek moyang sebelumnya,  tetapi  juga  semacam  mahakarya  yang  abadi  seperti Borobudur.  Lebih  dari  itu  kekayaan  pemikiran  mengenai  konsep kekuasaan, bahasa, dan sastra serta kosmologi alam makro dan mikro. Kesemuanya terekspresikan  dalam  perilaku  sehari-hari  dan  sebagian besar masih hidup dalam masyarakat sampai sekarang.
+
+<br>
+
+
+---
+## 📄 Halaman 175
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p175_111.png)
+
+> **Deskripsi Visual:** Gambar ini menunjukkan sebuah masjid yang megah dengan arsitektur yang indah. Masjid memiliki tiga menara besar dengan puncak berbentuk kupola yang mencolok. Menara ini dihiasi dengan ornamen yang rapi dan warna-warna cerah. Atap masjid juga dilapisi dengan material yang sama, menciptakan kesan harmonis. Di depan masjid terdapat kolam air yang luas, yang tampaknya digunakan untuk bersantai atau berenang. Pada bagian depan masjid terdapat pintu masuk yang besar dengan desain yang elegan. Di sekeliling masjid terdapat jalan yang rata dan teratur, serta beberapa bangunan kecil yang mungkin berfungsi sebagai fasilitas umum bagi pengunjung. Gambar ini menunjukkan keindahan dan keagungan masjid tersebut, serta menunjukkan bagaimana arsitektur tradisional telah diterapkan dalam pembangunannya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 176
+
+
+### Bab III
+
+
+### Islamisasi dan Silang Budaya di Nusantara
+
+Islamisasi  adalah  proses  sejarah  yang  panjang  yang  bahkan sampai  kini  masih  terus  berlanjut…  Kalau  para  ahli  sejarah mempersoalkan tentang asal usul nasionalisme Indonesia, atau integrasi bangsa, mereka menyebutkan Islam sebagai salah satu faktor  utama  maka  hal  itu  bisa  diartikan  pada  sifat  Islam  yang universal  dan  pada  jaringan  ingatan  kolektif  yaitu  keterkaitan para ulama di Nusantara dalam berbagai corak jaringan sosial guru-murid,  murid  sesama  murid;  penulis-dan-pembaca,  dan tak  kurang  pentingnya  ulama-umara  serta  ulama  dan  umat. (Tauik  Abdullah,  1996)
+
+Kedatangan Islam ke Nusantara mempunyai sejarah yang panjang. Satu  di  antaranya  adalah  tentang  interaksi  ajaran  Islam  dengan masyarakat  di  Nusantara  yang  kemudian  memeluk  Islam.  Lewat jaringan perdagangan, Islam dibawa masuk sampai ke lingkungan istana. Interaksi budaya Islam dengan budaya yang ada sebelumnya memunculkan  sebuah  jaringan  keilmuan,  akulturasi  budaya  dan perkembangan  kebudayaan  Islam.  Uraian  berikut  akan  mencoba menjabarkan  proses  Islamisasi  di  Indonesia  dan  mengurai  simpul dari silang budaya yang sampai kini masih terus berlanjut.
+
+
+<br>
+
+
+---
+## 📄 Halaman 177
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p177_112.png)
+
+> **Deskripsi Visual:** Gambar ini adalah diagram yang menunjukkan proses Islamisasi dan Silang Budaya di Nusantara. Diagram ini dimulai dengan "Islamisasi dan Silang Budaya di Nusantara" dan berakhir dengan "Proses Integrasi Nusantara". Proses dimulai dari "Kedatangan Islam di Nusantara", yang kemudian membentuk "Islam Masuk Istana Raja" dan "Islam dan Jaringan Perdagangan antarpulau". "Jaringan Keilmuan di Nusantara" dan "Akulturasi dan Perkembangan Budaya Islam" juga dibentuk melalui "Islam Masuk Istana Raja". "Kerajaan Islam di Sumatra, Jawa, Kalimantan, Sulawesi, Maluku, Papua dan Nusa Tenggara" menyebabkan "Proses Integrasi Nusantara". Teks, angka, atau label penting yang terlihat adalah "Islamisasi dan Silang Budaya di Nusantara", "Kedatangan Islam di Nusantara", "Islam Masuk Istana Raja", "Islam dan Jaringan Perdagangan antarpulau", "Jaringan Keilmuan di Nusantara", "Akulturasi dan Perkembangan Budaya Islam", "Kerajaan Islam di Sumatra, Jawa, Kalimantan, Sulawesi, Maluku, Papua dan Nusa Tenggara", dan "Proses Integrasi Nusantara". Informasi kunci yang dapat diambil pembaca adalah bahwa proses Islamisasi dan silang budaya di Nusantara melibatkan kedatangan Islam, jaringan perdagangan antar pulau, jaringan keilmuan, akulturasi budaya, dan integrasi nasional.
+
+
+<br>
+
+
+---
+## 📄 Halaman 178
+
+
+### TUJUAN PEMBELAJARAN
+
+Setelah mempelajari uraian ini, diharapkan kamu dapat:
+
+- menganalisis kedatangan Islam di Nusantara,
+- mengenal kerajaan Islam yang ada di Nusantara,
+- mendeskripsikan akulturasi dan perkembangan budaya Islam
+
+### A.   Kedatangan Islam ke Nusantara
+
+
+###  Mengamati Lingkungan
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p178_113.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan jalur perdagangan antara Asia Timur dan Barat pada masa Dinasti Song di China. Ilustrasi ini menggambarkan dua jalur utama perdagangan: jalur laut melalui Laut Cina Selatan menuju India dan Asia Tenggara, serta jalur darat melalui Asia Tenggara menuju Eropa.
+
+Elemen utama dalam gambar ini termasuk dua kapal besar yang mewakili jalur laut, berada di bagian tenggara dan barat laut ilustrasi. Jalur darat juga diperlihatkan dengan dua jalur utama, satu menuju India dan satu menuju Eropa, dengan peta yang menunjukkan lokasi kota-kota penting seperti Baghdad, Teheran, Madinah, dan beberapa kota lainnya di Asia Tenggara.
+
+Teks, angka, atau label penting yang terlihat dalam gambar ini meliputi nama-nama kota dan jalur perdagangan, serta angka yang mungkin menunjukkan jarak atau waktu perjalanan.
+
+Informasi kunci yang dapat diambil pembaca meliputi bahwa ada dua jalur utama perdagangan antara Asia Timur dan Barat pada masa Dinasti Song, dengan jalur laut melalui Laut Cina Selatan menuju India dan Asia Tenggara, serta jalur darat melalui Asia Tenggara menuju Eropa. Gambar ini juga menunjukkan bahwa ada hubungan perdagangan yang kuat antara kota-kota penting di Asia Tenggara, India, dan Eropa pada masa itu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 179
+
+Gambar di depan memperlihatkan jalur masuknya Islam ke Nusantara yang kemudian melahirkan sebuah interaksi antara ajaran Islam  dengan penduduk Nusantara. Wujud dari keberlangsungan interaksi  yang  hingga  kini  masih  terlihat  adalah  banyaknya  umat Muslim  Indonesia  yang  menjalankan  ibadah  haji  dan  umrah. Di  samping  itu  tidak  sedikit  para  ulama  dari  Timur  Tengah  yang berkunjung  ke  Indonesia  dalam  rangka  berdakwah.  Bagi  umat Islam di Indonesia, berbagai bentuk interaksi tersebut akan semakin memantapkan keimanan dan ketakwaan terhadap ajaran agamanya. Kemudian yang menjadi pertanyaan adalah kapan dan dari mana kira-kira  pertama  kali  Islam  masuk  ke  Kepulauan  Indonesia  serta bagaimana prosesnya? Untuk mendapatkan informasi dan bahan diskusi tentang proses masuknya Islam ke Indonesia, mari kita kaji uraian berikut.
+
+
+###  Memahami Teks
+
+Terdapat  berbagai  pendapat  mengenai  proses  masuknya Islam ke Kepulauan Indonesia, terutama perihal waktu dan tempat asalnya. Pertama ,  sarjana-sarjana  Barat-kebanyakan  dari  Negeri Belanda-mengatakan  bahwa  Islam  yang  masuk  ke  Kepulauan
+
+Indonesia  berasal  dari  Gujarat  sekitar  abad  ke-13  M atau abad ke-7 H. Pendapat ini mengasumsikan bahwa Gujarat terletak di India bagian  barat,  berdekatan dengan  Laut  Arab.  Letaknya  sangat  strategis,  berada di jalur perdagangan antara timur dan barat. Pedagang Arab yang bermahzab Syafi'i telah bermukim di Gujarat dan Malabar sejak awal tahun Hijriyah (abad ke-7 M). Orang yang menyebarkan Islam ke Indonesia menurut Pijnapel bukanlah dari orang Arab langsung, melainkan para  pedagang  Gujarat  yang  telah  memeluk  Islam dan  berdagang  ke  dunia  Timur.  Pendapat  J.  Pijnapel kemudian  didukung  oleh  C.  Snouck  Hurgronye,  dan J.P. Moquetta (1912). Argumentasinya didasarkan pada
+
+Gambar 3.3 Christiaan Snouck Hurgronje
+
+
+<br>
+
+
+---
+## 📄 Halaman 180
+
+batu nisan Sultan Malik Al-Saleh yang wafat pada 17 Dzulhijjah 831 H atau 1297 M di Pasai, Aceh. Menurutnya, batu nisan di Pasai dan makam Maulana Malik Ibrahim yang wafat tahun 1419 di Gresik, Jawa Timur, memiliki bentuk yang sama dengan batu nisan yang terdapat di Kambay, Gujarat. Moquetta kemudian berkesimpulan bahwa batu nisan tersebut diimpor dari Gujarat, atau setidaknya dibuat oleh orang Gujarat atau orang Indonesia yang telah belajar kaligrafi khas Gujarat.
+
+Kedua , Hoesein Djajadiningrat mengatakan bahwa Islam yang masuk ke Indonesia berasal dari Persia (Iran sekarang). Pendapatnya didasarkan pada kesamaan budaya dan tradisi yang berkembang antara masyarakat Parsi dan Indonesia. Tradisi tersebut antara lain: tradisi merayakan 10 Muharram atau Asyuro sebagai hari suci kaum Syiah atas kematian Husein bin Ali, seperti yang berkembang dalam tradisi tabot di Pariaman di Sumatra Barat dan Bengkulu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 181
+
+Ketiga , Buya Hamka (Haji Abdul Malik Karim Amrullah)  mengatakan  bahwa  Islam  berasal dari tanah kelahirannya, yaitu Arab atau Mesir. Proses  ini  berlangsung  pada  abad  pertama Hijriah  atau  abad  ke-7  M.  Senada  dengan pendapat Hamka, teori yang  mengatakan bahwa Islam berasal dari Mekkah dikemukakan Anthony H. Johns. Menurutnya, proses Islamisasi  dilakukan  oleh  para  musafir  (kaum pengembara) yang datang ke Kepulauan Indonesia.  Kaum  ini  biasanya  mengembara dari  satu  tempat  ke  tempat  lainnya  dengan motivasi hanya pengembangan agama Islam.
+
+Semua  teori  di  atas  bukan  mengada-ada, tetapi  mungkin  bisa  saling  melengkapi.  Islamisasi di Kepulauan Indonesia merupakan hal yang kompleks dan hingga kini  prosesnya  masih  terus berjalan. Pasai dan Malaka, adalah tempat di mana tongkat estafet Islamisasi dimulai. Pengaruh Pasai kemudian  diwarisi  Aceh  Darussalam.  Sedangkan Johor  tidak  pernah  bisa  melupakan  jasa  dinasti Palembang yang pernah berjaya dan mengislamkan Malaka.  Demikian  pula  Sulu  dan  Mangindanao akan  selalu  mengingat  Johor  sebagai  pengirim Islam ke wilayahnya. Sementara itu Minangkabau akan  selalu  mengingat  Malaka  sebagai  pengirim Islam  dan  tak  pernah  melupakan  Aceh  sebagai peletak  dasar  tradisi  surau  di  Ulakan.  Sebaliknya Pahang  akan  selalu  mengingat  pendatang  dari Minangkabau yang telah membawa Islam. Peranan para perantau dan penyiar agama Islam dari Minangkabau juga selalu diingat dalam tradisi Luwu dan Gowa-Tallo.
+
+Gambar 3.5 Batu Nisan Makam Maulana Malik Ibrahim (w. 822 H/1419 H) di Gresik, Jawa Timur
+
+Salah satu naskah yang terkenal dari Sulawesi Selatan adalah I La Galigo yang berisi epik mitos penciptaan  peradaban Bugis di Sulawesi Selatan. Epik ini ditulis antara abad 13 dan 15 dalam bentuk puisi, huruf lontarak dengan bahasa Bugis Kuno. Naskah ini  sudah diakui sebagai Memory of The World oleh UNESCO pada tahun 2011.
+
+
+<br>
+
+
+---
+## 📄 Halaman 182
+
+Nah, marilah kita pelajari awal masuknya Islam di Nusantara. Pada pertengahan abad ke-15, ibu kota Campa, Wijaya jatuh ke tangan Vietnam yang datang dari utara. Dalam kenangan historis Jawa, Campa selalu diingat dalam kaitannya dengan Islamisasi. Dari sinilah Raden Rahmat anak seorang putri Campa dengan seorang Arab,  datang  ke  Majapahit  untuk  menemui  bibinya  yang  telah kawin dengan raja Majapahit. Ia kemudian dikenal sebagai Sunan Ampel salah seorang wali tertua.
+
+Sunan Giri yang biasa disebut sebagai 'paus' dalam sumber Belanda bukan saja berpengaruh di  kalangan  para  wali  tetapi  juga  dikenang sebagai  penyebar  agama  Islam  di  Kepulauan Indonesia  bagian  Timur.  Raja  Ternate  Sultan Zainal Abidin pergi ke Giri (1495) untuk memperdalam pengetahuan agama. Tak lama setelah kembali ke Ternate, Sultan Zainal Abidin mangkat, tetapi beliau telah menjadikan Ternate  sebagai  kekuatan  Islam.  Di  bagian lain, Demak telah berhasil mengislamkan Banjarmasin.  Mata  rantai  proses  Islamisasi  di Kepulauan Indonesia masih terus berlangsung. Jaringan kolektif keislaman di Kepulauan Indonesia  inilah  nantinya  yang  mempercepat proses terbentuknya nasionalisme Indonesia.
+
+
+<br>
+
+
+---
+## 📄 Halaman 183
+
+
+### Uji Kompetensi
+
+
+### Tugas Individu
+
+- Bagaimana  pendapat  kamu  tentang  berbagai  teori  masuknya Islam ke Indonesia? Jelaskan pendapat kamu!
+- Proses  Islamisasi  di  Indonesia  berlangsung  dalam  waktu  yang panjang bahkan masih terus berlangsung. Berikan penjelasan!
+- Sebutkan beberapa peran tokoh pengembang agama Islam di Indonesia!
+- Mengapa Islam bisa cepat diterima oleh masyarakat di Indonesia?
+- Coba kamu diskusikan tentang upacara tabot di Bengkulu atau tabuik  di  Pariaman!  Jelaskan  hubungannya  dengan  proses masuknya Islam ke Indonesia!
+
+### Tugas Kelompok
+
+Setelah kamu memahami proses masuk dan berkembangnya Islam di Nusantara, coba amati dan perhatikan beberapa fenomena sosial yang terkait dengan Islam di sekitar tempat tinggal kamu. Buatlah kelompok dan catatan atas permasalahan berikut ini:
+
+- Buatlah  denah  dan  peta  tentang  proses  kedatangan  Islam  di Indonesia!
+- Di  lingkungan  masyarakat  di  Indonesia  terutama  di  pedesaan masih sering ada kegiatan kenduri atau selamatan untuk suatu kegiatan,  peristiwa  atau  peringatan  kejadian  tertentu  yang disertai  dengan  doa-doa  secara  Islam,  sementara  kalau  dilihat asal usulnya di ajaran Islam tidak ada. Mengapa dan bagaimana pendapat kamu?
+
+<br>
+
+
+---
+## 📄 Halaman 184
+
+
+### B. Islam dan Jaringan Perdagangan Antarpulau
+
+
+###  Mengamati Lingkungan
+
+Kepulauan  Indonesia  memiliki  laut  dan  daratan  yang  luas. Para  nelayan  pergi  melaut  dan  pulang  dengan  membawa  hasil tangkapannya. Begitu juga di pelabuhan terlihat lalu lalang kapal yang  membongkar  dan  memuat  barang.  Sungguh  menakjubkan hamparan  laut  yang  sangat  luas  ciptaan  Tuhan.  Coba  kamu renungkan  alam  semesta,  lautan  dan  daratan  semua  diciptakanNya untuk kepentingan hidup kita. Marilah kita syukuri semua itu dengan menjaga lingkungan laut dan daratan sebaik-baiknya.
+
+Sejak lama  laut telah berfungsi  sebagai  jalur  pelayaran dan perdagangan antarsuku bangsa di Kepulauan Indonesia dan  bangsa-bangsa  di  dunia.  Pelaut  tradisional  Indonesia  telah memiliki keterampilan berlayar yang dipelajari dari nenek moyang secara  turun-temurun.  Bagi  para  pelaut,  samudra  bukan  sekadar
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p184_119.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan dua kapal perang berlayar di laut. Kapal-kapal tersebut memiliki tiga layar besar yang terpasang pada tiang-tiangnya, menunjukkan bahwa mereka mungkin merupakan kapal perang atau kapal perang laut. Kapal-kapal tersebut tampak besar dan kuat, dengan struktur yang kompleks dan detail yang rinci. Di sekitar kapal-kapal tersebut, terlihat beberapa burung yang terbang, menunjukkan bahwa mereka sedang berlayar di area yang luas dan tenang. Gambar ini memberikan gambaran yang jelas tentang ukuran kapal, desain layar, dan lingkungan sekitarnya.
+
+
+<br>
+
+
+---
+## 📄 Halaman 185
+
+suatu  bentangan  air  yang  sangat  luas.  Setiap  perubahan  warna, pola  gerak  air,  bentuk  gelombang,  jenis  burung,  dan  ikan  yang mengitarinya dapat membantu pelaut dalam mengambil keputusan atau  tindakan  untuk  menentukan  arah  perjalanan.  Sejak  dulu mereka sudah mengenal teknologi arah angin dan musim untuk menentukan perjalanan pelayaran dan perdagangan. Kapal pedagang  yang  berlayar  ke  selatan  menggunakan  musim  utara dalam  Januari  atau  Februari  dan  kembali  lagi  pulang  jika  angin bertiup  dari  selatan  dalam  Juni,  Juli,  atau  Agustus.  Angin  musim barat daya di Samudra Hindia adalah antara April sampai Agustus, cara yang paling diandalkan untuk berlayar ke timur. Mereka dapat kembali  pada  musim  yang  sama  setelah  tinggal  sebentar-tapi kebanyakan tinggal untuk berdagang-untuk menghindari musim perubahan yang rawan badai dalam Oktober dan kembali dengan musim timur laut.
+
+Bacaan berikut akan memaparkan tentang aktivitas perdagangan  antarpulau  pada  masa  awal  perkembangan  Islam di  Indonesia.  Memahami  aktivitas  pelayaran  dan  perdagangan antarpulau  yang  membawa  serta  pesan-pesan  agama  ini  dapat menjadi  pelajaran  dan  menambah  rasa  syukur  terhadap  Tuhan Yang Maha Esa.
+
+
+###  Memahami Teks
+
+Berdasarkan data arkeologis seperti prasasti-prasasti maupun data historis  berupa  berita-berita  asing,  kegiatan  perdagangan  di Kepulauan Indonesia  sudah  dimulai  sejak  abad  pertama  Masehi.  Jalurjalur pelayaran dan jaringan perdagangan Kerajaan Sriwijaya dengan negeri-negeri di  Asia  Tenggara,  India,  dan  Cina  terutama  berdasarkan berita-berita Cina telah dikaji, antara lain oleh W. Wolters (1967). Demikian pula dari catatan-catatan sejarah Indonesia dan Malaya yang  dihimpun  dari  sumber-sumber  Cina  oleh  W.P  Groeneveldt, telah menunjukkan adanya jaringan-jaringan perdagangan antara kerajaan-kerajaan di Kepulauan Indonesia dengan berbagai negeri terutama dengan Cina. Kontak dagang ini sudah berlangsung sejak
+
+
+<br>
+
+
+---
+## 📄 Halaman 186
+
+abad-abad pertama Masehi sampai dengan abad ke-16. Kemudian kapal-kapal dagang Arab juga sudah mulai berlayar ke wilayah Asia Tenggara  sejak  permulaan  abad  ke-7.  Dari  literatur  Arab  banyak sumber  berita  tentang  perjalanan  mereka  ke  Asia  Tenggara. Adanya jalur pelayaran tersebut menyebabkan munculnya jaringan perdagangan  dan  pertumbuhan  serta  perkembangan  kota-kota pusat  kesultanan  dengan  kota-kota  bandarnya  pada  abad  ke-13 sampai abad ke-18 misalnya, Samudra Pasai, Malaka, Banda Aceh, Jambi, Palembang, Siak Indrapura, Minangkabau, Demak, Cirebon, Banten,  Ternate,  Tidore,  Goa-Tallo,  Kutai,  Banjar,  dan  kota-kota lainnya.
+
+Dari  sumber  literatur  Cina,  Cheng  Ho  mencatat  terdapat kerajaan yang bercorak Islam atau kesultanan, antara lain, Samudra Pasai dan Malaka yang tumbuh dan berkembang sejak abad ke-13
+
+Gambar 3.8 Laksamana Cheng Ho sampai abad ke-15, sedangkan Ma Huan juga  memberitakan  adanya  komunitaskomunitas Muslim di pesisir utara Jawa bagian  timur.  Berita  Tome  Pires  dalam Suma Oriental (1512-1515)  memberikan gambaran mengenai keberadaan jalur  pelayaran  jaringan  perdagangan, baik  regional  maupun  internasional.  Ia menceritakan  tentang  lalu  lintas  dan kehadiran  para  pedagang  di  Samudra Pasai  yang  berasal  dari  Bengal,  Turki, Arab,  Persia, Gujarat, Kling,  Malayu, Jawa,  dan  Siam.  Selain  itu  Tome  Pires juga mencatat kehadiran para pedagang di  Malaka  dari  Kairo,  Mekkah,  Aden, Abysinia, Kilwa, Malindi, Ormuz, Persia, Rum,  Turki,  Kristen  Armenia,  Gujarat, Chaul,  Dabbol,  Goa,  Keling,  Dekkan, Malabar, Orissa, Ceylon, Bengal, Arakan, Pegu,  Siam,  Kedah,  Malayu,  Pahang, Patani,  Kamboja, Campa, Cossin Cina,
+
+
+<br>
+
+
+---
+## 📄 Halaman 187
+
+Cina, Lequeos,  Bruei,  Lucus,  Tanjung  Pura, Lawe,  Bangka,  Lingga,  Maluku,  Banda,  Bima, Timor, Madura, Jawa, Sunda, Palembang, Jambi, Tongkal, Indragiri, Kapatra, Minangkabau, Siak, Arqua, Aru, Tamjano, Pase, Pedir, dan Maladiva.
+
+Berdasarkan kehadiran sejumlah pedagang dari berbagai negeri dan bangsa di Samudra  Pasai,  Malaka,  dan  bandar-bandar di  pesisir  utara  Jawa  sebagaimana  diceritakan Tome Pires, kita dapat mengambil kesimpulan adanya jalur-jalur pelayaran dan jaringan perdagangan  antara  beberapa  kesultanan  di Kepulauan Indonesia baik yang bersifat regional maupun internasional.
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p187_121.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan dua orang pria yang tampaknya sedang berbicara atau berinteraksi. Pria di sebelah kiri mengenakan pakaian tradisional Afrika dengan baju panjang berwarna putih dan biru, serta topi berwarna merah. Pria di sebelah kanan juga mengenakan pakaian tradisional, tetapi lebih sederhana dengan baju berwarna cokelat dan topi berwarna hitam. Kedua pria tersebut tampaknya berada di dekat satu sama lain, mungkin dalam situasi yang serius atau penting. Ilustrasi ini mungkin digunakan untuk membantu pembaca memahami atau menggambarkan hubungan sosial atau budaya antara dua individu dalam konteks tradisional Afrika.
+
+Hubungan    pelayaran  dan  perdagangan  antara  Nusantara dengan Arab meningkat menjadi hubungan langsung dan dalam intensitas  tinggi.  Dengan  demikian  aktivitas  perdagangan  dan pelayaran di Samudra Hindia semakin ramai. Peningkatan pelayaran tersebut  berkaitan  erat  dengan  makin  majunya  perdagangan  di masa  jaya  pemerintahan  Dinasti  Abbasiyah  (750-1258).  Dengan ditetapkannya Baghdad menjadi pusat pemerintahan menggantikan Damaskus  (Syam),  aktivitas  pelayaran  dan  perdagangan  di  Teluk Persia menjadi lebih ramai. Pedagang Arab yang selama ini hanya berlayar sampai India, sejak abad ke-8 mulai masuk ke Kepulauan Indonesia dalam rangka perjalanan ke Cina. Meskipun hanya transit, tetapi  hubungan  Arab  dengan  kerajaan-kerajaan  di  Kepulauan Indonesia terjalin secara langsung. Hubungan ini menjadi semakin ramai  manakala  pedagang  Arab  dilarang  masuk  ke  Cina  dan koloni  mereka  dihancurkan  oleh  Huang  Chou,  menyusul  suatu pemberontakan  yang  terjadi  pada  879  H.  Orang-orang  Islam melarikan diri  dari  Pelabuhan  Kanton  dan  meminta perlindungan Raja Kedah dan Palembang.
+
+
+<br>
+
+
+---
+## 📄 Halaman 188
+
+Ditaklukkannya Malaka oleh Portugis pada 1511, dan usaha Portugis selanjutnya untuk menguasai lalu lintas di selat tersebut, mendorong para pedagang untuk mengambil jalur alternatif, dengan melintasi Semenanjung atau pantai barat Sumatra ke Selat Sunda. Pergeseran ini melahirkan pelabuhan perantara yang baru, seperti Aceh, Patani, Pahang, Johor, Banten, Makassar dan lain sebagainya. Saat  itu,  pelayaran  di  Selat  Malaka  sering  diganggu  oleh  bajak laut.  Perompakan laut sering terjadi pada jalur-jalur perdagangan yang ramai, tetapi kurang mendapat pengawasan oleh penguasa setempat. Perompakan itu sesungguhnya merupakan bentuk kuno kegiatan dagang. Kegiatan tersebut dilakukan karena merosotnya keadaan politik dan mengganggu kewenangan pemerintahan yang berdaulat penuh atau kedaulatannya di bawah penguasa kolonial. Akibat dari aktivitas bajak laut, rute pelayaran perdagangan yang semula  melalui  Asia  Barat  ke  Jawa  lalu  berubah  melalui  pesisir Sumatra dan Sunda. Dari pelabuhan ini pula para pedagang singgah di Pelabuhan Barus, Pariaman, dan Tiku.
+
+Perdagangan pada wilayah timur Kepulauan Indonesia lebih terkonsentrasi  pada perdagangan cengkih dan pala. Dari Ternate dan Tidore (Maluku) dibawa barang komoditas ke Somba Opu, ibu kota Kerajaan Gowa di Sulawesi Selatan. Somba Opu pada abad ke-16 telah menjalin hubungan perdagangan dengan Patani, Johor, Banjar, Blambangan, dan Maluku. Adapun Hitu (Ambon) menjadi
+
+
+<br>
+
+
+---
+## 📄 Halaman 189
+
+pelabuhan yang menampung komoditas cengkih yang datang dari Huamual  (Seram  Barat),  sedangkan  komoditias  pala  berpusat  di Banda. Semua pelabuhan tersebut umumnya didatangi oleh para pedagang Jawa, Cina, Arab, dan Makassar. Kehadiran pedagang itu mempengaruhi corak kehidupan dan budaya setempat, antara lain ditemui bekas koloninya seperti Maspait (Majapahit), Kota Jawa (Jawa) dan Kota Mangkasare (Makassar).
+
+Pada abad ke-15, Sulawesi Selatan telah didatangi pedagang Muslim dari Malaka, Jawa, dan Sumatra. Dalam perjalanan sejarahnya,  masyarakat  Muslim  di  Gowa  terutama  Raja  Gowa Muhammad Said (1639-1653) dan putra penggantinya, Hasanuddin (1653-1669)  telah  menjalin  hubungan  dagang  dengan  Portugis. Bahkan Sultan Muhammad Said dan Karaeng Pattingaloang turut memberikan saham dalam perdagangan yang dilakukan Fr. Vieira, meskipun  mereka  beragama  Katolik.  Kerja  sama  ini  didorong oleh  adanya  usaha  monopoli  perdagangan  rempah-rempah  yang dilancarkan oleh kompeni Belanda di Maluku.
+
+Hubungan Ternate, Hitu dengan Jawa sangat erat sekali. Ini ditandai dengan adanya seorang raja yang dianggap benar-benar telah memeluk Islam ialah Zainal Abidin (1486-1500) yang pernah belajar  di  Madrasah  Giri.  Ia  dijuluki  sebagai  Raja  Bulawa,  artinya raja  cengkih,  karena  membawa  cengkih  dari  Maluku  sebagai persembahan. Cengkih, pala, dan bunga pala ( fuli ) hanya terdapat di Kepulauan Indonesia bagian timur, sehingga banyak barang yang sampai ke Eropa harus melewati jalur perdagangan yang panjang dari Maluku sampai ke Laut Tengah. Cengkih yang diperdagangkan adalah  putik  bunga  tumbuhan  hijau  ( szygium  aromaticum atau caryophullus  aromaticus )  yang  dikeringkan.  Satu  pohon  ini  ada yang  menghasilkan  cengkih  sampai  34  kg.  Hamparan  cengkih ditanam di perbukitan di pulau-pulau kecil Ternate, Tidore, Makian, dan Motir di lepas pantai barat Halmahera dan baru berhasil ditanam di pulau yang relatif besar, yaitu Bacan, Ambon dan Seram.
+
+
+<br>
+
+
+---
+## 📄 Halaman 190
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p190_123.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan tumbuhan dengan daun berbentuk seperti daun pisang dan bunga berwarna merah muda. Daun-daunnya tampak lebat dan rimbun, sementara bunga-bunganya tampak berkelompok di ujung pucuk. Gambar ini mungkin digunakan untuk membantu pembaca memahami struktur dan bentuk tumbuhan tersebut dalam konteks pembelajaran biologi.
+
+Gambar 3.11 Cengkih, lada, dan pala.
+
+Meningkatnya  ekspor  lada  dalam  kancah perdagangan internasional, membuat pedagang Nusantara  mengambil  alih  peranan  India  sebagai pemasok utama bagi  pasaran  Eropa  yang  berkembang dengan cepat. Selama periode (1500-1530) banyak terjadi  gangguan  di  laut  sehingga  bandar-bandar Laut Tengah harus mencari pasokan hasil bumi Asia ke  Lisabon.  Oleh  karena  itu  secara  berangsur  jalur perdagangan yang ditempuh pedagang muslim bertambah aktif,  ditambah  dengan  adanya  perang di laut Eropa, penaklukan Ottoman atas Mesir (1517) dan pantai Laut Merah Arabia (1538) memberikan dukungan yang besar bagi berkembangnya pelayaran Islam di Samudra Hindia.
+
+Meskipun banyak kota bandar, namun yang berfungsi untuk melakukan ekspor dan impor komoditas  pada  umumnya  adalah  kota-kota  bandar  besar  yang beribu  kota  pemerintahan  di  pesisir,  seperti  Banten,  Jayakarta, Cirebon, Jepara - Demak, Ternate, Tidore, Gowa-Tallo, Banjarmasin, Malaka, Samudra Pasai, Kesultanan Jambi, Palembang dan Jambi. Kesultanan Mataram berdiri dari abad ke-16 sampai ke-18. Meskipun kedudukannya sebagai kerajaan pedalaman, wilayah kekuasaannya meliputi sebagian besar Pulau Jawa yang merupakan hasil ekspansi Sultan Agung. Kesultanan Mataram juga memiliki kota-kota bandar, seperti  Jepara,  Tegal,  Kendal,  Semarang,  Tuban,  Sedayu,  Gresik, dan Surabaya.
+
+Dalam proses perdagangan telah terjalin hubungan antaretnis yang  sangat  erat.  Berbagai  etnis  dari  kerajaan-kerajaan  tersebut kemudian berkumpul dan membentuk komunitas. Oleh karena itu, muncul nama-nama kampung berdasarkan asal daerah. Misalnya,di Jakarta  terdapat  perkampungan  Keling,  Pekojan,  dan  kampungkampung lainnya yang berasal dari daerah-daerah asal yang jauh dari kota-kota yang dikunjungi, seperti Kampung Melayu, Kampung Bandan, Kampung Ambon, dan Kampung Bali.
+
+
+<br>
+
+
+---
+## 📄 Halaman 191
+
+Pada zaman pertumbuhan dan perkembangan Islam, sistem jual beli barang masih dilakukan dengan cara barter. Sistem barter dilakukan antara pedagang-pedagang dari daerah pesisir dengan daerah pedalaman, bahkan kadang-kadang  langsung kepada petani. Transaksi itu dilakukan di pasar, baik di kota maupun desa. Tradisi jual-beli dengan sistem barter hingga kini masih dilakukan oleh beberapa masyarakat sederhana yang berada jauh di daerah terpencil. Di beberapa kota pada masa pertumbuhan dan perkembangan Islam telah menggunakan mata uang sebagai nilai tukar barang. Mata uang yang dipergunakan tidak mengikat  pada  mata  uang  tertentu,  kecuali ada ketentuan yang diatur pemerintah daerah setempat.
+
+Untuk memperdalam materi ini kamu dapat membaca buku Taufik Abdullah dan Adrian B. Lapian, Indonesia Dalam Arus Sejarah, jilid III.
+
+Kemunduran  perdagangan  dan  kerajaan  yang  berada  di daerah  tepi  pantai  disebabkan  karena  kemenangan  militer  dan ekonomi  Belanda,  dan  munculnya  kerajaan-kerajaan  agraris  di pedalaman yang tidak menaruh perhatian pada perdagangan.
+
+
+### Uji Kompetensi
+
+- Berdasarkan berita Tome Pires, buatlah peta jalur perdagangan di bagian timur Kepulauan Indonesia!
+- Jelaskan dan buatlah peta jalur perdagangan alternatif setelah Malaka jatuh ke tangan Portugis tahun 1511!
+- Menurut kamu mengapa para pedagang waktu itu memilih jalur perairan atau laut?
+
+<br>
+
+
+---
+## 📄 Halaman 192
+
+
+### C.
+
+
+### Islam Masuk Istana Raja
+
+Gambar 3.12 Keraton Yogyakarta
+
+
+###  Mengamati Lingkungan
+
+Kamu tahu gambar di atas, bangunan apa dan di mana? Itu adalah salah satu pusat pemerintahan keraton yang bersifat Islam dan masih berfungsi sampai sekarang, yaitu Keraton Yogyakarta. Di Indonesia, keraton semacam ini pada perkembangannya memiliki peranan dan posisi yang sangat penting. Selain berfungsi sebagai  simbol  perkembangan  pemerintahan  Islam,  keraton  juga menjadi lambang perjuangan kemerdekaan. Di sana para raja atau tokoh-tokohnya  mengibarkan  panji-panji  perlawanan  terhadap penjajahan. Islam yang masuk ke istana memang telah menyemai bibit-bibit kemerdekaan dan persamaan.
+
+Pada  bagian  ini  kamu  akan  mempelajari  secara  garis  besar awal pertumbuhan dan perkembangan kerajaan-kerajaan Islam di Indonesia.  Uraian  ini  terutama  dipusatkan  pada  beberapa  pusat kekuasaan Islam yang berada di berbagai daerah, seperti di Sumatra, Jawa, Kalimantan, Sulawesi, dan bahkan di Indonesia bagian timur, seperti Maluku dan Papua. Kerajaan-kerajaan yang tidak diuraikan pada bab ini, dapat kamu cari informasinya melalui berbagai buku yang ada.
+
+
+<br>
+
+
+---
+## 📄 Halaman 193
+
+
+###  Memahami teks
+
+
+### 1. Kerajaan Islam di Sumatra
+
+Sejak awal kedatangan  Islam, Pulau Sumatra termasuk daerah pertama dan terpenting dalam pengembangan agama Islam di  Indonesia.  Dikatakan  demikian  mengingat  letak  Sumatra  yang strategis dan berhadapan langsung dengan jalur perdangan dunia, yakni Selat Malaka. Berdasarkan catatan Tomé Pires dalam Suma Oriental (1512-1515)  dikatakan  bahwa  di  Sumatra,  terutama  di sepanjang pesisir Selat Malaka dan pesisir barat Sumatra terdapat banyak  kerajaan  Islam,  baik  yang  besar  maupun  yang  kecil.  Di antara kerajaan-kerajaan tersebut antara lain Aceh, Biar dan Lambri, Pedir,  Pirada,  Pase,  Aru,  Arcat,  Rupat,  Siak,  Kampar,  Tongkal, Indragiri,  Jambi,  Palembang,  Andalas,  Pariaman,  Minangkabau, Tiku, Panchur, dan Barus. Menurut Tomé Pires, kerajaan-kerajaan tersebut ada yang sedang mengalami pertumbuhan, ada pula yang sedang  mengalami  perkembangan,  dan  ada  pula  yang  sedang mengalami keruntuhannya.
+
+
+### a. Samudra Pasai
+
+Samudra  Pasai  diperkirakan  tumbuh  berkembang antara  tahun  1270  hingga  1275,  atau  pertengahan  abad ke-13.  Kerajaan  ini  terletak  lebih  kurang  15  km  di  sebelah timur  Lhokseumawe,  Nanggroe  Aceh  Darussalam,  dengan sultan  pertamanya  bernama  Sultan  Malik  as-Shaleh  (wafat tahun  696  H  atau  1297  M).  Dalam  kitab Sejarah  Melayu dan Hikayat  Raja-Raja  Pasai diceritakan  bahwa  Sultan Malik as-Shaleh sebelumnya hanya seorang kepala Gampong Samudra  bernama  Marah  Silu.  Setelah  menganut  agama Islam kemudian berganti nama dengan Malik as-Shaleh.
+
+Berikut ini  merupakan urutan para raja-raja yang memerintah di Kesultanan Samudra Pasai:
+
+- Sultan Malik as-Shaleh (696 H/1297 M);
+- Sultan Muhammad Malik Zahir (1297-1326);
+- Sultan Mahmud Malik Zahir (± 1346-1383);
+
+<br>
+
+
+---
+## 📄 Halaman 194
+
+- Sultan Zainal Abidin Malik Zahir (1383-1405);
+- Sultanah Nahrisyah (1405-1412);
+- Abu Zain Malik Zahir (1412);
+- Mahmud Malik Zahir (1513-1524).
+Nama  sultan  yang  disebut  terdapat  dalam  sumber Sejarah Melayu dan Hikayat Raja-Raja Pasai. Nama-nama itu, kecuali  nama  Sultan  Malikush  Shaleh  juga  terdapat  dalam mata uang emas yang disebut dengan dirham.
+
+Pada masa pemerintahan Sultan Malik as-Shaleh, Kerajaan Pasai mempunyai hubungan dengan negara Cina. Seperti yang disebutkan dalam sumber sejarah Dinasti Yuan, pada  1282  duta  Cina  bertemu  dengan  Menteri  Kerajaan Sumatra di Quilan yang meminta agar Raja Sumatra mengirimkan dutanya ke Cina. Pada tahun itu pula disebutkan bahwa kerajaan Sumatra mengirimkan dutanya yang bernama Sulaiman dan Syamsuddin.
+
+Menurut Tome Pires, Kesultanan Samudera Pasai mencapai puncaknya pada awal abad ke-16. Kesultanan itu mengalami  kemajuan  di  berbagai  bidang  kehidupan  seperti politik,  ekonomi,  pemerintahan,  keagamaan,  dan  terutama ekonomi  perdagangan.  Diceritakan  pula  bahwa  Kesultanan Samudera Pasai selalu mengadakan hubungan persahabatan dengan Malaka, bahkan hubungan persahabatan itu diperkuat dengan perkawinan. Para pedagang yang pernah mengunjungi Pasai berasal dari berbagai negara seperti, Rumi, Turki, Arab, Persia  (Iran),  Gujarat,  Keling,  Bengal,  Melayu,  Jawa,  Siam,  Kedah, dan Pegu. Sementara barang komoditas yang diperdagangkan adalah lada, sutera, dan kapur barus. Di samping komoditas itu sebagai penghasil pendapatan Kesultanan Samudera Pasai, juga diperoleh pendapat dari pajak yang dipungut dari pajak barang  ekspor  dan  impor.  Dalam  sumber-sumber  sejarah juga  dijelaskan,  bahwa  Kesultanan  Samudera  Pasai  telah menggunakan  mata  uang  seperti  uang  kecil  yang  disebut dengan ceitis. Uang kecil itu ada yang terbuat dari emas dan ada pula yang terbuat dari dramas.
+
+
+<br>
+
+
+---
+## 📄 Halaman 195
+
+Dalam  bidang  keagamaan,  Ibnu  Batuta  menjelaskan bahwa Kesultanan Samudera Pasai juga dikunjungi oleh para ulama dari Persia, Suriah (Syria), dan Isfahan. Dalam catatan Ibnu Batuta disebutkan bahwa Sultan Samudera Pasai sangat taat  terhadap  agama  Islam  yang  bermazhab  Syafi'i.  Sultan selalu dikelilingi oleh para ahli teologi Islam.
+
+Kesultanan Samudera Pasai mempunyai peranan penting  dalam  penyebaran  Islam  di  Asia  Tenggara.  Malaka menjadi  kerajaan  yang  bercorak  Islam  karena  amat  erat hubungannya dengan Kerajaan Samudera Pasai. Hubungan tersebut semakin erat dengan diadakannya pernikahan antara putra-putri sultan dari Pasai dan Malaka sehingga pada awal abad-15 atau sekitar 1414 M tumbuhlah Kesultanan Islam Malaka, yang dimulai dengan pemerintahan Parameswara.
+
+Dalam Hikayat Patani terdapat cerita tentang pengislaman  Raja  Patani  yang  bernama  Paya  Tu  Nakpa dilakukan oleh seorang dari Pasai yang bernama Syaikh Sa'id, karena berhasil menyembuhkan Raja Patani. Setelah masuk Islam,  raja  berganti  nama  menjadi  Sultan  Isma'il  Syah  Zill Allah  fi  al-Alam  dan  juga  ketiga  orang  putra  dan  putrinya yaitu Sultan Mudaffar Syah, Siti Aisyah, dan Sultan Mansyur. Pada masa pemerintahan Sultan Mudaffar Syah juga datang lagi seorang ulama dari Pasai yang bernama Syaikh Safi'uddin yang  atas  perintah  raja  ia  mendirikan  masjid  untuk  orangorang Muslim di Patani. Demikian pula jenis nisan kubur yang disebut  Batu  Aceh  menjadi  nisan  kubur  raja-raja  di  Patani, Malaka, dan Malaysia. Pada umumnya nisan kubur tersebut berbentuk  menyerupai  nisan  kubur  Sultan  Malik  as-Shaleh dan  nisan-nisan  kubur  dari  sebelum  abad  ke-17.  Dilihat dari  kesamaan  jenis  batu  serta  cara  penulisan  dan  hurufhuruf  bahkan  dengan  cara  pengisian  ayat-ayat  al-Qur'an dan  nuansa  kesufiannya,  jelas  Samudera  Pasai  mempunyai peranan penting dalam persebaran Islam di beberapa tempat di Asia Tenggara dan demikian pula di bidang perekonomian dan perdagangan. Namun, sejak Portugis menguasai Malaka
+
+
+<br>
+
+
+---
+## 📄 Halaman 196
+
+pada 1511 dan meluaskan kekuasaannya, maka Kerajaan  Islam  Samudera  Pasai  mulai  dikuasai sejak 1521. Kemudian Kerajaan Aceh Darussalam di  bawah  pemerintahan  Sultan  Ali  Mughayat Syah  lebih  berhasil  menguasai  Samudera  Pasai. Kerajaan-kerajaan Islam yang  terletak di pesisir seperti Aru, Kedir, dan  lainnya lambat laun berada di bawah  kekuasaan Kerajaan Islam Aceh Darussalam yang sejak abad ke-16  makin mengalami perkembangan politik,ekonomiperdagangan, kebudayaan dan keagamaan.
+
+
+### b. Kesultanan Aceh Darussalam
+
+Gambar 3.13 Nisan yang memuat ayat 18 Surat Ali Imran
+
+Pada 1520 Aceh berhasil memasukkan Kerajaan Daya ke dalam kekuasaan Aceh Darussalam. Tahun 1524, Pedir dan Samudera Pasai ditaklukkan.  Kesultanan  Aceh  Darussalam  di  bawah  Sultan Ali  Mughayat  Syah  menyerang  kapal  Portugis  di  bawah komandan Simao de Souza Galvao di Bandar Aceh.
+
+Pada  1529  Kesultanan  Aceh  mengadakan  persiapan untuk menyerang orang Portugis di Malaka, tetapi batal karena Sultan Ali Mughayat Syah wafat pada 1530 dan dimakamkan di  Kandang  XII,  Banda  Aceh.  Di  antara  penggantinya  yang terkenal adalah Sultan Alauddin Riayat Syah al-Qahhar (15381571).  Usaha-usahanya  adalah  mengembangkan  kekuatan angkatan perang, perdagangan, dan mengadakan hubungan internasional dengan kerajaan Islam di Timur Tengah, seperti  Turki,  Abessinia  (Ethiopia),  dan  Mesir.  Pada  1563  ia mengirimkan  utusannya  ke  Konstantinopel  untuk  meminta bantuan dalam usaha melawan kekuasaan Portugis.
+
+
+<br>
+
+
+---
+## 📄 Halaman 197
+
+Dua tahun kemudian datang bantuan dari Turki berupa teknisi-teknisi, dan dengan kekuatan tentaranya Sultan Alauddin Riayat Syah at-Qahhar menyerang dan menaklukkan banyak  kerajaan, seperti Batak, Aru, dan  Barus.  Untuk menjaga keutuhan Kesultanan Aceh, Sultan Alauddin Riayat Syah al-Qahhar menempatkan suami saudara perempuannya di  Barus  dengan gelar Sultan Barus, dua orang putra sultan diangkat  menjadi  Sultan  Aru  dan  Sultan  Pariaman  dengan gelar resminya Sultan Ghari dan Sultan Mughal, dan di daerahdaerah  pengaruh  Kesultanan  Aceh  ditempatkan  wakil-wakil dari Aceh.
+
+Kemajuan  Kesultanan  Aceh  Darussalam  pada  masa pemerintahan Sultan Iskandar Muda mengundang perhatian para  ahli  sejarah.  Di  bidang  politik  Sultan  Iskandar  Muda telah menundukkan daerah-daerah di sepanjang pesisir timur dan  barat.  Demikian  pula  Johor  di  Semenanjung  Malaya telah diserang, dan kemudian rnengakui kekuasaan Kesultanan Aceh Darussalam. Kedudukan Portugis  di  Malaka  terus-menerus mengalami ancaman dan serangan, meskipun keruntuhan Malaka sebagai pusat perdagangan di Asia Tenggara baru terjadi sekitar tahun 1641  oleh  VOC  ( Verenigde  Oost Indische Compagnie) Belanda . Perluasan  kekuasaan  politik  VOC sampai Belanda pada dekade abad ke-20 tetap menjadi ancaman bagi Kesultanan Aceh.
+
+Gambar 3.14 (1607-1636) di Aceh
+
+Untuk memperdalam masalah ini kamu bisa membaca buku A. Hasymy. Sejarah Masuk dan Berkembangnya Islam di Indonesia. dan Marwati Djoened Poesponegoro. Sejarah Nasional Indonesia Jilid I.
+
+
+<br>
+
+
+---
+## 📄 Halaman 198
+
+
+### c. Kerajaan-Kerajaan Islam di Riau
+
+Gambar 3.15 Masjid Pulau Penyengat di Kepulauan Riau
+
+Kerajaan  Islam  yang  ada  di  Riau  dan  Kepulauan  Riau menurut  berita  Tome  Pires  (1512-1515  )  antara  lain  Siak, Kampar, dan Indragiri. Kerajaan Kampar, Indragiri, dan Siak pada abad ke-13 dan ke-14 dalam kekuasaan Kerajaan Melayu dan  Singasari-Majapahit,  maka  kerajaan-kerajaan  tersebut tumbuh menjadi kerajaan bercorak Islam sejak abad ke-15. Pengaruh Islam yang sampai ke daerah-daerah itu mungkin akibat  perkembangan  Kerajaan  Islam  Samudera  Pasai  dan Malaka.  Jika  kita  dasarkan  berita  Tome  Pires,  maka  ketiga Kerajaan  Kampar,  Indragiri  dan  Siak  senantiasa  melakukan perdagangan  dengan  Malaka  bahkan  memberikan  upeti kepada Kerajaan Malaka. Ketiga kerajaan di pesisir Sumatra Timur ini dikuasai Kerajaan Malaka pada masa pemerintahan Sultan  Mansyur  Syah  (wafat  1477).  Bahkan  pada  masa pemerintahan putranya, Sultan Ala'uddin Ri'ayat Syah (wafat 1488)  banyak  pulau  di  Selat  Malaka  (orang  laut)  termasuk Lingga-Riau, masuk kekuasaan Kerajaan Malaka. Siak menghasilkan padi, madu, lilin, rotan, bahan-bahan apotek, dan banyak emas. Kampar menghasilkan barang dagangan seperti emas, lilin, madu, biji-bijian, dan kayu gaharu. Indragiri menghasilkan barang-barang  perdagangan, seperti Kampar,
+
+
+<br>
+
+
+---
+## 📄 Halaman 199
+
+tetapi emas dibeli dari pedalaman Minangkabau.
+
+Siak menjadi daerah kekuasaan Malaka sejak penaklukan oleh Sultan Mansyûr Syah di mana ditempatkan raja-raja sebagai wakil Kemaharajaan Melayu. Ketika Sultan Mahmud  Syah  I  berada  di  Bintan,  Raja  Abdullah  yang bergelar  Sultan  Khoja  Ahmad  Syah  diangkat  di  Siak.  Pada 1596 yang menjadi Raja Siak ialah Raja Hasan putra Ali Jalla Abdul Jalil, sementara saudaranya yang bernama Raja Husain ditempatkan di Kelantan. Kemudian di Kampar ditempatkan Raja Muhammad. Sejak VOC Belanda menguasai Malaka pada 1641 sampai abad ke-18 praktis ketiga kerajaan, yaitu Siak, Kampar, dan Indragiri berada di bawah pengaruh kekuasaan politik dan ekonomi-perdagangan VOC. Perjanjian pada 14 Januari  1676  berisi,  bahwa  hasil  timah  harus  dijual  hanya kepada VOC.
+
+Demikian pula dengan ditemukan tambang emas dari Petapahan, Kerajaan Siak, juga terikat oleh ikatan perjanjian monopoli  perdagangan  sehingga  Raja  Kecil  pada  1723 mendirikan  kerajaan  baru  di  Buantan  dekat  Sabak  Auh  di Sungai Jantan Siak yang kemudian disebut juga Kerajaan Siak. Raja  Kecil  kemudian  sebagai  sultan  memakai  gelar  Sultan  Abdul Jalil Rahmad Syah (1723-1748), dan selama pemerintahannya ia meluaskan daerah kekuasaannya sambil melakukan perlawanan-perlawanan  terhadap  kekuasaan  politik  VOC, bahkan  sering  muncul  armadanya  di  Selat  Malaka.  Pada 1750, Sultan Abdul Jalil Rahmad Syah memindahkan ibu kota kerajaan dari Buantan ke Mempura yang terletak di tepi Sunai Memra Besar, Sungai Jantan diubah namanya menjadi Sungai Siak  dan  kerajaannya  disebut  Kerajaan  Siak  Sri  Indrapura. Karena VOC, yang kantor dagangnya ada di Pulau Guntung di  mulut  Sungai Siak, sering mengganggu lalu lintas kapalkapal  Kerajaan  Siak  Sri  Indrapura,  maka  Sultan  Abdul  Jalil Rahmad  Syah  dengan  pasukannya  pada  1760  menyerang benteng VOC.
+
+
+<br>
+
+
+---
+## 📄 Halaman 200
+
+Kerajaan  Siak  di  bawah  pemerintahan  Sultan  Sa'id Ali  (1784-1811)  banyak  berjasa  bagi  rakyatnya.  Ia  berhasil memakmurkan  kerajaan  dan  ia  dikenal  sebagai  seorang Sultan yang jujur. Daerah-daerah yang pada masa Raja Kecil melepaskan  diri  dari  Kerajaan  Siak  dan  berhasil  ia  kuasai kembali.  Sultan  Sa'id  Ali  memundurkan  diri  sebagai  Sultan
+
+Gambar 3.16 Masjid Indrapuri di Aceh Besar
+
+Siak pada 1811 dan kemudian pemerintahannya diganti oleh putranya, Tengku Ibrahim. Di bawah pemerintahan Tengku Ibrahim inilah Kerajaan Siak mengalami kemunduran sehingga banyak  orang  yang  pindah  ke  Bintan,  Lingga  Tambelan, Terenggano,  dan  Pontianak.  Ditambah  lagi  dengan  adanya perjanjian dengan VOC pada 1822 di Bukit Batu yang isinya menekankan Kerajaan Siak tidak boleh mengadakan ikatanikatan atau perjanjian-perjanjian dengan negara-negara lain kecuali  dengan  Belanda.  Dengan  demikian,  Kerajaan  Siak Sri Indrapura semakin sempit geraknya dan semakin banyak dipengaruhi politik penjajahan Hindia-Belanda.
+
+
+<br>
+
+
+---
+## 📄 Halaman 201
+
+Sebagaimana telah disebutkan bahwa Kerajaan Kampar sejak  abad  ke-15  berada  di  bawah  Kerajaan  Malaka.  Pada masa  pemerintahannya,  Sultan  Abdullah  di  Kampar  tidak mau  menghadap  Sultan  Mahmud  Syah  I  di  Bintan  selaku pemegang  kekuasaan Kemaharajaan Melayu. Akibatnya Sultan Mahmud Syah I mengirimkan pasukannya ke Kampar. Sultan Abdullah minta bantuan Portugis, dan berhasil mempertahankan Kampar. Ketika Sultan Abdullah dibawa ke Malaka oleh Portugis, maka Kampar ada di bawah pembesarpembesar kerajaan, di antaranya Mangkubumi Tun Perkasa yang mengirimkan utusan ke Kemaharajaan Melayu di bawah pimpinan  Sultan  Abdul  Jalil  Syah  I  yang  memohon  agar  di Kampar ditempatkan raja.
+
+Hasil  permohonan  tersebut  dikirimkan  seorang  pembesar dari Kemaharajaan Melayu ialah Raja Abdurrahman bergelar Maharaja Dinda Idan berkedudukan di Pekantua. Hubungan antara  Kerajaan  Kampar  di  bawah  pemerintahan  Maharaja Lela Utama  dengan Siak dan Kuantan diikat dengan hubungan perdagangan. Tetapi masa pemerintahan penggantinya Maharaja Dinda II memindahkan ibu kota Kerajaan Kampar pada 1725 ke Pelalawan yang kemudian mengganti Kerajaan Kampar  menjadi  Kerajaan  Pelalawan.  Kemudian  kerajaan tersebut tunduk kepada Kerajaan Siak, dan pada 4 Februari 1879  dengan  terjadinya  perjanjian  pengakuannya  Kampar berada  di  bawah  pemerintahan  Hindia  Belanda.  Kerajaan Indragiri sebelum 1641 yang berada di bawah Kemaharajaan Malayu  berhubungan  erat  dengan  Portugis,  tetapi  setelah Malaka diduduki VOC, mulailah berhubungan dengan VOC yang  mendirikan kantor dagangnya di Indragiri berdasarkan perjanjian 28 Oktober 1664.
+
+Pada 1765, Sultan Hasan Shalahuddin Kramat Syah memindahkan ibukotanya ke Japura tetapi dipindahkan lagi pada 5 Januari 1815 ke Rengat oleh Sultan Ibrahim atau Raja Indragiri XVII. Sultan Ibrahim inilah yang ikut serta berperang dengan Raja
+
+
+<br>
+
+
+---
+## 📄 Halaman 202
+
+Haji di Teluk Ketapang pada 1784. Demikianlah, kekuasaan politik kerajaan ini sama sekali hilang berdasarkan Tractat van Vrede en Vriend-schap 27 September 1838, berada di bawah pemerintahan Hindia  Belanda,  yang  berarti  jalannya  pemerintahan  Kerajaan Indragiri ditentukan pemerintah Hindia Belanda.
+
+
+### d. Kerajaan Islam di Jambi
+
+Berdasarkan temuan-temuan arkeologis kemungkinan kehadiran Islam di daerah Jambi diperkirakan dimulai sejak  abad  ke-9  atau  abad  ke-10  sampai  abad  ke-13. Kemungkinan pada masa itu proses Islamisasi masih terbatas pada  perorangan.  Karena  proses  Islamisasi  besar-besaran bersamaan  dengan  tumbuh  dan  berkembangnya  Kerajaan Islam Jambi sekitar 1500 M di bawah pemerintahan Orang Kayo Hitam yang juga meluaskan 'Bangsa XII' dari 'Bangsa IX',  anak  Datuk  Paduka  Berhala.  Konon  menurut  UndangUndang Jambi, Datuk Paduka Berhala adalah orang dari Turki yang  terdampar  di  Pulau  Berhala  yang  kemudian  dikenal dengan  sebutan  Ahmad  Salim.  Ia  menikah  dengan  Putri Salaro  Pinang  Masak  yang  sudah  Muslim,  turunan  raja-raja Pagarruyung yang kemudian melahirkan Orang Kayo Hitam, Sultan Kerajaan Jambi yang terkenal. Karena itu kemungkinan besar penyebaran Islam sudah terjadi sejak sekitar tahun 1460 atau pertengahan abad ke-15.
+
+Menurut Sila-sila Keturunan Raja Jambi, dari pernikahan antara  Datuk  Paduka  Berhala  dengan  Putri  Pinang  Masak, melahirkan  juga  tiga  saudaranya  Orang  Kayo  Hitam  yaitu Orang  Kayo  Pingai,  Orang  Kayo  Pedataran/Kedataran,  dan Orang Kayo Gemuk (seorang putri). Yang menjadi pengganti Datuk Paduka Berhala ialah Orang Kayo Hitam yang beristri salah  seorang  putri  dari  saudara  ibunya  ialah  Putri  Panjang Rambut.  Pengganti  Orang  Kayo  Hiam  ialah  Panembahan Ilang di Aer yang setelah wafat dimakamkan di Rantau Kapas sehingga terkenal pula dengan Panembahan Rantau Kapas. Masa pemerintahan Datuk Paduka Berhala beserta Putri Pinang
+
+
+<br>
+
+
+---
+## 📄 Halaman 203
+
+Masak sekitar tahun 1460, Orang Kayo Pingai sekitar tahun 1480, Orang Kayo Pedataran sekitar tahun 1490. Sedangkan masa pemerintahan Orang Kayo Hitam sendiri sekitar tahun 1500, Panembahan Rantau Kapas sekitar antara tahun 1500 hingga 1540, Panembahan Rengas Pandak cucu Orang Kayo Hitam sekitar tahun 1540 M, Panembahan Bawah Sawoh cicit Orang Kayo Hitam sekitar tahun 1565.
+
+Setelah Panembahan Bawah Sawoh meninggal dunia, pemerintahan digantikan oleh Panembahan Kota Baru sekitar tahun 1590, dan kemudian diganti lagi oleh Pangeran Keda  yang  bergelar  Sultan  Abdul  Kahar  pada  1615.  Sejak masa  pemerintahan  Kerajaan  Islam  Jambi  di  bawah  Sultan Abdul  Kahar  itulah  orang-orang  VOC  mulai  datang  untuk menjalin  hubungan  perdagangan.  Mereka  membeli  hasilhasil Kerajaan Jambi terutama lada. Dengan izin Sultan Jambi pada  1616,  Kompeni  Belanda  (VOC)  mendirikan  lojinya  di Muara Kompeh. Tetapi beberapa tahun kemudian ialah pada 1636 loji tersebut ditinggalkan karena rakyat Jambi tidak mau menjual hasil-hasil buminya kepada VOC. Sejak itu hubungan Kerajaan Jambi dengan VOC makin renggang, ditambah pada 1642 Gubernur Jenderal VOC Antonio van Diemen menuduh Jambi bekerja sama dengan Mataram.
+
+Pada  masa  pemerintahan  Sultan  Sri  Ingalogo  (16651690)  terjadi  peperangan  antara  Kerajaan  Jambi  dengan Kerajaan Johor di mana Kerajaan Jambi mendapat bantuan VOC dan akhirnya menang. Meskipun demikian, sebagai upah bantuan itu VOC berturut-turut menyodorkan perjanjian pada 12 Juli  1681,  20  Agustus  1681,  11  Agustus  1683,  dan  20 Agustus 1683. Pada hakikatnya perjanjian-perjanjian tersebut menguatkan monopoli pembelian lada, dan sebaliknya VOC memaksakan  untuk  penjualan  kain  dan  opium.  Beberapa tahun  kemudian  terjadi  penyerangan  kantor  dagang  VOC oleh rakyat Jambi dan kepala pedagang VOC, Sybrandt Swart terbunuh pada 1690 dan Sultan Jambi dituduh terlibat. Oleh
+
+
+<br>
+
+
+---
+## 📄 Halaman 204
+
+karena  itu,  Sultan  Sri  Ingalogo  ditangkap  dan  diasingkan mula-mula ke Batavia dan akhirnya ke Pulau Banda. Sultan penggantinya ialah Pangeran Dipati Cakraningrat yang bergelar  Sultan  Kiai  Gede.  Dengan  demikian,  Sultan  Ratu yang  lebih  berhak  disingkirkan  dan  ia  dengan  sejumlah pengikutnya pindah ke Muaratebo, membawa keris pusaka Sigenjei, keris lambang bagi Raja-Raja Jambi yang mempunyai hak atas kerajaan. Sejak itulah terus-menerus terjadi konflik yang  memuncak  dengan  pemberontakan  dan  perlawanan Sultan Thâhâ  Sayf al-Dîn yang  dipusatkan  terutama  di daerah Batanghari Hulu. Di daerah inilah pada pertempuran yang sengit, Sultan Thaha gugur pada 1 April 1904 dan ia dimakamkan di Muaratebo.
+
+
+### e. Kerajaan Islam di Sumatra Selatan
+
+Sejak Kerajaan Sriwijaya mengalami kelemahan bahkan runtuh sekitar abad ke-14, mulailah proses Islamisasi sehingga pada akhir abad ke-15 muncul komunitas Muslim di  Palembang.  Palembang  pada  akhir  abad  ke-16  sudah merupakan  daerah  kantong  Islam  terpenting  atau  bahkan pusat  Islam  di  bagian  selatan  'Pulau  Emas'.  Bukan  saja karena reputasinya sebagai pusat perdagangan yang banyak dikunjungi  pedagang  Arab/Islam  pada  abad-abad  kejayaan Sriwijaya,  tetapi  juga  dibantu  oleh  kebesaran  Malaka  yang tak  pernah  melepaskan  keterlibatannya  dengan  Palembang sebagai tanah asalnya.
+
+Palembang sekitar awal abad ke-16 sudah ada di bawah pengaruh  kekuasaan  Kerajaan  Demak  masa  pemerintahan Pate  Rodim  seperti  diberitakan  Tome  Pires  (1512-1515) bahkan  pada  waktu  itu  penduduk  Palembang  berjumlah lebih kurang 10.000 orang. Tetapi banyak yang mati dalam serangan  membantu  Demak  terhadap  Portugis  di  Malaka. Mereka berdagang dengan Malaka dan Pahang dengan jungjung sebanyak 10 atau 12 setiap tahunnya. Komoditas yang diperdagangkan  adalah  beras  dan  bahan  makanan,  katun,
+
+
+<br>
+
+
+---
+## 📄 Halaman 205
+
+rotan, lilin, madu, anggur, emas, besi, kapur barus, dan lainlainnya.  Meskipun  kedudukan  Palembang    sebagai  pusat penguasa Muslim sudah ada sejak 1550, nama tokoh yang tercatat menjadi sultan pertama Kesultanan Palembang ialah Susuhunan Sultan Abdurrahman Khalifat al-Mukminin Sayyid al-Iman/Pangeran Kusumo Abdurrahman/Kiai Mas Endi sejak 1659  sampai  1706.  Palembang  berturut-turut  diperintah oleh 11 sultan sejak 1706 dan sultan yang terakhir, Pangeran Kromojoyo/Raden Abdul Azim Purbolinggo (1823-1825).
+
+Kontak  pertama  Kesultanan  Palembang  dengan  VOC terjadi  pada  1610,  tetapi  karena  VOC  tidak  dipedulikan kepentingannya maka selalu terjadi kerenggangan. Pada 1658 wakil  dagang  VOC,  Ockersz  beserta  pasukannya  dibunuh dan dua buah kapalnya yaitu Wachter dan Jacatra dirampas. Akibatnya pada 4 November 1659 terjadi peperangan antara Kesultanan  Palembang  dengan  VOC  di  bawah  pimpinan Laksamana  Joan  van  der  Laen.  Pada  perang  ini  Keraton Kesultanan  Palembang  dibakar.  Demikian  pula  Kuta  dan permukiman  penduduk  Cina,  Portugis,  Arab  dan  bangsabangsa lainnya yang berada di seberang Kuta juga dibakar. Kota Palembang dapat direbut lagi oleh pasukan Palembang dan kemudian dilakukan pembangunan-pembangunan, kecuali Masjid Agung yang hingga kini masih dapat disaksikan
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p205_129.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan bangunan tradisional dengan struktur atap berundak dan tiang-tiang yang menjulang. Bangunan utama memiliki atap berbentuk segitiga dengan dinding yang terbuat dari kayu dan batu. Di sebelah kiri, terdapat sebuah menara kecil dengan atap berundak yang lebih tinggi. Atap menara ini memiliki pola yang mirip dengan atap bangunan utama. Pada bagian depan bangunan utama, terdapat pintu masuk dengan desain minimalis yang terbuat dari kayu. Seluruh bangunan ini tampak kokoh dan elegan, menunjukkan arsitektur tradisional yang khas.
+
+
+<br>
+
+
+---
+## 📄 Halaman 206
+
+meskipun  sudah  ada  beberapa  perubahan.  Masjid  agung mulai dibangun 28 Jumadil Awal 1151 H atau 26 Mei 1748 M pada  masa  pemerintahan  Sultan  Mahmud  Badaruddin  I (1724-1758). Pada masa pemerintahan putranya yaitu Sultan Ahmad  Najmuddin  (1758-1774)  syiar  agama  Islam  makin pesat.  Pada  waktu  itu,  berkembanglah  hasil-hasil  sastra keagamaan  dari  tokoh-tokoh,  antara  lain,  Abdussamad  alPalimbani, Kemas Fakhruddin, Kemas Muhammad ibn Ahmad, Muhammad Muhyiddin ibn Syaikh Shibabuddin, Muhammad Ma'ruf ibn Abdullah, dan lainnya. Mengenai ulama terkenal Abdussamad bin Abdullah al-Jawi al-Palimbani (1704-1789), telah dibicarakan Azyumardi Azra dalam Historiograi  Islam Kontemporer secara lengkap tentang riwayatnya, ajaran serta kitab-kitabnya dan guru-guru sufi serta tarekatnya.
+
+Dalam  perjalanan  sejarahnya,  Kesultanan  Palembang sejak pemerintahan Sultan Mahmud Badaruddin II mendapat serangan dari pasukan Hindia Belanda pada Juli 1819 atau yang  dikenal  sebagai  Perang  Menteng  (diambil  dari  kata
+
+Gambar 3.18 Jenderal de Kock
+
+Muntinghe). Serangan besar-besaran oleh pasukan  Belanda  pimpinan  J.C.  Wolterboek yang terjadi pada Oktober 1819 juga dapat  dipukul  mundur  oleh  prajurit-prajurit Kesultanan  Palembang.  Tetapi  pihak  Belanda pada Juni 1821  mencoba  lagi melakukan penyerangan dengan banyak armada di bawah pimpinan  panglima  Jenderal  de  Kock.  Sultan Mahmud  Badaruddin  II  ditangkap  kemudian dibuang  ke  Ternate.  Kesultanan  Palembang sejak 7 Oktober 1823 dihapuskan dan kekuasaan daerah Palembang berada langsung di  bawah  Pemerintah  Hindia  Belanda  dengan penempatan Residen Jon Cornelis Reijnst yang tidak diterima. Sultan Ahmad Najaruddin Prabu Anom karena memberontak akhirnya ditangkap
+
+
+<br>
+
+
+---
+## 📄 Halaman 207
+
+kemudian diasingkan ke Banda, dan seterusnya dipindahkan ke Menado.
+
+
+### f. Kerajaan Islam di Sumatra Barat
+
+Islam di daerah Lampung tidak akan dibicarakan karena daerah  ini  sudah  sejak  awal  masuk  kekuasaan  Kesultanan Banten,  karena  itu  yang  akan  dibicarakan  pada  bagian  ini ialah Kerajaan Islam di Sumatra Barat. Mengenai masuk dan berkembangnya Islam di daerah Sumatra Barat masih sukar dipastikan.  Berdasarkan berita Cina dari Dinasti T'ang yang menyebutkan sekitar abad ke-7 (674 M) ada kelompok orangorang Arab (Ta'shih) dan disebutkan oleh W.P. Goeneveldt, wilayah perkampungan  mereka  berada  di pesisir barat Sumatra.  Islam  yang  datang  dan  berkembang  di  Sumatra Barat diperkirakan pada akhir abad ke-14 atau abad 15, sudah memperoleh pengaruhnya di  kerajaan  besar  Minangkabau. Bahwa  Islam  sudah  masuk  ke  daerah  Minangkabau  pada sekitar akhir abad ke-15 mungkin dapat dihubungkan dengan cerita yang terdapat dalam naskah kuno dari Kerinci tentang  Siak  Lengih  Malin  Sabiyatullah  asal  Minangkabau yang mengenalkan Islam di daerah Kerinci, semasa dengan Putri  Unduk  Pinang  Masak,  Dayang  Baranai,  Parpatih  Nan Sabatang yang kesemuanya berada di daerah Kerinci. Tome Pires (1512-1515) juga mencatat keberadaan tempat-tempat seperti Pariaman, Tiku, bahkan Barus. Dari ketiga tempat ini diperoleh barang-barang perdagangan, seperti emas, sutra, damar, lilin, madu kamper, kapur barus, dan lainnya. Setiap tahun  ketiga  tempat  tersebut  juga  didatangi  dua  atau  tiga kapal  dari  Gujarat  yang  membawa  barang  dagangannya antara lain pakaian.
+
+Melalui  pelabuhan-pelabuhannya  sejak  abad  ke-15 dan ke-16 hubungan antara daerah Sumatra Barat dengan berbagai negeri terjalin dalam hubungan perdagangan antara lain  dengan  Aceh.  Pada  masa  Iskandar  Muda,  Pariaman merupakan salah satu daerah yang berada di bawah
+
+
+<br>
+
+
+---
+## 📄 Halaman 208
+
+pengaruh  Kerajaan  Aceh  penggantinya.  Pada  abad  ke-17 M, terdapat ulama terkenal di Sumatra Barat salah seorang murid  Abdurrauf  al-Sinkili  yang  terkenal  bernama  Syaikh Burhanuddin  (1646-1692)  di  Ulakan.  Ia  mendirikan  surau dan tak disangsikan lagi Ulakan merupakan pusat keilmuan Islam di Minangkabau. Tarekat Syattariyah yang diajarkannya tersebar  di  daerah  Minangkabau  dan  ajaran  tasawufnya cenderung  kepada  syariah  dan  dapat  dikatakan  sebagai ajaran  neo-sufisme.  Syaikh  Burhanuddin  dalam  masyarakat setempat dikenal sebagai Tuanku Ulakan. Penyebaran Islam yang  bersifat  pembaruan  dan  menjangkau  lebih  jauh  lagi mencapai klimaksnya pada awal abad ke-19.
+
+Sejak  awal  abad  ke-16  sampai  awal  abad  ke-19  di daerah Minangkabau senantiasa terdapat kedamaian, samasama saling menghargai antara kaum adat dan kaum agama, antara hukum adat dan syariah Islam sebagaimana tercetus dalam pepatah 'Adat bersandi syara, syara bersandi adat'. Sejak  awal  abad  ke-19  timbul  pembaruan  Islam  di  daerah Sumatra  Barat  yang  membawa  pengaruh  Wahabiyah  dan kemudian  memunculkan  'Perang  Padri  ',  perang  antara golongan adat dan golongan agama. Wilayah Minangkabau mempunyai seorang raja yang berkedudukan di Pagarruyung. Raja  tetap  dihormati  sebagai  lambang  negara  tetapi  tidak mempunyai  kekuasaan,  karena  hakikatnya  kekuasaan  ada di  tangan  para  panghulu  yang  tergabung  dalam  Dewan Penghulu atau Dewan Negari.
+
+Dalam kehidupan sehari-hari masyarakat Minangkabau lambat  laun terjadi kebiasaan buruk  seperti main  judi, menyabung ayam, menghisap madat dan minum-minuman keras.  Para  pembesarnya  tidak  dapat  mencegah  bahkan di  antaranya  turut  serta.  Terkait  dengan  hal  itu,  kaum ulamanya yang kelak dinamakan kaum 'Padri' berkeinginan mengadakan perbaikan mengembalikan kehidupan masyarakat Minangkabau kepada kemurnian Islam. Di antara
+
+
+<br>
+
+
+---
+## 📄 Halaman 209
+
+kaum ulama itu Tuanku Kota Tua dari kampung Kota Tua di dataran  Agam  mengajarkan  kemurnian  Islam  berdasarkan al-Qur'an  dan  hadis.  Sementara  itu,  pada  1803  tiga  orang haji kembali dari Makkah yaitu Haji Miskin dari Pandai Sikat, Haji Sumanik dari Delapan Kota, dan Haji Piabang dari Tanah Datar.  Ketika  Haji  Miskin  melarang  penyabungan  ayam  di kampungnya, maka kaum adat melawan sehingga Haji Miskin dikejar-kejar dan ketika sampai ke Kota Lawas ia mendapat perlindungan dari Tuanku Mensiangan. Dari sini Haji Miskin lari  ke  Kamang  dan  bertemu  dengan  Tuanku  Nan  Renceh yang  akhirnya  melalui  pertemuan  beberapa  tokoh  ulama terutama di darah Luhak Agam dibentuklah kelompok yang disebut 'Padri' yang tujuan utamanya ialah memperjuangkan tegaknya syara dan membasmi kemaksiatan. Mereka itu terdiri atasTuanku  Nan  Renceh,  Tuanku  Bansa,  Tuanku  Galung, Tuanku Lubuk Aer, Tuamku Padang Lawas, Tuanku Padang Luar, Tuanku Kubu Ambelan, dan Tuanku Kubu Senang.
+
+Kedelapan ulama Padri itu disebut Harimau Nan Salapan. Perjuangan kaum Padri itu makin kuat, tetapi pihak kaum Adat dibantu Belanda untuk keuntungan politik  dan ekonominya.  Hal  ini  membuat  kaum  Padri  melawan  dua kelompok  sekaligus  yaitu  kaum  Adat  dan  kaum  penjajah Belanda  termasuk  perlawanan  bangsa  Indonesia  terhadap kolonialisme Belanda. Pada awal abad ke-19, Belanda dengan adanya celah pertentangan antara kaum adat dengan kaum ulama  dalam  Perang  Padri,  memakai  kesempatan  demi keuntungan  politik  dan  ekonominya.  Tahun  1830-1838, ditandai  dengan  perlawanan  Padri  yang  meningkat  dan penyerbuan Belanda secara besar-besaran. Perlawanan Padri diakhiri  dengan  tertangkapnya  pemimpin-pemimpin  Padri terutama Tuanku Imam Bonjol dalam pertempuran Benteng Bonjol, pada 25 Oktober 1837. Dengan demikian, pemerintah Hindia  Belanda  pada  akhir  1838  berhasil  mengukuhkan kekuasaan politik dan ekonominya di daerah Minangkabau atau  di  Sumatra  Barat.  Tuanku  Imam  Bonjol  kemudian
+
+
+<br>
+
+
+---
+## 📄 Halaman 210
+
+diasingkan ke Cianjur, dan pada 19 Januari 1839 dibuang ke Ambon, serta pada 1841 dipindahkan ke Menado kemudian ia wafat di tempat itu pada 6 November 1864.
+
+
+### Uji Kompetensi
+
+Buatlah peta Sumatra. Kemudian gambarkan sebaran letak kerajaankerajaan pada peta tersebut! Kerjakan dalam kelompok!
+
+
+### 2. Kerajaan Islam di Jawa
+
+Tahukah  kamu  kapan  dan  bagaimana  proses  Islamisasi  di tanah Jawa? Islam masuk ke Jawa melalui pesisir utara Pulau Jawa. Bukti sejarah tentang awal mula kedatangan Islam di Jawa antara lain ialah ditemukannya makam Fatimah binti Maimun bin Hibatullah yang wafat tahun 475 H atau 1082 M di Desa Leran, Kecamatan Manyar, Gresik. Dilihat dari namanya, diperkirakan Fatimah adalah keturunan Hibatullah, salah satu dinasti di Persia.
+
+Di  samping  itu,  di  Gresik  juga  ditemukan  makam  Maulana Malik Ibrahim dari Kasyan (satu tempat di Persia) yang meninggal pada tahun 822 H atau 1419 M. Agak ke pedalaman, di Mojokerto juga ditemukan ratusan makam Islam kuno. Makam tertua berangka tahun 1374. Diperkirakan makam-makam ini ialah makam keluarga istana  Majapahit.  Berdasarkan  informasi  ini,  tentu  kamu  dapat mengambil  kesimpulan  bahwa  Islam  itu  sudah  lama  masuk  ke Pulau Jawa, jauh sebelum bangsa Barat menjejakkan kaki di pulau ini. Untuk lebih jelasnya marilah kita paparkan sekelumit kerajaankerajaan Islam di Pulau Jawa.
+
+
+### a.  Kerajaan Demak
+
+Para  ahli  memperkirakan  Demak  berdiri  tahun  1500. Sementara  Majapahit  hancur  beberapa  waktu  sebelumnya. Menurut sumber sejarah lokal di Jawa, keruntuhan Majapahit terjadi sekitar tahun 1478. Hal ini ditandai dengan candrasengkala, Sirna Hilang Kertaning Bhumi yang berarti
+
+
+<br>
+
+
+---
+## 📄 Halaman 211
+
+memiliki  angka  tahun  1400  Saka.  Raja  pertama  Kerajaan Demak  adalah  Raden  Fatah,  yang  bergelar  Sultan  Alam Akbar Al-Fatah. Raden Fatah memerintah Demak dari tahun 1500-1518. Menurut cerita rakyat Jawa Timur, Raden Fatah merupakan keturunan raja terakhir dari Kerajaan Majapahit, yaitu  Raja  Brawijaya  V.  Di  bawah  pemerintahan  Raden Fatah,  Kerajaan  Demak  berkembang  dengan  pesat  karena memiliki daerah pertanian yang luas sebagai penghasil bahan makanan,  terutama  beras.  Selain  itu,  Demak  juga  tumbuh menjadi  sebuah  kerajaan  maritim  karena  letaknya  di  jalur perdagangan  antara  Malaka  dan  Maluku.  Oleh  karena  itu Kerajaan Demak disebut juga sebagai sebuah kerajaan yang agraris-maritim.  Barang  dagangan  yang  diekspor  Kerajaan Demak antara lain beras, lilin dan madu. Barang-barang itu diekspor ke Malaka, Maluku dan Samudera Pasai.
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p211_131.png)
+
+> **Deskripsi Visual:** Gambar ini adalah diagram yang menunjukkan peta Indonesia dengan penekanan pada provinsi Jawa. Peta ini memperlihatkan wilayah-wilayah penting seperti Sumatera, Kalimantan, dan Jawa, serta beberapa kota besar seperti Jakarta, Surabaya, dan Bandung. Label-label di peta menunjukkan nama-nama provinsi dan kota-kota tersebut. Informasi kunci yang dapat diambil dari gambar ini adalah bahwa Indonesia terdiri dari beberapa provinsi, termasuk Jawa, yang merupakan salah satu provinsi terbesar di Indonesia.
+
+Gambar 3.19 Peta pengaruh kesultanan Demak meliputi Sumatra Selatan dan Kalimantan
+
+
+<br>
+
+
+---
+## 📄 Halaman 212
+
+Pada masa pemerintahan Raden Fatah, wilayah kekuasaan  Kerajaan  Demak  cukup  luas,  meliputi  Jepara, Tuban, Sedayu, Palembang, Jambi dan beberapa daerah di Kalimantan.  Daerah-daerah  pesisir  di  Jawa  bagian  Tengah dan Timur kemudian ikut mengakui kedaulatan Demak dan mengibarkan panji-panjinya. Kemajuan yang dialami Demak ini  dipengaruhi  oleh  jatuhnya  Malaka  ke  tangan  Portugis. Karena  Malaka  sudah  dikuasai  oleh  Portugis,  maka  para pedagang yang tidak simpatik dengan kehadiran Portugis di Malaka beralih haluan menuju pelabuhan-pelabuhan Demak seperti Jepara, Tuban, Sedayu, Jaratan dan Gresik. Pelabuhanpelabuhan tersebut kemudian berkembang menjadi pelabuhan transit.
+
+Selain  tumbuh  sebagai  pusat  perdagangan,  Demak juga  tumbuh menjadi pusat penyebaran agama Islam. Para wali  yang  merupakan  tokoh  penting  pada  perkembangan Kerajaan  Demak  ini,  memanfaatkan  posisinya  untuk  lebih menyebarkan Islam kepada penduduk Jawa. Para wali juga berusaha menyebarkan Islam di luar Pulau Jawa. Penyebaran agama Islam di Maluku dilakukan oleh Sunan Giri sedangkan
+
+Gambar 3.20 Demak
+
+
+<br>
+
+
+---
+## 📄 Halaman 213
+
+di daerah Kalimantan Timur dilakukan oleh seorang penghulu dari  Kerajaan  Demak  yang  bernama  Tunggang  Parangan. Setelah  Kerajaan  Demak  lemah  maka  muncul  Kerajaan Pajang.
+
+
+### b. Kerajaan Mataram
+
+Setelah Kerajaan Demak  berakhir, berkembanglah Kerajaan Pajang di bawah pemerintahan Sultan Hadiwijaya. Di  bawah  kekuasaannya,  Pajang  berkembang  baik.  Bahkan berhasil mengalahkan Arya Penangsang yang berusaha merebut kekuasaannya. Tokoh yang membantunya mengalahkan Arya Penangsang di antaranya adalah Ki Ageng Pemanahan (Ki Gede Pemanahan). la diangkat sebagai bupati (adipati)  di  Mataram.  Kemudian  putranya,  Raden  Bagus (Danang)  Sutawijaya  diangkat  anak  oleh  Sultan  Hadiwijaya dan dibesarkan di istana. Sutawijaya dipersaudarakan dengan putra mahkota, bernama Pangeran Benowo.
+
+Pada tahun 1582, Sultan Hadiwijaya meninggal dunia. Penggantinya, Pangeran Benowo  merupakan raja yang lemah.  Sementara  Sutawijaya  yang  menggantikan  Ki  Gede Pemanahan justru semakin menguatkan kekuasaannya sehingga  akhirnya  Istana  Pajang  pun  jatuh  ke  tangannya. Sutawijaya  segera  memindahkan  pusaka  Kerajaan  Pajang ke Mataram. Sutawijaya sebagai raja pertama dengan gelar: Panembahan  Senapati  Ing  Alaga  Sayidin  Panatagama . Pusat  kerajaan  ada  di  Kota  Gede,  sebelah  tenggara  Kota Yogyakarta sekarang. Panembahan Senapati digantikan oleh putranya yang bernama Mas Jolang (1601-1613). Mas Jolang kemudian digantikan oleh putranya bernama Mas Rangsang atau lebih dikenal dengan nama Sultan Agung (1613-1645). Pada  masa  pemerintahan  Sultan  Agung  inilah  Mataram mencapai zaman keemasan.
+
+
+<br>
+
+
+---
+## 📄 Halaman 214
+
+Dalam  bidang  politik  pemerintahan,  Sultan  Agung berhasil  memperluas  wilayah  Mataram  ke  berbagai  daerah yaitu, Surabaya (1615), Lasem, Pasuruhan (1617), dan Tuban (1620). Di samping berusaha menguasai dan mempersatukan berbagai daerah di Jawa, Sultan Agung juga ingin mengusir VOC dari Kepulauan Indonesia. Kemudian diadakan dua kali serangan tentara Mataram ke Batavia pada tahun 1628 dan 1629.
+
+Mataram berkembang menjadi kerajaan agraris. Dalam bidang pertanian, Mataram mengembangkan daerah-daerah persawahan yang luas. Seperti yang dilaporkan oleh Dr. de Han, Jan Vos dan Pieter Franssen bahwa Jawa bagian tengah adalah daerah pertanian yang subur dengan hasil utamanya adalah  beras.  Pada  abad  ke-17,  Jawa  benar-benar  menjadi lumbung padi. Hasil-hasil yang lain adalah kayu, gula, kelapa, kapas, dan hasil palawija.
+
+Gambar 3.21 Masjid Agung Surakarta
+
+
+<br>
+
+
+---
+## 📄 Halaman 215
+
+Di Mataram dikenal beberapa kelompok dalam masyarakat.  Ada  golongan  raja  dan  keturunannya,  para bangsawan dan rakyat sebagai kawula kerajaan. Kehidupan masyarakat bersifat feodal karena raja adalah pemilik tanah beserta seluruh isinya. Sultan dikenal sebagai panatagama, yaitu  pengatur  kehidupan  keagamaan.  Oleh  karena  itu, Sultan memiliki kedudukan yang sangat tinggi. Rakyat sangat hormat dan patuh, serta hidup mengabdi pada sultan.
+
+Bidang kebudayaan juga maju pesat. Seni bangunan, ukir,  lukis,  dan  patung  mengalami  perkembangan.  Kreasikreasi  para  seniman,  misalnya  terlihat  pada  pembuatan gapura-gapura, serta ukir-ukiran di istana dan tempat ibadah. Seni tari yang terkenal adalah Tari Bedoyo Ketawang. Dalam prakteknya, Sultan Agung memadukan unsur-unsur budaya Islam dengan budaya Hindu-Jawa. Sebagai contoh, di Mataram d i s e l e n g g a r a k a n perayaan sekaten untuk memperingati hari kelahiran Nabi Muhammad saw,
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p215_134.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan upacara pemakaman tradisional. Gambar ini menggambarkan beberapa orang yang sedang membawa karung berisi jenazah ke makam. Karung tersebut tampak besar dan berwarna merah. Orang-orang yang membawa karung tersebut tampak serius dan berperan dengan baik dalam upacara tersebut. Di sekitar mereka, terlihat beberapa pohon dan bangunan tradisional, menunjukkan bahwa upacara ini dilakukan di tempat yang biasanya digunakan untuk pemakaman. Gambar ini menunjukkan bagaimana upacara pemakaman tradisional diadakan dan bagaimana peran masing-masing orang dalam upacara tersebut.
+
+
+<br>
+
+
+---
+## 📄 Halaman 216
+
+dengan  membunyikan  gamelan  Kyai  Nagawilaga  dan  Kyai Guntur  Madu.  Kemudian  juga  diadakan  upacara  grebeg. Grebeg  diadakan  tiga  kali  dalam  satu  tahun,  yaitu  setiap tanggal  10  Dzulliijah  (Idul  Adha),  1  Syawal  (Idul  Fitri),  dan tanggal  12  Rabiulawal  (Maulid  Nabi).  Bentuk  dan  kegiatan upacara grebeg adalah mengarak gunungan dari keraton ke
+
+Untuk memperdalam masalah ini kamu bisa membaca buku J.H. de Graaf & T.H. Pigeud. Kerajaan Islam Pertama di Jawa: Tinjauan Sejarah Politik Abad XV dan XVI.
+
+depan masjid agung. Gunungan biasanya dibuat dari  berbagai  makanan,  kue,  dan  hasil  bumi yang  dibentuk  menyerupai  gunung.  Upacara grebeg merupakan sedekah sebagai rasa syukur dari raja kepada Tuhan Yang Maha Esa dan juga sebagai pembuktian kesetiaan para bupati dan punggawa kerajaan kepada rajanya.
+
+Sultan  Agung  wafat  pada  1645.  Ia  dimakamkan  di Bukit  Imogiri.  Ia  digantikan  oleh  putranya  yang  bergelar Amangkurat I. Akan tetapi,  pribadi  raja  ini  sangat  berbeda dengan pribadi Sultan Agung. Amangkurat I adalah seorang raja yang lemah, berpandangan sempit, dan sering bertindak
+
+Gambar 3.23 Keraton Surakarta
+
+
+<br>
+
+
+---
+## 📄 Halaman 217
+
+kejam.  Mataram  mengalami  kemunduran  apalagi  adanya pengaruh VOC yang semakin kuat. Dalam perkembangannya Kerajaan Mataram akhirnya dibagi dua berdasarkan Perjanjian Giyanti (1755). Sebelah barat menjadi Kesultanan Yogyakarta dan sebelah timur menjadi Kasunanan Surakarta.
+
+
+### c.  Kesultanan Banten
+
+Kerajaan  Banten  berawal  sekitar  tahun  1526,  ketika Kerajaan Demak memperluas pengaruhnya ke kawasan pesisir barat Pulau Jawa, dengan menaklukkan beberapa kawasan pelabuhan kemudian menjadikannya sebagai pangkalan militer  serta  kawasan  perdagangan.  Maulana  Hasanuddin, putera  Sunan  Gunung  Jati  berperan  dalam  penaklukan tersebut. Setelah penaklukan tersebut, Maulana Hasanuddin atau  lebih  sohor  dengan  sebutan  Fatahillah,  mendirikan benteng  pertahanan  yang  dinamakan Surosowan ,  yang kemudian hari menjadi pusat pemerintahan, yakni Kesultanan Banten.
+
+Pada awalnya, kawasan Banten dikenal dengan nama Banten Girang yang merupakan bagian dari Kerajaan Sunda. Kedatangan pasukan kerajaan di bawah pimpinan Maulana Hasanuddin  ke  kawasan  tersebut  selain  untuk  perluasan wilayah juga sekaligus penyebaran dakwah Islam. Kemudian dipicu oleh adanya kerja sama Sunda-Portugis dalam bidang ekonomi dan politik, hal ini dianggap dapat membahayakan kedudukan Kerajaan Demak  selepas kekalahan mereka mengusir  Portugis  dari  Malaka  tahun  1513.  Atas  perintah Sultan  Trenggono,  Fatahillah  melakukan  penyerangan  dan penaklukan  Pelabuhan  Sunda  Kelapa  sekitar  tahun  1527, yang  waktu  itu  masih  merupakan  pelabuhan  utama  dari Kerajaan Sunda.
+
+Selain mulai membangun  benteng pertahanan di Banten,  Fatahillah  juga  melanjutkan  perluasan  kekuasaan ke  daerah  penghasil  lada  di  Lampung.  Ia  berperan  dalam
+
+
+<br>
+
+
+---
+## 📄 Halaman 218
+
+Gambar 3.24 Masjid Agung Banten penyebaran  Islam  di  kawasan  tersebut,  selain  itu  ia  juga telah  melakukan  kontak  dagang  dengan  raja Malangkabu (Minangkabau,  Kerajaan  Indrapura),  Sultan  Munawar  Syah dan dianugerahi keris oleh raja tersebut.
+
+Seiring  dengan  kemunduran Demak terutama setelah meninggalnya Sultan Trenggono, maka Banten melepaskan diri dan menjadi kerajaan yang mandiri. Pada 1570 Fatahillah wafat.  Ia  meninggalkan  dua  orang  putra  laki-laki,  yakni Pangeran  Yusuf dan Pangeran  Arya (Pangeran Jepara). Dinamakan  Pangeran  Jepara,  karena  sejak  kecil  ia  sudah diikutkan  kepada  bibinya  (Ratu  Kalinyamat)  di  Jepara.  Ia kemudian berkuasa di Jepara menggantikan Ratu Kalinyamat, sedangkan Pangeran Yusuf menggantikan Fatahillah di Banten.
+
+
+<br>
+
+
+---
+## 📄 Halaman 219
+
+Pangeran  Yusuf  melanjutkan  usaha-usaha  perluasan daerah  yang  sudah  dilakukan  ayahandanya.  Tahun  1579, daerah-daerah yang masih setia pada Pajajaran ditaklukkan. Untuk kepentingan ini Pangeran Yusuf memerintahkan membangun kubu-kubu pertahanan. Tahun 1580, Pangeran Yusuf meninggal dan digantikan oleh putranya, yang bernama Maulana  Muhammad.  Pada  1596,  Maulana  Muhammad melancarkan serangan ke Palembang. Pada waktu itu Palembang diperintah oleh Ki Gede ing Suro (1572 - 1627). Ki  Gede ing Suro adalah seorang penyiar agama Islam dari Surabaya dan perintis perkembangan pemerintahan kerajaan Islam di Palembang. Kala itu Kerajaan Palembang lebih setia kepada Mataram dan sekaligus merupakan saingan Kerajaan Banten. Itulah sebabnya, Maulana Muhammad melancarkan serangan ke Palembang. Kerajaan Palembang dapat dikepung  dan  hampir  saja  dapat  ditaklukkan.  Akan  tetapi, Sultan  Maulana  Muhammad  tiba-tiba  terkena  tembakan musuh dan meninggal. Oleh karena itu,  ia  dikenal  dengan sebutan Prabu Seda ing Palembang. Serangan tentara Banten terpaksa dihentikan, bahkan akhirnya ditarik mundur kembali ke Banten.
+
+Gugurnya Maulana Muhammad menimbulkan berbagai perselisihan  di  istana.  Putra  Maulana  Muhammad  yang bernama  Abumufakir  Mahmud  Abdul  Kadir,  masih  kanakkanak. Pemerintahan dipegang oleh sang Mangkubumi. Akan tetapi,  Mangkubumi  berhasil  disingkirkan  oleh  Pangeran Manggala. Pangeran Manggala berhasil mengendalikan kekuasaan di Banten. Baru setelah Abumufakir dewasa dan Pangeran  Manggala  meninggal  tahun  1624,  maka  Banten secara  penuh  diperintah  oleh  Sultan  Abumufakir  Mahmud Abdul Kadir.
+
+Pada  tahun  1596  orang-orang  Belanda  datang  di pelabuhan Banten untuk yang pertama kali. Terjadilah perkenalan  dan  pembicaraan  dagang  yang  pertama  antara
+
+
+<br>
+
+
+---
+## 📄 Halaman 220
+
+
+---
+**🖼️ Gambar/Diagram**
+
+![Visual](extracted_assets/picture_p220_137.png)
+
+> **Deskripsi Visual:** Gambar ini adalah ilustrasi yang menunjukkan kapal perang atau kapal perang laut berlayar di laut dengan pemandangan kota di latar belakang. Kapal perang memiliki empat tiang dan beberapa bendera. Pemandangan kota tampak jelas dengan bangunan-bangunan tinggi dan sejumlah pohon. Ilustrasi ini mungkin digunakan untuk membantu pembaca memahami konsep tentang kapal perang atau peradaban laut pada masa lalu.
+
+orang-orang Belanda dengan para pedagang Banten. Tetapi dalam perkembangannya, orang-orang Belanda bersikap angkuh dan sombong, bahkan mulai menimbulkan kekacauan di Banten. Oleh karena itu, orang-orang Banten  menolak  dan  mengusir  orangorang  Belanda.  Akhirnya,  orang-orang Belanda kembali ke negerinya. Dua tahun  kemudian,  orang-orang  Belanda datang lagi. Mereka menunjukkan sikap yang baik, sehingga dapat berdagang di Banten dan di Jayakarta.
+
+Menginjak abad ke-17 Banten mencapai zaman keemasan. Daerahnya cukup luas. Setelah Sultan Abumufakir meninggal, ia  digantikan  oleh  putranya  bernama  Abumaali  Achmad. Setelah  Abumaali  Achmad,  tampillah  sultan  yang  terkenal, yakni  Sultan  Abdulfattah  atau  yang  lebih  dikenal  dengan nama  Sultan  Ageng  Tirtayasa.  Ia  memerintah  pada  tahun 1651 - 1682. Pada masa pemerintahan Sultan Ageng Tirtayasa, Banten terus mengalami kemajuan. Letak  Banten  yang  strategis  mempercepat  perkembangan dan  kemajuan  ekonomi  Banten.  Kehidupan  sosial  budaya juga mengalami kemajuan. Masyarakat umum hidup dengan rambu-rambu budaya Islam.
+
+Secara politik pemerintahan Banten juga semakin kuat. Perluasan wilayah kekuasaan terus dilakukan bahkan sampai ke daerah yang pernah dikuasai Kerajaan Pajajaran. Namun ada  sebagian  masyarakat  yang  menyingkir  di  pedalaman Banten  Selatan  karena  tidak  mau  memeluk  agama  Islam. Mereka  tetap  mempertahankan  agama  dan  adat  istiadat
+
+Gambar 3.25 16 M
+
+
+<br>
+
+
+---
+## 📄 Halaman 221
+
+nenek  moyang.  Mereka  dikenal  dengan  masyarakat  Badui. Mereka  hidup  mengisolir  diri  di  tanah  yang  disebut  tanah Kenekes . Mereka menyebut dirinya orang-orang Kejeroan.
+
+Dalam bidang kebudayaan, seni bangunan mengalami perkembangan. Beberapa jenis bangunan yang masih tersisa, antara  lain,  Masjid  Agung  Banten,  bangunan  keraton  dan gapura-gapura.
+
+Pada masa akhir pemerintahan Sultan Ageng Tirtayasa timbul konflik di dalam istana. Sultan Ageng Tirtayasa yang berusaha menentang VOC, kurang disetujui oleh Sultan Haji sebagai raja muda. Keretakan di dalam istana ini dimanfaatkan VOC dengan politik devide et impera . VOC membantu Sultan Haji  untuk  mengakhiri  kekuasaan  Sultan  Ageng  Tirtayasa. Berakhirnya  kekuasaan  Sultan  Ageng  Tirtayasa  membuat semakin kuatnya kekuasaan VOC di Banten. Raja-raja yang berkuasa  berikutnya,  bukanlah  raja-raja  yang  kuat.  Hal  ini membawa kemunduran Kerajaan Banten.
+
+
+### d. Kesultanan Cirebon
+
+Menurut berita Tome Pires sekitar 1513 diberitakan Cirebon sudah termasuk ke daerah Jawa di bawah kekuasaan Kerajaan Demak. Penguasa di Cirebon ialah Lebe Usa sebagai bawahan Pate Rodim. Cirebon terutama mengekspor beras dan banyak bahan makanan lainnya. Kota ini berpenduduk sekitar 1.000 orang. Menurut Tome Pires Islam sudah hadir di kota Cirebon 40 tahun sebelum kehadiran Tome Pires sendiri.
+
+Perkiraan  kehadiran  Islam  di  kota  Cirebon  menurut sumber lokal Tjarita Purwaka Tjaruban Nagari karya Pangeran  Arya  Cerbon  pada  1720  M,  dikatakan  bahwa Syarif  Hidayatullah  datang  ke  Cirebon  pada  1470  M,  dan mengajarkan Islam di Gunung Sembung, bersama-sama Haji Abdullah Iman atau Pangeran Cakrabumi. Syarif Hidayatullah
+
+
+<br>
+
+
+---
+## 📄 Halaman 222
+
+kawin dengan Pakungwati dan pada 1479 ia menggantikan mertuanya sebagai Penguasa Cirebon, lalu mendirikan keraton  yang  diberi  nama    Pakungwati  di  sebelah  timur Keraton Sultan Kasepuhan kini. Syarif Hidayatullah terkenal juga  dengan  gelaran  Susuhunan  Jati  atau  Sunan  Gunung Jati,  seorang  dari  walisongo  dan  juga  ia  mendapat  julukan Pandita-Ratu sejak  berfungsi  sebagai  wali  penyebar  Islam di  Tatar  Sunda  dan  sebagai  kepala  pemerintahan.  Sejak itu  Cirebon  menghentikan  upeti  ke  pusat  Kerajaan  Sunda Pajajaran di Pakuan. Sebenarnya Islam sudah mulai disebarkan meski mungkin masih terbatas daerahnya. Pangeran Cakrabumi alias Haji Abdullah Iman dan juga Syaikh Datuk Kahfi  yang  telah  mempelopori  pendirian  pesantren  sebagai tempat mengajar dan penyebaran agama Islam untuk daerah sekitarnya.  Pada  masa  pemerintahan  Sunan  Gunung  Jati Islam  makin  diintensifkan  dengan  pendirian  Masjid  Agung Cipta Rasa di sisi barat alun-alun Keraton Pakungwati. Islam diluaskan  ke  berbagai  daerah,  antara  lain,  ke  Kuningan, Talaga, dan Galuh sekitar 1528-1530, dan ke Banten sekitar 1525-1526 bersama putranya Maulana Hasanuddin. Sekitar 1527 ia mendorong menantunya, panglima yang dikirimkan Pangeran  Trenggana  dari  Demak  untuk  menyerang  Kalapa yang  masih  dikuasai  Kerajaan  Sunda.  Ketika  itu  Kerajaan Sunda sudah mengadakan hubungan dengan Portugis dari Malaka sejak 1522.
+
+Sunan Gunung Jati wafat pada 1568, ia dimakamkan di Bukit Sembung  atau yang dikenal  dengan  makam Gunung Jati. Penggantinya di Cirebon ialah buyutnya yang kelak  dikenal  sebagai  Panembahan  Ratu  putra  Pangeran Suwarga  yang  telah  meninggal  dunia  pada  1565.  Pada masa  pemerintahannya  hubungan  dengan  Mataram  masih diteruskan  melalui  jalur  kekeluargaan  antara  lain  dengan pernikahan kakak perempuan Panembahan Ratu yaitu Ratu Ayu  Sakluh  dengan  Sultan  Agung  Mataram  (1613-1645), yang melahirkan Amangkurat I (1614-1677).
+
+
+<br>
+
+
+---
+## 📄 Halaman 223
+
+Keberadaan Kesultanan Cirebon menjelang akhir abad ke-17 diwarnai dengan perjanjian-perjanjian VOC antara lain perjanjian  pada  tanggal  7  Januari  1681.  Lewat  perjanjian tersebut Kesultanan Cirebon mulai dicampuri politik kolonial  VOC.  Selain  itu  di  bidang  ekonomi-perdagangan, VOC  mendapatkan  hak  monopoli  seperti    pakaian  dan opium.  Demikian  pula  ekspor  komoditas  lada,  beras,  kayu, gula,  dan  sebagainya  berada  di  tangan  VOC.  Sejak  1697, kekuasaan  Keraton  Kasepuhan  dan  Kanoman  terbagi  lagi atas  Kacirebonan  dan  Kaprabonan.  Karena  itu  menurut pendapat Sharon Sidiqque,  Kesultanan  Cirebon  sejak  1681 sampai 1940 mengalami kemerosotan karena kolonialisme. Meskipun  pendapat  beberapa  ahli  agak  berbeda  namun dapat dikatakan Kesultanan Cirebon merupakan pusat syiar keagamaan  dengan  penyebarannya  berlangsung  sebelum 168I. Tasawuf dan tarekat-tarekat keagamaan Islam seperti Kubrawiyah, Qadariyah, Syattariyah, dan kemudian Tijaniyah berkembang di Cirebon. Cirebon sebagai pusat keagamaan banyak  menghasilkan  naskah-naskah  kuno  seperti Babad Cerbon, Tarita Puwaka Tjaruban Nagari, Pepakem Cerbon , dan lainnya.
+
+
+### 3. Kerajaan-Kerajaan Islam di Kalimantan
+
+Di  samping  Sumatra  dan  Jawa,  ternyata  di  Kalimantan juga  terdapat  beberapa  kerajaan-kerajaan  yang  bercorak  Islam. Apakah  kamu  sudah  mengetahui  nama  kerajaan-kerajaan  Islam yang tumbuh di Kalimantan? Di antara kerajaan Islam itu adalah Kesultanan Pasir (1516), Kesultanan Banjar (1526-1905), Kesultanan Kotawaringin, Kerajaan Pagatan (1750), Kesultanan Sambas (1671), Kesultanan Kutai Kartanegara, Kesultanan Berau (1400), Kesultanan Sambaliung (1810), Kesultanan Gunung Tabur (1820), Kesultanan Pontianak  (1771),  Kesultanan  Tidung,  dan  Kesultanan  Bulungan (1731).
+
+
+<br>
+
+
+---
+## 📄 Halaman 224
+
+
+### a. Kerajaan Pontianak
+
+Kerajaan-kerajaan yang terletak di daerah Kalimantan Barat  antara  lain  Tanjungpura  dan  Lawe.  Kedua  kerajaan tersebut pernah diberitakan Tome Pires (1512-1551). Tanjungpura  dan  Lawe  menurut  berita  musafir  Portugis sudah mempunyai kegiatan dalam perdagangan baik dengan Malaka  dan  Jawa,  bahkan  kedua  daerah  yang  diperintah oleh Pate atau mungkin adipati kesemuanya tunduk kepada kerajaan di Jawa yang diperintah Pati Unus. Tanjungpura dan Lawe  (daerah  Sukadana)  menghasilkan  komoditas  seperti emas,  berlian,  padi,  dan  banyak  bahan  makanan.  Banyak barang dagangan dari Malaka yang dimasukkan ke daerah itu, demikian pula jenis pakaian dari Bengal dan Keling yang berwarna merah dan hitam dengan harga yang mahal dan yang  murah.  Pada  abad  ke-17,  kedua  kerajaan  itu  telah berada  di  bawah  pengaruh  kekuasaan  Kerajaan  Mataram terutama dalam upaya perluasan politik dalam menghadapi ekspansi politik VOC.
+
+Demikian pula Kotawaringin yang kini sudah termasuk wilayah  Kalimantan  Barat  pada  masa  Kerajaan  Banjar  juga sudah masuk dalam pengaruh Mataram, sekurang-kurangnya sejak  abad  ke-16.  Meskipun  kita  tidak  mengetahui  dengan pasti kehadiran Islam di Pontianak, konon ada pemberitaan bahwa  sekitar  abad  ke-18  atau  1720  ada  rombongan pendakwah dari Tarim (Hadramaut) yang di antaranya datang ke daerah Kalimantan Barat untuk mengajarkan membaca alQur'an, ilmu fikih, dan ilmu hadis. Mereka di antaranya Syarif Idrus  bersama  anak  buahnya  pergi  ke  Mampawah,  tetapi kemudian menelusuri sungai ke arah laut memasuki Kapuas Kecil sampailah ke suatu tempat yang menjadi cikal bakal kota Pontianak. Syarif Idrus kemudian diangkat menjadi pimpinan utama masyarakat di tempat itu dengan gelar Syarif Idrus ibn Abdurrahman al-Aydrus yang kemudian memindahkan kota dengan  pembuatan  benteng  atau  kubu  dari  kayu-kayuan
+
+
+<br>
+
+
+---
+## 📄 Halaman 225
+
+untuk  pertahanan.  Sejak  itu  Syarif  Idrus  ibn  Abdurrahman al-Aydrus dikenal sebagai Raja Kubu. Daerah itu mengalami kemajuan di bidang perdagangan dan keagamaan, sehingga banyak para pedagang yang berdatangan dari berbagai negeri. Pemerintahan Syarif Idrus (lengkapnya: Syarif Idrus al-Aydrus ibn Abdurrahman ibn Ali ibn Hassan ibn Alwi ibn Abdullah ibn Ahmad ibn Husin ibn Abdullah al-Aydrus) memerintah pada 1199-1209 H atau 1779-1789 M.
+
+Cerita  lainnya  mengatakan  bahwa  pendakwah  dari Tarim (Hadramaut) yang mengajarkan Islam dan datang ke Kalimantan bagian barat terutama ke Sukadana ialah Habib Husin  al-Gadri.  Ia  semula  singgah  di  Aceh  dan  kemudian ke  Jawa  sampai  di  Semarang.  Di  tempat  itulah  ia  bertemu dengan pedagang Arab bernama Syaikh, karena itulah maka Habib  Husin  al-Gadri  berlayar  ke  Sukadana.  Kesaktiannya menyebabkan ia mendapat banyak simpati dari raja, Sultan Matan dan rakyat. Kemudian Habib Husin al-Gadri pindah dari Matan ke Mempawah untuk meneruskan syiar Islam. Setelah wafat ia diganti oleh salah seorang putranya yang bernama
+
+
+<br>
+
+
+---
+## 📄 Halaman 226
+
+Pangeran Sayid Abdurrahman Nurul Alam. Ia pergi dengan sejumlah  rakyatnya  ke  tempat  yang  kemudian  dinamakan Pontianak  dan  di  tempat  inilah  ia  mendirikan  keraton  dan masjid agung. Pemerintahan Syarif Abdurrahman Nur Alam ibn  Habib  Husin  al-Gadri  pada  1773-1808,  digantikan  oleh Syarif Kasim ibn Abdurrahman al-Gadri pada 1808-1828 dan selanjutnya  Kesultanan  Pontianak  di  bawah  pemerintahan sultan-sultan keluarga Habib Husin al-Gadri.
+
+
+### b. Kerajaan Banjar (Banjarmasin)
+
+Kerajaan Banjar (Banjarmasin) terdapat di daerah Kalimantan  Selatan  yang  muncul  sejak  kerajaan-kerajaan bercorak Hindu yaitu Negara Dipa, Daha, dan Kahuripan yang berpusat di daerah hulu Sungai Nagara di Amuntai. Kerajaan Nagara  Dipa  masa  pemerintahan  Putri  Jungjung  Buih  dan patihnya Lembu Amangkurat, pernah mengadakan hubungan dengan Kerajaan Majapahit. Mengingat pengaruh Majapahit sudah  sampai  di  daerah  Sungai  Nagara,  Batang  Tabalung, Barito,  dan  sebagainya  tercatat  dalam  kitab Nagarakertagama . Hubungan  tersebut  juga  dibuktikan  dalam  cerita Hikayat Banjar dan Kronik  Banjarmasin .  Pada  waktu  menghadapi peperangan dengan Daha, Raden Samudera minta bantuan Kerajaan  Demak  sehingga  mendapat  kemenangan.  Sejak itulah Raden Samudera  menjadi pemeluk  agama  Islam dengan gelar Sultan Suryanullah. Yang mengajarkan agama Islam  kepada  Raden  Samudera  dengan  patih-patih  serta rakyatnya  ialah  seorang  penghulu  Demak.  Proses  Islamisasi di  daerah itu,  menurut A.A. Cense, terjadi sekitar 1550 M. Sejak pemerintahan  Sultan  Suryanullah, Kerajaan Banjar atau Banjarmasin meluaskan kekuasaannya sampai Sambas, Batanglawai Sukadana, Kotawaringin, Sampit, Madawi, dan Sambangan.  Sebagai  tanda  daerah  takluk  biasanya  pada waktu-waktu  tertentu  mengirimkan  upeti  kepada  Sultan Suryanullah sebagai penguasa Kerajaan Banjar. Setelah Sultan Suryanullah wafat, ia digantikan oleh putra tertuanya dengan gelar  Sultan  Rahmatullah.  Ketika  menjabat  sebagai  raja,  ia
+
+
+<br>
+
+
+---
+## 📄 Halaman 227
+
+masih  mengirimkan  upeti  ke  Demak,  yang  pada  waktu  itu sudah menjadi Kerajaan Pajang. Setelah Sultan Rahmatullah, yang memerintah Kerajaan Banjarmasin ialah seorang putranya yang bergelar Sultan Hidayatullah. Pengganti Sultan Hidayatullah ialah Sultan Marhum Panambahan atau dikenal dengan gelar Sultan Mustain Billah yang pada masa pemerintahannya berupaya memindahkan ibu kota kerajaan ke Amuntai. Ketika memerintah pada awal abad ke-17 Sultan Mustain Billah ditakuti oleh kerajaan-kerajaan sekitarnya dan ia dapat menghimpun lebih kurang 50.000 prajurit. Demikian kuatnya Kerajaan Banjar sehingga  dapat  membendung pengaruh  politik  dari  Tuban,  Arosbaya,  dan  Mataram,  di samping  menguasai  daerah-daerah  kerajaan  di  Kalimantan Timur, Tenggara, Tengah, dan Barat.
+
+Pada  abad  ke-17  di  Kerajaan  Banjar  ada  seorang ulama besar yang bernama Muhammad Arsyad ibn Abdullah al-Banjari (1710-1812) lahir di Martapura. Atas biaya kesultanan masa Sultan Tahlil Allah (1700-1745) pergi belajar ke  Haramayn  selama  beberapa  tahun.  Sekembalinya  dari
+
+Gambar 3.27 Masjid peninggalan Kesultanan Banjar, Kesultanan Islam di Kalimantan
+
+
+<br>
+
+
+---
+## 📄 Halaman 228
+
+Haramayn ia mengajarkan fikih atau syariah, dengan kitabnya Sabîl al-Muhtadîn . Ia ahli di bidang tasawuf dengan karyanya Khaz al-Ma'rifah .  Mengenai riwayat,  ajaran dan guru-guru serta  kitab-kitab  hasil  karyanya  secara  panjang  lebar  telah dibicarakan  oleh  Azyumardi  Azara  dalam Jaringan  Ulama Timur  Tengah  dan  Kepulauan  Nusantara  Abad  XVII  dan XVIII . Sejak wafatnya Sultan Adam, pada 1 November 1857, pergantian  sultan-sultan  mulai  dicampuri  oleh  kepentingan politik  Belanda  sehingga  terjadi  pertentangan-pertentangan antara keluarga raja, terlebih setelah dihapuskannya Kerajaan Banjar oleh Belanda. Perlawanan-perlawanan terhadap Belanda itu terus-menerus dilakukan terutama antara tahun 1859-1863,  antara  lain  oleh  Pangeran  Antasari,  Pangeran Demang  Leman, Haji Nasrun dan lainnya. Perlawanan terhadap  penjajah  Belanda  itu  sebenarnya  terus  dilakukan sampai tahun-tahun selanjutnya.
+
+Ulasan  di  atas  hanya  salah  satu  dari  kerajaan  yang  ada di  Kalimantan.  Kamu  dapat  mencari  informasi  lebih mendalam  tentang  kerajaan  Islam  lainnya  yang  ada  di Kalimantan
+
+
+### 4. Kerajaan-Kerajaan Islam di Sulawesi
+
+Di daerah Sulawesi juga tumbuh kerajaan-kerajaan bercorak Islam. Munculnya kerajaan-kerajaan Islam di Sulawesi tidak terlepas dari  perdagangan yang berlangsung ketika itu. Berikut ini adalah beberapa kerajaan Islam di Sulawesi di antaranya Gowa-Tallo, Bone, Wajo  dan  Soppeng,  dan  Kesultanan  Buton.  Dari  sekian  banyak kerajaan-kerajaan itu yang terkenal antara lain Kerajaan Gowa-Tallo
+
+
+### a. Kerajaan Gowa-Tallo
+
+Kerajaan  Gowa-Tallo  sebelum  menjadi  kerajaan  Islam sering berperang dengan kerajaan lainnya di Sulawesi Selatan, seperti  dengan  Luwu,  Bone,  Soppeng,  dan  Wajo.  Kerajaan Luwu yang bersekutu dengan Wajo ditaklukan oleh Kerajaan
+
+
+<br>
+
+
+---
+## 📄 Halaman 229
+
+Gowa-Tallo. Kemudian Kerajaan Wajo menjadi daerah taklukan  Gowa  menurut Hikayat  Wajo. Dalam  serangan terhadap  Kerajaan  Gowa-Tallo,  Karaeng  Gowa  meninggal dan seorang lagi terbunuh sekitar pada 1565. Ketiga Kerajaan Bone,  Wajo,  dan  Soppeng  mengadakan  persatuan  untuk mempertahankan  kemerdekaannya  yang  disebut  perjanjian Tellumpocco, sekitar  1582.  Sejak  Kerajaan  Gowa  resmi sebagai kerajaan bercorak Islam pada 1605, Gowa meluaskan pengaruh  politiknya,  agar  kerajaan-kerajaan  lainnya  juga memeluk  Islam  dan  tunduk  kepada  Kerajaan  Gowa-Tallo. Kerajaan-kerajaan  yang  tunduk  kepada  Kerajaan  GowaTallo antara lain Wajo pada 10 Mei 1610, dan Bone pada 23 November 1611.
+
+Di  daerah  Sulawesi  Selatan  proses  Islamisasi  makin mantap  dengan  adanya  para  mubalig  yang  disebut  Dato' Tallu (Tiga Dato), yaitu Dato' Ri Bandang (Abdul Makmur atau Khatib Tunggal) Dato' Ri Pattimang (Dato' Sulaemana atau Khatib Sulung), dan Dato' Ri Tiro (Abdul Jawad alias Khatib Bungsu), ketiganya bersaudara dan berasal dari Kolo Tengah, Minangkabau. Para mubalig itulah yang mengislamkan Raja Luwu yaitu Datu' La Patiware' Daeng Parabung dengan gelar Sultan  Muhammad  pada  15-16  Ramadhan  1013  H  (4-5
+
+
+<br>
+
+
+---
+## 📄 Halaman 230
+
+Gambar 3.29 Makam Sultan Alauddin, Raja Gowa
+
+Februari 1605 M). Kemudian disusul oleh Raja Gowa dan Tallo yaitu Karaeng Matowaya dari Tallo yang bernama I Mallingkang Daeng Manyonri (Karaeng Tallo) mengucapkan syahadat pada Jumat sore, 9 Jumadil Awal 1014 H atau 22 September 1605 M dengan gelar Sultan Abdullah. Selanjutnya Karaeng Gowa I  Manga'  rangi  Daeng  Manrabbia  mengucapkan  syahadat pada  Jumat,  19  Rajab  1016  H  atau  9  November  1607  M. Perkembangan  agama  Islam  di  daerah  Sulawesi  Selatan mendapat  tempat  sebaik-baiknya  bahkan  ajaran  sufisme Khalwatiyah dari Syaikh Yusuf al-Makassari juga tersebar di Kerajaan Gowa dan kerajaan lainnya pada pertengahan abad ke-17. Karena banyaknya tantangan dari kaum bangsawan Gowa  maka  ia  meninggalkan  Sulawesi  Selatan  dan  pergi ke Banten. Di Banten ia terima oleh Sultan Ageng Tirtayasa bahkan  dijadikan  menantu  dan  diangkat  sebagai  mufti  di Kesultanan.
+
+Dalam sejarah Kerajaan Gowa perlu dicatat tentang sejarah perjuangan Sultan Hasanuddin dalam mempertahankan kedaulatannya terhadap upaya penjajahan
+
+
+<br>
+
+
+---
+## 📄 Halaman 231
+
+politik  dan  ekonomi  kompeni  (VOC)  Belanda.  Semula  VOC tidak menaruh perhatian terhadap Kerajaan Gowa-Tallo yang telah mengalami kemajuan dalam bidang perdagangan. Berita tentang  pentingnya  Kerajaan  Gowa-Tallo  didapat  setelah kapal  Portugis  dirampas  oleh  VOC  pada  masa  Gubernur Jendral J. P. Coen di dekat perairan Malaka. Di dalam kapal tersebut terdapat orang Makassar. Dari orang Makassar itulah ia mendapat berita tentang pentingnya Pelabuhan Somba Opu sebagai  pelabuhan  transit  terutama  untuk  mendatangkan rempah-rempah  dari  Maluku.  Pada  1634  VOC  memblokir Kerajaan  Gowa  tetapi  tidak  berhasil.  Peristiwa  peperangan dari waktu ke waktu terus berjalan dan baru berhenti antara 1637-1638.  Sempat  tercipta  perjanjian  damai  namun  tidak kekal karena pada 1638 terjadi perampokan kapal orang Bugis yang bermuatan kayu cendana, dan muatannya dijual kepada orang Portugis. Perang di Sulawesi Selatan ini berhenti setelah terjadi perjanjian Bongaya pada 1667 yang sangat merugikan pihak Gowa-Tallo.
+
+
+<br>
+
+
+---
+## 📄 Halaman 232
+
+
+### b. Kerajaan Wajo
+
+Berita  tentang  tumbuh  dan  berkembangnya Kerajaan Wajo  terdapat  pada  sumber  hikayat  lokal.  Di  hikayat  lokal tersebut ada cerita yang menghubungkan tentang pendirian Kampung Wajo yang didirikan oleh tiga orang anak raja dari kampung tetangga Cinnotta'bi yaitu berasal dari keturunan dewa yang mendirikan kampung dan menjadi raja-raja dari ketiga bagian ( limpo )  bangsa Wajo: Bettempola, Talonlenreng, dan Tua. Kepala keluarga dari mereka menjadi raja di seluruh Wajo  dengan  gelar  Batara  Wajo.  Batara  Wajo  yang  ketiga dipaksa  turun  tahta  karena  kelakuannya  yang  buruk  dan dibunuh  oleh  tiga  orang  Ranreng.  Menarik  perhatian  kita bahwa sejak itu  raja-raja  di  Wajo  tidak  lagi  turun  temurun tetapi melalui pemilihan dari seorang keluarga raja menjadi arung-matoa artinya raja yang pertama atau utama.
+
+Selama  keempat arung-matoa dewan  pangreh-praja diperluas  dengan tiga pa'betelompo (pendukung panji), 30 arung-ma'bicara (raja hakim), dan tiga duta, sehingga jumlah anggota  dewan  berjumlah  40  orang.  Mereka  itulah  yang memutuskan  segala  perkara.  Kerajaan  Wajo  memperluas daerah kekuasaannya sehingga menjadi Kerajaan Bugis yang besar.  Wajo  pernah  bersekutu  dengan  Kerajaan  Luwu  dan bersatu dengan Kerajaan Bone dan Soppeng dalam perjanjian Tellum Pocco pada 1582. Wajo pernah ditaklukan Kerajaan Gowa  dalam  upaya  memperluas  Islam  dan  pernah  tunduk pada  1610.  Di  samping  itu  diceritakan  pula  dalam  hikayat tersebut  bahwa  bagaimana  Dato'  ri  Bandang  dan  Dato' Sulaeman memberikan pelajaran agama Islam terhadap rajaraja Wajo dan rakyatnya dalam masalah kalam dan fikih. Pada waktu itu di Kerajaan Wajo dilantik pejabat-pejabat agama atau  syura  dan  yang  menjadi  kadi  pertama  di  Wajo  ialah konon seorang wali dengan mukjizatnya ketika berziarah ke Mekkah. Diceritakan bahwa di Kerajaan Wajo selama 1612 sampai  1679  diperintah  oleh  sepuluh  orang arung-matoa . Persekutuan  dengan  Gowa  pada  suatu  waktu  diperkuat  dengan
+
+
+<br>
+
+
+---
+## 📄 Halaman 233
+
+memberikan bantuan dalam peperangan tetapi berulangkali Gowa juga mencampuri urusan pemerintah Kerajaan Wajo. Kerajaan Wajo sering pula membantu Kerajaan Gowa pada peperangan baru dengan Kerajaan Bone pada 1643, 1660, dan 1667. Kerajaan Wajo sendiri pernah ditaklukkan Kerajaan Bone  tetapi  karena  didesak  maka  Kerajaan  Bone  sendiri takluk  kepada  Kerajaan  Gowa-Tallo.  Perang  besar-besaran antara  Kerajaan  Gowa-Tallo  di  bawah  Sultan  Hasanuddin melawan VOC pimpinan Speelman yang mendapat bantuan dari Aru Palaka dari Bone berakhir dengan perjanjian Bongaya pada 1667. Sejak itu terjadi penyerahan Kerajaan Gowa pada VOC dan disusul  pada  1670  Kerajaan  Wajo  yang  diserang tentara  Bone  dan  VOC  sehingga  jatuhlah  ibukota  Kerajaan Wajo yaitu Tosora. Arung-matoa to Sengeng gugur. Arungmatoa penggantinya terpaksa menandatangani perjanjian di Makassar tentang penyerahan Kerajaan Wajo kepada VOC
+
+
+### 5. Kerajaan-Kerajaan Islam di Maluku Utara
+
+Kepulauan Maluku menduduki posisi penting dalam perdagangan  dunia  di kawasan  timur Nusantara.  Mengingat keberadaan  daerah  Maluku  ini  maka  tidak  mengherankan  jika sejak abad ke-15 hingga abad ke-19 kawasan ini menjadi wilayah perebutan antara bangsa Spanyol, Portugis dan Belanda.
+
+Sejak  awal  diketahui  bahwa  di  daerah  ini  terdapat  dua kerajaan  besar  bercorak  Islam,  yakni  Ternate  dan  Tidore.  Kedua kerajaan  ini  terletak  di  sebelah  barat  Pulau  Halmahera,  Maluku Utara. Kedua kerajaan itu pusatnya masing-masing di Pulau Ternate dan Tidore, tetapi wilayah kekuasaannya mencakup sejumlah pulau di Kepulauan Maluku dan Papua.
+
+Tanda-tanda awal kehadiran Islam di daerah Maluku dapat diketahui dari sumber-sumber berupa naskah-naskah kuno dalam bentuk  hikayat  seperti  Hikayat  Hitu,  Hikayat  Bacan,dan  hikayat-
+
+
+<br>
+
+
+---
+## 📄 Halaman 234
+
+hikayat setempat lainnya. Sudah tentu sumber berita asing seperti Cina, Portugis, dan lainnya amat menunjang cerita sejarah daerah Maluku itu.
+
+
+### Kerajaan Ternate
+
+Gambar 3.31 Masjid Sultan Ternate
+
+Pada abad ke-14 dalam kitab Negarakartagama, karya Mpu Prapanca tahun 1365 M menyebut Maluku dibedakan dengan Ambon yaitu Ternate. Hal itu juga dapat dihubungkan dengan Hikayat  Ternate yang  antara  lain  menyebutkan Moeloka (Maluku) artinya Ternate, Tidore, Jailolo, dan Bacan. Pada abad ke-14, masa Kerajaan Majapahit sudah sering terjadi hubungan  pelayaran  dan  perdagangan  antara  pelabuhanpelabuhan terutama Tuban  dan  Gresik dengan  daerah Hitu,  Ternate,  Tidore  bahkan  Ambon.  Pada  abad  tersebut pelabuhan-pelabuhan yang masih di bawah Majapahit juga sudah didatangi para pedagang Muslim. Untuk memperoleh komoditi  berupa  rempah-rempah  terutama  cengkeh  dan pala,  para  pedagang  Muslim  dari  Arab  dan  Timur  Tengah lainnya  itu juga sangat mungkin mendatangi daerah Maluku.
+
+
+<br>
+
+
+---
+## 📄 Halaman 235
+
+Hikayat Ternate menyebutkan  bahwa  turunan  raja-raja Maluku: Ternate, Tidore, Jailolo, dan Bacan, berasal dari Jafar Sadik dari Arab. Dalam tradisi setempat dikatakan bahwa Raja Ternate ke-12 bernama Molomatea (1350-1357) bersahabat dengan orang-orang Muslim Arab yang datang ke Maluku memberikan  petunjuk  pembuatan  kapal.  Demikian  pula diceritakan  bahwa  pada  masa  pemerintahan  Raja  Marhum di Ternate, datang seorang alim dari Jawa bernama Maulana Husein yang mengajarkan membaca al-Qur'an dan menulis huruf Arab yang indah sehingga menarik raja dan keluarganya serta masyarakatnya. Meskipun demikian, mungkin waktu itu agama Islam belum begitu berkembang. Perkembangannya baru pada masa Raja Cico atau putranya Gopi Baguna dan dengan  Zainul  Abidin  pergi  ke  Jawa  belajar  agama,  iman Islam, dan tauhid makrifat Islam. Zainul Abidin (1486-1500) yang mendapat ajaran Islam dari Giri dan mungkin dari Prabu Atmaka  di  Jawa  dikenal  sebagai  Raja  Bulawa  artinya  Raja Cengkeh. Sekembalinya dari Jawa ia membawa mubalig yang bernama Tuhubahalul.
+
+Hubungan perdagangan antara Maluku dengan Jawa oleh Tome Pires (1512-1515) juga sudah diberitakan bahkan ia memberikan gambaran Ternate yang didatangi kapal-kapal dari  Gresik  milik  Pate  Cusuf,  dan  Raja  Ternate  yang  sudah memeluk  Islam  ialah  Sultan  Bem  Acorala  dan  hanya  Raja Ternate  yang  menggunakan  gelar  Sultan,  sedangkan  yang lainnya  masih  memakai  gelar  raja-raja  di  Tidore,  Kolano. Pada waktu itu diceritakan Sultan Ternate sedang berperang dengan  mertuanya  yang  menjadi  raja  di  Tidore  namanya Raja  Almansor.  Ternate,  Tidore,  Bacan,  Makyan,  Hitu  dan Banda pada masa kehadiran Tome Pires sudah banyak yang beragama Islam. Bila Islam memasuki daerah Maluku, Tome Pires mengatakan '50 tahun' lalu yang berarti antara tahun 1460-1465. Tahun-tahun tersebut menunjukkan persamaan dengan  berita  Antonio  yang  mengatakan  bahwa  Islam  di daerah Maluku mulai 80 atau 90 tahun lalu dari kehadirannya
+
+
+<br>
+
+
+---
+## 📄 Halaman 236
+
+di daerah Maluku (1540-1545) yang lebih kurang terjadi pada 1460-1463.  Kerajaan  Ternate  sejak  itu  makin  mengalami kemajuan baik di bidang ekonomi-perdagangan maupun di bidang politik, lebih-lebih setelah Sultan Khairun putra Sultan Zainal  Abidin  menaiki  tahta  sekitar  1535,  Kerajaan  Ternate berhasil  mempersatukan  daerah-daerah  di  Maluku  Utara. Tetapi persatuan daerah-daerah dalam Kerajaan Ternate itu mulai  pecah  karena  kedatangan  orang-orang  Portugis  dan juga orang-orang Spanyol ke Tidore dalam upaya monopoli perdagangan terutama rempah-rempah. Di kalangan kedua bangsa  itu  juga  terjadi  persaingan  monopoli  perdagangan Portugis memusatkan perhatiannya kepada Ternate, sedangkan pedagang Spanyol kepada Tidore.
+
+Untuk memperdalam materi ini kamu bisa membaca buku buku ' Indonesia dalam Arus Sejarah ' Jilid III.
+
+Pada 1565 Sultan Khairun dengan rakyatnya mengadakan  penyerangan-penyerangan  terhadap  Portugis. Karena hampir terdesak, pihak Portugis melakukan penipuan dengan dalih untuk mengadakan perundingan tetapi ternyata Sultan  Khairun  dibunuh  pada  1570.  Hal  tersebut  tentu menyebabkan makin marahnya rakyat Ternate. Perlawanan rakyat  itu  diteruskan  di  bawah  pimpinan  putranya,  Sultan Baabullah yang pada 28 Desember 1577 berhasil mengusir orang-orang  Portugis  dari  Ternate,  menyingkir  ke  pulau dekat  Tahula  tidak  jauh  dari  Tidore,  tetapi  tetap  diganggu oleh  orang-orang  Ternate  agar  menyingkir  dari  tempat  itu. Sultan Baabullah menyatakan  dirinya sebagai penguasa seluruh Maluku bahkan mendapat pengakuan kekuasaannya sampai ke berbagai daerah Mindanao, Menado, Sangihe, dan daerah-daerah  Nusa  Tenggara.  Sultan  Baabullah  mendapat julukan sebagai 'Penguasa 72 Kepulauan' dan menganggap sebagai kerajaan seluruh wilayah dan sangat berkuasa. Sultan
+
+
+<br>
+
+
+---
+## 📄 Halaman 237
+
+Baabullah wafat pada 1583. Selain Kerajaan Ternate, kamu dapat mencari sumber lain tentang Kerajaan Tidore, Bacan, Jailolo dan juga proses Islamisasi di Ambon.
+
+
+### 6. Kerajaan-Kerajaan Islam di Papua
+
+Sumber-sumber  sejarah  menunjukkan  bahwa  penyebaran Islam di Papua sudah berlangsung sejak lama. Bahkan, berdasarkan bukti sejarah terdapat sejumlah kerajaan-kerajaan Islam di Papua, yakni: (1) Kerajaan Waigeo (2) Kerajaan Misool (3) Kerajaan Salawati (4)  Kerajaan  Sailolof  (5)  Kerajaan  Fatagar  (6)  Kerajaan  Rumbati (terdiri  dari  Kerajaan  Atiati,  Sekar,  Patipi,  Arguni,  dan  Wertuar) (7) Kerajaan Kowiai (Namatota) (8). Kerajaan Aiduma (9) Kerajaan Kaimana.
+
+Berdasarkan  sumber  tradisi  lisan  dari  keturunan  raja-raja  di Raja Ampat-Sorong, Fakfak, Kaimana dan Teluk Bintuni-Manokwari, Islam sudah lebih awal datang ke daerah ini. Ada beberapa pendapat mengenai  kedatangan  Islam  di  Papua. Pertama ,  Islam  datang di  Papua  tahun  1360  yang  disebarkan  oleh  mubaligh  asal  Aceh, Abdul  Ghafar.  Pendapat  ini  juga  berasal  dari  sumber  lisan  yang disampaikan  oleh  putra  bungsu  Raja  Rumbati  ke-16  (Muhamad Sidik Bauw) dan Raja Rumbati ke-17 (H. Ismail Samali Bauw). Abdul Ghafar berdakwah selama 14 tahun (1360-1374) di Rumbati dan sekitarnya. Ia kemudian wafat dan dimakamkan di belakang masjid Kampung Rumbati tahun 1374.
+
+Kedua ,  pendapat  yang  menjelaskan  bahwa  agama  Islam pertama  kali  mulai  diperkenalkan  di  tanah  Papua,  tepatnya  di jazirah  Onin  (Patimunin-Fakfak)  oleh  seorang  sufi  bernama  Syarif Muaz al-Qathan dengan gelar Syekh Jubah Biru dari negeri Arab. Pengislaman ini diperkirakan terjadi pada pertengahan abad ke-16, dengan bukti adanya Masjid Tunasgain yang berumur sekitar 400 tahun atau di bangun sekitar tahun 1587.
+
+
+<br>
+
+
+---
+## 📄 Halaman 238
+
+Ketiga, pendapat yang mengatakan bahwa Islamisasi di Papua, khususnya di Fakfak dikembangkan oleh pedagang-pedagang Bugis melalui  Banda  dan  Seram  Timur  oleh  seorang  pedagang  dari  Arab bernama  Haweten  Attamimi  yang  telah  lama  menetap  di  Ambon. Proses  pengislamannya  dilakukan  dengan  cara  khitanan.  Di  bawah ancaman  penduduk  setempat  jika  orang  yang  disunat  mati,  kedua mubaligh  akan  dibunuh,  namun  akhirnya  mereka  berhasil  dalam khitanan  tersebut  kemudian  penduduk  setempat  berduyun-duyun masuk agama Islam.
+
+Keempat, pendapat yang mengatakan Islam di Papua berasal dari  Bacan.  Pada  masa  pemerintahan  Sultan  Mohammad  al-Bakir, Kesultanan  Bacan  mencanangkan  syiar  Islam  ke  seluruh  penjuru negeri,  seperti  Sulawesi,  Fiilipina,  Kalimantan,  Nusa  Tenggara,  Jawa dan Papua. Menurut Thomas Arnold, Raja Bacan yang pertama kali masuk  Islam  adalah  Zainal  Abidin  yang  memerintah  tahun  1521. Pada masa ini Bacan telah menguasai suku-suku di Papua serta pulaupulau di sebelah barat lautnya, seperti Waigeo, Misool, Waigama, dan Salawati. Sultan Bacan kemudian meluaskan kekuasaannya hingga ke Semenanjung Onin Fakfak, di barat laut Papua tahun 1606. Melalui pengaruhnya dan para pedagang muslim, para pemuka masyarakat di pulau-pulau kecil itu lalu memeluk agama Islam. Meskipun pesisir menganut agama Islam, sebagian besar penduduk asli di pedalaman masih tetap menganut animisme.
+
+Kelima ,  pendapat  yang  mengatakan  bahwa  Islam  di  Papua berasal dari Maluku Utara (Ternate-Tidore). Sumber sejarah Kesultanan Tidore  menyebutkan  bahwa  pada  tahun  1443  Sultan  Ibnu  Mansur (Sultan Tidore X atau Sultan Papua I) memimpin ekspedisi ke daratan tanah  besar  (Papua).  Setelah  tiba  di  wilayah  Pulau  Misool  dan  Raja Ampat,  kemudian  Sultan  Ibnu  Mansur  mengangkat  Kaicil  Patrawar putera Sultan Bacan dengan gelar Komalo Gurabesi (Kapita Gurabesi). Kapita  Gurabesi  kemudian  dikawinkan  dengan  putri  Sultan  Ibnu Mansur bernama Boki Tayyibah. Kemudian berdiri empat kerajaan di Kepulauan  Raja  Ampat  tersebut,  yakni  Kerajaan  Salawati,  Kerajaan Misool atau Kerajaan Sailolof, Kerajaan Batanta, dan Kerajaan Waigeo.
+
+
+<br>
+
+
+---
+## 📄 Halaman 239
+
+Berdasarkan penjelasan di atas  dapat  disimpulkan  bahwa proses Islamisasi tanah Papua, terutama di daerah pesisir barat pada pertengahan  abad  ke-15,  dipengaruhi  oleh  kerajaan-kerajaan  Islam di Maluku (Bacan, Ternate dan Tidore). Hal ini didukung oleh faktor letaknya yang strategis, yang merupakan jalur perdagangan rempahrempah ( spices road ) di dunia.
+
+Penelitian  tentang  Islamisasi  di  Papua  sampai  saat  ini  belum begitu  banyak,  mungkin  kamu  bisa  melakukan  penelitian  sendiri dengan membaca berbagai bacaan yang ada di perpustakaan sekolah, atau melacak sumber informasi di internet atau website.
+
+
+### 7.  Kerajaan-Kerajaan Islam di Nusa Tenggara
+
+Kehadiran Islam di daerah Nusa Tenggara antara lain ke Lombok diperkirakan  terjadi  sejak  abad  ke-16  yang  diperkenalkan  Sunan Perapen, putra Sunan Giri. Islam masuk ke Sumbawa kemungkinan datang lewat Sulawesi, melalui dakwah para mubalig dari Makassar antara 1540-1550. Kemudian berkembang pula kerajaan Islam salah satunya adalah Kerajaan Selaparang di Lombok.
+
+
+### a. Kerajaan Lombok dan Sumbawa
+
+Selaparang merupakan pusat kerajaan Islam di Lombok di  bawah  pemerintahan  Prabu  Rangkesari.  Pada  masa  itulah Selaparang  mengalami  zaman  keemasan  dan  memegang hegemoni di seluruh Lombok. Dari Lombok, Islam disebarkan ke  Pejanggik,  Parwa,  Sokong,  Bayan,  dan  tempat-tempat lainnya.  Konon  Sunan  Perapen  meneruskan  dakwahnya  dari Lombok menuju Sumbawa. Hubungan dengan beberapa negeri dikembangkan terutama dengan Demak.
+
+Kerajaan-kerajaan di Sumbawa Barat dapat dimasukkan kepada kekuasaan Kerajaan Gowa pada 1618. Bima ditaklukkan pada 1633 dan kemudian Selaparang pada 1640. Pada abad ke17 seluruh Kerajaan Islam Lombok berada di bawah pengaruh
+
+
+<br>
+
+
+---
+## 📄 Halaman 240
+
+kekuasaan  Kerajaan  Gowa.  Hubungan  antara  Kerajaan  Gowa dan Lombok dipererat dengan cara perkawinan seperti Pemban Selaparang, Pemban Pejanggik, dan Pemban Parwa. Kerajaankerajaan di Nusa Tenggara mengalami tekanan dari VOC setelah terjadinya  perjanjian  Bongaya  pada  18  November  1667.  Oleh karena itu  pusat  Kerajaan  Lombok  dipindahkan  ke  Sumbawa  pada 1673 dengan tujuan untuk dapat mempertahankan kedaulatan kerajaan-kerajaan  Islam  di  pulau  tersebut  dengan  dukungan pengaruh kekuasaan Gowa. Sumbawa dipandang lebih strategis daripada pusat pemerintahan di Selaparang mengingat ancaman dan serangan dari VOC terus-menerus terjadi.
+
+
+### b. Kerajaan Bima
+
+Bima  merupakan  pusat  pemerintahan  atau  kerajaan Islam  yang  menonjol  di  Nusa  Tenggara  dengan  nama  rajanya yang pertama masuk Islam ialah Ruma Ta Ma Bata Wada yang bergelar Sultan Bima I atau Sultan Abdul Kahir. Sejak itu pula terjalin  hubungan erat antara Kerajaan Bima dengan Kerajaan Gowa, lebih-lebih sejak perjuangan Sultan Hasanuddin kandas akibat perjanjian Bongaya. Setelah Kerajaan Bima terusmenerus  melakukan  perlawanan  terhadap  masuknya  politik dan  monopoli  perdagangan  VOC  akhirnya  juga  tunduk  di bawah kekuasaannya. Ketika VOC mau memperbaharui perjanjiannya dengan Bima pada 1668 ditolak oleh Raja Bima, Tureli  Nggampo;  ketika  Tambora  merampas  kapal  VOC  pada 1675 maka Raja Tambora, Kalongkong dan para pembesarnya diharuskan menyerahkan keris-keris pusakanya kepada Holsteijn. Pada 1691, ketika permaisuri Kerajaan Dompu terbunuh, Raja Kerajaan Bima ditangkap dan diasingkan ke Makassar sampai meninggal dunia di dalam penjara. Di antara kerajaan-kerajaan di  Lombok,  Sumbawa,  Bima,  dan  kerajaan-kerajaan  lainnya sepanjang  abad  ke-18  masih  menunjukkan  pemberontakan dan  peperangan,  karena  pihak  VOC  senantiasa  memaksakan kehendaknya dan mencampuri pemerintahan kerajaan-kerajaan, bahkan menangkapi dan mengasingkan raja-raja yang melawan.
+
+
+<br>
+
+
+---
+## 📄 Halaman 241
+
+`
+
+Sebenarnya  jika  kita  membicarakan  sejarah  Kerajaan Bima abad ke-19 dapat diperkaya oleh gambaran rinci dalam Syair Kerajaan Bima yang menurut telaah filologi Cambert Loir diperkirakan sangat mungkin syair tersebut dikarang sebelum 1833 M,  sebelum Raja Bicara Abdul Nabi meletakkan jabatannya dan diganti oleh putranya. Pendek kata syair itu dikarang oleh Khatib Lukman barangkali pada 1830 M. Syair itu ditulis dalam huruf Jawi dengan bahasa Melayu. Dalam syair itu diceritakan empat peristiwa  yang terjadi di Bima pada pertengahan abad ke-19, yaitu, letusan Gunung Tambora, wafat dan pemakaman Sultan  Abdul  Hamid  pada  Mei  1819,  serangan  bajak  laut, penobatan Sultan Ismail pada 26 November 1819, Sultan Abdul Hamid dan Wazir Abdul Nabi, pelayaran Sultan Abdul Hamid ke  Makassar  pada  1792,  kontrak  Bima  pada  26  Mei  1792, pelantikan  Raja  Bicara  Abdul  Nabi,  serta  kedatangan  Sultan Ismail, Reinwardt, dan H. Zollinger yang mengunjungi Sumbawa dan menemui Sultan.
+
+
+<br>
+
+
+---
+## 📄 Halaman 242
+
+
+### Uji Kompetensi
+
+- Jelaskan latar belakang berdirinya Kerajaan Demak!
+- Bagaimana proses berdirinya Kerajaan Mataram?
+- 3 Gambarkan  skema  struktur birokrasi pemerintahan Kerajaan Mataram!
+- Diskusikan  dan  buat  tulisan  ringkas  tentang  kejatuhan  kerajaan Banten ke tangan VOC (3-6 halaman)!
+- Tuliskan biografi singkat Sultan Ageng Tirtayasa!
+- Jelaskan  apa  makna  dan  pelajaran  yang  kita  peroleh  tentang Perjanjian Bongaya di Sulawesi!
+- Dari  nama-nama  kerajaan  di  Sulawesi  di  atas,  kamu  pilih  satu dan berikan penjelasan secara singkat tentang kerajaan tersebut, misalnya kapan berdiri, siapa rajanya, pernahkah berperang melawan Belanda dan sebagainya!
+- Jelaskan proses Islamisasi di Maluku!
+- Ceritakan secara singkat tentang Sultan Baabullah!
+- Ceritakan hubungan antara kerajaan Ternate dan Tidore dengan tokoh-tokoh ulama dari Gresik!
+- Buatlah peta dunia (kamu dapat memfotokopi pada atlas) kemudian gambarkan pelabuhan-pelabuhan yang pada masa Islam digunakan  sebagai  bandar-bandar  perdagangan  dan  berperan dalam penyebaran Islam sampai di Indonesia!
+- Rumuskan nilai-nilai karakter yang dapat diperoleh setelah belajar perkembangan kerajaan-kerajaan Islam di Indonesia! Nilai apa saja yang sekiranya dapat kamu amalkan?
+
+<br>
+
+
+---
+## 📄 Halaman 243
+
+
+### D.    Jaringan Keilmuan di Nusantara
+
+
+###  Memahami teks
+
+Pada bagian ini kamu akan memahami hubungan antara istana sebagai  pusat  kekuasaan  dan  pendidikan.  Perkembangan  lembaga pendidikan dan pengajaran di masjid-masjid kesultanan sangat ditentukan  oleh  dukungan  penguasa.  Sultan  bukan  saja  mendanai kegiatan-kegiatan masjid, tetapi juga mendatangkan para ulama, baik dari  mancanegara,  terutama  Timur  Tengah,  maupun  dari  kalangan ulama pribumi sendiri. Para ulama yang kemudian juga difungsikan sebagai pejabat-pejabat negara, bukan saja memberikan pengajaran agama Islam di masjid-masjid negara, tetapi juga di istana sultan. Para sultan dan pejabat tinggi rupanya juga menimba ilmu dari para ulama. Seperti  halnya  yang  terjadi  di  Kerajaan  Islam  Samudera  Pasai  dan Kerajaan Malaka.
+
+Ketika Kerajaan Samudera Pasai mengalami kemunduran dalam bidang politik, tradisi keilmuannya tetap berlanjut. Samudera Pasai terus berfungsi sebagai pusat studi Islam di Nusantara. Namun, ketika  Kerajaan  Malaka  telah  masuk  Islam,  pusat  studi  keislaman tidak  lagi  hanya  dipegang  oleh  Samudera  Pasai.  Malaka  kemudian juga berkembang sebagai pusat studi Islam di Asia Tenggara, bahkan mungkin dapat dikatakan berhasil menyainginya. Kemajuan ekonomi Kerajaan Malaka telah mengundang banyak ulama dari mancanegara untuk  berpartisipasi  dengan  lebih  intensif  dalam  proses  pendidikan dan pembelajaran agama Islam.
+
+Kerajaan  Malaka  dengan  giat  melaksanakan  pengajian  dan pendidikan  Islam.  Hal  itu  terbukti  dengan  berhasilnya  kerajaan  ini dalam  waktu  singkat  melakukan  perubahan  sikap  dan  konsepsi masyarakat  terhadap  agama,  kebudayaan  dan  ilmu  pengetahuan. Proses  pendidikan  sebagian  berlangsung  di  kerajaan.  Perpustakaan sudah  tersedia  di  istana  dan  difungsikan  sebagai  pusat  penyalinan kitab-kitab dan penerjemahannya dari bahasa Arab ke bahasa Melayu.
+
+
+<br>
+
+
+---
+## 📄 Halaman 244
+
+Karena  perhatian  kerajaan  yang  tinggi  terhadap  pendidikan  Islam, banyak ulama dari mancanegara yang datang ke Malaka, seperti dari Afghanistan, Malabar, Hindustan, dan terutama dari Arab. Banyaknya para  ulama  besar  dari  berbagai  negara  yang  mengajar  di  Malaka telah menarik para penuntut ilmu dari berbagai kerajaan Islam di Asia Tenggara untuk datang. Dari Jawa misalnya, Sunan Bonang dan Sunan Giri  pernah  menuntut  ilmu  ke  Malaka  dan  setelah  menyelesaikan pendidikannya  mereka  kembali  ke  Jawa  dan  mendirikan  lembaga pendidikan Islam di tempat masing-masing.
+
+Hubungan  antar  kerajaan  Islam,  misalnya  Samudera  Pasai, Malaka,  dan  Aceh  Darussalam,  sangat  bermakna  dalam  bidang budaya dan keagamaan. Ketiganya tersohor dengan sebutan Serambi Mekkah dan menjadi pusat pendidikan dan pengajaran agama Islam di Indonesia. Untuk mengintensifkan proses Islamisasi, para ulama telah mengarang,  menyadur,  dan  menerjemahkan  karya-karya  keilmuan Islam. Sultan Iskandar Muda adalah raja yang sangat memperhatikan pengembangan pendidikan dan pengajaran agama Islam. Ia mendirikan Masjid  Raya  Baiturrahman,  dan  memanggil  Hamzah  al  Fanzuri  dan Syamsuddin as Sumatrani sebagai penasihat. Syekh Yusuf al Makassari ulama  dari  Kesultanan  Goa  di  Sulawesi  Selatan  pernah  menuntut ilmu di Aceh Darussalam sebelum  melanjutkan ke Mekkah. Melalui pengajaran Abdur Rauf as Singkili telah muncul ulama Minangkabau Syekh Burhanuddin Ulakan yang terkenal sebagai pelopor pendidikan Islam di Minangkabau dan Syekh Abdul Muhyi al Garuti yang berjasa menyebarkan pendidikan Islam di Jawa Barat. Karya-karya susastra dan keagamaan dengan segera berkembang di kerajaan-kerajaan Islam. Kerajaan-kerajaan Islam itu telah merintis terwujudnya idiom kultural yang sama, yaitu Islam. Hal itu menjadi pendorong terjadinya interaksi budaya yang makin erat.
+
+Di  Banten,  fungsi  istana  sebagai  lembaga  pendidikan  juga sangat  mencolok.  Pada  abad  ke-17,  Banten  sudah  menjadi  pusat ilmu  pengetahuan  Islam  di  pulau  Jawa.  Para  ulama  dari  berbagai negara menjadikan Banten sebagai tempat untuk belajar. Martin van
+
+
+<br>
+
+
+---
+## 📄 Halaman 245
+
+Bruinessen menyatakan, 'Pendidikan agama cukup menonjol ketika Belanda datang untuk pertama kalinya pada 1596 dan menyaksikan bahwa  orang-orang  Banten  memiliki  guru-guru  yang  berasal  dari Mekkah'.
+
+Di Palembang, istana (keraton) juga difungsikan sebagai pusat sastra dan ilmu agama. Banyak Sultan Palembang yang mendorong perkembangan intelektual keagamaan, seperti Sultan Ahmad Najamuddin  I  (1757-1774)  dan  Sultan  Muhammad  Baha'uddin (1774-1804). Pada masa pemerintahan mereka, telah muncul banyak ilmuwan asal Palembang yang produktif melahirkan karya-karya ilmiah keagamaan: ilmu tauhid, ilmu kalam, tasawuf, tarekat, tarikh, dan alQur'an. Perhatian sultan terhadap perkembangan ilmu pengetahuan Islam tercermin pada keberadaan perpustakaan keraton yang memiliki koleksi cukup lengkap dan rapi.
+
+Berkembangnya pendidikan dan pengajaran Islam, telah berhasil menyatukan  wilayah  Nusantara  yang  sangat  luas.  Dua  hal  yang mempercepat proses itu yaitu penggunaan aksara Arab dan bahasa Melayu sebagai bahasa pemersatu (lingua  franca) . Semua ilmu yang diberikan  di  lembaga  pendidikan  Islam  di  Nusantara  ditulis  dalam aksara Arab, baik dalam bahasa Arab maupun dalam bahasa Melayu atau Jawa. Aksara Arab itu disebut dengan banyak sebutan, seperti huruf Jawi (di Melayu) dan huruf pegon (di Jawa). Luasnya penguasaan aksara Arab ke Nusantara telah membuat para pengunjung asal Eropa ke Asia Tenggara terpukau oleh tingginya tingkat kemampuan baca tulis yang mereka jumpai.
+
+Pada 1579, orang Spanyol merampas sebuah kapal kecil dari Brunei. Orang Spanyol itu menguji apakah orang-orang Melayu yang menyatakan diri sebagai budak-budak sultan itu dapat menulis. Dua dari tujuh orang itu dapat (menulis), dan semuanya mampu membaca surat kabar berbahasa Melayu sendiri-sendiri.
+
+
+<br>
+
+
+---
+## 📄 Halaman 246
+
+Berkembangnya  pendidikan  Islam  di  istana-istana  raja  seolah menjadi pendorong munculnya pendidikan dan pengajaran di masyarakat. Setelah terbentuknya berbagai ulama hasil didikan dari istana-istana,  maka  murid-muridnya  melakukan  pendidikan  ke  tingkatan yang  lebih  luas,  dengan  dilangsungkannya  pendidikan  di  rumahrumah ulama untuk  masyarakat  umum,  khususnya  sebagai  tempat pendidikan  dasar,  layaknya  kuttâb  di  wilayah  Arab.  Sebagaimana kuttâb  (lembaga  pendidikan  dasar  di  Arab  sejak  masa  Rasulullah) yang biasa mengambil tempat di rumah-rumah ulama, di Nusantara pendidikan dasar berlangsung di rumah-rumah guru. Pelajaran yang diberikan terutama membaca al-Qur'an, menghafal ayat-ayat pendek, dan belajar bacaan salat lima waktu. Dan ini diperkirakan sama tuanya dengan kehadiran Islam di wilayah ini.
+
+Di Nusantara, masjid-masjid yang berada di pemukiman penduduk yang dikelola secara swadaya oleh masyarakat menjalankan fungsi pendidikan dan pengajaran untuk masyarakat umum. Di sinilah terjadi  demokratisasi  pendidikan  dalam  sejarah  Islam.  Demikianlah yang terjadi di wilayah-wilayah Islam di Nusantara, seperti Malaka dan kemudian Johor, Aceh Darussalam, Minangkabau, Palembang, Demak, Cirebon, Banten, Pajang, Mataram, Gowa-Tallo, Bone, Ternate, Tidore, Banjar, Papua dan lain sebagainya. Bahkan mungkin karena memiliki tingkat otonomi dan kebebasan tertentu, di masjid proses pendidikan dan pengajaran mengalami perkembangan. Tidak jarang di antaranya berkembang menjadi sebuah lembaga pendidikan yang cukup kompleks, seperti meunasah di Aceh, surau di Minangkabau, langgar di Kalimantan dan pesantren di Jawa.
+
+Untuk  memperdalam  tentang  jaringan  keilmuan  ini  kamu dapat  membaca  buku  Taufik  Abdullah  dan  Adrian  B.  Lapian, Indonesia dalam Arus Sejarah , jilid III dan Sartono Kartodirdjo. Pengantar Sejarah Indonesia Baru 1500-1900 dari Emporium sampai Empirium .
+
+
+<br>
+
+
+---
+## 📄 Halaman 247
+
+
+### Uji Kompetensi
+
+Coba kamu tulis satu artikel pendek (3-5 halaman) yang membahas jaringan keilmuan Islam di Nusantara, kemudian  diskusi secara kelompok. Bahan dapat diperoleh melalui internet dan perpustakaan sekolah. Tetapi ingat sumber dari internet maksimal 20% dari sumber teks yang diperoleh dari wawancara atau perpustakaan.
+
+
+### E.     Akulturasi dan Perkembangan Budaya Islam
+
+
+###  Mengamati lingkungan
+
+
+<br>
+
+
+---
+## 📄 Halaman 248
+
+Coba  kamu  perhatikan  gambar  menara  Masjid  Kudus.  Bentuknya unik  seperti  candi  langgam  Jawa  Timur.  Di  bagian  atas  ada  beduk yang dibunyikan seiring datangnya waktu salat. Itulah bentuk nyata akulturasi  dalam  kebudayaan  di  Indonesia.  Di  Nusantara  banyak terdapat  bangunan  yang  akulturatif  dan  budaya  non  fisik  yang merupakan  perpaduan  antara  budaya  Islam  dengan  budaya  lain. Untuk lebih menghayati perkembangan hasil budaya ini, kamu dapat mengkaji uraian berikut
+
+
+###  Memahami  Teks
+
+Berkembangnya kebudayaan Islam di Kepulauan Indonesia telah menambah khasanah budaya nasional Indonesia,  serta  ikut  memberikan dan  menentukan  corak  kebudayaan  bangsa  Indonesia.  Akan  tetapi karena kebudayaan yang berkembang di Indonesia sudah begitu kuat di  lingkungan  masyarakat  maka  berkembangnya  kebudayaan  Islam tidak menggantikan atau memusnahkan kebudayaan yang sudah ada. Dengan demikian terjadi akulturasi antara kebudayaan Islam dengan kebudayaan yang sudah ada.
+
+Hasil  proses  akulturasi  antara  kebudayaan  praIslam  dengan ketika  Islam  masuk  tidak  hanya  berbentuk  fisik  kebendaan  seperti seni  bangunan,  seni  ukir  atau  pahat,  dan  karya  sastra  tetapi  juga menyangkut pola hidup dan kebudayaan non fisik lainnya. Beberapa contoh bentuk akulturasi akan ditunjukkan pada paparan berikut.
+
+
+### 1.   Seni Bangunan
+
+Seni  dan  arsitektur  bangunan  Islam  di  Indonesia  sangat  unik, menarik  dan  akulturatif.  Seni  bangunan  yang  menonjol  di  zaman perkembangan Islam ini terutama masjid, menara serta makam.
+
+
+### a.  Masjid dan Menara
+
+Dalam  seni  bangunan  di  zaman  perkembangan  Islam, nampak ada perpaduan antara unsur Islam dengan kebudayaan praIslam yang telah ada. Seni bangunan Islam yang menonjol
+
+
+<br>
+
+
+---
+## 📄 Halaman 249
+
+adalah  masjid.  Fungsi  utama  dari  masjid,  adalah  tempat beribadah bagi orang Islam. Masjid atau mesjid dalam bahasa Arab mungkin berasal dari bahasa Aramik atau bentuk bebas dari  perkataan sajada yang  artinya  merebahkan  diri  untuk bersujud. Dalam bahasa Ethiopia terdapat perkataan mesgad yang dapat diartikan  dengan  kuil  atau  gereja.  Di  antara  dua pengertian tersebut yang mungkin primer ialah tempat orang merebahkan diri untuk bersujud ketika salat atau sembahyang.
+
+Pengertian  tersebut  dapat  dikaitkan  dengan  salah  satu hadis  sahih  al-Bukhârî  yang  menyatakan  bahwa  'Bumi  ini dijadikan bagiku untuk masjid (tempat salat) dan alat pensucian (buat tayamum) dan di tempat mana saja seseorang dari umatku mendapat waktu salat, maka salatlah di situ.' Jika pengertian tersebut dapat dibenarkan dapat pula diambil asumsi bahwa ternyata agama Islam telah memberikan pengertian perkataan masjid atau mesjid itu bersifat universal.
+
+Dengan sifat universal itu, orang-orang Muslim diberikan keleluasaan untuk melakukan ibadah salat di tempat manapun asalkan  bersih.  Karena  itu  tidak  mengherankan  apabila  ada orang  Muslim  yang  melakukan  salat  di  atas  batu  di  sebuah sungai, di atas batu di tengah sawah atau ladang, di tepi jalan, di lapangan rumput, di atas gubug penjaga sawah atau ranggon (Jawa,  Sunda),  di  atas  bangunan  gedung  dan  sebagainya. Meskipun pengertian hadist tersebut memberikan keleluasaan bagi  setiap  Muslim  untuk  salat,  namun  dirasakan  perlunya mendirikan  bangunan  khusus  yang  disebut  masjid  sebagai tempat peribadatan umat Islam. Masjid sebenarnya mempunyai fungsi yang luas yaitu sebagai pusat untuk menyelenggarakan keagamaan  Islam,  pusat  untuk  mempraktikkan  ajaran-ajaran persamaan  hak  dan  persahabatan  di  kalangan  umat  Islam. Demikian pula masjid dapat dianggap sebagai pusat kebudayaan bagi orang-orang Muslim.
+
+
+<br>
+
+
+---
+## 📄 Halaman 250
+
+Di  Indonesia  sebutan  masjid  serta  bangunan  tempat peribadatan lainnya ada bermacam-macam sesuai dan tergantung kepada masyarakat dan bahasa setempat. Sebutan masjid, dalam bahasa Jawa lazim disebut mesjid, dalam bahasa Sunda disebut masigit, dalam bahasa Aceh disebut meuseugit, dalam bahasa Makassar dan Bugis disebut masigi.
+
+Bangunan  masjid-masjid  kuno  di  Indonesia  memiliki  ciri-ciri sebagai berikut:
+
+- Atapnya berupa atap tumpang, yaitu atap yang bersusun, semakin  ke  atas  semakin  kecil  dan  tingkat  yang  paling  atas berbentuk limas. Jumlah tumpang biasanya selalu gasal/ ganjil, ada yang tiga, ada juga yang lima. Ada pula yang tumpangnya dua, tetapi yang ini dinamakan tumpang satu, jadi angka gasal juga. Atap yang demikian disebut meru. Atap masjid biasanya masih  diberi  lagi  sebuah  kemuncak/  puncak  yang  dinamakan mustaka.
+- Tidak ada menara yang berfungsi sebagai tempat mengumandangkan adzan.  Berbeda  dengan  masjid-masjid  di luar Indonesia yang umumnya terdapat menara. Pada masjidmasjid  kuno  di  Indonesia  untuk  menandai  datangnya  waktu salat  dilakukan  dengan  memukul  beduk  atau  kentongan. Yang  istimewa  dari  Masjid  Kudus  dan  Masjid  Banten  adalah menaranya yang bentuknya begitu unik. Bentuk menara Masjid Kudus merupakan sebuah candi langgam Jawa Timur yang telah diubah  dan  disesuaikan  penggunaannya  dengan  diberi  atap tumpang.  Pada  Masjid  Banten,  menara  tambahannya  dibuat menyerupai mercusuar.
+- Masjid  umumnya  didirikan  di  ibu  kota  atau  dekat  istana kerajaan. Ada juga masjid-masjid yang dipandang keramat yang dibangun  di  atas  bukit  atau  dekat  makam.  Masjid-masjid  di zaman Wali Sanga umumnya berdekatan dengan makam.
+
+<br>
+
+
+---
+## 📄 Halaman 251
+
+
+### b. Makam
+
+Makam-makam yang lokasinya di dataran dekat masjid agung, bekas kota pusat kesultanan antara lain makam sultansultan Demak di samping Masjid Agung Demak, makam rajaraja Mataram-Islam Kota Gede (D.I. Yogyakarta), makam sultansultan  Palembang,  makam  sultan-sultan  di  daerah  Nanggroe Aceh,  yaitu  kompleks  makam  di  Samudera  Pasai,  makam sultan-sultan  Aceh  di  Kandang  XII,  Gunongan  dan  di  tempat lainnya di Nanggroe Aceh, makam sultan-sultan Siak Indrapura (Riau),  makam  sultan-sultan  Palembang,  makam  sultan-sultan Banjar di Kuin (Banjarmasin), makam sultan-sultan di Martapura (Kalimantan  Selatan),  makam  sultan-sultan  Kutai  (Kalimantan Timur), makam Sultan Ternate di Ternate, makam sultan-sultan Goa di Tamalate, dan kompleks makam raja-raja di Jeneponto dan  kompleks  makam  di  Watan  Lamuru  (Sulawesi  Selatan), makam-makam di berbagai daerah lainnya di Sulawesi Selatan, serta kompleks makam Selaparang di Nusa Tenggara.
+
+
+<br>
+
+
+---
+## 📄 Halaman 252
+
+Di beberapa tempat terdapat  makam-makam  yang meski tokoh yang dikubur termasuk wali atau syaikh namun, penempatannya berada di daerah dataran tinggi. Makam tokoh tersebut antara lain, makam Sunan Bonang di Tuban, makam Sunan Derajat (Lamongan), makam Sunan Kalijaga di Kadilangu (Demak),  makam  Sunan  Kudus  di  Kudus,  makam  Maulana Malik Ibrahim dan makam Leran di Gresik (Jawa Timur), makam Datuk Ri Bkalianng di Takalar (Sulawesi Selatan), makam Syaikh Burhanuddin (Pariaman), makam Syaikh Kuala atau Nuruddin arRaniri (Aceh) dan masih banyak para dai lainnya di tanah air yang dimakamkan di dataran.
+
+Makam-makam  yang  terletak  di  tempat-tempat  tinggi atau  di  atas  bukit-bukit  sebagaimana  telah  dikatakan  di  atas, masih menunjukkan kesinambungan tradisi yang mengandung unsur kepercayaan pada ruh-ruh nenek moyang yang sebenarnya sudah  dikenal  dalam  pengejawantahan  pendirian  pundenpunden berundak Megalitik. Tradisi tersebut dilanjutkan pada masa  kebudayaan  Indonesia  Hindu-Buddha  yang  diwujudkan dalam bentuk bangunan-bangunan yang disebut candi. Antara  lain  Candi  Dieng  yang  berketinggian  2.000  meter  di atas  permukaan laut,  Candi  Gedongsanga, Candi Borobudur. Percandian Prambanan, Candi Ceto dan Candi Sukuh di daerah Surakarta,  Percandian  Gunung  Penanggungan  dan  lainnya. Menarik  perhatian  kita  bahwa  makam  Sultan  Iskandar  Tsani dimakamkan  di  Aceh  dalam  sebuah  bangunan  berbentuk gunungan yang  dikenal pula unsur meru.
+
+Setelah kebudayaan Indonesia Hindu-Buddha mengalami keruntuhan dan tidak lagi ada pendirian bangunan percandian, unsur seni bangunan  keagamaan  masih  diteruskan pada masa tumbuh dan berkembangnya Islam di Indonesia melalui proses akulturasi. Makam-makam yang lokasinya di atas bukit, makam yang paling atas adalah yang dianggap paling dihormati misalnya Sunan Gunung Jati atau Syarif Hidayatullah di Gunung Sembung, di bagian teratas kompleks pemakaman Imogiri ialah
+
+
+<br>
+
+
+---
+## 📄 Halaman 253
+
+makam  Sultan  Agung  Hanyokrokusumo.  Kompleks  makam yang mengambil tempat datar misalnya di Kota Gede, orang yang paling dihormati ditempatkan di bagian tengah. Makam walisongo dan sultan-sultan pada umumnya ditempatkan dalam bangunan  yang  disebut  cungkup  yang  masih  bergaya  kuno dan juga dalam bangunan yang sudah diperbaharui. Cungkupcungkup  yang  termasuk  kuno  antara  lain  cungkup  makam Sunan Giri, Sunan Derajat, dan Sunan Gunung Jati. Demikian juga  cungkup  makam  sultan-sultan  yang  dapat  dikatakan masih menunjukkan kekunoannya walaupun sudah mengalami perbaikan  contohnya cungkup makam sultan-sultan Demak, Banten, dan Ratu Kalinyamat (Jepara).
+
+Di samping bangunan makam, terdapat tradisi pemakaman yang sebenarnya bukan berasal dari ajaran Islam. Misalnya,  jenazah  dimasukkan  ke  dalam  peti.  Pada  zaman kuno  ada  peti  batu,  kubur  batu  dan  lainnya.  Sering  pula  di atas kubur diletakkan bunga-bunga. Pada hari ke-3, ke-7, ke40,  ke-100,  satu  tahun,  dua  tahun,  dan  1000  hari  diadakan selamatan.  Saji-sajian  dan  selamatan  adalah  unsur  pengaruh kebudayaan pra-Islam, tetapi doa-doanya secara Islam. Hal ini jelas menunjukkan perpaduan. Sesudah upacara terakhir (seribu hari)  selesai,  barulah  kuburan  diabadikan,  artinya  diperkuat dengan  bangunan  dan  batu.  Bangunan  ini  disebut  jirat  atau kijing. Nisannya diganti dengan nisan batu. Di atas jirat sering didirikan semacam rumah yang di atas disebut cungkup. Dalam kaitan dengan makam Islam ada juga istilah masjid makam. Apa yang dimaksud masjid makam itu?
+
+
+### 2.  Seni Ukir
+
+Pada masa perkembangan Islam di zaman madya, berkembang ajaran bahwa seni ukir, patung, dan melukis makhluk hidup, apalagi manusia  secara  nyata,  tidak  diperbolehkan.  Di  Indonesia  ajaran
+
+Untuk  lebih  mendalami  materi ini,  silakan  membaca  buku  R. Soekmono, Pengantar Sejarah Kebudayaan Indonesia III.
+
+
+<br>
+
+
+---
+## 📄 Halaman 254
+
+tersebut ditaati. Hal ini menyebabkan seni patung di Indonesia pada zaman madya, kurang berkembang. Padahal pada masa sebelumnya seni patung sangat berkembang, baik patung-patung bentuk manusia maupun binatang. Akan tetapi, sesudah zaman madya, seni patung berkembang seperti yang dapat kita saksikan sekarang ini.
+
+Walaupun seni patung untuk menggambarkan makhluk hidup secara nyata tidak diperbolehkan. Akan tetapi, seni pahat atau seni ukir
+
+terus  berkembang.  Para  seniman tidak ragu-ragu mengembangkan seni hias  dan  seni  ukir  dengan  motif daun-daunan dan bunga-bungaan seperti  yang  telah  dikembangkan sebelumnya. Kemudian juga ditambah seni hias dengan huruf Arab  (kaligrafi).  Bahkan  muncul kreasi  baru,  yaitu  kalau  terpaksa ingin  melukiskan  makhluk  hidup, akan disamar dengan  berbagai hiasan,  sehingga  tidak  lagi  jelasjelas berwujud binatang atau manusia.
+
+Banyak sekali bangunan-bangunan Islam yang dihiasi dengan berbagai motif ukir-ukiran. Misalnya, ukir-ukiran pada pintu atau tiang pada  bangunan  keraton  ataupun  masjid,  pada  gapura  atau  pintu gerbang. Dikembangkan juga seni hias atau seni ukir dengan bentuk tulisan Arab yang dicampur dengan ragam hias yang lain. Bahkan ada seni kaligrafi yang membentuk orang, binatang, atau wayang.
+
+
+### 3.  Aksara dan Seni Sastra
+
+Tersebarnya  Islam  di  Indonesia  membawa  pengaruh  dalam bidang  aksara  atau  tulisan.  Abjad  atau  huruf-huruf  Arab  sebagai abjad yang digunakan untuk menulis bahasa Arab mulai digunakan di Indonesia. Bahkan huruf Arab digunakan di bidang seni ukir. Berkaitan dengan itu berkembang seni kaligrafi
+
+
+<br>
+
+
+---
+## 📄 Halaman 255
+
+Di  samping  pengaruh  sastra  Islam  dan  Persia,  perkembangan sastra  di  zaman  madya  tidak  terlepas  dari  pengaruh  unsur  sastra sebelumnya. Dengan demikian terjadilah akulturasi antara sastra Islam dengan sastra yang berkembang di zaman pra-Islam. Seni sastra di zaman Islam terutama berkembang di Melayu dan Jawa. Dilihat dari corak dan isinya, ada beberapa jenis seni sastra seperti berikut.
+
+- Hikayat adalah karya sastra yang  berisi  cerita  sejarah  ataupun dongeng. Dalam hikayat banyak ditulis berbagai peristiwa yang menarik, keajaiban, atau hal-hal yang tidak masuk akal. Hikayat ditulis dalam  bentuk  gancaran  (karangan bebas  atau  prosa).  Hikayat-hikayat yang terkenal, misalnya Hikayat Iskandar  Zulkarnain , Hikayat  RajaRaja Pasai , Hikayat Khaidir , Hikayat si Miskin , Hikayat  1001  Malam , Hikayat Bayan Budiman , dan Hikayat Amir Hamzah .
+- Babad mirip dengan hikayat. Penulisan babad seperti tulisan sejarah, tetapi isinya tidak selalu berdasarkan fakta. Jadi, isinya campuran  antara  fakta  sejarah,  mitos,  dan  kepercayaan.  Di tanah Melayu terkenal dengan sebutan tambo atau salasilah. Contoh  babad  adalah Babad  Tanah  Jawi , Babad  Cirebon, Babad Mataram, dan Babad Surakarta .
+- Syair berasal dari perkataan Arab untuk menamakan karya sastra  berupa  sajak-sajak  yang  terdiri  atas  empat  baris  setiap baitnya. Contoh syair sangat tua adalah syair yang tertulis pada batu nisan makam putri Pasai di Minye Tujoh.
+Gambar 3.35 Naskah Hikayat Amir Hamzah
+
+
+<br>
+
+
+---
+## 📄 Halaman 256
+
+- Suluk merupakan karya sastra yang berupa kitab-kitab dan isinya  menjelaskan  soal-soal  tasawufnya.  Contoh  suluk  yaitu Suluk Sukarsa, Suluk Wujil , dan Suluk Malang Sumirang .
+
+### 4.  Kesenian
+
+Di  Indonesia,  Islam  menghasilkan  kesenian  bernafas  Islam yang bertujuan untuk menyebarkan ajaran Islam. Kesenian tersebut, misalnya sebagai berikut.
+
+- Permainan  debus,  yaitu  tarian  yang  pada  puncak  acara para  penari  menusukkan  benda  tajam  ke  tubuhnya  tanpa meninggalkan luka. Tarian ini diawali dengan pembacaan ayatayat dalam Al Quran dan salawat nabi. Tarian ini terdapat di Banten dan Minangkabau.
+- Seudati,  sebuah  bentuk  tarian  dari  Aceh.  Seudati  berasal dan kata syaidati  yang  artinya  permainan  orang-orang  besar. Seudati sering disebut saman artinya delapan. Tarian ini aslinya dimainkan oleh delapan orang penari. Para pemain menyanyikan lagu yang isinya antara lain salawat nabi
+- Wayang, termasuk wayang kulit. Pertunjukan wayang sudah berkembang  sejak  zaman  Hindu,  akan  tetapi,  pada  zaman Islam terus dikembangkan. Kemudian berdasarkan cerita Amir Hamzah dikembangkan pertunjukan wayang golek.
+
+### 5.  Kalender
+
+Menjelang  tahun  ketiga  pemerintahan  Khalifah  Umar  bin Khattab,  beliau  berusaha  membenahi  kalender  Islam.  Perhitungan tahun  yang  dipakai  atas  dasar  peredaran  bulan  (komariyah).  Umar menetapkan tahun 1 H bertepatan dengan tanggal 14 September 622 M, sehingga sekarang kita mengenal tahun Hijriyah.
+
+
+<br>
+
+
+---
+## 📄 Halaman 257
+
+Sistem  kalender  itu  juga  berpengaruh  di  Nusantara.  Bukti perkembangan sistem penanggalan (kalender) yang paling nyata adalah sistem  kalender  yang  diciptakan  oleh  Sultan  Agung.  Ia  melakukan sedikit  perubahan,  mengenai  nama-nama  bulan  pada  tahun  Saka. Misalnya bulan Muharam diganti dengan Sura dan Ramadhan diganti dengan Pasa.  Kalender  tersebut  dimulai  tanggal  1  Muharam  tahun 1043 H. Kalender Sultan Agung dimulai tepat dengan tanggal 1 Sura tahun 1555 Jawa (8 Agustus 1633).
+
+Masih  terdapat  beberapa  bentuk  lain  dan  akulturasi  antara kebudayaan  pra-Islam  dengan  kebudayaan  Islam.  Misalnya  upacara kelahiran perkawinan dan kematian. Masyarakat Jawa juga mengenal berbagai  kegiatan  selamatan  dengan  bentuk  kenduri.  Selamatan diadakan pada waktu tertentu. Misalnya, selamatan atau kenduri pada 10  Muharam  untuk  memperingati  Hasan-Husen  (putra  Ali  bin  Abu Thalib), Maulid Nabi (untuk memperingati kelahiran Nabi Muhammad), Ruwahan  (Nyadran)  untuk  menghormati  para  leluhur  atau  sanak keluarga yang sudah meninggal.
+
+
+### Uji Kompetensi
+
+- Jelaskan  bagaimana  wayang  dapat  digunakan  dalam  proses Islamisasi di Pulau Jawa!
+- Diskusikan  bagaimana  proses  akulturasi  antara  budaya  lama dengan budaya Islam dapat berlangsung secara damai dan saling melengkapi? Uraikan jawaban kamu dan presentasikan!
+- Coba  kamu  lakukan  penelitian  sederhana  dengan  melakukan wawancara atau pengamatan di lingkungan kamu tinggal atau sekitar  sekolah,  tuliskan  hasil-hasil  budaya  yang  berhubungan dengan akulturasi budaya Islam (tulisan antara 3 - 5 halaman)!
+
+<br>
+
+
+---
+## 📄 Halaman 258
+
+
+### F .     Proses Integrasi Nusantara
+
+
+###  Mengamati Lingkungan
+
+Integrasi suatu bangsa adalah hal yang sangat penting dalam kehidupan berbangsa dan bernegara. Dengan adanya integrasi akan melahirkan satu kekuatan bangsa yang ampuh dan segala persoalan yang timbul dapat dihadapi bersama-sama. Negara Kesatuan Republik Indonesia adalah wujud konkret dari proses integrasi bangsa. Proses integrasi bangsa Indonesia ini ternyata sudah berlangsung cukup lama bahkan  sudah  dimulai  sejak  awal  tarikh  masehi.  Pada  abad  ke-16 proses integrasi bangsa Indonesia mulai mengalami kemajuan pesat sejak  proses  Islamisasi.  Coba  kamu  perhatikan  dari  bacaan  di  atas hubungan  antara  ulama  dari  berbagai  daerah  telah  mempercepat proses  persatuan  bangsa-bangsa  di  kepulauan  Indonesia.  Ulamaulama  dari  Minangkabau  misalnya  sudah  berhasil  mengislamkan saudara-saudara  kita  di  Sulawesi,  begitu  juga  ulama  Sulawesi  juga telah  berperan  dalam  mengislamkan  saudara-saudara  kita  di  Bima, Nusa Tenggara, Kepulauan Riau dan sebagainya, begitu juga ulama dari Jawa Timur telah mengislamkan Ternate dan Tidore, tentu kalau diurai satu persatu maka hubungan antar ulama ini telah menyatukan seluruh wilayah Indonesia bahkan sampai ke Malaka dan Singapura.
+
+
+###  Memahami  Teks
+
+
+### 1.  Peranan Para Ulama dalam Proses Integrasi
+
+Agama  Islam  yang  masuk  dan  berkembang  di  Nusantara mengajarkan  kebersamaan  dan  mengembangkan  toleransi  dalam kehidupan beragama.  Islam mengajarkan  persamaan  dan  tidak mengenal  kasta-kasta  dalam  kehidupan  masyarakat.  Konsep  ajaran Islam  memunculkan  perilaku  ke  arah  persatuan  dan  persamaan derajat. Disisi lain, datangnya pedagang-pedagang Islam di Indonesia mendorong berkembangnya tempat-tempat perdagangan di daerah pantai.  Tempat-tempat  perdagangan  itu  kemudian  berkembang menjadi  pelabuhan  dan  kota-kota  pantai.  Bahkan  kota-kota  pantai
+
+
+<br>
+
+
+---
+## 📄 Halaman 259
+
+yang  merupakan  bandar  dan  pusat  perdagangan,  berkembang menjadi  kerajaan.  Timbulnya  kerajaan-kerajaan  Islam  merupakan awal  terjadinya  proses  integrasi.  Meskipun  masing-masing  kerajaan memiliki cara dan faktor pendukung yang berbeda-beda dalam proses integrasinya.
+
+
+### 2.  Peran Perdagangan Antarpulau
+
+Proses  integrasi  juga  terlihat  melalui  kegiatan  pelayaran  dan perdagangan antarpulau. Sejak zaman kuno, kegiatan pelayaran dan perdagangan sudah berlangsung di Kepulauan Indonesia. Pelayaran dan perdagangan itu berlangsung dari daerah yang satu ke daerah yang lain, bahkan antara negara yang satu dengan negara yang lain. Kegiatan  pelayaran  dan  perdagangan  pada  umumnya  berlangsung dalam waktu yang lama. Hal ini,  menimbulkan pergaulan dan hubungan kebudayaan  antara  para  pedagang  dengan  penduduk  setempat. Kegiatan semacam ini mendorong terjadinya proses integrasi.
+
+Pada  mulanya  penduduk  di  suatu  pulau  cukup  memenuhi kebutuhan hidupnya dengan apa yang ada di pulau tersebut. Dalam perkembangannya, mereka ingin mendapatkan barang-barang yang terdapat di pulau lain. Untuk memenuhi kebutuhan tersebut, terjadilah hubungan  dagang  antar  pulau.  Angkutan  yang  paling  murah  dan  mudah adalah angkutan laut (kapal/perahu), maka berkembanglah pelayaran dan perdagangan. Terjadinya pelayaran dan perdagangan antarpulau di  Kepulauan  Indonesia  yang  diikuti  pengaruh  di  bidang  budaya turut  berperan  serta  mempercepat  perkembangan  proses  integrasi. Misalnya, para pedagang dari Jawa berdagang ke Palembang, atau para pedagang dari Sumatra berdagang ke Jepara. Hal ini  menyebabkan terjadinya proses integrasi antara Sumatra dan Jawa. Para pedagang di Banjarmasin berdagang  ke  Makassar,  atau  sebaliknya.  Hal ini  menyebabkan  terjadi  proses  integrasi  antara masyarakat Banjarmasin (Kalimantan) dengan masyarakat Makassar (Sulawesi). Para pedagang
+
+Untuk lebih mendalami, silakan membaca buku Sartono Kartodirdjo . Pengantar Sejarah Indonesia Baru 1500-1900 dari Emporium sampai Empirium.
+
+
+<br>
+
+
+---
+## 📄 Halaman 260
+
+Makassar dan Bugis memiliki peranan penting dalam proses integrasi. Mereka berlayar hampir ke seluruh Kepulauan Indonesia bahkan jauh sampai ke luar Kepulauan Indonesia.
+
+Pulau-pulau penting di Indonesia, pada umumnya memiliki pusatpusat perdagangan. Sebagai contoh di Sumatra terdapat Aceh, Pasai, Barus,  dan  Palembang.  Jawa  memiliki  beberapa  pusat  perdagangan misalnya Banten Sunda Kelapa, Jepara, Tuban, Gresik, Surabaya, dan Blambangan. Kemudian di dekat Sumatra ada bandar Malaka. Malaka berkembang sebagai bandar terbesar di Asia Tenggara. Tahun 1511 Malaka jatuh ke tangan Portugis. Akibatnya perdagangan Nusantara berpindah ke Aceh. Dalam waktu singkat Aceh berkembang sebagai bandar dan menjadi sebuah kerajaan yang besar. Para pedagang dari pulau-pulau lain di Indonesia juga datang dan berdagang di Aceh.
+
+Sementara  itu,  sejak  awal  abad  ke-16  di  Jawa  berkembang Kerajaan Demak dan beberapa bandar sebagai pusat perdagangan. Di kepulauan Indonesia bagian tengah maupun timur juga berkembang kerajaan  dan  pusat-pusat  perdagangan.  Dengan  demikian,  terjadi hubungan dagang antardaerah dan antarpulau. Kegiatan perdagangan antarpulau  mendorong  terjadinya  proses  integrasi  yang  terhubung melalui  para  pedagang.  Proses  integrasi  itu  juga  diperkuat  dengan berkembangnya hubungan kebudayaan. Bahkan juga ada yang diikuti dengan perkawinan.
+
+
+### 3.  Peran Bahasa
+
+Perlu  juga  kamu  pahami  bahwa  bahasa  juga  memiliki  peran yang strategis dalam proses integrasi. Kamu tahu bahwa Kepulauan Indonesia terdiri atas beribu-ribu pulau yang dihuni oleh aneka ragam suku bangsa. Tiap-tiap suku bangsa memiliki bahasa masing-masing. Untuk mempermudah komunikasi antarsuku bangsa, diperlukan satu bahasa  yang  menjadi  bahasa  perantara  dan  dapat  dimengerti  oleh semua suku bangsa. Jika tidak memiliki kesamaan bahasa, persatuan tidak akan terjadi karena di antara suku bangsa timbul kecurigaan dan prasangka lain.
+
+
+<br>
+
+
+---
+## 📄 Halaman 261
+
+Bahasa merupakan sarana pergaulan. Bahasa Melayu digunakan hampir  di  semua  pelabuhan-pelabuhan  di  Kepulauan  Nusantara. Bahasa Melayu sejak zaman kuno sudah menjadi bahasa resmi negara Melayu (Jambi). Pada masa kejayaan Kerajaan Sriwijaya, bahasa Melayu dijadikan bahasa resmi dan bahasa ilmu pengetahuan. Hal ini dapat dilihat dalam Prasasti Kedukan Bukit tahun 683 M, Prasasti Talang Tuo tahun 684 M, Prasasti Kota Kapur tahun 685 M, dan Prasasti Karang Berahi tahun 686 M.
+
+Para pedagang di daerah-daerah sebelah timur Nusantara, juga menggunakan  bahasa  Melayu  sebagai  bahasa  pengantar.  Dengan demikian,  berkembanglah  bahasa  Melayu  ke  seluruh  Kepulauan Nusantara. Pada mulanya bahasa Melayu digunakan sebagai bahasa dagang.  Akan  tetapi  lambat  laun  bahasa  Melayu  tumbuh  menjadi bahasa  perantara  dan  menjadi lingua  franca di  seluruh  Kepulauan Nusantara. Di Semenanjung Malaka (Malaysia seberang), pantai timur Pulau  Sumatra,  pantai  barat  Pulau  Sumatra,  Kepulauan  Riau,  dan pantai-pantai  Kalimantan,  penduduk  menggunakan  bahasa  Melayu sebagai bahasa pergaulan.
+
+Masuk dan berkembangnya agama Islam, mendorong perkembangan  bahasa  Melayu.  Buku-buku  agama  dan  tafsir  alQur'an  juga  mempergunakan  bahasa  Melayu.  Ketika  menguasai Malaka, Portugis mendirikan sekolah-sekolah dengan menggunakan bahasa  Portugis,  namun  kurang  berhasil.  Pada  tahun  1641  VOC merebut Malaka dan kemudian mendirikan sekolah-sekolah dengan menggunakan bahasa Melayu. Jadi, secara tidak sengaja, kedatangan VOC secara tidak langsung ikut mengembangkan bahasa Melayu.
+
+
+### Uji Kompetensi
+
+- Diskusikan mengapa bahasa Melayu cepat berkembang di Nusantara?
+- Bagaimana  Islam  dapat  mempercepat  proses  integrasi  bangsa Indonesia? Uraikan jawaban kamu dalam 2 - 3 lembar!
+
+<br>
+
+
+---
+## 📄 Halaman 262
+
+
+### Kesimpulan
+
+- Perkembangan  Islam  di  Nusantara  tidak  pernah  terlepas  dari dinamika  Islam  di  kawasan-kawasan  lain.  Karena  itu,  adalah keliru pandangan yang menganggap seolah-olah Islam Nusantara berkembang secara tersendiri serta terisolasi dari perkembangan dan  dinamika  Islam  di  tempat-tempat  lain.  Peradaban  Islam Nusantara juga menampilkan ciri-ciri dan karakter yang khas, relatif berbeda dengan peradaban Islam di wilayah-wilayah perabadan Muslim lainnya,  misalnya  Arab,  Turki,  Persia,  Afrika  Hitam,  dan Dunia Barat.
+- Islam  yang  datang  pertama  kali  adalah  Islam  yang  umumnya dibawa  para  guru  pengembara  Sufi,  yang  mengembara  dari satu  tempat  ke  tempat  lain  untuk  menyebarkan  Islam.  Islam sufistik  yang  dibawa  para  guru  pengembara  ini  jelas  memiliki kecenderungan kuat untuk lebih menerima terhadap tradisi dan praktik  keagamaan  lokal.  Bagi  guru-guru  Sufi  pengembara  ini, yang paling penting adalah pengucapan dua kalimah syahadat, setelah itu barulah memperkenalkan ketentuan-ketentuan hukum Islam.
+- Masyarakat Nusantara pada umumnya adalah masyarakat pesisir yang kehidupan mereka tergantung pada perdagangan antarpulau dan antarbenua. Sedangkan mereka yang berada di pedalaman adalah  masyarakat  agraris,  yang  kehidupan  mereka  tergantung kepada pertanian.
+- Dalam  bidang  kebudayaan,  umat  Islam  mempunyai  ciri  yang khusus pula dari budaya  material ( material culture )  dalam kehidupan sehari-hari, sampai kepada budaya spiritual ( spiritual culture ).  Bahkan  sampai  sekarang  kita  masih  bisa  menyaksikan berbagai  kesinambungan  tertentu  antara  tradisi  Islam  dengan tradisi  budaya  spiritual  praIslam  yang  sedikit  banyak  diwarnai tradisi  Hindu,  Buddha,  dan  bahkan  tradisi  keagamaan  spritual lokal.
+
+<br>
+
+
+---
+## 📄 Halaman 263
+
+- Faktor  pemersatu  terpenting  di  antara  berbagai  suku  bangsa Nusantara  adalah  Islam.  Islam  mengatasi  perbedaan-perbedaan yang terdapat di antara berbagai suku bangsa dan menjadi identitas yang  mengatasi  batas-batas  geografis,  sentimen  etnis,  identitas kesukuan, adat istiadat dan tradisi lokal lainnya. Tentu saja, sejauh menyangkut pemahaman dan pengamalan Islam, terdapat pula perbedaan-perbedaan tertentu terhadap doktrin dan ajaran Islam sesuai rumusan para ulama, bukan dengan identitas suku bangsa.
+- Faktor pemersatu kedua, yaitu bahasa Melayu. Bahasa ini sebelum kedatangan Islam digunakan hanya di lingkungan etnis terbatas, yakni  suku  bangsa  Melayu  di  Palembang,  Riau,  Deli  (Sumatra Timur),  dan  Semenanjung Malaya. Terdapat bahasa-bahasa lain yang digunakan lebih banyak orang suku bangsa lain di Nusantara, seperti bahasa Jawa dan bahasa Sunda. Bahasa Melayu yang lebih egaliter  dibanding bahasa Jawa, diadopsi sebagai lingua franca oleh para penyiar Islam, ulama, dan pedagang. Kedudukan bahasa Melayu sebagai lingua franca Islam di Nusantara bertambah kuat ketika  bahasa  Melayu  ditulis  dengan  aksara  Arab.  Bersamaan dengan adopsi huruf-huruf Arab, maka dilakukan pula pengenalan dan penyesuaian pada aksara Arab tertentu untuk kepentingan bahasa-bahasa lokal di Nusantara. Kedudukan bahasa Melayu itu menjadi semakin lebih kuat lagi ketika para ulama menulis banyak karya  mereka  dengan  bahasa  Melayu  berhuruf  Jawi  tersebut, sehingga pada gilirannya, tulisan Jawi menjadi alat komunikasi dan dakwah tertulis bagi masyarakat Melayu-Nusantara menggantikan beberapa bentuk tulisan yang berkembang sebelumnya.
+- Warisan  terbaik  dari  sejarah  zaman  Islam  lainnya  ialah  adanya pengintegrasian  Nusantara  lewat  nasionalisme  keagamaan  dan jaringan perdagangan antarpulau.
+
+<br>
+
+
+---
+## 📄 Halaman 264
+
+
+### LATIHAN ULANGAN
+
+
+### Jawablah pertanyaan-pertanyaan berikut!
+
+- Uraikan secara ringkas periode proses evolusi bumi!
+- Untuk menggambarkan masa kehidupan manusia purba, lebih tepat menggunakan istilah pra-aksara dibandingkan prasejarah. Mengapa demikian?
+- Jelaskan  alasan  Sangiran  disebut  sebagai  laboratorium  situs  manusia  purba  di Asia!
+- Jelaskan hubungan antara manusia yang sudah bertempat tinggal dengan adanya sistem kepercayaan!
+- Bagaimana peninggalan sejarah berupa benda dan karya seni bisa menyebar ke berbagai wilayah di Indonesia?
+- Jelaskan teori-teori mengenai masuknya Hindu-Buddha di Kepulauan Indonesia!
+- Mengapa Ratu Sima dari Kerajaan Kalingga dikenal sebagai pemimpin wanita yang tegas?
+- Mengapa  Kerajaan  Sriwijaya  dikatakan  sebagai  pusat  pembelajaran  agama Buddha Mahayana di seluruh Asia Tenggara?
+- Muhammad  Yamin  menyebutkan  Kerajaan  Sriwijaya  sebagai  negara  nasional pertama. Jelaskan mengapa demikian!
+- Jelaskan  alasan  Airlangga  memerintahkan  Mpu  Bharada  untuk  membagi kerajaannya menjadi Kediri dan Janggala!
+256
+
+Kelas X SMA/MA/SMK/MAK
+
+
+<br>
+
+
+---
+## 📄 Halaman 265
+
+- Jelaskan  mengapa  perdagangan  lewat  jalur  perairan  atau  laut  lebih  populer dibandingkan perdagangan lewat jalur darat!
+- Jelaskan peran Sriwijaya dan Majapahit dalam proses integrasi antarpulau pada masa Hindu-Buddha!
+- Sebutkan beberapa peran tokoh pengembang agama Islam di Indonesia!
+- Anthony  H.  Johns  mengatakan  bahwa  proses  Islamisasi  dilakukan  oleh  para musafir dari Mekkah yang datang ke Kepulauan Indonesia. Jelaskan teori serupa yang dikemukakan oleh Hoesein Djajadiningrat!
+- Mengapa bahasa Melayu cepat berkembang di Nusantara?
+- Uraikan mengenai bentuk-bentuk akulturasi kebudayaan Islam dengan kebudayaan yang sudah ada di Nusantara!
+- Berdasarkan bukti sejarah, Islam sudah masuk ke Papua pada pertengahan abad ke-15. Jelaskan teori yang mengatakan proses Islamisasi di Papua terutama yang dilakukan di pesisir barat!
+- Jelaskan bagaimana awal terjadinya konflik kaum Adat dengan kaum Padri di Sumatra Barat!
+- Ceritakan hubungan antara Kerajaan Ternate dan Tidore dengan tokoh-tokoh ulama Gresik!
+- Rumuskan nilai-nilai karakter yang dapat diperoleh setelah belajar perkembangan kerajaan-kerajaan Islam di Indonesia!
+Sejarah Indonesia
+
+257
+
+
+<br>
+
+
+---
+## 📄 Halaman 266
+
+
+### GLOSARIUM
+
+- arca patung yang terbuat dari batu yang berbentuk manusia atau binatang
+- aksara Pallawa aksara yang dipakai untuk menuliskan bahasa dari India Selatan dan diturunkan dari Aksara Brahmi, disebut juga dengan Aksara Grantha
+- akuwu jabatan kepala daerah pada masa Kediri abad ke-12
+- arjunawiwaha karya sastra lama yang menceritakan kisah Airlangga bagian dari kitab Mahabharata
+- artefak benda atau pecahan benda kecil berupa alat-alat perlengkapan  hidup  yang  dibuat, atau digunakan  oleh manusia di zaman kuno
+- arung-matoa artinya raja yang pertama atau utama
+- batu  inti  ( core ) bahan  baku  yang  dikerjakan  (dipangkas)  untuk pembuatan  alat  (alat  batu  inti)  atau  untuk  menghasilkan serpih atau bilah yang kemudian dijadikan alat
+- batuan kersikan batuan yang telah mengalami mineralisasi melalui penyerapan silika di dalamnya. Selain terhadap batuan, juga sering terjadi dalam tanaman
+- breksi batuan klastik butiran kasar, terdiri dari fragmen batu segitiga atau runcing, yang dibungkus oleh matriks butiran halus yang tersemenkan
+- candi bangunan kuno yang terbuat batu , sebagai tempat pemujaan, atau  penyimpanan abu jenazah raja-raja, pendeta-pendeta Hindu-Buddha pada masa klasik
+- ceitis adalah mata uang seperti uang kecil yang digunakan pada masa Kerajaan Samudra Pasai
+
+<br>
+
+
+---
+## 📄 Halaman 267
+
+- debus , yaitu tarian yang pada puncak acara para penari menusukkan benda tajam ke tubuhnya tanpa meninggalkan luka
+- devide  et  impera politik  adu  domba,  menjadikan  berselisih (bertikai) di antara pihak yang sepaham
+dharma mempersembahkan, membaktikan dhatugagdha pembuat alat-alat yang terbuat dari logam
+
+- dramas, yaitu mata uang pada masa Kerajaan Samudra Pasai yang dibaut  dari  emas  yang  apabila  dibandingkan  dengan  harga mata uang Portugis crusade, yaitu 9 drama sama dengan 1 crusado yang juga sam dengan 500 cash. Mata uang emas itu dibuatdari serbukan emas dan perak.
+- ekofak  ( ecofact ) tinggalan  berupa  sisa  lingkungan  organik  yang non-artefaktual,  tetapi  memiliki  relevansi  kultural,  misalnya sisa  fauna  atau  vegetasi  yang  mengkait  dengan  kehidupan manusia di masa lampau
+- ekskavasi metode prinsipal yang dipakai dalam  memperoleh data  arkeologi  dengan  cara  menggali  tanah  dengan  teknik perekaman  seluruh  tinggalan  atau  gejala  dan  konteksnya secara sistematis dalam tiga dimensi
+- endapan  teras merupakan  salah  satu  perlapisan  yang  terdiri  atas gravel  konglomerat,  merupakan  hasil  dari  pengangkatan dasar sungai
+- evolusi perkembangan makhluk hidup yang terjadi secara gradual dalam  skala  waktu  geologis,  dari  organisme  yang  sangat sederhana menuju bentuk yang kompleks. Produk akhir suatu evolusi  akan  sangat  berbeda  dibandingkan  dengan  produk awalnya
+fauna himpunan binatang dalam suatu sistem ekologi flora himpunan tumbuhan dalam suatu sistem ekologi
+
+fluvial berhubungan dengan sungai atau terjadi di dalam sungai
+
+- formasi massa perlapisan batuan yang secara dominan terdiri dari tipe  litologi  tertentu  ataupun  gabungan  dari  beberapa  tipe litologi, yang merupakan dasar dari unit litostratigrafi. Formasi dapat  dikombinasikan  ke  dalam  grup  atau  dibagi  menjadi member
+
+<br>
+
+
+---
+## 📄 Halaman 268
+
+fosil sisa-sisa,  jejak,  atau  cetakan  dari  mahluk  hidup  (tanaman, binatang,  dan  manusia)  yang  terawetkan  dalam  lapisan bumi  selama  waktu  geologis  atau  prasejarah.  Atau,  segala bukti  tentang  kehidupan  masa  silam.  Sebuah  tulang  atau kayu  dapat  disebut  sebagai  fosil  setelah  secara  smpurna mengalami  proses  fosilisasi  (yaitu  bergantinya  zat  organik menjadi anorganik)
+
+- grebeg diadakan  tiga kali dalam satu tahun, yaitu setiap tanggal 10  Dzulliijah  (Idul  Adha),  1  Syawal  (Idul  Fitri),  dan  tanggal 12 Rabiulawal (Maulud Nabi). Bentuk dan kegiatan upacara grebeg adalah mengarak gunungan dari keraton ke depan masjid agung
+- hominid (Latin),  makhluk  sebagai  kera  besar  mendekati  genus manusia  tetapi  agak  di  bawah  sedikit  dari Homo  sapiens dan termasuk makhluk cerdas dari keluarga simpanse gorila ( Gorilla ), orangutan dan manusia ( Homo )
+- holosen kala  yang  kedua  dari  zaman  quarter,  setelah  Kala  yang pertama (Pleistosen), berlangsung sekitar 11.800 tahun yang lalu hingga saat ini
+jawadwipa sebutan Pulau Jawa dalam bahasa sanskerta
+
+- kakawin kesusastraan dalam bentuk puisi pada masa Jawa Kuno
+- kapak genggam ( hand axe ) alat  batu  inti  yang  dipangkas  secara bifasial pada seluruh atau sebagian besar permukaan hingga menciptakan bentuk-bentuk yang simetris
+- kapak pembelah ( cleaver) alat serpih besar yang dipangkas secara bifasial dengan tajaman yang melebar
+- karst sebuah topografi yang dibentuk oleh batu gamping, dolomite, atau gypsum melalui pelarutan, dicirikan oleh pembentukan gua atau drainase bawah tanah
+- kranium tengkorak secara lengkap, yang terdiri atas atap tengkorak, dasar tengkorak, muka, rahang atas dan rahang bawah
+kumbhakaraka pembuat periok tanah liat yang dibakar lancipan  ( point ) alat  yang  bentuknya  mengarah  pada  segitiga dengan salah satu sudutnya merupakan bagian yang sengaja diruncingkan. Selain untuk melubangi, lancipan dapat digunakan sebagai alat  penusuk  dengan  cara  mengikatkan pangkalnya pada tangkai dari kayu atau sebagai mata panah
+
+
+<br>
+
+
+---
+## 📄 Halaman 269
+
+- megalitik budaya yang pada umumnya diwujudkan dalam bentuk batu-batu besar, pendiriannya dimaksudkan sebagai lambang atau sarana pemujaan terhadap arwah nenek moyang
+- mesolitik budaya  yang  berkembang  pada  periode  transisi  antara paleolitik dan neolitik, dicirikan oleh kehidupan berburu dan meramu dengan produk teknologi litik yang khas, berupa alat-alat  mikrolit.  Terminologi  mesolitik  terutama  berlaku  di Eropa, yakni pada periode yang berlangsung antara 12.000 dan 6.000 tahun lalu
+- meunasah merupakan  bangunan  umum  di  desa-desa  sebagai tempat  melaksanakan  upacara  agama,  pendidikan  agama, bermusyawarah, dan sebagainya (di Aceh)
+- mufti , pemberi fatwa untuk memutuskan masalah yg berhubungan dengan hukum Islam
+- neolitik budaya  yang  dicirikan  oleh  kehidupan  menetap  dalam perkampungan dengan mengandalkan hasil kegiatan pertanian dan membuat serta menggunakan produk-produk teknologi inovasi, seperti pengupaman untuk alat-alat batu, pembuatan tembikar, pertenunan, dan pelayaran
+- nirwana keadaan  dan  ketentraman  smpurna  bagi  setiap  wujud eksistensi karena berakhirnya kelahiran kembali ke dunia
+- nomaden pola hidup yang berpindah-pindah dari suatu tempat ke tempat lain secara berkesinambungan
+- padmasana takhta atau singgasana
+- paleogeografi ilmu tentang geografi fisik, baik seluruh atau sebagian dari pemukaan bumi, dalam kurun geologis yang telah berlalu
+- paleolitik budaya tertua yang dicirikan oleh kehidupan mengembara, berburu dan meramu dengan membuat peralatan litik berupa alat-alat serpih dan alat-alat batu inti yang masih sederhana
+- paleolitik  Atas periodisasi  budaya  dalam  prasejarah  di  Eropa, berlangsung di sekitar 35.000  -  12.000  tahun  yang  lalu, umumnya merupakan produk budaya Manusia Modern Awal
+- paleolitik  Bawah periodisasi  budaya  dalam  prasejarah  di  Eropa, yang dimulai dari kehadiran manusia pertama hingga sekitar 125.000  tahun  yang  lalu,  umumnya  merupakan  produk budaya Homo erectus
+
+<br>
+
+
+---
+## 📄 Halaman 270
+
+- paleolitik Tengah periodisasi budaya dalam prasejarah Eropa yang berlangsung antara 125.000 hingga 35.000 tahun yang lalu. Umumnya merupakan produk budaya manusia Neanderthal. Budaya ini sering disebut sebagai budaya Mousterian
+- paleontologi ilmu  tentang  kehidupan  masa  lalu  dalam  waktu geologis, berdasarkan pada fosil-fosil tanaman dan binatang, termasuk  hubungannya  dengan  tanaman,  binatang,  dan lingkungan  sekarang,  maupun  dengan  kronologi  sejarah bumi
+- pangreh-praja adalah  penguasa  lokal  pada  masa  pemerintahan kolonial Belanda untuk menangani daerah jajahannya
+- Perjanjian Tellum  Pocco perjanjian  antara  Kerajaan  Wajo  yang bersekutu dengan  Kerajaan  Luwu  dan  bersatu  dengan Kerajaan Bone dan Soppeng pada tahun 1582
+- prasasti piagam yang tertulis pada batu, tembaga, dan sebagainya
+- pleistosen kala  pertama  dari  Zaman  Kuarter,  setelah  Pliosen  dan sebelum Holosen. Kala Pleistosen mulai sekitar 1.8 juta tahun yang lalu dan berakhir pada 11.800 tahun yang lalu, dan dibagi menjadi 3 tingkatan, yaitu Kala Pleistosen Bawah (1.8 hingga 0.8 juta tahun yang lalu), Pleistosen Tengah (0.8 hingga 0.12 juta tahun lalu), dan Pleistosen Atas (antara 120.000 hingga 11.800 tahun yang lalu)
+- pliosen suatu  masa  pada  Zaman  Tersier,  sesudah  Miosen  dan sebelum Pleistosen, antara 5-1.8 juta tahun yang lalu
+- primus inter pares (latin:  yang  pertama  di  antara  yang  setara), suatu  tipe  kepemimpinan  yang  mula-mula  dan  juga  dapat ditemukan dalam koloni hewan
+- protosejarah masa  transisi dari Zaman  prasejarah  ke  Zaman sejarah dicirikan oleh mulai munculnya tulisan tentang suatu masyarakat yang tinggal di wilayah tertentu, tetapi masyarakat tersebut belum mengerti dan menggunakan tulisan
+- ramayana cerita  epos  dari  India  yang  digubah oleh Walmiki yang menceritakan  petualangan  Rama,  titisan  dari  dewa  Wisnu dalam mitologi Hindu
+- saka tahun Jawa yang didasarkan dari cerita Aji Saka ke tanah Jawa, dimulai 78 tahun sesudah masehi
+
+<br>
+
+
+---
+## 📄 Halaman 271
+
+- sang  Amurwwabhumi gelar  yang  diberikan  kepada  Ken  Arok, ketika ia berhasil menguasai seluruh kerajaan di Jawa
+- sanggha, berarti perjamuan atau persaudaraan para Bhikkhu
+- sanskerta bahasa kesusastraan Hindu kuno
+- seni cadas ( rock art ) karya yang diwujudkan di permukaan cadas dalam bentuk lukisan ( rock painting ), pahatan ( rock carving ), dan goresan ( rock engraving )
+- serpih ( lake ) kepingan atau serpihan  yang sengaja dihasilkan dari bahan baku atau batu inti lewat pemangkasan. Disebut alat serpih  jika  memiliki  retus-retus  pengerjaan  atau  perimping bekas pakai
+- serut  ( scraper) alat  serpih  yang  dicirikan  oleh  keberadaan  retus bersambung menutupi seluruh atau sebagian besar sisi alat. Keletakan retus menciptakan berbagai tipe-tipe serut, seperti serut ujung, serut samping, dan lain-lain
+- seudati ,  sebuah  bentuk  tarian  dari  Aceh.  Seudati  berasal  dan kata  syaidati  yang  artinya  permainan  orang-orang  besar. Seudati  sering  disebut  saman  artinya  delapan.  Tarian  ini aslinya  dimainkan  oleh  delapan  orang  penari.  Para  pemain menyanyikan lagu yang isinya antara lain salawat nabi
+- situs ( site ) lokasi penemuan artefak, ekofak, atau fitur sebagai sisa aktivitas manusia
+- spesies kelompok  organisme,  baik  manusia,  binatang,  ataupun tumbuhan,  yang  dalam  perkawinannya  dapat  memberikan keturunan dengan struktur, kebiasaan, dan fungsi yang sama. Dalam hierakhinya, spesies berada setingkat di bawah genus
+- syahadat merupakan persaksian dan pengakuan (ikrar) yang benar, diikrarkan dengan lisan dan dibenarkan dengan hati bahwa tidak  ada  Tuhan  selain  Allah  dan  Muhammad  adalah  rasul Allah
+- tabot adalah upacara tradisional masyarakat Bengkulu untuk mengenang tentang kisah kepahlawanan dan kematian cucu Nabi Muhammad SAW, Husein bin Ali bin Abi Thalib dalam peperangan dengan pasukan Ubaidillah bin Zaid di padang Karbala, Irak pada tanggal 10 Muharam 61 Hijriah (681 M)
+
+<br>
+
+
+---
+## 📄 Halaman 272
+
+- Tahun Hijriah atau tarikh Islam yang dimulai ketika nabi Muhammad SAW berpindah ke Medinah. Perhitungan tahun yang dipakai atas dasar peredaran bulan (komariyah). Umar menetapkan tahun 1 H bertepatan dengan tanggal 14 September 622 M
+- tauhid makrifat adalah penyerahan diri kepada TuhanYang Maha Esa, yang naik setingkat demi setingkat sehingga sampai ke tingkat keyakinan yg kuat
+- tsunami  (Jepang) mengacu  gelombang  air  laut  yang  besar, yang diakibatkan oleh gempa bawah laut atau gunung api. Gelombang  tsunami  ini  dicirikan  oleh  kecepatan  rambat yang luar biasa hingga 950 kilometer/jam, dengan panjang gelombang mencapai 200 kilometer, dan waktu yang lama (bervariasi dari 5 menit hingga beberapa jam). Istilah Indonesia untuk  tsunami  mungkin  lebih  tepat  disebut  dengan  istilah 'air  bengis'  (aie  bangih:  Minangkabau),  salah  satu  nama kota pantai yang diduga sering mengalami serangan air bah dari laut itu
+- yuwaraja rajamuda,  biasa  dipangku  oleh  anak  sulung  seorang putra permaisuri
+- zaman Glasial periode  yang  dicirikan  oleh  terjadinya  penurunan suhu  global  hingga  menimbulkan  terjadinya  pengesan  di kutub dan di pegunungan. Gejala ini menimbulkan penurunan muka laut yang signifikan hingga menciptakan daratan yang luas. Periode ini sering juga disebut 'zaman Es'
+- zaman  Interglasial zaman  di  antara  dua  zaman  Glasial,  dicirikan oleh kenaikan temperatur hingga mencairkan es di kutub dan pegunungan. Sebagai konsekwensinya terjadi kenaikan muka laut hingga mengurangi luas daratan
+
+<br>
+
+
+---
+## 📄 Halaman 273
+
+
+### DAFTAR PUSTAKA
+
+- ------------.  1995.  Sejarah  Nasional  dan  Sejarah  Umum  1c  (sesuai dengan Kurikulum 1994). Surabaya: Kendang Sari.
+- ------------.  1995.  Sejarah  Nasional  dan  Sejarah  Umum  1c  (sesuai dengan Kurikulum 1994). Surabaya: Kendang Sari.
+- -----------.  1995.  Sejarah  Nasional  dan  Sejarah  Umum  1b  (sesuai dengan Kurikulum 1994). Surabaya: Kendang Sari.
+- -----------.  1995.  Sejarah  Nasional  dan  Sejarah  Umum  1b  (sesuai dengan Kurikulum 1994). Surabaya: Kendang Sari.
+- -----------. 2011. Pengantar Sejarah Kebudayaan  Indonesia 1. Yogyakarta: Kanisius.
+- -----------. 2011. Pengantar Sejarah Kebudayaan  Indonesia 1. Yogyakarta: Kanisius.
+- -----------. 2011. Pengantar Sejarah Kebudayaan  Indonesia 2. Yogyakarta: Kanisius.
+- -----------. 2011. Pengantar Sejarah Kebudayaan  Indonesia 2. Yogyakarta: Kanisius.
+- -----------.  dan  Truman  Simanjuntak.  2011.  Sangiran  Menjawab Dunia  (Edisi  Khusus).  Jawa  Tengah:  Balai  Pelestarian  Situs Manusia Purba Sangiran.
+- ---------.    2012.  Indonesia  dalam  Arus  Sejarah.  Jilid  III.  Jakarta:  PT Ichtiar  Baru  van  Hoeve  bekerja  sama  dengan  Kementerian Pendidikan dan Kebudayaan RI.
+- ---------.  1994.  Sejarah  Nasional  Indonesia  Jilid  II.  Jakarta:  Balai Pustaka
+- ---------.  1994.  Sejarah  Nasional  Indonesia  Jilid  II.  Jakarta:  Balai Pustaka
+
+<br>
+
+
+---
+## 📄 Halaman 274
+
+- ---------.  1994.  Sejarah  Nasional  Indonesia  Jilid  III.  Jakarta:  Balai Pustaka.
+- ---------.  1994.  Sejarah  Nasional  Indonesia  Jilid  III.  Jakarta:  Balai Pustaka.
+- ---------.  2012.  Indonesia  dalam  Arus  Sejarah.  Jilid  II.  Jakarta:  PT Ichtiar  Baru  van  Hoeve  bekerja  sama  dengan  Kementerian Pendidikan dan Kebudayaan RI.
+- ---------.  2012.  Indonesia  dalam  Arus  Sejarah.  Jilid  II.  Jakarta:  PT Ichtiar  Baru  van  Hoeve  bekerja  sama  dengan  Kementerian Pendidikan dan Kebudayaan RI.
+- --------. 1985. Sejarah Nasional Indonesia 2 untuk Sekolah Lanjutan Tingkat Atas. Jakarta: Depdikbud.
+- --------. 1985. Sejarah Nasional Indonesia 2 untuk Sekolah Lanjutan Tingkat Atas. Jakarta: Depdikbud.
+- --------. 2010. Atlas Sejarah Indonesia Masa Klasik (Hindu-Buddha), Jakarta: Kementerian Kebudayaan dan Pariwisata.
+- --------.  2011.  Atlas  Prasejarah  Indonesia  Masa  Islam.  Jakarta: Kementerian Kebudayaan dan Pariwisata.
+- Abdullah,  Taufik.  1996.  Islam  dan  Pluralisme  di  Asia  Tenggara. Jakarta: LIPI.
+- Abdullah, Taufik. dan Adrian B. Lapian (eds.). 2012. Indonesia dalam Arus Sejarah Jilid I. Jakarta: PT Ichtiar Baru van Hoeve bekerja sama dengan Kementerian Pendidikan dan Kebudayaan RI
+- Adrisijanti,  Inajati  dan  Andi  Putranto  (ed).  2009.  Membangun Kembali Prambanan. Yogyakarta: Balai Pelestarian Peninggalan Purbakala.
+- Anonim. 1988. Seri Penerbitan Sejarah Peradaban Manusia Zaman Mataram Kuno. Jakarta: Gita Karya.
+- Anonim. 1988. Seri Penerbitan Sejarah Peradaban Manusia Zaman Mataram Kuno. Jakarta: Gita Karya.
+- Anonim. 1990. Seri Penerbitan Sejarah Peradaban Manusia zaman Mataram Islam. Jakarta: Multiguna.
+- Azra, Azyumardi. 2002. Historiografi Islam Kontemporer: Wacana, Aktualitas  dan  Aktor  Sejarah.  Jakarta:  Penerbit  Gramedia Pustaka Utama.
+
+<br>
+
+
+---
+## 📄 Halaman 275
+
+- Badrika,  I  Wayan.  2006.  Sejarah  untuk  SMA  Kelas  X.  Jakarta: Erlangga.
+- Badrika,  I  Wayan.  2006.  Sejarah  untuk  SMA  Kelas  X.  Jakarta: Erlangga.
+- G.  G.  J.  Van  Steenis,  2006.  Flora  Pegunungan  Jawa.  Jakarta: Lembaga Ilmu Pengetahuan Indonesia.
+- G.  G.  J.  Van  Steenis,  2006.  Flora  Pegunungan  Jawa.  Jakarta: Lembaga Ilmu Pengetahuan Indonesia.
+- Daldjoeni,  N.1992.  Geografi  kesejarahan  II  Indonesia.  Bandung: Alumni.
+- Daldjoeni,  N.1992.  Geografi  kesejarahan  II  Indonesia.  Bandung: Alumni.
+- Direktorat Permuseuman. 1997. Untaian Manik-Manik Nusantara. Jakarta: Departemen Pendidikan dan Kebudayaan.
+- Direktorat Permuseuman. 1997. Untaian Manik-Manik Nusantara. Jakarta: Departemen Pendidikan dan Kebudayaan.
+- Forestier, Hubert. 2007. Ribuan Gunung,  Ribuan Alat Batu: Prasejarah Song Keplek, Gunung Sewu, Jawa Timur. Jakarta: KPG, EFEO, Puslit Arkenas.
+- Graaf, H.J. de & T.H. Pigeud. 1986. Kerajaan Islam Pertama di Jawa: Tinjauan  Sejarah  Politik  abad  XV  dan  XVI.  Jakarta:  Pustaka Utama Grafiti & KITLV.
+- Hall,  D.  G  .  E.  1988.  Sejarah  Asia  Tenggara.  Sutabaya:  PT  Usaha Nasional.
+- Hall,  D.  G  .  E.  1988.  Sejarah  Asia  Tenggara.  Sutabaya:  PT  Usaha Nasional.
+- Hasymy,  A.  1989.  Sejarah  Masuk  dan  Berkembangnya  Islam  di Indonesia. Medan: Penerbit Alma'arif.
+- Kartodirdjo, Sartono.1987. Pengantar Sejarah Indonesia Baru 15001900 dari Emporium sampai Empirium. Jakarta: Gramedia
+- Kartodirdjo, Sartono.1987. Pengantar Sejarah Indonesia Baru 15001900 dari Emporium sampai Empirium. Jakarta: Gramedia
+- Koentjaraningrat.  1997.  Manusia  dan  Kebudayaan  di  Indonesia. Jakarta: Penerbit Djambatan
+
+<br>
+
+
+---
+## 📄 Halaman 276
+
+- Koentjaraningrat.  1997.  Manusia  dan  Kebudayaan  di  Indonesia. Jakarta: Penerbit Djambatan
+- Kristinah, Endang dan Aris Soviyani. 2007. Mutiara-Mutiara Majapahit. Jakarta: Departemen Kebudayaan dan Pariwisata.
+- Kristinah, Endang dan Aris Soviyani. 2007. Mutiara-Mutiara Majapahit. Jakarta: Departemen Kebudayaan dan Pariwisata.
+- Lombard,  Denis.  2005.  Nusa  Jawa  :  Silang  Budaya,  Bagian  III : Wawasan Kerajaan-Kerajaan Konsentris. Jakarta: PT. Gramedia.
+- Lombard,  Denis.  2005.  Nusa  Jawa:  Silang  Budaya,  Bagian  III: Wawasan Kerajaan-Kerajaan Konsentris. Jakarta: PT. Gramedia.
+- Munandar, Agus Aris (ed). 2007. Sejarah Kebudayaan Indonesia. Religi  dan  Falsafah,  Direktorat  Geografi  Sejarah.  Jakarta: Departemen Budaya dan Pariwisata.
+- Munandar, Agus Aris (ed). 2007. Sejarah Kebudayaan Indonesia. Religi  dan  Falsafah,  Direktorat  Geografi  Sejarah.  Jakarta: Departemen Budaya dan Pariwisata.
+- Mustopo, M. Habib, dkk. 2010. Sejarah  1, Jakarta: Yudhistira.
+- Mustopo, M. Habib, dkk. 2010. Sejarah  1, Jakarta: Yudhistira.
+- Notosusanto,  Nugroho  dkk.  1985.  Sejarah  Nasional  Indonesia  1 untuk Sekolah Lanjutan Tingkat Atas. Jakarta: Depdikbud.
+- Notosusanto,  Nugroho  dkk.  1985.  Sejarah  Nasional  Indonesia  1 untuk Sekolah Lanjutan Tingkat Atas. Jakarta: Depdikbud.
+- Pane, Sanusi. 1965. Sejarah Indonesia. Jakarta : Balai Pustaka.
+- Pane, Sanusi. 1965. Sejarah Indonesia. Jakarta : Balai Pustaka.
+- Poesponegoro,  Marwati  Djoened  (dkk).  1993.  Sejarah  Nasional Indonesia Jilid I, Jakarta: Balai Pustaka.
+- Poesponegoro,  Marwati  Djoened  (dkk).  1993.  Sejarah  Nasional Indonesia Jilid I, Jakarta: Balai Pustaka.
+- Proyek Penelitian  dan  Pencacatan  Kebudayaan.  1978.  Sejarah  Daerah Bali, Jakarta: Departemen Pendidikan dan Kebudayaan.
+- Proyek Penelitian  dan  Pencacatan  Kebudayaan.  1978.  Sejarah  Daerah Bali, Jakarta: Departemen Pendidikan dan Kebudayaan.
+
+<br>
+
+
+---
+## 📄 Halaman 277
+
+- Rangkuti, Nurhadi. 2006.'Trowulan, Situs-Kota Majapahit' dalam Majapahit. Jakarta: Indonesian Heritage Society.
+- Rangkuti, Nurhadi. 2006.'Trowulan, Situs-Kota Majapahit' dalam Majapahit. Jakarta: Indonesian Heritage Society.
+- Reid,  Anthony  (ed.).  2002.  Indonesia  Heritage  (Jilid  III):  Sejarah Modern Awal, Jakarta:  Grolier Internasional.
+- Reid,  Anthony  (ed.).  2002.  Indonesia  Heritage  (Jilid  III):  Sejarah Modern Awal, Jakarta:  Grolier Internasional.
+- Ricklef, M.C. 2008. Sejarah Indonesia Modern 1200-2008, Jakarta: PT Serambi Ilmu Semesta.
+- Ricklef, M.C. 2008. Sejarah Indonesia Modern 1200-2008. Jakarta: PT Serambi Ilmu Semesta.
+- Santos,  Arysio.  2010.  Atlantis  The  Lost  Continent  Finally  Found (Terj). Jakarta: Ufuk Press.
+- Santos,  Arysio.  2010.  Atlantis  The  Lost  Continent  Finally  Found (Terj). Jakarta: Ufuk Press.
+- Sardiman  AM  dan  Kusriyantinah.  1995.  Sejarah  Nasional  dan Sejarah  Umum  (sesuai  dengan  Kurikulum  1994),  Surabaya: Kendangsari.
+- Sardiman  AM  dan  Kusriyantinah.  1995.  Sejarah  Nasional  dan Sejarah  Umum  (sesuai  dengan  Kurikulum  1994),  Surabaya: Kendangsari.
+- Setiadi,  Idham  Bachtiar  (ed).  2011.  100  Tahun  Pemugaran  Candi Borobudur. Jakarta: Direktorat Tinggalan Purbakala,  Direktorat Jenderal Sejarah dan Purbalaka, Kementerian Pariwisata dan Ekonomi Kreatif.
+- Setiadi,  Idham  Bachtiar  (ed).  2011.  100  Tahun  Pemugaran  Candi Borobudur. Jakarta: Direktorat Tinggalan Purbakala,  Direktorat Jenderal Sejarah dan Purbalaka, Kementerian Pariwisata dan Ekonomi Kreatif.
+- Soekmono, R. 1973. Pengantar Sejarah Kebudayaan Indonesia III, Yogyakarta: Kanisius.
+- Soekmono, R. 1973. Pengantar Sejarah Kebudayaan Indonesia III, Yogyakarta: Kanisius.
+- Suwarno,  P.J.  1994.  Hamengku  Buwono  IX  dan  Sistem  Birokrasi Pemerintahan Yogyakarta 1942-1974: Sebuah Tinjauan Historis. Yogyakarta: PT Kanisius.
+
+<br>
+
+
+---
+## 📄 Halaman 278
+
+- Suwarno,  P.J.  1994.  Hamengku  Buwono  IX  dan  Sistem  Birokrasi Pemerintahan Yogyakarta 1942-1974: Sebuah Tinjauan Historis. Yogyakarta: PT Kanisius.
+- Tjahjono,  Gunawan  (dkk).  2007.  Sejarah  Kebudayaan  Indonesia: Arsitektur. Jakarta: Direktorat Geografi Sejarah, Departemen Kebudayaan dan Pariwisata.
+- Tjahjono,  Gunawan  (dkk).  2007.  Sejarah  Kebudayaan  Indonesia: Arsitektur. Jakarta: Direktorat Geografi Sejarah, Departemen Kebudayaan dan Pariwisata.
+- Utomo,  Bambang  Budi.  2009.  Atlas  Sejarah  Indonesia  Masa Prasejarah (Hindu-Buddha). Jakarta: Kementerian Kebudayaan dan Pariwisata.
+- Utomo, Bambang Budi. 2010. Atlas Sejarah Indonesia Masa Klasik (Hindu-Buddha), Jakarta: Kementerian Kebudayaan dan Pariwisata.
+- Vlekke, Bernard H.M. 2008. Nusantara Sejarah Indonesia. Jakarta: PT. Gramedia.
+- Vlekke, Bernard H.M. 2008. Nusantara Sejarah Indonesia. Jakarta: PT. Gramedia.
+- Wallace, Alfred Russel. 2009. Kepulauan Nusantara. Jakarta: Komunitas Bambu.
+- Wallace, Alfred Russel. 2009. Kepulauan Nusantara. Jakarta: Komunitas Bambu.
+- Wanggai, Toni Victor M. 2009. Rekonstruksi Sejarah Umat Islam di Tanah Papua. Jakarta: Badan Litbang dan Diklat Departemen Agama RI.
+- Widianto,  Harry.  2011.  Jejak  Langkah  Setelah  Sangiran  (Edisi Khusus). Jawa Tengah: Balai Pelestarian Situs Manusia Purba Sangiran.
+- Wilson, J. Tuzo. 1994. 'Lempeng Tektonik' dalam Tony S. Rahmadie (terj). Ilmu Pengetahuan Populer. Jilid 2. Grolier International
+- Wilson, J. Tuzo. 1994. 'Lempeng Tektonik' dalam Tony S. Rahmadie (terj). Ilmu Pengetahuan Populer. Jilid 2. Grolier International
+- Yayasan Untuk Indonesia. 2005. Ensiklopedi Jakarta. Jakarta: Dinas Kebudayaan dan Permuseuman DKI Jakarta.
+- Yayasan Untuk Indonesia. 2005. Ensiklopedi Jakarta. Jakarta: Dinas Kebudayaan dan Permuseuman DKI Jakarta.
+
+<br>
+
+
+---
+## 📄 Halaman 279
+
+
+### Profil Penulis
+
+Nama Lengkap
+
+:   Amurwani Dwi Lestariningsih, S.Sos., M.Hum.
+
+Telp Kantor/HP
+
+:   08121098998.
+
+E-mail
+
+:   amurwani1@yahoo.com.
+
+Alamat Kantor
+
+:   Kompleks Kemdikbud, Gedung E lantai 9,
+
+JL.  Jenderal Sudirman, Senayan, Jakarta
+
+Bidang Keahlian  :   Sejarah Lisan.
+
+
+### Riwayat Pekerjaan/Profesi dalam 10 tahun terakhir:
+
+- Kepala Sub. Direktorat Pemahaman Sejarah (2007-2012).
+- Kepala Sub. Direktorat Sejarah (2012-2015).
+- Kepala Sub. Direktorat Nasional (2015- sekarang).
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S2: Fakultas Ilmu Pengetahuan Budaya, Jurusan Sejarah, Universitas Indonesia (2004-2006).
+- S1: Fakultas Ilmu Sosial dan Ilmu Politik, Jurusan Sosiologi, Universitas Sebelas Maret  (1988 - 1994).
+
+### Judul Buku dan Tahun Terbit (10 Tahun Terakhir):
+
+- Pancasila : Nilai Budaya, Ideologi Bangsa, dan Harapan Kita, (Penerbit Kemenbudpar-2010).
+- Panglima Soedirman Pejuang Tanpa Pamprih (Tim), (Penerbit Kemenbudpar-2010).
+- Gerwani : Kisah Tahanan Politik Wanita di Kamp Plantungan, (Penerbit Kompas-2011).
+- Malam Bencana 1965 Dalam Belitan Krisis Nasional Buku I, (Penerbit Yayasan Obor-2013).
+- MPR hingga Reformasi, (Penerbit MPR-2012).
+- Indonesia Across Orders: Arus Bawah Sejarah Bangsa (1930-1960), (Penerbit Yayasan Obor-2012).
+- Buku Pelajaran Sejarah Kelas X; Kurikulum 2013, (Penerbit Kemdikbud-2012)
+- Buku Pegangan Guru Sejarah Kelas X, Kurikulum 2013, (Penerbit Kemdikbud-2012).
+- Buku Pelajaran Sejarah Kelas XI; Kurikulum 2013, (Penerbit Kemdikbud-2013)
+- Buku Pegangan Guru Sejarah Kelas XI, Kurikulum 2013, (Penerbit Kemdikbud-2013).
+
+<br>
+
+
+---
+## 📄 Halaman 280
+
+Nama Lengkap
+
+: Dr. Restu Gunawan, M.Hum
+
+Telp Kantor/HP
+
+: 08128142102
+
+E-mail
+
+: restu_gunawan@yahoo.com
+
+Alamat Kantor
+
+: Direktorat Warisan Diplomas Budaya, Dtijen  Kebudayaan, Kemendikbud, Gedung E, lantai 10, Komplek Kemendikbud,
+
+Senayan Jakarta
+
+Bidang Keahlian
+
+: Sejarah Indonesia
+
+
+### Riwayat Pekerjaan/Profesi dalam 10 tahun terakhir:
+
+- Kasi Penulisan Sejarah Nasional Badan Pengembangan Kebudayaan Dan Pariwisata (2002-2003)
+- Kasubid Sejarah Indonesia Kementerian Kebudayaan Dan Pariwisata (2003-2005)
+- Kasi Lingkungan Sosial Departemen Kebudayaan Dan Pariwisata (20052008)
+- Kasubdit Peradaban Sejarah Departemen Kebudayaan Dan Pariwisata (2008-2012)
+- Kasubdit Diplomasi Budaya Kemendikbud (2012-2015)
+- Kasubdit Diplomasi Budaya Luar Negeri Kemendikbud (2015-sekarang)
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S3: Jurusan Sejarah, Universitas Indonesia (2004 -2008)
+- S2: Jurusan Sejarah, Universitas Indonesia (1999 -2002)
+- S1: Jurusan Sejarah, Universitas Sebelas Maret (1987-1992)
+
+### Judul Buku dan Tahun Terbit (10 Tahun Terakhir):
+
+- Pes di Jawa dan Penanganannya dalam Buku Dialog Peradaban dan Kebudayaan dalam 70 Tahun Prof. Dr. Taufik Abdullah (2007)
+- Muhammad Yamin dan Cita-cita Persatuan (2004)
+- Konflik Lokal Pasca Gerakan 30 September 1965 (Editor) (2013)
+- Gerakan Pemuda dan Wanita dalam buku Indonesia dalam Arus Sejarah jilid 5  (2010)
+- Dari Keluarga Berencana sampai Puskesmas dalam buku Indonesia dalam Arus  Sejarah jilid 8 (2010)
+- Memoar  KPH Jenderal Herman Sarens Sudiro (2012)
+- Pedoman Penulisan Sejarah Lokal (2008)
+- Pedoman Penulisan Geografi Sejarah (2009)
+- Merajut Simpul-simpul Ke-Indonesiaan Melalui Simpul Pengasingan (2005)
+- Modul Dasar Pelatihan Sejarah Tingkat Dasar (2009)
+- Peranan Komisi Tiga Negara Dalam Penyelesaian Konflik Indonesia Belanda 1947 - 1949   (1992)
+
+<br>
+
+
+---
+## 📄 Halaman 281
+
+- Memoar Prajurit KIM (Koninklijk Institute voor de Marine) Belanda (2006)
+- Toponim Surakarta (2008).
+- Toponim Jakarta (Kearifan Lokal Dalam Penamaan Kota) (2009)
+- Gagalnya Sistem Kanal: Pengendalian Banjir Jakarta dari Masa ke Masa (2010).
+- Malam Jahanam; Indonesia Dalam Belitan Krisis 1965;  jilid I (Editor Bersama Taufik Abdullah  dan Sukri Abdurrahman) (2013).
+- Malam Jahanam; Indonesia Dalam Belitan Krisis 1965;  jilid 2 (Editor Bersama Taufik Abdullah  dan Sukri Abdurrahman) (2013).
+- Malam Jahanam; Indonesia Dalam Belitan Krisis 1965;  jilid 3 (Editor Bersama Taufik Abdullah  dan Sukri Abdurrahman) (2013).
+- MPR: Dari Masa Pembentukannya Hingga Reformasi (2012).
+- Soedirman: Pejuang Tanpa Pamrih (Tim) (2010)
+- Pancasila Nilai Budaya dan Pedoman Hidup (Tim) (2011)
+- Sejarah Pangan di Indonesia (Tim)  (2012).
+- Sejarah Pemikiran Indonesia Modern (2014).
+- Presiden-Presiden RI dari Sukarno sampai SBY (2014).
+- Berita di Sekitar Proklamasi Kemerdekaan Indonesia  (2015).
+
+<br>
+
+
+---
+## 📄 Halaman 282
+
+Nama Lengkap
+
+:   Sardiman AM. M.Pd.
+
+Telp Kantor/HP
+
+:   0274 548202/0811255660.
+
+E-mail
+
+:   sardiman@uny.ac.id.
+
+Alamat Kantor
+
+:   Jl. Colombo No.1,  Yogyakarta
+
+Bidang Keahlian  :   Pendidikan Sejarah; Sejarah Pemikiran.
+
+
+### Riwayat Pekerjaan/Profesi dalam 10 tahun terakhir:
+
+Dosen Pendidikan Sejarah, FIS-UNY, sejak tahun 1980.
+
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S3: Ilmu Pendidikan Kons. IPS, Pascasarjana UNY, th 2013- sedang menyusun disertasi)
+- S2: Pendidikan Sejarah UNS (1986-1990)
+- S1: Pendidikan Sejarah FKIS-IKIP Yogyakarta ( 1970-1976).
+
+### Judul Buku dan Tahun Terbit (10 Tahun Terakhir):
+
+- Memahami Sejarah, Yogyakarta: Bigraaf, (2004)
+- Guru Bangsa: Sebuah Biografi Jenderal Sudirman, Yogyakarta: Ombak (2008).
+- Interaksi dan Motivasi Belajar Mengajar, Jakarta: Raja Grafindo Persada, (2014: cetak ke-22)
+- Demokratisasi dan Defeodalisasi Masa Umar bin Abdul Aziz, Yogyakarta: UnyPress, (2015).
+- IPS Terpadu; Buku teks Pelajaran IPS, Surakarta: Tiga Serangkai (2007).
+
+### Judul Penelitian (10 Tahun Terakhir):
+
+- Sejarah dan Profil Bangsa Yahudi dalam Al-Qur'an: Kajian terhadap Surat Al Baqarah,  2008.
+- Dinamika Kebijakan Pendidikan pada Masa Orde Baru (Kebijakan Menteri Daoed Joesoef dan Nugroho Notosusanto), 2012
+- Konsep Pendidikan Ki Hadjar Dewantara: Kajian terhadap Taman Indria dan Konsep Paguron Tamansiswa, 2013.
+
+<br>
+
+
+---
+## 📄 Halaman 283
+
+
+### Profil Penelaah
+
+Nama Lengkap
+
+:   Baha` Uddin, S.S., M.Hum
+
+Telp Kantor/HP
+
+:   0274-513096/081226563523
+
+E-mail
+
+:   bahauddin@ugm.ac.id
+
+Alamat Kantor
+
+:   Fakultas Ilmu Budaya UGM, Jl. Sosio-Humaniora
+
+No. 1  Bulaksumur, Yogyakarta
+
+Bidang Keahlian  :   Sejarah Indonesia
+
+
+### Riwayat Pekerjaan/Profesi dalam 10 tahun terakhir:
+
+- Staf Pengajar, Jurusan Sejarah, FIB-UGM (1999- sekarang)
+- Staf Peneliti, Pusat Studi Korea UGM (1998-sekarang)
+- Staf Peneliti Pusat Manajemen Kesehatan Pelayanan Kesehatan FK UGM (2000-2001)
+- Staf Dewan Kebudayaan Prop. DIY  (2005)
+- Anggota Revisi Kurikulum IPS Sejarah SMA, BSNP,Depdiknas  (20052006)
+- Anggota Unit Laboratorium Terpadu FIB UGM (2006-sekarang)
+- Dosen Pembimbing Lapangan KKN PPM Pembrantasan Buta Aksara LPPM UGM di Jember, Jatim (2006)
+- Dosen Pembimbing Lapangan KKN PPM Pembrantasan Buta Aksara LPPM UGM di Jember dan Banyuwangi, Jatim (2007)
+- Dosen Pembimbing Lapangan KKN PPM Pembrantasan Buta Aksara, LPPM UGM di Wonosobo, Jawa Tengah (2008)
+- Dosen Pembimbing Tutor Program Layanan Masyarakat Pembrantasan Buta  Aksara, LPPM UGM di Wonosobo, Jawa Tengah (2008)
+- Reviewer Buku Pelajaran IPS Sejarah SMU, BNSP Depdiknas (2007)
+- Bendahara Jurusan Sejarah FIB UGM (2007 - 2012)
+- Sekretaris Jurusan Sejarah FIB-UGM (2007-2015)
+- Reviewer Buku Pelajaran IPS Sejarah SD & SMP, BNSP Depdiknas (2008)
+- Tim Teknis Program Layanan Masyarakat  Pembrantasan Buta Aksara LPPM UGM (2008)
+- Reviewer Buku Pelajaran Sejarah Kurikulum 2013 (2013-2015)
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S2: Program Pascasarjana/Program Studi Humaniora/Universitas Gadjah Mada (2000 - 2005).
+- S1: Fakultas Sastra/Jurusan Sejarah/Prodi Ilmu Sejarah/Universitas Gadjah Mada (1993 - 1998).
+
+### Judul Buku Yang Telah Ditelaah dan Tahun Terbit (10 Tahun Terakhir):
+
+- Penelaah Buku Mata Pelajaran Sejarah untuk Sekolah Menengah Umum dan Sederajat-Depdiknas (2007)
+- Penelaah Buku Mata Pelajaran IPS Terpadu untuk Sekolah Dasar dan Sekolah Menengah Pertama-Depdiknas (2008)
+
+<br>
+
+
+---
+## 📄 Halaman 284
+
+- Penelaah Buku Pelajaran IPS Sejarah SD & SMP-Depdiknas (2008)
+- Penelaah Buku Pelajaran IPS Sejarah SMA-Depdiknas (2011)
+- Penelaah Buku Pengayaan IPS dan Sejarah Kurikulum 2013, Kemendikbud (2013).
+- Penelaah Buku Palajaran Sejarah Kelas XI Kurikulum 2013, Kemendikbud (2013).
+- Penelaah Buku Palajaran Sejarah Kelas XII Kurikulum 2013, Kemendikbud (2013).
+- Penelaah Buku Non-Teks IPS dan Sejarah Kurikulum 2013 Kemendikbud (2014).
+- Penelaah Buku Pelajaran Sejarah Indonesia Kelas X SMALB Kurikulum 2013 Kemendikbud (2015).
+- Penelaah Buku Pelajaran Sejarah Indonesia Kelas XI SMALB Kurikulum 2013 Kemendikbud (2015).
+
+### Judul Penelitian (10 Tahun Terakhir):
+
+- Pemahaman Antarbudaya dan Budaya Kerja pada Karyawan PT LG Electronics Indonesia, Legok, Tangerang, Banten (2005).
+- Dari Mantri Hingga Dokter Jawa: Studi Tentang Kebijakan Pemerintah Kolonial dalam Penanganan Penyakit Cacar dan Pengaruhnya terhadap Pelayanan  Kesehatan Masyarakat Jawa pada Abad XIX sampai Awal Abad XX (2006).
+- Studi Teknis Tamansari Pasca Gempa Bidang Sejarah (2007).
+- Sejarah Perkembangan Universitas Muhammadiyah Yogyakarta (2008)
+- Dinamika Pergerakan Perempuan di Indonesia (2009).
+- Lebaran dan Kontestasi Gaya Hidup: Perubahan sensibilitas Masyarakat Gunung Kidul Tahun 1990-an (2009).
+- Dari Gropyokan hingga Sayembara: Studi Kebijakan Pemerintah Lokal Kadipaten Pakualaman dalam Pengendalian Penyakit Pes Tahun 1916 - 1932 (2009).
+- Sejarah dan Silsilah Kesultanan Kotawaringin (2009).
+- Hari Jadi Rumah Sakit Dr. Moewardi Surakarta (2010)
+- Kebijakan Propaganda Kesehatan pada Masa Kolonial di Jawa (2010)
+- Pemberdayaan Masyarakat Berbasis Komunitas dalam Bidang Kesehatan dan Pembangunan Pedesaan di Banjarnegara 1972-1989 (2011).
+- Antara Tradisi dan Mentalitas: Dinamika Kehidupan Komunitas Pengemis di Dusun Wanteyan, Grabag, Magelang (2011).
+- Penyakit Sosial Masyarakat di Kadipaten Pakualaman pada masa Pakualam VIII  (19061937) (2012).
+- Warisan Sejarah, Preservasi dan Konflik Sosial Di Ujung Timur Jawa: Pemberdayaan Masyarakat Lokal Dan Penyelamatan Warisan Sejarah Dan Budaya Situs Kerajaan Macan Putih Di Kabupaten Banyuwangi (2012)
+- Kretek Indonesia: Dari Nasionalisme Hingga Warisan Budaya (2013)
+- Sejarah Nasionalisasi Aset-aset BUMN: Dari Perusahaan Kolonial Menjadi Perusahaan Nasional (2013).
+- Westernisasi dan Paradoks Kebudayaan: Elit Istana Jawa Pada Masa Paku Alam V (18781900) (2013)
+- Pemetaan Daerah Rawan Konflik Sosial di DIY (2013)
+- Bangsawan Terbuang: Studi Tentang Transformasi Identitas Bangsawan Jawa di Ambon 1718-1980an (2014)
+- Kajian Hari Jadi Daerah Istimewa Yogyakarta (2015)
+- Ensiklopedi Budaya Kabupaten Kulonprogo (2015)
+
+<br>
+
+
+---
+## 📄 Halaman 285
+
+Nama Lengkap
+
+: Prof. Dr. Hariyono, M.Pd
+
+Telp Kantor/HP
+
+: 0341-562778 / 0818380812
+
+E-mail
+
+: hariyonosejunm@yahoo.com
+
+Alamat Kantor
+
+: Jl. Semarang 5 Malang
+
+Bidang Keahlian
+
+: Sejarah Indonesia
+
+
+### Riwayat pekerjaan/profesi dalam 10 tahun terakhir:
+
+Dosen Sejarah di Universitas Negeri Malang (1988 - sekarang)
+
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S3: Fakultas Ilmu Budaya / Ilmu Sejarah / Universitas Indonesia  (1999 2004)
+- S2: PPs / Pendidikan Sejarah / IKIP Jakarta (1990 - 1995)
+- S1: Fakultas Ilmu Pengetahuan Sosial/Pendidikan Sejarah/IKIP Malang (1982 - 1986)
+
+### Judul Buku Yang Telah Ditelaah dan Tahun Terbit (10 Tahun Terakhir):
+
+- Nasionalisme Indonesia, Kewarganegaraan dan Pancasila. Malang. UM Press (2010)
+- Kedaulatan Indonesia Dalam Perjalanan Sejarah Politik. Malang. UM Press (2011)
+- Nasionalisme dan Generasi Muda Indonesia. Surabaya. Sekretariat Daerah Propinsi Jawa Timur (2012)
+- Arsitektur Demokrasi Indonesia; Gagasan Awal Demokrasi Para Pendiri Bangsa.  Malang. Setara Press (2013)
+- Dinamika Revolusi Nasional. Malang. Aditya Media (2013)
+- Ideologi Pancasila, Roh Progresif Nasionalisme Indonesia. Malang. Intrans Publishing (2014)
+
+### Judul Penelitian (10 Tahun Terakhir):
+
+- Pemikiran Demokrasi menurut Pendiri Bangsa
+- Sistem Among : Pemikiran Ki Hajar Dewantara
+- Kekuasaan Raffles di Indonesia
+
+<br>
+
+
+---
+## 📄 Halaman 286
+
+Nama Lengkap
+
+:   Dr. Mumuh Muhsin Z., M.Hum.
+
+Telp Kantor/HP
+
+:   022-7796482/08112322511
+
+E-mail
+
+:   mumuh.muhsin@unpad.ac.id
+
+Alamat Kantor
+
+:   Jl. Raya Bandung-Sumedang km. 21
+
+Jatinangor, Sumedang
+
+Bidang Keahlian
+
+:   Ilmu Sejarah
+
+
+### Riwayat Pekerjaan/Profesi dalam 10 tahun terakhir:
+
+- Wakil Dekan I Fakultas Ilmu Budaya (2016-2021)
+- Ketua MSI Cabang Jawa Barat sejak (2010-sekarang)
+- Sekretaris Prodi S2 Kajian Budaya FIB Unpad (2011-2013).
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S3: Fakultas Sastra/Jurusan Ilmu Sejarah/Program Studi Ilmu Sejarah/ Universitas Padjadjaran  (2010)
+- S2: Fakultas Pascasarjana/Jurusan Ilmu Humaniora/Program Studi Sejarah/  Universitas Gadjah Mada  (1993)
+- S1: Fakultas Sastra/Jurusan Sejarah Universitas Padjadjaran   (1986)
+
+### Judul Penelitian (10 Tahun Terakhir):
+
+- Priangan Abad ke-19; Kondisi Geografi, Ekonomi, dan Sosial (2008)
+- Jatigede dalam Tinjauan Sejarah dan Budaya (2008)
+- Kondisi Sosial-Ekonomi Cianjur Abad ke-19. (2009)
+- Identifikasi Masalah Kebudayaan Sunda Masa Lalu, Masa Kini, dan Masa Yang Akan Datang (2011)
+- Bunga Rampai; Mozaik Budaya dan Sejarah dari Kampung Naga hingga Partai Rakyat Pasundan (editor) (2012)
+- Bunga Rampai; Pelangi Tradisi dan Sejarah dari Kampung Adat Kuta hingga Peran Ulama Banten (editor) (2012)
+- Bunga Rampai; Pelestarian Budaya dan Sejarah Lokal (editor) (2012)
+- Inventarisasi dan Dokumentasi Sistem Mata Pencaharian yang Ada dan Berkembang di Jawa Barat (2012)
+- Kearifan Budaya Masyarakat Nelayan Jawa Barat dalam Menghadapi Perubahan Ekosistem (2013)
+
+<br>
+
+
+---
+## 📄 Halaman 287
+
+Nama Lengkap
+
+: Dr. Mohammad Iskandar
+
+Telp Kantor/HP
+
+: 08129689391
+
+E-mail
+
+: abahsepuh@yahoo.com
+
+Alamat Kantor
+
+: Komplek UI, Jl. Margomda Raya, Depok,
+
+Jabar
+
+Bidang Keahlian
+
+: Sejarah
+
+
+### Riwayat pekerjaan/profesi dalam 10 tahun terakhir:
+
+Dosen Ilmu Sejarah di Universitas Indonesia, Depok (2010 - 2016)
+
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S3: Fakultas Ilmu Pengetahuaj Budaya/Program Studi Sejarah Universitas Indonesia
+- S2: Fakultas Ilmu Pengetahuaj Budaya/Program Studi Sejarah Universitas Indonesia
+- S1: Fakultas Ilmu Pengetahuaj Budaya/Program Studi Sejarah Universitas Indonesia
+
+### Judul Buku Yang Telah Ditelaah dan Tahun Terbit (10 Tahun Terakhir):
+
+- Buku Sejarah Indonesia untuk SMA/MA Kelas XI (Erlangga -2013)
+- Buku Sejarag Indonesia untuk SMA/MA Kelas XII (Erlangga - 2014)
+- Sejarah Para Pemikir Indonesia (Depbudpar - 2004)
+- Sejarah Kebudayaan Indonesia: Sistem Ilmu Pengetahuan (Raja Grafindo Persada/ Rajawali Pers - 2009)
+
+### Judul Penelitian (10 Tahun Terakhir):
+
+- De Javascge Bank 1828 - 1953. (Bank Indonesia - 2014)
+- Perjuangan bangsa mendirikan Bank Sentral (Bank Indonesia 2015)
+
+<br>
+
+
+---
+## 📄 Halaman 288
+
+
+### Profil Editor
+
+Nama Lengkap
+
+: Martina Safitry, SS.
+
+Telp Kantor/HP
+
+: 08156028439
+
+E-mail
+
+: martinasafitry@gmail.com
+
+Alamat Kantor
+
+: Komplek UI, Jl. Margomda Raya, Depok, Jabar
+
+Bidang Keahlian
+
+: Sejarah Kesehatan
+
+
+### Riwayat pekerjaan/profesi dalam 10 tahun terakhir:
+
+- Kepala promosi marketing penerbit Komunitas Bambu (2008-2011)
+- Pengajar IPS dan Bahasa Indonesia di Bimbingan Belajar MAESTRO (2011)
+- Asisten peneliti pada pembuatan buku Sejarah Penyakit Kelamin di Jawa karya  Gani Ahmad Jaelani (2011)
+- Pengajar Sejarah SMA di Perguruan Islam Al-Izhar Pondok Labu (2012)
+
+### Riwayat Pendidikan Tinggi dan Tahun Belajar:
+
+- S2: Ilmu Sejarah Fakultas Ilmu Budaya Universitas Gadjah Mada (2011-sekarang)
+- S1: Ilmu Sejarah Fakultas Sastra Universitas Padjadjaran (2003-2007)
+
+### Judul Buku Yang Telah Ditelaah dan Tahun Terbit (10 Tahun Terakhir):
+
+- Asal Usul Nama Tempat di Jakarta terbitan Masup Jakarta (2011)
+- Sukarno, orang kiri dan G30S terbitan Komunitas Bambu (2009)
+- Anti Cina Kapitalisme Cina Dan Gerakan Cina Sejarah Etnis Cina di Indonesia terbitan Komunitas Bambu (2009)
+- Buku siswa dan buku guru Sejarah Indonesia kelas 10 dan kelas 11 kurikulum 2013 terbitan Kemendikbud (2013-2014)
+- Buku Sejarah Kebudayaan Islam di Indonesia jilid 1-2 terbitan Kemendikbud (2015)
+
+### Judul Penelitian (10 Tahun Terakhir):
+
+Epidemi pes di afdeeling Malang 1910-1917 , Skripsi Universitas Padjadjaran (2007)
+
+HIDUP MENJADI LEBIH INDAH TANPA NARKOBA.
+
+
+
+---
+
+*📊 Statistik: 36 visual berhasil, 114 dilewati, 0 gagal | Durasi: 10m 24s*

@@ -1,0 +1,107 @@
+[TASK]
+Generate EXACTLY 10 multiple choice questions in JSON format.
+Never generate more or fewer.
+
+Prioritize cognitive quality, reasoning diversity, and contextual realism over formula repetition.
+
+[OUTPUT_SCHEMA]
+{
+  "soal": [
+    {
+      "id": "q1",
+      "soal": "[Write ONLY the complete question sentence here]",
+      "jawaban": 0,
+      "pilihan": ["Option A", "Option B", "Option C", "Option D", "Option E"],
+      "stimulus": "[Write the introductory narrative or problem context here]",
+      "image_path": "[Fill with image path from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]",
+      "penjelasan": "[Explanation for the correct answer]"
+    }
+  ]
+}
+[CRITICAL JSON RULES]
+- "jawaban" MUST be the INTEGER INDEX of the correct answer in the "pilihan" array.
+- STRICTLY PROHIBITED to fill "jawaban" with question numbers (like 1, 2, 3) or letters (A/B/C/D/E).
+- When generating the "pilihan" (options) array, you MUST shuffle the placement of the correct answer. Do not always place the correct answer at index 0, 1, or 2.
+- Ensure the correct answer is frequently placed at index 3 or 4 to create an EVEN DISTRIBUTION of answer keys across the 10 questions.
+- The "jawaban" field must ALWAYS perfectly match the integer index (0-4) where you actually placed the correct answer in the "pilihan" array.
+- DO NOT use words like "Stimulus:" or "Question:" inside the "soal" field. The "soal" field must ONLY contain the actual question sentence.
+- STRICTLY PROHIBITED to create questions that highly depend on Images/Tables/Graphs. NEVER use phrases like "Based on the image above...", or "Look at the following table...". Every question MUST be answerable without visual aids!
+- Even if there are image references in the Context, ignore them and create independent theoretical questions.
+{% if image_context %}
+[MULTIMODAL IMAGE CONTEXT]
+{{ image_context }}
+
+*** ABSOLUTE INSTRUCTION FOR IMAGES ***
+The reference text above has markers like [Referensi File Gambar: filename.png] right above the text describing the image.
+Select ONE image path that is most relevant to the question you are creating, and put it in the `image_path` field in the JSON structure.
+DO NOT use markdown image syntax `![img](path)` inside the question. Just fill the raw URL path in the `image_path` field.
+{% endif %}
+
+[LEVEL_CONFIGURATION]
+{{ level_config }}
+
+[SUBJECT_CONFIGURATION]
+{{ subject_config }}
+
+[LEARNING_CONTEXT]
+{{ rag_context }}
+
+[ATP_ALIGNMENT]
+{{ atp }}
+
+Prioritize ATP objectives as curriculum constraints.
+
+[DISTRACTOR_QUALITY_RULES]
+- Incorrect options must remain strategically plausible.
+- Avoid obviously irrational, careless, or extreme distractors.
+- Avoid answer choices that can be eliminated without understanding the underlying concept.
+- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.
+- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.
+- Prefer distractors from the same reasoning family as the correct answer.
+- Avoid structurally obvious distractors.
+
+[OPTION_BALANCING_RULES]
+- Keep option specificity and tone relatively balanced.
+- Avoid one option sounding significantly more complete or professional than others.
+- All options should appear potentially reasonable at first glance.
+- Keep all options within similar reasoning complexity.
+- Avoid one option being noticeably more detailed than others.
+
+[QUESTION_PRECISION_RULES]
+- Questions must support only one mathematically valid interpretation.
+- Explicitly distinguish between cumulative totals, current phase values, accumulated growth, and newly added quantities.
+- Avoid ambiguous wording.
+
+[STIMULUS_REQUIREMENTS]
+- Length: 30-60 words (keep extremely concise to avoid output truncation).
+- Use contextual numerical, social, or literacy-based situations depending on subject domain.
+- Use realistic Indonesian contexts.
+- Avoid repetitive scenarios across questions.
+- Stimuli should naturally support reasoning and decision-making.
+
+[QUESTION_DIVERSITY_RULES]
+- Avoid repetitive question structures.
+- Follow the active level generation behavior.
+
+[QUESTION_REQUIREMENTS]
+- Questions must remain contextually grounded.
+- Encourage application of concepts to realistic situations.
+- Avoid pure memorization.
+
+[DISTRACTOR_REASONING_RULES]
+- Distractors should represent realistic reasoning alternatives, not only formula variations.
+- Keep distractors within the same contextual reasoning space as the correct answer.
+
+[EXPLANATION_REQUIREMENTS]
+- Length: 30-60 words (keep extremely concise to avoid output truncation).
+- Start with a short bold title.
+- Explanations must be concise and decisive.
+- Focus only on reasoning supporting the correct answer.
+- Avoid chain-of-thought style deliberation.
+
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.

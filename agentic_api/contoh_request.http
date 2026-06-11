@@ -1,0 +1,537 @@
+### BASE URL
+@baseUrl = http://localhost:8000
+
+### =================================================================
+### TASK: BACAAN
+### =================================================================
+
+### Bacaan - Bahasa Indonesia (Topik Visual: Komik Anekdot)
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "menulis",
+  "elemen_label": "Menulis",
+  "materi": "Menggunakan Kaidah Bahasa untuk Menyampaikan Kritik (Anekdot)",
+  "materi_id": "bindo__kaidah_anekdot",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menulis teks anekdot dengan kaidah bahasa yang benar dan mengkritisi fenomena sosial."],
+  "tipe": "bacaan",
+  "level": "Mid"
+}
+
+### Bacaan - Matematika (Topik Visual: Segitiga Trigonometri)
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "mat",
+  "elemen_id": "geometri",
+  "elemen_label": "Geometri",
+  "materi": "Pemanfaatan Perbandingan Trigonometri",
+  "materi_id": "mat__pemanfaatan_trigonometri",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Menyelesaikan masalah kontekstual (tinggi objek/jarak) menggunakan perbandingan trigonometri."],
+  "tipe": "bacaan",
+  "level": "Mid"
+}
+
+### Bacaan - IPS (Topik Visual: Gambar Peta / Lapisan Bumi)
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "ips",
+  "elemen_id": "geografi",
+  "elemen_label": "Pemahaman Geografi",
+  "materi": "Dinamika Litosfer dan Dampaknya Terhadap Kehidupan",
+  "materi_id": "ips__litosfer",
+  "kelas_id": "x_2",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menganalisis dinamika litosfer dan dampaknya terhadap kehidupan."],
+  "tipe": "bacaan",
+  "level": "Mid"
+}
+
+### =================================================================
+### TASK: QUIZ PILIHAN GANDA (QUIZ_PG)
+### =================================================================
+
+### Quiz PG - Bahasa Indonesia
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "menulis",
+  "elemen_label": "Menulis",
+  "materi": "Menggunakan Kaidah Bahasa untuk Menyampaikan Kritik (Anekdot)",
+  "materi_id": "bindo__kaidah_anekdot",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menulis teks anekdot dengan kaidah bahasa yang benar dan mengkritisi fenomena sosial."],
+  "tipe": "quiz_pg",
+  "level": "Mid"
+}
+
+### Quiz PG - Matematika
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "mat",
+  "elemen_id": "geometri",
+  "elemen_label": "Geometri",
+  "materi": "Pemanfaatan Perbandingan Trigonometri",
+  "materi_id": "mat__pemanfaatan_trigonometri",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Menyelesaikan masalah kontekstual (tinggi objek/jarak) menggunakan perbandingan trigonometri."],
+  "tipe": "quiz_pg",
+  "level": "Mid"
+}
+
+### Quiz PG - IPS
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "ips",
+  "elemen_id": "geografi",
+  "elemen_label": "Pemahaman Geografi",
+  "materi": "Dinamika Litosfer dan Dampaknya Terhadap Kehidupan",
+  "materi_id": "ips__litosfer",
+  "kelas_id": "x_2",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menganalisis dinamika litosfer dan dampaknya terhadap kehidupan."],
+  "tipe": "quiz_pg",
+  "level": "Mid"
+}
+
+### =================================================================
+### TASK: QUIZ ESSAY
+### =================================================================
+
+### Quiz Essay - Bahasa Indonesia
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "menulis",
+  "elemen_label": "Menulis",
+  "materi": "Menggunakan Kaidah Bahasa untuk Menyampaikan Kritik (Anekdot)",
+  "materi_id": "bindo__kaidah_anekdot",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menulis teks anekdot dengan kaidah bahasa yang benar dan mengkritisi fenomena sosial."],
+  "tipe": "quiz_essay",
+  "level": "Mid"
+}
+
+### Quiz Essay - Matematika
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "mat",
+  "elemen_id": "geometri",
+  "elemen_label": "Geometri",
+  "materi": "Pemanfaatan Perbandingan Trigonometri",
+  "materi_id": "mat__pemanfaatan_trigonometri",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Menyelesaikan masalah kontekstual (tinggi objek/jarak) menggunakan perbandingan trigonometri."],
+  "tipe": "quiz_essay",
+  "level": "Mid"
+}
+
+### Quiz Essay - IPS
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "ips",
+  "elemen_id": "geografi",
+  "elemen_label": "Pemahaman Geografi",
+  "materi": "Dinamika Litosfer dan Dampaknya Terhadap Kehidupan",
+  "materi_id": "ips__litosfer",
+  "kelas_id": "x_2",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menganalisis dinamika litosfer dan dampaknya terhadap kehidupan."],
+  "tipe": "quiz_essay",
+  "level": "Mid"
+}
+
+### =================================================================
+### TASK: FLASHCARD
+### =================================================================
+
+### Flashcard - Bahasa Indonesia
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "membaca_memirsa",
+  "elemen_label": "Membaca dan Memirsa",
+  "materi": "Kosakata Teknis dan Informasi Faktual dalam Teks LHO",
+  "materi_id": "bindo__kosakata_fakta_lho",
+  "kelas_id": "x_3",
+  "jenjang": "10",
+  "atp": ["Menemukan kosakata teknis, menentukan arti kata, serta mengidentifikasi informasi faktual dalam teks LHO."],
+  "tipe": "flashcard",
+  "level": "Mid"
+}
+
+### Flashcard - Matematika
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "mat",
+  "elemen_id": "bil_aljabar",
+  "elemen_label": "Bilangan dan Aljabar",
+  "materi": "Bunga Tunggal dan Bunga Majemuk",
+  "materi_id": "mat__bunga_keuangan",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Menghitung dan membedakan bunga tunggal serta bunga majemuk dalam konteks keuangan."],
+  "tipe": "flashcard",
+  "level": "Mid"
+}
+
+### Flashcard - IPS
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "ips",
+  "elemen_id": "sosiologi",
+  "elemen_label": "Pemahaman Sosial",
+  "materi": "Gejala Sosial di Lingkungan Sekitar",
+  "materi_id": "ips__gejala_sosial",
+  "kelas_id": "x_2",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menganalisis berbagai gejala sosial di masyarakat dari berbagai perspektif sosiologi."],
+  "tipe": "flashcard",
+  "level": "Mid"
+}
+
+
+### =================================================================
+### TASK: MINDMAP
+### =================================================================
+
+### Mindmap - Bahasa Indonesia
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "membaca_memirsa",
+  "elemen_label": "Membaca dan Memirsa",
+  "materi": "Teks Laporan Hasil Observasi (LHO)",
+  "materi_id": "bindo__teks_lho",
+  "kelas_id": "x_3",
+  "jenjang": "10",
+  "atp": ["Siswa mengevaluasi informasi yang tidak akurat dan bias dalam paparan teks Laporan Hasil Observasi."],
+  "tipe": "mindmap",
+  "level": null
+}
+
+### Mindmap - IPS
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "ips",
+  "elemen_id": "geografi",
+  "elemen_label": "Geografi",
+  "materi": "Lingkungan Geosfer Fisikal Indonesia: Litosfer",
+  "materi_id": "ips__litosfer",
+  "kelas_id": "x_2",
+  "jenjang": "10",
+  "atp": ["Menjelaskan karakteristik lapisan batuan bumi serta dampak tektonisme dan vulkanisme bagi kehidupan."],
+  "tipe": "mindmap",
+  "level": null
+}
+
+
+### =================================================================
+### CONTOH ENDPOINT LAINNYA
+### =================================================================
+
+### REGENERATE (Refinement oleh Guru)
+# Catatan: konten_id ini didapat dari response /konten/generate sebelumnya
+POST {{baseUrl}}/konten/regenerate
+Content-Type: application/json
+
+{
+  "konten_id": "konten_mat_spltv_bacaan_low_1234567890",
+  "mapel_id": "mat",
+  "elemen_id": "bil_aljabar",
+  "elemen_label": "Bilangan dan Aljabar",
+  "materi": "Sistem Persamaan Linear Tiga Variabel (SPLTV)",
+  "materi_id": "mat__spltv",
+  "kelas_id": "x_1",
+  "jenjang": "10",
+  "atp": ["Siswa mampu menyusun sistem persamaan linear tiga variabel dari masalah kontekstual dan menyelesaikannya."],
+  "tipe": "bacaan",
+  "level": "Low",
+  "instruksi_revisi": "Tolong gunakan contoh buah-buahan lokal Indonesia seperti Manggis dan Rambutan dalam soal cerita SPLTV."
+}
+
+### REGENERATE - IPS Litosfer
+POST {{baseUrl}}/konten/regenerate
+Content-Type: application/json
+
+{
+  "konten_id": "konten_ips_litosfer_mindmap_1234567890",
+  "mapel_id": "ips",
+  "elemen_id": "geografi",
+  "elemen_label": "Geografi",
+  "materi": "Lingkungan Geosfer Fisikal Indonesia: Litosfer",
+  "materi_id": "ips__litosfer",
+  "kelas_id": "x_2",
+  "jenjang": "10",
+  "atp": ["Menjelaskan karakteristik lapisan batuan bumi serta dampak tektonisme dan vulkanisme bagi kehidupan."],
+  "tipe": "mindmap",
+  "level": null,
+  "instruksi_revisi": "Fokuskan mindmap pada perbedaan dampak tektonisme (epirogenetik vs orogenetik) dan vulkanisme terhadap kehidupan tani di Indonesia."
+}
+
+### RAG INSIGHT (Motivasi)
+POST {{baseUrl}}/rag/insight
+Content-Type: application/json
+
+{
+  "nama": "Andi Setiawan",
+  "streak": 5,
+  "total_topik": 3,
+  "total_poin_kuiz": 450,
+  "total_durasi_menit": 120
+}
+
+### RAG SUMMARY (Sesi)
+POST {{baseUrl}}/sesi/summary
+Content-Type: application/json
+
+{
+  "siswa": "Andi Setiawan",
+  "mapel_label": "Matematika",
+  "elemen_label": "Aljabar dan Fungsi",
+  "materi_id": "mat__pemanfaatan_trigonometri",
+  "durasi_menit": 45,
+  "hasil_quiz": [
+    {
+      "level": "Mid",
+      "tipe": "quiz_pg",
+      "nilai": 80
+    }
+  ],
+  "last_quiz": {
+    "nilai_mc": 80,
+    "nilai_essay": null,
+    "agregasi": null
+  },
+  "emosi_sesi": [
+    "senang", "fokus"
+  ],
+  "violations": [
+    {
+      "detail": "Membuka Aplikasi / Window Lain",
+      "terjadi_at": "2026-06-03T09:46:55.352000+07:00"
+    }
+  ]
+}
+
+### EVALUASI ESSAY
+POST {{baseUrl}}/siswa/quiz/essay
+Content-Type: application/json
+
+[
+  {
+    "jawaban_siswa": "Menurut saya, kemiskinan adalah contoh gejala sosial karena dipengaruhi oleh struktur ekonomi masyarakat secara luas dan bukan sekadar masalah individu malas.",
+    "soal": "Berikan satu contoh gejala sosial di lingkungan sekitarmu dan jelaskan dampaknya!",
+    "rubrik": "Siswa menyebutkan masalah nyata (seperti kemiskinan atau pengangguran) dan memberikan analisis sebab-akibat struktural.",
+    "stimulus": null,
+    "image_path": null,
+    "penjelasan": null
+  }
+]
+
+### EVALUASI ESSAY - Matematika Trigonometri
+POST {{baseUrl}}/siswa/quiz/essay
+Content-Type: application/json
+
+[
+  {
+    "jawaban_siswa": "Untuk mencari tinggi pohon, kita memakai perbandingan tangen karena yang diketahui adalah jarak mendatar (sisi samping = 10m) dan yang dicari adalah tinggi pohon (sisi depan). Rumusnya tan(30) = depan / samping. Maka depan = samping * tan(30) = 10 * (1/3 * akar(3)) = 10/3 akar(3) meter atau sekitar 5.77 meter.",
+    "soal": "Seorang pengamat berdiri 10 meter dari kaki sebuah pohon dan melihat puncak pohon dengan sudut elevasi 30 derajat. Jika tinggi pengamat diabaikan, jelaskan langkah dan rumus perbandingan trigonometri yang tepat untuk menentukan tinggi pohon tersebut!",
+    "rubrik": "Siswa harus mengidentifikasi bahwa perbandingan yang tepat adalah tangen (tan 30 derajat = depan/samping = tinggi pohon/jarak), lalu menghitung tinggi pohon = 10 * tan 30 = 10 * (1/sqrt(3)) atau sekitar 5.77 meter.",
+    "stimulus": null,
+    "image_path": null,
+    "penjelasan": null
+  }
+]
+
+### EVALUASI ESSAY - 5 Soal (Bahasa Indonesia)
+POST {{baseUrl}}/siswa/quiz/essay
+Content-Type: application/json
+
+[
+  {
+    "jawaban_siswa": "Teks LHO adalah teks yang berisi penjabaran umum mengenai sesuatu yang disusun berdasarkan hasil pengamatan. Ciri-cirinya bersifat objektif, berdasarkan fakta yang ditemukan di lapangan, dan ditulis secara sistematis.",
+    "soal": "Jelaskan apa yang dimaksud dengan teks laporan hasil observasi (LHO) beserta ciri-cirinya!",
+    "rubrik": "Siswa mampu menjelaskan definisi teks LHO dan menyebutkan minimal 3 ciri-cirinya (faktual, objektif, disusun sistematis).",
+    "stimulus": "Teks Laporan Hasil Observasi (LHO) merupakan teks yang berfungsi untuk memberikan informasi tentang suatu objek atau situasi setelah diadakannya investigasi secara sistematis.",
+    "image_path": "https://example.com/lho-concept.jpg",
+    "penjelasan": "Teks LHO harus memuat fakta murni dari pengamatan, sehingga bersifat objektif dan tidak memihak (tidak berisi opini penulis)."
+  },
+  {
+    "jawaban_siswa": "Struktur teks LHO terdiri dari pernyataan umum yang berisi definisi atau klasifikasi, kemudian deskripsi bagian yang menjelaskan perincian dari objek yang diamati, dan terakhir deskripsi manfaat atau simpulan.",
+    "soal": "Sebutkan dan jelaskan struktur dari teks laporan hasil observasi!",
+    "rubrik": "Siswa dapat menyebutkan struktur teks LHO: pernyataan umum (klasifikasi), deskripsi bagian, dan deskripsi manfaat.",
+    "stimulus": "Setiap jenis karangan teks memiliki struktur kerangka pembangun agar mudah dibaca dan sistematis alurnya.",
+    "image_path": "https://example.com/lho-structure.png",
+    "penjelasan": "Struktur utama LHO ada 3: (1) Pernyataan Umum untuk pengenalan, (2) Deskripsi Bagian untuk detail fisik/sifat, (3) Deskripsi Manfaat untuk menjelaskan kegunaannya."
+  },
+  {
+    "jawaban_siswa": "Kalimat definisi menjelaskan makna suatu objek, contoh: 'Kucing adalah hewan mamalia karnivora'. Kalimat deskripsi menggambarkan ciri fisik, contoh: 'Kucing tersebut memiliki bulu berwarna putih dengan corak hitam di punggungnya'.",
+    "soal": "Apa perbedaan antara kalimat definisi dan kalimat deskripsi dalam teks LHO? Berikan contohnya masing-masing!",
+    "rubrik": "Siswa menjelaskan kalimat definisi (menggunakan kopula adalah/ialah/merupakan) dan kalimat deskripsi (menggambarkan sifat/ciri khusus), serta memberikan contoh yang tepat.",
+    "stimulus": "Dalam merangkai paragraf LHO, penggunaan kalimat definisi sangat penting di bagian awal sebelum mulai mendeskripsikan secara rinci.",
+    "image_path": null,
+    "penjelasan": "Kalimat definisi identik dengan penggunaan kata 'adalah', 'ialah', 'yakni'. Sedangkan kalimat deskripsi lebih menggunakan kata sifat (adjektiva) untuk menggambarkan fisik/suasana."
+  },
+  {
+    "jawaban_siswa": "Karena teks laporan hasil observasi berfungsi sebagai sumber informasi atau pengetahuan bagi pembaca, sehingga isinya harus bisa dipertanggungjawabkan kebenarannya berdasarkan data dan pengamatan langsung.",
+    "soal": "Mengapa dalam menulis teks laporan hasil observasi harus menggunakan bahasa yang objektif dan fakta?",
+    "rubrik": "Siswa memahami bahwa teks LHO bertujuan memberikan informasi yang akurat berdasarkan pengamatan, bukan opini pribadi atau imajinasi.",
+    "stimulus": "Seringkali pembaca menyamakan LHO dengan teks deskripsi biasa yang bisa saja dibumbui oleh opini atau imajinasi penulis.",
+    "image_path": null,
+    "penjelasan": "Sifat LHO adalah sebagai referensi keilmuan atau laporan ilmiah, sehingga tidak boleh disusupi pendapat pribadi yang bias (subjektif)."
+  },
+  {
+    "jawaban_siswa": "Pohon mangga di halaman rumah saya memiliki batang yang cukup besar dengan kulit kayu yang kasar dan berwarna cokelat keabuan. Daunnya rimbun, berbentuk lonjong dengan ujung yang agak runcing, berwarna hijau tua di bagian atas dan lebih muda di bagian bawah.",
+    "soal": "Buatlah satu paragraf deskripsi bagian tentang sebuah tanaman yang sering kamu temui di lingkungan sekitarmu!",
+    "rubrik": "Siswa mampu menuliskan satu paragraf yang mendeskripsikan ciri fisik/bagian-bagian dari tanaman yang dipilih secara rinci dan objektif.",
+    "stimulus": "Perhatikan bentuk daun, tekstur batang, hingga buah pada tanaman di sekelilingmu untuk merangkai satu paragraf deskripsi.",
+    "image_path": "https://example.com/pohon-mangga.jpg",
+    "penjelasan": "Penilaian ditekankan pada kemampuan merincikan bagian tanaman (batang, daun, warna) dan bebas dari unsur cerita fiktif/perasaan personal penulis."
+  }
+]
+
+### RAG REKOMENDASI 1 (Baru Selesai Matematika SPLTV)
+POST {{baseUrl}}/rag/rekomendasi
+Content-Type: application/json
+
+{
+  "siswa_id": "s_001",
+  "levels": {
+    "mat__spltv": "Mid",
+    "ips__gejala_sosial": "High"
+  },
+  "sudah_selesai_ids": ["mat__spltv", "ips__gejala_sosial"],
+  "sedang_dipelajari_ids": []
+}
+
+### RAG REKOMENDASI 2 (Sedang Kesulitan di Sosiologi)
+POST {{baseUrl}}/rag/rekomendasi
+Content-Type: application/json
+
+{
+  "siswa_id": "s_002",
+  "levels": {
+    "ips__interaksi_sosial": "Low"
+  },
+  "sudah_selesai_ids": [],
+  "sedang_dipelajari_ids": ["ips__interaksi_sosial"]
+}
+
+### RAG REKOMENDASI 3 (Pintar Bahasa Indonesia, Sedang Belajar Puisi)
+POST {{baseUrl}}/rag/rekomendasi
+Content-Type: application/json
+
+{
+  "siswa_id": "s_003",
+  "levels": {
+    "bindo__teks_cerpen": "High",
+    "bindo__puisi": "Mid"
+  },
+  "sudah_selesai_ids": ["bindo__teks_cerpen"],
+  "sedang_dipelajari_ids": ["bindo__puisi"]
+}
+
+### RAG REKOMENDASI 4 (Selesai Trigonometri, Mulai Kajian Sejarah)
+POST {{baseUrl}}/rag/rekomendasi
+Content-Type: application/json
+
+{
+  "siswa_id": "s_004",
+  "levels": {
+    "mat__pemanfaatan_trigonometri": "High",
+    "ips__kajian_sejarah": "Low"
+  },
+  "sudah_selesai_ids": ["mat__pemanfaatan_trigonometri"],
+  "sedang_dipelajari_ids": ["ips__kajian_sejarah"]
+}
+
+### =================================================================
+### BAHASA INDONESIA (Contoh Multimodal: Pasti Ada Gambar)
+### =================================================================
+
+### Bindo Multimodal - Generate Bacaan (Low)
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "membaca_memirsa",
+  "elemen_label": "Membaca dan Memirsa",
+  "materi": "MENGUNGKAP FAKTA ALAM SECARA OBJEKTIF",
+  "materi_id": "bindo__fakta_alam",
+  "kelas_id": "x_3",
+  "jenjang": "10",
+  "atp": ["Siswa mampu mengevaluasi dan mengungkap fakta alam secara objektif berdasarkan teks bacaan."],
+  "tipe": "bacaan",
+  "level": "Low"
+}
+
+### Bindo Multimodal - Generate Quiz Pilihan Ganda (Mid)
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "membaca_memirsa",
+  "elemen_label": "Membaca dan Memirsa",
+  "materi": "MENGUNGKAP FAKTA ALAM SECARA OBJEKTIF",
+  "materi_id": "bindo__fakta_alam",
+  "kelas_id": "x_3",
+  "jenjang": "10",
+  "atp": ["Siswa mampu mengevaluasi dan mengungkap fakta alam secara objektif berdasarkan teks bacaan."],
+  "tipe": "quiz_pg",
+  "level": "Mid"
+}
+
+### Bindo Multimodal - Generate Quiz Essay (High)
+POST {{baseUrl}}/konten/generate
+Content-Type: application/json
+
+{
+  "mapel_id": "bindo",
+  "elemen_id": "membaca_memirsa",
+  "elemen_label": "Membaca dan Memirsa",
+  "materi": "Belalang Anggrek",
+  "materi_id": "bindo__belalang_anggrek",
+  "kelas_id": "x_3",
+  "jenjang": "10",
+  "atp": ["Siswa mampu mengevaluasi dan mengungkap fakta alam secara objektif berdasarkan teks bacaan (Belalang Anggrek)."],
+  "tipe": "quiz_essay",
+  "level": "High"
+}
