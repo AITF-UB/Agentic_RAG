@@ -2,6 +2,7 @@ import os
 import json
 import time
 from datetime import datetime
+from typing import Any
 from jinja2 import Environment, FileSystemLoader
 from langgraph.graph import StateGraph, START, END
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -157,6 +158,30 @@ async def _call_generation_llm(state: AgentState, usr_prompt: str) -> dict:
         "generated_content": content_dict
     }
 
+
+def _score_from_eval(eval_dict: Any) -> float:
+    try:
+        return float(eval_dict.get("skor", 0))
+    except Exception:
+        return 0.0
+
+
+def _update_best_revision(state: AgentState, eval_dict: dict) -> dict:
+    current_content = state.get("generated_content")
+    if isinstance(current_content, dict) and "error" in current_content:
+        return {}
+
+    current_score = _score_from_eval(eval_dict)
+    best_score = state.get("best_revision_score")
+    if best_score is None or current_score > best_score:
+        return {
+            "best_revision": current_content,
+            "best_evaluator_result": eval_dict,
+            "best_revision_score": current_score,
+            "best_revision_count": state["revision_count"] + 1
+        }
+    return {}
+
 async def bacaan_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
@@ -208,7 +233,11 @@ async def mindmap_node(state: AgentState) -> dict:
 async def evaluator_node(state: AgentState) -> dict:
     """Mengevaluasi output generator."""
     if state["revision_count"] >= 2:
-        return {"evaluator_result": {"skor": 100, "poin_revisi": []}}
+        return {
+            "evaluator_result": state.get("best_evaluator_result", {"skor": 0, "poin_revisi": ["Batas revisi tercapai. Menggunakan hasil revisi terbaik yang tersedia."]}),
+            "generated_content": state.get("best_revision", state.get("generated_content")),
+            "revision_count": state["revision_count"]
+        }
 
     gen_content = state.get("generated_content", {})
     if isinstance(gen_content, dict) and "error" in gen_content:
@@ -240,10 +269,12 @@ async def evaluator_node(state: AgentState) -> dict:
     # Fallback if evaluation is weird
     if not isinstance(eval_dict, dict) or "skor" not in eval_dict:
         eval_dict = {"skor": 0, "poin_revisi": ["JSON output sebelumnya terpotong atau rusak. Buat ulang JSON dengan valid dan lengkap."]}
-        
+
+    update_fields = _update_best_revision(state, eval_dict)
     return {
         "evaluator_result": eval_dict,
-        "revision_count": state["revision_count"] + 1
+        "revision_count": state["revision_count"] + 1,
+        **update_fields
     }
 
 def structurer_node(state: AgentState) -> dict:

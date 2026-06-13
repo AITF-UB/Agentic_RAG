@@ -20,6 +20,10 @@ class AgentState(TypedDict):
     generated_content: Any    # Raw output from the generator node
     evaluator_result: Any     # Output from the evaluator node
     revision_count: int       # Tracks how many times it has looped for revision
+    best_revision: Optional[Any]            # The highest-scored generated_content seen so far
+    best_evaluator_result: Optional[Any]    # Evaluator result for the best revision
+    best_revision_score: Optional[float]    # Score for the best revision
+    best_revision_count: Optional[int]      # Revision count index of the best revision
     
     # 5. Output
     final_payload: dict       # The structured data to be returned via the API
