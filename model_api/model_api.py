@@ -8,9 +8,12 @@ import io
 import numpy as np
 import uvicorn
 
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 # Pastikan API tidak mencoba memanggil dirinya sendiri
 if "MODEL_API_URL" in os.environ:
@@ -25,6 +28,20 @@ from model_registry import (
 )
 
 app = FastAPI(title="Model API Microservice")
+
+API_KEY = os.getenv("API_KEY", "default-internal-secret-key")
+
+@app.middleware("http")
+async def api_key_middleware(request: Request, call_next):
+    if request.url.path not in ["/health", "/docs", "/openapi.json"]:
+        api_key = request.headers.get("X-API-Key")
+        if api_key != API_KEY:
+            return JSONResponse(status_code=401, content={"detail": "Invalid API Key"})
+    return await call_next(request)
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 @app.on_event("startup")
 def startup_event():
@@ -46,25 +63,30 @@ class RerankRequest(BaseModel):
     texts: List[str]
 
 @app.post("/embed/dense")
-def embed_dense(req: DenseRequest):
+@limiter.limit("24/minute")
+def embed_dense(request: Request, req: DenseRequest):
     try:
         model = get_dense_model()
         vectors = model.encode(req.texts, normalize_embeddings=req.normalize_embeddings, convert_to_numpy=True)
         return {"vectors": vectors.tolist()}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Internal Error in embed_dense: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.post("/embed/sparse/query")
-def embed_sparse_query(req: SparseQueryRequest):
+@limiter.limit("24/minute")
+def embed_sparse_query(request: Request, req: SparseQueryRequest):
     try:
         model = get_sparse_model()
         result = model.encode_query(req.text)
         return result
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Internal Error in embed_sparse_query: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.post("/embed/sparse/passages")
-def embed_sparse_passages(req: SparsePassagesRequest):
+@limiter.limit("24/minute")
+def embed_sparse_passages(request: Request, req: SparsePassagesRequest):
     try:
         model = get_sparse_model()
         vectors = model.encode_passages(req.texts)
@@ -77,10 +99,12 @@ def embed_sparse_passages(req: SparsePassagesRequest):
             })
         return {"vectors": results}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Internal Error in embed_sparse_passages: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.post("/rerank")
-def rerank(req: RerankRequest):
+@limiter.limit("24/minute")
+def rerank(request: Request, req: RerankRequest):
     try:
         reranker = get_reranker()
         pairs = [(req.query, t) for t in req.texts]
@@ -92,11 +116,16 @@ def rerank(req: RerankRequest):
             scores = [scores]
         return {"scores": [float(s) for s in scores]}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Internal Error in rerank: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.post("/extract/docling")
-async def extract_docling(file: UploadFile = File(...)):
+@limiter.limit("24/minute")
+async def extract_docling(request: Request, file: UploadFile = File(...)):
     try:
+        if file.size and file.size > 20 * 1024 * 1024:
+            raise HTTPException(status_code=413, detail="File too large. Max size is 20MB.")
+
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
             tmp.write(await file.read())
             tmp_path = tmp.name
@@ -158,7 +187,8 @@ async def extract_docling(file: UploadFile = File(...)):
             "elements": elements
         }
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Internal Error in extract_docling: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 if __name__ == "__main__":
     uvicorn.run("model_api:app", host="0.0.0.0", port=8003, workers=1)
