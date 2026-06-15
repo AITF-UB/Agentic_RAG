@@ -92,6 +92,7 @@ async def retrieve_node(state: AgentState) -> dict:
 
     # Build formatted image context string
     img_ctx_str = ""
+    visual_assets = []
     if rag_results["images"]:
         for idx, img_info in enumerate(rag_results["images"]):
             img_path = img_info["path"]
@@ -100,6 +101,15 @@ async def retrieve_node(state: AgentState) -> dict:
             img_ctx_str += f"- filename: {os.path.basename(img_path)}\n"
             img_ctx_str += f"- image_path: {img_path}\n"
             img_ctx_str += f"- konteks_materi_gambar: {img_context}...\n\n"
+            
+            # Extract base64 for frontend
+            b64_data = img_info.get("base64")
+            if b64_data:
+                mime_type = img_info.get("mime_type", "image/png")
+                if b64_data.startswith("data:"):
+                    visual_assets.append(b64_data)
+                else:
+                    visual_assets.append(f"data:{mime_type};base64,{b64_data}")
         
     max_rag_tokens_str = os.getenv("MAX_RAG_TOKEN")
     if max_rag_tokens_str and max_rag_tokens_str.isdigit():
@@ -110,7 +120,8 @@ async def retrieve_node(state: AgentState) -> dict:
     return {
         "rag_context": text_ctx if text_ctx else "Tidak ada dokumen relevan di database.",
         "sumber_text": sumber,
-        "image_context": img_ctx_str.strip() if img_ctx_str else ""
+        "image_context": img_ctx_str.strip() if img_ctx_str else "",
+        "visual_assets": visual_assets
     }
 
 def get_rag_context_for_revision(state: AgentState) -> str:
@@ -271,6 +282,11 @@ def structurer_node(state: AgentState) -> dict:
             content = {"pertanyaan": content}
         elif tipe in ["quiz_pg", "pretest"]:
             content = {"soal": content}
+            
+    # Tambahkan visual assets jika ada
+    visuals = state.get("visual_assets", [])
+    if visuals and isinstance(content, dict):
+        content["visuals"] = visuals
             
     return {"final_payload": content}
 

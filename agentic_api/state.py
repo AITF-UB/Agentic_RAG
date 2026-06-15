@@ -11,7 +11,8 @@ class AgentState(TypedDict):
     # 2. Context from RAG
     rag_context: str
     sumber_text: str
-    image_context: List[dict] # List of image metadata dicts from RAG
+    image_context: str        # Text descriptions of images from RAG
+    visual_assets: List[str]  # Base64 data URLs for frontend rendering
     
     # 2.5 Revision
     instruksi_revisi: Optional[str]

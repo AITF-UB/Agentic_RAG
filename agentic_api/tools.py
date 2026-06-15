@@ -475,14 +475,27 @@ class RAGEngine:
                 vis_list = vis if isinstance(vis, list) else [vis] if isinstance(vis, str) else []
 
                 for img in vis_list:
+                    # img bisa berupa string (path) atau dict (path, base64, dll)
+                    img_path = img.get("path") if isinstance(img, dict) else img
+                    
                     # Cek apakah image sudah ada di list
-                    if not any(x["path"] == img for x in images if isinstance(x, dict)):
+                    if not any(x["path"] == img_path for x in images if isinstance(x, dict)):
                         # Ambil potongan teks chunk asli sebagai konteks visual gambar (max 600 chars)
                         context_snippet = t.get("text", "")[:600]
-                        images.append({
-                            "path": img,
+                        
+                        img_entry = {
+                            "path": img_path,
                             "context": context_snippet
-                        })
+                        }
+                        
+                        # Simpan base64 jika ada agar bisa digunakan frontend
+                        if isinstance(img, dict):
+                            if "base64" in img:
+                                img_entry["base64"] = img["base64"]
+                            if "mime_type" in img:
+                                img_entry["mime_type"] = img["mime_type"]
+                                
+                        images.append(img_entry)
 
         return {
             "text": [{"text": t.get("expanded_text", t["text"]), "source_file": t["source_file"], "visual_context": t.get("metadata", {}).get("has_visual_content", [])} for t in texts],
