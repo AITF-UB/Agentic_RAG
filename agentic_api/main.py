@@ -310,7 +310,11 @@ async def generate_konten(req: GenerateRequest):
             "tipe": req.tipe,
             "level": req.level,
             "revision_count": 0,
-            "instruksi_revisi": req.instruksi_revisi
+            "instruksi_revisi": req.instruksi_revisi,
+            "best_revision": None,
+            "best_evaluator_result": None,
+            "best_revision_score": None,
+            "best_revision_count": None
         }
         
         # Mengeksekusi State Machine
