@@ -19,7 +19,7 @@ Content-Type: application/json
   "jenjang": "10",
   "atp": ["Siswa mampu menulis teks anekdot dengan kaidah bahasa yang benar dan mengkritisi fenomena sosial."],
   "tipe": "bacaan",
-  "level": "Mid"
+  "level": "Mid" 
 }
 
 ### Bacaan - Matematika (Topik Visual: Segitiga Trigonometri)

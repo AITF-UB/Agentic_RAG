@@ -7,9 +7,11 @@ from typing import List, Dict, Any, Optional
 import io
 import numpy as np
 import uvicorn
+import secrets
 
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request, Depends
 from fastapi.responses import JSONResponse
+from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
@@ -27,15 +29,21 @@ from model_registry import (
     preload_all
 )
 
-app = FastAPI(title="Model API Microservice")
+api_key_scheme = APIKeyHeader(name="X-API-Key", auto_error=False)
+app = FastAPI(
+    title="Model API Microservice",
+    dependencies=[Depends(api_key_scheme)]
+)
 
 API_KEY = os.getenv("API_KEY", "default-internal-secret-key")
+if API_KEY == "default-internal-secret-key":
+    print("⚠️ WARNING: Menggunakan default API_KEY di model_api. Sangat tidak disarankan untuk production!")
 
 @app.middleware("http")
 async def api_key_middleware(request: Request, call_next):
     if request.url.path not in ["/health", "/docs", "/openapi.json"]:
-        api_key = request.headers.get("X-API-Key")
-        if api_key != API_KEY:
+        api_key = request.headers.get("X-API-Key", "")
+        if not secrets.compare_digest(api_key.encode("utf8"), API_KEY.encode("utf8")):
             return JSONResponse(status_code=401, content={"detail": "Invalid API Key"})
     return await call_next(request)
 

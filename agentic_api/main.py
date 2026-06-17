@@ -31,6 +31,7 @@ import uvicorn
 import os
 import traceback
 import uuid
+import secrets
 from typing import List, Any, Dict, Optional
 from enum import Enum
 from datetime import datetime, timedelta
@@ -42,9 +43,10 @@ os.environ["FOR_DISABLE_CONSOLE_CTRL_HANDLER"] = "1"
 
 from fastapi import (
     BackgroundTasks, FastAPI, File, Form,
-    HTTPException, UploadFile, Request
+    HTTPException, UploadFile, Request, Depends
 )
 from fastapi.responses import JSONResponse
+from fastapi.security import APIKeyHeader
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
@@ -256,28 +258,37 @@ async def lifespan(app: FastAPI):
     yield
     print("Shutting down...")
 
+api_key_scheme = APIKeyHeader(name="X-API-Key", auto_error=False)
+
 app = FastAPI(
     title       = "Beta Agentic SR API + RAG Pipeline",
     description = "Unified microservice: Konten/RAG endpoints + Pipeline PDF → Qdrant (Docling + VLM + BGE-M3 + SPLADE).",
     version     = "4.0",
     lifespan    = lifespan,
+    dependencies= [Depends(api_key_scheme)]
 )
+
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "*")
+allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
+allow_credentials = "*" not in allowed_origins
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 API_KEY = os.getenv("API_KEY", "default-internal-secret-key")
+if API_KEY == "default-internal-secret-key":
+    print("⚠️ WARNING: Menggunakan default API_KEY. Sangat tidak disarankan untuk production!")
 
 @app.middleware("http")
 async def api_key_middleware(request: Request, call_next):
     if request.url.path not in ["/health", "/docs", "/openapi.json"] and not request.url.path.startswith("/extraction"):
-        api_key = request.headers.get("X-API-Key")
-        if api_key != API_KEY:
+        api_key = request.headers.get("X-API-Key", "")
+        if not secrets.compare_digest(api_key.encode("utf8"), API_KEY.encode("utf8")):
             return JSONResponse(status_code=401, content={"detail": "Invalid API Key"})
     return await call_next(request)
 
