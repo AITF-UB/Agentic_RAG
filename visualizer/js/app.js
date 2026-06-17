@@ -17,7 +17,7 @@ async function handleGenerate() {
         elemen_id: document.getElementById("inp-elemen-id").value,
         elemen_label: document.getElementById("inp-elemen-label").value,
         materi: document.getElementById("inp-materi").value,
-        atp: document.getElementById("inp-atp").value,
+        atp: [document.getElementById("inp-atp").value],
         kelas_id: document.getElementById("inp-kelas").value,
         jenjang: document.getElementById("inp-jenjang").value,
         tipe: tipe

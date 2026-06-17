@@ -83,7 +83,7 @@ async def retrieve_node(state: AgentState) -> dict:
         if isinstance(vis, str):
             vis = [vis]
         if vis:
-            vis_str = ", ".join([os.path.basename(v) for v in vis])
+            vis_str = ", ".join([os.path.basename(v.get("path", "")) if isinstance(v, dict) else os.path.basename(str(v)) for v in vis])
             part = f"[Referensi File Gambar: {vis_str}]\n" + part
         text_ctx_parts.append(part)
         

@@ -127,6 +127,22 @@ def get_llm():
             temperature=0.3
         )
 
+    elif provider == "kaggle_llamacpp":
+        from langchain_openai import ChatOpenAI
+        
+        # llama-server di Kaggle menyediakan endpoint OpenAI-compatible di /v1
+        endpoint = os.getenv("NGROK_KAGGLE_LLAMACPP")
+        if endpoint and not endpoint.endswith("/v1"):
+            endpoint = endpoint + "/v1"
+            
+        return ChatOpenAI(
+            openai_api_base=endpoint,
+            openai_api_key="llama-cpp",
+            model_name=os.getenv("KAGGLE_LLAMACPP_MODEL_ID", "unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_M"),
+            temperature=0.3,
+            max_tokens=int(os.getenv("MAX_TOKEN", 4000))
+        )
+
     else:
         # Default fallback ke Hugging Face Inference
         return HFChatModel()

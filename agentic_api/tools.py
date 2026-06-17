@@ -40,6 +40,7 @@ TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
 
 BM25_CACHE_PATH = Path(__file__).resolve().parent / f"bm25_{TEXT_COLLECTION}.pkl"
+BM25_CACHE_VERSION = "v1"
 
 # ================================================================
 # Search Mode Configuration
@@ -91,22 +92,38 @@ def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_paylo
     payload = {"vector": {"name": "dense", "vector": vector}, "limit": top_k, "with_payload": True}
     if filter_payload:
         payload["filter"] = filter_payload
-    try:
-        response = requests.post(url, json=payload, timeout=120)
+    max_retries = 2
+    for attempt in range(max_retries + 1):
+        try:
+            response = requests.post(url, json=payload, timeout=60)
 
-        # Fallback ke vector biasa jika collection tidak pakai named vectors (seperti srma-22)
-        if response.status_code == 400 and "Not existing vector name error" in response.text:
-            payload["vector"] = vector
-            response = requests.post(url, json=payload, timeout=120)
+            # Fallback ke vector biasa jika collection tidak pakai named vectors (seperti srma-22)
+            if response.status_code == 400 and "Not existing vector name error" in response.text:
+                payload["vector"] = vector
+                response = requests.post(url, json=payload, timeout=60)
 
-        if response.status_code != 200:
-            print(f"⚠️ Qdrant Dense Error Body: {response.text}")
+            if response.status_code != 200:
+                print(f"⚠️ Qdrant Dense Error Body: {response.text}")
 
-        response.raise_for_status()
-        return response.json().get("result", [])
-    except Exception as e:
-        print(f"❌ Error query Qdrant Dense: {e}")
-        return []
+            response.raise_for_status()
+            return response.json().get("result", [])
+        except requests.exceptions.ConnectionError as e:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant connection error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                time.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant connection error (after {max_retries + 1} attempts): {e}")
+            return []
+        except requests.exceptions.Timeout:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant timeout (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                time.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant timeout (after {max_retries + 1} attempts)")
+            return []
+        except Exception as e:
+            print(f"❌ Error query Qdrant Dense: {e}")
+            return []
 
 # ── Hybrid-only components (tidak dipakai saat SEARCH_MODE=dense) ──────────
 
@@ -122,41 +139,67 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
     }
     if filter_payload:
         payload["filter"] = filter_payload
-    try:
-        response = requests.post(url, json=payload, timeout=120)
+    max_retries = 2
+    for attempt in range(max_retries + 1):
+        try:
+            response = requests.post(url, json=payload, timeout=60)
 
-        if response.status_code != 200:
-            print(f"⚠️ Qdrant Splade Error Body: {response.text}")
+            if response.status_code != 200:
+                print(f"⚠️ Qdrant Splade Error Body: {response.text}")
 
-        response.raise_for_status()
-        hits = response.json().get("result", [])
+            response.raise_for_status()
+            hits = response.json().get("result", [])
 
-        results = []
-        for hit in hits:
-            payload_data = hit.get("payload", {})
-            metadata = payload_data.get("metadata", {})
-            results.append({
-                "score": hit.get("score", 0.0),
-                "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
-                "metadata": metadata,
-                "source_file": payload_data.get("source_file", metadata.get("source_file", "N/A")),
-                "retrieval_type": "splade"
-            })
-        return results
-    except Exception as e:
-        print(f"❌ Error query Qdrant Splade: {e}")
-        return []
+            results = []
+            for hit in hits:
+                payload_data = hit.get("payload", {})
+                metadata = payload_data.get("metadata")
+                if metadata is None:
+                    metadata = {k: v for k, v in payload_data.items() if k not in ("text", "page_content")}
+                results.append({
+                    "score": hit.get("score", 0.0),
+                    "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
+                    "metadata": metadata,
+                    "source_file": payload_data.get("source_file", metadata.get("source_file", "N/A")),
+                    "retrieval_type": "splade"
+                })
+            return results
+        except requests.exceptions.ConnectionError as e:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant splade connection error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                time.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant splade connection error (after {max_retries + 1} attempts): {e}")
+            return []
+        except requests.exceptions.Timeout:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant splade timeout (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                time.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant splade timeout (after {max_retries + 1} attempts)")
+            return []
+        except Exception as e:
+            print(f"❌ Error query Qdrant Splade: {e}")
+            return []
 
-def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200) -> list:
+def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_retries: int = 2) -> list:
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/scroll"
     payload = {"filter": scroll_filter, "limit": limit, "with_payload": True}
-    try:
-        response = requests.post(url, json=payload, timeout=120)
-        response.raise_for_status()
-        return response.json().get("result", {}).get("points", [])
-    except Exception as e:
-        print(f"❌ Error scroll Qdrant: {e}")
-        return []
+    for attempt in range(max_retries + 1):
+        try:
+            response = requests.post(url, json=payload, timeout=60)
+            response.raise_for_status()
+            return response.json().get("result", {}).get("points", [])
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant scroll error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                time.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant scroll error (after {max_retries + 1} attempts): {e}")
+            return []
+        except Exception as e:
+            print(f"❌ Error scroll Qdrant: {e}")
+            return []
 
 def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None) -> Optional[dict]:
     conditions = []
@@ -174,21 +217,34 @@ def build_bm25_index():
     if _bm25 is not None:
         return
 
+    # Cek cache dengan versioning — invalidate jika struktur payload berubah
+    cache_valid = False
     if BM25_CACHE_PATH.exists():
-        print(f"📦 Loading BM25 dari cache: {BM25_CACHE_PATH}")
-        with open(BM25_CACHE_PATH, "rb") as f:
-            cache = pickle.load(f)
-        _bm25 = cache["bm25"]
-        _bm25_docs = cache["docs"]
-        return
-
-    print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
+        try:
+            with open(BM25_CACHE_PATH, "rb") as f:
+                cache = pickle.load(f)
+            if cache.get("version") == BM25_CACHE_VERSION:
+                _bm25 = cache["bm25"]
+                _bm25_docs = cache["docs"]
+                cache_valid = True
+                print(f"📦 Loading BM25 dari cache (version {BM25_CACHE_VERSION}): {BM25_CACHE_PATH}")
+            else:
+                print(f"⚠️ BM25 cache version mismatch (cache={cache.get('version')}, expected={BM25_CACHE_VERSION}). Building new index...")
+        except Exception as e:
+            print(f"⚠️ BM25 cache load error: {e}. Building new index...")
+            
+    if not cache_valid:
+        print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{TEXT_COLLECTION}/points/scroll"
     all_points = []
     offset = None
 
     while True:
-        payload = {"limit": 1000, "with_payload": True}
+        # payload = {"limit": 1000, "with_payload": True}
+        payload = {
+            "limit": 1000, 
+            "with_payload": {"exclude": ["has_visual_content", "visuals", "metadata.has_visual_content"]}
+        }
         if offset is not None:
             payload["offset"] = offset
         try:
@@ -209,7 +265,9 @@ def build_bm25_index():
         payload = p.get("payload", {})
         text = payload.get("text", payload.get("page_content", ""))
         if not text: continue
-        metadata = payload.get("metadata", {})
+        metadata = payload.get("metadata")
+        if metadata is None:
+            metadata = {k: v for k, v in payload.items() if k not in ("text", "page_content")}
         docs.append({
             "text": text,
             "metadata": metadata,
@@ -221,8 +279,8 @@ def build_bm25_index():
         _bm25 = BM25Okapi(corpus)
         _bm25_docs = docs
         with open(BM25_CACHE_PATH, "wb") as f:
-            pickle.dump({"bm25": _bm25, "docs": _bm25_docs}, f)
-        print(f"✅ BM25 index built & cached: {len(docs)} docs")
+            pickle.dump({"version": BM25_CACHE_VERSION, "bm25": _bm25, "docs": _bm25_docs}, f)
+        print(f"✅ BM25 index built & cached (v{BM25_CACHE_VERSION}): {len(docs)} docs")
     else:
         print("⚠ Tidak ada dokumen untuk BM25.")
 
@@ -300,41 +358,80 @@ def deduplicate(docs: list) -> list:
         unique.append(doc)
     return unique
 
+def _fetch_chunks_for_source(source_file: str, min_idx: int, max_idx: int) -> list:
+    """Ambil chunk per source_file dengan limit scroll untuk efisiensi."""
+    points = _scroll_qdrant(TEXT_COLLECTION, scroll_filter={"must": [{"key": "source_file", "match": {"value": source_file}}]}, limit=50)
+    chunks = []
+    for p in points:
+        payload = p.get("payload", {})
+        # Payload flat — chunk_index langsung di top-level payload
+        idx = payload.get("chunk_index")
+        if idx is not None and min_idx <= idx <= max_idx:
+            text = payload.get("text", payload.get("page_content", ""))
+            if text: chunks.append((idx, text))
+    chunks.sort(key=lambda x: x[0])
+    return chunks
+
 def expand_chunk_context(docs: list, window=1) -> list:
+    """Expand chunk context dengan batch scroll per source_file — mengurangi N+1 query Qdrant."""
     expanded_docs = []
+    
+    # Group dokumen yang butuh chunk expansion per source_file
+    needs_expansion = []
+    no_chunk_docs = []
+    
     for doc in docs:
         metadata = doc.get("metadata", {})
         chunk_index = metadata.get("chunk_index")
         source_file = doc.get("source_file")
+        
         if chunk_index is None:
             doc["expanded_text"] = doc["text"]
-            expanded_docs.append(doc)
+            no_chunk_docs.append(doc)
             continue
-
+        
         cache_key = (source_file, chunk_index, window)
         if cache_key in _chunk_expansion_cache:
             doc["expanded_text"] = _chunk_expansion_cache[cache_key]
-            expanded_docs.append(doc)
+            no_chunk_docs.append(doc)
             continue
-
-        min_idx = chunk_index - window
-        max_idx = chunk_index + window
-
-        points = _scroll_qdrant(TEXT_COLLECTION, scroll_filter={"must": [{"key": "source_file", "match": {"value": source_file}}]})
-        chunks = []
-        for p in points:
-            payload = p.get("payload", {})
-            meta = payload.get("metadata", {})
-            idx = meta.get("chunk_index")
-            if idx is not None and min_idx <= idx <= max_idx:
-                text = payload.get("text", payload.get("page_content", ""))
-                if text: chunks.append((idx, text))
-
-        chunks.sort(key=lambda x: x[0])
-        expanded_text = "\n".join(text for _, text in chunks) if chunks else doc["text"]
-        _chunk_expansion_cache[cache_key] = expanded_text
-        doc["expanded_text"] = expanded_text
-        expanded_docs.append(doc)
+        
+        needs_expansion.append((doc, source_file, chunk_index, cache_key))
+    
+    # Group by source_file — scroll sekali per source, bukan N kali
+    source_groups: Dict[str, list] = {}
+    for doc, source_file, chunk_index, cache_key in needs_expansion:
+        if source_file not in source_groups:
+            source_groups[source_file] = []
+        source_groups[source_file].append((doc, chunk_index, cache_key))
+    
+    # Batch scroll per source_file
+    for source_file, group_items in source_groups.items():
+        all_chunk_indices = {idx for _, idx, _ in group_items}
+        min_idx = min(all_chunk_indices) - window
+        max_idx = max(all_chunk_indices) + window
+        
+        # Scroll sekali untuk semua chunk yang dibutuhkan source ini
+        chunks = _fetch_chunks_for_source(source_file, min_idx, max_idx)
+        chunk_map = {idx: text for idx, text in chunks}
+        
+        # Assign expanded text ke setiap dokumen di group ini
+        for doc, chunk_index, cache_key in group_items:
+            # Kumpulkan chunk di window
+            window_chunks = []
+            for offset in range(-window, window + 1):
+                target_idx = chunk_index + offset
+                if target_idx in chunk_map:
+                    window_chunks.append((target_idx, chunk_map[target_idx]))
+            
+            window_chunks.sort(key=lambda x: x[0])
+            expanded_text = "\n".join(text for _, text in window_chunks) if window_chunks else doc["text"]
+            _chunk_expansion_cache[cache_key] = expanded_text
+            doc["expanded_text"] = expanded_text
+            expanded_docs.append(doc)
+    
+    # Gabungkan dokumen yang tidak perlu expand
+    expanded_docs.extend(no_chunk_docs)
     return expanded_docs
 
 async def rerank_results(query: str, docs: list, top_k: int = 5) -> list:
@@ -370,7 +467,9 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
     results = []
     for hit in hits:
         payload = hit.get("payload", {})
-        metadata = payload.get("metadata", {})
+        metadata = payload.get("metadata")
+        if metadata is None:
+            metadata = {k: v for k, v in payload.items() if k not in ("text", "page_content")}
         results.append({
             "score": hit.get("score", 0.0),
             "text": payload.get("text", payload.get("page_content", "N/A")),
@@ -399,7 +498,9 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     dense_results = []
     for hit in hits:
         payload = hit.get("payload", {})
-        metadata = payload.get("metadata", {})
+        metadata = payload.get("metadata")
+        if metadata is None:
+            metadata = {k: v for k, v in payload.items() if k not in ("text", "page_content")}
         dense_results.append({
             "score": hit.get("score", 0.0),
             "text": payload.get("text", payload.get("page_content", "N/A")),
@@ -412,13 +513,22 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     splade_results = _search_qdrant_splade(TEXT_COLLECTION, query, top_k=retrieve_k, filter_payload=payload_filter)
     bm25_results = sparse_search(query, top_k=retrieve_k, mata_pelajaran=mata_pelajaran, kelas=kelas)
 
-    # 3. RRF + Dedup + Expand
+    # 3. RRF + Dedup
     fused_results = reciprocal_rank_fusion(dense_results, splade_results, bm25_results)
     unique_results = deduplicate(fused_results)
-    expanded_results = expand_chunk_context(unique_results, window=1)
 
-    # 4. Rerank
+    # [OPTIMASI RERANKER & EXPANSION]
+    # Batasi dokumen yang masuk ke proses ekspansi dan reranking (max 15).
+    # Ini sangat penting agar Qdrant tidak di-query berkali-kali secara tidak perlu,
+    # dan model reranker (cross-encoder) tidak kewalahan memproses teks.
+    docs_to_process = unique_results[:15]
+    
+    # Expand Context DULU (menggunakan batching yang sudah dioptimasi)
+    expanded_results = expand_chunk_context(docs_to_process, window=1)
+
+    # Rerank dokumen yang SUDAH di-expand untuk akurasi maksimal
     reranked_results = await rerank_results(query, expanded_results, top_k=top_k)
+    
     return reranked_results
 
 
