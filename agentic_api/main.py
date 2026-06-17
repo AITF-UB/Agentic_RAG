@@ -31,6 +31,7 @@ import uvicorn
 import os
 import traceback
 import uuid
+import secrets
 from typing import List, Any, Dict, Optional
 from enum import Enum
 from datetime import datetime, timedelta
@@ -42,9 +43,13 @@ os.environ["FOR_DISABLE_CONSOLE_CTRL_HANDLER"] = "1"
 
 from fastapi import (
     BackgroundTasks, FastAPI, File, Form,
-    HTTPException, UploadFile,
+    HTTPException, UploadFile, Request, Depends
 )
 from fastapi.responses import JSONResponse
+from fastapi.security import APIKeyHeader
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
@@ -253,20 +258,43 @@ async def lifespan(app: FastAPI):
     yield
     print("Shutting down...")
 
+api_key_scheme = APIKeyHeader(name="X-API-Key", auto_error=False)
+
 app = FastAPI(
     title       = "Beta Agentic SR API + RAG Pipeline",
     description = "Unified microservice: Konten/RAG endpoints + Pipeline PDF → Qdrant (Docling + VLM + BGE-M3 + SPLADE).",
     version     = "4.0",
     lifespan    = lifespan,
+    dependencies= [Depends(api_key_scheme)]
 )
+
+allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "*")
+allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
+allow_credentials = "*" not in allowed_origins
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+API_KEY = os.getenv("API_KEY", "default-internal-secret-key")
+if API_KEY == "default-internal-secret-key":
+    print("⚠️ WARNING: Menggunakan default API_KEY. Sangat tidak disarankan untuk production!")
+
+@app.middleware("http")
+async def api_key_middleware(request: Request, call_next):
+    if request.url.path not in ["/health", "/docs", "/openapi.json"] and not request.url.path.startswith("/extraction"):
+        api_key = request.headers.get("X-API-Key", "")
+        if not secrets.compare_digest(api_key.encode("utf8"), API_KEY.encode("utf8")):
+            return JSONResponse(status_code=401, content={"detail": "Invalid API Key"})
+    return await call_next(request)
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")))
 llm = get_llm()
@@ -302,7 +330,8 @@ def health_check():
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/konten/generate", tags=["Konten"])
-async def generate_konten(req: GenerateRequest):
+@limiter.limit("24/minute")
+async def generate_konten(request: Request, req: GenerateRequest):
     try:
         # Menyiapkan State Awal untuk Graf
         initial_state = {
@@ -336,7 +365,8 @@ async def generate_konten(req: GenerateRequest):
         }
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"GEN_ERROR: {str(e)}")
+        print(f"Internal Error in generate_konten: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error during content generation.")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -344,7 +374,8 @@ async def generate_konten(req: GenerateRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/sesi/summary", tags=["Sesi"])
-def generate_summary(req: SesiSummaryRequest):
+@limiter.limit("24/minute")
+def generate_summary(request: Request, req: SesiSummaryRequest):
     try:
         prompt = load_prompt(
             "summary.j2",
@@ -366,7 +397,8 @@ def generate_summary(req: SesiSummaryRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/siswa/quiz/essay", tags=["Quiz"])
-def submit_essay(req: List[EssayEvalItem]):
+@limiter.limit("24/minute")
+def submit_essay(request: Request, req: List[EssayEvalItem]):
     try:
         evaluasi_hasil = []
         total_skor = 0
@@ -398,7 +430,8 @@ def submit_essay(req: List[EssayEvalItem]):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/rag/rekomendasi", tags=["RAG"])
-def rekomendasi(req: RekomendasiRequest):
+@limiter.limit("24/minute")
+def rekomendasi(request: Request, req: RekomendasiRequest):
     try:
         prompt = load_prompt(
             "rekomendasi.j2",
@@ -411,10 +444,12 @@ def rekomendasi(req: RekomendasiRequest):
         content = clean_json_from_llm(res.content)
         return content
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"REKOM_ERR: {str(e)}")
+        print(f"Internal Error in rekomendasi: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error during recommendation.")
 
 @app.post("/rag/insight", tags=["RAG"])
-def insight(req: InsightRequest):
+@limiter.limit("24/minute")
+def insight(request: Request, req: InsightRequest):
     try:
         prompt = load_prompt(
             "insight.j2",
@@ -430,7 +465,8 @@ def insight(req: InsightRequest):
         content = clean_json_from_llm(res.content)
         return content
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"INSIGHT_ERR: {str(e)}")
+        print(f"Internal Error in insight: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error during insight generation.")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -438,7 +474,9 @@ def insight(req: InsightRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/pipeline/upload", response_model=JobInfo, status_code=202, tags=["Pipeline"])
+@limiter.limit("24/minute")
 async def upload_and_run(
+    request: Request,
     background_tasks: BackgroundTasks,
     file:             UploadFile = File(..., description="File PDF yang akan diproses"),
     # Parameter opsional
@@ -461,6 +499,9 @@ async def upload_and_run(
     # Validasi tipe file
     if not file.filename or not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Hanya file PDF yang diterima.")
+
+    if file.size and file.size > 20 * 1024 * 1024:
+        raise HTTPException(status_code=413, detail="File too large. Max size is 20MB.")
 
     # Simpan file yang di-upload
     safe_name = Path(file.filename).name  # Hindari path traversal
@@ -493,7 +534,9 @@ async def upload_and_run(
 # ── Run Specific Step (tanpa upload ulang) ─────────────────────────────────
 
 @app.post("/pipeline/step", response_model=JobInfo, status_code=202, tags=["Pipeline"])
+@limiter.limit("24/minute")
 async def run_step(
+    request: Request,
     background_tasks: BackgroundTasks,
     params: PipelineParams,
     filename: Optional[str] = None,

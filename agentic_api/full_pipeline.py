@@ -106,9 +106,9 @@ class PipelineConfig:
     sparse_model_name:  str = _env_str("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
     # ── Qdrant ────────────────────────────────────────────────────────────────
-    qdrant_host:      str  = "76.13.195.1"
-    qdrant_port:      int  = 6333
-    collection_name:  str  = "test_pipeline"
+    qdrant_host:      str  = _env_str("QDRANT_HOST", "76.13.195.1")
+    qdrant_port:      int  = int(_env_str("QDRANT_PORT", "6333"))
+    collection_name:  str  = _env_str("QDRANT_PIPELINE_EKSTRACTION", "test_pipeline")
     qdrant_timeout:   int  = 60
     force_reindex:    bool = False
     batch_size:       int  = 32

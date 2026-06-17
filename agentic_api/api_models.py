@@ -4,18 +4,18 @@ from typing import Any, Dict, List, Optional
 
 # --- Generate Models ---
 class GenerateRequest(BaseModel):
-    mapel_id: str
-    elemen_id: str
-    elemen_label: str
-    materi: Optional[str] = ""
-    materi_id: Optional[str] = ""
-    kelas_id: Optional[str] = ""
-    jenjang: str
+    mapel_id: str = Field(max_length=100)
+    elemen_id: str = Field(max_length=100)
+    elemen_label: str = Field(max_length=200)
+    materi: Optional[str] = Field("", max_length=1000)
+    materi_id: Optional[str] = Field("", max_length=100)
+    kelas_id: Optional[str] = Field("", max_length=50)
+    jenjang: str = Field(max_length=50)
     atp: Optional[List[str]] = Field(default_factory=list)
-    tipe: str = Field(description="pretest, bacaan, quiz_pg, quiz_essay, flashcard, mindmap")
-    level: Optional[str] = Field(default=None, description="Low, Mid, or High (Null for mindmap)")
-    instruksi_revisi: Optional[str] = None
-    konten_id: Optional[str] = None
+    tipe: str = Field(description="pretest, bacaan, quiz_pg, quiz_essay, flashcard, mindmap", max_length=50)
+    level: Optional[str] = Field(default=None, description="Low, Mid, or High (Null for mindmap)", max_length=20)
+    instruksi_revisi: Optional[str] = Field(None, max_length=1000)
+    konten_id: Optional[str] = Field(None, max_length=100)
 
 # --- Quiz Submission Models ---
 # --- Summary Sesi Model ---
