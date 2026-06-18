@@ -1,0 +1,106 @@
+[TUGAS]
+
+Buat materi pembelajaran dalam format JSON.
+
+[SKEMA_KELUARAN]
+
+{
+"judul_utama": "",
+"konten_markdown": ""
+}
+
+[KONFIGURASI_LEVEL]
+
+{LEVEL_CONFIGURATION}
+
+[KONFIGURASI_MATA_PELAJARAN]
+
+{SUBJECT_CONFIGURATION}
+
+[KONTEKS_PEMBELAJARAN]
+
+{context}
+
+[ATP]
+
+{atp}
+
+[STRUKTUR_MATERI]
+
+Materi wajib mengikuti urutan:
+
+1. Apersepsi
+2. Pengembangan konsep
+3. Penjelasan teknis atau formulasi (jika relevan)
+4. Studi kasus
+5. Refleksi
+
+Struktur di atas hanya panduan internal dan tidak boleh ditampilkan dalam hasil.
+
+[PRINSIP_PEMBELAJARAN]
+
+* Utamakan pemahaman praktis sebelum abstraksi.
+* Bangun konsep dari konteks menuju teori.
+* Utamakan kedalaman pembahasan dibanding banyaknya contoh.
+
+[APERSEPSI]
+
+Hubungkan dengan permasalahan sehari-hari yang memicu keingintahuan siswa.
+Hindari salam, pertanyaan retoris, dan filler.
+
+[PENGEMBANGAN_KONSEP]
+
+Jelaskan konsep secara runtut, jelas, dan sesuai konfigurasi level.
+
+[PENJELASAN_TEKNIS]
+
+STEM:
+
+* tampilkan rumus atau formulasi yang relevan dari materi sumber menggunakan LaTeX
+* jelaskan simbol atau variabel yang digunakan
+
+Non-STEM:
+
+* jelaskan hubungan antar konsep
+
+[STUDI_KASUS]
+
+Gunakan satu studi kasus utama yang relevan dengan materi.
+Bahas secara bertahap: konteks → analisis bertahap → kesimpulan.
+Tunjukkan penerapan konsep pada studi kasus tersebut.
+Jika tersedia, kembangkan contoh dari materi sumber.
+Hindari studi kasus tambahan yang tidak berkaitan.
+
+[REFLEKSI]
+
+Akhiri dengan refleksi nilai-nilai karakter yang menghubungkan kembali ide utama pembelajaran.
+Jika level pembelajaran menuntut evaluasi, refleksi, atau pengambilan keputusan, tampilkan proses berpikir tersebut pada bagian ini.
+
+[JUDUL_DAN_SUBJUDUL]
+
+* Judul dan subjudul harus deskriptif, formal, dan sesuai isi materi.
+* Jangan menggunakan nama struktur internal pembelajaran.
+
+[PENYAJIAN_VISUAL]
+
+Wajib menggunakan masing-masing minimal satu kali:
+
+* bullet list → karakteristik, komponen, langkah, manfaat, atau poin penting
+* tabel → perbandingan konsep, kategori, contoh, atau data
+* blockquote → definisi, kesimpulan, atau insight penting
+* penebalan teks → istilah, konsep, variabel, atau kata kunci utama
+
+[PENGGUNAAN_EMOJI]
+
+Wajib menggunakan minimal 4 emoji fungsional yang tersebar pada:
+
+* subjudul
+* konsep penting
+* informasi penting
+* studi kasus
+* refleksi
+
+Hindari penggunaan emoji yang hanya bersifat dekoratif.
+
+[BATASAN]
+Hindari instruksi atau struktur internal muncul pada konten.

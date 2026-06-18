@@ -146,6 +146,39 @@ def get_rag_context_for_revision(state: AgentState) -> str:
         return ""
     return state.get("rag_context", "")
 
+def get_context_with_header(state: AgentState) -> str:
+    req = state.get("request_params", {})
+    level = state.get("level")
+    raw_context = get_rag_context_for_revision(state)
+    
+    level_upper = (level or "").upper()
+    mapping = {"LOW": "LOTS", "MID": "MOTS", "HIGH": "HOTS"}
+    internal_level = mapping.get(level_upper, level_upper)
+
+    mapel = req.get("mapel_id", "")
+    bab = req.get("elemen_label", "")
+    sub_bab = req.get("materi", "")
+
+    header_parts = []
+    if mapel: header_parts.append(f"Mapel: {mapel}")
+    if bab: header_parts.append(f"Bab: {bab}")
+    if sub_bab: header_parts.append(f"Sub Bab: {sub_bab}")
+    
+    header = " | ".join(header_parts)
+    if internal_level and internal_level.lower() != "none" and internal_level != "":
+        if header:
+            header += f" | Target: {internal_level}"
+        else:
+            header = f"Target: {internal_level}"
+            
+    context_parts = []
+    if header:
+        context_parts.append(header)
+    if raw_context:
+        context_parts.append(f"\n--- MATERI ---\n{raw_context}")
+        
+    return "\n".join(context_parts)
+
 async def _call_generation_llm(state: AgentState, usr_prompt: str) -> dict:
     req = state["request_params"]
     lvl = state["level"]
@@ -197,7 +230,7 @@ async def bacaan_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("bacaan", lvl)
     subject_config = compile_subject_registry("bacaan", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, subject_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def pretest_node(state: AgentState) -> dict:
@@ -205,7 +238,7 @@ async def pretest_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("pretest", lvl)
     subject_config = compile_subject_registry("pretest", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
+    usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def quiz_pg_node(state: AgentState) -> dict:
@@ -213,7 +246,7 @@ async def quiz_pg_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("quiz_pg", lvl)
     subject_config = compile_subject_registry("quiz_pg", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
+    usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def quiz_essay_node(state: AgentState) -> dict:
@@ -221,7 +254,7 @@ async def quiz_essay_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("quiz_essay", lvl)
     subject_config = compile_subject_registry("quiz_essay", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
+    usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def flashcard_node(state: AgentState) -> dict:
@@ -229,7 +262,7 @@ async def flashcard_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("flashcard", lvl)
     subject_config = compile_subject_registry("flashcard", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), context=get_rag_context_for_revision(state), atp=req.get("atp", ""), level=lvl, level_config=level_config)
+    usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), context=get_context_with_header(state), atp=req.get("atp", ""), level=lvl, level_config=level_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def mindmap_node(state: AgentState) -> dict:
@@ -237,7 +270,7 @@ async def mindmap_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("mindmap", lvl)
     subject_config = compile_subject_registry("mindmap", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("mindmap.j2", context=get_rag_context_for_revision(state), atp=req.get("atp", ""))
+    usr_prompt = load_prompt("mindmap.j2", context=get_context_with_header(state), atp=req.get("atp", ""))
     return await _call_generation_llm(state, usr_prompt)
 
 async def evaluator_node(state: AgentState) -> dict:
