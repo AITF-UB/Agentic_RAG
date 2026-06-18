@@ -1,0 +1,85 @@
+services:
+  agentic_api:
+    build: ./agentic_api
+    container_name: agentic_api
+    command: >
+      gunicorn main:app
+      -w 1
+      -k uvicorn.workers.UvicornWorker
+      --bind 0.0.0.0:8002
+      --timeout 600
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./agentic_api/.env:/app/.env
+      - ./extraction:/app/extraction
+      - ./agentic_api/templates:/app/templates
+      - ./agentic_api/bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
+      - ./uploads:/app/uploads
+      - ./pipeline_output:/app/pipeline_output
+      - ./chunks:/app/chunks
+      - ./outputs:/app/outputs
+    env_file:
+      - ./.env
+    environment:
+      - MODEL_API_URL=http://model_api:8003
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 6G
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis_broker
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  celery_worker:
+    build: ./agentic_api
+    container_name: agentic_celery_worker
+    command: celery -A celery_app worker --loglevel=info
+    volumes:
+      - ./agentic_api/.env:/app/.env
+      - ./extraction:/app/extraction
+      - ./agentic_api/templates:/app/templates
+      - ./agentic_api/bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
+      - ./uploads:/app/uploads
+      - ./pipeline_output:/app/pipeline_output
+      - ./chunks:/app/chunks
+      - ./outputs:/app/outputs
+    env_file:
+      - ./agentic_api/.env
+    environment:
+      - MODEL_API_URL=http://model_api:8003
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    depends_on:
+      - redis
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+
+  model_api:
+    build: ./model_api
+    container_name: model_api
+    command: >
+      gunicorn model_api:app
+      -w 1
+      -k uvicorn.workers.UvicornWorker
+      --bind 0.0.0.0:8003
+      --timeout 600
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./.env:/app/.env
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 8G

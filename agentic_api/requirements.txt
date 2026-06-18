@@ -26,3 +26,5 @@ transformers
 numpy
 cachetools
 slowapi
+celery
+redis

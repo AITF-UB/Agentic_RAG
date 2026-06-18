@@ -1,0 +1,126 @@
+###Language Specification:
+Bahasa Indonesia - Konten yang dievaluasi dan feedback yang diberikan harus dalam Bahasa Indonesia.
+
+###Task Description:
+An instruction (might include an Input inside it), a response to evaluate, a reference context (RAG), and a score rubric representing evaluation criteria are given.
+1. Write a detailed feedback that assesses the quality of the response strictly based on the given score rubric, not evaluating in general.
+2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
+3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
+4. Please do not generate any other opening, closing, and explanations.
+
+###The instruction to evaluate:
+Anda adalah evaluator kualitas untuk konten pendidikan yang dihasilkan oleh sistem RAG.
+Evaluasi konten berdasarkan kriteria yang telah ditentukan dan berikan skor 1-5.
+
+**Target Material:** {{ materi }}
+**Target ATP:** {{ atp }}
+**Target Level:** {{ level }}
+**Content Type:** {{ tipe }}
+
+###Response to evaluate:
+{{ generated_content }}
+
+###Reference Context (RAG - Source of Truth):
+{{ rag_context }}
+
+###Score Rubrics:
+[Content Accuracy & Material Alignment]
+Score 1: Konten sepenuhnya tidak relevan dengan materi target, fakta salah, dan tidak sesuai dengan konteks RAG.
+Score 2: Konten sebagian besar tidak sesuai materi, beberapa fakta salah, hanya sedikit menggunakan konteks RAG.
+Score 3: Konten cukup sesuai materi tetapi ada beberapa ketidakakuratan, menggunakan konteks RAG secara parsial.
+Score 4: Konten relevan dengan materi,大部分 akurat, dan memanfaatkan konteks RAG dengan baik.
+Score 5: Konten sepenuhnya akurat, sangat relevan dengan materi target, dan memanfaatkan konteks RAG secara optimal.
+
+[Difficulty Level Alignment (C1-C6)]
+Score 1: Tingkat kesulitan sama sekali tidak sesuai dengan target level ({{ level }}), terlalu mudah atau terlalu sulit.
+Score 2: Tingkat kesulitan kurang sesuai dengan target level, ada ketidakseimbangan yang signifikan.
+Score 3: Tingkat kesulitan cukup sesuai dengan target level, tetapi ada beberapa ketidaksesuaian.
+Score 4: Tingkat kesulitan mostly sesuai dengan target level, hanya beberapa aspek yang perlu penyesuaian.
+Score 5: Tingkat kesulitan sepenuhnya sesuai dengan target level ({{ level }}), sangat tepat untuk siswa.
+
+[Format Validity & Structure]
+Score 1: Format tidak valid, tidak dapat dibaca/diterima, tidak ada struktur yang jelas.
+Score 2: Format sebagian besar tidak valid, struktur tidak konsisten, banyak kesalahan format.
+Score 3: Format cukup valid tetapi ada beberapa kesalahan, struktur cukup jelas.
+Score 4: Format mostly valid dengan struktur yang jelas, hanya beberapa minor issues.
+Score 5: Format sepenuhnya valid, struktur sangat jelas dan konsisten, siap digunakan.
+
+[Language Quality & Clarity]
+Score 1: Bahasa sangat buruk, tidak komunikatif, banyak kesalahan gramatikal dan diksi.
+Score 2: Bahasa kurang baik, beberapa kesalahan gramatikal, diksi tidak tepat.
+Score 3: Bahasa cukup baik, tetapi ada beberapa masalah gramatikal atau diksi yang perlu perbaikan.
+Score 4: Bahasa mostly baik, komunikatif, hanya beberapa minor issues.
+Score 5: Bahasa sangat baik, komunikatif, gramatikal sempurna, diksi tepat.
+
+[Pedagogical Effectiveness]
+Score 1: Tidak efektif untuk pembelajaran, tidak membantu pemahaman siswa, tidak sesuai prinsip pedagogis.
+Score 2: Kurang efektif, pemahaman siswa terbatas, beberapa aspek pedagogis tidak terpenuhi.
+Score 3: Cukup efektif, pemahaman cukup terbantu, aspek pedagogis dasar terpenuhi.
+Score 4: Mostly efektif, pemahaman siswa terbantu dengan baik, sebagian besar prinsip pedagogis terpenuhi.
+Score 5: Sangat efektif, sangat membantu pemahaman siswa, sepenuhnya sesuai prinsip pedagogis terbaik.
+
+###Type-Specific Score Rubrics:
+
+{% if 'pilihan ganda' in tipe|lower or 'pg' in tipe|lower or 'quiz' in tipe|lower %}
+[QUIZ-SPECIFIC CRITERIA]
+
+[Distractor Quality & Construction]
+Score 1: Semua distraktor salah/tidak masuk akal, jawaban benar terlalu jelas, struktur pertanyaan ambigu.
+Score 2: Sebagian besar distraktor tidak efektif, tidak homogen, terlalu mudah ditebak, ada kesalahan konstruksi.
+Score 3: Beberapa distraktor cukup baik, tetapi ada yang terlalu jelas salah atau tidak homogen, konstruksi cukup baik.
+Score 4: Sebagian besar distraktor efektif, cukup homogen, tidak terlalu mudah ditebak, konstruksi mostly baik.
+Score 5: Semua distraktor sangat efektif, homogen, plausible, dan tidak terlalu jelas salah, konstruksi sempurna.
+
+{% elif 'essay' in tipe|lower or 'uraian' in tipe|lower %}
+[ESSAY-SPECIFIC CRITERIA]
+
+[Rubric Clarity & Answer Key]
+Score 1: Tidak ada rubrik penilaian, tidak ada answer key, kriteria tidak jelas.
+Score 2: Rubrik ada tetapi tidak jelas, tidak terukur, answer key tidak lengkap.
+Score 3: Rubrik cukup jelas tetapi beberapa kriteria tidak terukur, answer key cukup lengkap.
+Score 4: Rubrik mostly jelas dan terukur, answer key mostly lengkap, hanya beberapa aspek perlu perbaikan.
+Score 5: Rubrik sangat jelas, terukur, dengan gradasi skor yang logis, answer key sangat lengkap dan spesifik.
+
+{% elif 'flashcard' in tipe|lower %}
+[FLASHCARD-SPECIFIC CRITERIA]
+
+[Microlearning Effectiveness & Content Relevance]
+Score 1: Konten terlalu panjang, tidak fokus, tidak relevan dengan topik utama, tidak efektif untuk microlearning.
+Score 2: Konten cukup panjang, fokus kurang, beberapa kartu tidak efektif atau tidak relevan.
+Score 3: Konten cukup fokus, tetapi beberapa kartu terlalu panjang atau kurang relevan, sebagian besar efektif.
+Score 4: Konten mostly fokus dan efektif, sangat relevan, hanya beberapa kartu yang perlu penyesuaian.
+Score 5: Konten sangat fokus, ringkas, sangat relevan dengan topik utama, sangat efektif untuk microlearning.
+
+{% elif 'mind map' in tipe|lower or 'mindmap' in tipe|lower %}
+[MIND MAP-SPECIFIC CRITERIA]
+
+[Structure Hierarchy & Keyword Density]
+Score 1: Struktur tidak logis, tidak ada hierarki, hanya paragraf panjang, keyword tidak ada.
+Score 2: Struktur kurang logis, hierarki tidak jelas, terlalu banyak teks, keyword jarang digunakan.
+Score 3: Struktur cukup logis, hierarki cukup jelas, beberapa node terlalu panjang, beberapa node gunakan keyword.
+Score 4: Struktur mostly logis dengan hierarki jelas, sebagian besar node menggunakan keyword, beberapa minor issues.
+Score 5: Struktur sangat logis dengan hierarki sangat jelas, semua node menggunakan keyword padat, material sangat lengkap.
+
+{% elif 'modul' in tipe|lower or 'materi' in tipe|lower or 'rekomendasi' in tipe|lower %}
+[MODUL/MATERI-SPECIFIC CRITERIA]
+
+[Independent Study Suitability & Content Completeness]
+Score 1: Tidak cocok untuk belajar mandiri, memerlukan bantuan eksternal yang banyak, alur sangat tidak jelas.
+Score 2: Kurang cocok untuk belajar mandiri, alur tidak jelas, memerlukan beberapa bantuan, content kurang lengkap.
+Score 3: Cukup cocok untuk belajar mandiri, alur cukup jelas, tetapi masih memerlukan beberapa bantuan, content cukup lengkap.
+Score 4: Mostly cocok untuk belajar mandiri, alur jelas, content mostly lengkap dan sistematis, hanya beberapa bagian perlu perbaikan.
+Score 5: Sangat cocok untuk belajar mandiri, alur sangat jelas, siswa dapat belajar dengan minimal bantuan, content sangat lengkap dan sistematis.
+
+{% else %}
+[DEFAULT CRITERIA]
+
+[Material Relevance & Cognitive Alignment]
+Score 1: Konten sama sekali tidak relevan dengan materi "{{ materi }}", tingkat kesulitan tidak sesuai dengan {{ level }}.
+Score 2: Konten kurang relevan, tingkat kesulitan tidak sesuai, banyak aspek yang perlu perbaikan.
+Score 3: Konten cukup relevan, tingkat kesulitan cukup sesuai, tetapi ada beberapa ketidaksesuaian.
+Score 4: Konten mostly relevan, tingkat kesulitan mostly sesuai dengan {{ level }}, hanya beberapa aspek perlu perbaikan.
+Score 5: Konten sangat relevan dengan "{{ materi }}", tingkat kesulitan sepenuhnya sesuai dengan {{ level }}.
+
+{% endif %}
+
+###Feedback:

@@ -29,4 +29,38 @@ services:
     deploy:
       resources:
         limits:
+          memory: 6G
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis_broker
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  celery_worker:
+    build: .
+    container_name: agentic_celery_worker
+    command: celery -A celery_app worker --loglevel=info
+    volumes:
+      - ./.env:/app/.env
+      - ../extraction:/app/extraction
+      - ./templates:/app/templates
+      - ./bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
+      - ../uploads:/app/uploads
+      - ../pipeline_output:/app/pipeline_output
+      - ../chunks:/app/chunks
+      - ../outputs:/app/outputs
+    env_file:
+      - ./.env
+    environment:
+      - MODEL_API_URL=http://model_api:8003
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    depends_on:
+      - redis
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
           memory: 8G

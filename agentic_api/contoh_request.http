@@ -1,5 +1,5 @@
 ### BASE URL
-@baseUrl = http://localhost:8000
+@baseUrl = http://localhost:8002
 
 ### =================================================================
 ### TASK: BACAAN
