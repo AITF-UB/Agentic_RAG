@@ -1,7 +1,7 @@
 {
   "pdf_name": "somatosensory",
   "total_pages": 4,
-  "extracted_at": "2026-06-10T18:53:14.619380",
+  "extracted_at": "2026-06-19T00:19:56.309301",
   "elements": [
     {
       "type": "section_header",
@@ -26,7 +26,7 @@
     {
       "type": "text",
       "page": 1,
-      "text": "Sensory information from Meissner corpuscles and rapidly adapting afferents leads to adjustment of grip force when objects  are  lifted.  These  afferents  respond  with  a  brief burst of action potentials when objects move a small distance  during  the  early  stages  of  lifting.  In  response  to"
+      "text": "Sensory information from Meissner corpuscles and rapidly adapting afferents leads to adjustment of grip force when objects  are  lifted.  These  afferents  respond  with  a  brief burst of action potentials when objects move a small distance  during  the  early  stages  of  lifting.  In  response  to This is a sample document to showcase page-based formatting. It contains a chapter from a Wikibook called Sensory Systems. None of the content has been changed in this article, but some content has been removed."
     },
     {
       "type": "picture",
@@ -34,11 +34,6 @@
       "img_path": "pipeline_output\\outputs\\extracted\\somatosensory\\extracted_assets\\picture_p001_001.png",
       "img_rel": "extracted_assets/picture_p001_001.png",
       "description": null
-    },
-    {
-      "type": "text",
-      "page": 1,
-      "text": "This is a sample document to showcase page-based formatting. It contains a chapter from a Wikibook called Sensory Systems. None of the content has been changed in this article, but some content has been removed."
     },
     {
       "type": "section_header",
@@ -75,7 +70,7 @@
     {
       "type": "text",
       "page": 2,
-      "text": "Nociceptors  have  free  nerve  endings.  Functionally,  skin nociceptors  are  either  high-threshold  mechanoreceptors or polymodal receptors .  Polymodal receptors respond not"
+      "text": "Nociceptors  have  free  nerve  endings.  Functionally,  skin nociceptors  are  either  high-threshold  mechanoreceptors or polymodal receptors .  Polymodal receptors respond not only to intense mechanical stimuli, but also to heat and to noxious chemicals. These receptors respond to minute punctures of the epithelium, with a response magnitude that depends on the degree of tissue deformation. They also respond to temperatures in the range of 40-60°C, and change their response rates as a linear function of warming (in contrast with the saturating responses displayed by non-noxious thermoreceptors at high temperatures)."
     },
     {
       "type": "table",
@@ -83,11 +78,6 @@
       "img_path": "pipeline_output\\outputs\\extracted\\somatosensory\\extracted_assets\\table_p003_003.png",
       "img_rel": "extracted_assets/table_p003_003.png",
       "description": null
-    },
-    {
-      "type": "text",
-      "page": 3,
-      "text": "only to intense mechanical stimuli, but also to heat and to noxious chemicals. These receptors respond to minute punctures of the epithelium, with a response magnitude that depends on the degree of tissue deformation. They also respond to temperatures in the range of 40-60°C, and change their response rates as a linear function of warming (in contrast with the saturating responses displayed by non-noxious thermoreceptors at high temperatures)."
     },
     {
       "type": "text",
@@ -102,12 +92,7 @@
     {
       "type": "text",
       "page": 3,
-      "text": "Scattered throughout virtually every striated muscle in the body are long, thin, stretch receptors called muscle spindles. They are quite simple in principle, consisting of a few small muscle fibers with a capsule surrounding the middle third of the fibers. These fibers are called intrafusal fibers , in contrast to the ordinary extrafusal fibers . The ends of the intrafusal fibers are attached to extrafusal fibers, so whenever the muscle is stretched, the intrafusal fibers are also stretched. The central region of each intrafusal fiber has"
-    },
-    {
-      "type": "text",
-      "page": 3,
-      "text": "Notice how figure captions and sidenotes are shown in the outside margin (on the left or right, depending on whether the page is left or right). Also, figures are floated to the top/ bottom of the page. Wide content, like the table and Figure 3, intrude into the outside margins."
+      "text": "Scattered throughout virtually every striated muscle in the body are long, thin, stretch receptors called muscle spindles. They are quite simple in principle, consisting of a few small muscle fibers with a capsule surrounding the middle third of the fibers. These fibers are called intrafusal fibers , in contrast to the ordinary extrafusal fibers . The ends of the intrafusal fibers are attached to extrafusal fibers, so whenever the muscle is stretched, the intrafusal fibers are also stretched. The central region of each intrafusal fiber has Notice how figure captions and sidenotes are shown in the outside margin (on the left or right, depending on whether the page is left or right). Also, figures are floated to the top/ bottom of the page. Wide content, like the table and Figure 3, intrude into the outside margins."
     },
     {
       "type": "section_header",

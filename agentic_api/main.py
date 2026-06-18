@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import uvicorn
 import os
+import sys
 import traceback
 import uuid
 from typing import List, Any, Dict, Optional
@@ -78,12 +79,24 @@ from graph import beta_graph
 from llm import get_llm, get_eval_llm
 from tools import clean_json_from_llm
 
+# ── Pastikan agentic_api/ ada di sys.path (agar import berfungsi dari mana pun) ──
+_THIS_DIR = Path(__file__).parent.resolve()
+if str(_THIS_DIR) not in sys.path:
+    sys.path.insert(0, str(_THIS_DIR))
+
 # ── Import pipeline ──────────────────────────────────────────────────────────
 try:
-    from full_pipeline import PipelineConfig, run_full_pipeline
+    from full_pipeline import (
+        PipelineConfig, run_full_pipeline,
+        DEFAULT_VLM_MODEL, DEFAULT_VLM_HOST, DEFAULT_DENSE_MODEL, DEFAULT_SPARSE_MODEL,
+    )
     PIPELINE_AVAILABLE = True
 except ImportError:
     PIPELINE_AVAILABLE = False
+    DEFAULT_VLM_MODEL   = os.getenv("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
+    DEFAULT_VLM_HOST    = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
+    DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
+    DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -93,11 +106,6 @@ except ImportError:
 UPLOAD_DIR  = Path("uploads")          # PDF yang di-upload disimpan di sini
 OUTPUT_DIR  = Path("pipeline_output")  # Output pipeline
 CHUNKS_DIR  = Path("chunks")           # Output JSONL chunks
-
-DEFAULT_OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5vl:7b")
-DEFAULT_OLLAMA_HOST  = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
-DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
-DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
 UPLOAD_DIR.mkdir(exist_ok=True)
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -151,8 +159,8 @@ class PipelineParams(BaseModel):
     id_kelas:         Optional[str] = Field(None, description="ID Kelas")
     jenjang:          Optional[str] = Field(None, description="Jenjang Kelas")
     id_guru:          Optional[str] = Field(None, description="ID Guru")
-    vlm_model:        str  = Field(DEFAULT_OLLAMA_MODEL, description="Nama model Ollama untuk VLM")
-    ollama_host:      str  = Field(DEFAULT_OLLAMA_HOST,  description="URL server Ollama")
+    vlm_model:        str  = Field(DEFAULT_VLM_MODEL, description="Nama model VLM (OpenAI-compatible API)")
+    ollama_host:      str  = Field(DEFAULT_VLM_HOST,  description="Base URL server VLM (OpenAI-compatible)")
     dense_model:      str  = Field(DEFAULT_DENSE_MODEL,  description="Model dense embedding")
     sparse_model:     str  = Field(DEFAULT_SPARSE_MODEL, description="Model sparse")
 
