@@ -361,15 +361,23 @@ def step1_extract(config: PipelineConfig) -> List[Path]:
             print(f"   💾 Struktur disimpan: {json_path}")
             print(f"   📊 {img_counter} gambar diekstrak — {elapsed}s")
 
-            shutil.move(str(original_pdf), str(config.done_folder / original_pdf.name))
-            print(f"   📦 PDF dipindah ke: {config.done_folder}/\n")
+            # Pindahkan PDF hanya jika mode batch (folder), bukan mode single-PDF (API upload).
+            # Pada mode API, file harus tetap di tempat agar re-run step lain tidak gagal.
+            if config.input_pdf is None:
+                shutil.move(str(original_pdf), str(config.done_folder / original_pdf.name))
+                print(f"   📦 PDF dipindah ke: {config.done_folder}/\n")
+            else:
+                print(f"   ✅ Mode single-PDF: file tetap di tempat.\n")
             json_paths.append(json_path)
 
         except Exception as e:
             elapsed = (datetime.now() - start_time).seconds
             print(f"   ❌ GAGAL [{pdf_name}]: {e} ({elapsed}s)")
-            shutil.move(str(original_pdf), str(config.failed_folder / original_pdf.name))
-            print(f"   📦 PDF dipindah ke: {config.failed_folder}/\n")
+            if config.input_pdf is None:
+                shutil.move(str(original_pdf), str(config.failed_folder / original_pdf.name))
+                print(f"   📦 PDF dipindah ke: {config.failed_folder}/\n")
+            else:
+                print(f"   ❌ Mode single-PDF: file tetap di tempat.\n")
 
         finally:
             # Hapus file PDF sementara (hasil pemotongan) jika ada
@@ -1557,13 +1565,30 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         ])
         return str(uuid.uuid5(uuid.NAMESPACE_URL, raw))
 
+    def _normalize_source_file_for_qdrant(raw: str) -> str:
+        """Normalisasi source_file sebelum disimpan ke Qdrant.
+
+        Logika HARUS identik dengan _normalize_source_file di tools.py
+        agar filter retriever selalu match dengan data yang tersimpan.
+
+        Contoh:
+          "Biologi_Kelas_X_FINAL_PAGINATED" → "biologi_kelas_x"
+          "Biologi_Kelas_X"                 → "biologi_kelas_x"
+        """
+        name = raw.strip().replace("\\", "/")
+        name = Path(name).stem
+        for suffix in ("_chunks", "_FINAL_PAGINATED", "_final_paginated", "_structure"):
+            if name.endswith(suffix):
+                name = name[: -len(suffix)]
+        return name.lower()
+
     def build_payload(doc):
         """
         Bangun payload Qdrant yang flat dan efisien.
 
         Field yang disimpan (tanpa duplikasi):
           page_content      - teks chunk
-          source_file       - nama file sumber (tanpa ekstensi)
+          source_file       - nama file sumber (dinormalisasi: lowercase, tanpa suffix pipeline)
           page              - nomor halaman
           chunk_index       - indeks chunk dalam dokumen
           mata_pelajaran    - mata pelajaran (dari config)
@@ -1588,9 +1613,13 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
                 for entry in visuals
             ] or False
 
+        # Normalisasi source_file agar konsisten dengan retriever filter
+        raw_source = meta.get("source_file", "unknown")
+        normalized_source = _normalize_source_file_for_qdrant(raw_source)
+
         payload = {
             "page_content":       doc["page_content"],
-            "source_file":        meta.get("source_file", "unknown"),
+            "source_file":        normalized_source,
             "page":               meta.get("page"),
             "chunk_index":        meta.get("chunk_index"),
             "mata_pelajaran":     meta.get("mata_pelajaran"),

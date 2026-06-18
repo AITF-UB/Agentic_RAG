@@ -29,10 +29,10 @@ get_sentence_model = get_dense_model
 # ================================================================
 # Models Configuration
 # ================================================================
-QDRANT_HOST        = os.getenv("QDRANT_HOST")
-if QDRANT_HOST.startswith("http://"):
+QDRANT_HOST        = os.getenv("QDRANT_HOST", "localhost")
+if QDRANT_HOST and QDRANT_HOST.startswith("http://"):
     QDRANT_HOST = QDRANT_HOST[7:]
-elif QDRANT_HOST.startswith("https://"):
+elif QDRANT_HOST and QDRANT_HOST.startswith("https://"):
     QDRANT_HOST = QDRANT_HOST[8:]
 QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
@@ -274,9 +274,20 @@ def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_r
             return []
 
 def _normalize_source_file(raw: str) -> str:
-    """Normalisasi source_file: hapus ekstensi file, path prefix & lowercase."""
+    """Normalisasi source_file: hapus ekstensi, path prefix, suffix pipeline & lowercase.
+
+    Menghasilkan nilai yang konsisten dari input apa pun:
+      - "Biologi_Kelas_X.pdf"                    → "biologi_kelas_x"
+      - "Biologi_Kelas_X_FINAL_PAGINATED"        → "biologi_kelas_x"
+      - "Biologi_Kelas_X_FINAL_PAGINATED_chunks" → "biologi_kelas_x"
+      - "biologi_kelas_x"                        → "biologi_kelas_x"
+    """
     name = raw.strip().replace("\\", "/")
-    name = Path(name).stem
+    name = Path(name).stem  # hapus ekstensi file jika ada
+    # Hapus suffix yang ditambahkan oleh pipeline (urutan penting: dari paling spesifik)
+    for suffix in ("_chunks", "_FINAL_PAGINATED", "_final_paginated", "_structure"):
+        if name.endswith(suffix):
+            name = name[: -len(suffix)]
     return name.lower()
 
 
@@ -311,13 +322,13 @@ def build_bm25_index():
                 _bm25_docs = cache["docs"]
                 cache_valid = True
                 print(f"📦 Loading BM25 dari cache (version {BM25_CACHE_VERSION}): {BM25_CACHE_PATH}")
+                return  # Cache valid, tidak perlu rebuild
             else:
                 print(f"⚠️ BM25 cache version mismatch (cache={cache.get('version')}, expected={BM25_CACHE_VERSION}). Building new index...")
         except Exception as e:
             print(f"⚠️ BM25 cache load error: {e}. Building new index...")
     
-    if not cache_valid:
-        print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
+    print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{TEXT_COLLECTION}/points/scroll"
     all_points = []
     offset = None
