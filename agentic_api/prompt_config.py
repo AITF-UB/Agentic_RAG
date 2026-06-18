@@ -121,7 +121,16 @@ def compile_leveling_registry(task_type: str, level: str = None) -> str:
                 sections.append(_compile_pretest_level_prose(lvl_key, lvl_data))
         return "\n\n".join(sections)
     elif level:
-        lvl_data = registry.get(level.upper())
+        # Map "Low", "Mid", "High" dari frontend (MVP) ke "LOTS", "MOTS", "HOTS"
+        level_upper = level.upper()
+        mapping = {
+            "LOW": "LOTS",
+            "MID": "MOTS",
+            "HIGH": "HOTS"
+        }
+        internal_level = mapping.get(level_upper, level_upper)
+
+        lvl_data = registry.get(internal_level)
         if not lvl_data:
             log.warning(f"Level '{level}' not found in leveling configuration")
             return ""
