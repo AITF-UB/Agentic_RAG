@@ -17,6 +17,10 @@ Endpoints:
   GET  /pipeline/jobs            → Daftar semua job
   DELETE /pipeline/job/{id}      → Hapus job dari riwayat
 
+  -- Chat Memory --
+  POST /chat-memory/ingest       → Simpan pasangan Q&A ke Qdrant
+  POST /chat-memory/retrieve     → Ambil histori chat relevan
+
   -- System --
   GET  /health                   → Health check
 
@@ -25,13 +29,12 @@ Cara menjalankan:
   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 """
 
-
+from __future__ import annotations
 
 import uvicorn
 import os
 import traceback
 import uuid
-import secrets
 from typing import List, Any, Dict, Optional
 from enum import Enum
 from datetime import datetime, timedelta
@@ -43,13 +46,9 @@ os.environ["FOR_DISABLE_CONSOLE_CTRL_HANDLER"] = "1"
 
 from fastapi import (
     BackgroundTasks, FastAPI, File, Form,
-    HTTPException, UploadFile, Request, Depends
+    HTTPException, UploadFile,
 )
 from fastapi.responses import JSONResponse
-from fastapi.security import APIKeyHeader
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.util import get_remote_address
-from slowapi.errors import RateLimitExceeded
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
@@ -64,6 +63,16 @@ from api_models import (
 
 from dotenv import load_dotenv
 load_dotenv()
+
+from chat_memory.schemas import (
+    IngestChatRequest,
+    RetrieveChatRequest,
+)
+from chat_memory.dependencies import (
+    embedding_service,
+    qdrant_service,
+    chunking_service,
+)
 
 from graph import beta_graph
 from llm import get_llm, get_eval_llm
@@ -258,47 +267,30 @@ async def lifespan(app: FastAPI):
     yield
     print("Shutting down...")
 
-api_key_scheme = APIKeyHeader(name="X-API-Key", auto_error=False)
-
 app = FastAPI(
     title       = "Beta Agentic SR API + RAG Pipeline",
     description = "Unified microservice: Konten/RAG endpoints + Pipeline PDF → Qdrant (Docling + VLM + BGE-M3 + SPLADE).",
     version     = "4.0",
     lifespan    = lifespan,
-    dependencies= [Depends(api_key_scheme)]
 )
 
-allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "*")
-allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
-allow_credentials = "*" not in allowed_origins
+import traceback
+from fastapi import Request
+from fastapi.responses import PlainTextResponse
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    tb = traceback.format_exc()
+    print(tb)
+    return PlainTextResponse(str(tb), status_code=500)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=allow_credentials,
+    allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-API_KEY = os.getenv("API_KEY", "default-internal-secret-key")
-if API_KEY == "default-internal-secret-key":
-    print("⚠️ WARNING: Menggunakan default API_KEY. Sangat tidak disarankan untuk production!")
-
-@app.middleware("http")
-async def api_key_middleware(request: Request, call_next):
-    # Biarkan CORS preflight (OPTIONS) lewat tanpa cek API Key
-    if request.method == "OPTIONS":
-        return await call_next(request)
-        
-    if request.url.path not in ["/health", "/docs", "/openapi.json"] and not request.url.path.startswith("/extraction"):
-        api_key = request.headers.get("X-API-Key", "")
-        if not secrets.compare_digest(api_key.encode("utf8"), API_KEY.encode("utf8")):
-            return JSONResponse(status_code=401, content={"detail": "Invalid API Key"})
-    return await call_next(request)
-
-limiter = Limiter(key_func=get_remote_address)
-app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")))
 llm = get_llm()
@@ -334,8 +326,7 @@ def health_check():
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/konten/generate", tags=["Konten"])
-@limiter.limit("24/minute")
-async def generate_konten(request: Request, req: GenerateRequest):
+async def generate_konten(req: GenerateRequest):
     try:
         # Menyiapkan State Awal untuk Graf
         initial_state = {
@@ -343,11 +334,7 @@ async def generate_konten(request: Request, req: GenerateRequest):
             "tipe": req.tipe,
             "level": req.level,
             "revision_count": 0,
-            "instruksi_revisi": req.instruksi_revisi,
-            "best_revision": None,
-            "best_evaluator_result": None,
-            "best_revision_score": None,
-            "best_revision_count": None
+            "instruksi_revisi": req.instruksi_revisi
         }
         
         # Mengeksekusi State Machine
@@ -358,11 +345,18 @@ async def generate_konten(request: Request, req: GenerateRequest):
         if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
             final_payload["konten_id"] = req.konten_id
             
-        return final_payload
+        return {
+            "data": {
+                "content": final_payload,
+                "mapel_id": req.mapel_id,
+                "elemen_id": req.elemen_id,
+                "materi_id": req.materi_id,
+                "level": req.level
+            }
+        }
         
     except Exception as e:
-        print(f"Internal Error in generate_konten: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error during content generation.")
+        raise HTTPException(status_code=500, detail=f"GEN_ERROR: {str(e)}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -370,8 +364,7 @@ async def generate_konten(request: Request, req: GenerateRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/sesi/summary", tags=["Sesi"])
-@limiter.limit("24/minute")
-def generate_summary(request: Request, req: SesiSummaryRequest):
+def generate_summary(req: SesiSummaryRequest):
     try:
         prompt = load_prompt(
             "summary.j2",
@@ -393,8 +386,7 @@ def generate_summary(request: Request, req: SesiSummaryRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/siswa/quiz/essay", tags=["Quiz"])
-@limiter.limit("24/minute")
-def submit_essay(request: Request, req: List[EssayEvalItem]):
+def submit_essay(req: List[EssayEvalItem]):
     try:
         evaluasi_hasil = []
         total_skor = 0
@@ -414,9 +406,9 @@ def submit_essay(request: Request, req: List[EssayEvalItem]):
             
             skor = hasil.get("skor", 0)
             total_skor += skor
-            evaluasi_hasil.append({"skor": skor})
+            evaluasi_hasil.append(hasil)
             
-        return {"data": {"total_skor": total_skor, "evaluasi": evaluasi_hasil}}
+        return {"total_skor": total_skor}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"EVAL_ERR: {str(e)}")
 
@@ -426,8 +418,7 @@ def submit_essay(request: Request, req: List[EssayEvalItem]):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/rag/rekomendasi", tags=["RAG"])
-@limiter.limit("24/minute")
-def rekomendasi(request: Request, req: RekomendasiRequest):
+def rekomendasi(req: RekomendasiRequest):
     try:
         prompt = load_prompt(
             "rekomendasi.j2",
@@ -440,12 +431,10 @@ def rekomendasi(request: Request, req: RekomendasiRequest):
         content = clean_json_from_llm(res.content)
         return content
     except Exception as e:
-        print(f"Internal Error in rekomendasi: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error during recommendation.")
+        raise HTTPException(status_code=500, detail=f"REKOM_ERR: {str(e)}")
 
 @app.post("/rag/insight", tags=["RAG"])
-@limiter.limit("24/minute")
-def insight(request: Request, req: InsightRequest):
+def insight(req: InsightRequest):
     try:
         prompt = load_prompt(
             "insight.j2",
@@ -461,8 +450,7 @@ def insight(request: Request, req: InsightRequest):
         content = clean_json_from_llm(res.content)
         return content
     except Exception as e:
-        print(f"Internal Error in insight: {e}")
-        raise HTTPException(status_code=500, detail="Internal server error during insight generation.")
+        raise HTTPException(status_code=500, detail=f"INSIGHT_ERR: {str(e)}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -470,9 +458,7 @@ def insight(request: Request, req: InsightRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/pipeline/upload", response_model=JobInfo, status_code=202, tags=["Pipeline"])
-@limiter.limit("24/minute")
 async def upload_and_run(
-    request: Request,
     background_tasks: BackgroundTasks,
     file:             UploadFile = File(..., description="File PDF yang akan diproses"),
     # Parameter opsional
@@ -495,9 +481,6 @@ async def upload_and_run(
     # Validasi tipe file
     if not file.filename or not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Hanya file PDF yang diterima.")
-
-    if file.size and file.size > 20 * 1024 * 1024:
-        raise HTTPException(status_code=413, detail="File too large. Max size is 20MB.")
 
     # Simpan file yang di-upload
     safe_name = Path(file.filename).name  # Hindari path traversal
@@ -530,9 +513,7 @@ async def upload_and_run(
 # ── Run Specific Step (tanpa upload ulang) ─────────────────────────────────
 
 @app.post("/pipeline/step", response_model=JobInfo, status_code=202, tags=["Pipeline"])
-@limiter.limit("24/minute")
 async def run_step(
-    request: Request,
     background_tasks: BackgroundTasks,
     params: PipelineParams,
     filename: Optional[str] = None,
@@ -600,6 +581,72 @@ def delete_job(job_id: str):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# CHAT MEMORY ENDPOINTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+CHAT_CHUNK_SIZE = 1800
+
+
+@app.post("/chat-memory/ingest", tags=["Chat Memory"])
+def ingest_chat_memory(request: IngestChatRequest):
+    """Simpan satu pasangan Q&A (user + assistant) ke Qdrant chat memory."""
+    page_content = f"""User:\n{request.user_message}\n\nAssistant:\n{request.assistant_message}""".strip()
+
+    chunks = [page_content] if len(page_content) <= CHAT_CHUNK_SIZE else chunking_service.split_text(page_content)
+
+    for idx, chunk in enumerate(chunks):
+        embedding = embedding_service.embed(chunk)
+        payload = {
+            "user_id":      request.user_id,
+            "sesi_id":      request.sesi_id,
+            "chat_id":      request.chat_id,
+            "chunk_index":  idx,
+            "total_chunks": len(chunks),
+            "page_content": chunk,
+        }
+        qdrant_service.insert(embedding=embedding, payload=payload)
+
+    return {
+        "status":       "success",
+        "user_id":      request.user_id,
+        "sesi_id":      request.sesi_id,
+        "chat_id":      request.chat_id,
+        "total_chunks": len(chunks),
+    }
+
+
+@app.post("/chat-memory/retrieve", tags=["Chat Memory"])
+def retrieve_chat_memory(request: RetrieveChatRequest):
+    """Ambil histori chat yang relevan berdasarkan query semantik."""
+    query_embedding = embedding_service.embed(request.query)
+
+    results = qdrant_service.search(
+        query_vector=query_embedding,
+        user_id=request.user_id,
+        sesi_id=request.sesi_id,
+        top_k=request.top_k,
+    )
+
+    formatted_results = [
+        {
+            "score":        r.score,
+            "page_content": r.payload.get("page_content"),
+            "metadata":     {k: v for k, v in r.payload.items() if k != "page_content"},
+        }
+        for r in results
+    ]
+
+    return {
+        "query":         request.query,
+        "user_id":       request.user_id,
+        "sesi_id":       request.sesi_id,
+        "top_k":         request.top_k,
+        "total_results": len(formatted_results),
+        "results":       formatted_results,
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # STATIC FILES
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -622,4 +669,6 @@ os.environ["LANGSMITH_PROJECT"] = "beta-agentic"
 # ══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.freeze_support()
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
