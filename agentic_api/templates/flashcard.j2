@@ -6,22 +6,11 @@ Buat tepat 5 flashcard dalam format JSON array.
 
 [
   {
-    "depan": "",
-    "belakang": ""  
+    "level": "LOTS/MOTS/HOTS",
+    "front": "",
+    "back": ""  
   }
 ]
-
-{% if image_context %}
-[MULTIMODAL IMAGE CONTEXT]
-{{ image_context }}
-
-*** ABSOLUTE INSTRUCTION FOR IMAGES ***
-The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
-If you want to include an image from the context in your generation, you MUST use markdown reference-style links.
-Format: ![Alt Text Singkat][IMG-001]
-Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
-Place the image naturally in the paragraph or section where it is most relevant.
-{% endif %}
 
 [KONFIGURASI_LEVEL]
 
@@ -29,7 +18,7 @@ Place the image naturally in the paragraph or section where it is most relevant.
 
 [KONTEKS_PEMBELAJARAN]
 
-{{ rag_context }}
+{{ context }}
 
 [ATP]
 
@@ -66,4 +55,3 @@ Level pembelajaran menentukan kedalaman isi, bukan mengubah flashcard menjadi so
 [PENGGUNAAN_EMOJI]
 
 * Emoji wajib digunakan untuk membantu pemahaman.
-

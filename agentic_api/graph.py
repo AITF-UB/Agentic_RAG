@@ -34,18 +34,18 @@ async def retrieve_node(state: AgentState) -> dict:
     mapel_mapping = {
         # Mapping berdasar ID (MVP)
         "1": "Bahasa Indonesia",
-        "2": "Bahasa Inggris",
-        "3": "Ilmu Pengetahuan Alam",
-        "4": "Ilmu Pengetahuan Sosial",
+        "2": "Bahasa Indonesia",
+        # "17": "Ilmu Pengetahuan Alam",
+        "17": "Ilmu Pengetahuan Sosial",
         "5": "Informatika",
         "6": "Koding dan Kecerdasan Artifisial",
-        "7": "Matematika",
+        "10": "Matematika",
         "8": "Pendidikan Agama Islam dan Budi Pekerti",
         "9": "Pendidikan Agama Katolik dan Budi Pekerti",
-        "10": "Pendidikan Agama Kristen dan Budi Pekerti",
+        # "10": "Pendidikan Agama Kristen dan Budi Pekerti",
         "11": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
         "12": "Pendidikan Pancasila",
-        "17": "Seni Musik",
+        # "17": "Seni Musik",
         "18": "Seni Rupa",
         "19": "Seni Tari",
         "20": "Seni Teater",
@@ -197,7 +197,7 @@ async def bacaan_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("bacaan", lvl)
     subject_config = compile_subject_registry("bacaan", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), image_context=state.get("image_context", ""), level=lvl, level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, subject_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def pretest_node(state: AgentState) -> dict:
@@ -205,7 +205,7 @@ async def pretest_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("pretest", lvl)
     subject_config = compile_subject_registry("pretest", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def quiz_pg_node(state: AgentState) -> dict:
@@ -213,7 +213,7 @@ async def quiz_pg_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("quiz_pg", lvl)
     subject_config = compile_subject_registry("quiz_pg", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), image_context=state.get("image_context", ""), level=lvl, level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def quiz_essay_node(state: AgentState) -> dict:
@@ -221,7 +221,7 @@ async def quiz_essay_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("quiz_essay", lvl)
     subject_config = compile_subject_registry("quiz_essay", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), image_context=state.get("image_context", ""), level=lvl, level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def flashcard_node(state: AgentState) -> dict:
@@ -229,7 +229,7 @@ async def flashcard_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("flashcard", lvl)
     subject_config = compile_subject_registry("flashcard", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), rag_context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), context=get_rag_context_for_revision(state), atp=req.get("atp", ""), level=lvl, level_config=level_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def mindmap_node(state: AgentState) -> dict:
@@ -237,7 +237,7 @@ async def mindmap_node(state: AgentState) -> dict:
     lvl = state["level"]
     level_config = compile_leveling_registry("mindmap", lvl)
     subject_config = compile_subject_registry("mindmap", req.get("mapel_id", ""))
-    usr_prompt = load_prompt("mindmap.j2", matpel=req["mapel_id"], materi=req.get("materi", ""), rag_context=get_rag_context_for_revision(state), level_config=level_config, subject_config=subject_config)
+    usr_prompt = load_prompt("mindmap.j2", context=get_rag_context_for_revision(state), atp=req.get("atp", ""))
     return await _call_generation_llm(state, usr_prompt)
 
 async def evaluator_node(state: AgentState) -> dict:
@@ -335,8 +335,8 @@ def structurer_node(state: AgentState) -> dict:
                 if isinstance(q, dict): inject_visuals(q)
         elif tipe == "bacaan":
             # Set top-level visuals for bacaan if requested
-            if "text" in content:
-                teks_markdown = content["text"]
+            if "konten_markdown" in content:
+                teks_markdown = content["konten_markdown"]
                 references_to_append = []
                 for img_id, b64_data in visual_assets.items():
                     if f"[{img_id}]" in teks_markdown:
