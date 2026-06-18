@@ -1,67 +1,100 @@
-[TASK]
-Generate EXACTLY 5 essay questions in JSON format.
-Never generate more or fewer.
+[TUGAS]
 
-[OUTPUT_SCHEMA]
-{
-  "pertanyaan": [
-    {
-      "id": "e1",
-      "soal": "[Essay question sentence]",
-      "rubrik": "[High-score grading criteria]",
-      "stimulus": "[Introductory narrative or problem context]",
-      "image_id": "[Fill with image ID (e.g. IMG-001) from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]",
-      "penjelasan": "[Explanation for the correct answer]"
-    }
-  ]
-}
-[CRITICAL JSON RULES]
-- DO NOT use words like "Stimulus:" or "Question:" inside the "soal" field. The "soal" field must ONLY contain the actual question sentence.
-- If a relevant image is provided in the MULTIMODAL IMAGE CONTEXT, you MAY create questions that depend on that image (e.g., 'Based on the diagram...'). Evaluate the image description and determine if it is highly relevant to the concept.
-- Not all questions need an image. If the concept doesn't need visual aids, create independent theoretical questions.
+Buat TEPAT 5 soal esai dalam format JSON array.
+
+[SKEMA_KELUARAN]
+
+[
+  {
+    "level": "LOTS/MOTS/HOTS",
+    "stimulus": "",
+    "question": "",
+    "rubric_points": [],
+    "explanation": ""
+  }
+]
+
 {% if image_context %}
 [MULTIMODAL IMAGE CONTEXT]
 {{ image_context }}
 
 *** ABSOLUTE INSTRUCTION FOR IMAGES ***
 The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
-If the question you are creating STRICTLY requires an image, select the ONE most relevant image ID and put it in the `image_id` field.
-If the question DOES NOT require an image, you MUST set `image_id` to null. DO NOT force an image into every question.
-CRITICAL RULE: DO NOT use the same image_id for more than 2 questions! If an image has already been used twice, you MUST use a different image or set image_id to null for subsequent questions.
-DO NOT use markdown image syntax `![img](path)` inside the question. Just fill the raw image ID (e.g. IMG-001) or null in the `image_id` field.
+If you want to include an image from the context in your generation, you MUST use markdown reference-style links.
+Format: ![Alt Text Singkat][IMG-001]
+Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
+Place the image naturally in the paragraph or section where it is most relevant.
 {% endif %}
 
-[LEVEL_CONFIGURATION]
+[KONFIGURASI_LEVEL]
+
 {{ level_config }}
 
-[SUBJECT_CONFIGURATION]
+[KONFIGURASI_STIMULUS]
+
 {{ subject_config }}
 
-[LEARNING_CONTEXT]
+[KONTEKS_PEMBELAJARAN]
+
 {{ rag_context }}
 
-[ATP_ALIGNMENT]
+[ATP]
+
 {{ atp }}
 
-Prioritize ATP objectives as curriculum constraints.
+Prioritaskan ATP jika tersedia.
 
-[QUESTION_DESIGN_RULES]
-- Frame questions around real Indonesian scenarios.
-- Avoid simple recall questions ("Sebutkan", "Apa definisi").
-- Require students to explain "Mengapa" or "Bagaimana".
-- Do not make the question overly convoluted.
+[ATURAN_SOAL]
 
-[RUBRIC_REQUIREMENTS]
-- Keep rubrics concise and actionable.
-- Define exactly what constitutes a high-score answer.
+* Soal harus sesuai level yang diberikan.
+* Soal harus relevan dengan konteks pembelajaran dan ATP.
+* Soal harus kontekstual, realistis, dan bergantung pada stimulus.
+* Hindari pola soal yang berulang.
 
-[EXPLANATION_REQUIREMENTS]
-- Keep explanation direct and focused on the key concepts.
-- Use clear cause-effect logic.
+[ATURAN_STIMULUS]
 
-[STRICT_OUTPUT_RULES]
-- Return raw JSON only.
-- No markdown code block.
-- No additional commentary.
-- Escape newline characters.
-- Escape internal quotes.
+* Setiap soal wajib memiliki stimulus.
+* Variasikan bentuk stimulus dalam satu paket soal.
+* Jika memuat data atau perbandingan, prioritaskan tabel atau data terstruktur.
+* Hindari dominasi narasi murni.
+
+[ATURAN_RUBRIK]
+
+* Gunakan 3 indikator penilaian yang operasional, terukur, dan singkat.
+* Sesuaikan indikator dengan level yang diberikan.
+
+[ATURAN_PENJELASAN]
+
+Penjelasan ditampilkan kepada siswa sebagai pembahasan soal.
+
+Gunakan struktur:
+
+### Pengerjaan
+* Langkah atau analisis bertahap menuju jawaban.
+* Untuk STEM gunakan LaTeX bila diperlukan.
+* Untuk non-STEM jelaskan alasan atau hubungan konsep yang mendukung jawaban.
+
+Hindari chain-of-thought yang panjang.
+
+[PENYAJIAN_VISUAL_PENJELASAN]
+
+Gunakan bila relevan:
+
+* bullet list → poin jawaban
+* tabel → perbandingan
+* blockquote → kesimpulan
+* bold → konsep penting
+
+[PENGGUNAAN_EMOJI]
+
+Gunakan emoji secara fungsional pada stimulus dan penjelasan untuk:
+
+- informasi penting
+- data penting
+- langkah penyelesaian
+- kesimpulan
+
+Hindari emoji dekoratif.
+
+[BATASAN]
+Hindari instruksi atau struktur internal muncul pada konten.

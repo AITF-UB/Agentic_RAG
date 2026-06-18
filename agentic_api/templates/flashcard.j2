@@ -1,30 +1,70 @@
-[TASK]
-Extract EXACTLY 5 key concepts into flashcards from the provided learning context.
-Return in strict JSON format.
+[TUGAS]
 
-[OUTPUT_SCHEMA]
-{
-  "cards": [
-    {
-      "depan": "[Short term or concept]",
-      "belakang": "[Short definition or explanation]"
-    }
-  ],
-  "source": "[Fill with empty string, will be filled by system]"
-}
+Buat tepat 5 flashcard dalam format JSON array.
 
-[LEARNING_CONTEXT]
+[SKEMA_KELUARAN]
+
+[
+  {
+    "level": "LOTS/MOTS/HOTS",
+    "front": "",
+    "back": ""  
+  }
+]
+
+{% if image_context %}
+[MULTIMODAL IMAGE CONTEXT]
+{{ image_context }}
+
+*** ABSOLUTE INSTRUCTION FOR IMAGES ***
+The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
+If you want to include an image from the context in your generation, you MUST use markdown reference-style links.
+Format: ![Alt Text Singkat][IMG-001]
+Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
+Place the image naturally in the paragraph or section where it is most relevant.
+{% endif %}
+
+[KONFIGURASI_LEVEL]
+
+{{ level_config }}
+
+[KONTEKS_PEMBELAJARAN]
+
 {{ rag_context }}
 
-[CONTENT_REQUIREMENTS]
-- Extract highly relevant definitions, formulas, or key terms.
-- Keep the front (depan) short (1-4 words).
-- Keep the back (belakang) concise and clear (1-2 sentences).
-- Prioritize concepts that require memorization or quick recall.
+[ATP]
 
-[STRICT_OUTPUT_RULES]
-- Return raw JSON only.
-- No markdown code block.
-- No additional commentary.
-- Escape newline characters.
-- Escape internal quotes.
+{{ atp }}
+
+Prioritaskan ATP jika tersedia.
+
+[PRINSIP_FLASHCARD]
+
+Flashcard digunakan untuk membantu mengingat, memahami, dan meninjau ulang konsep penting.
+Level pembelajaran menentukan kedalaman isi, bukan mengubah flashcard menjadi soal, studi kasus, atau tugas analisis.
+
+[ATURAN_FLASHCARD]
+
+* Buat tepat 5 flashcard.
+* Seluruh flashcard harus sesuai level yang diberikan.
+* Fokus pada konsep, hubungan konsep, rumus, aplikasi singkat, atau insight penting.
+* Hindari penjelasan panjang.
+
+[ATURAN_FRONT]
+
+* Singkat dan mudah dipindai.
+* Utamakan istilah, konsep, rumus, kata kunci, atau ide utama.
+* Hindari kalimat soal dan pertanyaan.
+* Maksimal 60 karakter.
+
+[ATURAN_BACK]
+
+* Ringkas dan mudah diingat.
+* Maksimal 120 karakter.
+* Berisi definisi, rumus, hubungan konsep, aplikasi singkat, atau insight utama.
+* Hindari jawaban terbuka, refleksi panjang, langkah penyelesaian, atau pembahasan soal.
+
+[PENGGUNAAN_EMOJI]
+
+* Emoji wajib digunakan untuk membantu pemahaman.
+
