@@ -33,7 +33,9 @@ from __future__ import annotations
 
 import uvicorn
 import os
+import sys
 import traceback
+import threading
 import uuid
 from typing import List, Any, Dict, Optional
 from enum import Enum
@@ -78,12 +80,24 @@ from graph import beta_graph
 from llm import get_llm, get_eval_llm
 from tools import clean_json_from_llm
 
+# ── Pastikan agentic_api/ ada di sys.path (agar import berfungsi dari mana pun) ──
+_THIS_DIR = Path(__file__).parent.resolve()
+if str(_THIS_DIR) not in sys.path:
+    sys.path.insert(0, str(_THIS_DIR))
+
 # ── Import pipeline ──────────────────────────────────────────────────────────
 try:
-    from full_pipeline import PipelineConfig, run_full_pipeline
+    from full_pipeline import (
+        PipelineConfig, run_full_pipeline,
+        DEFAULT_VLM_MODEL, DEFAULT_VLM_HOST, DEFAULT_DENSE_MODEL, DEFAULT_SPARSE_MODEL,
+    )
     PIPELINE_AVAILABLE = True
 except ImportError:
     PIPELINE_AVAILABLE = False
+    DEFAULT_VLM_MODEL   = os.getenv("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
+    DEFAULT_VLM_HOST    = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
+    DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
+    DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -93,11 +107,6 @@ except ImportError:
 UPLOAD_DIR  = Path("uploads")          # PDF yang di-upload disimpan di sini
 OUTPUT_DIR  = Path("pipeline_output")  # Output pipeline
 CHUNKS_DIR  = Path("chunks")           # Output JSONL chunks
-
-DEFAULT_OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5vl:7b")
-DEFAULT_OLLAMA_HOST  = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
-DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
-DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
 UPLOAD_DIR.mkdir(exist_ok=True)
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -151,8 +160,8 @@ class PipelineParams(BaseModel):
     id_kelas:         Optional[str] = Field(None, description="ID Kelas")
     jenjang:          Optional[str] = Field(None, description="Jenjang Kelas")
     id_guru:          Optional[str] = Field(None, description="ID Guru")
-    vlm_model:        str  = Field(DEFAULT_OLLAMA_MODEL, description="Nama model Ollama untuk VLM")
-    ollama_host:      str  = Field(DEFAULT_OLLAMA_HOST,  description="URL server Ollama")
+    vlm_model:        str  = Field(DEFAULT_VLM_MODEL, description="Nama model VLM (OpenAI-compatible API)")
+    ollama_host:      str  = Field(DEFAULT_VLM_HOST,  description="Base URL server VLM (OpenAI-compatible)")
     dense_model:      str  = Field(DEFAULT_DENSE_MODEL,  description="Model dense embedding")
     sparse_model:     str  = Field(DEFAULT_SPARSE_MODEL, description="Model sparse")
 
@@ -162,6 +171,7 @@ class PipelineParams(BaseModel):
 # ══════════════════════════════════════════════════════════════════════════════
 
 _jobs: Dict[str, JobInfo] = {}
+_jobs_lock = threading.Lock()  # Thread-safe access untuk _jobs
 
 
 def _create_job(filename: Optional[str] = None, step: Optional[str] = None) -> JobInfo:
@@ -174,16 +184,18 @@ def _create_job(filename: Optional[str] = None, step: Optional[str] = None) -> J
         created_at = now,
         updated_at = now,
     )
-    _jobs[job.job_id] = job
+    with _jobs_lock:
+        _jobs[job.job_id] = job
     return job
 
 
 def _update_job(job_id: str, **kwargs) -> None:
-    if job_id in _jobs:
-        job = _jobs[job_id]
-        for k, v in kwargs.items():
-            setattr(job, k, v)
-        job.updated_at = datetime.now().isoformat()
+    with _jobs_lock:
+        if job_id in _jobs:
+            job = _jobs[job_id]
+            for k, v in kwargs.items():
+                setattr(job, k, v)
+            job.updated_at = datetime.now().isoformat()
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -233,12 +245,21 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             for f in jsonl_files
         )
 
+        # Normalisasi buku_id agar frontend tahu value yang harus dikirim
+        # Logika identik dengan _normalize_source_file_for_qdrant di full_pipeline.py
+        buku_id_raw = pdf_path.stem  # mis. "Biologi_Kelas_X"
+        buku_id_normalized = buku_id_raw.lower()
+        for _sfx in ("_chunks", "_final_paginated", "_structure"):
+            if buku_id_normalized.endswith(_sfx):
+                buku_id_normalized = buku_id_normalized[: -len(_sfx)]
+
         _update_job(
             job_id,
             status  = JobStatus.SUCCESS,
             message = "Pipeline selesai.",
             result  = {
                 "pdf_file":          pdf_path.name,
+                "buku_id":           buku_id_normalized,
                 "step_run":          params.step if params.step else "all",
                 "json_files":        [str(p) for p in json_files],
                 "markdown_files":    [str(p) for p in md_files],
@@ -542,10 +563,18 @@ async def run_step(
                        f"Upload dulu via POST /pipeline/upload.",
             )
 
-    job = _create_job(filename=filename, step=params.step.value if params.step else "all")
+    # Validasi: step extract dan describe WAJIB punya file PDF
+    if params.step in ("extract", "describe") and pdf_path is None:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Step '{params.step}' memerlukan file PDF. "
+                   f"Sertakan parameter 'filename' atau upload via POST /pipeline/upload.",
+        )
+
+    job = _create_job(filename=filename, step=params.step if params.step else "all")
 
     if pdf_path is None:
-        # Buat dummy path supaya runner tidak crash; runner akan skip jika tidak ada PDF
+        # Step chunk/ingest tidak butuh PDF — buat dummy path agar signature runner terpenuhi
         pdf_path = UPLOAD_DIR / "placeholder.pdf"
 
     background_tasks.add_task(_run_pipeline_task, job.job_id, pdf_path, params)
@@ -557,7 +586,8 @@ async def run_step(
 @app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"])
 def get_job(job_id: str):
     """Ambil status dan hasil dari sebuah job berdasarkan `job_id`."""
-    job = _jobs.get(job_id)
+    with _jobs_lock:
+        job = _jobs.get(job_id)
     if not job:
         raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
     return job
@@ -570,7 +600,8 @@ def list_jobs(status: Optional[JobStatus] = None):
 
     - Filter opsional dengan query param `?status=running`, `?status=success`, dll.
     """
-    jobs = list(_jobs.values())
+    with _jobs_lock:
+        jobs = list(_jobs.values())
     if status:
         jobs = [j for j in jobs if j.status == status]
     # Urutkan terbaru dulu
@@ -581,9 +612,10 @@ def list_jobs(status: Optional[JobStatus] = None):
 @app.delete("/pipeline/job/{job_id}", tags=["Jobs"])
 def delete_job(job_id: str):
     """Hapus job dari riwayat (hanya riwayat; file output tidak dihapus)."""
-    if job_id not in _jobs:
-        raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
-    job = _jobs.pop(job_id)
+    with _jobs_lock:
+        if job_id not in _jobs:
+            raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
+        job = _jobs.pop(job_id)
     return {"message": f"Job '{job_id}' dihapus.", "filename": job.filename}
 
 

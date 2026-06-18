@@ -29,10 +29,10 @@ get_sentence_model = get_dense_model
 # ================================================================
 # Models Configuration
 # ================================================================
-QDRANT_HOST        = os.getenv("QDRANT_HOST")
-if QDRANT_HOST.startswith("http://"):
+QDRANT_HOST        = os.getenv("QDRANT_HOST", "localhost")
+if QDRANT_HOST and QDRANT_HOST.startswith("http://"):
     QDRANT_HOST = QDRANT_HOST[7:]
-elif QDRANT_HOST.startswith("https://"):
+elif QDRANT_HOST and QDRANT_HOST.startswith("https://"):
     QDRANT_HOST = QDRANT_HOST[8:]
 QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
@@ -273,7 +273,25 @@ def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_r
             print(f"❌ Error scroll Qdrant: {e}")
             return []
 
-def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None) -> Optional[dict]:
+def _normalize_source_file(raw: str) -> str:
+    """Normalisasi source_file: hapus ekstensi, path prefix, suffix pipeline & lowercase.
+
+    Menghasilkan nilai yang konsisten dari input apa pun:
+      - "Biologi_Kelas_X.pdf"                    → "biologi_kelas_x"
+      - "Biologi_Kelas_X_FINAL_PAGINATED"        → "biologi_kelas_x"
+      - "Biologi_Kelas_X_FINAL_PAGINATED_chunks" → "biologi_kelas_x"
+      - "biologi_kelas_x"                        → "biologi_kelas_x"
+    """
+    name = raw.strip().replace("\\", "/")
+    name = Path(name).stem  # hapus ekstensi file jika ada
+    # Hapus suffix yang ditambahkan oleh pipeline (urutan penting: dari paling spesifik)
+    for suffix in ("_chunks", "_FINAL_PAGINATED", "_final_paginated", "_structure"):
+        if name.endswith(suffix):
+            name = name[: -len(suffix)]
+    return name.lower()
+
+
+def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None) -> Optional[dict]:
     # Field-field ini ada di top-level payload (sudah dikonfirmasi dari
     # screenshot payload Qdrant: mata_pelajaran, kelas, source_file, dst
     # semua flat, tidak nested di bawah "metadata").
@@ -282,6 +300,7 @@ def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str]
     if source: conditions.append({"key": "source", "match": {"value": source}})
     if mata_pelajaran: conditions.append({"key": "mata_pelajaran", "match": {"value": mata_pelajaran}})
     if kelas is not None: conditions.append({"key": "kelas", "match": {"value": kelas}})
+    if source_file: conditions.append({"key": "source_file", "match": {"value": _normalize_source_file(source_file)}})
     return {"must": conditions} if conditions else None
 
 # ================================================================
@@ -303,13 +322,13 @@ def build_bm25_index():
                 _bm25_docs = cache["docs"]
                 cache_valid = True
                 print(f"📦 Loading BM25 dari cache (version {BM25_CACHE_VERSION}): {BM25_CACHE_PATH}")
+                return  # Cache valid, tidak perlu rebuild
             else:
                 print(f"⚠️ BM25 cache version mismatch (cache={cache.get('version')}, expected={BM25_CACHE_VERSION}). Building new index...")
         except Exception as e:
             print(f"⚠️ BM25 cache load error: {e}. Building new index...")
     
-    if not cache_valid:
-        print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
+    print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{TEXT_COLLECTION}/points/scroll"
     all_points = []
     offset = None
@@ -359,7 +378,7 @@ def build_bm25_index():
     else:
         print("⚠ Tidak ada dokumen untuk BM25.")
 
-def sparse_search(query: str, top_k: int = 10, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None):
+def sparse_search(query: str, top_k: int = 10, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None):
     build_bm25_index()
     if _bm25 is None: return []
 
@@ -367,14 +386,18 @@ def sparse_search(query: str, top_k: int = 10, mata_pelajaran: Optional[str] = N
     scores = _bm25.get_scores(tokenized_query)
     ranked_idx = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)
 
+    norm_source = _normalize_source_file(source_file) if source_file else None
+
     results = []
     for idx in ranked_idx:
         doc = dict(_bm25_docs[idx])
-        # Soft-filter matching untuk mapel & kelas karena BM25 ditarik full corpus
+        # Soft-filter matching untuk mapel, kelas & source_file karena BM25 ditarik full corpus
         meta = doc.get("metadata", {})
         if mata_pelajaran and meta.get("mata_pelajaran") != mata_pelajaran:
             continue
         if kelas is not None and meta.get("kelas") != kelas:
+            continue
+        if norm_source and meta.get("source_file", "").lower() != norm_source:
             continue
 
         doc["bm25_score"] = float(scores[idx])
@@ -527,7 +550,7 @@ async def rerank_results(query: str, docs: list, top_k: int = 5) -> list:
 # ================================================================
 # 5. Pipeline Search Utama
 # ================================================================
-async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int]) -> list:
+async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int], source_file: Optional[str] = None) -> list:
     """
     Dense-only retrieval: embed → Qdrant dense search → dedup.
     Tidak menjalankan SPLADE, BM25, RRF, maupun reranker sehingga
@@ -536,7 +559,7 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
     retrieve_k = max(top_k * 3, 20)
 
     vector = await embed_text_for_text_vdb(query)
-    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas)
+    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file)
     hits = _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
 
     results = []
@@ -562,7 +585,7 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
     return _inject_visual_content_batch(TEXT_COLLECTION, top_results)
 
 
-async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int]) -> list:
+async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int], source_file: Optional[str] = None) -> list:
     """
     Hybrid retrieval: Dense + SPLADE + BM25 → RRF fusion → dedup
     → chunk expansion → rerank.
@@ -572,7 +595,7 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
 
     # 1. Dense Search
     vector = await embed_text_for_text_vdb(query)
-    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas)
+    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file)
     hits = _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
     dense_results = []
     for hit in hits:
@@ -589,7 +612,7 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
 
     # 2. Sparse Search (SPLADE & BM25)
     splade_results = _search_qdrant_splade(TEXT_COLLECTION, query, top_k=retrieve_k, filter_payload=payload_filter)
-    bm25_results = sparse_search(query, top_k=retrieve_k, mata_pelajaran=mata_pelajaran, kelas=kelas)
+    bm25_results = sparse_search(query, top_k=retrieve_k, mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file)
 
     # 3. RRF + Dedup + Expand
     fused_results = reciprocal_rank_fusion(dense_results, splade_results, bm25_results)
@@ -608,7 +631,7 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     return _inject_visual_content_batch(TEXT_COLLECTION, reranked_results)
 
 
-async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None) -> list:
+async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None) -> list:
     """
     Entry point retrieval. Memilih strategi berdasarkan SEARCH_MODE:
       - "dense"  → _retrieve_dense()   (default production)
@@ -618,9 +641,9 @@ async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str
         return []
 
     if SEARCH_MODE == "hybrid":
-        return await _retrieve_hybrid(query, top_k, mata_pelajaran, kelas)
+        return await _retrieve_hybrid(query, top_k, mata_pelajaran, kelas, source_file)
     else:
-        return await _retrieve_dense(query, top_k, mata_pelajaran, kelas)
+        return await _retrieve_dense(query, top_k, mata_pelajaran, kelas, source_file)
 
 def extract_source(chunks: List[dict]) -> List[str]:
     sources = set()
@@ -649,10 +672,21 @@ class RAGEngine:
         return 8
 
     @staticmethod
-    async def unified_search(query: str, tipe: str, mapel: Optional[str] = None, kelas: Optional[int] = None) -> Dict[str, Any]:
-        """Perform full pipeline search with dynamic chunk sizing and multimodal metadata capabilities."""
+    async def unified_search(query: str, tipe: str, mapel: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None) -> Dict[str, Any]:
+        """
+        Perform full pipeline search with dynamic chunk sizing and multimodal metadata capabilities.
+
+        Ketika `source_file` (buku_id) diberikan, melakukan dua pencarian:
+          1. Search normal tanpa filter → ambil chunk dari file RAG bawaan
+          2. Search spesifik dengan filter source_file → ambil chunk dari buku tertentu
+        Hasilnya digabung & di-dedup, dengan chunk spesifik buku diutamakan.
+        """
         k_text = RAGEngine.get_k_for_type(tipe)
-        texts = await retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas)
+
+        if source_file:
+            texts = await RAGEngine._search_with_book_reference(query, k_text, mapel, kelas, source_file)
+        else:
+            texts = await retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas)
 
         images = []
         if tipe in ["quiz_pg", "quiz_essay", "bacaan"]:
@@ -682,6 +716,25 @@ class RAGEngine:
             "text": [{"text": t.get("expanded_text", t["text"]), "source_file": t["source_file"], "visual_context": t.get("metadata", {}).get("has_visual_content", [])} for t in texts],
             "images": images
         }
+
+    @staticmethod
+    async def _search_with_book_reference(query: str, k_text: int, mapel: Optional[str], kelas: Optional[int], source_file: str) -> list:
+        """Dual-search parallel: default + spesifik buku, lalu merge & dedup dengan prioritas buku."""
+        default_texts, book_texts = await asyncio.gather(
+            retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas),
+            retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas, source_file=source_file),
+        )
+
+        seen_ids = set()
+        merged = []
+        for t in book_texts + default_texts:
+            doc_id = t.get("id") or hash(t.get("text", ""))
+            if doc_id in seen_ids:
+                continue
+            seen_ids.add(doc_id)
+            merged.append(t)
+
+        return merged[:k_text]
 
 # ================================================================
 # 7. Utilities
