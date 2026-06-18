@@ -1,12 +1,11 @@
-[TUGAS]
+[TASK]
+Generate learning material in JSON format.
 
-Buat materi pembelajaran dalam format JSON.
-
-[SKEMA_KELUARAN]
-
+[OUTPUT_SCHEMA]
 {
-"judul": "",
-"text": ""
+  "text": "[Combined main title and material content without numbering, using markdown. Insert images here if needed.]",
+  "judul": "[Main Concept Title]",
+  "source": "[Fill with empty string, will be filled by system]"
 }
 
 {% if image_context %}
@@ -15,104 +14,99 @@ Buat materi pembelajaran dalam format JSON.
 
 *** ABSOLUTE INSTRUCTION FOR IMAGES ***
 The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
-If you want to include an image from the context in your generation, you MUST use markdown reference-style links.
-Format: ![Alt Text Singkat][IMG-001]
+If you want to include an image from the context in your reading material, you MUST use markdown reference-style links inside the `text` field.
+Format: `![Alt Text Singkat][IMG-001]`
 Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
-Place the image naturally in the paragraph or section where it is most relevant.
+ipPlace the image naturally in the paragraph or section where it is most relevant.
 {% endif %}
 
-[KONFIGURASI_LEVEL]
-
+[LEVEL_CONFIGURATION]
 {{ level_config }}
 
-[KONFIGURASI_MATA_PELAJARAN]
-
+[SUBJECT_CONFIGURATION]
 {{ subject_config }}
 
-[KONTEKS_PEMBELAJARAN]
-
+[LEARNING_CONTEXT]
 {{ rag_context }}
 
-[ATP]
-
+[ATP_ALIGNMENT]
 {{ atp }}
 
-[STRUKTUR_MATERI]
+Prioritize ATP objectives as curriculum constraints.
 
-Materi wajib mengikuti urutan:
+[CONTENT_REQUIREMENTS]
+- Generate a minimum of 500 words.
+- Use natural Indonesian educational language suitable for SMA students.
+- Maintain strong contextual relevance to Indonesian realities.
+- Build clear cause-effect explanations.
+- Prioritize practical understanding before abstraction.
 
-1. Apersepsi
-2. Pengembangan konsep
-3. Penjelasan teknis atau formulasi (jika relevan)
-4. Studi kasus
-5. Refleksi
+[CONTENT_STRUCTURE]
+The material should flow naturally through these sections:
 
-Struktur di atas hanya panduan internal dan tidak boleh ditampilkan dalam hasil.
+- contextual opening
+- concept explanation
+- technical explanation or formulation
+- real Indonesian case study
+- reflective closing
 
-[PRINSIP_PEMBELAJARAN]
+Use markdown subheadings with:
+### Heading
 
-* Utamakan pemahaman praktis sebelum abstraksi.
-* Bangun konsep dari konteks menuju teori.
-* Utamakan kedalaman pembahasan dibanding banyaknya contoh.
+Do not use:
+- numbering
+- rigid section labels
+- colon symbols in headings
 
-[APERSEPSI]
+[OPENING_REQUIREMENTS]
+- Start with realistic Indonesian situations, problems, or numerical/social phenomena.
+- Build curiosity naturally through contextual tension.
+- Avoid rhetorical greetings or motivational filler.
 
-Hubungkan dengan permasalahan sehari-hari yang memicu keingintahuan siswa.
-Hindari salam, pertanyaan retoris, dan filler.
+[CONCEPT_EXPLANATION]
+- Explain concepts gradually and logically.
+- Connect concepts with Indonesian daily life situations.
+- Avoid abstract academic wording.
 
-[PENGEMBANGAN_KONSEP]
+[TECHNICAL_REQUIREMENTS]
+- STEM subjects:
+  - include formulas using LaTeX
+  - explain variables clearly
+  - use escaped LaTeX:
+    \\frac
+    \\times
+    \\sqrt
 
-Jelaskan konsep secara runtut, jelas, dan sesuai konfigurasi level.
+- Theory subjects:
+  - explain conceptual relationships
+  - strengthen causal understanding
 
-[PENJELASAN_TEKNIS]
+[CASE_STUDY_REQUIREMENTS]
+- Use realistic Indonesian cases:
+  - UMKM
+  - pertanian
+  - distribusi
+  - sekolah
+  - lingkungan sosial
+  - ekonomi keluarga
+  - industri lokal
 
-STEM:
+- Demonstrate step-by-step reasoning or analysis.
+- Show practical application of concepts.
 
-* tampilkan rumus atau formulasi yang relevan dari materi sumber menggunakan LaTeX
-* jelaskan simbol atau variabel yang digunakan
+[REFLECTION_REQUIREMENTS]
+- End with reflective guidance related to learning awareness or daily application.
+- Reflection must remain grounded and realistic.
+- Avoid overly philosophical narration.
 
-Non-STEM:
+[TITLE_REQUIREMENTS]
+- Combine the main concept and Indonesian contextual impact naturally.
+- Titles should feel formal, readable, and educational.
+- Avoid rigid labels or symbolic formatting.
 
-* jelaskan hubungan antar konsep
-
-[STUDI_KASUS]
-
-Gunakan satu studi kasus utama yang relevan dengan materi.
-Bahas secara bertahap: konteks → analisis bertahap → kesimpulan.
-Tunjukkan penerapan konsep pada studi kasus tersebut.
-Jika tersedia, kembangkan contoh dari materi sumber.
-Hindari studi kasus tambahan yang tidak berkaitan.
-
-[REFLEKSI]
-
-Akhiri dengan refleksi nilai-nilai karakter yang menghubungkan kembali ide utama pembelajaran.
-Jika level pembelajaran menuntut evaluasi, refleksi, atau pengambilan keputusan, tampilkan proses berpikir tersebut pada bagian ini.
-
-[JUDUL_DAN_SUBJUDUL]
-
-* Judul dan subjudul harus deskriptif, formal, dan sesuai isi materi.
-* Jangan menggunakan nama struktur internal pembelajaran.
-
-[PENYAJIAN_VISUAL]
-
-Wajib menggunakan masing-masing minimal satu kali:
-
-* bullet list → karakteristik, komponen, langkah, manfaat, atau poin penting
-* tabel → perbandingan konsep, kategori, contoh, atau data
-* blockquote → definisi, kesimpulan, atau insight penting
-* penebalan teks → istilah, konsep, variabel, atau kata kunci utama
-
-[PENGGUNAAN_EMOJI]
-
-Wajib menggunakan minimal 4 emoji fungsional yang tersebar pada:
-
-* subjudul
-* konsep penting
-* informasi penting
-* studi kasus
-* refleksi
-
-Hindari penggunaan emoji yang hanya bersifat dekoratif.
-
-[BATASAN]
-Hindari instruksi atau struktur internal muncul pada konten.
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.

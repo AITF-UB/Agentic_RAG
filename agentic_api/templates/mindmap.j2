@@ -1,58 +1,43 @@
-[TUGAS]
+[TASK]
+Generate a concept map structure in JSON format from the provided learning context.
 
-Buat mindmap hierarkis dalam format JSON.
+[OUTPUT_SCHEMA]
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "[Main Topic]",
+      "parent_id": null,
+      "penjelasan": "[Brief explanation]"
+    },
+    {
+      "id": "n2",
+      "label": "[Sub Topic]",
+      "parent_id": "n1",
+      "penjelasan": "[Brief explanation]"
+    }
+  ]
+}
 
-[SKEMA_KELUARAN]
+[LEVEL_CONFIGURATION]
+{{ level_config }}
 
-[
-  {
-    "id": "",
-    "label": "",
-    "parent_id": null,
-    "penjelasan": ""
-  }
-]
+[SUBJECT_CONFIGURATION]
+{{ subject_config }}
 
-
-[KONTEKS_PEMBELAJARAN]
-
+[LEARNING_CONTEXT]
 {{ rag_context }}
 
-[ATP]
+[CONTENT_REQUIREMENTS]
+- Extract the core hierarchical structure of the concepts.
+- The root node must have parent_id: null.
+- Child nodes must point to their valid parent_id.
+- Keep labels concise (1-4 words).
+- Keep explanations clear and brief (1 sentence).
 
-{{ atp }}
-
-[ATURAN_MINDMAP]
-
-* Kedalaman minimal 3 level:
-  Root → Child → Grandchild.
-* Setiap leaf node wajib menggunakan:
-  "children": []
-* Susun konsep secara hierarkis dan kelompokkan konsep yang saling berkaitan.
-* Node harus merepresentasikan konsep, subkonsep, karakteristik, hubungan, atau aplikasi dari materi sumber dan ATP.
-* Hindari instruksi belajar, aktivitas berpikir, refleksi, evaluasi, atau label metakognitif sebagai node.
-
-[ATURAN_DESKRIPSI]
-
-* Maksimal 15 kata.
-* Singkat, padat, dan informatif.
-* Hindari filler, pengulangan, penomoran, dan label kaku.
-
-[PENGGUNAAN_EMOJI]
-
-* Root node wajib menggunakan emoji.
-* Child level pertama wajib menggunakan emoji.
-* Gunakan emoji yang relevan dan konsisten.
-
-
-{% if image_context %}
-[MULTIMODAL IMAGE CONTEXT]
-{{ image_context }}
-
-*** ABSOLUTE INSTRUCTION FOR IMAGES ***
-The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
-If you want to include an image from the context in your generation, you MUST use markdown reference-style links.
-Format: ![Alt Text Singkat][IMG-001]
-Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
-Place the image naturally in the paragraph or section where it is most relevant.
-{% endif %}
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.

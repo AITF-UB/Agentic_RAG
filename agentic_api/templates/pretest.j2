@@ -1,29 +1,31 @@
-[TUGAS]
+[TASK]
+Generate EXACTLY 10 multiple choice questions in JSON format.
+Never generate more or fewer.
 
-Buat TEPAT 10 soal pilihan ganda dalam format JSON array.
-
-[SKEMA_KELUARAN]
-
-[
-  {
-    "id": "",
-    "soal": "",
-    "level": "lots",
-    "jawaban": 0,
-    "pilihan": [
-      "", "", "", "", ""
-    ],
-    "stimulus": "",
-    "image_id": null,
-    "penjelasan": ""
-  }
-]
-
-[DISTRIBUSI_LEVEL]
-- 4 soal LOTS
-- 3 soal MOTS
-- 3 soal HOTS
-Pastikan jumlah soal pada setiap level sesuai distribusi tersebut.
+[OUTPUT_SCHEMA]
+{
+  "soal": [
+    {
+      "id": "p1",
+      "soal": "[Write ONLY the complete question sentence here]",
+      "level": "[Must be exactly 'lots', 'mots', or 'hots']",
+      "jawaban": 0,
+      "pilihan": ["Option A", "Option B", "Option C", "Option D"],
+      "stimulus": "[Write the introductory narrative or problem context here]",
+      "image_path": "[Fill with image path from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]",
+      "penjelasan": "[Explanation for the correct answer]"
+    }
+  ]
+}
+[CRITICAL JSON RULES]
+- "jawaban" MUST be the INTEGER INDEX of the correct answer in the "pilihan" array.
+- STRICTLY PROHIBITED to fill "jawaban" with question numbers (like 1, 2, 3) or letters (A/B/C/D).
+- When generating the "pilihan" (options) array, you MUST shuffle the placement of the correct answer. Do not always place the correct answer at index 0 or 1.
+- Ensure the correct answer is frequently placed at index 2 or 3 to create an EVEN DISTRIBUTION of answer keys across the 10 questions.
+- The "jawaban" field must ALWAYS perfectly match the integer index (0-3) where you actually placed the correct answer in the "pilihan" array.
+- "soal" MUST be a combination of the Stimulus and the Question.
+- If a relevant image is provided in the MULTIMODAL IMAGE CONTEXT, you MAY create questions that depend on that image (e.g., 'Based on the diagram...'). Evaluate the image description and determine if it is highly relevant to the concept.
+- Not all questions need an image. If the concept doesn't need visual aids, create independent theoretical questions.
 
 {% if image_context %}
 [MULTIMODAL IMAGE CONTEXT]
@@ -31,76 +33,78 @@ Pastikan jumlah soal pada setiap level sesuai distribusi tersebut.
 
 *** ABSOLUTE INSTRUCTION FOR IMAGES ***
 The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
-If you want to include an image from the context in your generation, you MUST use markdown reference-style links.
-Format: ![Alt Text Singkat][IMG-001]
-Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
-Place the image naturally in the paragraph or section where it is most relevant.
+If the question you are creating STRICTLY requires an image, select the ONE most relevant image ID and put it in the `image_path` field (use the ID like IMG-001).
+If the question DOES NOT require an image, you MUST set `image_path` to null. DO NOT force an image into every question.
+CRITICAL RULE: DO NOT use the same image ID for more than 2 questions! If an image has already been used twice, you MUST use a different image or set image_path to null for subsequent questions.
+DO NOT use markdown image syntax `![img](path)` inside the question. Just fill the raw image ID (e.g. IMG-001) or null in the `image_path` field.
 {% endif %}
 
-[KONFIGURASI_LEVEL]
-
+[LEVEL_CONFIGURATION]
 {{ level_config }}
 
-[KONFIGURASI_STIMULUS]
-
+[SUBJECT_CONFIGURATION]
 {{ subject_config }}
 
-[KONTEKS_PEMBELAJARAN]
-
+[LEARNING_CONTEXT]
 {{ rag_context }}
 
-[ATP]
-
+[ATP_ALIGNMENT]
 {{ atp }}
 
-[ATURAN_SOAL]
+Prioritize ATP objectives as curriculum constraints.
 
-* Seluruh soal harus sesuai dengan level yang diberikan.
-* Seluruh soal harus mengukur kompetensi yang relevan dengan konteks pembelajaran dan ATP (jika tersedia).
-* Soal harus kontekstual, realistis, dan bergantung pada stimulus.
-* Pastikan hanya ada satu jawaban yang paling benar.
-* Hindari pola soal yang berulang.
+[DISTRACTOR_QUALITY_RULES]
+- Incorrect options must remain strategically plausible.
+- Avoid obviously irrational, careless, or extreme distractors.
+- Avoid answer choices that can be eliminated without understanding the underlying concept.
+- Distractors should reflect realistic misunderstandings, incomplete reasoning, or partially correct strategies.
+- Correct answers must not be identifiable solely by length, detail, tone, or professionalism.
+- Prefer distractors from the same reasoning family as the correct answer.
+- Avoid structurally obvious distractors.
 
-[ATURAN_STIMULUS]
+[OPTION_BALANCING_RULES]
+- Keep option specificity and tone relatively balanced.
+- Avoid one option sounding significantly more complete or professional than others.
+- All options should appear potentially reasonable at first glance.
+- Keep all options within similar reasoning complexity.
+- Avoid one option being noticeably more detailed than others.
 
-- Setiap soal harus memiliki stimulus.
-- Stimulus harus ringkas, relevan, dan memuat informasi yang cukup untuk dianalisis.
-- Gunakan bentuk stimulus sesuai konfigurasi yang diberikan.
-- Variasikan bentuk stimulus dalam satu paket soal.
-- Jika stimulus memuat beberapa data, kategori, atau perbandingan, prioritaskan tabel atau data terstruktur dibanding paragraf.
-- Hindari dominasi narasi murni dalam satu paket soal.
-- Jika relevan, stimulus dapat menggabungkan beberapa bentuk yang saling melengkapi.
+[QUESTION_DIVERSITY_RULES]
+- Avoid repetitive question patterns.
+- Vary cognitive operations across questions.
+- Prioritize applied reasoning over formula recognition.
 
-[ATURAN_OPSI]
+[QUESTION_PRECISION_RULES]
+- Questions must support only one mathematically valid interpretation.
+- Avoid ambiguous wording.
 
-* Semua opsi harus masuk akal dan relevan dengan stimulus.
-* Panjang, tingkat detail, dan gaya bahasa opsi harus relatif seimbang.
-* Jawaban benar tidak boleh tampak paling panjang, paling spesifik, atau paling berbeda.
-* Distraktor harus mencerminkan miskonsepsi atau penalaran yang realistis.
+[STIMULUS_REQUIREMENTS]
+- Length: 30-60 words (keep extremely concise to avoid output truncation).
+- Use contextual numerical, social, or literacy-based situations depending on subject domain.
+- Use realistic Indonesian contexts.
+- Avoid repetitive scenarios across questions.
+- Stimuli should naturally support reasoning and decision-making.
+- Avoid overly artificial storytelling.
 
-[ATURAN_PENJELASAN]
+[QUESTION_REQUIREMENTS]
+- Questions must remain contextually grounded.
+- Encourage application of concepts to realistic situations.
+- Avoid pure memorization.
 
-Penjelasan berfungsi sebagai pembahasan soal.
+[DISTRACTOR_REASONING_RULES]
+- Distractors should represent realistic reasoning alternatives, not only formula variations.
+- Keep distractors within the same contextual reasoning space as the correct answer.
 
-Gunakan:
+[EXPLANATION_REQUIREMENTS]
+- Length: 30-60 words (keep extremely concise to avoid output truncation).
+- Start with a short bold title.
+- Explanations must be concise and decisive.
+- Focus only on reasoning supporting the correct answer.
+- Avoid self-correction or interpretation debates.
 
-### Analisis 
-- Dasar Teori
-- Gunakan pembahasan bertahap terhadap masalah yang akan dipecahkan
-
-* Gunakan LaTeX bila diperlukan.
-* Hindari chain-of-thought.
-
-[PENGGUNAAN_EMOJI]
-
-Gunakan emoji secara fungsional pada stimulus dan penjelasan untuk:
-
-- informasi penting
-- data penting
-- langkah penyelesaian
-- kesimpulan
-
-Hindari emoji dekoratif.
-
-[BATASAN]
-Hindari instruksi atau struktur internal muncul pada konten
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.
