@@ -1,0 +1,27 @@
+fastapi
+uvicorn
+gunicorn
+pydantic
+python-dotenv
+requests
+sentence-transformers
+rank_bm25
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+huggingface_hub
+langgraph
+langchain_core
+langchain_aws
+langchain_openai
+langchain_community
+boto3
+jinja2
+docling
+pypdf
+python-multipart
+Pillow
+requests
+qdrant-client
+transformers
+numpy
+cachetools

@@ -1,0 +1,117 @@
+:root {
+    --bg-dark: #0f1115;
+    --bg-panel: #1a1d24;
+    --bg-card: #252a33;
+    --bg-hover: #2f3542;
+    --text-main: #f0f2f5;
+    --text-muted: #9ba3af;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --success: #10b981;
+    --danger: #ef4444;
+    --border: #374151;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background-color: var(--bg-panel);
+    border-right: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.logo { font-size: 22px; font-weight: 700; margin-bottom: 24px; color: var(--accent); }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; }
+.form-group input, .form-group select {
+    width: 100%; padding: 10px; background-color: var(--bg-dark);
+    border: 1px solid var(--border); border-radius: 6px; color: var(--text-main);
+    font-size: 14px; font-family: 'Inter', sans-serif; box-sizing: border-box;
+}
+.form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent); }
+
+.btn-generate {
+    width: 100%; padding: 14px; background-color: var(--accent); color: white;
+    border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: 600;
+    margin-top: 10px; transition: .2s;
+}
+.btn-generate:hover { background-color: var(--accent-hover); }
+.btn-generate:disabled { background-color: #374151; color: #6b7280; cursor: not-allowed; }
+
+/* MAIN CONTENT */
+.main-content {
+    flex-grow: 1; position: relative; display: flex; flex-direction: column;
+    overflow-y: auto; overflow-x: hidden; padding: 40px; align-items: center; min-width: 0;
+}
+
+/* LOADING */
+.loading-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 17, 21, 0.9); z-index: 100;
+    display: none; flex-direction: column; align-items: center; justify-content: center;
+}
+.spinner {
+    width: 50px; height: 50px; border: 4px solid var(--bg-card);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin 1s linear infinite; margin-bottom: 16px;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* VIEWS */
+.view-container { display: none; width: 100%; max-width: 800px; flex-direction: column; }
+.view-container.active { display: flex; }
+
+pre.debug { background: var(--bg-dark); padding: 16px; border-radius: 8px; font-size: 12px; overflow-x: auto; color: #a5b4fc; margin-top: 40px; width: 100%; box-sizing: border-box; white-space: pre-wrap; word-wrap: break-word; }
+
+/* Komponen CSS untuk Bacaan */
+.bacaan-content { background: var(--bg-card); padding: 32px; border-radius: 12px; line-height: 1.7; font-size: 16px; }
+.bacaan-content h1, .bacaan-content h2, .bacaan-content h3 { color: var(--accent); margin-top: 0; }
+.source-box { margin-top: 24px; padding: 16px; background: rgba(59, 130, 246, 0.1); border-left: 4px solid var(--accent); border-radius: 6px; font-size: 14px; }
+
+/* Komponen CSS untuk Quiz PG */
+.quiz-card { background: var(--bg-card); padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+.quiz-card img { max-width: 100%; border-radius: 8px; margin-bottom: 16px; max-height: 200px; object-fit: cover; }
+.quiz-q { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+.quiz-opt { padding: 12px 16px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; cursor: pointer; transition: .2s; }
+.quiz-opt:hover { border-color: var(--accent); }
+.quiz-opt.selected { background: rgba(59, 130, 246, 0.15); border-color: var(--accent); }
+.quiz-explanation { margin-top: 16px; padding: 16px; background: rgba(16, 185, 129, 0.1); border-left: 4px solid var(--success); border-radius: 6px; font-size: 14px; display: none; }
+
+/* Komponen CSS untuk Quiz Essay */
+.essay-textarea { width: 100%; height: 120px; padding: 16px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 8px; color: white; font-family: inherit; font-size: 15px; resize: vertical; margin-bottom: 16px; }
+.btn-eval { background: var(--success); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.eval-result { margin-top: 16px; padding: 16px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 8px; display: none; }
+.eval-skor { font-size: 24px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+
+/* Komponen CSS untuk Flashcard */
+.fc-container { width: 100%; max-width: 500px; height: 350px; perspective: 1000px; margin: 0 auto 30px auto; }
+.fc-card { width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer; position: relative; }
+.fc-card.is-flipped { transform: rotateY(180deg); }
+.fc-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: var(--bg-card); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px; box-sizing: border-box; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.fc-back { transform: rotateY(180deg); background: var(--bg-hover); }
+.fc-title { color: var(--text-muted); font-size: 14px; text-transform: uppercase; margin-bottom: 20px; position: absolute; top: 24px; }
+.fc-text { font-size: 20px; line-height: 1.5; font-weight: 500; }
+.fc-controls { display: flex; justify-content: center; gap: 16px; }
+.fc-btn { background: var(--bg-card); border: 1px solid var(--border); color: white; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 18px; }
+.fc-btn:hover { background: var(--bg-hover); }
+
+/* Komponen CSS untuk Mindmap */
+#mindmap-svg-container { width: 100%; height: 80vh; background: transparent; border-radius: 12px; }
+.node text.label { font-size: 14px; font-weight: bold; fill: #ffffff; pointer-events: none; }
+.node text.desc { font-size: 12px; fill: #cbd5e1; pointer-events: none; }
+.link { fill: none; stroke: #475569; stroke-width: 2px; }

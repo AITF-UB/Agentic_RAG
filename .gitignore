@@ -1,0 +1,19 @@
+__pycache__/
+**/__pycache__/
+*__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.zip
+*.pdf
+.ipynb_checkpoints/
+semantic_chunker_results/
+
+# Environment Variables
+.env
+**/.env
+*.env
+*.pklc
+current_experiments/
+current_experiments_now.7z

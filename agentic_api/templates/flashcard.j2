@@ -1,0 +1,30 @@
+[TASK]
+Extract EXACTLY 5 key concepts into flashcards from the provided learning context.
+Return in strict JSON format.
+
+[OUTPUT_SCHEMA]
+{
+  "cards": [
+    {
+      "depan": "[Short term or concept]",
+      "belakang": "[Short definition or explanation]"
+    }
+  ],
+  "source": "[Fill with empty string, will be filled by system]"
+}
+
+[LEARNING_CONTEXT]
+{{ rag_context }}
+
+[CONTENT_REQUIREMENTS]
+- Extract highly relevant definitions, formulas, or key terms.
+- Keep the front (depan) short (1-4 words).
+- Keep the back (belakang) concise and clear (1-2 sentences).
+- Prioritize concepts that require memorization or quick recall.
+
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.

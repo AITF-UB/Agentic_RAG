@@ -1,0 +1,112 @@
+[TASK]
+Generate learning material in JSON format.
+
+[OUTPUT_SCHEMA]
+{
+  "text": "[Combined main title and material content without numbering, using markdown]",
+  "judul": "[Main Concept Title]",
+  "source": "[Fill with empty string, will be filled by system]",
+  "image_path": "[Fill with image path from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]"
+}
+
+{% if image_context %}
+[MULTIMODAL IMAGE CONTEXT]
+{{ image_context }}
+
+*** ABSOLUTE INSTRUCTION FOR IMAGES ***
+The reference text above has markers like [Referensi File Gambar: filename.png] right above the text describing the image.
+Select ONE image path that is most relevant to the material you are creating, and put it in the `image_path` field in the JSON structure.
+DO NOT use markdown image syntax `![img](path)` inside the text. Just fill the raw URL path in the `image_path` field.
+STRICTLY PROHIBITED to create text narratives that hang or highly depend on Images/Tables. DO NOT use phrases like "Look at the table below...". Create independent theoretical narrative sentences.
+{% endif %}
+
+[LEVEL_CONFIGURATION]
+{{ level_config }}
+
+[SUBJECT_CONFIGURATION]
+{{ subject_config }}
+
+[LEARNING_CONTEXT]
+{{ rag_context }}
+
+[ATP_ALIGNMENT]
+{{ atp }}
+
+Prioritize ATP objectives as curriculum constraints.
+
+[CONTENT_REQUIREMENTS]
+- Generate a minimum of 500 words.
+- Use natural Indonesian educational language suitable for SMA students.
+- Maintain strong contextual relevance to Indonesian realities.
+- Build clear cause-effect explanations.
+- Prioritize practical understanding before abstraction.
+
+[CONTENT_STRUCTURE]
+The material should flow naturally through these sections:
+
+- contextual opening
+- concept explanation
+- technical explanation or formulation
+- real Indonesian case study
+- reflective closing
+
+Use markdown subheadings with:
+### Heading
+
+Do not use:
+- numbering
+- rigid section labels
+- colon symbols in headings
+
+[OPENING_REQUIREMENTS]
+- Start with realistic Indonesian situations, problems, or numerical/social phenomena.
+- Build curiosity naturally through contextual tension.
+- Avoid rhetorical greetings or motivational filler.
+
+[CONCEPT_EXPLANATION]
+- Explain concepts gradually and logically.
+- Connect concepts with Indonesian daily life situations.
+- Avoid abstract academic wording.
+
+[TECHNICAL_REQUIREMENTS]
+- STEM subjects:
+  - include formulas using LaTeX
+  - explain variables clearly
+  - use escaped LaTeX:
+    \\frac
+    \\times
+    \\sqrt
+
+- Theory subjects:
+  - explain conceptual relationships
+  - strengthen causal understanding
+
+[CASE_STUDY_REQUIREMENTS]
+- Use realistic Indonesian cases:
+  - UMKM
+  - pertanian
+  - distribusi
+  - sekolah
+  - lingkungan sosial
+  - ekonomi keluarga
+  - industri lokal
+
+- Demonstrate step-by-step reasoning or analysis.
+- Show practical application of concepts.
+
+[REFLECTION_REQUIREMENTS]
+- End with reflective guidance related to learning awareness or daily application.
+- Reflection must remain grounded and realistic.
+- Avoid overly philosophical narration.
+
+[TITLE_REQUIREMENTS]
+- Combine the main concept and Indonesian contextual impact naturally.
+- Titles should feel formal, readable, and educational.
+- Avoid rigid labels or symbolic formatting.
+
+[STRICT_OUTPUT_RULES]
+- Return raw JSON only.
+- No markdown code block.
+- No additional commentary.
+- Escape newline characters.
+- Escape internal quotes.

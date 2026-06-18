@@ -1,0 +1,42 @@
+[TASK]
+You are an AI Study Guide (Recommender System).
+Based on the student's learning history below, determine a maximum of 3 logical next materials to study.
+
+[STUDENT LEARNING PROFILE]
+Available Universe of Materials (Available):
+{% for b in available %}
+- Bundle ID: {{ b.bundle_id }}, Mapel: {{ b.mapel_label }}, Elemen: {{ b.elemen_label }}, Materi: {{ b.materi }}
+  ATP: {{ b.atp }}
+{% endfor %}
+
+Materials Currently Being Studied (In Progress):
+{% for b in in_progress %}
+- Bundle ID: {{ b.bundle_id }}, Materi: {{ b.materi }}
+{% endfor %}
+
+Completed Materials (Complete):
+{% for b in complete %}
+- Bundle ID: {{ b.bundle_id }}, Materi: {{ b.materi }}
+{% endfor %}
+
+[ABSOLUTE RULES FOR PREVENTING HALLUCINATION]
+1. You MUST ONLY recommend materials that are EXACTLY listed in the "Available Universe of Materials (Available)" section above.
+2. DO NOT invent, hallucinate, or create new "bundle_id", "mapel_label", "elemen_label", or "materi". You MUST strictly copy-paste these fields from the "Available" list.
+3. Choose a maximum of 3 materials from the "Available" list that are NOT present in the "Complete" list and NOT present in the "In Progress" list.
+4. If it's not clear which material to take next, recommend the next chapter based on a logical cognitive sequence from the ATP (Learning Objective Flow).
+5. Provide a clear, motivating reason ("alasan") why the material is recommended.
+6. Return raw JSON with exactly the structure below.
+7. IF Materi is empty (e.g. "materi": "N/A" or "") RECOMMEND WITH "elemen_label" ONLY.
+
+MANDATORY JSON STRUCTURE:
+{
+  "rekomendasi": [
+    {
+      "bundle_id": "string",
+      "mapel_label": "string",
+      "elemen_label": "string",
+      "materi": "string",
+      "alasan": "string"
+    }
+  ]
+}

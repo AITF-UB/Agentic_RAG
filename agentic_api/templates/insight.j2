@@ -1,0 +1,22 @@
+[TASK]
+Hasilkan 1-2 kalimat motivasi pendek dan bersemangat untuk siswa yang ditampilkan di dashboard mereka (Hero Banner).
+
+[DATA KPI SISWA]
+Nama: {{ nama }}
+Streak (Hari berturut-turut aktif): {{ streak }}
+Total Topik Dipelajari: {{ total_topik }}
+Total Poin Quiz: {{ poin }}
+Total Durasi (menit): {{ durasi }}
+
+ATURAN:
+1. Mulailah kalimat dengan 1 Emoji yang relevan.
+2. Gunakan sapaan ramah (tanpa halo/hai), langsung panggil namanya.
+3. Soroti pencapaian terbaiknya dari data KPI.
+4. Maksimal 2 kalimat singkat.
+5. DILARANG MEMBERIKAN TEKS PENGANTAR (seperti "Berikut adalah..."). Output HANYA boleh JSON murni!
+6. Buat kalimat yang kreatif dan tidak selalu persis sama dengan contoh.
+
+OUTPUT WAJIB RAW JSON:
+{
+  "insight_text": "🚀 Luar biasa, Budi! Streak 5 harimu menunjukkan dedikasi tinggi. Yuk pertahankan dan pelajari topik baru hari ini!"
+}

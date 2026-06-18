@@ -1,0 +1,356 @@
+import os
+import json
+import time
+from datetime import datetime
+from jinja2 import Environment, FileSystemLoader
+from langgraph.graph import StateGraph, START, END
+from langchain_core.messages import SystemMessage, HumanMessage
+
+from state import AgentState
+from tools import RAGEngine, clean_json_from_llm, extract_source, generate_konten_id, truncate_context_to_budget
+from llm import get_llm, get_eval_llm
+from prompt_config import compile_leveling_registry, compile_subject_registry
+
+env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")))
+llm = get_llm()
+
+def load_prompt(template_name: str, **kwargs) -> str:
+    template = env.get_template(template_name)
+    return template.render(**kwargs)
+
+# ================================================================
+# 1. NODES
+# ================================================================
+async def retrieve_node(state: AgentState) -> dict:
+    """Melakukan pencarian ke Qdrant menggunakan RAGEngine secara asynchronous."""
+    tipe = state["tipe"]
+    req = state["request_params"]
+    
+    # Fokuskan query RAG HANYA pada elemen dan materi.
+    query = f"{req.get('materi', '')}".strip()
+    
+    # Mapping mapel_id ke string di metadata Qdrant (VDB)
+    mapel_mapping = {
+        # Mapping berdasar ID (MVP)
+        "1": "Bahasa Indonesia",
+        "2": "Bahasa Inggris",
+        "3": "Ilmu Pengetahuan Alam",
+        "4": "Ilmu Pengetahuan Sosial",
+        "5": "Informatika",
+        "6": "Koding dan Kecerdasan Artifisial",
+        "7": "Matematika",
+        "8": "Pendidikan Agama Islam dan Budi Pekerti",
+        "9": "Pendidikan Agama Katolik dan Budi Pekerti",
+        "10": "Pendidikan Agama Kristen dan Budi Pekerti",
+        "11": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
+        "12": "Pendidikan Pancasila",
+        "17": "Seni Musik",
+        "18": "Seni Rupa",
+        "19": "Seni Tari",
+        "20": "Seni Teater",
+        # Mapping legacy text (fallback)
+        "bahasa_indonesia": "Bahasa Indonesia",
+        "bindo": "Bahasa Indonesia",
+        "matematika_umum": "Matematika",
+        "mat": "Matematika",
+        "matematika": "Matematika",
+        "mtk": "Matematika",
+        "ips": "Ilmu Pengetahuan Sosial"
+    }
+    raw_mapel = str(req.get("mapel_id", ""))
+    mapel_key = raw_mapel.lower().replace(" ", "_")
+    mapel_str = mapel_mapping.get(mapel_key, raw_mapel)
+    
+    # Ekstrak angka kelas dari jenjang (mendukung angka & romawi)
+    jenjang_str = str(req.get("jenjang", "")).lower().strip()
+    kelas_int = None
+    
+    roman_map = {"X": 10, "xi": 11, "xii": 12}
+    if jenjang_str in roman_map:
+        kelas_int = roman_map[jenjang_str]
+    else:
+        digits = ''.join(filter(str.isdigit, jenjang_str))
+        if digits:
+            kelas_int = int(digits)
+    
+    rag_results = await RAGEngine.unified_search(query, tipe, mapel=mapel_str, kelas=kelas_int)
+    
+    # Format texts
+    text_ctx_parts = []
+    for t in rag_results["text"]:
+        part = t["text"]
+        vis = t.get("visual_context", [])
+        if isinstance(vis, str):
+            vis = [vis]
+        if vis:
+            vis_str = ", ".join([os.path.basename(v.get("path", "")) if isinstance(v, dict) else os.path.basename(str(v)) for v in vis])
+            part = f"[Referensi File Gambar: {vis_str}]\n" + part
+        text_ctx_parts.append(part)
+        
+    text_ctx = "\n---\n".join(text_ctx_parts)
+    sumber = extract_source(rag_results["text"])
+
+    # Build formatted image context string
+    img_ctx_str = ""
+    visual_assets = []
+    if rag_results["images"]:
+        for idx, img_info in enumerate(rag_results["images"]):
+            img_path = img_info["path"]
+            img_context = img_info["context"].replace("\n", " ") # Bersihkan newline agar rapi
+            img_ctx_str += f"Gambar {idx+1}:\n"
+            img_ctx_str += f"- filename: {os.path.basename(img_path)}\n"
+            img_ctx_str += f"- image_path: {img_path}\n"
+            img_ctx_str += f"- konteks_materi_gambar: {img_context}...\n\n"
+            
+            # Extract base64 for frontend
+            b64_data = img_info.get("base64")
+            if b64_data:
+                mime_type = img_info.get("mime_type", "image/png")
+                if b64_data.startswith("data:"):
+                    visual_assets.append(b64_data)
+                else:
+                    visual_assets.append(f"data:{mime_type};base64,{b64_data}")
+        
+    max_rag_tokens_str = os.getenv("MAX_RAG_TOKEN")
+    if max_rag_tokens_str and max_rag_tokens_str.isdigit():
+        max_rag_tokens = int(max_rag_tokens_str)
+        text_ctx = truncate_context_to_budget(text_ctx, max_tokens=max_rag_tokens) if text_ctx else ""
+        img_ctx_str = truncate_context_to_budget(img_ctx_str, max_tokens=max_rag_tokens // 4).strip() if img_ctx_str else ""
+        
+    return {
+        "rag_context": text_ctx if text_ctx else "Tidak ada dokumen relevan di database.",
+        "sumber_text": sumber,
+        "image_context": img_ctx_str.strip() if img_ctx_str else "",
+        "visual_assets": visual_assets
+    }
+
+def get_rag_context_for_revision(state: AgentState) -> str:
+    """Mengembalikan rag_context atau string kosong jika error murni dari gagal parsing."""
+    if state["revision_count"] == 0:
+        return state.get("rag_context", "")
+        
+    eval_res = state.get("evaluator_result", {})
+    poin = str(eval_res.get("poin_revisi", ""))
+    gen = state.get("generated_content", {})
+    
+    is_format_error = False
+    if isinstance(gen, dict) and "error" in gen:
+        is_format_error = True
+    elif "JSON" in poin and "rusak" in poin:
+        is_format_error = True
+        
+    if "konteks" in poin.lower() or "jauh" in poin.lower() or "materi" in poin.lower() or "rag" in poin.lower():
+        is_format_error = False
+        
+    if is_format_error:
+        return ""
+    return state.get("rag_context", "")
+
+async def _call_generation_llm(state: AgentState, usr_prompt: str) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    sys_prompt = load_prompt("system.j2", matpel=req["mapel_id"], materi=req.get("materi", ""), level=lvl)
+    
+    if state.get("instruksi_revisi"):
+        usr_prompt += f"\n\n[INSTRUKSI REVISI DARI GURU]:\n{state['instruksi_revisi']}\nSesuaikan dan perbaiki hasil generasimu berdasarkan instruksi ini!"
+
+    if state.get("evaluator_result") and state["revision_count"] > 0:
+        usr_prompt += f"\n\n[FEEDBACK REVISI SEBELUMNYA]:\n{state['evaluator_result'].get('poin_revisi')}\nPerbaiki JSON-mu!"
+        
+        gen = state.get("generated_content", {})
+        if isinstance(gen, dict) and "raw" in gen:
+            usr_prompt += f"\n\n[OUTPUT SEBELUMNYA YANG RUSAK]:\n```text\n{gen['raw']}\n```\nTugasmu HANYA memperbaiki format JSON di atas agar valid (tambahkan kutip, kurung, koma, dll yang kurang). JANGAN mengubah isinya secara drastis."
+
+    response = await llm.ainvoke([SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
+    content_dict = clean_json_from_llm(response.content)
+    
+    return {
+        "generated_content": content_dict
+    }
+
+async def bacaan_node(state: AgentState) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    level_config = compile_leveling_registry("bacaan", lvl)
+    subject_config = compile_subject_registry("bacaan", req.get("mapel_id", ""))
+    usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), image_context=state.get("image_context", ""), level=lvl, level_config=level_config, subject_config=subject_config)
+    return await _call_generation_llm(state, usr_prompt)
+
+async def pretest_node(state: AgentState) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    level_config = compile_leveling_registry("pretest", lvl)
+    subject_config = compile_subject_registry("pretest", req.get("mapel_id", ""))
+    usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, subject_config=subject_config)
+    return await _call_generation_llm(state, usr_prompt)
+
+async def quiz_pg_node(state: AgentState) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    level_config = compile_leveling_registry("quiz_pg", lvl)
+    subject_config = compile_subject_registry("quiz_pg", req.get("mapel_id", ""))
+    usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), image_context=state.get("image_context", ""), level=lvl, level_config=level_config, subject_config=subject_config)
+    return await _call_generation_llm(state, usr_prompt)
+
+async def quiz_essay_node(state: AgentState) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    level_config = compile_leveling_registry("quiz_essay", lvl)
+    subject_config = compile_subject_registry("quiz_essay", req.get("mapel_id", ""))
+    usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), rag_context=get_rag_context_for_revision(state), image_context=state.get("image_context", ""), level=lvl, level_config=level_config, subject_config=subject_config)
+    return await _call_generation_llm(state, usr_prompt)
+
+async def flashcard_node(state: AgentState) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    level_config = compile_leveling_registry("flashcard", lvl)
+    subject_config = compile_subject_registry("flashcard", req.get("mapel_id", ""))
+    usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), rag_context=get_rag_context_for_revision(state), level=lvl, level_config=level_config, subject_config=subject_config)
+    return await _call_generation_llm(state, usr_prompt)
+
+async def mindmap_node(state: AgentState) -> dict:
+    req = state["request_params"]
+    lvl = state["level"]
+    level_config = compile_leveling_registry("mindmap", lvl)
+    subject_config = compile_subject_registry("mindmap", req.get("mapel_id", ""))
+    usr_prompt = load_prompt("mindmap.j2", matpel=req["mapel_id"], materi=req.get("materi", ""), rag_context=get_rag_context_for_revision(state), level_config=level_config, subject_config=subject_config)
+    return await _call_generation_llm(state, usr_prompt)
+
+async def evaluator_node(state: AgentState) -> dict:
+    """Mengevaluasi output generator."""
+    if state["revision_count"] >= 2:
+        return {"evaluator_result": {"skor": 100, "poin_revisi": []}}
+
+    gen_content = state.get("generated_content", {})
+    if isinstance(gen_content, dict) and "error" in gen_content:
+        # Langsung tembak paksa revisi tanpa panggil LLM Evaluator
+        return {
+            "evaluator_result": {
+                "skor": 0, 
+                "status": "tidak_layak",
+                "poin_revisi": ["JSON output sebelumnya gagal diparsing (kemungkinan terpotong atau kurang tanda koma/kurung). Perbaiki struktur JSON agar valid!"]
+            },
+            "revision_count": state["revision_count"] + 1
+        }
+
+    req = state["request_params"]
+    sys_prompt = "Kamu adalah Evaluator JSON dan Konten Pendidikan."
+    usr_prompt = load_prompt(
+        "evaluator.j2",
+        materi=req.get("materi", ""),
+        atp=req.get("atp", ""),
+        level=state["level"],
+        tipe=state["tipe"],
+        rag_context=state.get("rag_context", ""),
+        generated_content=json.dumps(state["generated_content"], indent=2)
+    )
+    
+    response = await get_eval_llm().ainvoke([SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
+    eval_dict = clean_json_from_llm(response.content)
+    
+    # Fallback if evaluation is weird
+    if not isinstance(eval_dict, dict) or "skor" not in eval_dict:
+        eval_dict = {"skor": 0, "poin_revisi": ["JSON output sebelumnya terpotong atau rusak. Buat ulang JSON dengan valid dan lengkap."]}
+        
+    return {
+        "evaluator_result": eval_dict,
+        "revision_count": state["revision_count"] + 1
+    }
+
+def structurer_node(state: AgentState) -> dict:
+    """Membungkus hasil akhir sesuai API Contract SR LATEST (V3.6)"""
+    tipe = state["tipe"]
+    req = state["request_params"]
+    content = state["generated_content"]
+    
+    # Mapping format JSON dari V3 (judul_utama & konten_markdown) menjadi 'text' untuk frontend
+    if tipe == "bacaan":
+        if isinstance(content, dict):
+            if "judul_utama" in content and "konten_markdown" in content:
+                content["text"] = f"# {content['judul_utama']}\n\n{content['konten_markdown']}"
+                content.pop("judul_utama", None)
+                content.pop("konten_markdown", None)
+            content["source"] = state["sumber_text"]
+            
+    if tipe == "flashcard":
+        if isinstance(content, dict):
+            content["source"] = state["sumber_text"]
+            
+    # Fallback jika LLM open-source membuang wrapper object dan langsung mengembalikan array
+    if isinstance(content, list):
+        if tipe == "quiz_essay":
+            content = {"pertanyaan": content}
+        elif tipe in ["quiz_pg", "pretest"]:
+            content = {"soal": content}
+            
+    # Tambahkan visual assets jika ada
+    visuals = state.get("visual_assets", [])
+    if visuals and isinstance(content, dict):
+        content["visuals"] = visuals
+            
+    return {"final_payload": content}
+
+# ================================================================
+# 2. EDGES & GRAPH
+# ================================================================
+def route_after_retrieve(state: AgentState) -> str:
+    tipe = state.get("tipe")
+    if tipe in ["bacaan", "pretest", "quiz_pg", "quiz_essay", "flashcard", "mindmap"]:
+        return tipe
+    raise ValueError(f"Tipe {tipe} tidak dikenali.")
+
+def should_revise(state: AgentState) -> str:
+    eval_res = state.get("evaluator_result", {})
+    skor = eval_res.get("skor", 100)
+    status = eval_res.get("status", "layak")
+    
+    if (skor < 80 or status == "tidak_layak") and state["revision_count"] < 2:
+        return state.get("tipe")
+    return "pass"
+
+builder = StateGraph(AgentState)
+builder.add_node("retrieve", retrieve_node)
+builder.add_node("bacaan", bacaan_node)
+builder.add_node("pretest", pretest_node)
+builder.add_node("quiz_pg", quiz_pg_node)
+builder.add_node("quiz_essay", quiz_essay_node)
+builder.add_node("flashcard", flashcard_node)
+builder.add_node("mindmap", mindmap_node)
+builder.add_node("evaluate", evaluator_node)
+builder.add_node("structure", structurer_node)
+
+builder.add_edge(START, "retrieve")
+
+builder.add_conditional_edges(
+    "retrieve",
+    route_after_retrieve,
+    {
+        "bacaan": "bacaan",
+        "pretest": "pretest",
+        "quiz_pg": "quiz_pg",
+        "quiz_essay": "quiz_essay",
+        "flashcard": "flashcard",
+        "mindmap": "mindmap"
+    }
+)
+
+for node_name in ["bacaan", "pretest", "quiz_pg", "quiz_essay", "flashcard", "mindmap"]:
+    builder.add_edge(node_name, "evaluate")
+
+builder.add_conditional_edges(
+    "evaluate", 
+    should_revise, 
+    {
+        "bacaan": "bacaan",
+        "pretest": "pretest",
+        "quiz_pg": "quiz_pg",
+        "quiz_essay": "quiz_essay",
+        "flashcard": "flashcard",
+        "mindmap": "mindmap",
+        "pass": "structure"
+    }
+)
+
+builder.add_edge("structure", END)
+
+beta_graph = builder.compile()

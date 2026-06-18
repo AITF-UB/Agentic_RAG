@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta Agentic - Modular Visualizer Hub</title>
+    <!-- Libraries -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- SIDEBAR FORM -->
+    <div class="sidebar">
+        <div class="logo">🚀 Beta Agentic</div>
+        
+        <div class="form-group">
+            <label>Tipe Konten</label>
+            <select id="inp-tipe">
+                <option value="bacaan">Bacaan</option>
+                <option value="quiz_pg">Quiz Pilihan Ganda</option>
+                <option value="quiz_essay">Quiz Essay</option>
+                <option value="flashcard">Flashcard</option>
+                <option value="mindmap">Mindmap</option>
+                <option value="pretest">Pretest (5 Soal)</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="group-level">
+            <label>Level Kesulitan</label>
+            <select id="inp-level">
+                <option value="Low">Low (LOTS)</option>
+                <option value="Mid">Mid (MOTS)</option>
+                <option value="High">High (HOTS)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Mapel ID</label>
+            <input type="text" id="inp-mapel" value="mat">
+        </div>
+        <div class="form-group">
+            <label>Jenjang & Kelas ID</label>
+            <input type="text" id="inp-jenjang" value="10" placeholder="Jenjang (misal 10 atau X)" style="margin-bottom: 8px;">
+            <input type="text" id="inp-kelas" value="x_1" placeholder="Kelas ID (misal x_1)">
+        </div>
+        <div class="form-group">
+            <label>Elemen ID & Label</label>
+            <input type="text" id="inp-elemen-id" value="bil_aljabar" placeholder="ID" style="margin-bottom: 8px;">
+            <input type="text" id="inp-elemen-label" value="Bilangan dan Aljabar" placeholder="Label">
+        </div>
+        <div class="form-group">
+            <label>Materi</label>
+            <input type="text" id="inp-materi" value="Persamaan Linear">
+        </div>
+        <div class="form-group">
+            <label>ATP (Tujuan Pembelajaran)</label>
+            <input type="text" id="inp-atp" value="Siswa mampu menjelaskan dan menyelesaikan persamaan linear satu variabel dalam konteks nyata.">
+        </div>
+
+        <button class="btn-generate" id="btn-gen" onclick="handleGenerate()">✨ Generate Konten</button>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content">
+        <!-- LOADING SPINNER -->
+        <div class="loading-overlay" id="loading">
+            <div class="spinner"></div>
+            <div style="font-weight: 600;">Agen AI sedang bekerja...</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Mencari referensi & generate konten...</div>
+        </div>
+
+        <!-- GLOBAL VISUALS (RAG Base64 Images) -->
+        <div id="global-visuals" class="visuals-container" style="display: none; margin-bottom: 20px; padding: 15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;"></div>
+
+        <!-- VIEW: BACAAN -->
+        <div id="view-bacaan" class="view-container">
+            <div class="bacaan-content" id="bacaan-html"></div>
+            <div class="source-box" id="bacaan-source"></div>
+        </div>
+
+        <!-- VIEW: PRETEST -->
+        <div id="view-pretest" class="view-container"></div>
+
+        <!-- VIEW: QUIZ PG -->
+        <div id="view-quiz-pg" class="view-container"></div>
+
+        <!-- VIEW: QUIZ ESSAY -->
+        <div id="view-quiz-essay" class="view-container"></div>
+
+        <!-- VIEW: FLASHCARD -->
+        <div id="view-flashcard" class="view-container">
+            <div class="fc-container" onclick="this.querySelector('.fc-card').classList.toggle('is-flipped')">
+                <div class="fc-card" id="fc-card">
+                    <div class="fc-face">
+                        <div class="fc-title">Depan</div>
+                        <div class="fc-text" id="fc-front"></div>
+                    </div>
+                    <div class="fc-face fc-back">
+                        <div class="fc-title">Belakang</div>
+                        <div class="fc-text" style="font-size:16px;" id="fc-back"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fc-controls">
+                <button class="fc-btn" onclick="fcPrev()">◄</button>
+                <span id="fc-counter" style="align-self:center; font-weight:bold;">1/1</span>
+                <button class="fc-btn" onclick="fcNext()">►</button>
+            </div>
+        </div>
+
+        <!-- VIEW: MINDMAP -->
+        <div id="view-mindmap" class="view-container" style="max-width: 100%;">
+            <div id="mindmap-svg-container"></div>
+        </div>
+        
+        <!-- DEBUG RAW JSON -->
+        <pre class="debug" id="debug-json" style="display:none;"></pre>
+    </div>
+
+    <!-- JAVASCRIPT MODULARS -->
+    <script src="js/bacaan.js"></script>
+    <script src="js/quiz_pg.js"></script>
+    <script src="js/pretest.js"></script>
+    <script src="js/quiz_essay.js"></script>
+    <script src="js/flashcard.js"></script>
+    <script src="js/mindmap.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
