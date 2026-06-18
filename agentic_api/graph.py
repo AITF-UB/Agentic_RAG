@@ -357,20 +357,15 @@ def structurer_node(state: AgentState) -> dict:
     visual_assets = state.get("visual_assets", {})
 
     def inject_visuals(item: dict):
-        img_id = item.pop("image_id", None) or item.pop("image_path", None)
-        if img_id and isinstance(img_id, str) and img_id in visual_assets:
-            item["visuals"] = visual_assets[img_id]
+        item.pop("image_id", None)
+        item.pop("image_path", None)
+        if visual_assets:
+            item["visuals"] = list(visual_assets.values())
         else:
             item["visuals"] = None
 
     if isinstance(content, dict):
-        if tipe in ["quiz_pg", "pretest"] and "soal" in content:
-            for s in content["soal"]:
-                if isinstance(s, dict): inject_visuals(s)
-        elif tipe == "quiz_essay" and "pertanyaan" in content:
-            for q in content["pertanyaan"]:
-                if isinstance(q, dict): inject_visuals(q)
-        elif tipe == "bacaan":
+        if tipe == "bacaan":
             # Set top-level visuals for bacaan if requested
             if "konten_markdown" in content:
                 teks_markdown = content["konten_markdown"]
@@ -381,9 +376,9 @@ def structurer_node(state: AgentState) -> dict:
                 
                 if references_to_append:
                     content["text"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
-            
-            # Map top level visuals
-            inject_visuals(content)
+        
+        # Injeksi visual di level paling atas (root) untuk semua tipe task
+        inject_visuals(content)
 
     return {"final_payload": content}
 
