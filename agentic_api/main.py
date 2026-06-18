@@ -267,11 +267,26 @@ async def lifespan(app: FastAPI):
     yield
     print("Shutting down...")
 
+from fastapi.security import APIKeyHeader
+from fastapi import Security, Depends
+
+API_KEY = os.getenv("API_KEY")
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
+
+async def verify_api_key(api_key: str = Security(api_key_header)):
+    if API_KEY and api_key != API_KEY:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing API Key"
+        )
+    return api_key
+
 app = FastAPI(
     title       = "Beta Agentic SR API + RAG Pipeline",
     description = "Unified microservice: Konten/RAG endpoints + Pipeline PDF → Qdrant (Docling + VLM + BGE-M3 + SPLADE).",
     version     = "4.0",
     lifespan    = lifespan,
+    dependencies=[Depends(verify_api_key)]
 )
 
 import traceback

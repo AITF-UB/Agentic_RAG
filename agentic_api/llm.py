@@ -217,5 +217,18 @@ def get_eval_llm():
             temperature=0.0,
             max_tokens=4000
         )
+    elif provider == "kaggle_llamacpp":
+        from langchain_openai import ChatOpenAI
+        endpoint = os.getenv("EVAL_NGROK_KAGGLE_LLAMACPP") or os.getenv("NGROK_KAGGLE_LLAMACPP")
+        if endpoint and not endpoint.endswith("/v1"):
+            endpoint = endpoint + "/v1"
+            
+        return ChatOpenAI(
+            openai_api_base=endpoint,
+            openai_api_key="llama-cpp",
+            model_name=os.getenv("EVAL_KAGGLE_LLAMACPP_MODEL_ID", "unsloth/qwen3.6"),
+            temperature=0.0,
+            max_tokens=4000
+        )
     else:
         return get_llm()

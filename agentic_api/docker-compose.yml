@@ -12,7 +12,7 @@ services:
       - "8002:8002"
     volumes:
       # Config & data
-      - ./.env:/app/.env
+      - ../.env:/app/.env
       - ../extraction:/app/extraction
       - ./templates:/app/templates
       - ./bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
@@ -23,8 +23,6 @@ services:
       - ../outputs:/app/outputs
     env_file:
       - ../.env
-    environment:
-      - MODEL_API_URL=http://model_api:8003
     restart: unless-stopped
     deploy:
       resources:
