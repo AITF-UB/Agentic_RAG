@@ -50,6 +50,7 @@ async def retrieve_node(state: AgentState) -> dict:
         "19": "Seni Tari",
         "20": "Seni Teater",
         # Mapping legacy text (fallback)
+        "bio": "Biologi",
         "bahasa_indonesia": "Bahasa Indonesia",
         "bindo": "Bahasa Indonesia",
         "matematika_umum": "Matematika",
@@ -93,24 +94,22 @@ async def retrieve_node(state: AgentState) -> dict:
 
     # Build formatted image context string
     img_ctx_str = ""
-    visual_assets = []
+    visual_assets = {}
     if rag_results["images"]:
         for idx, img_info in enumerate(rag_results["images"]):
+            img_id = img_info.get("id", f"IMG-{idx+1:03d}")
             img_path = img_info["path"]
             img_context = img_info["context"].replace("\n", " ") # Bersihkan newline agar rapi
-            img_ctx_str += f"Gambar {idx+1}:\n"
-            img_ctx_str += f"- filename: {os.path.basename(img_path)}\n"
-            img_ctx_str += f"- image_path: {img_path}\n"
-            img_ctx_str += f"- konteks_materi_gambar: {img_context}...\n\n"
+            img_ctx_str += f"[{img_id}] (filename: {os.path.basename(img_path)}) - Deskripsi: {img_context}...\n\n"
             
             # Extract base64 for frontend
             b64_data = img_info.get("base64")
             if b64_data:
                 mime_type = img_info.get("mime_type", "image/png")
                 if b64_data.startswith("data:"):
-                    visual_assets.append(b64_data)
+                    visual_assets[img_id] = b64_data
                 else:
-                    visual_assets.append(f"data:{mime_type};base64,{b64_data}")
+                    visual_assets[img_id] = f"data:{mime_type};base64,{b64_data}"
         
     max_rag_tokens_str = os.getenv("MAX_RAG_TOKEN")
     if max_rag_tokens_str and max_rag_tokens_str.isdigit():
@@ -314,10 +313,32 @@ def structurer_node(state: AgentState) -> dict:
         elif tipe in ["quiz_pg", "pretest"]:
             content = {"soal": content}
             
-    # Tambahkan visual assets jika ada
-    visuals = state.get("visual_assets", [])
-    if visuals and isinstance(content, dict):
-        content["visuals"] = visuals
+    # Tambahkan visual assets jika direquest via image_id
+    visual_assets = state.get("visual_assets", {})
+
+    def inject_visuals(item: dict):
+        img_id = item.pop("image_id", None) or item.pop("image_path", None)
+        if img_id and isinstance(img_id, str) and img_id in visual_assets:
+            item["visuals"] = visual_assets[img_id]
+        else:
+            item["visuals"] = None
+
+    if isinstance(content, dict):
+        if tipe in ["quiz_pg", "pretest"] and "soal" in content:
+            for s in content["soal"]:
+                if isinstance(s, dict): inject_visuals(s)
+        elif tipe == "quiz_essay" and "pertanyaan" in content:
+            for q in content["pertanyaan"]:
+                if isinstance(q, dict): inject_visuals(q)
+        elif tipe == "bacaan" and "text" in content:
+            teks_markdown = content["text"]
+            references_to_append = []
+            for img_id, b64_data in visual_assets.items():
+                if f"[{img_id}]" in teks_markdown:
+                    references_to_append.append(f"[{img_id}]: {b64_data}")
+            
+            if references_to_append:
+                content["text"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
             
     return {"final_payload": content}
 

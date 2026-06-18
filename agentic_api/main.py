@@ -25,7 +25,7 @@ Cara menjalankan:
   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 """
 
-from __future__ import annotations
+
 
 import uvicorn
 import os
@@ -286,6 +286,10 @@ if API_KEY == "default-internal-secret-key":
 
 @app.middleware("http")
 async def api_key_middleware(request: Request, call_next):
+    # Biarkan CORS preflight (OPTIONS) lewat tanpa cek API Key
+    if request.method == "OPTIONS":
+        return await call_next(request)
+        
     if request.url.path not in ["/health", "/docs", "/openapi.json"] and not request.url.path.startswith("/extraction"):
         api_key = request.headers.get("X-API-Key", "")
         if not secrets.compare_digest(api_key.encode("utf8"), API_KEY.encode("utf8")):
@@ -354,15 +358,7 @@ async def generate_konten(request: Request, req: GenerateRequest):
         if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
             final_payload["konten_id"] = req.konten_id
             
-        return {
-            "data": {
-                "content": final_payload,
-                "mapel_id": req.mapel_id,
-                "elemen_id": req.elemen_id,
-                "materi_id": req.materi_id,
-                "level": req.level
-            }
-        }
+        return final_payload
         
     except Exception as e:
         print(f"Internal Error in generate_konten: {e}")
@@ -418,9 +414,9 @@ def submit_essay(request: Request, req: List[EssayEvalItem]):
             
             skor = hasil.get("skor", 0)
             total_skor += skor
-            evaluasi_hasil.append(hasil)
+            evaluasi_hasil.append({"skor": skor})
             
-        return {"total_skor": total_skor}
+        return {"data": {"total_skor": total_skor, "evaluasi": evaluasi_hasil}}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"EVAL_ERR: {str(e)}")
 

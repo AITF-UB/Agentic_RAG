@@ -24,8 +24,20 @@ Never generate more or fewer.
 - Ensure the correct answer is frequently placed at index 2 or 3 to create an EVEN DISTRIBUTION of answer keys across the 10 questions.
 - The "jawaban" field must ALWAYS perfectly match the integer index (0-3) where you actually placed the correct answer in the "pilihan" array.
 - "soal" MUST be a combination of the Stimulus and the Question.
-- STRICTLY PROHIBITED to create questions that highly depend on Images/Tables/Graphs. NEVER use phrases like "Based on the image above...", or "Look at the following table...". Every question MUST be answerable without visual aids!
-- Even if there are image references in the Context, ignore them and create independent theoretical questions.
+- If a relevant image is provided in the MULTIMODAL IMAGE CONTEXT, you MAY create questions that depend on that image (e.g., 'Based on the diagram...'). Evaluate the image description and determine if it is highly relevant to the concept.
+- Not all questions need an image. If the concept doesn't need visual aids, create independent theoretical questions.
+
+{% if image_context %}
+[MULTIMODAL IMAGE CONTEXT]
+{{ image_context }}
+
+*** ABSOLUTE INSTRUCTION FOR IMAGES ***
+The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
+If the question you are creating STRICTLY requires an image, select the ONE most relevant image ID and put it in the `image_path` field (use the ID like IMG-001).
+If the question DOES NOT require an image, you MUST set `image_path` to null. DO NOT force an image into every question.
+CRITICAL RULE: DO NOT use the same image ID for more than 2 questions! If an image has already been used twice, you MUST use a different image or set image_path to null for subsequent questions.
+DO NOT use markdown image syntax `![img](path)` inside the question. Just fill the raw image ID (e.g. IMG-001) or null in the `image_path` field.
+{% endif %}
 
 [LEVEL_CONFIGURATION]
 {{ level_config }}

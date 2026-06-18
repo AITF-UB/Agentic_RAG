@@ -40,6 +40,7 @@ TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
 
 BM25_CACHE_PATH = Path(__file__).resolve().parent / f"bm25_{TEXT_COLLECTION}.pkl"
+BM25_CACHE_VERSION = "v1"
 
 # ================================================================
 # Search Mode Configuration
@@ -64,15 +65,6 @@ assert SEARCH_MODE in ("dense", "hybrid"), (
 
 print(f"🔍 Search mode aktif: [{SEARCH_MODE.upper()}]")
 
-# ================================================================
-# Query Embedding Cache — menghindari encode ulang query sama
-# ================================================================
-_query_embed_cache: Dict[str, tuple] = {}  # query -> (vector, timestamp)
-_QUERY_EMBED_TTL = 300  # 5 menit
-
-# BM25 cache version — invalidate kalau struktur payload berubah
-BM25_CACHE_VERSION = "v1"
-
 # Lazy load globals (BM25 only — model singletons sekarang di model_registry)
 _bm25 = None
 _bm25_docs = []
@@ -86,49 +78,33 @@ def tokenize(text: str):
     return re.findall(r"\w+", text)
 
 async def embed_text_for_text_vdb(query: str) -> list:
-    """Embed query dengan cache — menghindari encode ulang query yang sama."""
-    cache_key = query.strip()
-    now = time.time()
-    
-    # Cek cache
-    if cache_key in _query_embed_cache:
-        cached_vector, cached_ts = _query_embed_cache[cache_key]
-        if now - cached_ts < _QUERY_EMBED_TTL:
-            return cached_vector
-    
     model = get_sentence_model()
-    prefixed = f"query: {cache_key}"
+    prefixed = f"query: {query.strip()}"
     loop = asyncio.get_event_loop()
     vector = await loop.run_in_executor(None, lambda: model.encode([prefixed], normalize_embeddings=True, convert_to_numpy=True)[0])
-    vector_list = vector.tolist()
-    
-    # Simpan ke cache
-    _query_embed_cache[cache_key] = (vector_list, now)
-    return vector_list
+    return vector.tolist()
 
 # ================================================================
 # 2. Qdrant Search Engine
 # ================================================================
 def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_payload: Optional[dict] = None) -> list:
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search"
-    payload = {
-        "vector": {"name": "dense", "vector": vector},
-        "limit": top_k,
-        "with_payload": {
-            "exclude": ["has_visual_content"]
-        },
-    }
+    payload = {"vector": {"name": "dense", "vector": vector}, "limit": top_k, "with_payload": True}
     if filter_payload:
         payload["filter"] = filter_payload
     max_retries = 2
     for attempt in range(max_retries + 1):
         try:
             response = requests.post(url, json=payload, timeout=60)
+
+            # Fallback ke vector biasa jika collection tidak pakai named vectors (seperti srma-22)
             if response.status_code == 400 and "Not existing vector name error" in response.text:
                 payload["vector"] = vector
                 response = requests.post(url, json=payload, timeout=60)
+
             if response.status_code != 200:
                 print(f"⚠️ Qdrant Dense Error Body: {response.text}")
+
             response.raise_for_status()
             return response.json().get("result", [])
         except requests.exceptions.ConnectionError as e:
@@ -159,9 +135,7 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
     payload = {
         "vector": {"name": "sparse", "vector": sparse_vector},
         "limit": top_k,
-        "with_payload": {
-            "exclude": ["has_visual_content"]
-        },
+        "with_payload": True
     }
     if filter_payload:
         payload["filter"] = filter_payload
@@ -178,14 +152,15 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
 
             results = []
             for hit in hits:
-                # Payload Qdrant FLAT (tidak ada nesting "metadata"),
-                # jadi seluruh payload diperlakukan sebagai metadata.
                 payload_data = hit.get("payload", {})
+                metadata = payload_data.get("metadata")
+                if metadata is None:
+                    metadata = {k: v for k, v in payload_data.items() if k not in ("text", "page_content")}
                 results.append({
                     "score": hit.get("score", 0.0),
                     "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
-                    "metadata": payload_data,
-                    "source_file": payload_data.get("source_file", "N/A"),
+                    "metadata": metadata,
+                    "source_file": payload_data.get("source_file", metadata.get("source_file", "N/A")),
                     "retrieval_type": "splade"
                 })
             return results
@@ -207,64 +182,9 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
             print(f"❌ Error query Qdrant Splade: {e}")
             return []
 
-def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
-    """Fetch full points (with ALL payloads) by their IDs.
-    Returns list of {id, score, payload} dicts.
-    Uses GET /collections/{collection}/points/{id} for each ID.
-    Handles rate limits with retry logic (max 2 retries per point).
-    """
-    url_base = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}"
-    results = []
-    for point_id in point_ids:
-        for attempt in range(3):
-            try:
-                resp = requests.get(f"{url_base}/points/{point_id}", timeout=30)
-                resp.raise_for_status()
-                point = resp.json().get("result", {})
-                if point:
-                    results.append(point)
-                break
-            except requests.exceptions.RequestException as e:
-                if attempt < 2:
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"⚠️ Failed to fetch point {point_id} after 3 attempts: {e}")
-    return results
-
-def _search_with_image_context(collection: str, vector: list, top_k: int, filter_payload: Optional[dict] = None) -> tuple:
-    """2-phase search: first search excluding has_visual_content, then fetch images by ID.
-    Returns (search_results_with_images, search_duration_ms).
-    """
-    start = time.time()
-    # Phase 1: search exclude images (fast)
-    phase1 = _search_qdrant_dense(collection, vector, top_k, filter_payload)
-
-    # Phase 2: fetch full payload with has_visual_content for each top-K ID
-    ids_to_fetch = [hit.get("id") for hit in phase1 if hit.get("id") is not None]
-    full_points = _fetch_qdrant_points_by_ids(ids_to_fetch, collection)
-
-    # Build a lookup: id -> full payload
-    image_lookup = {p.get("id"): p.get("payload", {}).get("has_visual_content", []) for p in full_points if p.get("id") is not None}
-
-    # Attach has_visual_content to each search result
-    for hit in phase1:
-        hit_id = hit.get("id")
-        if hit_id is not None:
-            # Qdrant payload is flat, inject directly to payload
-            hit.setdefault("payload", {})["has_visual_content"] = image_lookup.get(hit_id, [])
-
-    duration = (time.time() - start) * 1000
-    return phase1, duration
-
 def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_retries: int = 2) -> list:
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/scroll"
-    payload = {
-        "filter": scroll_filter,
-        "limit": limit,
-        "with_payload": {
-            "exclude": ["has_visual_content"]
-        },
-    }
+    payload = {"filter": scroll_filter, "limit": limit, "with_payload": True}
     for attempt in range(max_retries + 1):
         try:
             response = requests.post(url, json=payload, timeout=60)
@@ -282,9 +202,6 @@ def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_r
             return []
 
 def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None) -> Optional[dict]:
-    # Field-field ini ada di top-level payload (sudah dikonfirmasi dari
-    # screenshot payload Qdrant: mata_pelajaran, kelas, source_file, dst
-    # semua flat, tidak nested di bawah "metadata").
     conditions = []
     if asset_type: conditions.append({"key": "asset_type", "match": {"value": asset_type}})
     if source: conditions.append({"key": "source", "match": {"value": source}})
@@ -299,7 +216,7 @@ def build_bm25_index():
     global _bm25, _bm25_docs
     if _bm25 is not None:
         return
-    
+
     # Cek cache dengan versioning — invalidate jika struktur payload berubah
     cache_valid = False
     if BM25_CACHE_PATH.exists():
@@ -315,18 +232,18 @@ def build_bm25_index():
                 print(f"⚠️ BM25 cache version mismatch (cache={cache.get('version')}, expected={BM25_CACHE_VERSION}). Building new index...")
         except Exception as e:
             print(f"⚠️ BM25 cache load error: {e}. Building new index...")
-    
+            
     if not cache_valid:
         print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{TEXT_COLLECTION}/points/scroll"
     all_points = []
     offset = None
+
     while True:
+        # payload = {"limit": 1000, "with_payload": True}
         payload = {
-            "limit": 1000,
-            "with_payload": {
-                "exclude": ["has_visual_content"]
-            }
+            "limit": 1000, 
+            "with_payload": {"exclude": ["has_visual_content", "visuals", "metadata.has_visual_content"]}
         }
         if offset is not None:
             payload["offset"] = offset
@@ -341,22 +258,23 @@ def build_bm25_index():
         except Exception as e:
             print(f"❌ BM25 scroll error: {e}")
             break
+
     corpus = []
     docs = []
     for p in all_points:
         payload = p.get("payload", {})
         text = payload.get("text", payload.get("page_content", ""))
         if not text: continue
-        # Payload Qdrant FLAT — seluruh payload diperlakukan sebagai metadata
-        # (mata_pelajaran, kelas, chunk_index, source_file, dll semua di sini).
-        # has_visual_content sudah di-exclude di level request di atas.
-        metadata = payload
+        metadata = payload.get("metadata")
+        if metadata is None:
+            metadata = {k: v for k, v in payload.items() if k not in ("text", "page_content")}
         docs.append({
             "text": text,
             "metadata": metadata,
-            "source_file": payload.get("source_file", "N/A")
+            "source_file": payload.get("source_file", metadata.get("source_file", "N/A"))
         })
         corpus.append(tokenize(text))
+
     if corpus:
         _bm25 = BM25Okapi(corpus)
         _bm25_docs = docs
@@ -544,21 +462,19 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
 
     vector = await embed_text_for_text_vdb(query)
     payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas)
-    hits, _ = _search_with_image_context(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
+    hits = _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
 
     results = []
     for hit in hits:
-        # Payload Qdrant FLAT (tidak ada nesting "metadata").
-        # Seluruh payload (chunk_index, mata_pelajaran, kelas,
-        # has_visual_content, dll) diperlakukan sebagai metadata,
-        # supaya dedup, chunk expansion, dan info gambar di
-        # RAGEngine.unified_search bisa berfungsi dengan benar.
         payload = hit.get("payload", {})
+        metadata = payload.get("metadata")
+        if metadata is None:
+            metadata = {k: v for k, v in payload.items() if k not in ("text", "page_content")}
         results.append({
             "score": hit.get("score", 0.0),
             "text": payload.get("text", payload.get("page_content", "N/A")),
-            "metadata": payload,
-            "source_file": payload.get("source_file", "N/A"),
+            "metadata": metadata,
+            "source_file": payload.get("source_file", metadata.get("source_file", "N/A")),
             "retrieval_type": "dense",
         })
 
@@ -573,21 +489,23 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     → chunk expansion → rerank.
     Lebih akurat namun lebih berat — gunakan saat infrastruktur siap.
     """
-    retrieve_k = max(top_k * 5, 15)
+    retrieve_k = max(top_k * 5, 30)
 
     # 1. Dense Search
     vector = await embed_text_for_text_vdb(query)
     payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas)
-    hits, _ = _search_with_image_context(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
+    hits = _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
     dense_results = []
     for hit in hits:
-        # Payload Qdrant FLAT — seluruh payload diperlakukan sebagai metadata.
         payload = hit.get("payload", {})
+        metadata = payload.get("metadata")
+        if metadata is None:
+            metadata = {k: v for k, v in payload.items() if k not in ("text", "page_content")}
         dense_results.append({
             "score": hit.get("score", 0.0),
             "text": payload.get("text", payload.get("page_content", "N/A")),
-            "metadata": payload,
-            "source_file": payload.get("source_file", "N/A"),
+            "metadata": metadata,
+            "source_file": payload.get("source_file", metadata.get("source_file", "N/A")),
             "retrieval_type": "dense"
         })
 
@@ -595,20 +513,22 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     splade_results = _search_qdrant_splade(TEXT_COLLECTION, query, top_k=retrieve_k, filter_payload=payload_filter)
     bm25_results = sparse_search(query, top_k=retrieve_k, mata_pelajaran=mata_pelajaran, kelas=kelas)
 
-    # 3. RRF + Dedup + Expand
+    # 3. RRF + Dedup
     fused_results = reciprocal_rank_fusion(dense_results, splade_results, bm25_results)
     unique_results = deduplicate(fused_results)
-    
+
     # [OPTIMASI RERANKER & EXPANSION]
     # Batasi dokumen yang masuk ke proses ekspansi dan reranking (max 15).
-    # Ini sangat penting agar Qdrant tidak di-query 90x untuk ekspansi,
+    # Ini sangat penting agar Qdrant tidak di-query berkali-kali secara tidak perlu,
     # dan model reranker (cross-encoder) tidak kewalahan memproses teks.
     docs_to_process = unique_results[:15]
     
+    # Expand Context DULU (menggunakan batching yang sudah dioptimasi)
     expanded_results = expand_chunk_context(docs_to_process, window=1)
 
-    # 4. Rerank
+    # Rerank dokumen yang SUDAH di-expand untuk akurasi maksimal
     reranked_results = await rerank_results(query, expanded_results, top_k=top_k)
+    
     return reranked_results
 
 
@@ -661,26 +581,31 @@ class RAGEngine:
         images = []
         if tipe in ["quiz_pg", "quiz_essay", "bacaan"]:
             for t in texts:
-                # metadata sekarang = seluruh payload (flat), jadi
-                # has_visual_content benar-benar terbaca dari Qdrant.
                 vis = t.get("metadata", {}).get("has_visual_content", [])
                 vis_list = vis if isinstance(vis, list) else [vis] if isinstance(vis, str) else []
 
                 for img in vis_list:
-                    img_path = img.get("path") if isinstance(img, dict) else str(img)
-                    img_base64 = img.get("base64") if isinstance(img, dict) else None
+                    # img bisa berupa string (path) atau dict (path, base64, dll)
+                    img_path = img.get("path") if isinstance(img, dict) else img
                     
                     # Cek apakah image sudah ada di list
-                    if not any(x.get("path") == img_path for x in images if isinstance(x, dict)):
+                    if not any(x["path"] == img_path for x in images if isinstance(x, dict)):
                         # Ambil potongan teks chunk asli sebagai konteks visual gambar (max 600 chars)
                         context_snippet = t.get("text", "")[:600]
-                        img_id = f"IMG-{len(images)+1:03d}"
-                        images.append({
-                            "id": img_id,
+                        
+                        img_entry = {
                             "path": img_path,
-                            "base64": img_base64,
                             "context": context_snippet
-                        })
+                        }
+                        
+                        # Simpan base64 jika ada agar bisa digunakan frontend
+                        if isinstance(img, dict):
+                            if "base64" in img:
+                                img_entry["base64"] = img["base64"]
+                            if "mime_type" in img:
+                                img_entry["mime_type"] = img["mime_type"]
+                                
+                        images.append(img_entry)
 
         return {
             "text": [{"text": t.get("expanded_text", t["text"]), "source_file": t["source_file"], "visual_context": t.get("metadata", {}).get("has_visual_content", [])} for t in texts],

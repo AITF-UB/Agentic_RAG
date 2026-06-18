@@ -22,7 +22,7 @@ services:
       - ../chunks:/app/chunks
       - ../outputs:/app/outputs
     env_file:
-      - ./.env
+      - ../.env
     environment:
       - MODEL_API_URL=http://model_api:8003
     restart: unless-stopped

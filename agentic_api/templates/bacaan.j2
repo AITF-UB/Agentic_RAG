@@ -3,10 +3,9 @@ Generate learning material in JSON format.
 
 [OUTPUT_SCHEMA]
 {
-  "text": "[Combined main title and material content without numbering, using markdown]",
+  "text": "[Combined main title and material content without numbering, using markdown. Insert images here if needed.]",
   "judul": "[Main Concept Title]",
-  "source": "[Fill with empty string, will be filled by system]",
-  "image_path": "[Fill with image path from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]"
+  "source": "[Fill with empty string, will be filled by system]"
 }
 
 {% if image_context %}
@@ -14,10 +13,11 @@ Generate learning material in JSON format.
 {{ image_context }}
 
 *** ABSOLUTE INSTRUCTION FOR IMAGES ***
-The reference text above has markers like [Referensi File Gambar: filename.png] right above the text describing the image.
-Select ONE image path that is most relevant to the material you are creating, and put it in the `image_path` field in the JSON structure.
-DO NOT use markdown image syntax `![img](path)` inside the text. Just fill the raw URL path in the `image_path` field.
-STRICTLY PROHIBITED to create text narratives that hang or highly depend on Images/Tables. DO NOT use phrases like "Look at the table below...". Create independent theoretical narrative sentences.
+The reference text above has markers like [IMG-001] (filename) - Deskripsi: ...
+If you want to include an image from the context in your reading material, you MUST use markdown reference-style links inside the `text` field.
+Format: `![Alt Text Singkat][IMG-001]`
+Pastikan Alt Text (teks di dalam kurung siku pertama) sangat singkat (maksimal 3 kata). DO NOT write the image URL, path, or base64 data. Just use the exact image ID (e.g., IMG-001) in the reference brackets.
+ipPlace the image naturally in the paragraph or section where it is most relevant.
 {% endif %}
 
 [LEVEL_CONFIGURATION]

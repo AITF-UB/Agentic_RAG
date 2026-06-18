@@ -8,7 +8,14 @@ function renderQuizPG(content) {
         const soalStr = Array.isArray(q.soal) ? q.soal.join('\n') : String(q.soal || "");
         let soalHtml = marked.parse(fixImgUrl(soalStr));
         
-        if (q.image_path && typeof q.image_path === 'string' && q.image_path.trim() !== "") {
+        let stimulusHtml = "";
+        if (q.stimulus && typeof q.stimulus === 'string' && q.stimulus.trim() !== "") {
+            stimulusHtml = `<div class="quiz-stimulus" style="font-style: italic; margin-bottom: 16px; padding: 12px 16px; background: var(--bg-hover); border-left: 4px solid var(--accent); border-radius: 4px; color: var(--text-muted);">${marked.parse(fixImgUrl(q.stimulus))}</div>`;
+        }
+        
+        if (q.visuals && typeof q.visuals === 'string' && q.visuals.startsWith("data:image")) {
+            soalHtml = `<img src="${q.visuals}" alt="Ilustrasi Soal" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />\n` + soalHtml;
+        } else if (q.image_path && typeof q.image_path === 'string' && q.image_path.trim() !== "") {
             soalHtml = `<img src="http://localhost:8000/extraction/${q.image_path}" alt="Ilustrasi Soal" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />\n` + soalHtml;
         }
         
@@ -22,6 +29,7 @@ function renderQuizPG(content) {
 
         container.innerHTML += `
             <div class="quiz-card">
+                ${stimulusHtml}
                 <div class="quiz-q">${idx+1}. ${soalHtml}</div>
                 <div class="opts-container">${optsHtml}</div>
                 <div class="quiz-explanation" id="expl-${q.id}">
