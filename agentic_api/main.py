@@ -360,15 +360,7 @@ async def generate_konten(req: GenerateRequest):
         if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
             final_payload["konten_id"] = req.konten_id
             
-        return {
-            "data": {
-                "content": final_payload,
-                "mapel_id": req.mapel_id,
-                "elemen_id": req.elemen_id,
-                "materi_id": req.materi_id,
-                "level": req.level
-            }
-        }
+        return final_payload
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"GEN_ERROR: {str(e)}")
