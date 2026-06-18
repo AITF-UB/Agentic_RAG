@@ -68,10 +68,10 @@ print(f"🔍 Search mode aktif: [{SEARCH_MODE.upper()}]")
 # Query Embedding Cache — menghindari encode ulang query sama
 # ================================================================
 _query_embed_cache: Dict[str, tuple] = {}  # query -> (vector, timestamp)
-_QUERY_EMBED_TTL = 300  # 5 menit
-
-# BM25 cache version — invalidate kalau struktur payload berubah
-BM25_CACHE_VERSION = "v1"
+_QUERY_EMBED_TTL = 300  # Lokasi file local untuk cache BM25
+BM25_CACHE_FILE = os.path.join(os.path.dirname(__file__), "bm25_hybrid_new.pkl")
+# Versi struktur objek index BM25
+BM25_CACHE_VERSION = "v2"
 
 # Lazy load globals (BM25 only — model singletons sekarang di model_registry)
 _bm25 = None
@@ -182,6 +182,7 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
                 # jadi seluruh payload diperlakukan sebagai metadata.
                 payload_data = hit.get("payload", {})
                 results.append({
+                    "id": hit.get("id"),
                     "score": hit.get("score", 0.0),
                     "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
                     "metadata": payload_data,
@@ -210,51 +211,42 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
 def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
     """Fetch full points (with ALL payloads) by their IDs.
     Returns list of {id, score, payload} dicts.
-    Uses GET /collections/{collection}/points/{id} for each ID.
-    Handles rate limits with retry logic (max 2 retries per point).
+    Uses POST /collections/{collection}/points for batch fetching.
     """
-    url_base = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}"
-    results = []
-    for point_id in point_ids:
-        for attempt in range(3):
-            try:
-                resp = requests.get(f"{url_base}/points/{point_id}", timeout=30)
-                resp.raise_for_status()
-                point = resp.json().get("result", {})
-                if point:
-                    results.append(point)
-                break
-            except requests.exceptions.RequestException as e:
-                if attempt < 2:
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"⚠️ Failed to fetch point {point_id} after 3 attempts: {e}")
-    return results
+    if not point_ids: return []
+    url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points"
+    payload = {
+        "ids": point_ids,
+        "with_payload": True,
+        "with_vector": False
+    }
+    for attempt in range(3):
+        try:
+            resp = requests.post(url, json=payload, timeout=30)
+            resp.raise_for_status()
+            return resp.json().get("result", [])
+        except requests.exceptions.RequestException as e:
+            if attempt < 2:
+                time.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"⚠️ Failed to batch fetch points after 3 attempts: {e}")
+    return []
 
-def _search_with_image_context(collection: str, vector: list, top_k: int, filter_payload: Optional[dict] = None) -> tuple:
-    """2-phase search: first search excluding has_visual_content, then fetch images by ID.
-    Returns (search_results_with_images, search_duration_ms).
+def _inject_visual_content_batch(collection: str, docs: list) -> list:
+    """Menerima list dokumen yang sudah direrank, mengambil visual context dari Qdrant, dan menyisipkannya.
+    docs adalah list of dict format standar kita, yang memiliki key 'id' dan 'metadata'.
     """
-    start = time.time()
-    # Phase 1: search exclude images (fast)
-    phase1 = _search_qdrant_dense(collection, vector, top_k, filter_payload)
-
-    # Phase 2: fetch full payload with has_visual_content for each top-K ID
-    ids_to_fetch = [hit.get("id") for hit in phase1 if hit.get("id") is not None]
+    ids_to_fetch = [doc.get("id") for doc in docs if doc.get("id") is not None]
+    if not ids_to_fetch: return docs
+    
     full_points = _fetch_qdrant_points_by_ids(ids_to_fetch, collection)
-
-    # Build a lookup: id -> full payload
     image_lookup = {p.get("id"): p.get("payload", {}).get("has_visual_content", []) for p in full_points if p.get("id") is not None}
-
-    # Attach has_visual_content to each search result
-    for hit in phase1:
-        hit_id = hit.get("id")
-        if hit_id is not None:
-            # Qdrant payload is flat, inject directly to payload
-            hit.setdefault("payload", {})["has_visual_content"] = image_lookup.get(hit_id, [])
-
-    duration = (time.time() - start) * 1000
-    return phase1, duration
+    
+    for doc in docs:
+        doc_id = doc.get("id")
+        if doc_id is not None:
+            doc.setdefault("metadata", {})["has_visual_content"] = image_lookup.get(doc_id, [])
+    return docs
 
 def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_retries: int = 2) -> list:
     url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/scroll"
@@ -352,6 +344,7 @@ def build_bm25_index():
         # has_visual_content sudah di-exclude di level request di atas.
         metadata = payload
         docs.append({
+            "id": p.get("id"),
             "text": text,
             "metadata": metadata,
             "source_file": payload.get("source_file", "N/A")
@@ -544,7 +537,7 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
 
     vector = await embed_text_for_text_vdb(query)
     payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas)
-    hits, _ = _search_with_image_context(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
+    hits = _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
 
     results = []
     for hit in hits:
@@ -555,6 +548,7 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
         # RAGEngine.unified_search bisa berfungsi dengan benar.
         payload = hit.get("payload", {})
         results.append({
+            "id": hit.get("id"),
             "score": hit.get("score", 0.0),
             "text": payload.get("text", payload.get("page_content", "N/A")),
             "metadata": payload,
@@ -564,7 +558,8 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
 
     unique_results = deduplicate(results)
     # Kembalikan top_k teratas (sudah diurutkan Qdrant by score)
-    return unique_results[:top_k]
+    top_results = unique_results[:top_k]
+    return _inject_visual_content_batch(TEXT_COLLECTION, top_results)
 
 
 async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int]) -> list:
@@ -578,12 +573,13 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     # 1. Dense Search
     vector = await embed_text_for_text_vdb(query)
     payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas)
-    hits, _ = _search_with_image_context(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
+    hits = _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
     dense_results = []
     for hit in hits:
         # Payload Qdrant FLAT — seluruh payload diperlakukan sebagai metadata.
         payload = hit.get("payload", {})
         dense_results.append({
+            "id": hit.get("id"),
             "score": hit.get("score", 0.0),
             "text": payload.get("text", payload.get("page_content", "N/A")),
             "metadata": payload,
@@ -609,7 +605,7 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
 
     # 4. Rerank
     reranked_results = await rerank_results(query, expanded_results, top_k=top_k)
-    return reranked_results
+    return _inject_visual_content_batch(TEXT_COLLECTION, reranked_results)
 
 
 async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None) -> list:

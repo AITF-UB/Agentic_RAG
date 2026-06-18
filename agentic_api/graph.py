@@ -293,24 +293,27 @@ def structurer_node(state: AgentState) -> dict:
     req = state["request_params"]
     content = state["generated_content"]
     
-    # Mapping format JSON dari V3 (judul_utama & konten_markdown) menjadi 'text' untuk frontend
+    # Mapping format JSON untuk frontend
     if tipe == "bacaan":
         if isinstance(content, dict):
-            if "judul_utama" in content and "konten_markdown" in content:
-                content["text"] = f"# {content['judul_utama']}\n\n{content['konten_markdown']}"
-                content.pop("judul_utama", None)
-                content.pop("konten_markdown", None)
-            content["source"] = state["sumber_text"]
+            content.setdefault("source", state["sumber_text"])
             
-    if tipe == "flashcard":
-        if isinstance(content, dict):
-            content["source"] = state["sumber_text"]
+    elif tipe == "flashcard":
+        if isinstance(content, list):
+            content = {"cards": content, "source": state["sumber_text"]}
+        elif isinstance(content, dict):
+            content.setdefault("source", state["sumber_text"])
             
-    # Fallback jika LLM open-source membuang wrapper object dan langsung mengembalikan array
-    if isinstance(content, list):
-        if tipe == "quiz_essay":
+    elif tipe == "mindmap":
+        if isinstance(content, list):
+            content = {"nodes": content}
+
+    elif tipe == "quiz_essay":
+        if isinstance(content, list):
             content = {"pertanyaan": content}
-        elif tipe in ["quiz_pg", "pretest"]:
+
+    elif tipe in ["quiz_pg", "pretest"]:
+        if isinstance(content, list):
             content = {"soal": content}
             
     # Tambahkan visual assets jika direquest via image_id
@@ -330,16 +333,21 @@ def structurer_node(state: AgentState) -> dict:
         elif tipe == "quiz_essay" and "pertanyaan" in content:
             for q in content["pertanyaan"]:
                 if isinstance(q, dict): inject_visuals(q)
-        elif tipe == "bacaan" and "text" in content:
-            teks_markdown = content["text"]
-            references_to_append = []
-            for img_id, b64_data in visual_assets.items():
-                if f"[{img_id}]" in teks_markdown:
-                    references_to_append.append(f"[{img_id}]: {b64_data}")
+        elif tipe == "bacaan":
+            # Set top-level visuals for bacaan if requested
+            if "text" in content:
+                teks_markdown = content["text"]
+                references_to_append = []
+                for img_id, b64_data in visual_assets.items():
+                    if f"[{img_id}]" in teks_markdown:
+                        references_to_append.append(f"[{img_id}]: {b64_data}")
+                
+                if references_to_append:
+                    content["text"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
             
-            if references_to_append:
-                content["text"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
-            
+            # Map top level visuals
+            inject_visuals(content)
+
     return {"final_payload": content}
 
 # ================================================================

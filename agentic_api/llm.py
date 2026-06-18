@@ -204,18 +204,21 @@ def get_eval_llm():
         )
     elif provider == "vllm":
         from langchain_openai import ChatOpenAI
-        endpoint = os.getenv("EVAL_VLLM_ENDPOINT")
-        if endpoint and not endpoint.startswith("http"):
-            endpoint = "http://" + endpoint
-        if endpoint and endpoint.endswith("/chat/completions"):
-            endpoint = endpoint.replace("/chat/completions", "")
-            
+        endpoint = os.getenv("EVAL_VLLM_ENDPOINT") or os.getenv("VLLM_ENDPOINT")
+        if endpoint:
+            if not endpoint.startswith("http://") and not endpoint.startswith("https://"):
+                endpoint = "http://" + endpoint
+            if endpoint.endswith("/chat/completions"):
+                endpoint = endpoint.replace("/chat/completions", "")
+                
         return ChatOpenAI(
             openai_api_base=endpoint,
             openai_api_key="empty",
-            model_name=os.getenv("EVAL_VLLM_MODEL_ID", "Qwen/Qwen2.5-72B-Instruct"),
+            model_name=os.getenv("EVAL_VLLM_MODEL_ID") or os.getenv("VLLM_MODEL_ID", "Qwen/Qwen2.5-72B-Instruct"),
             temperature=0.0,
-            max_tokens=4000
+            max_tokens=4000,
+            model_kwargs={"response_format": {"type": "json_object"}},
+            extra_body={"chat_template_kwargs": {"enable_thinking": False}}
         )
     elif provider == "kaggle_llamacpp":
         from langchain_openai import ChatOpenAI
@@ -229,6 +232,24 @@ def get_eval_llm():
             model_name=os.getenv("EVAL_KAGGLE_LLAMACPP_MODEL_ID", "unsloth/qwen3.6"),
             temperature=0.0,
             max_tokens=4000
+        )
+    elif provider == "tim2_vllm":
+        from langchain_openai import ChatOpenAI
+        endpoint = os.getenv("EVAL_TIM2_VLLM_ENDPOINT") or os.getenv("TIM2_VLLM_ENDPOINT")
+        if endpoint:
+            if not endpoint.startswith("http://") and not endpoint.startswith("https://"):
+                endpoint = "http://" + endpoint
+            if endpoint.endswith("/chat/completions"):
+                endpoint = endpoint.replace("/chat/completions", "")
+                
+        return ChatOpenAI(
+            openai_api_base=endpoint,
+            openai_api_key="empty",
+            model_name=os.getenv("EVAL_TIM2_MODEL_ID") or os.getenv("TIM2_MODEL_ID", "aitf-ub-2026/ub-sr-02-qwen3.5-9b-base-sft-v2"),
+            temperature=0.0,  # Evaluator harus deterministik (temperature 0)
+            max_tokens=4000,
+            model_kwargs={"response_format": {"type": "json_object"}},
+            extra_body={"chat_template_kwargs": {"enable_thinking": False}}
         )
     else:
         return get_llm()
