@@ -1,65 +1,100 @@
-[TASK]
-Generate EXACTLY 5 essay questions in JSON format.
-Never generate more or fewer.
+[TUGAS]
 
-[OUTPUT_SCHEMA]
+Buat TEPAT 5 soal esai dalam format JSON.
+
+[SKEMA_KELUARAN]
+
 {
   "pertanyaan": [
     {
-      "id": "e1",
-      "soal": "[Essay question sentence]",
-      "rubrik": "[High-score grading criteria]",
-      "stimulus": "[Introductory narrative or problem context]",
-      "image_path": "[Fill with image path from MULTIMODAL IMAGE CONTEXT if relevant, otherwise leave null]",
-      "penjelasan": "[Explanation for the correct answer]"
+      "level": "LOTS/MOTS/HOTS",
+      "stimulus": "",
+      "question": "",
+      "rubric_points": [],
+      "explanation": ""
     }
   ]
 }
-[CRITICAL JSON RULES]
-- DO NOT use words like "Stimulus:" or "Question:" inside the "soal" field. The "soal" field must ONLY contain the actual question sentence.
-- STRICTLY PROHIBITED to create questions that highly depend on Images/Tables/Graphs. NEVER use phrases like "Based on the image above...", or "Look at the following table...". Every question MUST be answerable without visual aids!
-- Even if there are image references in the Context, ignore them and create independent theoretical questions.
-{% if image_context %}
-[MULTIMODAL IMAGE CONTEXT]
-{{ image_context }}
 
-*** ABSOLUTE INSTRUCTION FOR IMAGES ***
-The reference text above has markers like [Referensi File Gambar: filename.png] right above the text describing the image.
-Select ONE image path that is most relevant to the question you are creating, and put it in the `image_path` field in the JSON structure.
-DO NOT use markdown image syntax `![img](path)` inside the question. Just fill the raw URL path in the `image_path` field.
-{% endif %}
+[KONFIGURASI_LEVEL]
 
-[LEVEL_CONFIGURATION]
 {{ level_config }}
 
-[SUBJECT_CONFIGURATION]
+[KONFIGURASI_STIMULUS]
+
 {{ subject_config }}
 
-[LEARNING_CONTEXT]
+{% if image_context %}
+[KONTEKS_GAMBAR]
+
+{{ image_context }}
+
+Jika gambar relevan, referensikan konteks gambar pada stimulus atau penjelasan soal.
+Jangan membuat soal yang sepenuhnya bergantung pada gambar.
+{% endif %}
+
+[KONTEKS_PEMBELAJARAN]
+
 {{ rag_context }}
 
-[ATP_ALIGNMENT]
+[ATP]
+
 {{ atp }}
 
-Prioritize ATP objectives as curriculum constraints.
+Prioritaskan ATP jika tersedia.
 
-[QUESTION_DESIGN_RULES]
-- Frame questions around real Indonesian scenarios.
-- Avoid simple recall questions ("Sebutkan", "Apa definisi").
-- Require students to explain "Mengapa" or "Bagaimana".
-- Do not make the question overly convoluted.
+[ATURAN_SOAL]
 
-[RUBRIC_REQUIREMENTS]
-- Keep rubrics concise and actionable.
-- Define exactly what constitutes a high-score answer.
+* Soal harus sesuai level yang diberikan.
+* Soal harus relevan dengan konteks pembelajaran dan ATP.
+* Soal harus kontekstual, realistis, dan bergantung pada stimulus.
+* Hindari pola soal yang berulang.
 
-[EXPLANATION_REQUIREMENTS]
-- Keep explanation direct and focused on the key concepts.
-- Use clear cause-effect logic.
+[ATURAN_STIMULUS]
 
-[STRICT_OUTPUT_RULES]
-- Return raw JSON only.
-- No markdown code block.
-- No additional commentary.
-- Escape newline characters.
-- Escape internal quotes.
+* Setiap soal wajib memiliki stimulus.
+* Variasikan bentuk stimulus dalam satu paket soal.
+* Jika memuat data atau perbandingan, prioritaskan tabel atau data terstruktur.
+* Hindari dominasi narasi murni.
+
+[ATURAN_RUBRIK]
+
+* Gunakan 3 indikator penilaian yang operasional, terukur, dan singkat.
+* Sesuaikan indikator dengan level yang diberikan.
+* Isi rubric_points sebagai array string, masing-masing satu indikator.
+
+[ATURAN_PENJELASAN]
+
+Penjelasan ditampilkan kepada siswa sebagai pembahasan soal.
+
+Gunakan struktur:
+
+### Pengerjaan
+* Langkah atau analisis bertahap menuju jawaban.
+* Untuk STEM gunakan LaTeX bila diperlukan.
+* Untuk non-STEM jelaskan alasan atau hubungan konsep yang mendukung jawaban.
+
+Hindari chain-of-thought yang panjang.
+
+[PENYAJIAN_VISUAL_PENJELASAN]
+
+Gunakan bila relevan:
+
+* bullet list → poin jawaban
+* tabel → perbandingan
+* blockquote → kesimpulan
+* bold → konsep penting
+
+[PENGGUNAAN_EMOJI]
+
+Gunakan emoji secara fungsional pada stimulus dan penjelasan untuk:
+
+- informasi penting
+- data penting
+- langkah penyelesaian
+- kesimpulan
+
+Hindari emoji dekoratif.
+
+[BATASAN]
+Hindari instruksi atau struktur internal muncul pada konten.

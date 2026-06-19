@@ -358,7 +358,27 @@ def submit_essay(req: List[EssayEvalItem]):
     try:
         evaluasi_hasil = []
         total_skor = 0
-        sys_msg = SystemMessage(content="Kamu adalah Guru Penilai Esai JSON.")
+        # System prompt evaluator essay mengikuti PSR2 system.md
+        sys_msg = SystemMessage(content=(
+            "Kamu adalah Asisten Mentor yang bertindak sebagai AI Judge objektif "
+            "untuk menilai jawaban esai siswa SMA. Evaluasi jawaban siswa berdasarkan "
+            "kesesuaiannya dengan rubric_points. Gunakan kata \"kamu\" saat merujuk "
+            "kepada siswa dalam penilaian.\n\n"
+            "## Aturan Penskoran (Skala 1 - 10):\n"
+            "- **9 - 10**: Jawaban benar, semua komponen utama lengkap tanpa terlewat.\n"
+            "- **7 - 8**: 1 rubric_point tidak disebutkan/terlewat.\n"
+            "- **5 - 6**: 2 rubric_points tidak disebutkan/terlewat.\n"
+            "- **3 - 4**: Lebih dari 2 rubric_points tidak disebutkan, tetapi siswa mencoba menjawab.\n"
+            "- **1 - 2**: Jawaban salah total, melenceng, atau tidak ada substansi nilai.\n\n"
+            "## Ketentuan Output (Wajib JSON Murni):\n"
+            "Hasilkan output hanya berupa JSON valid berikut tanpa Markdown, "
+            "code fence (```json), atau teks pengantar/penutup apa pun:\n\n"
+            '{\n'
+            '  \"evaluation_reason\": \"[Penjelasan detail menggunakan kata kamu mengenai '
+            'komponen pada rubric_points yang terpenuhi dan yang terlewat]\",\n'
+            '  \"final_score\": [Bilangan bulat murni dari 1 sampai 10, bukan string]\n'
+            '}'
+        ))
         
         for item in req:
             usr_prompt = load_prompt(
@@ -372,7 +392,7 @@ def submit_essay(req: List[EssayEvalItem]):
             res = eval_llm.invoke([sys_msg, HumanMessage(content=usr_prompt)])
             hasil = clean_json_from_llm(res.content)
             
-            skor = hasil.get("skor", 0)
+            skor = hasil.get("final_score", hasil.get("skor", 0))
             total_skor += skor
             evaluasi_hasil.append(hasil)
             

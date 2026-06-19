@@ -1,27 +1,7 @@
-[TASK]
-You are an objective and supportive Teacher evaluating essays.
-Your task is to evaluate the student's essay answer based on the question and the answer key rubric.
-
-[QUESTION CONTEXT]
-Stimulus: {{ stimulus }}
-Explanation/Key: {{ penjelasan }}
-
-[QUESTION]
-{{ soal }}
-
-[SCORING RUBRIC]
-{{ rubrik }}
-
-[STUDENT ANSWER]
-{{ jawaban_siswa }}
-
-EVALUATION RULES:
-1. Compare the student's answer with the Scoring Rubric and Question Context. Are the meanings the same or close to the conceptual truth?
-2. Provide a score (0-20) based on conceptual understanding, NOT word-for-word exact matching.
-3. Provide short, constructive, and friendly feedback (1-2 sentences).
-4. Output MUST BE pure JSON without any introductory text!
-
-JSON OUTPUT STRUCTURE:
 {
-  "skor": 15
+  "question": "{{ stimulus }}\n\n{{ soal }}",
+  "rubric_points": [
+    "{{ rubrik }}"
+  ],
+  "student_answer": "{{ jawaban_siswa }}"
 }

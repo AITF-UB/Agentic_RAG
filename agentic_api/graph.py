@@ -258,12 +258,12 @@ async def evaluator_node(state: AgentState) -> dict:
     }
 
 def structurer_node(state: AgentState) -> dict:
-    """Membungkus hasil akhir sesuai API Contract SR LATEST (V3.6)"""
+    """Membungkus hasil akhir sesuai API Contract SR PSR2"""
     tipe = state["tipe"]
     req = state["request_params"]
     content = state["generated_content"]
     
-    # Mapping format JSON dari V3 (judul_utama & konten_markdown) menjadi 'text' untuk frontend
+    # ── bacaan: gabungkan judul_utama + konten_markdown menjadi 'text' ──────
     if tipe == "bacaan":
         if isinstance(content, dict):
             if "judul_utama" in content and "konten_markdown" in content:
@@ -272,18 +272,21 @@ def structurer_node(state: AgentState) -> dict:
                 content.pop("konten_markdown", None)
             content["source"] = state["sumber_text"]
             
+    # ── flashcard: tambahkan source (PSR2 skema: {flashcard:[{level,front,back}]}) ──
     if tipe == "flashcard":
         if isinstance(content, dict):
             content["source"] = state["sumber_text"]
             
-    # Fallback jika LLM open-source membuang wrapper object dan langsung mengembalikan array
+    # ── Fallback: LLM kadang mengembalikan array langsung tanpa wrapper ──────
     if isinstance(content, list):
         if tipe == "quiz_essay":
             content = {"pertanyaan": content}
         elif tipe in ["quiz_pg", "pretest"]:
             content = {"soal": content}
+        elif tipe == "flashcard":
+            content = {"flashcard": content, "source": state["sumber_text"]}
             
-    # Tambahkan visual assets jika ada
+    # ── Tambahkan visual assets jika ada ────────────────────────────────────
     visuals = state.get("visual_assets", [])
     if visuals and isinstance(content, dict):
         content["visuals"] = visuals
