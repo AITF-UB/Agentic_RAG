@@ -375,8 +375,9 @@ def structurer_node(state: AgentState) -> dict:
                 if references_to_append:
                     content["text"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
         
-        # Injeksi visual di level paling atas (root) untuk semua tipe task
-        inject_visuals(content)
+        # Injeksi visual di level paling atas (root) hanya untuk task tertentu
+        if tipe in ["bacaan", "quiz_pg", "quiz_essay", "pretest"]:
+            inject_visuals(content)
 
     return {"final_payload": content}
 
