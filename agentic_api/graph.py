@@ -357,8 +357,6 @@ def structurer_node(state: AgentState) -> dict:
     visual_assets = state.get("visual_assets", {})
 
     def inject_visuals(item: dict):
-        item.pop("image_id", None)
-        item.pop("image_path", None)
         if visual_assets:
             item["visuals"] = list(visual_assets.values())
         else:
@@ -367,8 +365,8 @@ def structurer_node(state: AgentState) -> dict:
     if isinstance(content, dict):
         if tipe == "bacaan":
             # Set top-level visuals for bacaan if requested
-            if "konten_markdown" in content:
-                teks_markdown = content["konten_markdown"]
+            if "text" in content:
+                teks_markdown = content["text"]
                 references_to_append = []
                 for img_id, b64_data in visual_assets.items():
                     if f"[{img_id}]" in teks_markdown:
