@@ -171,7 +171,7 @@ def get_eval_llm():
             openai_api_key=os.getenv("EVAL_OPENAI_API_KEY"),
             model_name=os.getenv("EVAL_OPENAI_MODEL_ID", "gpt-4o-mini"),
             temperature=0.0,
-            max_tokens=4000
+            max_tokens=3000
         )
     elif provider == "bedrock":
         import boto3
@@ -187,7 +187,7 @@ def get_eval_llm():
             client=bedrock_client,
             model_id=os.getenv("EVAL_BEDROCK_MODEL_ID", "anthropic.claude-3-haiku-20240307-v1:0"),
             temperature=0.0,
-            max_tokens=4000
+            max_tokens=3000
         )
     elif provider == "runpod":
         from langchain_openai import ChatOpenAI
@@ -200,7 +200,7 @@ def get_eval_llm():
             openai_api_key=os.getenv("EVAL_RUNPOD_API_KEY") or os.getenv("RUNPOD_API_KEY", "empty"),
             model_name=os.getenv("EVAL_RUNPOD_MODEL_ID", "qwen/qwen3-8b"),
             temperature=0.0,
-            max_tokens=4000
+            max_tokens=3000
         )
     elif provider == "vllm":
         from langchain_openai import ChatOpenAI
@@ -216,7 +216,7 @@ def get_eval_llm():
             openai_api_key="empty",
             model_name=os.getenv("EVAL_VLLM_MODEL_ID") or os.getenv("VLLM_MODEL_ID", "Qwen/Qwen2.5-72B-Instruct"),
             temperature=0.0,
-            max_tokens=4000,
+            max_tokens=3000,
             model_kwargs={"response_format": {"type": "json_object"}},
             extra_body={"chat_template_kwargs": {"enable_thinking": False}}
         )
@@ -231,7 +231,7 @@ def get_eval_llm():
             openai_api_key="llama-cpp",
             model_name=os.getenv("EVAL_KAGGLE_LLAMACPP_MODEL_ID", "unsloth/qwen3.6"),
             temperature=0.0,
-            max_tokens=4000
+            max_tokens=3000
         )
     elif provider == "tim2_vllm":
         from langchain_openai import ChatOpenAI
@@ -247,7 +247,7 @@ def get_eval_llm():
             openai_api_key="empty",
             model_name=os.getenv("EVAL_TIM2_MODEL_ID") or os.getenv("TIM2_MODEL_ID", "aitf-ub-2026/ub-sr-02-qwen3.5-9b-base-sft-v2"),
             temperature=0.0,  # Evaluator harus deterministik (temperature 0)
-            max_tokens=4000,
+            max_tokens=3000,
             model_kwargs={"response_format": {"type": "json_object"}},
             extra_body={"chat_template_kwargs": {"enable_thinking": False}}
         )
