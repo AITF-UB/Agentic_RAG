@@ -79,7 +79,7 @@ async def retrieve_node(state: AgentState) -> dict:
     user_id = req.get("user_id")
     if user_id:
         print(f"[retrieve_node] Generating for user={user_id}, buku={buku_id}")
-    rag_results = await RAGEngine.unified_search(query, tipe, mapel=mapel_str, kelas=kelas_int, source_file=buku_id)
+    rag_results = await RAGEngine.unified_search(query, tipe, mapel=mapel_str, kelas=kelas_int, buku_id=buku_id)
     
     # Format texts
     text_ctx_parts = []
