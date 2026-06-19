@@ -146,6 +146,7 @@ class JobInfo(BaseModel):
 class PipelineParams(BaseModel):
     """Parameter opsional untuk pipeline."""
     step:             Optional[str] = Field(None, description="Step tertentu, kosong = semua step")
+    buku_id:          Optional[str] = Field(None, description="ID unik buku (UUID, di-generate/diinput saat upload)")
     qdrant_host:      str  = Field(os.getenv("QDRANT_HOST", "76.13.195.1"),           description="Host Qdrant")
     qdrant_port:      int  = Field(int(os.getenv("QDRANT_PORT", "6333")),             description="Port Qdrant")
     collection_name:  str  = Field(os.getenv("QDRANT_TEXT_COLLECTION", "Test_pipeline"), description="Nama collection Qdrant")
@@ -227,6 +228,7 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             id_kelas          = params.id_kelas,
             jenjang           = params.jenjang,
             id_guru           = params.id_guru,
+            buku_id           = params.buku_id,
             vlm_model_id      = params.vlm_model,
             ollama_host       = params.ollama_host,
             dense_model_name  = params.dense_model,
@@ -245,13 +247,13 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             for f in jsonl_files
         )
 
-        # Normalisasi buku_id agar frontend tahu value yang harus dikirim
+        # Normalisasi source_file agar tetap informatif
         # Logika identik dengan _normalize_source_file_for_qdrant di full_pipeline.py
-        buku_id_raw = pdf_path.stem  # mis. "Biologi_Kelas_X"
-        buku_id_normalized = buku_id_raw.lower()
+        source_file_raw = pdf_path.stem  # mis. "Biologi_Kelas_X"
+        source_file_normalized = source_file_raw.lower()
         for _sfx in ("_chunks", "_final_paginated", "_structure"):
-            if buku_id_normalized.endswith(_sfx):
-                buku_id_normalized = buku_id_normalized[: -len(_sfx)]
+            if source_file_normalized.endswith(_sfx):
+                source_file_normalized = source_file_normalized[: -len(_sfx)]
 
         _update_job(
             job_id,
@@ -259,7 +261,8 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             message = "Pipeline selesai.",
             result  = {
                 "pdf_file":          pdf_path.name,
-                "buku_id":           buku_id_normalized,
+                "buku_id":           params.buku_id,
+                "source_file":       source_file_normalized,
                 "step_run":          params.step if params.step else "all",
                 "json_files":        [str(p) for p in json_files],
                 "markdown_files":    [str(p) for p in md_files],
@@ -491,6 +494,7 @@ async def upload_and_run(
     file:             UploadFile = File(..., description="File PDF yang akan diproses"),
     # Parameter opsional
     step:             Optional[str] = Form(None),
+    buku_id:          Optional[str] = Form(None, description="ID unik buku. Kosongkan untuk auto-generate UUID"),
     start_page:       int  = Form(0, description="Halaman awal (1-based). 0 = dari awal"),
     end_page:         int  = Form(0, description="Halaman akhir (inklusif). 0 = sampai akhir"),
     mata_pelajaran:   Optional[str] = Form(None, description="Mata pelajaran (mis. Biologi)"),
@@ -505,10 +509,15 @@ async def upload_and_run(
     - Pantau status via `GET /pipeline/job/{job_id}`.
     - `step` bisa diisi `extract`, `describe`, `chunk`, atau `ingest` untuk menjalankan
       satu step saja. Kosongkan untuk menjalankan semua step.
+    - `buku_id` adalah ID unik buku. Jika tidak dikirim, akan di-generate UUID otomatis.
     """
     # Validasi tipe file
     if not file.filename or not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Hanya file PDF yang diterima.")
+
+    # Auto-generate buku_id jika tidak dikirim
+    if not buku_id:
+        buku_id = str(uuid.uuid4())
 
     # Simpan file yang di-upload
     safe_name = Path(file.filename).name  # Hindari path traversal
@@ -522,6 +531,7 @@ async def upload_and_run(
 
     params = PipelineParams(
         step            = step,
+        buku_id         = buku_id,
         start_page      = start_page,
         end_page        = end_page,
         mata_pelajaran  = mata_pelajaran,

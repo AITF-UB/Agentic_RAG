@@ -136,6 +136,7 @@ class PipelineConfig:
     id_kelas:        Optional[str] = None  # ID_Kelas
     jenjang:         Optional[str] = None  # Jenjang Kelas (mis. X, XI, XII)
     id_guru:         Optional[str] = None  # ID Guru
+    buku_id:         Optional[str] = None  # ID unik buku, di-assign di upload API
     skip_existing:   bool = True
 
     def ensure_dirs(self) -> None:
@@ -1620,6 +1621,7 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         payload = {
             "page_content":       doc["page_content"],
             "source_file":        normalized_source,
+            "buku_id":            config.buku_id,
             "page":               meta.get("page"),
             "chunk_index":        meta.get("chunk_index"),
             "mata_pelajaran":     meta.get("mata_pelajaran"),
