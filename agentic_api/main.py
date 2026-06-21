@@ -492,7 +492,7 @@ def rekomendasi(req: RekomendasiRequest):
             "You MUST return ONLY a valid raw JSON object — no markdown, no explanation. "
             "NEVER hallucinate bundle_id, mapel_label, elemen_label, or materi. "
             "ONLY use values that are EXACTLY listed in the Available materials provided by the user. "
-            "If the source material has null or empty materi, you MUST set materi to null in your response."
+            "If the source material has null or empty materi, you MUST set materi to its elemen_label in your response."
         ))
         res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
