@@ -20,6 +20,7 @@ def _read(filename: str) -> str:
     with open(path, "r", encoding="utf-8") as f:
         return f.read().strip()
 
+
 def _load_dict(raw: str) -> dict:
     try:
         brace_idx = raw.find("{")

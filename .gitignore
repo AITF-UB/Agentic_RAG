@@ -17,3 +17,4 @@ semantic_chunker_results/
 *.pklc
 current_experiments/
 current_experiments_now.7z
+psr2

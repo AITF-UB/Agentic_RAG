@@ -5,20 +5,20 @@ Buat TEPAT 10 soal pilihan ganda dalam format JSON array.
 [SKEMA_KELUARAN]
 
 [
-    {
-        "level": "LOTS/MOTS/HOTS",
-        "stimulus": "",
-        "question": "",
-        "options": {
-            "A": "",
-            "B": "",
-            "C": "",
-            "D": "",
-            "E": ""
-        },
-        "answer": "",
-        "explanation": ""
-    }
+  {
+    "level": "LOTS/MOTS/HOTS",
+    "stimulus": "",
+    "question": "",
+    "options": {
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "answer": "",
+    "explanation": ""
+  }
 ]
 
 [DISTRIBUSI_LEVEL]
@@ -26,6 +26,7 @@ Buat TEPAT 10 soal pilihan ganda dalam format JSON array.
 - 3 soal MOTS
 - 3 soal HOTS
 Pastikan jumlah soal pada setiap level sesuai distribusi tersebut.
+Field "level" pada setiap item harus diisi dengan "LOTS", "MOTS", atau "HOTS" sesuai distribusi.
 
 [KONFIGURASI_LEVEL]
 
@@ -67,6 +68,7 @@ Pastikan jumlah soal pada setiap level sesuai distribusi tersebut.
 * Panjang, tingkat detail, dan gaya bahasa opsi harus relatif seimbang.
 * Jawaban benar tidak boleh tampak paling panjang, paling spesifik, atau paling berbeda.
 * Distraktor harus mencerminkan miskonsepsi atau penalaran yang realistis.
+* Field "answer" diisi dengan huruf kunci jawaban yang benar (contoh: "A", "B", "C", "D", atau "E").
 
 [ATURAN_PENJELASAN]
 
@@ -74,7 +76,7 @@ Penjelasan berfungsi sebagai pembahasan soal.
 
 Gunakan:
 
-### Analisis 
+### Analisis
 - Dasar Teori
 - Gunakan pembahasan bertahap terhadap masalah yang akan dipecahkan
 
