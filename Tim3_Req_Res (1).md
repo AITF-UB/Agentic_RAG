@@ -1,5 +1,6 @@
 # Request Response MVP buat RAG & AGENTIC
-## Per Tanggal 05/06/2025
+## Per Tanggal 21/06/2026
+## NYESUAIN SR 2
 
 ### Format Request Konten Generate
 - `bacaan`: 3x [`lots`, `mots`, `hots`]
@@ -8,7 +9,7 @@
 - `flashcard`: 3x [`lots`, `mots`, `hots`]
 - `mindmap`: 1x
 - `pretest`: 1x
-- `rekomendasi`: tbd
+- `rekomendasi`: 1x
 ```json
 {
   "mapel_id": "string",
@@ -30,8 +31,8 @@
 ### `bacaan`
 ```json
 {
-  "text": "## Tujuan Pembelajaran\nPada bagian ini, kamu belajar menyatakan perkalian berulang dalam bentuk bilangan berpangkat.\n\n## Konsep Inti\nBilangan berpangkat digunakan untuk menuliskan perkalian berulang secara ringkas. Bentuk a^n berarti bilangan a dikalikan dengan dirinya sendiri sebanyak n kali. Bilangan a disebut basis, sedangkan n disebut pangkat atau eksponen.\n\nContoh: 2^4 = 2 x 2 x 2 x 2 = 16. Bentuk ini lebih ringkas daripada menulis perkalian berulang.\n\n## Contoh Kontekstual\nSebuah pola memiliki 3 cabang. Setiap cabang bercabang lagi menjadi 3 bagian. Jika proses ini terjadi 4 tingkat, banyak cabang dapat ditulis sebagai 3^4.\n\n## Rangkuman\nBilangan berpangkat membantu kita menulis perkalian berulang secara singkat dan menjadi dasar untuk memahami pertumbuhan, skala, dan notasi ilmiah.",
-  "judul": "Mengenal Bilangan Berpangkat",
+  "konten_markdown": "## Tujuan Pembelajaran\nPada bagian ini, kamu belajar menyatakan perkalian berulang dalam bentuk bilangan berpangkat.\n\n## Konsep Inti\nBilangan berpangkat digunakan untuk menuliskan perkalian berulang secara ringkas. Bentuk a^n berarti bilangan a dikalikan dengan dirinya sendiri sebanyak n kali. Bilangan a disebut basis, sedangkan n disebut pangkat atau eksponen.\n\nContoh: 2^4 = 2 x 2 x 2 x 2 = 16. Bentuk ini lebih ringkas daripada menulis perkalian berulang.\n\n## Contoh Kontekstual\nSebuah pola memiliki 3 cabang. Setiap cabang bercabang lagi menjadi 3 bagian. Jika proses ini terjadi 4 tingkat, banyak cabang dapat ditulis sebagai 3^4.\n\n## Rangkuman\nBilangan berpangkat membantu kita menulis perkalian berulang secara singkat dan menjadi dasar untuk memahami pertumbuhan, skala, dan notasi ilmiah.",
+  "judul_utama": "Mengenal Bilangan Berpangkat",
   "source": "Matematika Fase E - Bilangan",
   "image_path": null
 }
@@ -42,20 +43,20 @@
 {
   "cards": [
     {
-      "depan": "Model pertidaksamaan",
-      "belakang": "Representasi batasan sumber daya dalam masalah nyata."
+      "front": "Model pertidaksamaan",
+      "back": "Representasi batasan sumber daya dalam masalah nyata."
     },
     {
-      "depan": "Optimasi kuadrat",
-      "belakang": "Mencari nilai maksimum/minimum melalui titik puncak."
+      "front": "Optimasi kuadrat",
+      "back": "Mencari nilai maksimum/minimum melalui titik puncak."
     },
     {
-      "depan": "Fungsi pertumbuhan",
-      "belakang": "Model eksponensial untuk pertumbuhan dengan faktor tetap."
+      "front": "Fungsi pertumbuhan",
+      "back": "Model eksponensial untuk pertumbuhan dengan faktor tetap."
     },
     {
-      "depan": "Feasible region",
-      "belakang": "Daerah semua solusi yang memenuhi batasan."
+      "front": "Feasible region",
+      "back": "Daerah semua solusi yang memenuhi batasan."
     }
   ],
   "source": "Matematika Fase E - Aljabar dan Fungsi"
@@ -66,44 +67,76 @@
 ### `mindmap`
 ```json
 {
-  "nodes": [
-    {
-      "id": "n1",
-      "label": "Bilangan Berpangkat",
-      "parent_id": null,
-      "penjelasan": "Topik utama tentang eksponen dan penggunaannya."
-    },
-    {
-      "id": "n2",
-      "label": "Konsep Dasar",
-      "parent_id": "n1",
-      "penjelasan": "Mengenal basis, pangkat, dan perkalian berulang."
-    },
-    {
-      "id": "n3",
-      "label": "Sifat Eksponen",
-      "parent_id": "n1",
-      "penjelasan": "Perkalian, pembagian, pangkat dari pangkat, pangkat nol, dan pangkat pecahan."
-    },
-    {
-      "id": "n4",
-      "label": "Penyederhanaan",
-      "parent_id": "n1",
-      "penjelasan": "Menggunakan aturan eksponen untuk menyederhanakan operasi."
-    },
-    {
-      "id": "n5",
-      "label": "Pemodelan",
-      "parent_id": "n1",
-      "penjelasan": "Menggunakan eksponen untuk pertumbuhan, penyusutan, dan notasi ilmiah."
-    },
-    {
-      "id": "n6",
-      "label": "Masalah Kontekstual",
-      "parent_id": "n5",
-      "penjelasan": "Menyelesaikan kasus populasi, tabungan, skala, dan data besar."
+  "root": {
+      "name": "Unsur Kebahasaan Teks Negosiasi 🤝",
+      "description": "Elemen bahasa untuk mencapai kesepakatan yang saling menguntungkan dalam negosiasi.",
+      "children": [
+        {
+          "name": "Tuturan Berpasangan 🗣️",
+          "description": "Pola percakapan timbal balik antara pihak yang terlibat dalam negosiasi.",
+          "children": [
+            {
+              "name": "Salam",
+              "description": "Mengucapkan dan membalas salam sebagai pembuka interaksi.",
+              "children": []
+            },
+            {
+              "name": "Tanya-Jawab",
+              "description": "Proses pertukaran informasi melalui pertanyaan dan jawaban.",
+              "children": []
+            },
+            {
+              "name": "Permintaan",
+              "description": "Meminta sesuatu dan memberikan respon memenuhi atau menolak.",
+              "children": []
+            },
+            {
+              "name": "Penawaran",
+              "description": "Menawarkan sesuatu dan memberikan respon menerima atau menolak.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Kalimat Persuasif 🎯",
+          "description": "Bahasa yang digunakan untuk membujuk pihak lain mencapai kesepakatan.",
+          "children": [
+            {
+              "name": "Tujuan",
+              "description": "Mengarahkan pihak lain agar setuju dengan tawaran yang diajukan.",
+              "children": []
+            },
+            {
+              "name": "Fungsi",
+              "description": "Mencapai jalan tengah atau keberhasilan transaksi.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Pronomina 👤",
+          "description": "Kata ganti persona untuk mewakili pihak yang berkepentingan.",
+          "children": [
+            {
+              "name": "Contoh Kata",
+              "description": "Penggunaan kata saya, kami, dan Anda dalam percakapan.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Bahasa Santun ✨",
+          "description": "Penggunaan tutur kata sopan sebagai cerminan sikap saling menghargai.",
+          "children": [
+            {
+              "name": "Etika",
+              "description": "Menjaga hubungan baik antar pihak selama proses negosiasi.",
+              "children": []
+            }
+          ]
+        }
+      ]
     }
-  ]
 }
 ```
 
@@ -114,143 +147,153 @@
   "soal": [
     {
       "id": "q1",
-      "soal": "Bentuk pangkat yang tepat adalah ...",
-      "jawaban": 1,
-      "pilihan": [
-        "5^2",
-        "5^3",
-        "3^5",
-        "15^1"
-      ],
+      "question": "Bentuk pangkat yang tepat adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Perkalian 5 x 5 x 5 dapat ditulis dalam bentuk pangkat.",
       "image_path": null,
-      "penjelasan": "Bilangan 5 dikalikan berulang sebanyak 3 kali, sehingga ditulis 5^3."
+      "explanation": "Bilangan 5 dikalikan berulang sebanyak 3 kali, sehingga ditulis 5^3."
     },
     {
       "id": "q2",
-      "soal": "Angka 7 pada 7^4 disebut ...",
-      "jawaban": 1,
-      "pilihan": [
-        "pangkat",
-        "basis",
-        "hasil",
-        "koefisien"
-      ],
+      "question": "Angka 7 pada 7^4 disebut ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Pada bentuk 7^4, angka 7 dan 4 memiliki peran berbeda.",
       "image_path": null,
-      "penjelasan": "Pada bentuk a^n, a disebut basis dan n disebut pangkat."
+      "explanation": "Pada bentuk a^n, a disebut basis dan n disebut pangkat."
     },
     {
       "id": "q3",
-      "soal": "Nilai dari 2^5 adalah ...",
-      "jawaban": 3,
-      "pilihan": [
-        "10",
-        "16",
-        "25",
-        "32"
-      ],
+      "question": "Nilai dari 2^5 adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Rani menulis 2^5 di papan tulis.",
       "image_path": null,
-      "penjelasan": "2^5 = 2 x 2 x 2 x 2 x 2 = 32."
+      "explanation": "2^5 = 2 x 2 x 2 x 2 x 2 = 32."
     },
     {
       "id": "q4",
-      "soal": "Cara membaca 9^2 yang tepat adalah ...",
-      "jawaban": 1,
-      "pilihan": [
-        "sembilan kali dua",
-        "sembilan pangkat dua",
-        "dua pangkat sembilan",
-        "sembilan dibagi dua"
-      ],
+      "question": "Cara membaca 9^2 yang tepat adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Bentuk 9^2 dibaca sebagai ...",
       "image_path": null,
-      "penjelasan": "9^2 dibaca sembilan pangkat dua."
+      "explanation": "9^2 dibaca sembilan pangkat dua."
     },
     {
       "id": "q5",
-      "soal": "Bentuk pangkatnya adalah ...",
-      "jawaban": 2,
-      "pilihan": [
-        "4^2",
-        "4^3",
-        "4^4",
-        "16^2"
-      ],
+      "question": "Bentuk pangkatnya adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Perkalian 4 x 4 x 4 x 4 adalah perkalian berulang.",
       "image_path": null,
-      "penjelasan": "Ada empat faktor bernilai 4, sehingga bentuknya 4^4."
+      "explanation": "Ada empat faktor bernilai 4, sehingga bentuknya 4^4."
     },
     {
       "id": "q6",
-      "soal": "Nilai dari 10^3 adalah ...",
-      "jawaban": 2,
-      "pilihan": [
-        "30",
-        "100",
-        "1.000",
-        "10.000"
-      ],
+      "question": "Nilai dari 10^3 adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Bilangan 10^3 sering muncul dalam satuan ribuan.",
       "image_path": null,
-      "penjelasan": "10^3 = 10 x 10 x 10 = 1.000."
+      "explanation": "10^3 = 10 x 10 x 10 = 1.000."
     },
     {
       "id": "q7",
-      "soal": "Pada 3^6, eksponennya adalah ...",
-      "jawaban": 1,
-      "pilihan": [
-        "3",
-        "6",
-        "9",
-        "18"
-      ],
+      "question": "Pada 3^6, eksponennya adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Bentuk a^n memiliki basis dan eksponen.",
       "image_path": null,
-      "penjelasan": "Eksponen adalah angka kecil di atas, yaitu 6."
+      "explanation": "Eksponen adalah angka kecil di atas, yaitu 6."
     },
     {
       "id": "q8",
-      "soal": "Bentuk pangkatnya adalah ...",
-      "jawaban": 1,
-      "pilihan": [
-        "8^1",
-        "8^2",
-        "2^8",
-        "16^1"
-      ],
+      "question": "Bentuk pangkatnya adalah ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Perkalian 8 x 8 dapat ditulis secara ringkas.",
       "image_path": null,
-      "penjelasan": "8 dikalikan dengan dirinya sendiri dua kali, sehingga 8^2."
+      "explanation": "8 dikalikan dengan dirinya sendiri dua kali, sehingga 8^2."
     },
     {
       "id": "q9",
-      "soal": "Banyak kemungkinan dapat ditulis sebagai ...",
-      "jawaban": 1,
-      "pilihan": [
-        "2+3",
-        "2^3",
-        "3^2",
-        "2x3x3"
-      ],
+      "question": "Banyak kemungkinan dapat ditulis sebagai ...",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Sebuah pola memiliki 2 pilihan pada setiap tahap dan berlangsung 3 tahap.",
       "image_path": null,
-      "penjelasan": "Dua pilihan berulang selama 3 tahap dapat dinyatakan sebagai 2^3."
+      "explanation": "Dua pilihan berulang selama 3 tahap dapat dinyatakan sebagai 2^3."
     },
     {
       "id": "q10",
-      "soal": "Manakah yang sama dengan 6^3?",
-      "jawaban": 2,
-      "pilihan": [
-        "6+6+6",
-        "6x3",
-        "6x6x6",
-        "3x3x3x3x3x3"
-      ],
+      "question": "Manakah yang sama dengan 6^3?",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Bilangan berpangkat digunakan untuk menulis perkalian berulang.",
       "image_path": null,
-      "penjelasan": "6^3 berarti 6 x 6 x 6."
+      "explanation": "6^3 berarti 6 x 6 x 6."
     }
   ]
 }
@@ -263,43 +306,63 @@
   "pertanyaan": [
     {
       "id": "e1",
-      "soal": "Jelaskan arti bentuk 4^3 dan hitung nilainya.",
-      "rubrik": "Skor tinggi jika siswa menjelaskan basis, pangkat, perkalian berulang, dan hasil 64.",
+      "question": "Jelaskan arti bentuk 4^3 dan hitung nilainya.",
+      "rubric_points": [
+          "Mengidentifikasi pasangan tuturan (salam-salam, tanya-jawab, tawar-menawar).",
+          "Menganalisis efektivitas respon penjual dalam menanggapi kendala pembeli.",
+          "Menilai kesantunan bahasa sebagai pendukung keberhasilan negosiasi."
+        ],
       "stimulus": "Bilangan berpangkat merupakan cara ringkas menulis perkalian berulang.",
       "image_path": null,
-      "penjelasan": "4^3 berarti 4 x 4 x 4 = 64."
+      "explanation": "4^3 berarti 4 x 4 x 4 = 64."
     },
     {
       "id": "e2",
-      "soal": "Jelaskan perbedaan basis dan pangkat pada bentuk 6^5.",
-      "rubrik": "Skor tinggi jika siswa menyebutkan 6 sebagai basis dan 5 sebagai pangkat serta menjelaskan maknanya.",
+      "question": "Jelaskan perbedaan basis dan pangkat pada bentuk 6^5.",
+      "rubric_points": [
+          "Mengidentifikasi pasangan tuturan (salam-salam, tanya-jawab, tawar-menawar).",
+          "Menganalisis efektivitas respon penjual dalam menanggapi kendala pembeli.",
+          "Menilai kesantunan bahasa sebagai pendukung keberhasilan negosiasi."
+        ],
       "stimulus": "Dalam bentuk a^n, a dan n memiliki nama yang berbeda.",
       "image_path": null,
-      "penjelasan": "Pada 6^5, 6 adalah bilangan yang dikalikan berulang, sedangkan 5 menunjukkan banyaknya pengulangan."
+      "explanation": "Pada 6^5, 6 adalah bilangan yang dikalikan berulang, sedangkan 5 menunjukkan banyaknya pengulangan."
     },
     {
       "id": "e3",
-      "soal": "Ubah 3 x 3 x 3 x 3 menjadi bentuk pangkat dan jelaskan alasannya.",
-      "rubrik": "Skor tinggi jika siswa menulis 3^4 dan menjelaskan ada empat faktor 3.",
+      "question": "Ubah 3 x 3 x 3 x 3 menjadi bentuk pangkat dan jelaskan alasannya.",
+      "rubric_points": [
+          "Mengidentifikasi pasangan tuturan (salam-salam, tanya-jawab, tawar-menawar).",
+          "Menganalisis efektivitas respon penjual dalam menanggapi kendala pembeli.",
+          "Menilai kesantunan bahasa sebagai pendukung keberhasilan negosiasi."
+        ],
       "stimulus": "Perkalian berulang dapat ditulis menjadi bentuk pangkat.",
       "image_path": null,
-      "penjelasan": "Bentuknya 3^4 karena angka 3 muncul sebagai faktor sebanyak 4 kali."
+      "explanation": "Bentuknya 3^4 karena angka 3 muncul sebagai faktor sebanyak 4 kali."
     },
     {
       "id": "e4",
-      "soal": "Berikan satu contoh pola sederhana yang dapat ditulis dalam bentuk pangkat.",
-      "rubrik": "Skor tinggi jika contoh relevan dan menunjukkan perkalian berulang.",
+      "question": "Berikan satu contoh pola sederhana yang dapat ditulis dalam bentuk pangkat.",
+      "rubric_points": [
+          "Mengidentifikasi pasangan tuturan (salam-salam, tanya-jawab, tawar-menawar).",
+          "Menganalisis efektivitas respon penjual dalam menanggapi kendala pembeli.",
+          "Menilai kesantunan bahasa sebagai pendukung keberhasilan negosiasi."
+        ],
       "stimulus": "Bilangan berpangkat sering dipakai dalam pola.",
       "image_path": null,
-      "penjelasan": "Contoh: dua pilihan di setiap tahap selama 3 tahap dapat ditulis sebagai 2^3."
+      "explanation": "Contoh: dua pilihan di setiap tahap selama 3 tahap dapat ditulis sebagai 2^3."
     },
     {
       "id": "e5",
-      "soal": "Mengapa 10^6 lebih praktis daripada menulis 1.000.000?",
-      "rubrik": "Skor tinggi jika siswa menjelaskan efisiensi penulisan dan makna pangkat.",
+      "question": "Mengapa 10^6 lebih praktis daripada menulis 1.000.000?",
+      "rubric_points": [
+          "Mengidentifikasi pasangan tuturan (salam-salam, tanya-jawab, tawar-menawar).",
+          "Menganalisis efektivitas respon penjual dalam menanggapi kendala pembeli.",
+          "Menilai kesantunan bahasa sebagai pendukung keberhasilan negosiasi."
+        ],
       "stimulus": "Bilangan berpangkat membantu membuat penulisan lebih ringkas.",
       "image_path": null,
-      "penjelasan": "10^6 menyatakan 10 dikalikan berulang 6 kali sehingga lebih ringkas untuk bilangan besar."
+      "explanation": "10^6 menyatakan 10 dikalikan berulang 6 kali sehingga lebih ringkas untuk bilangan besar."
     }
   ]
 }
@@ -334,153 +397,163 @@
   "soal": [
     {
       "id": "p1",
-      "soal": "Manakah yang merupakan pertidaksamaan linear dua variabel?",
-      "level": "lots",
-      "jawaban": 1,
-      "pilihan": [
-        "x + y = 10",
-        "2x - y > 4",
-        "x^2 + y = 9",
-        "y = 3x + 2"
-      ],
+      "question": "Manakah yang merupakan pertidaksamaan linear dua variabel?",
+      "level": "LOTS",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Persamaan linear dua variabel biasanya memuat tanda sama dengan, sedangkan pertidaksamaan memuat tanda <, >, <=, atau >=.",
       "image_path": null,
-      "penjelasan": "Bentuk 2x - y > 4 adalah pertidaksamaan linear dua variabel karena memuat x, y, dan tanda lebih dari."
+      "explanation": "Bentuk 2x - y > 4 adalah pertidaksamaan linear dua variabel karena memuat x, y, dan tanda lebih dari."
     },
     {
       "id": "p2",
-      "soal": "Manakah yang merupakan persamaan kuadrat?",
-      "level": "lots",
-      "jawaban": 1,
-      "pilihan": [
-        "2x + 3 = 7",
-        "x^2 - 5x + 6 = 0",
-        "3x + 2y = 8",
-        "2^x = 16"
-      ],
+      "question": "Manakah yang merupakan persamaan kuadrat?",
+      "level": "LOTS",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Persamaan kuadrat memiliki bentuk umum ax^2 + bx + c = 0 dengan a tidak sama dengan 0.",
       "image_path": null,
-      "penjelasan": "x^2 - 5x + 6 = 0 merupakan persamaan kuadrat karena pangkat tertinggi variabelnya adalah 2."
+      "explanation": "x^2 - 5x + 6 = 0 merupakan persamaan kuadrat karena pangkat tertinggi variabelnya adalah 2."
     },
     {
       "id": "p3",
-      "soal": "Manakah contoh fungsi kuadrat?",
-      "level": "lots",
-      "jawaban": 1,
-      "pilihan": [
-        "f(x)=2x+1",
-        "f(x)=x^2-4x+3",
-        "f(x)=3^x",
-        "f(x)=5"
-      ],
+      "question": "Manakah contoh fungsi kuadrat?",
+      "level": "LOTS",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Fungsi kuadrat memiliki grafik berbentuk parabola.",
       "image_path": null,
-      "penjelasan": "Fungsi kuadrat memiliki suku x^2 dengan koefisien tidak nol."
+      "explanation": "Fungsi kuadrat memiliki suku x^2 dengan koefisien tidak nol."
     },
     {
       "id": "p4",
-      "soal": "Manakah contoh persamaan eksponensial?",
-      "level": "lots",
-      "jawaban": 2,
-      "pilihan": [
-        "x + 2 = 7",
-        "x^2 = 9",
-        "2^x = 32",
-        "2x + y = 5"
-      ],
+      "question": "Manakah contoh persamaan eksponensial?",
+      "level": "LOTS",
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Persamaan eksponensial memuat variabel pada pangkat.",
       "image_path": null,
-      "penjelasan": "Pada 2^x = 32, variabel x berada pada pangkat."
+      "explanation": "Pada 2^x = 32, variabel x berada pada pangkat."
     },
     {
       "id": "p5",
-      "soal": "Akar-akar dari x^2 - 5x + 6 = 0 adalah ...",
+      "question": "Akar-akar dari x^2 - 5x + 6 = 0 adalah ...",
       "level": "mots",
-      "jawaban": 1,
-      "pilihan": [
-        "1 dan 6",
-        "2 dan 3",
-        "-2 dan -3",
-        "-1 dan -6"
-      ],
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Akar-akar persamaan kuadrat dapat diperoleh dengan faktorisasi jika bentuknya mudah difaktorkan.",
       "image_path": null,
-      "penjelasan": "x^2 - 5x + 6 = (x - 2)(x - 3), sehingga akarnya x = 2 dan x = 3."
+      "explanation": "x^2 - 5x + 6 = (x - 2)(x - 3), sehingga akarnya x = 2 dan x = 3."
     },
     {
       "id": "p6",
-      "soal": "Jika 3^(x+1) = 3^5, maka nilai x adalah ...",
+      "question": "Jika 3^(x+1) = 3^5, maka nilai x adalah ...",
       "level": "mots",
-      "jawaban": 1,
-      "pilihan": [
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Persamaan eksponensial dengan basis sama dapat diselesaikan dengan menyamakan pangkatnya.",
       "image_path": null,
-      "penjelasan": "Karena basis sama, x + 1 = 5 sehingga x = 4."
+      "explanation": "Karena basis sama, x + 1 = 5 sehingga x = 4."
     },
     {
       "id": "p7",
-      "soal": "Untuk x^2 - 4x + 4 = 0, nilai diskriminannya adalah ...",
+      "question": "Untuk x^2 - 4x + 4 = 0, nilai diskriminannya adalah ...",
       "level": "mots",
-      "jawaban": 0,
-      "pilihan": [
-        "0",
-        "4",
-        "8",
-        "16"
-      ],
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Diskriminan persamaan kuadrat ax^2 + bx + c = 0 adalah D = b^2 - 4ac.",
       "image_path": null,
-      "penjelasan": "D = (-4)^2 - 4(1)(4) = 16 - 16 = 0."
+      "explanation": "D = (-4)^2 - 4(1)(4) = 16 - 16 = 0."
     },
     {
       "id": "p8",
-      "soal": "Titik (0,0) memenuhi pertidaksamaan x + y <= 5 karena ...",
+      "question": "Titik (0,0) memenuhi pertidaksamaan x + y <= 5 karena ...",
       "level": "mots",
-      "jawaban": 0,
-      "pilihan": [
-        "0 + 0 <= 5",
-        "0 + 0 > 5",
-        "0 + 5 = 5",
-        "x dan y harus positif"
-      ],
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Daerah penyelesaian pertidaksamaan linear dapat diuji menggunakan titik tertentu.",
       "image_path": null,
-      "penjelasan": "Substitusi (0,0) menghasilkan 0 <= 5, sehingga titik tersebut memenuhi pertidaksamaan."
+      "explanation": "Substitusi (0,0) menghasilkan 0 <= 5, sehingga titik tersebut memenuhi pertidaksamaan."
     },
     {
       "id": "p9",
-      "soal": "Apa makna utama daerah penyelesaian dari sistem pertidaksamaan tersebut?",
+      "question": "Apa makna utama daerah penyelesaian dari sistem pertidaksamaan tersebut?",
       "level": "hots",
-      "jawaban": 0,
-      "pilihan": [
-        "Semua kemungkinan jumlah kendaraan yang memenuhi kedua batasan",
-        "Hanya satu titik yang menjadi jawaban",
-        "Jumlah kendaraan yang tidak mungkin terjadi",
-        "Grafik fungsi kuadrat dari kendaraan"
-      ],
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Sebuah daerah parkir memiliki batas x + y <= 20 dan 2x + y <= 30, dengan x dan y menyatakan banyak kendaraan dua jenis berbeda.",
       "image_path": null,
-      "penjelasan": "Daerah penyelesaian sistem pertidaksamaan berisi semua pasangan nilai x dan y yang memenuhi seluruh batasan."
+      "explanation": "Daerah penyelesaian sistem pertidaksamaan berisi semua pasangan nilai x dan y yang memenuhi seluruh batasan."
     },
     {
       "id": "p10",
-      "soal": "Makna titik puncak grafik fungsi tersebut adalah ...",
+      "question": "Makna titik puncak grafik fungsi tersebut adalah ...",
       "level": "hots",
-      "jawaban": 1,
-      "pilihan": [
-        "waktu saat bola mulai dilempar",
-        "tinggi maksimum bola",
-        "jarak horizontal bola",
-        "waktu saat bola menyentuh tanah saja"
-      ],
+      "answer": "B",
+      "options": {
+        "A": "Penjual menggunakan kalimat persuasif untuk menekan pembeli agar segera melakukan pembayaran.",
+        "B": "Penjual menggunakan kalimat persuasif dengan menonjolkan keunggulan produk sebagai solusi atas kebutuhan pembeli.",
+        "C": "Penjual menggunakan kalimat persuasif untuk menyembunyikan kekurangan harga produk yang mahal.",
+        "D": "Penjual menggunakan kalimat persuasif untuk membatasi pilihan pembeli agar hanya fokus pada satu produk.",
+        "E": "Penjual menggunakan kalimat persuasif untuk menunjukkan dominasi posisi penjual terhadap pembeli."
+      },
       "stimulus": "Sebuah bola dilempar sehingga tinggi h terhadap waktu t dimodelkan dengan h(t) = -t^2 + 6t + 1.",
       "image_path": null,
-      "penjelasan": "Pada fungsi kuadrat yang membuka ke bawah, titik puncak menyatakan nilai maksimum, yaitu tinggi maksimum bola."
+      "explanation": "Pada fungsi kuadrat yang membuka ke bawah, titik puncak menyatakan nilai maksimum, yaitu tinggi maksimum bola."
     }
   ]
 }
