@@ -478,15 +478,40 @@ async def submit_essay(req: List[EssayEvalItem]):
 @app.post("/rag/rekomendasi", tags=["RAG"])
 def rekomendasi(req: RekomendasiRequest):
     try:
+        # Serialize Pydantic objects ke dict agar Jinja2 dapat mengakses field-nya via dot-notation
+        available_dicts = [b.model_dump() for b in req.available]
+
         prompt = load_prompt(
             "rekomendasi.j2",
-            available=req.available,
-            in_progress=req.in_progress_ids,
-            complete=req.complete_ids
+            available=available_dicts,
+            in_progress=[b.model_dump() for b in req.in_progress_ids],
+            complete=[b.model_dump() for b in req.complete_ids],
         )
-        sys_msg = SystemMessage(content="Kamu adalah AI Recommender JSON.")
+        sys_msg = SystemMessage(content=(
+            "You are a strict AI Study Recommender. "
+            "You MUST return ONLY a valid raw JSON object — no markdown, no explanation. "
+            "NEVER hallucinate bundle_id, mapel_label, elemen_label, or materi. "
+            "ONLY use values that are EXACTLY listed in the Available materials provided by the user. "
+            "If the source material has null or empty materi, you MUST set materi to null in your response."
+        ))
         res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
+
+        # ── Post-processing: paksa nilai materi sesuai sumber di available ──────
+        # Jika materi sumber null/kosong → fallback ke elemen_label.
+        available_map = {str(b["bundle_id"]): b for b in available_dicts}
+        if isinstance(content, dict) and "rekomendasi" in content:
+            for item in content["rekomendasi"]:
+                bid = str(item.get("bundle_id", ""))
+                if bid in available_map:
+                    source = available_map[bid]
+                    source_materi = source.get("materi")
+                    # Jika sumber null/None/""/N/A → fallback ke elemen_label
+                    if not source_materi or source_materi.strip().upper() in ("", "N/A", "NULL", "NONE"):
+                        item["materi"] = source.get("elemen_label") or None
+                    else:
+                        item["materi"] = source_materi
+
         return content
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"REKOM_ERR: {str(e)}")

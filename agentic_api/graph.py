@@ -363,7 +363,7 @@ async def evaluator_node(state: AgentState) -> dict:
     }
 
 def structurer_node(state: AgentState) -> dict:
-    """Membungkus hasil akhir sesuai API Contract SR LATEST (V3.6)"""
+    """Membungkus hasil akhir sesuai API Contract SR PSR2"""
     tipe = state["tipe"]
     req = state["request_params"]
     content = state["generated_content"]
@@ -375,6 +375,9 @@ def structurer_node(state: AgentState) -> dict:
             
     elif tipe == "flashcard":
         if isinstance(content, list):
+            for item in content:
+                if isinstance(item, dict):
+                    item.pop("level", None)
             content = {"cards": content, "source": state["sumber_text"]}
         elif isinstance(content, dict):
             content.setdefault("source", state["sumber_text"])
@@ -396,8 +399,10 @@ def structurer_node(state: AgentState) -> dict:
         if isinstance(content, list):
             for item in content:
                 if isinstance(item, dict):
-                    item.pop("level", None)
+                    if tipe != "pretest":
+                        item.pop("level", None)
             content = {"soal": content}
+
             
     # Tambahkan visual assets jika direquest via image_id
     visual_assets = state.get("visual_assets", {})
