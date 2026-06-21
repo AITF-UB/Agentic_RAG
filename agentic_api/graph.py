@@ -19,6 +19,38 @@ def load_prompt(template_name: str, **kwargs) -> str:
     template = env.get_template(template_name)
     return template.render(**kwargs)
 
+MAPEL_MAPPING = {
+    # Mapping berdasar ID (MVP)
+    "1": "Bahasa Indonesia",
+    "2": "Bahasa Indonesia",
+    "17": "Ilmu Pengetahuan Sosial",
+    "5": "Informatika",
+    "6": "Koding dan Kecerdasan Artifisial",
+    "10": "Matematika",
+    "8": "Pendidikan Agama Islam dan Budi Pekerti",
+    "9": "Pendidikan Agama Katolik dan Budi Pekerti",
+    "11": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
+    "12": "Pendidikan Pancasila",
+    "18": "Seni Rupa",
+    "19": "Seni Tari",
+    "20": "Seni Teater",
+    # Mapping legacy text (fallback)
+    "bio": "Biologi",
+    "bahasa_indonesia": "Bahasa Indonesia",
+    "bindo": "Bahasa Indonesia",
+    "matematika_umum": "Matematika",
+    "mat": "Matematika",
+    "matematika": "Matematika",
+    "mtk": "Matematika",
+    "ips": "Ilmu Pengetahuan Sosial"
+}
+
+def resolve_mapel(raw_mapel: Any) -> str:
+    if not raw_mapel: return ""
+    raw_str = str(raw_mapel)
+    key = raw_str.lower().replace(" ", "_")
+    return MAPEL_MAPPING.get(key, raw_str)
+
 # ================================================================
 # 1. NODES
 # ================================================================
@@ -30,38 +62,7 @@ async def retrieve_node(state: AgentState) -> dict:
     # Fokuskan query RAG HANYA pada elemen dan materi.
     query = f"{req.get('materi', '')}".strip()
     
-    # Mapping mapel_id ke string di metadata Qdrant (VDB)
-    mapel_mapping = {
-        # Mapping berdasar ID (MVP)
-        "1": "Bahasa Indonesia",
-        "2": "Bahasa Indonesia",
-        # "17": "Ilmu Pengetahuan Alam",
-        "17": "Ilmu Pengetahuan Sosial",
-        "5": "Informatika",
-        "6": "Koding dan Kecerdasan Artifisial",
-        "10": "Matematika",
-        "8": "Pendidikan Agama Islam dan Budi Pekerti",
-        "9": "Pendidikan Agama Katolik dan Budi Pekerti",
-        # "10": "Pendidikan Agama Kristen dan Budi Pekerti",
-        "11": "Pendidikan Jasmani, Olahraga, dan Kesehatan",
-        "12": "Pendidikan Pancasila",
-        # "17": "Seni Musik",
-        "18": "Seni Rupa",
-        "19": "Seni Tari",
-        "20": "Seni Teater",
-        # Mapping legacy text (fallback)
-        "bio": "Biologi",
-        "bahasa_indonesia": "Bahasa Indonesia",
-        "bindo": "Bahasa Indonesia",
-        "matematika_umum": "Matematika",
-        "mat": "Matematika",
-        "matematika": "Matematika",
-        "mtk": "Matematika",
-        "ips": "Ilmu Pengetahuan Sosial"
-    }
-    raw_mapel = str(req.get("mapel_id", ""))
-    mapel_key = raw_mapel.lower().replace(" ", "_")
-    mapel_str = mapel_mapping.get(mapel_key, raw_mapel)
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     
     # Ekstrak angka kelas dari jenjang (mendukung angka & romawi)
     jenjang_str = str(req.get("jenjang", "")).lower().strip()
@@ -159,7 +160,7 @@ def get_context_with_header(state: AgentState) -> str:
     mapping = {"LOW": "LOTS", "MID": "MOTS", "HIGH": "HOTS"}
     internal_level = mapping.get(level_upper, level_upper)
 
-    mapel = req.get("mapel_id", "")
+    mapel = resolve_mapel(req.get("mapel_id", ""))
     bab = req.get("elemen_label", "")
     sub_bab = req.get("materi", "")
 
@@ -186,7 +187,8 @@ def get_context_with_header(state: AgentState) -> str:
 async def _call_generation_llm(state: AgentState, usr_prompt: str) -> dict:
     req = state["request_params"]
     lvl = state["level"]
-    sys_prompt = load_prompt("system.j2", matpel=req["mapel_id"], materi=req.get("materi", ""), level=lvl)
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
+    sys_prompt = load_prompt("system.j2", matpel=mapel_str, materi=req.get("materi", ""), level=lvl)
     
     if state.get("instruksi_revisi"):
         usr_prompt += f"\n\n[INSTRUKSI REVISI DARI GURU]:\n{state['instruksi_revisi']}\nSesuaikan dan perbaiki hasil generasimu berdasarkan instruksi ini!"
@@ -232,48 +234,54 @@ def _update_best_revision(state: AgentState, eval_dict: dict) -> dict:
 async def bacaan_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("bacaan", lvl)
-    subject_config = compile_subject_registry("bacaan", req.get("mapel_id", ""))
+    subject_config = compile_subject_registry("bacaan", mapel_str)
     usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, subject_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def pretest_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("pretest", lvl)
-    subject_config = compile_subject_registry("pretest", req.get("mapel_id", ""))
+    subject_config = compile_subject_registry("pretest", mapel_str)
     usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def quiz_pg_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("quiz_pg", lvl)
-    subject_config = compile_subject_registry("quiz_pg", req.get("mapel_id", ""))
+    subject_config = compile_subject_registry("quiz_pg", mapel_str)
     usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def quiz_essay_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("quiz_essay", lvl)
-    subject_config = compile_subject_registry("quiz_essay", req.get("mapel_id", ""))
+    subject_config = compile_subject_registry("quiz_essay", mapel_str)
     usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def flashcard_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("flashcard", lvl)
-    subject_config = compile_subject_registry("flashcard", req.get("mapel_id", ""))
+    subject_config = compile_subject_registry("flashcard", mapel_str)
     usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), context=get_context_with_header(state), atp=req.get("atp", ""), level=lvl, level_config=level_config)
     return await _call_generation_llm(state, usr_prompt)
 
 async def mindmap_node(state: AgentState) -> dict:
     req = state["request_params"]
     lvl = state["level"]
+    mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("mindmap", lvl)
-    subject_config = compile_subject_registry("mindmap", req.get("mapel_id", ""))
+    subject_config = compile_subject_registry("mindmap", mapel_str)
     usr_prompt = load_prompt("mindmap.j2", context=get_context_with_header(state), atp=req.get("atp", ""))
     return await _call_generation_llm(state, usr_prompt)
 
