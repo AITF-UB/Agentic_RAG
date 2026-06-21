@@ -59,7 +59,7 @@ class EssayEvalItem(BaseModel):
     soal: str
     rubrik: str
     stimulus: Optional[str] = None
-    image_path: Optional[str] = None
+    visuals: Optional[List[str]] = None
     penjelasan: Optional[str] = None
 
 # --- RAG Specific Models ---

@@ -184,7 +184,7 @@ def get_context_with_header(state: AgentState) -> str:
         
     return "\n".join(context_parts)
 
-async def _call_generation_llm(state: AgentState, usr_prompt: str) -> dict:
+async def _call_generation_llm(state: AgentState, usr_prompt: str, is_array_output: bool = False, jumlah_soal_target: int = 0) -> dict:
     req = state["request_params"]
     lvl = state["level"]
     mapel_str = resolve_mapel(req.get("mapel_id", ""))
@@ -200,7 +200,29 @@ async def _call_generation_llm(state: AgentState, usr_prompt: str) -> dict:
         if isinstance(gen, dict) and "raw" in gen:
             usr_prompt += f"\n\n[OUTPUT SEBELUMNYA YANG RUSAK]:\n```text\n{gen['raw']}\n```\nTugasmu HANYA memperbaiki format JSON di atas agar valid (tambahkan kutip, kurung, koma, dll yang kurang). JANGAN mengubah isinya secara drastis."
 
-    response = await llm.ainvoke([SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
+    if is_array_output:
+        array_schema = {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "array_response",
+                "strict": False,
+                "schema": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            }
+        }
+        if jumlah_soal_target > 0:
+            array_schema["json_schema"]["schema"]["minItems"] = jumlah_soal_target
+            array_schema["json_schema"]["schema"]["maxItems"] = jumlah_soal_target
+            
+        bound_llm = llm.bind(response_format=array_schema)
+    else:
+        bound_llm = llm.bind(response_format={"type": "json_object"})
+
+    response = await bound_llm.ainvoke([SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
     content_dict = clean_json_from_llm(response.content)
     
     return {
@@ -238,43 +260,51 @@ async def bacaan_node(state: AgentState) -> dict:
     level_config = compile_leveling_registry("bacaan", lvl)
     subject_config = compile_subject_registry("bacaan", mapel_str)
     usr_prompt = load_prompt("bacaan.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, subject_config=subject_config)
-    return await _call_generation_llm(state, usr_prompt)
+    return await _call_generation_llm(state, usr_prompt, is_array_output=False)
 
 async def pretest_node(state: AgentState) -> dict:
+    import os
+    jumlah = int(os.getenv("JUMLAH_SOAL_PRETEST", "10"))
     req = state["request_params"]
     lvl = state["level"]
     mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("pretest", lvl)
     subject_config = compile_subject_registry("pretest", mapel_str)
     usr_prompt = load_prompt("pretest.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
-    return await _call_generation_llm(state, usr_prompt)
+    return await _call_generation_llm(state, usr_prompt, is_array_output=True, jumlah_soal_target=jumlah)
 
 async def quiz_pg_node(state: AgentState) -> dict:
+    import os
+    jumlah = int(os.getenv("JUMLAH_SOAL_QUIZ_PG", "10"))
     req = state["request_params"]
     lvl = state["level"]
     mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("quiz_pg", lvl)
     subject_config = compile_subject_registry("quiz_pg", mapel_str)
     usr_prompt = load_prompt("quiz_pg.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
-    return await _call_generation_llm(state, usr_prompt)
+    return await _call_generation_llm(state, usr_prompt, is_array_output=True, jumlah_soal_target=jumlah)
 
 async def quiz_essay_node(state: AgentState) -> dict:
+    import os
+    jumlah = int(os.getenv("JUMLAH_SOAL_QUIZ_ESSAY", "5"))
     req = state["request_params"]
     lvl = state["level"]
     mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("quiz_essay", lvl)
     subject_config = compile_subject_registry("quiz_essay", mapel_str)
     usr_prompt = load_prompt("quiz_essay.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), atp=req.get("atp", ""), context=get_context_with_header(state), level=lvl, level_config=level_config, stimulus_config=subject_config)
-    return await _call_generation_llm(state, usr_prompt)
+    return await _call_generation_llm(state, usr_prompt, is_array_output=True, jumlah_soal_target=jumlah)
 
 async def flashcard_node(state: AgentState) -> dict:
+    import os
+    jumlah = int(os.getenv("JUMLAH_SOAL_FLASHCARD", "5"))
     req = state["request_params"]
     lvl = state["level"]
     mapel_str = resolve_mapel(req.get("mapel_id", ""))
     level_config = compile_leveling_registry("flashcard", lvl)
     subject_config = compile_subject_registry("flashcard", mapel_str)
     usr_prompt = load_prompt("flashcard.j2", jenjang=req["jenjang"], kelas=req.get("kelas_id", ""), context=get_context_with_header(state), atp=req.get("atp", ""), level=lvl, level_config=level_config)
-    return await _call_generation_llm(state, usr_prompt)
+    return await _call_generation_llm(state, usr_prompt, is_array_output=True, jumlah_soal_target=jumlah)
 
 async def mindmap_node(state: AgentState) -> dict:
     req = state["request_params"]
@@ -283,7 +313,7 @@ async def mindmap_node(state: AgentState) -> dict:
     level_config = compile_leveling_registry("mindmap", lvl)
     subject_config = compile_subject_registry("mindmap", mapel_str)
     usr_prompt = load_prompt("mindmap.j2", context=get_context_with_header(state), atp=req.get("atp", ""))
-    return await _call_generation_llm(state, usr_prompt)
+    return await _call_generation_llm(state, usr_prompt, is_array_output=False)
 
 async def evaluator_node(state: AgentState) -> dict:
     """Mengevaluasi output generator."""
@@ -351,14 +381,22 @@ def structurer_node(state: AgentState) -> dict:
             
     elif tipe == "mindmap":
         if isinstance(content, list):
-            content = {"nodes": content}
+            content = {"root": {"children": content}}
+        elif isinstance(content, dict) and "root" not in content:
+            content = {"root": content}
 
     elif tipe == "quiz_essay":
         if isinstance(content, list):
+            for item in content:
+                if isinstance(item, dict):
+                    item.pop("level", None)
             content = {"pertanyaan": content}
 
     elif tipe in ["quiz_pg", "pretest"]:
         if isinstance(content, list):
+            for item in content:
+                if isinstance(item, dict):
+                    item.pop("level", None)
             content = {"soal": content}
             
     # Tambahkan visual assets jika direquest via image_id
@@ -366,22 +404,22 @@ def structurer_node(state: AgentState) -> dict:
 
     def inject_visuals(item: dict):
         if visual_assets:
-            item["visuals"] = list(visual_assets.values())
+            item["visualz"] = list(visual_assets.values())
         else:
-            item["visuals"] = None
+            item["visualz"] = None
 
     if isinstance(content, dict):
         if tipe == "bacaan":
             # Set top-level visuals for bacaan if requested
-            if "text" in content:
-                teks_markdown = content["text"]
+            if "konten_markdown" in content:
+                teks_markdown = content["konten_markdown"]
                 references_to_append = []
                 for img_id, b64_data in visual_assets.items():
                     if f"[{img_id}]" in teks_markdown:
                         references_to_append.append(f"[{img_id}]: {b64_data}")
                 
                 if references_to_append:
-                    content["text"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
+                    content["konten_markdown"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
         
         # Injeksi visual di level paling atas (root) hanya untuk task tertentu
         if tipe in ["bacaan", "quiz_pg", "quiz_essay", "pretest"]:
