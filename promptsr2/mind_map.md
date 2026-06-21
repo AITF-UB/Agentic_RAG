@@ -6,9 +6,9 @@ Buat mindmap hierarkis dalam format JSON.
 
 {
 "root": {
-"name": "",
-"description": "",
-"children": []
+  "name": "",
+  "description": "",
+  "children": []
 }
 }
 

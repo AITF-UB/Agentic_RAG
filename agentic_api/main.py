@@ -416,30 +416,66 @@ def generate_summary(req: SesiSummaryRequest):
 # QUIZ EVALUATION ENDPOINTS (Dipanggil BE)
 # ══════════════════════════════════════════════════════════════════════════════
 
+import asyncio
+import json
+
 @app.post("/siswa/quiz/essay", tags=["Quiz"])
-def submit_essay(req: List[EssayEvalItem]):
+async def submit_essay(req: List[EssayEvalItem]):
     try:
-        evaluasi_hasil = []
-        total_skor = 0
-        sys_msg = SystemMessage(content="Kamu adalah Guru Penilai Esai JSON.")
-        
-        for item in req:
+        sys_prompt = load_prompt("essay_judge_system.j2")
+        sys_msg = SystemMessage(content=sys_prompt)
+
+        async def evaluate_single(item: EssayEvalItem):
+            rubric_list = []
+            try:
+                # Mengubah string JSON dari frontend menjadi list jika ada
+                rubric_list = json.loads(item.rubrik)
+                if not isinstance(rubric_list, list):
+                    rubric_list = [item.rubrik]
+            except Exception:
+                # Jika string biasa, jadikan item dalam list
+                rubric_list = [item.rubrik]
+                
+            stimulus = item.stimulus or ""
+            # Bersihkan dan gabung stimulus dengan soal sesuai template
+            stimulus_dan_pertanyaan = f"{stimulus}\nPertanyaan: {item.soal}".strip()
+            
+            rp1 = rubric_list[0] if len(rubric_list) > 0 else ""
+            rp2 = rubric_list[1] if len(rubric_list) > 1 else ""
+            rp3 = rubric_list[2] if len(rubric_list) > 2 else ""
+            
             usr_prompt = load_prompt(
-                "essay_evaluation.j2",
-                soal=item.soal,
-                rubrik=item.rubrik,
-                jawaban_siswa=item.jawaban_siswa,
-                stimulus=item.stimulus,
-                penjelasan=item.penjelasan
+                "essay_judge_user.j2",
+                stimulus_dan_pertanyaan=stimulus_dan_pertanyaan,
+                rubric_point_1=rp1,
+                rubric_point_2=rp2,
+                rubric_point_3=rp3,
+                jawaban_siswa=item.jawaban_siswa
             )
-            res = eval_llm.invoke([sys_msg, HumanMessage(content=usr_prompt)])
-            hasil = clean_json_from_llm(res.content)
             
-            skor = hasil.get("skor", 0)
+            res = await eval_llm.ainvoke([sys_msg, HumanMessage(content=usr_prompt)])
+            return clean_json_from_llm(res.content)
+
+        # Lakukan pemanggilan LLM secara paralel untuk semua soal
+        tasks = [evaluate_single(item) for item in req]
+        evaluasi_hasil = await asyncio.gather(*tasks)
+        
+        final_response = {}
+        total_skor = 0
+        
+        for idx, hasil in enumerate(evaluasi_hasil):
+            skor = hasil.get("final_score", 0)
             total_skor += skor
-            evaluasi_hasil.append(hasil)
             
-        return {"total_skor": total_skor}
+            soal_key = f"soal_{idx+1}"
+            final_response[soal_key] = {
+                "evaluation_reason": hasil.get("evaluation_reason", ""),
+                "skor": skor
+            }
+            
+        final_response["total_skor"] = total_skor
+        return final_response
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"EVAL_ERR: {str(e)}")
 
