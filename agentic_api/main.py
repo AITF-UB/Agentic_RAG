@@ -94,8 +94,8 @@ try:
     PIPELINE_AVAILABLE = True
 except ImportError:
     PIPELINE_AVAILABLE = False
-    DEFAULT_VLM_MODEL   = os.getenv("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
-    DEFAULT_VLM_HOST    = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
+    DEFAULT_VLM_MODEL   = os.getenv("VLM_MODEL", "ub-sr-all")
+    DEFAULT_VLM_HOST    = os.getenv("VLM_HOST", "https://providers-else-hear-wheel.trycloudflare.com")
     DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
     DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
