@@ -1,20 +1,18 @@
 [TUGAS]
 
-Buat TEPAT 5 soal esai dalam format JSON.
+Buat TEPAT 5 soal esai dalam format JSON array.
 
 [SKEMA_KELUARAN]
 
-{
-  "pertanyaan": [
-    {
-      "level": "LOTS/MOTS/HOTS",
-      "stimulus": "",
-      "question": "",
-      "rubric_points": [],
-      "explanation": ""
-    }
-  ]
-}
+[
+  {
+    "level": "LOTS/MOTS/HOTS",
+    "stimulus": "",
+    "question": "",
+    "rubric_points": [],
+    "explanation": ""
+  }
+]
 
 [KONFIGURASI_LEVEL]
 
@@ -22,28 +20,16 @@ Buat TEPAT 5 soal esai dalam format JSON.
 
 [KONFIGURASI_STIMULUS]
 
-{{ subject_config }}
-
-{% if image_context %}
-[KONTEKS_GAMBAR]
-
-{{ image_context }}
-
-Jika gambar relevan, referensikan konteks gambar pada stimulus atau penjelasan soal.
-Jangan membuat soal yang sepenuhnya bergantung pada gambar.
-{% endif %}
+{{ stimulus_config }}
 
 [KONTEKS_PEMBELAJARAN]
 
-{{ rag_context }}
-
-[ATP]
+{{ context }}
 
 [ATP]
 
 {{ atp }}
 
-Prioritaskan ATP jika tersedia.
 Prioritaskan ATP jika tersedia.
 
 [ATURAN_SOAL]
@@ -64,20 +50,7 @@ Prioritaskan ATP jika tersedia.
 
 * Gunakan 3 indikator penilaian yang operasional, terukur, dan singkat.
 * Sesuaikan indikator dengan level yang diberikan.
-* Isi rubric_points sebagai array string, masing-masing satu indikator.
 
-[ATURAN_PENJELASAN]
-
-Penjelasan ditampilkan kepada siswa sebagai pembahasan soal.
-
-Gunakan struktur:
-
-### Pengerjaan
-* Langkah atau analisis bertahap menuju jawaban.
-* Untuk STEM gunakan LaTeX bila diperlukan.
-* Untuk non-STEM jelaskan alasan atau hubungan konsep yang mendukung jawaban.
-
-Hindari chain-of-thought yang panjang.
 [ATURAN_PENJELASAN]
 
 Penjelasan ditampilkan kepada siswa sebagai pembahasan soal.
