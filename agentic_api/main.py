@@ -389,13 +389,19 @@ def submit_essay(req: List[EssayEvalItem]):
 @app.post("/rag/rekomendasi", tags=["RAG"])
 def rekomendasi(req: RekomendasiRequest):
     try:
+        # Serialize Pydantic objects ke dict agar Jinja2 dapat mengakses field-nya via dot-notation
         prompt = load_prompt(
             "rekomendasi.j2",
-            available=req.available,
-            in_progress=req.in_progress_ids,
-            complete=req.complete_ids
+            available=[b.model_dump() for b in req.available],
+            in_progress=[b.model_dump() for b in req.in_progress_ids],
+            complete=[b.model_dump() for b in req.complete_ids],
         )
-        sys_msg = SystemMessage(content="Kamu adalah AI Recommender JSON.")
+        sys_msg = SystemMessage(content=(
+            "You are a strict AI Study Recommender. "
+            "You MUST return ONLY a valid raw JSON object — no markdown, no explanation. "
+            "NEVER hallucinate bundle_id, mapel_label, elemen_label, or materi. "
+            "ONLY use values that are EXACTLY listed in the Available materials provided by the user."
+        ))
         res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
         return content
