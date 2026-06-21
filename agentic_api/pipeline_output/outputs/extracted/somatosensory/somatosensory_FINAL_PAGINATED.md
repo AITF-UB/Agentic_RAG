@@ -1,6 +1,6 @@
 # somatosensory
 
-*Diekstrak: 19 June 2026, 00:19*
+*Diekstrak: 21 June 2026, 22:52*
 
 ---
 
@@ -27,7 +27,7 @@ Sensory information from Meissner corpuscles and rapidly adapting afferents lead
 
 ![Visual](extracted_assets/picture_p001_001.png)
 
-> **Deskripsi Visual:** ⚠️ Gagal dianalisis: HTTP 503 — 503 Server Error: Service Unavailable for url: https://tipoff-errant-chatroom.ngrok-free.dev/v1/chat/completions
+> **Deskripsi Visual:** Diagram ini menampilkan struktur anatomi lapisan kulit, yang dibagi menjadi kulit berambut (hairy skin) dan kulit licin (glabrous skin). Secara keseluruhan, gambar ini memvisualisasikan lapisan epidermis dan dermis beserta berbagai reseptor sensorik yang terdapat di dalamnya. Elemen utama yang digambarkan meliputi folikel rambut, kelenjar sebasea, serta jenis-jenis corpuscle sensorik seperti Meissner's, Pacinian, Ruffini's, dan Merkel's, yang semuanya terhubung dengan ujung saraf bebas. Label penting yang terlihat mencakup nama-nama struktur anatomi seperti Papillary Ridges, Septa, dan lapisan kulit itu sendiri. Informasi kunci yang dapat diambil adalah pemahaman mengenai bagaimana berbagai reseptor sensorik tersebar di dalam lapisan kulit untuk mendeteksi rangsangan lingkungan.
 
 
 <br>
@@ -45,7 +45,7 @@ Sensory information from Meissner corpuscles and rapidly adapting afferents lead
 
 ![Visual](extracted_assets/picture_p002_002.png)
 
-> **Deskripsi Visual:** ⚠️ Gagal dianalisis: HTTP 502 — 502 Server Error: Bad Gateway for url: https://tipoff-errant-chatroom.ngrok-free.dev/v1/chat/completions
+> **Deskripsi Visual:** Ilustrasi ini menampilkan detail anatomi dan neurologis dari refleks tendon lutut (refleks panggul) serta komponen pengatur panjang otot di dalamnya. Di sisi kiri, terlihat gambaran jaringan otot dan saraf yang mengarah ke area panggul. Bagian tengah menunjukkan "pembesaran otot spindle", yang berisi serabut otot utama (ekstrafus) dan serabut otot intrafus. Terdapat beberapa saluran saraf yang saling terhubung, termasuk neuron motorik gamma-s (γ-s), neuron motorik gamma-d (γ-d), serta serabut aferen II dan Ia. Label-label ini menjelaskan bagaimana sinyal saraf mengontrol kontraksi otot untuk menjaga keseimbangan dan posisi tubuh.
 
 rapidly adapting afferent activity, muscle force increases reflexively until the gripped object no longer moves. Such a rapid response to a tactile stimulus is a clear indication of the role played by somatosensory neurons in motor activity.
 
@@ -71,7 +71,7 @@ Nociceptors  have  free  nerve  endings.  Functionally,  skin nociceptors  are  
 
 ![Tabel](extracted_assets/table_p003_003.png)
 
-⚠️ Gagal dianalisis: HTTP 502 — 502 Server Error: Bad Gateway for url: https://tipoff-errant-chatroom.ngrok-free.dev/v1/chat/completions
+Tabel ini membandingkan dua jenis reseptor sensitivitas sentuhan pada kulit berdasarkan kecepatan adaptasinya. Di sisi kiri, reseptor yang beradaptasi cepat mencakup penerima di permukaan seperti reseptor rambut dan korpuskel Meissner yang mendeteksi getaran halus atau tekstur, serta korpuskel Pacinian di dalam kulit yang merespons getaran difus. Sebaliknya, di sisi kanan, reseptor yang beradaptasi lambat meliputi reseptor Merkel yang mendeteksi detail spasial seperti tepi objek atau pola Braille, serta korpuskel Ruffini yang berfungsi sebagai pegas kulit untuk mendeteksi peregangan dan posisi sendi jari.
 
 Pain signals can be separated into individual components,  corresponding  to  different  types  of  nerve  fibers used for transmitting these signals. The rapidly transmitted  signal,  which  often  has  high  spatial  resolution,  is called fi rst pain or cutaneous pricking pain . It is well localized and easily tolerated. The much slower, highly affective component is called second pain or burning pain ; it is poorly  localized  and  poorly  tolerated.  The  third  or deep pain , arising from viscera, musculature and joints, is also poorly  localized,  can  be  chronic  and  is  often  associated with referred pain.
 
@@ -96,7 +96,7 @@ Scattered throughout virtually every striated muscle in the body are long, thin,
 
 ![Visual](extracted_assets/picture_p004_004.png)
 
-> **Deskripsi Visual:** ⚠️ Gagal dianalisis: HTTP 502 — 502 Server Error: Bad Gateway for url: https://tipoff-errant-chatroom.ngrok-free.dev/v1/chat/completions
+> **Deskripsi Visual:** Diagram ini menggambarkan mekanisme kontrol motorik dan umpan balik dalam sistem saraf yang mengatur aktivitas otot. Terlihat elemen utama seperti neuron intermedier (inter-neurons), unit motorik alfa (α), dan gamma (γ), serta reseptor seperti organ Golgi tendon dan spindle otot. Relasi antar elemen menunjukkan bagaimana sinyal kontrol dari otak diolah untuk menggerakkan otot, sementara umpan balik dari panjang, kecepatan, dan gaya otot (melalui spindle dan organ Golgi tendon) terus-menerus dimonitor untuk menyesuaikan aktivitas otot terhadap beban eksternal. Informasi kunci yang dapat diambil adalah pentingnya mekanisme umpan balik sensorik untuk kontrol postur dan pergerakan yang presisi.
 
 few myofilaments and is non-contractile, but it does have one or more sensory endings applied to it. When the muscle is stretched, the central part of the intrafusal fiber is stretched and each sensory ending fires impulses.
 

@@ -66,8 +66,8 @@ def _env_str(name: str, default: str) -> str:
 
 
 # ── Default shared antar file ─────────────────────────────────────────────
-DEFAULT_VLM_MODEL  = _env_str("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
-DEFAULT_VLM_HOST   = _env_str("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
+DEFAULT_VLM_MODEL  = _env_str("VLM_MODEL", "ub-sr-all")
+DEFAULT_VLM_HOST   = _env_str("VLM_HOST", "https://providers-else-hear-wheel.trycloudflare.com")
 DEFAULT_DENSE_MODEL  = _env_str("DENSE_MODEL", "BAAI/bge-m3")
 DEFAULT_SPARSE_MODEL = _env_str("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
@@ -106,7 +106,7 @@ class PipelineConfig:
     # ── Model ─────────────────────────────────────────────────────────────────
     # VLM diakses melalui OpenAI-compatible API (Ollama, llama.cpp, vLLM, dll.)
     # Request body menggunakan OpenAI chat completion template.
-    vlm_model_id:       str = _env_str("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
+    vlm_model_id:       str = _env_str("VLM_MODEL", "ub-sr-all")
     ollama_host:        str = DEFAULT_VLM_HOST  # Base URL server VLM
     dense_model_name:   str = _env_str("DENSE_MODEL", "BAAI/bge-m3")
     sparse_model_name:  str = _env_str("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
@@ -496,16 +496,27 @@ def step2_describe_images(config: PipelineConfig, json_paths: Optional[List[Path
             "model": model_name,
             "messages": [
                 {
+                    "role": "system",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Kamu adalah helpfull assistant untuk kebutuhan captioning gambar materi pendidikan. Langsung berikan caption gambar tanpa tambahan kata lainya yang tidak berkaitan dengan caption"
+                        }
+                    ],
+                },
+                {
                     "role": "user",
                     "content": [
-                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
                         {"type": "text", "text": prompt_text},
+                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
                     ],
                 }
             ],
-            "max_tokens": 512,
-            "temperature": 0.0,
-            "stream": False,
+            "max_tokens": 3000,
+            "temperature": 0.7,
+            "chat_template_kwargs": {
+                "enable_thinking": False
+            },
         }
         try:
             resp = _requests.post(vlm_url, json=payload, timeout=120, headers=_NGROK_HEADERS)
