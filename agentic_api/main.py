@@ -498,16 +498,17 @@ def rekomendasi(req: RekomendasiRequest):
         content = clean_json_from_llm(res.content)
 
         # ── Post-processing: paksa nilai materi sesuai sumber di available ──────
-        # Ini mencegah LLM mengarang nilai materi ketika sumbernya null/kosong.
+        # Jika materi sumber null/kosong → fallback ke elemen_label.
         available_map = {str(b["bundle_id"]): b for b in available_dicts}
         if isinstance(content, dict) and "rekomendasi" in content:
             for item in content["rekomendasi"]:
                 bid = str(item.get("bundle_id", ""))
                 if bid in available_map:
-                    source_materi = available_map[bid].get("materi")
-                    # Jika sumber null/None/""/N/A → paksa null di response
+                    source = available_map[bid]
+                    source_materi = source.get("materi")
+                    # Jika sumber null/None/""/N/A → fallback ke elemen_label
                     if not source_materi or source_materi.strip().upper() in ("", "N/A", "NULL", "NONE"):
-                        item["materi"] = None
+                        item["materi"] = source.get("elemen_label") or None
                     else:
                         item["materi"] = source_materi
 

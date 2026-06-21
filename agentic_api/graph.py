@@ -398,8 +398,7 @@ def structurer_node(state: AgentState) -> dict:
                 if isinstance(item, dict):
                     item.pop("level", None)
             content = {"soal": content}
-        elif tipe == "flashcard":
-            content = {"flashcard": content, "source": state["sumber_text"]}
+
             
     # Tambahkan visual assets jika direquest via image_id
     visual_assets = state.get("visual_assets", {})
