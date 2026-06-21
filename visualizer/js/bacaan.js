@@ -4,7 +4,9 @@ function renderBacaan(content, source) {
     mdText = mdText.replace(/!\[(.*?)\]\((?!http)(.*?)\)/g, "![$1](http://localhost:8000/extraction/$2)");
     let html = marked.parse(mdText);
     
-    if (content.image_path && typeof content.image_path === 'string' && content.image_path.trim() !== "") {
+    if (content.visuals && typeof content.visuals === 'string' && content.visuals.startsWith("data:image")) {
+        html = `<img src="${content.visuals}" alt="Ilustrasi Materi" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />\n` + html;
+    } else if (content.image_path && typeof content.image_path === 'string' && content.image_path.trim() !== "") {
         html = `<img src="http://localhost:8000/extraction/${content.image_path}" alt="Ilustrasi Materi" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />\n` + html;
     }
     

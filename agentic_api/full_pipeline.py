@@ -65,6 +65,13 @@ def _env_str(name: str, default: str) -> str:
     return val if val else default
 
 
+# ── Default shared antar file ─────────────────────────────────────────────
+DEFAULT_VLM_MODEL  = _env_str("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
+DEFAULT_VLM_HOST   = _env_str("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
+DEFAULT_DENSE_MODEL  = _env_str("DENSE_MODEL", "BAAI/bge-m3")
+DEFAULT_SPARSE_MODEL = _env_str("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
+
+
 @dataclass
 class PipelineConfig:
     """Semua konfigurasi pipeline di satu tempat."""
@@ -97,18 +104,17 @@ class PipelineConfig:
         return self.outputs_root / "chunks"
 
     # ── Model ─────────────────────────────────────────────────────────────────
-    # VLM diakses melalui Ollama (tidak butuh GPU lokal)
-    # Nama model harus sesuai dengan yang sudah di-pull di server Ollama,
-    # misalnya: ollama pull qwen2.5vl:3b
-    vlm_model_id:       str = _env_str("OLLAMA_MODEL", "qwen2.5vl:3b")
-    ollama_host:        str = _env_str("OLLAMA_HOST", "http://localhost:11434")  # URL server Ollama
+    # VLM diakses melalui OpenAI-compatible API (Ollama, llama.cpp, vLLM, dll.)
+    # Request body menggunakan OpenAI chat completion template.
+    vlm_model_id:       str = _env_str("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
+    ollama_host:        str = DEFAULT_VLM_HOST  # Base URL server VLM
     dense_model_name:   str = _env_str("DENSE_MODEL", "BAAI/bge-m3")
     sparse_model_name:  str = _env_str("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
     # ── Qdrant ────────────────────────────────────────────────────────────────
-    qdrant_host:      str  = "76.13.195.1"
-    qdrant_port:      int  = 6333
-    collection_name:  str  = "test_pipeline"
+    qdrant_host:      str  = _env_str("QDRANT_HOST", "76.13.195.1")
+    qdrant_port:      int  = int(_env_str("QDRANT_PORT", "6333"))
+    collection_name:  str  = _env_str("QDRANT_PIPELINE_EKSTRACTION", "test_pipeline")
     qdrant_timeout:   int  = 60
     force_reindex:    bool = False
     batch_size:       int  = 32
@@ -130,6 +136,7 @@ class PipelineConfig:
     id_kelas:        Optional[str] = None  # ID_Kelas
     jenjang:         Optional[str] = None  # Jenjang Kelas (mis. X, XI, XII)
     id_guru:         Optional[str] = None  # ID Guru
+    buku_id:         Optional[str] = None  # ID unik buku, di-assign di upload API
     skip_existing:   bool = True
 
     def ensure_dirs(self) -> None:
@@ -355,15 +362,23 @@ def step1_extract(config: PipelineConfig) -> List[Path]:
             print(f"   💾 Struktur disimpan: {json_path}")
             print(f"   📊 {img_counter} gambar diekstrak — {elapsed}s")
 
-            shutil.move(str(original_pdf), str(config.done_folder / original_pdf.name))
-            print(f"   📦 PDF dipindah ke: {config.done_folder}/\n")
+            # Pindahkan PDF hanya jika mode batch (folder), bukan mode single-PDF (API upload).
+            # Pada mode API, file harus tetap di tempat agar re-run step lain tidak gagal.
+            if config.input_pdf is None:
+                shutil.move(str(original_pdf), str(config.done_folder / original_pdf.name))
+                print(f"   📦 PDF dipindah ke: {config.done_folder}/\n")
+            else:
+                print(f"   ✅ Mode single-PDF: file tetap di tempat.\n")
             json_paths.append(json_path)
 
         except Exception as e:
             elapsed = (datetime.now() - start_time).seconds
             print(f"   ❌ GAGAL [{pdf_name}]: {e} ({elapsed}s)")
-            shutil.move(str(original_pdf), str(config.failed_folder / original_pdf.name))
-            print(f"   📦 PDF dipindah ke: {config.failed_folder}/\n")
+            if config.input_pdf is None:
+                shutil.move(str(original_pdf), str(config.failed_folder / original_pdf.name))
+                print(f"   📦 PDF dipindah ke: {config.failed_folder}/\n")
+            else:
+                print(f"   ❌ Mode single-PDF: file tetap di tempat.\n")
 
         finally:
             # Hapus file PDF sementara (hasil pemotongan) jika ada
@@ -382,11 +397,11 @@ def step1_extract(config: PipelineConfig) -> List[Path]:
 
 def step2_describe_images(config: PipelineConfig, json_paths: Optional[List[Path]] = None) -> List[Path]:
     """
-    Proses setiap gambar dengan VLM melalui Ollama API, rakit Markdown final.
-    Tidak butuh GPU lokal — model berjalan di server Ollama.
+    Proses setiap gambar dengan VLM melalui OpenAI-compatible API, rakit Markdown final.
+    Request body menggunakan OpenAI chat completion template.
 
-    Model default  : qwen2.5vl:3b  (harus sudah di-pull: ollama pull qwen2.5vl:3b)
-    Ollama host    : config.ollama_host  (default: http://localhost:11434)
+    Model default  : unsloth/Qwen3-VL-4B-Instruct-GGUF
+    Server host    : config.ollama_host  (default: http://localhost:11434)
 
     Returns: list path Markdown final yang dihasilkan.
     """
@@ -395,38 +410,40 @@ def step2_describe_images(config: PipelineConfig, json_paths: Optional[List[Path
     from PIL import Image
     import io
 
-    ollama_url = config.ollama_host.rstrip("/") + "/api/chat"
+    vlm_url = config.ollama_host.rstrip("/") + "/v1/chat/completions"
     model_name = config.vlm_model_id
 
     print("=" * 60)
-    print("  STEP 2 — Deskripsi VLM via Ollama + Rakitan Markdown")
+    print("  STEP 2 — Deskripsi VLM + Rakitan Markdown")
     print("=" * 60)
-    print(f"  Ollama host : {config.ollama_host}")
+    print(f"  Server host : {config.ollama_host}")
     print(f"  Model       : {model_name}")
     print("=" * 60)
 
-    # ── Cek koneksi ke Ollama ───────────────────────────────────────────────
-    # Header ini diperlukan saat Ollama diakses lewat ngrok (free tier)
+    # ── Cek koneksi ke server VLM ───────────────────────────────────────────
+    # Header ini diperlukan saat diakses lewat ngrok (free tier)
     # agar ngrok tidak memblokir request dengan halaman browser challenge
     _NGROK_HEADERS = {"ngrok-skip-browser-warning": "true"}
+    _vlm_ok = True
     try:
-        ping = _requests.get(config.ollama_host.rstrip("/") + "/api/tags", timeout=10, headers=_NGROK_HEADERS)
+        ping = _requests.get(config.ollama_host.rstrip("/") + "/v1/models", timeout=10, headers=_NGROK_HEADERS)
         ping.raise_for_status()
-        available_models = [m["name"] for m in ping.json().get("models", [])]
-        # Cek apakah model sudah tersedia (toleran terhadap tag :latest)
-        model_tag = model_name if ":" in model_name else model_name + ":latest"
-        if not any(model_tag == m or model_name == m.split(":")[0] for m in available_models):
-            print(f"\n⚠️  Model '{model_name}' tidak ditemukan di Ollama.")
-            print(f"   Model tersedia: {available_models}")
-            print(f"   Jalankan: ollama pull {model_name}\n")
-            return []
-        print(f"\n✅ Terhubung ke Ollama. Model '{model_name}' siap.\n")
+        data = ping.json()
+        if "data" in data:
+            available_models = [m["id"] for m in data["data"]]
+            print(f"\n✅ Terhubung ke server VLM. Model tersedia: {available_models}")
+            if model_name not in available_models:
+                print(f"   ⚠️  Model '{model_name}' tidak dalam daftar. Server mungkin tetap bisa menjalankannya.")
+        else:
+            print(f"\n✅ Terhubung ke server VLM di {config.ollama_host}")
     except _requests.exceptions.ConnectionError:
-        print(f"\n❌  Tidak bisa terhubung ke Ollama di {config.ollama_host}")
-        print("   Pastikan Ollama sudah berjalan (ollama serve).\n")
-        return []
+        print(f"\n❌  Tidak bisa terhubung ke server VLM di {config.ollama_host}")
+        print("   Pastikan server sudah berjalan.\n")
+        _vlm_ok = False
     except Exception as conn_err:
-        print(f"\n❌  Error saat cek Ollama: {conn_err}\n")
+        print(f"\n⚠️  Peringatan — tidak bisa cek /v1/models: {conn_err}")
+        print(f"   Pipeline tetap lanjut; jika gagal nanti periksa server VLM.\n")
+    if not _vlm_ok:
         return []
 
     # ── Helper: encode gambar ke base64 ─────────────────────────────────────
@@ -469,7 +486,7 @@ def step2_describe_images(config: PipelineConfig, json_paths: Optional[List[Path
                 "Deskripsikan gambar dari buku pelajaran ini dalam satu paragraf yang informatif."
             )
 
-    # ── Helper: kirim gambar ke Ollama dan dapatkan deskripsi ────────────────
+    # ── Helper: kirim gambar ke VLM dan dapatkan deskripsi ──────────────────
     def describe_image(img_path: str, label: str) -> Optional[str]:
         b64 = validate_and_encode_image(img_path)
         if b64 is None:
@@ -480,20 +497,20 @@ def step2_describe_images(config: PipelineConfig, json_paths: Optional[List[Path
             "messages": [
                 {
                     "role": "user",
-                    "content": prompt_text,
-                    "images": [b64],
+                    "content": [
+                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64}"}},
+                        {"type": "text", "text": prompt_text},
+                    ],
                 }
             ],
+            "max_tokens": 512,
+            "temperature": 0.0,
             "stream": False,
-            "options": {
-                "num_predict": 512,
-                "temperature": 0.0,
-            },
         }
         try:
-            resp = _requests.post(ollama_url, json=payload, timeout=120, headers=_NGROK_HEADERS)
+            resp = _requests.post(vlm_url, json=payload, timeout=120, headers=_NGROK_HEADERS)
             resp.raise_for_status()
-            result = resp.json()["message"]["content"].strip()
+            result = resp.json()["choices"][0]["message"]["content"].strip()
             skip_kw = ["SKIP", "tidak dapat melihat", "belum memberikan",
                         "tidak dapat membantu", "maaf saya", "saya tidak bisa"]
             if any(kw.lower() in result.lower() for kw in skip_kw):
@@ -1549,13 +1566,30 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         ])
         return str(uuid.uuid5(uuid.NAMESPACE_URL, raw))
 
+    def _normalize_source_file_for_qdrant(raw: str) -> str:
+        """Normalisasi source_file sebelum disimpan ke Qdrant.
+
+        Logika HARUS identik dengan _normalize_source_file di tools.py
+        agar filter retriever selalu match dengan data yang tersimpan.
+
+        Contoh:
+          "Biologi_Kelas_X_FINAL_PAGINATED" → "biologi_kelas_x"
+          "Biologi_Kelas_X"                 → "biologi_kelas_x"
+        """
+        name = raw.strip().replace("\\", "/")
+        name = Path(name).stem
+        for suffix in ("_chunks", "_FINAL_PAGINATED", "_final_paginated", "_structure"):
+            if name.endswith(suffix):
+                name = name[: -len(suffix)]
+        return name.lower()
+
     def build_payload(doc):
         """
         Bangun payload Qdrant yang flat dan efisien.
 
         Field yang disimpan (tanpa duplikasi):
           page_content      - teks chunk
-          source_file       - nama file sumber (tanpa ekstensi)
+          source_file       - nama file sumber (dinormalisasi: lowercase, tanpa suffix pipeline)
           page              - nomor halaman
           chunk_index       - indeks chunk dalam dokumen
           mata_pelajaran    - mata pelajaran (dari config)
@@ -1580,9 +1614,14 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
                 for entry in visuals
             ] or False
 
+        # Normalisasi source_file agar konsisten dengan retriever filter
+        raw_source = meta.get("source_file", "unknown")
+        normalized_source = _normalize_source_file_for_qdrant(raw_source)
+
         payload = {
             "page_content":       doc["page_content"],
-            "source_file":        meta.get("source_file", "unknown"),
+            "source_file":        normalized_source,
+            "buku_id":            config.buku_id,
             "page":               meta.get("page"),
             "chunk_index":        meta.get("chunk_index"),
             "mata_pelajaran":     meta.get("mata_pelajaran"),
@@ -1747,12 +1786,12 @@ Contoh penggunaan:
                         help="Mata pelajaran (mis. Biologi). Dipakai sebagai metadata chunk.")
     parser.add_argument("--id-kelas", type=str, default=None,
                         help="ID Kelas (mis. X-A). Dipakai sebagai metadata chunk.")
-    parser.add_argument("--vlm-model", type=str, default=_env_str("OLLAMA_MODEL", "qwen2.5vl:3b"),
-                        help="Nama model Ollama untuk deskripsi gambar (default: qwen2.5vl:3b)")
-    parser.add_argument("--ollama-host", type=str, default=_env_str("OLLAMA_HOST", "http://localhost:11434"),
-                        help="URL server Ollama (default: http://localhost:11434)")
-    parser.add_argument("--dense-model", type=str, default=_env_str("DENSE_MODEL", "BAAI/bge-m3"))
-    parser.add_argument("--sparse-model", type=str, default=_env_str("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil"))
+    parser.add_argument("--vlm-model", type=str, default=DEFAULT_VLM_MODEL,
+                        help=f"Nama model VLM (default: {DEFAULT_VLM_MODEL})")
+    parser.add_argument("--ollama-host", type=str, default=DEFAULT_VLM_HOST,
+                        help=f"Base URL server VLM (default: {DEFAULT_VLM_HOST})")
+    parser.add_argument("--dense-model", type=str, default=DEFAULT_DENSE_MODEL)
+    parser.add_argument("--sparse-model", type=str, default=DEFAULT_SPARSE_MODEL)
 
     args = parser.parse_args()
 

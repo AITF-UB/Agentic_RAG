@@ -1,0 +1,44 @@
+[TUGAS]
+
+Buat mindmap hierarkis dalam format JSON.
+
+[SKEMA_KELUARAN]
+
+{
+"root": {
+  "name": "",
+  "description": "",
+  "children": []
+}
+}
+
+
+[KONTEKS_PEMBELAJARAN]
+
+{context}
+
+[ATP]
+
+{atp}
+
+[ATURAN_MINDMAP]
+
+* Kedalaman minimal 3 level:
+  Root → Child → Grandchild.
+* Setiap leaf node wajib menggunakan:
+  "children": []
+* Susun konsep secara hierarkis dan kelompokkan konsep yang saling berkaitan.
+* Node harus merepresentasikan konsep, subkonsep, karakteristik, hubungan, atau aplikasi dari materi sumber dan ATP.
+* Hindari instruksi belajar, aktivitas berpikir, refleksi, evaluasi, atau label metakognitif sebagai node.
+
+[ATURAN_DESKRIPSI]
+
+* Maksimal 15 kata.
+* Singkat, padat, dan informatif.
+* Hindari filler, pengulangan, penomoran, dan label kaku.
+
+[PENGGUNAAN_EMOJI]
+
+* Root node wajib menggunakan emoji.
+* Child level pertama wajib menggunakan emoji.
+* Gunakan emoji yang relevan dan konsisten.

@@ -17,7 +17,7 @@ async function handleGenerate() {
         elemen_id: document.getElementById("inp-elemen-id").value,
         elemen_label: document.getElementById("inp-elemen-label").value,
         materi: document.getElementById("inp-materi").value,
-        atp: document.getElementById("inp-atp").value,
+        atp: [document.getElementById("inp-atp").value],
         kelas_id: document.getElementById("inp-kelas").value,
         jenjang: document.getElementById("inp-jenjang").value,
         tipe: tipe
@@ -39,30 +39,38 @@ async function handleGenerate() {
 
     try {
         // 3. Panggil API Utama Beta Agentic
+        const apiKey = document.getElementById("inp-apikey")?.value || "";
         const response = await fetch("http://localhost:8000/konten/generate", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json",
+                "X-API-Key": apiKey
+            },
             body: JSON.stringify(payload)
         });
         
         const json = await response.json();
         console.log("Raw Response:", json);
         
+        if (!response.ok) {
+            alert(`Error ${response.status}: ${json.detail || "Request failed"}`);
+            return;
+        }
+
         if (json.error) {
             alert("Error: " + json.error.message);
             return;
         }
 
-        const data = json.data;
-        const content = data.content;
-        lastGeneratedData = data;
+        const content = json.data ? (json.data.content || json.data) : json;
+        lastGeneratedData = content;
 
         // 4. Tampilkan RAW JSON untuk keperluan debug
-        document.getElementById("debug-json").textContent = JSON.stringify(data, null, 2);
+        document.getElementById("debug-json").textContent = JSON.stringify(content, null, 2);
         document.getElementById("debug-json").style.display = "block";
 
         // 5. Render Visuals (jika ada array visuals dari RAG base64)
-        if (content.visuals && content.visuals.length > 0) {
+        if (content.visuals && Array.isArray(content.visuals) && content.visuals.length > 0) {
             let imgHtml = "<div style='font-weight: 600; margin-bottom: 12px; color: #1e293b;'>🖼️ Referensi Gambar dari Materi:</div>";
             imgHtml += "<div style='display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;'>";
             content.visuals.forEach((v, index) => {

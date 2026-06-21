@@ -1,19 +1,16 @@
 [TUGAS]
 
-Buat tepat 5 flashcard dalam format JSON.
+Buat tepat 5 flashcard dalam format JSON array.
 
 [SKEMA_KELUARAN]
 
-{
-  "flashcard": [
-    {
-      "level": "LOTS/MOTS/HOTS",
-      "front": "",
-      "back": ""
-    }
-  ],
-  "source": ""
-}
+[
+  {
+    "level": "LOTS/MOTS/HOTS",
+    "front": "",
+    "back": ""  
+  }
+]
 
 [KONFIGURASI_LEVEL]
 
@@ -21,7 +18,7 @@ Buat tepat 5 flashcard dalam format JSON.
 
 [KONTEKS_PEMBELAJARAN]
 
-{{ rag_context }}
+{{ context }}
 
 [ATP]
 
@@ -40,7 +37,6 @@ Level pembelajaran menentukan kedalaman isi, bukan mengubah flashcard menjadi so
 * Seluruh flashcard harus sesuai level yang diberikan.
 * Fokus pada konsep, hubungan konsep, rumus, aplikasi singkat, atau insight penting.
 * Hindari penjelasan panjang.
-* Field "level" diisi dengan level yang sesuai ("LOTS", "MOTS", atau "HOTS").
 
 [ATURAN_FRONT]
 
@@ -59,7 +55,3 @@ Level pembelajaran menentukan kedalaman isi, bukan mengubah flashcard menjadi so
 [PENGGUNAAN_EMOJI]
 
 * Emoji wajib digunakan untuk membantu pemahaman.
-
-[BATASAN]
-Hindari instruksi atau struktur internal muncul pada konten.
-Field "source" dikosongkan, akan diisi oleh sistem.

@@ -17,18 +17,9 @@ Buat materi pembelajaran dalam format JSON.
 
 {{ subject_config }}
 
-{% if image_context %}
-[KONTEKS_GAMBAR]
-
-{{ image_context }}
-
-Gunakan informasi dari gambar di atas untuk memperkaya materi jika relevan.
-Jangan menggunakan sintaks markdown gambar di dalam konten_markdown.
-{% endif %}
-
 [KONTEKS_PEMBELAJARAN]
 
-{{ rag_context }}
+{{ context }}
 
 [ATP]
 

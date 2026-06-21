@@ -17,6 +17,10 @@ Endpoints:
   GET  /pipeline/jobs            → Daftar semua job
   DELETE /pipeline/job/{id}      → Hapus job dari riwayat
 
+  -- Chat Memory --
+  POST /chat-memory/ingest       → Simpan pasangan Q&A ke Qdrant
+  POST /chat-memory/retrieve     → Ambil histori chat relevan
+
   -- System --
   GET  /health                   → Health check
 
@@ -29,7 +33,9 @@ from __future__ import annotations
 
 import uvicorn
 import os
+import sys
 import traceback
+import threading
 import uuid
 from typing import List, Any, Dict, Optional
 from enum import Enum
@@ -60,16 +66,38 @@ from api_models import (
 from dotenv import load_dotenv
 load_dotenv()
 
+from chat_memory.schemas import (
+    IngestChatRequest,
+    RetrieveChatRequest,
+)
+from chat_memory.dependencies import (
+    embedding_service,
+    qdrant_service,
+    chunking_service,
+)
+
 from graph import beta_graph
 from llm import get_llm, get_eval_llm
 from tools import clean_json_from_llm
 
+# ── Pastikan agentic_api/ ada di sys.path (agar import berfungsi dari mana pun) ──
+_THIS_DIR = Path(__file__).parent.resolve()
+if str(_THIS_DIR) not in sys.path:
+    sys.path.insert(0, str(_THIS_DIR))
+
 # ── Import pipeline ──────────────────────────────────────────────────────────
 try:
-    from full_pipeline import PipelineConfig, run_full_pipeline
+    from full_pipeline import (
+        PipelineConfig, run_full_pipeline,
+        DEFAULT_VLM_MODEL, DEFAULT_VLM_HOST, DEFAULT_DENSE_MODEL, DEFAULT_SPARSE_MODEL,
+    )
     PIPELINE_AVAILABLE = True
 except ImportError:
     PIPELINE_AVAILABLE = False
+    DEFAULT_VLM_MODEL   = os.getenv("OLLAMA_MODEL", "unsloth/Qwen3-VL-4B-Instruct-GGUF")
+    DEFAULT_VLM_HOST    = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
+    DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
+    DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -79,11 +107,6 @@ except ImportError:
 UPLOAD_DIR  = Path("uploads")          # PDF yang di-upload disimpan di sini
 OUTPUT_DIR  = Path("pipeline_output")  # Output pipeline
 CHUNKS_DIR  = Path("chunks")           # Output JSONL chunks
-
-DEFAULT_OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5vl:7b")
-DEFAULT_OLLAMA_HOST  = os.getenv("OLLAMA_HOST", "https://tipoff-errant-chatroom.ngrok-free.dev")
-DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
-DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
 
 UPLOAD_DIR.mkdir(exist_ok=True)
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -123,6 +146,7 @@ class JobInfo(BaseModel):
 class PipelineParams(BaseModel):
     """Parameter opsional untuk pipeline."""
     step:             Optional[str] = Field(None, description="Step tertentu, kosong = semua step")
+    buku_id:          Optional[str] = Field(None, description="ID unik buku (UUID, di-generate/diinput saat upload)")
     qdrant_host:      str  = Field(os.getenv("QDRANT_HOST", "76.13.195.1"),           description="Host Qdrant")
     qdrant_port:      int  = Field(int(os.getenv("QDRANT_PORT", "6333")),             description="Port Qdrant")
     collection_name:  str  = Field(os.getenv("QDRANT_TEXT_COLLECTION", "Test_pipeline"), description="Nama collection Qdrant")
@@ -137,8 +161,8 @@ class PipelineParams(BaseModel):
     id_kelas:         Optional[str] = Field(None, description="ID Kelas")
     jenjang:          Optional[str] = Field(None, description="Jenjang Kelas")
     id_guru:          Optional[str] = Field(None, description="ID Guru")
-    vlm_model:        str  = Field(DEFAULT_OLLAMA_MODEL, description="Nama model Ollama untuk VLM")
-    ollama_host:      str  = Field(DEFAULT_OLLAMA_HOST,  description="URL server Ollama")
+    vlm_model:        str  = Field(DEFAULT_VLM_MODEL, description="Nama model VLM (OpenAI-compatible API)")
+    ollama_host:      str  = Field(DEFAULT_VLM_HOST,  description="Base URL server VLM (OpenAI-compatible)")
     dense_model:      str  = Field(DEFAULT_DENSE_MODEL,  description="Model dense embedding")
     sparse_model:     str  = Field(DEFAULT_SPARSE_MODEL, description="Model sparse")
 
@@ -148,6 +172,7 @@ class PipelineParams(BaseModel):
 # ══════════════════════════════════════════════════════════════════════════════
 
 _jobs: Dict[str, JobInfo] = {}
+_jobs_lock = threading.Lock()  # Thread-safe access untuk _jobs
 
 
 def _create_job(filename: Optional[str] = None, step: Optional[str] = None) -> JobInfo:
@@ -160,16 +185,18 @@ def _create_job(filename: Optional[str] = None, step: Optional[str] = None) -> J
         created_at = now,
         updated_at = now,
     )
-    _jobs[job.job_id] = job
+    with _jobs_lock:
+        _jobs[job.job_id] = job
     return job
 
 
 def _update_job(job_id: str, **kwargs) -> None:
-    if job_id in _jobs:
-        job = _jobs[job_id]
-        for k, v in kwargs.items():
-            setattr(job, k, v)
-        job.updated_at = datetime.now().isoformat()
+    with _jobs_lock:
+        if job_id in _jobs:
+            job = _jobs[job_id]
+            for k, v in kwargs.items():
+                setattr(job, k, v)
+            job.updated_at = datetime.now().isoformat()
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -201,6 +228,7 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             id_kelas          = params.id_kelas,
             jenjang           = params.jenjang,
             id_guru           = params.id_guru,
+            buku_id           = params.buku_id,
             vlm_model_id      = params.vlm_model,
             ollama_host       = params.ollama_host,
             dense_model_name  = params.dense_model,
@@ -219,12 +247,22 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             for f in jsonl_files
         )
 
+        # Normalisasi source_file agar tetap informatif
+        # Logika identik dengan _normalize_source_file_for_qdrant di full_pipeline.py
+        source_file_raw = pdf_path.stem  # mis. "Biologi_Kelas_X"
+        source_file_normalized = source_file_raw.lower()
+        for _sfx in ("_chunks", "_final_paginated", "_structure"):
+            if source_file_normalized.endswith(_sfx):
+                source_file_normalized = source_file_normalized[: -len(_sfx)]
+
         _update_job(
             job_id,
             status  = JobStatus.SUCCESS,
             message = "Pipeline selesai.",
             result  = {
                 "pdf_file":          pdf_path.name,
+                "buku_id":           params.buku_id,
+                "source_file":       source_file_normalized,
                 "step_run":          params.step if params.step else "all",
                 "json_files":        [str(p) for p in json_files],
                 "markdown_files":    [str(p) for p in md_files],
@@ -253,12 +291,37 @@ async def lifespan(app: FastAPI):
     yield
     print("Shutting down...")
 
+from fastapi.security import APIKeyHeader
+from fastapi import Security, Depends
+
+API_KEY = os.getenv("API_KEY")
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
+
+async def verify_api_key(api_key: str = Security(api_key_header)):
+    if API_KEY and api_key != API_KEY:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing API Key"
+        )
+    return api_key
+
 app = FastAPI(
     title       = "Beta Agentic SR API + RAG Pipeline",
     description = "Unified microservice: Konten/RAG endpoints + Pipeline PDF → Qdrant (Docling + VLM + BGE-M3 + SPLADE).",
     version     = "4.0",
     lifespan    = lifespan,
+    dependencies=[Depends(verify_api_key)]
 )
+
+import traceback
+from fastapi import Request
+from fastapi.responses import PlainTextResponse
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    tb = traceback.format_exc()
+    print(tb)
+    return PlainTextResponse(str(tb), status_code=500)
 
 app.add_middleware(
     CORSMiddleware,
@@ -353,31 +416,57 @@ def generate_summary(req: SesiSummaryRequest):
 # QUIZ EVALUATION ENDPOINTS (Dipanggil BE)
 # ══════════════════════════════════════════════════════════════════════════════
 
+import asyncio
+import json
+
 @app.post("/siswa/quiz/essay", tags=["Quiz"])
-def submit_essay(req: List[EssayEvalItem]):
+async def submit_essay(req: List[EssayEvalItem]):
     try:
-        evaluasi_hasil = []
-        total_skor = 0
-        # System prompt evaluator essay dimuat dari template PSR2 (essay_eval_system.j2)
-        sys_msg = SystemMessage(content=load_prompt("essay_eval_system.j2"))
-        
-        for item in req:
+        sys_prompt = load_prompt("essay_judge_system.j2")
+        sys_msg = SystemMessage(content=sys_prompt)
+
+        async def evaluate_single(item: EssayEvalItem):
+            rubric_list = []
+            try:
+                # Mengubah string JSON dari frontend menjadi list jika ada
+                rubric_list = json.loads(item.rubrik)
+                if not isinstance(rubric_list, list):
+                    rubric_list = [item.rubrik]
+            except Exception:
+                # Jika string biasa, jadikan item dalam list
+                rubric_list = [item.rubrik]
+                
+            stimulus = item.stimulus or ""
+            # Bersihkan dan gabung stimulus dengan soal sesuai template
+            stimulus_dan_pertanyaan = f"{stimulus}\nPertanyaan: {item.soal}".strip()
+            
+            rp1 = rubric_list[0] if len(rubric_list) > 0 else ""
+            rp2 = rubric_list[1] if len(rubric_list) > 1 else ""
+            rp3 = rubric_list[2] if len(rubric_list) > 2 else ""
+            
             usr_prompt = load_prompt(
-                "essay_evaluation.j2",
-                soal=item.soal,
-                rubrik=item.rubrik,
-                jawaban_siswa=item.jawaban_siswa,
-                stimulus=item.stimulus,
-                penjelasan=item.penjelasan
+                "essay_judge_user.j2",
+                stimulus_dan_pertanyaan=stimulus_dan_pertanyaan,
+                rubric_point_1=rp1,
+                rubric_point_2=rp2,
+                rubric_point_3=rp3,
+                jawaban_siswa=item.jawaban_siswa
             )
-            res = eval_llm.invoke([sys_msg, HumanMessage(content=usr_prompt)])
-            hasil = clean_json_from_llm(res.content)
             
-            skor = hasil.get("final_score", hasil.get("skor", 0))
+            res = await eval_llm.ainvoke([sys_msg, HumanMessage(content=usr_prompt)])
+            return clean_json_from_llm(res.content)
+
+        # Lakukan pemanggilan LLM secara paralel untuk semua soal
+        tasks = [evaluate_single(item) for item in req]
+        evaluasi_hasil = await asyncio.gather(*tasks)
+        
+        total_skor = 0
+        for hasil in evaluasi_hasil:
+            skor = hasil.get("final_score", 0)
             total_skor += skor
-            evaluasi_hasil.append(hasil)
             
-        return {"total_skor": total_skor}
+        return {"total_skor": total_skor * 2}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"EVAL_ERR: {str(e)}")
 
@@ -456,6 +545,7 @@ async def upload_and_run(
     file:             UploadFile = File(..., description="File PDF yang akan diproses"),
     # Parameter opsional
     step:             Optional[str] = Form(None),
+    buku_id:          Optional[str] = Form(None, description="ID unik buku. Kosongkan untuk auto-generate UUID"),
     start_page:       int  = Form(0, description="Halaman awal (1-based). 0 = dari awal"),
     end_page:         int  = Form(0, description="Halaman akhir (inklusif). 0 = sampai akhir"),
     mata_pelajaran:   Optional[str] = Form(None, description="Mata pelajaran (mis. Biologi)"),
@@ -470,10 +560,15 @@ async def upload_and_run(
     - Pantau status via `GET /pipeline/job/{job_id}`.
     - `step` bisa diisi `extract`, `describe`, `chunk`, atau `ingest` untuk menjalankan
       satu step saja. Kosongkan untuk menjalankan semua step.
+    - `buku_id` adalah ID unik buku. Jika tidak dikirim, akan di-generate UUID otomatis.
     """
     # Validasi tipe file
     if not file.filename or not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Hanya file PDF yang diterima.")
+
+    # Auto-generate buku_id jika tidak dikirim
+    if not buku_id:
+        buku_id = str(uuid.uuid4())
 
     # Simpan file yang di-upload
     safe_name = Path(file.filename).name  # Hindari path traversal
@@ -487,6 +582,7 @@ async def upload_and_run(
 
     params = PipelineParams(
         step            = step,
+        buku_id         = buku_id,
         start_page      = start_page,
         end_page        = end_page,
         mata_pelajaran  = mata_pelajaran,
@@ -528,10 +624,18 @@ async def run_step(
                        f"Upload dulu via POST /pipeline/upload.",
             )
 
-    job = _create_job(filename=filename, step=params.step.value if params.step else "all")
+    # Validasi: step extract dan describe WAJIB punya file PDF
+    if params.step in ("extract", "describe") and pdf_path is None:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Step '{params.step}' memerlukan file PDF. "
+                   f"Sertakan parameter 'filename' atau upload via POST /pipeline/upload.",
+        )
+
+    job = _create_job(filename=filename, step=params.step if params.step else "all")
 
     if pdf_path is None:
-        # Buat dummy path supaya runner tidak crash; runner akan skip jika tidak ada PDF
+        # Step chunk/ingest tidak butuh PDF — buat dummy path agar signature runner terpenuhi
         pdf_path = UPLOAD_DIR / "placeholder.pdf"
 
     background_tasks.add_task(_run_pipeline_task, job.job_id, pdf_path, params)
@@ -543,7 +647,8 @@ async def run_step(
 @app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"])
 def get_job(job_id: str):
     """Ambil status dan hasil dari sebuah job berdasarkan `job_id`."""
-    job = _jobs.get(job_id)
+    with _jobs_lock:
+        job = _jobs.get(job_id)
     if not job:
         raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
     return job
@@ -556,7 +661,8 @@ def list_jobs(status: Optional[JobStatus] = None):
 
     - Filter opsional dengan query param `?status=running`, `?status=success`, dll.
     """
-    jobs = list(_jobs.values())
+    with _jobs_lock:
+        jobs = list(_jobs.values())
     if status:
         jobs = [j for j in jobs if j.status == status]
     # Urutkan terbaru dulu
@@ -567,10 +673,77 @@ def list_jobs(status: Optional[JobStatus] = None):
 @app.delete("/pipeline/job/{job_id}", tags=["Jobs"])
 def delete_job(job_id: str):
     """Hapus job dari riwayat (hanya riwayat; file output tidak dihapus)."""
-    if job_id not in _jobs:
-        raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
-    job = _jobs.pop(job_id)
+    with _jobs_lock:
+        if job_id not in _jobs:
+            raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
+        job = _jobs.pop(job_id)
     return {"message": f"Job '{job_id}' dihapus.", "filename": job.filename}
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CHAT MEMORY ENDPOINTS
+# ══════════════════════════════════════════════════════════════════════════════
+
+CHAT_CHUNK_SIZE = 1800
+
+
+@app.post("/chat-memory/ingest", tags=["Chat Memory"])
+def ingest_chat_memory(request: IngestChatRequest):
+    """Simpan satu pasangan Q&A (user + assistant) ke Qdrant chat memory."""
+    page_content = f"""User:\n{request.user_message}\n\nAssistant:\n{request.assistant_message}""".strip()
+
+    chunks = [page_content] if len(page_content) <= CHAT_CHUNK_SIZE else chunking_service.split_text(page_content)
+
+    for idx, chunk in enumerate(chunks):
+        embedding = embedding_service.embed(chunk)
+        payload = {
+            "user_id":      request.user_id,
+            "sesi_id":      request.sesi_id,
+            "chat_id":      request.chat_id,
+            "chunk_index":  idx,
+            "total_chunks": len(chunks),
+            "page_content": chunk,
+        }
+        qdrant_service.insert(embedding=embedding, payload=payload)
+
+    return {
+        "status":       "success",
+        "user_id":      request.user_id,
+        "sesi_id":      request.sesi_id,
+        "chat_id":      request.chat_id,
+        "total_chunks": len(chunks),
+    }
+
+
+@app.post("/chat-memory/retrieve", tags=["Chat Memory"])
+def retrieve_chat_memory(request: RetrieveChatRequest):
+    """Ambil histori chat yang relevan berdasarkan query semantik."""
+    query_embedding = embedding_service.embed(request.query)
+
+    results = qdrant_service.search(
+        query_vector=query_embedding,
+        user_id=request.user_id,
+        sesi_id=request.sesi_id,
+        top_k=request.top_k,
+    )
+
+    formatted_results = [
+        {
+            "score":        r.score,
+            "page_content": r.payload.get("page_content"),
+            "metadata":     {k: v for k, v in r.payload.items() if k != "page_content"},
+        }
+        for r in results
+    ]
+
+    return {
+        "query":         request.query,
+        "user_id":       request.user_id,
+        "sesi_id":       request.sesi_id,
+        "top_k":         request.top_k,
+        "total_results": len(formatted_results),
+        "results":       formatted_results,
+    }
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -596,4 +769,6 @@ os.environ["LANGSMITH_PROJECT"] = "beta-agentic"
 # ══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.freeze_support()
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
