@@ -480,7 +480,15 @@ def rekomendasi(req: RekomendasiRequest):
     try:
         # Serialize Pydantic objects ke dict agar Jinja2 dapat mengakses field-nya via dot-notation
         available_dicts = [b.model_dump() for b in req.available]
+        for b in available_dicts:
+            if not b.get("materi") or str(b.get("materi")).strip().upper() in ("NONE", "NULL", "N/A", ""):
+                b["materi"] = b.get("elemen_label") or "Tanpa Materi"
+
         in_progress_dicts = [b.model_dump() for b in req.in_progress_ids]
+        for b in in_progress_dicts:
+            if not b.get("materi") or str(b.get("materi")).strip().upper() in ("NONE", "NULL", "N/A", ""):
+                b["materi"] = b.get("elemen_label") or "Tanpa Materi"
+
         complete_dicts = [b.model_dump() for b in req.complete_ids]
 
         prompt = load_prompt(
@@ -492,6 +500,7 @@ def rekomendasi(req: RekomendasiRequest):
         sys_msg = SystemMessage(content=(
             "You are a strict AI Study Recommender. "
             "You MUST return ONLY a valid raw JSON object — no markdown, no explanation. "
+            "CRITICAL: It is FORBIDDEN to return an empty array if there are any available materials or in_progress_ids. You MUST select at least 1 material! "
             "NEVER hallucinate bundle_id, mapel_label, elemen_label, or materi. "
             "ONLY use values that are EXACTLY listed in the Available or In_Progress_Ids materials provided by the user. "
             "If the source material has null or empty materi, you MUST set materi to its elemen_label in your response."
