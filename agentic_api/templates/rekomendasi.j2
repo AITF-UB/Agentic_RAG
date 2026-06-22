@@ -27,7 +27,7 @@ Completed Materials (Complete):
 5. If it's not clear which new material to take next, recommend the next chapter based on a logical cognitive sequence from the ATP (Learning Objective Flow).
 6. Provide a clear, motivating reason ("alasan") why the material is recommended (e.g., "Lanjutkan materi ini agar tuntas" or "Materi baru untuk dipelajari").
 7. Return raw JSON with exactly the structure below.
-8. IF Materi is empty (e.g. "materi": "N/A" or "") RECOMMEND WITH "elemen_label" ONLY.
+8. IF the "Materi" field in the list above is "None", "null", "N/A", or empty, you MUST fill the "materi" field in your JSON output with the value of the "elemen_label". Do NOT leave it empty.
 
 MANDATORY JSON STRUCTURE:
 {
