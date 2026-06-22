@@ -480,26 +480,29 @@ def rekomendasi(req: RekomendasiRequest):
     try:
         # Serialize Pydantic objects ke dict agar Jinja2 dapat mengakses field-nya via dot-notation
         available_dicts = [b.model_dump() for b in req.available]
+        in_progress_dicts = [b.model_dump() for b in req.in_progress_ids]
+        complete_dicts = [b.model_dump() for b in req.complete_ids]
 
         prompt = load_prompt(
             "rekomendasi.j2",
             available=available_dicts,
-            in_progress=[b.model_dump() for b in req.in_progress_ids],
-            complete=[b.model_dump() for b in req.complete_ids],
+            in_progress=in_progress_dicts,
+            complete=complete_dicts,
         )
         sys_msg = SystemMessage(content=(
             "You are a strict AI Study Recommender. "
             "You MUST return ONLY a valid raw JSON object — no markdown, no explanation. "
             "NEVER hallucinate bundle_id, mapel_label, elemen_label, or materi. "
-            "ONLY use values that are EXACTLY listed in the Available materials provided by the user. "
+            "ONLY use values that are EXACTLY listed in the Available or In Progress materials provided by the user. "
             "If the source material has null or empty materi, you MUST set materi to its elemen_label in your response."
         ))
         res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
 
-        # ── Post-processing: paksa nilai materi sesuai sumber di available ──────
+        # ── Post-processing: paksa nilai materi sesuai sumber di available/in_progress ──────
         # Jika materi sumber null/kosong → fallback ke elemen_label.
-        available_map = {str(b["bundle_id"]): b for b in available_dicts}
+        combined_sources = available_dicts + in_progress_dicts
+        available_map = {str(b["bundle_id"]): b for b in combined_sources}
         if isinstance(content, dict) and "rekomendasi" in content:
             for item in content["rekomendasi"]:
                 bid = str(item.get("bundle_id", ""))

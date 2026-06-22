@@ -1,6 +1,7 @@
 import os
 import json
 import time
+import asyncio
 from datetime import datetime
 from typing import Any
 from jinja2 import Environment, FileSystemLoader
@@ -14,6 +15,17 @@ from prompt_config import compile_leveling_registry, compile_subject_registry
 
 env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")))
 llm = get_llm()
+
+async def _safe_ainvoke(llm_instance, messages, max_retries=3, delay=15):
+    """Bungkus LLM invoke dengan mekanisme retry otomatis untuk menghindari Cloudflare 524 Timeout."""
+    for attempt in range(max_retries):
+        try:
+            return await llm_instance.ainvoke(messages)
+        except Exception as e:
+            if attempt == max_retries - 1:
+                raise e
+            print(f"[RETRY] LLM Error (Attempt {attempt+1}/{max_retries}): {e}. Retrying in {delay}s...")
+            await asyncio.sleep(delay)
 
 def load_prompt(template_name: str, **kwargs) -> str:
     template = env.get_template(template_name)
@@ -222,7 +234,7 @@ async def _call_generation_llm(state: AgentState, usr_prompt: str, is_array_outp
     else:
         bound_llm = llm.bind(response_format={"type": "json_object"})
 
-    response = await bound_llm.ainvoke([SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
+    response = await _safe_ainvoke(bound_llm, [SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
     content_dict = clean_json_from_llm(response.content)
     
     return {
@@ -348,7 +360,7 @@ async def evaluator_node(state: AgentState) -> dict:
         generated_content=json.dumps(state["generated_content"], indent=2)
     )
     
-    response = await get_eval_llm().ainvoke([SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
+    response = await _safe_ainvoke(get_eval_llm(), [SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
     eval_dict = clean_json_from_llm(response.content)
     
     # Fallback if evaluation is weird
