@@ -25,7 +25,7 @@ celery_app = Celery(
     "agentic_worker",
     broker=REDIS_URL,
     backend=REDIS_URL,
-    include=["tasks.pipeline_task"],
+    include=["tasks.pipeline_task", "tasks.generate_task"],
 )
 
 celery_app.conf.update(
