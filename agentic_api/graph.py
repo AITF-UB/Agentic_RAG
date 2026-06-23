@@ -6,7 +6,6 @@ from datetime import datetime
 from typing import Any
 from jinja2 import Environment, FileSystemLoader
 from langgraph.graph import StateGraph, START, END
-from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from state import AgentState
@@ -443,45 +442,8 @@ def structurer_node(state: AgentState) -> dict:
         if tipe in ["bacaan", "quiz_pg", "quiz_essay", "pretest"]:
             inject_visuals(content)
 
-    return {"final_payload": content}
-
 # ================================================================
-# 3. REVISION & HITL NODES
-# ================================================================
-async def revisi_node(state: AgentState) -> dict:
-    """Node untuk merevisi konten berdasarkan feedback dari Guru (Human-in-the-Loop)."""
-    print(f"🔄 [revisi_node] Merevisi berdasarkan feedback guru...")
-    
-    # Ambil konten lama (hasil terbaik sejauh ini, atau dari generated_content terakhir)
-    konten_lama = state.get("best_revision") or state.get("generated_content") or state.get("final_payload")
-    human_feedback = state.get("human_feedback", "Tolong perbaiki secara umum.")
-    
-    prompt = load_prompt(
-        "revisi.j2",
-        konten_lama=konten_lama,
-        human_feedback=human_feedback
-    )
-    
-    sys_msg = SystemMessage(content="You are a strict AI Education Content Revisor. Output MUST be valid JSON matching the original structure.")
-    res = await _safe_ainvoke(llm, [sys_msg, HumanMessage(content=prompt)])
-    content = clean_json_from_llm(res.content)
-    
-    # Reset is_approved agar bisa di-review lagi
-    return {
-        "generated_content": content,
-        "revision_count": state.get("revision_count", 0) + 1,
-        "is_approved": None,
-        "human_feedback": None
-    }
-
-def human_review_node(state: AgentState) -> dict:
-    """Dummy node sebagai titik henti (interrupt) untuk persetujuan guru."""
-    print("⏳ [human_review_node] Menunggu review guru...")
-    return {}
-
-
-# ================================================================
-# 4. ROUTING & GRAPH BUILDER
+# 3. ROUTING & GRAPH BUILDER
 # ================================================================
 def route_after_retrieve(state: AgentState) -> str:
     tipe = state.get("tipe")
@@ -498,15 +460,6 @@ def should_revise(state: AgentState) -> str:
         return state.get("tipe")
     return "pass"
 
-def route_after_human_review(state: AgentState) -> str:
-    """Rute setelah titik henti: apakah disetujui (END) atau direvisi."""
-    if state.get("is_approved") is True:
-        return "end"
-    elif state.get("is_approved") is False:
-        return "revisi"
-    # Default jika tidak ada kejelasan (bisa juga loop balik ke review)
-    return "end"
-
 builder = StateGraph(AgentState)
 builder.add_node("retrieve", retrieve_node)
 builder.add_node("bacaan", bacaan_node)
@@ -517,10 +470,6 @@ builder.add_node("flashcard", flashcard_node)
 builder.add_node("mindmap", mindmap_node)
 builder.add_node("evaluate", evaluator_node)
 builder.add_node("structure", structurer_node)
-
-# HITL Nodes
-builder.add_node("human_review", human_review_node)
-builder.add_node("revisi", revisi_node)
 
 builder.add_edge(START, "retrieve")
 
@@ -555,32 +504,6 @@ builder.add_conditional_edges(
     }
 )
 
-# Strukturisasi selesai -> Jeda untuk Human Review
-builder.add_edge("structure", "human_review")
+builder.add_edge("structure", END)
 
-# Setelah Human Review
-builder.add_conditional_edges(
-    "human_review",
-    route_after_human_review,
-    {
-        "end": END,
-        "revisi": "revisi"
-    }
-)
-
-# Revisi Node (dari feedback guru) -> lalu masuk lagi ke pipeline Evaluator (atau Structure)
-# Lebih baik masuk ke evaluate agar dicek ulang secara kriteria sebelum jadi struktur
-builder.add_edge("revisi", "evaluate")
-
-# ================================================================
-# COMPILATION WITH CHECKPOINTER (Memory)
-# ================================================================
-# [TODO] Untuk Production: Gunakan AsyncPostgresSaver jika butuh data persisten saat restart
-# from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
-# ...
-memory = MemorySaver()
-
-beta_graph = builder.compile(
-    checkpointer=memory,
-    interrupt_before=["human_review"]  # Graf akan pause otomatis saat masuk ke sini
-)
+beta_graph = builder.compile()

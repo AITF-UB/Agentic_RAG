@@ -26,12 +26,6 @@ class GenerateRequest(BaseModel):
             return None
         return v
 
-class ResumeRequest(BaseModel):
-    thread_id: str = Field(..., max_length=100, description="Thread ID dari proses generasi yang di-pause")
-    is_approved: bool = Field(..., description="True jika guru setuju, False jika butuh revisi")
-    human_feedback: Optional[str] = Field("", max_length=2000, description="Komentar/revisi dari guru jika is_approved False")
-
-
 # --- Quiz Submission Models ---
 # --- Summary Sesi Model ---
 class QuizResult(BaseModel):

@@ -16,8 +16,6 @@ class AgentState(TypedDict):
     
     # 2.5 Revision
     instruksi_revisi: Optional[str]
-    human_feedback: Optional[str]
-    is_approved: Optional[bool]
     
     # 3. Generation Process
     generated_content: Any    # Raw output from the generator node

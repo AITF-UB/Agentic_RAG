@@ -436,90 +436,78 @@ def health_check():
     }
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# KONTEN ENDPOINTS
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================
+# KONTEN ENDPOINTS (Celery / Async)
+# ================================================================
 
-@app.post("/konten/generate", tags=["Konten"])
-async def generate_konten(req: GenerateRequest):
+def _run_generate_task_fallback(job_id: str, initial_state: dict):
+    """Fallback in-process untuk /konten/generate jika Celery tidak tersedia."""
     try:
-        thread_id = str(uuid.uuid4())
-        config = {"configurable": {"thread_id": thread_id}}
-        
-        # Batasi concurrent generation agar LLM provider tidak overload
-        async with _generation_semaphore:
-            # Menyiapkan State Awal untuk Graf
-            initial_state = {
-                "request_params": req.model_dump(),
-                "tipe": req.tipe,
-                "level": req.level,
-                "revision_count": 0,
-                "instruksi_revisi": req.instruksi_revisi
-            }
+        # Panggil graph secara async dalam event loop baru/yang ada
+        # Karena kita sudah berada di background task (yang merupakan thread terpisah di FastAPI), 
+        # kita butuh event loop
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            final_state = loop.run_until_complete(beta_graph.ainvoke(initial_state))
+            final_payload = final_state.get("final_payload", {})
+            
+            with _jobs_lock:
+                if job_id in _jobs:
+                    _jobs[job_id].status = JobStatus.SUCCESS
+                    _jobs[job_id].result = final_payload
+                    _jobs[job_id].updated_at = datetime.now().isoformat()
+        finally:
+            loop.close()
+    except Exception as e:
+        error_msg = f"{type(e).__name__}: {str(e)}\n{traceback.format_exc()}"
+        with _jobs_lock:
+            if job_id in _jobs:
+                _jobs[job_id].status = JobStatus.FAILED
+                _jobs[job_id].error = error_msg
+                _jobs[job_id].updated_at = datetime.now().isoformat()
 
-            # Mengeksekusi State Machine sampai titik interrupt ("human_review")
-            final_state = await beta_graph.ainvoke(initial_state, config=config)
-            
-        # Dapatkan state terbaru dari checkpointer
-        current_state = beta_graph.get_state(config)
-        is_interrupted = len(current_state.next) > 0 and "human_review" in current_state.next
-        
-        # Karena berhenti di human_review, data struktur sudah ada di final_payload
-        final_payload = final_state.get("final_payload", {})
-        
-        # Pertahankan konten_id jika diberikan dari klien (kecuali untuk quiz dan essay)
-        if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
-            final_payload["konten_id"] = req.konten_id
-            
-        return {
-            "status": "waiting_for_review" if is_interrupted else "completed",
-            "thread_id": thread_id,
-            "data": final_payload
+@app.post("/konten/generate", response_model=JobInfo, tags=["Konten"])
+async def generate_konten(req: GenerateRequest, background_tasks: BackgroundTasks):
+    """
+    Generate konten (Soal/Bacaan) secara asynchronous.
+    Mengembalikan job_id untuk di-polling menggunakan `GET /job/{job_id}`.
+    """
+    try:
+        initial_state = {
+            "request_params": req.model_dump(),
+            "tipe": req.tipe,
+            "level": req.level,
+            "revision_count": 0,
+            "instruksi_revisi": req.instruksi_revisi
         }
-        
+
+        # Jika konten_id dikirimkan klien, kita simpan di state agar di-inject nanti di final payload (opsional)
+        if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
+            initial_state["request_params"]["konten_id"] = req.konten_id
+
+        if CELERY_AVAILABLE and celery_app is not None:
+            from tasks.generate_task import run_generation
+            # Dispatch ke Celery
+            task = run_generation.delay(initial_state)
+            now = datetime.now().isoformat()
+            return JobInfo(
+                job_id     = task.id,
+                status     = JobStatus.PENDING,
+                step       = req.tipe,
+                created_at = now,
+                updated_at = now,
+                message    = "Generasi konten dikirim ke antrian Celery. Pantau via GET /job/{job_id}"
+            )
+        else:
+            # Fallback ke in-process BackgroundTask
+            job = _create_job(step=req.tipe)
+            background_tasks.add_task(_run_generate_task_fallback, job.job_id, initial_state)
+            job.message = "Generasi konten diproses di background. Pantau via GET /job/{job_id}"
+            return job
+            
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"GEN_ERROR: {str(e)}")
-
-
-@app.post("/konten/resume", tags=["Konten"])
-async def resume_konten(req: ResumeRequest):
-    """Endpoint untuk meresume proses generasi setelah di-review oleh guru."""
-    try:
-        config = {"configurable": {"thread_id": req.thread_id}}
-        
-        # Pastikan thread tersebut ada dan sedang di-interrupt
-        current_state = beta_graph.get_state(config)
-        if not current_state or "human_review" not in current_state.next:
-            raise HTTPException(status_code=400, detail="Thread tidak ditemukan atau tidak sedang menunggu review.")
-            
-        # Update state dengan feedback dari guru
-        await beta_graph.aupdate_state(
-            config,
-            {
-                "is_approved": req.is_approved,
-                "human_feedback": req.human_feedback
-            },
-            as_node="human_review" # Anggap state di-update dari node human_review
-        )
-        
-        # Lanjutkan eksekusi graf
-        async with _generation_semaphore:
-            final_state = await beta_graph.ainvoke(None, config=config)
-            
-        # Cek apakah graf selesai atau interrupt lagi (misal revisi -> generate -> review lagi)
-        new_state = beta_graph.get_state(config)
-        is_interrupted = len(new_state.next) > 0 and "human_review" in new_state.next
-        
-        return {
-            "status": "waiting_for_review" if is_interrupted else "completed",
-            "thread_id": req.thread_id,
-            "data": final_state.get("final_payload", {})
-        }
-        
-    except HTTPException as he:
-        raise he
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"RESUME_ERROR: {str(e)}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -804,7 +792,8 @@ async def run_step(
 
 # ── Job Status ────────────────────────────────────────────────────────────────
 
-@app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"])
+@app.get("/job/{job_id}", response_model=JobInfo, tags=["Jobs"])
+@app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"], include_in_schema=False)
 def get_job(job_id: str):
     """Ambil status dan hasil dari sebuah job berdasarkan `job_id`."""
     # Coba baca dari Celery result backend (Redis) dulu
