@@ -796,7 +796,30 @@ def truncate_context_to_budget(text: str, max_tokens: int = 4000, chars_per_toke
 
     return truncated + "\n\n[INFO: Teks referensi dipotong karena batas token]"
 
-def clean_json_from_llm(raw_text: str) -> dict | list:
+def clean_json_from_llm(raw_text: str | list) -> dict | list:
+    # 0. Handle LangChain message content blocks (e.g., from Vision models or VLLM)
+    if isinstance(raw_text, list):
+        # Extract text from blocks: [{"type": "text", "text": "{...}"}]
+        extracted_text = ""
+        for block in raw_text:
+            if isinstance(block, dict) and "text" in block:
+                extracted_text += block["text"]
+            elif isinstance(block, str):
+                extracted_text += block
+        raw_text = extracted_text
+    elif isinstance(raw_text, str):
+        # Sometimes it comes as a stringified list of blocks!
+        if raw_text.strip().startswith('[{"type":') or raw_text.strip().startswith('[{"text":'):
+            try:
+                blocks = json.loads(raw_text)
+                if isinstance(blocks, list) and len(blocks) > 0 and isinstance(blocks[0], dict) and "text" in blocks[0]:
+                    raw_text = "".join(b.get("text", "") for b in blocks if isinstance(b, dict))
+            except Exception:
+                pass
+
+    if not isinstance(raw_text, str):
+        raw_text = str(raw_text)
+
     raw_text = _fix_json_escapes(raw_text)
 
     # 1. Coba cari di dalam markdown block ```json ... ```
