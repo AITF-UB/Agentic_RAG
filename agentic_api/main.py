@@ -405,7 +405,7 @@ eval_llm = get_eval_llm()
 # ── Concurrency limiter untuk konten generation ───────────────────────────────
 # Batasi max concurrent LLM generation agar LLM provider tidak overload.
 # Jika ada request ke-11, client akan menunggu sampai ada slot kosong.
-_MAX_CONCURRENT_GENERATION = int(os.getenv("MAX_CONCURRENT_GENERATION", "10"))
+_MAX_CONCURRENT_GENERATION = int(os.getenv("MAX_CONCURRENT_GENERATION", "30"))
 _generation_semaphore = asyncio.Semaphore(_MAX_CONCURRENT_GENERATION)
 
 
