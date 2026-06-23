@@ -60,7 +60,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from jinja2 import Environment, FileSystemLoader
 
 from api_models import (
-    GenerateRequest,
+    GenerateRequest, ResumeRequest,
     SesiSummaryRequest, EssayEvalItem, RekomendasiRequest, InsightRequest,
 )
 
@@ -443,6 +443,9 @@ def health_check():
 @app.post("/konten/generate", tags=["Konten"])
 async def generate_konten(req: GenerateRequest):
     try:
+        thread_id = str(uuid.uuid4())
+        config = {"configurable": {"thread_id": thread_id}}
+        
         # Batasi concurrent generation agar LLM provider tidak overload
         async with _generation_semaphore:
             # Menyiapkan State Awal untuk Graf
@@ -454,18 +457,69 @@ async def generate_konten(req: GenerateRequest):
                 "instruksi_revisi": req.instruksi_revisi
             }
 
-            # Mengeksekusi State Machine
-            final_state = await beta_graph.ainvoke(initial_state)
-        final_payload = final_state["final_payload"]
+            # Mengeksekusi State Machine sampai titik interrupt ("human_review")
+            final_state = await beta_graph.ainvoke(initial_state, config=config)
+            
+        # Dapatkan state terbaru dari checkpointer
+        current_state = beta_graph.get_state(config)
+        is_interrupted = len(current_state.next) > 0 and "human_review" in current_state.next
+        
+        # Karena berhenti di human_review, data struktur sudah ada di final_payload
+        final_payload = final_state.get("final_payload", {})
         
         # Pertahankan konten_id jika diberikan dari klien (kecuali untuk quiz dan essay)
         if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
             final_payload["konten_id"] = req.konten_id
             
-        return final_payload
+        return {
+            "status": "waiting_for_review" if is_interrupted else "completed",
+            "thread_id": thread_id,
+            "data": final_payload
+        }
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"GEN_ERROR: {str(e)}")
+
+
+@app.post("/konten/resume", tags=["Konten"])
+async def resume_konten(req: ResumeRequest):
+    """Endpoint untuk meresume proses generasi setelah di-review oleh guru."""
+    try:
+        config = {"configurable": {"thread_id": req.thread_id}}
+        
+        # Pastikan thread tersebut ada dan sedang di-interrupt
+        current_state = beta_graph.get_state(config)
+        if not current_state or "human_review" not in current_state.next:
+            raise HTTPException(status_code=400, detail="Thread tidak ditemukan atau tidak sedang menunggu review.")
+            
+        # Update state dengan feedback dari guru
+        await beta_graph.aupdate_state(
+            config,
+            {
+                "is_approved": req.is_approved,
+                "human_feedback": req.human_feedback
+            },
+            as_node="human_review" # Anggap state di-update dari node human_review
+        )
+        
+        # Lanjutkan eksekusi graf
+        async with _generation_semaphore:
+            final_state = await beta_graph.ainvoke(None, config=config)
+            
+        # Cek apakah graf selesai atau interrupt lagi (misal revisi -> generate -> review lagi)
+        new_state = beta_graph.get_state(config)
+        is_interrupted = len(new_state.next) > 0 and "human_review" in new_state.next
+        
+        return {
+            "status": "waiting_for_review" if is_interrupted else "completed",
+            "thread_id": req.thread_id,
+            "data": final_state.get("final_payload", {})
+        }
+        
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"RESUME_ERROR: {str(e)}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
