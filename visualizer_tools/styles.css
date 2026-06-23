@@ -1,22 +1,102 @@
 :root {
-    --primary: #4F46E5;
-    --primary-hover: #4338CA;
-    --bg-color: #F3F4F6;
-    --card-bg: #FFFFFF;
-    --text-main: #111827;
-    --text-muted: #6B7280;
-    --border: #E5E7EB;
-    --success: #10B981;
-    --warning: #F59E0B;
-    --danger: #EF4444;
+    --primary: #09090b;
+    --primary-hover: #27272a;
+    --primary-foreground: #fafafa;
+    --bg-color: #f4f4f5; /* Slight gray background to make white cards pop */
+    --card-bg: #ffffff;
+    --text-main: #09090b;
+    --text-muted: #71717a;
+    --border: #e4e4e7;
+    --border-glow: rgba(0, 0, 0, 0.3);
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+body.dark-mode {
+    --primary: #fafafa;
+    --primary-hover: #e4e4e7;
+    --primary-foreground: #09090b;
+    --bg-color: #000000;
+    --card-bg: #09090b;
+    --text-main: #fafafa;
+    --text-muted: #a1a1aa;
+    --border: #27272a;
+    --border-glow: rgba(255, 255, 255, 0.3);
+}
+
+:root {
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
     margin: 0;
     padding: 2rem;
+    transition: background-color 0.6s var(--ease-in-out-circ), color 0.6s var(--ease-in-out-circ);
+}
+
+.card, .job-card, input, select, button, .quiz-question, .flashcard-face, .correct-answer-box {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 100;
+}
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 64px;
+}
+.theme-switch input {
+    display: none;
+}
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+    z-index: 2;
+}
+input:checked + .slider {
+    background-color: var(--primary);
+}
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+.icon {
+    font-size: 14px;
+    z-index: 1;
 }
 
 .header {
@@ -65,10 +145,17 @@ body {
 /* Cards */
 .card {
     background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     padding: 2rem;
     box-sizing: border-box;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.5s var(--ease-out-expo), border-color 0.5s var(--ease-out-expo);
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--border-glow);
 }
 
 .card h3 {
@@ -76,16 +163,29 @@ body {
     margin-bottom: 1.5rem;
 }
 
+@keyframes slideInComplex {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .job-card {
     background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
     padding: 1.5rem;
     border-left: 4px solid var(--warning);
-    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    transition: box-shadow 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo), border-color 0.5s var(--ease-out-expo);
     min-width: 0;
     word-wrap: break-word;
     box-sizing: border-box;
+    animation: slideInComplex 0.8s var(--ease-out-expo) forwards;
+    transform-origin: center bottom;
+}
+
+.job-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--border-glow);
 }
 
 .job-card.status-running { border-left-color: #3B82F6; }
@@ -131,29 +231,43 @@ label {
 
 input, select {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     border: 1px solid var(--border);
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
     box-sizing: border-box;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
 }
 
 button {
     width: 100%;
     background-color: var(--primary);
-    color: white;
+    color: var(--primary-foreground);
     border: none;
     padding: 0.875rem;
     border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s var(--ease-out-expo), transform 0.4s var(--ease-out-back);
     box-sizing: border-box;
 }
 
 button:hover {
     background-color: var(--primary-hover);
+    transform: scale(0.98);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .btn-cancel {
@@ -190,20 +304,22 @@ button:hover {
     margin: 1rem 0;
 }
 .progress-bar {
-    height: 8px;
+    height: 4px;
     background-color: var(--border);
-    border-radius: 4px;
+    border-radius: 999px;
     overflow: hidden;
     position: relative;
     width: 100%;
+    transform: translateZ(0); /* Force GPU acceleration */
 }
 .progress-bar::after {
     content: '';
     display: block;
     height: 100%;
     width: 0%;
-    background-color: #3B82F6;
-    transition: width 1s linear;
+    background-color: var(--primary);
+    transition: width 1.2s var(--ease-out-expo), background-color 0.8s var(--ease-out-expo);
+    border-radius: 999px;
 }
 .job-card.status-success .progress-bar::after { width: 100% !important; background-color: var(--success); }
 .job-card.status-failed .progress-bar::after { background-color: var(--danger); }
@@ -243,12 +359,18 @@ button:hover {
 /* =========================================
    DYNAMIC RENDER UI STYLES
    ========================================= */
+@keyframes fadeInScaleUI {
+    0% { opacity: 0; transform: scale(0.98) translateY(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 .result-container {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
     width: 100%;
     overflow-x: auto;
+    animation: fadeInScaleUI 0.7s var(--ease-out-expo) forwards;
 }
 
 /* Markdown Bacaan */
@@ -284,9 +406,14 @@ button:hover {
 /* Quiz */
 .quiz-question {
     margin-bottom: 1.5rem;
-    background: #F9FAFB;
-    padding: 1rem;
-    border-radius: 8px;
+    background-color: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+.quiz-question:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 .quiz-options {
     list-style: none;
@@ -300,18 +427,37 @@ button:hover {
     align-items: center;
     font-weight: 400;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    background-color: rgba(0,0,0,0.02);
 }
-.quiz-options label:hover { background-color: #EEF2FF; }
+body.dark-mode .quiz-options label { background-color: rgba(255,255,255,0.02); }
+.quiz-options label:hover { 
+    background-color: var(--bg-color); 
+    border-color: var(--primary);
+}
+body.dark-mode .quiz-options label:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--border);
+}
 .quiz-options input { width: auto; margin-right: 0.5rem; }
 .correct-answer-box {
     margin-top: 0.5rem;
-    padding: 0.5rem;
-    background-color: #D1FAE5;
-    border-left: 3px solid var(--success);
+    padding: 1rem;
+    background-color: #f0fdf4;
+    color: #166534;
+    border-left: 4px solid var(--success);
     font-size: 0.875rem;
     display: none;
+    border-radius: 6px;
+    border: 1px solid #bbf7d0;
+}
+body.dark-mode .correct-answer-box {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #a7f3d0;
+    border-color: rgba(16, 185, 129, 0.2);
 }
 
 /* Flashcard Carousel */
@@ -350,15 +496,16 @@ button:hover {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    background: white;
+    background-color: var(--card-bg);
     border: 2px solid var(--border);
 }
-.flashcard-front { color: var(--primary); font-weight: bold; font-size: 1.2rem;}
-.flashcard-back { transform: rotateY(180deg); background: var(--primary); color: white; }
+.flashcard-front { color: var(--text-main); font-weight: bold; font-size: 1.2rem;}
+.flashcard-back { transform: rotateY(180deg); background: var(--primary); color: var(--primary-foreground); }
 .carousel-controls {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
-.btn-nav { width: auto; padding: 0.5rem 1rem; background: #E5E7EB; color: #374151; }
-.btn-nav:hover { background: #D1D5DB; }
+.btn-nav { width: auto; padding: 0.5rem 1rem; background: transparent; color: var(--text-main); border: 1px solid var(--border); transition: background-color 0.2s ease;}
+.btn-nav:hover { background: rgba(0,0,0,0.05); }
+body.dark-mode .btn-nav:hover { background: rgba(255,255,255,0.1); }

@@ -16,6 +16,48 @@ const PROGRESS_STAGES = [
 // Dictionary interval polling untuk setiap job (jobId -> intervalId)
 const activePollings = {};
 
+let currentJobIndex = 0; // State untuk pagination/carousel jobs
+
+// Update tampilan pagination carousel jobs
+function updateJobsPagination() {
+    const cards = document.querySelectorAll('#jobsContainer .job-card');
+    const total = cards.length;
+    const pagination = document.getElementById('jobsPagination');
+    const counter = document.getElementById('jobsCounter');
+    
+    if (total <= 1) {
+        pagination.style.display = 'none';
+        if (total === 1) cards[0].style.display = 'block';
+        return;
+    }
+    
+    pagination.style.display = 'flex';
+    
+    if (currentJobIndex >= total) currentJobIndex = total - 1;
+    if (currentJobIndex < 0) currentJobIndex = 0;
+    
+    counter.innerText = `${currentJobIndex + 1} / ${total}`;
+    
+    cards.forEach((card, index) => {
+        if (index === currentJobIndex) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Navigasi carousel jobs
+window.navJobs = function(dir) {
+    const total = document.querySelectorAll('#jobsContainer .job-card').length;
+    if (total === 0) return;
+    
+    currentJobIndex += dir;
+    if (currentJobIndex < 0) currentJobIndex = total - 1;
+    if (currentJobIndex >= total) currentJobIndex = 0;
+    updateJobsPagination();
+}
+
 function addLog(card, message, isJson = false) {
     const logContainer = card.querySelector('.log-container');
     const time = new Date().toLocaleTimeString();
@@ -61,7 +103,7 @@ function simulateProgress(card) {
             clearInterval(progInterval);
             if(card.classList.contains('status-success')) {
                 text.innerText = "Selesai!";
-                bar.style.setProperty('--bar-width', '100%');
+                bar.innerHTML = ''; // Hapus style progress buatan agar CSS 100% bisa masuk
             }
             return;
         }
@@ -91,16 +133,19 @@ form.addEventListener('submit', async (e) => {
     const level = document.getElementById('level').value;
     if (level) payload.level = level;
 
-    // 1. Buat Job Card Baru dari Template
-    const clone = template.content.cloneNode(true);
-    const cardElement = clone.querySelector('.job-card');
-    const cardId = 'card_' + Date.now();
-    cardElement.dataset.cardId = cardId;
+    // 1. Buat elemen UI baru untuk Job ini
+    const jobsContainer = document.getElementById('jobsContainer');
+    const template = document.getElementById('jobCardTemplate');
+    const cardElement = template.content.cloneNode(true).firstElementChild;
+    
     cardElement.dataset.tipe = tipe;
+    cardElement.dataset.cardId = Date.now().toString() + Math.floor(Math.random()*1000); // ID unik untuk DOM UI
     cardElement.querySelector('.job-tipe').innerText = tipe;
     
     // Taruh di paling atas list
     jobsContainer.prepend(cardElement);
+    currentJobIndex = 0; // Selalu fokus ke job terbaru
+    updateJobsPagination();
     
     // 2. Mulai proses
     addLog(cardElement, `Memulai Request POST /konten/generate...`);
@@ -211,32 +256,59 @@ function renderResultUI(card, tipe, resultJson) {
             html += `<div class="markdown-body">${marked.parse(title + mdContent)}</div>`;
         } 
         else if (tipe.includes('quiz') || tipe === 'pretest') {
-            // Ambil array dari key 'soal' atau 'pertanyaan'
-            const listSoal = resultJson.soal || resultJson.pertanyaan || [];
+            // Ambil array dari key 'soal' atau 'pertanyaan', kadang terbungkus di 'final_payload'
+            let listSoal = resultJson.soal || resultJson.pertanyaan || [];
+            if (listSoal.length === 0 && resultJson.final_payload && resultJson.final_payload.soal) {
+                listSoal = resultJson.final_payload.soal;
+            }
             
             listSoal.forEach((soal, index) => {
-                if(!soal.pertanyaan) return;
+                const questionText = soal.pertanyaan || soal.question;
+                if(!questionText) return;
                 
                 html += `<div class="quiz-question">`;
-                html += `<p><strong>Soal ${index + 1}:</strong> ${soal.pertanyaan}</p>`;
                 
-                if (soal.opsi && typeof soal.opsi === 'object') {
+                // Render stimulus jika ada (biasanya markdown/teks panjang)
+                if (soal.stimulus) {
+                    html += `<div class="markdown-body" style="background:var(--bg-color); padding:0.75rem; border-radius:8px; margin-bottom:1rem; border-left:4px solid var(--primary); font-size:0.95rem;">${marked.parse(soal.stimulus)}</div>`;
+                }
+                
+                // Label tingkat kesulitan (level)
+                const levelBadge = soal.level ? `<span class="badge" style="background:var(--primary); color:white; margin-left:0.5rem; font-size:0.7rem;">${soal.level}</span>` : '';
+                html += `<p style="font-weight:600; font-size:1.05rem;">Soal ${index + 1} ${levelBadge}</p>`;
+                html += `<div class="markdown-body" style="margin-bottom:1rem;">${marked.parse(questionText)}</div>`;
+                
+                const optionsObj = soal.opsi || soal.options;
+                if (optionsObj && typeof optionsObj === 'object') {
                     html += `<ul class="quiz-options">`;
-                    for(const opKey in soal.opsi) {
-                        html += `<li><label><input type="radio" name="${card.dataset.cardId}_soal_${index}"> ${opKey}. ${soal.opsi[opKey]}</label></li>`;
+                    for(const opKey in optionsObj) {
+                        html += `<li><label><input type="radio" name="${card.dataset.cardId}_soal_${index}"> <strong>${opKey}.</strong>&nbsp; ${optionsObj[opKey]}</label></li>`;
                     }
                     html += `</ul>`;
                 }
                 
                 // Tombol lihat jawaban
                 const boxId = `${card.dataset.cardId}_ans_${index}`;
-                html += `<button type="button" class="btn-nav" onclick="document.getElementById('${boxId}').style.display='block'">Lihat Jawaban</button>`;
+                const ansText = soal.jawaban_benar || soal.jawaban || soal.answer || '';
+                const expText = soal.penjelasan || soal.explanation || '';
+                
+                html += `<button type="button" class="btn-nav" onclick="document.getElementById('${boxId}').style.display='block'" style="margin-top:1rem; max-width:200px;">Lihat Jawaban</button>`;
                 html += `<div id="${boxId}" class="correct-answer-box">
-                            <strong>Jawaban:</strong> ${soal.jawaban_benar || soal.jawaban || ''} <br>
-                            <em>${soal.penjelasan || ''}</em>
+                            <strong>Jawaban Benar: ${ansText}</strong>
+                            <div class="markdown-body" style="margin-top:0.5rem; font-size:0.95rem;">${marked.parse(expText)}</div>
                          </div>`;
                 html += `</div>`;
             });
+        }
+        else if (tipe === 'mindmap') {
+            const rootNode = resultJson.root || (resultJson.final_payload && resultJson.final_payload.root);
+            if (rootNode) {
+                html += `<div class="mindmap-container" style="padding:1rem 0;">`;
+                html += buildMindmapHTML(rootNode);
+                html += `</div>`;
+            } else {
+                html += `<p><em>Format mindmap tidak dikenali atau JSON kosong.</em></p>`;
+            }
         }
         else if (tipe === 'flashcard') {
             // resultJson = { cards: [ { front: "", back: "" }, ... ] }
@@ -293,6 +365,27 @@ function renderResultUI(card, tipe, resultJson) {
     }
 }
 
+// Helper rekursif untuk merender Mindmap
+function buildMindmapHTML(node, isRoot = true) {
+    if (!node) return '';
+    let html = `<div class="mindmap-node" style="margin-left: ${isRoot ? '0' : '1.5rem'}; ${!isRoot ? 'border-left: 2px solid var(--border); padding-left: 1rem;' : ''} margin-top: 0.5rem;">`;
+    
+    html += `<div style="background:var(--card-bg); border: 1px solid var(--border); padding: 0.75rem; border-radius: 6px; margin-bottom: 0.5rem; transition: all 0.2s ease;">`;
+    html += `<h5 style="margin:0 0 0.25rem 0; color:var(--primary); font-size:1.05rem;">${node.name}</h5>`;
+    if (node.description) {
+        html += `<p style="margin:0; font-size:0.9rem; color:var(--text-muted);">${node.description}</p>`;
+    }
+    html += `</div>`;
+    
+    if (node.children && Array.isArray(node.children) && node.children.length > 0) {
+        node.children.forEach(child => {
+            html += buildMindmapHTML(child, false);
+        });
+    }
+    html += `</div>`;
+    return html;
+}
+
 // Helper untuk navigasi flashcard global
 window.navFlashcard = function(carouselId, direction) {
     const state = window[carouselId];
@@ -320,3 +413,30 @@ window.navFlashcard = function(carouselId, direction) {
         }
     }, 150); // delay dikit biar animasi flip ke reset mulus
 }
+
+// ==========================================
+// THEME SWITCHER (Light/Dark Mode)
+// ==========================================
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.body.classList.add(currentTheme);
+    if (currentTheme === 'dark-mode') {
+        toggleSwitch.checked = true;
+    }
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // Auto-detect system preference
+    document.body.classList.add('dark-mode');
+    toggleSwitch.checked = true;
+}
+
+toggleSwitch.addEventListener('change', function(e) {
+    if (e.target.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light-mode');
+    }
+});

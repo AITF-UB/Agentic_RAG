@@ -7,6 +7,11 @@
     <!-- Menghubungkan file CSS Eksternal -->
     <link rel="stylesheet" href="styles.css">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Dependencies for Rendering -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
@@ -25,6 +30,16 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+<div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round">
+            <span class="icon">☀️</span>
+            <span class="icon">🌙</span>
+        </div>
+    </label>
+</div>
 
 <div class="header">
     <h1>Visualizer 2.0 Ultimate (Celery Polling)</h1>
@@ -57,8 +72,8 @@
                     <input type="text" id="elemen_label" value="Aljabar" required>
                 </div>
                 <div class="form-group">
-                    <label for="materi">Materi Spesifik</label>
-                    <input type="text" id="materi" value="Fungsi Eksponensial" required>
+                    <label for="materi">Materi Spesifik (Opsional)</label>
+                    <input type="text" id="materi" value="Fungsi Eksponensial">
                 </div>
                 <div class="form-group">
                     <label for="level">Tingkat Kesulitan (Opsional)</label>
@@ -75,13 +90,21 @@
         </div>
     </div>
 
-    <!-- Kolom Kanan: Jobs Container -->
-    <div class="jobs-column">
-        <h3>Daftar Antrian (Concurrent Jobs)</h3>
-        <div id="jobsContainer">
-            <!-- Job Cards akan di-generate oleh script.js -->
+        <!-- Kolom Kanan: Daftar Job (Carousel) -->
+        <div class="jobs-column">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Daftar Antrian (Carousel Jobs)</h3>
+                <div id="jobsPagination" class="carousel-controls" style="display:none; background:var(--card-bg); padding:0.5rem 1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
+                    <button class="btn-nav" style="padding:0.25rem 0.75rem; font-size:0.85rem;" onclick="navJobs(-1)">⬅ Prev</button>
+                    <span id="jobsCounter" style="margin:0 1rem; font-weight:600; font-size:0.9rem;">0 / 0</span>
+                    <button class="btn-nav" style="padding:0.25rem 0.75rem; font-size:0.85rem;" onclick="navJobs(1)">Next ➡</button>
+                </div>
+            </div>
+            
+            <div id="jobsContainer" style="position: relative;">
+                <!-- Job cards akan di-inject ke sini -->
+            </div>
         </div>
-    </div>
 </div>
 
 <!-- Template untuk Job Card (Disembunyikan) -->
