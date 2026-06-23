@@ -378,7 +378,9 @@ def structurer_node(state: AgentState) -> dict:
     """Membungkus hasil akhir sesuai API Contract SR PSR2"""
     tipe = state["tipe"]
     req = state["request_params"]
-    content = state["generated_content"]
+    
+    # Ambil hasil generate terbaik (best_revision) jika tersedia, jika tidak pakai yang terakhir
+    content = state.get("best_revision") or state.get("generated_content")
     
     # Mapping format JSON untuk frontend
     if tipe == "bacaan":
@@ -441,6 +443,9 @@ def structurer_node(state: AgentState) -> dict:
         # Injeksi visual di level paling atas (root) hanya untuk task tertentu
         if tipe in ["bacaan", "quiz_pg", "quiz_essay", "pretest"]:
             inject_visuals(content)
+
+    # KEMBALIKAN OUTPUT SEBAGAI final_payload KE DALAM STATE!
+    return {"final_payload": content}
 
 # ================================================================
 # 3. ROUTING & GRAPH BUILDER

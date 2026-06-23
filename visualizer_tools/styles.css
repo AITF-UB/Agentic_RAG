@@ -51,6 +51,7 @@ body {
 
 .jobs-column {
     flex: 1;
+    min-width: 0; /* CRITICAL: mencegah flexbox melar mengikuti anak elemen yang panjang */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -67,6 +68,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     padding: 2rem;
+    box-sizing: border-box;
 }
 
 .card h3 {
@@ -81,6 +83,9 @@ body {
     padding: 1.5rem;
     border-left: 4px solid var(--warning);
     transition: all 0.3s ease;
+    min-width: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
 }
 
 .job-card.status-running { border-left-color: #3B82F6; }
@@ -93,6 +98,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .job-tipe {
@@ -107,6 +114,7 @@ body {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin: 0 0 1rem 0;
+    word-break: break-all;
 }
 
 /* Form Elements */
@@ -141,6 +149,7 @@ button {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -168,6 +177,7 @@ button:hover {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 .badge.pending { background-color: #FEF3C7; color: #D97706; }
 .badge.running { background-color: #DBEAFE; color: #1D4ED8; }
@@ -185,6 +195,7 @@ button:hover {
     border-radius: 4px;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 .progress-bar::after {
     content: '';
@@ -213,12 +224,20 @@ button:hover {
     font-size: 0.8rem;
     max-height: 150px;
     overflow-y: auto;
+    overflow-x: auto;
     margin-top: 1rem;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 .log-container pre {
     margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.log-container pre code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
 }
 
 /* =========================================
@@ -228,13 +247,39 @@ button:hover {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* Markdown Bacaan */
 .markdown-body {
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.markdown-body pre, .markdown-body code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .markdown-body h1, .markdown-body h2 { border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+
+/* Responsive Media Queries */
+@media screen and (max-width: 900px) {
+    .layout-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-column {
+        flex: 1 1 auto;
+        position: relative;
+        top: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+    .jobs-column {
+        width: 100%;
+    }
+}
 
 /* Quiz */
 .quiz-question {

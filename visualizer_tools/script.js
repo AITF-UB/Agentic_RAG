@@ -2,7 +2,7 @@ const form = document.getElementById('generateForm');
 const jobsContainer = document.getElementById('jobsContainer');
 const template = document.getElementById('jobCardTemplate');
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://localhost:8001';
 
 // Trik UX: Pesan progress palsu
 const PROGRESS_STAGES = [
@@ -80,7 +80,7 @@ form.addEventListener('submit', async (e) => {
     
     const tipe = document.getElementById('tipe').value;
     const payload = {
-        mapel_id: "10",
+        mapel_id: document.getElementById('mapel').value,
         elemen_id: "1",
         jenjang: "SMA",
         kelas_id: "10",
@@ -206,40 +206,50 @@ function renderResultUI(card, tipe, resultJson) {
     
     try {
         if (tipe === 'bacaan') {
-            html += `<div class="markdown-body">${marked.parse(resultJson.bacaan || resultJson.content || '')}</div>`;
+            const mdContent = resultJson.konten_markdown || resultJson.bacaan || resultJson.content || '';
+            const title = resultJson.judul_utama ? `<h2>${resultJson.judul_utama}</h2>\n` : '';
+            html += `<div class="markdown-body">${marked.parse(title + mdContent)}</div>`;
         } 
         else if (tipe.includes('quiz') || tipe === 'pretest') {
-            // Misal resultJson = { soal_1: { pertanyaan: "", opsi: {...}, jawaban_benar: "", penjelasan: "" } }
-            for (const key in resultJson) {
-                if(!resultJson[key].pertanyaan) continue;
-                const soal = resultJson[key];
+            // Ambil array dari key 'soal' atau 'pertanyaan'
+            const listSoal = resultJson.soal || resultJson.pertanyaan || [];
+            
+            listSoal.forEach((soal, index) => {
+                if(!soal.pertanyaan) return;
                 
                 html += `<div class="quiz-question">`;
-                html += `<p><strong>${key.replace('_', ' ').toUpperCase()}:</strong> ${soal.pertanyaan}</p>`;
+                html += `<p><strong>Soal ${index + 1}:</strong> ${soal.pertanyaan}</p>`;
                 
-                if (soal.opsi) {
+                if (soal.opsi && typeof soal.opsi === 'object') {
                     html += `<ul class="quiz-options">`;
                     for(const opKey in soal.opsi) {
-                        html += `<li><label><input type="radio" name="${card.dataset.cardId}_${key}"> ${opKey}. ${soal.opsi[opKey]}</label></li>`;
+                        html += `<li><label><input type="radio" name="${card.dataset.cardId}_soal_${index}"> ${opKey}. ${soal.opsi[opKey]}</label></li>`;
                     }
                     html += `</ul>`;
                 }
                 
                 // Tombol lihat jawaban
-                const boxId = `${card.dataset.cardId}_${key}_ans`;
+                const boxId = `${card.dataset.cardId}_ans_${index}`;
                 html += `<button type="button" class="btn-nav" onclick="document.getElementById('${boxId}').style.display='block'">Lihat Jawaban</button>`;
                 html += `<div id="${boxId}" class="correct-answer-box">
-                            <strong>Jawaban:</strong> ${soal.jawaban_benar} <br>
+                            <strong>Jawaban:</strong> ${soal.jawaban_benar || soal.jawaban || ''} <br>
                             <em>${soal.penjelasan || ''}</em>
                          </div>`;
                 html += `</div>`;
-            }
+            });
         }
         else if (tipe === 'flashcard') {
-            // resultJson = { kartu_1: { muka: "", belakang: "" } }
-            const cards = [];
-            for (const key in resultJson) {
-                if(resultJson[key].muka) cards.push(resultJson[key]);
+            // resultJson = { cards: [ { front: "", back: "" }, ... ] }
+            let cards = resultJson.cards || [];
+            
+            // Fallback backward compat jika array terstruktur beda
+            if (!Array.isArray(cards)) {
+                 cards = [];
+                 for (const key in resultJson) {
+                     if (resultJson[key].front || resultJson[key].muka) {
+                         cards.push(resultJson[key]);
+                     }
+                 }
             }
             
             // Render Carousel
@@ -247,11 +257,14 @@ function renderResultUI(card, tipe, resultJson) {
                 const carouselId = `fc_${card.dataset.cardId}`;
                 window[carouselId] = { cards, current: 0 };
                 
+                const frontText = cards[0].front || cards[0].muka || "";
+                const backText = cards[0].back || cards[0].belakang || "";
+                
                 html += `<div class="flashcard-carousel" id="${carouselId}_container">
                             <div class="flashcard-scene">
                                 <div class="flashcard" onclick="this.classList.toggle('is-flipped')">
-                                    <div class="flashcard-face flashcard-front" id="${carouselId}_front">${cards[0].muka}</div>
-                                    <div class="flashcard-face flashcard-back" id="${carouselId}_back">${cards[0].belakang}</div>
+                                    <div class="flashcard-face flashcard-front" id="${carouselId}_front">${frontText}</div>
+                                    <div class="flashcard-face flashcard-back" id="${carouselId}_back">${backText}</div>
                                 </div>
                             </div>
                             <div class="carousel-controls">
@@ -261,6 +274,8 @@ function renderResultUI(card, tipe, resultJson) {
                             </div>
                             <p class="progress-text" style="text-align:center; margin-top:0.5rem">Klik kartu untuk membalik</p>
                          </div>`;
+            } else {
+                html += `<p><em>Tidak ada flashcard valid yang ditemukan.</em></p>`;
             }
         }
         else {
@@ -271,6 +286,11 @@ function renderResultUI(card, tipe, resultJson) {
     }
     
     container.innerHTML = html;
+    
+    // Trigger MathJax untuk merender ulang LaTeX yang baru saja disisipkan
+    if (window.MathJax) {
+        window.MathJax.typesetPromise([container]).catch((err) => console.error('MathJax Error:', err));
+    }
 }
 
 // Helper untuk navigasi flashcard global
@@ -284,8 +304,19 @@ window.navFlashcard = function(carouselId, direction) {
     cardEl.classList.remove('is-flipped'); // reset flip
     
     setTimeout(() => {
-        document.getElementById(`${carouselId}_front`).innerText = state.cards[state.current].muka;
-        document.getElementById(`${carouselId}_back`).innerText = state.cards[state.current].belakang;
+        const frontText = state.cards[state.current].front || state.cards[state.current].muka || "";
+        const backText = state.cards[state.current].back || state.cards[state.current].belakang || "";
+        
+        const frontEl = document.getElementById(`${carouselId}_front`);
+        const backEl = document.getElementById(`${carouselId}_back`);
+        
+        frontEl.innerHTML = frontText;
+        backEl.innerHTML = backText;
         document.getElementById(`${carouselId}_counter`).innerText = `${state.current + 1} / ${state.cards.length}`;
+        
+        // Render MathJax di kartu yang baru
+        if (window.MathJax) {
+            window.MathJax.typesetPromise([frontEl, backEl]).catch((err) => console.error('MathJax Error:', err));
+        }
     }, 150); // delay dikit biar animasi flip ke reset mulus
 }

@@ -831,7 +831,8 @@ def delete_job(job_id: str):
     # Coba revoke dari Celery
     if CELERY_AVAILABLE and celery_app is not None:
         try:
-            celery_app.control.revoke(job_id, terminate=False)
+            # Menggunakan terminate=True untuk membunuh paksa task yang sedang berjalan
+            celery_app.control.revoke(job_id, terminate=True)
         except Exception:
             pass  # Abaikan error revoke (task mungkin sudah selesai)
         return {"message": f"Job '{job_id}' dihapus dari antrian.", "job_id": job_id}

@@ -11,6 +11,18 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <!-- MathJax for LaTeX Rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -35,6 +47,10 @@
                         <option value="flashcard">Flashcard</option>
                         <option value="mindmap">Mindmap</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="mapel">Mata Pelajaran</label>
+                    <input type="text" id="mapel" value="Matematika" required>
                 </div>
                 <div class="form-group">
                     <label for="elemen_label">Elemen Label (Topik Utama)</label>
