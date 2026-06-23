@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizer 2.0 Ultimate - Agentic RAG Celery</title>
+    <!-- Menghubungkan file CSS Eksternal -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Dependencies for Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Visualizer 2.0 Ultimate (Celery Polling)</h1>
+    <p>Simulator Frontend Paralel dengan UI Dinamis</p>
+</div>
+
+<div class="layout-container">
+    <!-- Kolom Kiri: Form -->
+    <div class="form-column">
+        <div class="card">
+            <h3>Buat Tugas Baru</h3>
+            <form id="generateForm">
+                <div class="form-group">
+                    <label for="tipe">Tipe Konten</label>
+                    <select id="tipe" required>
+                        <option value="pretest">Pretest</option>
+                        <option value="bacaan">Bacaan (Materi)</option>
+                        <option value="quiz_pg">Quiz Pilihan Ganda</option>
+                        <option value="quiz_essay">Quiz Essay</option>
+                        <option value="flashcard">Flashcard</option>
+                        <option value="mindmap">Mindmap</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="elemen_label">Elemen Label (Topik Utama)</label>
+                    <input type="text" id="elemen_label" value="Aljabar" required>
+                </div>
+                <div class="form-group">
+                    <label for="materi">Materi Spesifik</label>
+                    <input type="text" id="materi" value="Fungsi Eksponensial" required>
+                </div>
+                <div class="form-group">
+                    <label for="level">Tingkat Kesulitan (Opsional)</label>
+                    <select id="level">
+                        <option value="">-- Default --</option>
+                        <option value="Low">Low</option>
+                        <option value="Mid">Mid</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="submitBtn">Generate Konten (Kirim ke Antrian)</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Kolom Kanan: Jobs Container -->
+    <div class="jobs-column">
+        <h3>Daftar Antrian (Concurrent Jobs)</h3>
+        <div id="jobsContainer">
+            <!-- Job Cards akan di-generate oleh script.js -->
+        </div>
+    </div>
+</div>
+
+<!-- Template untuk Job Card (Disembunyikan) -->
+<template id="jobCardTemplate">
+    <div class="job-card" data-job-id="">
+        <div class="job-header">
+            <div>
+                <span class="job-tipe">Tipe</span>
+                <span class="badge pending">PENDING</span>
+            </div>
+            <button class="btn-cancel" onclick="cancelJob(this)">Batalkan</button>
+        </div>
+        <p class="job-id-text">ID: <span>-</span></p>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <p class="progress-text">Mengirim antrian...</p>
+        </div>
+        
+        <div class="log-container"></div>
+        <div class="result-container" style="display: none;"></div>
+    </div>
+</template>
+
+<!-- Menghubungkan file JavaScript Eksternal -->
+<script src="script.js"></script>
+</body>
+</html>

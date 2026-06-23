@@ -1,0 +1,291 @@
+const form = document.getElementById('generateForm');
+const jobsContainer = document.getElementById('jobsContainer');
+const template = document.getElementById('jobCardTemplate');
+
+const API_BASE_URL = 'http://localhost:8000';
+
+// Trik UX: Pesan progress palsu
+const PROGRESS_STAGES = [
+    { p: 10, text: "Memasukkan ke antrian Celery..." },
+    { p: 30, text: "Menganalisa referensi vektor RAG..." },
+    { p: 60, text: "LLM sedang merancang konten..." },
+    { p: 85, text: "Menyusun struktur & finalisasi..." },
+    { p: 95, text: "Sedikit lagi selesai..." }
+];
+
+// Dictionary interval polling untuk setiap job (jobId -> intervalId)
+const activePollings = {};
+
+function addLog(card, message, isJson = false) {
+    const logContainer = card.querySelector('.log-container');
+    const time = new Date().toLocaleTimeString();
+    let content = message;
+    if (isJson) {
+        content = JSON.stringify(message, null, 2);
+    }
+    
+    if(isJson) {
+        logContainer.innerHTML += `\n[${time}] DATA JSON:\n<pre><code class="language-json">${content}</code></pre>\n`;
+        // Apply syntax highlight to new block
+        const blocks = logContainer.querySelectorAll('pre code');
+        hljs.highlightElement(blocks[blocks.length - 1]);
+    } else {
+        logContainer.innerHTML += `[${time}] ${content}\n`;
+    }
+    logContainer.scrollTop = logContainer.scrollHeight;
+}
+
+function updateCardStatus(card, status) {
+    card.classList.remove('status-running', 'status-success', 'status-failed', 'status-cancelled');
+    card.classList.add(`status-${status}`);
+    
+    const badge = card.querySelector('.badge');
+    badge.className = `badge ${status}`;
+    badge.innerText = status.toUpperCase();
+
+    const btnCancel = card.querySelector('.btn-cancel');
+    if (status !== 'pending' && status !== 'running') {
+        btnCancel.style.display = 'none'; // Sembunyikan cancel jika udah selesai/gagal
+    }
+}
+
+function simulateProgress(card) {
+    const bar = card.querySelector('.progress-bar');
+    const text = card.querySelector('.progress-text');
+    let currentStage = 0;
+    
+    const progInterval = setInterval(() => {
+        if(card.classList.contains('status-success') || 
+           card.classList.contains('status-failed') || 
+           card.classList.contains('status-cancelled')) {
+            clearInterval(progInterval);
+            if(card.classList.contains('status-success')) {
+                text.innerText = "Selesai!";
+                bar.style.setProperty('--bar-width', '100%');
+            }
+            return;
+        }
+
+        if(currentStage < PROGRESS_STAGES.length) {
+            const stage = PROGRESS_STAGES[currentStage];
+            bar.innerHTML = `<style>.job-card[data-card-id="${card.dataset.cardId}"] .progress-bar::after { width: ${stage.p}% !important; }</style>`;
+            text.innerText = stage.text;
+            currentStage++;
+        }
+    }, 4000); // Ganti stage tiap 4 detik
+}
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const tipe = document.getElementById('tipe').value;
+    const payload = {
+        mapel_id: "10",
+        elemen_id: "1",
+        jenjang: "SMA",
+        kelas_id: "10",
+        tipe: tipe,
+        elemen_label: document.getElementById('elemen_label').value,
+        materi: document.getElementById('materi').value,
+    };
+    const level = document.getElementById('level').value;
+    if (level) payload.level = level;
+
+    // 1. Buat Job Card Baru dari Template
+    const clone = template.content.cloneNode(true);
+    const cardElement = clone.querySelector('.job-card');
+    const cardId = 'card_' + Date.now();
+    cardElement.dataset.cardId = cardId;
+    cardElement.dataset.tipe = tipe;
+    cardElement.querySelector('.job-tipe').innerText = tipe;
+    
+    // Taruh di paling atas list
+    jobsContainer.prepend(cardElement);
+    
+    // 2. Mulai proses
+    addLog(cardElement, `Memulai Request POST /konten/generate...`);
+    updateCardStatus(cardElement, 'pending');
+    simulateProgress(cardElement); // Mulai jalankan fake progress
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/konten/generate`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error(JSON.stringify(await response.json()));
+        
+        const data = await response.json();
+        const jobId = data.job_id;
+        
+        cardElement.dataset.jobId = jobId;
+        cardElement.querySelector('.job-id-text span').innerText = jobId;
+        addLog(cardElement, `Job diterima! ID: ${jobId}`);
+        updateCardStatus(cardElement, 'running');
+        
+        // 3. Mulai Polling Independen
+        startPolling(cardElement, jobId);
+
+    } catch (error) {
+        updateCardStatus(cardElement, 'failed');
+        addLog(cardElement, `ERROR: ${error.message}`);
+    }
+});
+
+function startPolling(card, jobId) {
+    const intervalId = setInterval(async () => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/job/${jobId}`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            
+            const data = await response.json();
+            
+            // Jika tiba-tiba dibatalkan
+            if(card.classList.contains('status-cancelled')) {
+                clearInterval(intervalId);
+                delete activePollings[jobId];
+                return;
+            }
+
+            if (data.status === 'success') {
+                clearInterval(intervalId);
+                delete activePollings[jobId];
+                updateCardStatus(card, 'success');
+                addLog(card, '✅ GENERASI SELESAI!');
+                addLog(card, data.result, true); // Tetap log raw JSON
+                
+                // RENDER UI DINAMIS
+                renderResultUI(card, card.dataset.tipe, data.result);
+            } 
+            else if (data.status === 'failed') {
+                clearInterval(intervalId);
+                delete activePollings[jobId];
+                updateCardStatus(card, 'failed');
+                addLog(card, `❌ GENERASI GAGAL! Error: ${data.error}`);
+            } else {
+                addLog(card, `Polling status... [${data.status}]`);
+            }
+        } catch (err) {
+            addLog(card, `WARNING polling: ${err.message}`);
+        }
+    }, 3000);
+    
+    activePollings[jobId] = intervalId;
+}
+
+// Fitur Pembatalan
+async function cancelJob(btn) {
+    const card = btn.closest('.job-card');
+    const jobId = card.dataset.jobId;
+    
+    updateCardStatus(card, 'cancelled');
+    addLog(card, `Membatalkan job...`);
+    
+    if(activePollings[jobId]) {
+        clearInterval(activePollings[jobId]);
+        delete activePollings[jobId];
+    }
+    
+    if(jobId) {
+        try {
+            await fetch(`${API_BASE_URL}/job/${jobId}`, { method: 'DELETE' });
+            addLog(card, `✅ Sinyal Kill dikirim ke Server.`);
+        } catch(e) {
+            addLog(card, `Gagal membatalkan di server: ${e.message}`);
+        }
+    }
+}
+
+// Fitur Rendering Dinamis
+function renderResultUI(card, tipe, resultJson) {
+    const container = card.querySelector('.result-container');
+    container.style.display = 'block';
+    
+    let html = `<h4>✨ Hasil (Rendered UI)</h4>`;
+    
+    try {
+        if (tipe === 'bacaan') {
+            html += `<div class="markdown-body">${marked.parse(resultJson.bacaan || resultJson.content || '')}</div>`;
+        } 
+        else if (tipe.includes('quiz') || tipe === 'pretest') {
+            // Misal resultJson = { soal_1: { pertanyaan: "", opsi: {...}, jawaban_benar: "", penjelasan: "" } }
+            for (const key in resultJson) {
+                if(!resultJson[key].pertanyaan) continue;
+                const soal = resultJson[key];
+                
+                html += `<div class="quiz-question">`;
+                html += `<p><strong>${key.replace('_', ' ').toUpperCase()}:</strong> ${soal.pertanyaan}</p>`;
+                
+                if (soal.opsi) {
+                    html += `<ul class="quiz-options">`;
+                    for(const opKey in soal.opsi) {
+                        html += `<li><label><input type="radio" name="${card.dataset.cardId}_${key}"> ${opKey}. ${soal.opsi[opKey]}</label></li>`;
+                    }
+                    html += `</ul>`;
+                }
+                
+                // Tombol lihat jawaban
+                const boxId = `${card.dataset.cardId}_${key}_ans`;
+                html += `<button type="button" class="btn-nav" onclick="document.getElementById('${boxId}').style.display='block'">Lihat Jawaban</button>`;
+                html += `<div id="${boxId}" class="correct-answer-box">
+                            <strong>Jawaban:</strong> ${soal.jawaban_benar} <br>
+                            <em>${soal.penjelasan || ''}</em>
+                         </div>`;
+                html += `</div>`;
+            }
+        }
+        else if (tipe === 'flashcard') {
+            // resultJson = { kartu_1: { muka: "", belakang: "" } }
+            const cards = [];
+            for (const key in resultJson) {
+                if(resultJson[key].muka) cards.push(resultJson[key]);
+            }
+            
+            // Render Carousel
+            if(cards.length > 0) {
+                const carouselId = `fc_${card.dataset.cardId}`;
+                window[carouselId] = { cards, current: 0 };
+                
+                html += `<div class="flashcard-carousel" id="${carouselId}_container">
+                            <div class="flashcard-scene">
+                                <div class="flashcard" onclick="this.classList.toggle('is-flipped')">
+                                    <div class="flashcard-face flashcard-front" id="${carouselId}_front">${cards[0].muka}</div>
+                                    <div class="flashcard-face flashcard-back" id="${carouselId}_back">${cards[0].belakang}</div>
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="btn-nav" onclick="navFlashcard('${carouselId}', -1)">⬅ Prev</button>
+                                <span id="${carouselId}_counter">1 / ${cards.length}</span>
+                                <button class="btn-nav" onclick="navFlashcard('${carouselId}', 1)">Next ➡</button>
+                            </div>
+                            <p class="progress-text" style="text-align:center; margin-top:0.5rem">Klik kartu untuk membalik</p>
+                         </div>`;
+            }
+        }
+        else {
+            html += `<p><em>UI Renderer untuk tipe <strong>${tipe}</strong> belum didukung. Silakan lihat raw JSON di log terminal.</em></p>`;
+        }
+    } catch(e) {
+        html += `<p style="color:red">Gagal merender UI: ${e.message}</p>`;
+    }
+    
+    container.innerHTML = html;
+}
+
+// Helper untuk navigasi flashcard global
+window.navFlashcard = function(carouselId, direction) {
+    const state = window[carouselId];
+    state.current += direction;
+    if(state.current < 0) state.current = state.cards.length - 1;
+    if(state.current >= state.cards.length) state.current = 0;
+    
+    const cardEl = document.querySelector(`#${carouselId}_container .flashcard`);
+    cardEl.classList.remove('is-flipped'); // reset flip
+    
+    setTimeout(() => {
+        document.getElementById(`${carouselId}_front`).innerText = state.cards[state.current].muka;
+        document.getElementById(`${carouselId}_back`).innerText = state.cards[state.current].belakang;
+        document.getElementById(`${carouselId}_counter`).innerText = `${state.current + 1} / ${state.cards.length}`;
+    }, 150); // delay dikit biar animasi flip ke reset mulus
+}

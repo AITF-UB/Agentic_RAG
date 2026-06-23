@@ -60,7 +60,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from jinja2 import Environment, FileSystemLoader
 
 from api_models import (
-    GenerateRequest, ResumeRequest,
+    GenerateRequest,
     SesiSummaryRequest, EssayEvalItem, RekomendasiRequest, InsightRequest,
 )
 
@@ -824,7 +824,8 @@ def list_jobs(status: Optional[JobStatus] = None):
     return jobs
 
 
-@app.delete("/pipeline/job/{job_id}", tags=["Jobs"])
+@app.delete("/job/{job_id}", tags=["Jobs"])
+@app.delete("/pipeline/job/{job_id}", tags=["Jobs"], include_in_schema=False)
 def delete_job(job_id: str):
     """Hapus job dari riwayat dan revoke task Celery jika masih berjalan."""
     # Coba revoke dari Celery
