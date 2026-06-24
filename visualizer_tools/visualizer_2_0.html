@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizer 2.0 Ultimate - Agentic RAG Celery</title>
+    <!-- Menghubungkan file CSS Eksternal -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Dependencies for Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <!-- MathJax for LaTeX Rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round">
+            <span class="icon">☀️</span>
+            <span class="icon">🌙</span>
+        </div>
+    </label>
+</div>
+
+<div class="header">
+    <h1>Visualizer 2.0 Ultimate (Celery Polling)</h1>
+    <p>Simulator Frontend Paralel dengan UI Dinamis</p>
+</div>
+
+<div class="layout-container">
+    <!-- Kolom Kiri: Form -->
+    <div class="form-column">
+        <div class="card">
+            <h3>Buat Tugas Baru</h3>
+            <form id="generateForm">
+                <div class="form-group">
+                    <label for="tipe">Tipe Konten</label>
+                    <select id="tipe" required>
+                        <option value="pretest">Pretest</option>
+                        <option value="bacaan">Bacaan (Materi)</option>
+                        <option value="quiz_pg">Quiz Pilihan Ganda</option>
+                        <option value="quiz_essay">Quiz Essay</option>
+                        <option value="flashcard">Flashcard</option>
+                        <option value="mindmap">Mindmap</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mapel">Mata Pelajaran</label>
+                    <input type="text" id="mapel" value="Matematika" required>
+                </div>
+                <div class="form-group">
+                    <label for="elemen_label">Elemen Label (Topik Utama)</label>
+                    <input type="text" id="elemen_label" value="Aljabar" required>
+                </div>
+                <div class="form-group">
+                    <label for="materi">Materi Spesifik (Opsional)</label>
+                    <input type="text" id="materi" value="Fungsi Eksponensial">
+                </div>
+                <div class="form-group">
+                    <label for="level">Tingkat Kesulitan (Opsional)</label>
+                    <select id="level">
+                        <option value="">-- Default --</option>
+                        <option value="Low">Low</option>
+                        <option value="Mid">Mid</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="submitBtn">Generate Konten (Kirim ke Antrian)</button>
+            </form>
+        </div>
+    </div>
+
+        <!-- Kolom Kanan: Daftar Job (Carousel) -->
+        <div class="jobs-column">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Daftar Antrian (Carousel Jobs)</h3>
+                <div id="jobsPagination" class="carousel-controls" style="display:none; background:var(--card-bg); padding:0.5rem 1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
+                    <button class="btn-nav" style="padding:0.25rem 0.75rem; font-size:0.85rem;" onclick="navJobs(-1)">⬅ Prev</button>
+                    <span id="jobsCounter" style="margin:0 1rem; font-weight:600; font-size:0.9rem;">0 / 0</span>
+                    <button class="btn-nav" style="padding:0.25rem 0.75rem; font-size:0.85rem;" onclick="navJobs(1)">Next ➡</button>
+                </div>
+            </div>
+            
+            <div id="jobsContainer" style="position: relative;">
+                <!-- Job cards akan di-inject ke sini -->
+            </div>
+        </div>
+</div>
+
+<!-- Template untuk Job Card (Disembunyikan) -->
+<template id="jobCardTemplate">
+    <div class="job-card" data-job-id="">
+        <div class="job-header">
+            <div>
+                <span class="job-tipe">Tipe</span>
+                <span class="badge pending">PENDING</span>
+            </div>
+            <button class="btn-cancel" onclick="cancelJob(this)">Batalkan</button>
+        </div>
+        <p class="job-id-text">ID: <span>-</span></p>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <p class="progress-text">Mengirim antrian...</p>
+        </div>
+        
+        <div class="log-container"></div>
+        <div class="result-container" style="display: none;"></div>
+    </div>
+</template>
+
+<!-- Menghubungkan file JavaScript Eksternal -->
+<script src="script.js"></script>
+</body>
+</html>

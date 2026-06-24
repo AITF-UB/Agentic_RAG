@@ -1,4 +1,21 @@
 services:
+  # ── Redis: Message broker + Result backend ────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: agentic_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes  # Persistensi AOF (crash-safe)
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI: Endpoint utama ───────────────────────────────────────────────
   agentic_api:
     build: .
     container_name: agentic_api
@@ -11,20 +28,66 @@ services:
     ports:
       - "8002:8002"
     volumes:
-      # Config & data
       - ../.env:/app/.env
       - ../extraction:/app/extraction
       - ./templates:/app/templates
       - ./bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
-      # Pipeline directories (persistent across container restarts)
       - ../uploads:/app/uploads
       - ../pipeline_output:/app/pipeline_output
       - ../chunks:/app/chunks
       - ../outputs:/app/outputs
     env_file:
       - ../.env
+    depends_on:
+      redis:
+        condition: service_healthy
     restart: unless-stopped
     deploy:
       resources:
         limits:
           memory: 8G
+
+  # ── Celery Worker: Menjalankan pipeline PDF secara background ─────────────
+  celery_worker:
+    build: .
+    container_name: agentic_celery_worker
+    command: >
+      celery -A celery_app worker
+      --loglevel=info
+      --concurrency=2
+      -Q pipeline
+      --hostname=worker@%h
+    volumes:
+      - ../.env:/app/.env
+      - ../uploads:/app/uploads
+      - ../pipeline_output:/app/pipeline_output
+      - ../chunks:/app/chunks
+      - ../outputs:/app/outputs
+      - ./templates:/app/templates
+      - ./bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
+    env_file:
+      - ../.env
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 12G  # Pipeline PDF (Docling + VLM) butuh RAM lebih banyak
+
+  # ── Flower: Monitoring dashboard Celery ───────────────────────────────────
+  flower:
+    image: mher/flower:2.0
+    container_name: agentic_flower
+    command: celery --broker=redis://redis:6379/0 flower --port=5555
+    ports:
+      - "5555:5555"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+    driver: local

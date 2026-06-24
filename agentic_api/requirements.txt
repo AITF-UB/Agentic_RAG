@@ -26,3 +26,7 @@ transformers
 numpy
 cachetools
 slowapi
+# Message Broker
+celery[redis]==5.3.6
+redis==5.0.4
+flower==2.0.1

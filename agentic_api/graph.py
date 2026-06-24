@@ -378,7 +378,9 @@ def structurer_node(state: AgentState) -> dict:
     """Membungkus hasil akhir sesuai API Contract SR PSR2"""
     tipe = state["tipe"]
     req = state["request_params"]
-    content = state["generated_content"]
+    
+    # Ambil hasil generate terbaik (best_revision) jika tersedia, jika tidak pakai yang terakhir
+    content = state.get("best_revision") or state.get("generated_content")
     
     # Mapping format JSON untuk frontend
     if tipe == "bacaan":
@@ -442,10 +444,11 @@ def structurer_node(state: AgentState) -> dict:
         if tipe in ["bacaan", "quiz_pg", "quiz_essay", "pretest"]:
             inject_visuals(content)
 
+    # KEMBALIKAN OUTPUT SEBAGAI final_payload KE DALAM STATE!
     return {"final_payload": content}
 
 # ================================================================
-# 2. EDGES & GRAPH
+# 3. ROUTING & GRAPH BUILDER
 # ================================================================
 def route_after_retrieve(state: AgentState) -> str:
     tipe = state.get("tipe")
@@ -458,7 +461,7 @@ def should_revise(state: AgentState) -> str:
     skor = eval_res.get("skor", 100)
     status = eval_res.get("status", "layak")
     
-    if (skor < 80 or status == "tidak_layak") and state["revision_count"] < 2:
+    if (skor < 80 or status == "tidak_layak") and state.get("revision_count", 0) < 2:
         return state.get("tipe")
     return "pass"
 
@@ -491,6 +494,7 @@ builder.add_conditional_edges(
 for node_name in ["bacaan", "pretest", "quiz_pg", "quiz_essay", "flashcard", "mindmap"]:
     builder.add_edge(node_name, "evaluate")
 
+# Setelah evaluasi (auto-correction AI)
 builder.add_conditional_edges(
     "evaluate", 
     should_revise, 

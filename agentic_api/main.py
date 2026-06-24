@@ -31,6 +31,7 @@ Cara menjalankan:
 
 from __future__ import annotations
 
+import asyncio
 import uvicorn
 import os
 import sys
@@ -98,6 +99,16 @@ except ImportError:
     DEFAULT_VLM_HOST    = os.getenv("VLM_HOST", "https://providers-else-hear-wheel.trycloudflare.com")
     DEFAULT_DENSE_MODEL  = os.getenv("DENSE_MODEL", "BAAI/bge-m3")
     DEFAULT_SPARSE_MODEL = os.getenv("SPARSE_MODEL", "naver/splade-cocondenser-ensembledistil")
+
+# ── Import Celery task ────────────────────────────────────────────────────────
+try:
+    from celery_app import celery_app
+    from tasks.pipeline_task import run_pipeline as celery_run_pipeline
+    CELERY_AVAILABLE = True
+except ImportError:
+    CELERY_AVAILABLE = False
+    celery_app = None
+    celery_run_pipeline = None
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -168,14 +179,69 @@ class PipelineParams(BaseModel):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# IN-MEMORY JOB STORE
+# JOB STORE — Celery Result Backend (Redis) dengan fallback in-memory
 # ══════════════════════════════════════════════════════════════════════════════
 
+# Fallback in-memory store — digunakan jika Celery tidak tersedia
 _jobs: Dict[str, JobInfo] = {}
-_jobs_lock = threading.Lock()  # Thread-safe access untuk _jobs
+_jobs_lock = threading.Lock()
+
+
+def _celery_state_to_job_status(state: str) -> JobStatus:
+    """Map Celery task state ke JobStatus enum."""
+    mapping = {
+        "PENDING":  JobStatus.PENDING,
+        "RECEIVED": JobStatus.PENDING,
+        "STARTED":  JobStatus.RUNNING,
+        "PROGRESS": JobStatus.RUNNING,
+        "SUCCESS":  JobStatus.SUCCESS,
+        "FAILURE":  JobStatus.FAILED,
+        "RETRY":    JobStatus.RUNNING,
+        "REVOKED":  JobStatus.FAILED,
+    }
+    return mapping.get(state, JobStatus.PENDING)
+
+
+def _celery_result_to_job_info(task_id: str, filename: Optional[str] = None, step: Optional[str] = None) -> Optional[JobInfo]:
+    """Baca status task dari Celery result backend dan konversi ke JobInfo."""
+    if not CELERY_AVAILABLE or celery_app is None:
+        return None
+    try:
+        result = celery_app.AsyncResult(task_id)
+        state  = result.state
+        meta   = result.info or {}
+
+        status    = _celery_state_to_job_status(state)
+        error_msg = None
+        job_result = None
+
+        if state == "SUCCESS":
+            job_result = meta if isinstance(meta, dict) else {}
+        elif state == "FAILURE":
+            error_msg = str(meta) if not isinstance(meta, dict) else meta.get("exc_message", str(meta))
+
+        message = None
+        if isinstance(meta, dict):
+            message = meta.get("message")
+
+        now = datetime.now().isoformat()
+        return JobInfo(
+            job_id     = task_id,
+            status     = status,
+            filename   = filename or (meta.get("filename") if isinstance(meta, dict) else None),
+            step       = step or (meta.get("step") if isinstance(meta, dict) else None),
+            created_at = (meta.get("started_at") if isinstance(meta, dict) else None) or now,
+            updated_at = now,
+            message    = message,
+            error      = error_msg,
+            result     = job_result,
+        )
+    except Exception:
+        return None
 
 
 def _create_job(filename: Optional[str] = None, step: Optional[str] = None) -> JobInfo:
+    """Buat JobInfo baru (in-memory fallback saat Celery tidak tersedia)."""
     now = datetime.now().isoformat()
     job = JobInfo(
         job_id     = str(uuid.uuid4()),
@@ -191,6 +257,7 @@ def _create_job(filename: Optional[str] = None, step: Optional[str] = None) -> J
 
 
 def _update_job(job_id: str, **kwargs) -> None:
+    """Update JobInfo di in-memory store (fallback)."""
     with _jobs_lock:
         if job_id in _jobs:
             job = _jobs[job_id]
@@ -335,6 +402,12 @@ env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__)
 llm = get_llm()
 eval_llm = get_eval_llm()
 
+# ── Concurrency limiter untuk konten generation ───────────────────────────────
+# Batasi max concurrent LLM generation agar LLM provider tidak overload.
+# Jika ada request ke-11, client akan menunggu sampai ada slot kosong.
+_MAX_CONCURRENT_GENERATION = int(os.getenv("MAX_CONCURRENT_GENERATION", "30"))
+_generation_semaphore = asyncio.Semaphore(_MAX_CONCURRENT_GENERATION)
+
 
 def load_prompt(template_name: str, **kwargs) -> str:
     template = env.get_template(template_name)
@@ -349,25 +422,58 @@ def load_prompt(template_name: str, **kwargs) -> str:
 def health_check():
     """Cek apakah service berjalan normal."""
     return {
-        "status":             "ok",
-        "pipeline_available": PIPELINE_AVAILABLE,
-        "upload_dir":         str(UPLOAD_DIR.resolve()),
-        "output_dir":         str(OUTPUT_DIR.resolve()),
-        "chunks_dir":         str(CHUNKS_DIR.resolve()),
-        "active_jobs":        sum(1 for j in _jobs.values() if j.status == JobStatus.RUNNING),
-        "total_jobs":         len(_jobs),
-        "timestamp":          datetime.now().isoformat(),
+        "status":                      "ok",
+        "pipeline_available":          PIPELINE_AVAILABLE,
+        "celery_available":            CELERY_AVAILABLE,
+        "upload_dir":                  str(UPLOAD_DIR.resolve()),
+        "output_dir":                  str(OUTPUT_DIR.resolve()),
+        "chunks_dir":                  str(CHUNKS_DIR.resolve()),
+        "active_jobs":                 sum(1 for j in _jobs.values() if j.status == JobStatus.RUNNING),
+        "total_jobs":                  len(_jobs),
+        "max_concurrent_generation":   _MAX_CONCURRENT_GENERATION,
+        "current_concurrent_generation": _MAX_CONCURRENT_GENERATION - _generation_semaphore._value,
+        "timestamp":                   datetime.now().isoformat(),
     }
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# KONTEN ENDPOINTS
-# ══════════════════════════════════════════════════════════════════════════════
+# ================================================================
+# KONTEN ENDPOINTS (Celery / Async)
+# ================================================================
 
-@app.post("/konten/generate", tags=["Konten"])
-async def generate_konten(req: GenerateRequest):
+def _run_generate_task_fallback(job_id: str, initial_state: dict):
+    """Fallback in-process untuk /konten/generate jika Celery tidak tersedia."""
     try:
-        # Menyiapkan State Awal untuk Graf
+        # Panggil graph secara async dalam event loop baru/yang ada
+        # Karena kita sudah berada di background task (yang merupakan thread terpisah di FastAPI), 
+        # kita butuh event loop
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            final_state = loop.run_until_complete(beta_graph.ainvoke(initial_state))
+            final_payload = final_state.get("final_payload", {})
+            
+            with _jobs_lock:
+                if job_id in _jobs:
+                    _jobs[job_id].status = JobStatus.SUCCESS
+                    _jobs[job_id].result = final_payload
+                    _jobs[job_id].updated_at = datetime.now().isoformat()
+        finally:
+            loop.close()
+    except Exception as e:
+        error_msg = f"{type(e).__name__}: {str(e)}\n{traceback.format_exc()}"
+        with _jobs_lock:
+            if job_id in _jobs:
+                _jobs[job_id].status = JobStatus.FAILED
+                _jobs[job_id].error = error_msg
+                _jobs[job_id].updated_at = datetime.now().isoformat()
+
+@app.post("/konten/generate", response_model=JobInfo, tags=["Konten"])
+async def generate_konten(req: GenerateRequest, background_tasks: BackgroundTasks):
+    """
+    Generate konten (Soal/Bacaan) secara asynchronous.
+    Mengembalikan job_id untuk di-polling menggunakan `GET /job/{job_id}`.
+    """
+    try:
         initial_state = {
             "request_params": req.model_dump(),
             "tipe": req.tipe,
@@ -375,17 +481,31 @@ async def generate_konten(req: GenerateRequest):
             "revision_count": 0,
             "instruksi_revisi": req.instruksi_revisi
         }
-        
-        # Mengeksekusi State Machine
-        final_state = await beta_graph.ainvoke(initial_state)
-        final_payload = final_state["final_payload"]
-        
-        # Pertahankan konten_id jika diberikan dari klien (kecuali untuk quiz dan essay)
+
+        # Jika konten_id dikirimkan klien, kita simpan di state agar di-inject nanti di final payload (opsional)
         if req.konten_id and req.tipe not in ["quiz_pg", "quiz_essay", "pretest"]:
-            final_payload["konten_id"] = req.konten_id
+            initial_state["request_params"]["konten_id"] = req.konten_id
+
+        if CELERY_AVAILABLE and celery_app is not None:
+            from tasks.generate_task import run_generation
+            # Dispatch ke Celery
+            task = run_generation.delay(initial_state)
+            now = datetime.now().isoformat()
+            return JobInfo(
+                job_id     = task.id,
+                status     = JobStatus.PENDING,
+                step       = req.tipe,
+                created_at = now,
+                updated_at = now,
+                message    = "Generasi konten dikirim ke antrian Celery. Pantau via GET /job/{job_id}"
+            )
+        else:
+            # Fallback ke in-process BackgroundTask
+            job = _create_job(step=req.tipe)
+            background_tasks.add_task(_run_generate_task_fallback, job.job_id, initial_state)
+            job.message = "Generasi konten diproses di background. Pantau via GET /job/{job_id}"
+            return job
             
-        return final_payload
-        
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"GEN_ERROR: {str(e)}")
 
@@ -644,21 +764,42 @@ async def run_step(
                    f"Sertakan parameter 'filename' atau upload via POST /pipeline/upload.",
         )
 
-    job = _create_job(filename=filename, step=params.step if params.step else "all")
-
     if pdf_path is None:
-        # Step chunk/ingest tidak butuh PDF — buat dummy path agar signature runner terpenuhi
         pdf_path = UPLOAD_DIR / "placeholder.pdf"
 
-    background_tasks.add_task(_run_pipeline_task, job.job_id, pdf_path, params)
-    return job
+    if CELERY_AVAILABLE and celery_run_pipeline is not None:
+        # ── Celery path: pipeline berjalan di worker terpisah (production) ────
+        job_params = params.model_dump()
+        job_params["pdf_path"] = str(pdf_path)
+        task = celery_run_pipeline.delay(job_params)
+        now = datetime.now().isoformat()
+        return JobInfo(
+            job_id     = task.id,
+            status     = JobStatus.PENDING,
+            filename   = filename,
+            step       = params.step if params.step else "all",
+            created_at = now,
+            updated_at = now,
+            message    = "Task dikirim ke Celery worker. Pantau via GET /pipeline/job/{job_id}",
+        )
+    else:
+        # ── Fallback: in-process BackgroundTask (dev / tanpa Redis) ──────────
+        job = _create_job(filename=filename, step=params.step if params.step else "all")
+        background_tasks.add_task(_run_pipeline_task, job.job_id, pdf_path, params)
+        return job
 
 
 # ── Job Status ────────────────────────────────────────────────────────────────
 
-@app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"])
+@app.get("/job/{job_id}", response_model=JobInfo, tags=["Jobs"])
+@app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"], include_in_schema=False)
 def get_job(job_id: str):
     """Ambil status dan hasil dari sebuah job berdasarkan `job_id`."""
+    # Coba baca dari Celery result backend (Redis) dulu
+    job = _celery_result_to_job_info(job_id)
+    if job:
+        return job
+    # Fallback: cari di in-memory store
     with _jobs_lock:
         job = _jobs.get(job_id)
     if not job:
@@ -682,9 +823,19 @@ def list_jobs(status: Optional[JobStatus] = None):
     return jobs
 
 
-@app.delete("/pipeline/job/{job_id}", tags=["Jobs"])
+@app.delete("/job/{job_id}", tags=["Jobs"])
+@app.delete("/pipeline/job/{job_id}", tags=["Jobs"], include_in_schema=False)
 def delete_job(job_id: str):
-    """Hapus job dari riwayat (hanya riwayat; file output tidak dihapus)."""
+    """Hapus job dari riwayat dan revoke task Celery jika masih berjalan."""
+    # Coba revoke dari Celery
+    if CELERY_AVAILABLE and celery_app is not None:
+        try:
+            # Menggunakan terminate=True untuk membunuh paksa task yang sedang berjalan
+            celery_app.control.revoke(job_id, terminate=True)
+        except Exception:
+            pass  # Abaikan error revoke (task mungkin sudah selesai)
+        return {"message": f"Job '{job_id}' dihapus dari antrian.", "job_id": job_id}
+    # Fallback: hapus dari in-memory
     with _jobs_lock:
         if job_id not in _jobs:
             raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
