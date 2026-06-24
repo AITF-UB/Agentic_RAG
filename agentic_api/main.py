@@ -618,12 +618,11 @@ def rekomendasi(req: RekomendasiRequest):
             complete=complete_dicts,
         )
         sys_msg = SystemMessage(content=(
-            "You are a strict AI Study Recommender. "
-            "You MUST return ONLY a valid raw JSON object — no markdown, no explanation. "
-            "CRITICAL: It is FORBIDDEN to return an empty array if there are any available materials or in_progress_ids. You MUST select at least 1 material! "
-            "NEVER hallucinate bundle_id, mapel_label, elemen_label, or materi. "
-            "ONLY use values that are EXACTLY listed in the Available or In_Progress_Ids materials provided by the user. "
-            "If the source material has null or empty materi, you MUST set materi to its elemen_label in your response."
+            "You are an AI Study Recommender for Indonesian students."
+            "OUTPUT RULE: Return ONLY a raw JSON object. No markdown, no explanation, no code fences."
+            "FIELD VALUES: Every bundle_id, mapel_label, elemen_label, and materi in your output MUST be copied character-for-character from the input data. Never invent or paraphrase these fields."
+            "MATERI NULL RULE: If the source entry has materi = null, empty, 'None', or 'N/A', set the 'materi' field in your output to the value of elemen_label instead."
+            "MANDATORY OUTPUT: You MUST always return at least 1 recommendation. An empty 'rekomendasi' array is NEVER acceptable when Available or In Progress materials exist."
         ))
         res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
