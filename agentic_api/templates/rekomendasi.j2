@@ -1,35 +1,49 @@
 [TASK]
-You are an AI Study Guide (Recommender System).
-Based on the student's learning history below, determine a maximum of 3 logical next materials to study.
+Recommend a maximum of 3 logical next materials for this student to study.
+Always return between 1 and 3 items — never return an empty array.
 
-[STUDENT LEARNING PROFILE]
-Available Universe of Materials (Available):
+---
+[STUDENT DATA]
+
+Available (pick from here if In Progress is empty, or to fill up to 3 slots):
+{% if available %}
 {% for b in available %}
-- Bundle ID: {{ b.bundle_id }}, Mapel: {{ b.mapel_label }}, Elemen: {{ b.elemen_label }}, Materi: {{ b.materi }}
-  ATP: {{ b.atp }}
+- bundle_id: {{ b.bundle_id }} | mapel_label: {{ b.mapel_label }} | elemen_label: {{ b.elemen_label }} | materi: {{ b.materi }} | atp: {{ b.atp }}
 {% endfor %}
+{% else %}
+(none)
+{% endif %}
 
-Materials Currently Being Studied (In Progress):
+In Progress (study these FIRST — always include if non-empty):
+{% if in_progress %}
 {% for b in in_progress %}
-- Bundle ID: {{ b.bundle_id }}, Materi: {{ b.materi }}
+- bundle_id: {{ b.bundle_id }} | materi: {{ b.materi }}
 {% endfor %}
+{% else %}
+(none)
+{% endif %}
 
-Completed Materials (Complete):
+Completed (NEVER recommend these):
+{% if complete %}
 {% for b in complete %}
-- Bundle ID: {{ b.bundle_id }}, Materi: {{ b.materi }}
+- bundle_id: {{ b.bundle_id }} | materi: {{ b.materi }}
 {% endfor %}
+{% else %}
+(none)
+{% endif %}
 
-[ABSOLUTE RULES FOR PREVENTING HALLUCINATION]
-1. You MUST ONLY recommend materials that are EXACTLY listed in the "Available Universe of Materials (Available)" OR the "Materials Currently Being Studied (In Progress)" section above.
-2. DO NOT invent, hallucinate, or create new "bundle_id", "mapel_label", "elemen_label", or "materi". You MUST strictly copy-paste these fields from the provided lists.
-3. You MUST recommend at least 1 material (maximum 3). Do NOT return an empty array! First, pick from the "In Progress" list. If the "In Progress" list is empty, you MUST pick from the "Available" list.
-4. DO NOT recommend any materials that are present in the "Completed Materials (Complete)" list.
-5. If it's not clear which new material to take next, recommend the next chapter based on a logical cognitive sequence from the ATP (Learning Objective Flow).
-6. Provide a clear, motivating reason ("alasan") why the material is recommended (e.g., "Lanjutkan materi ini agar tuntas" or "Materi baru untuk dipelajari").
-7. Return raw JSON with exactly the structure below.
-8. IF the "Materi" field in the list above is "None", "null", "N/A", or empty, you MUST fill the "materi" field in your JSON output with the value of the "elemen_label". Do NOT leave it empty.
+---
+[SELECTION RULES]
+1. Pick from In Progress first. Then fill remaining slots (up to 3 total) from Available.
+2. Never recommend bundle_ids that appear in Completed.
+3. If Available has only 1 or 2 items, recommend ALL of them — do not skip any.
+4. For materi field: if the source shows null/empty/"None"/"N/A", copy the elemen_label value into materi.
+5. For alasan: write 1–2 sentences in Indonesian that are specific to the material. For In Progress items, mention continuing toward  completion. For Available items, briefly explain WHY this material  matters based on its ATP learning objectives — make it motivating and concrete, not generic.
+6. All bundle_id, mapel_label, elemen_label, materi values MUST be copied exactly from the data above — no rewording.
 
-MANDATORY JSON STRUCTURE:
+---
+[OUTPUT FORMAT]
+Return exactly this structure and nothing else:
 {
   "rekomendasi": [
     {
