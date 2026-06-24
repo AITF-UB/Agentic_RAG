@@ -580,12 +580,15 @@ async def submit_essay(req: List[EssayEvalItem]):
         tasks = [evaluate_single(item) for item in req]
         evaluasi_hasil = await asyncio.gather(*tasks)
         
-        total_skor = 0
-        for hasil in evaluasi_hasil:
+        response_data = {}
+        for idx, hasil in enumerate(evaluasi_hasil):
             skor = hasil.get("final_score", 0)
-            total_skor += skor
             
-        return {"total_skor": total_skor * 2}
+            q_num = idx + 1
+            response_data[f"q{q_num}_score"] = skor
+            response_data[f"q{q_num}_eval"] = hasil.get("evaluation_reason", "")
+            
+        return response_data
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"EVAL_ERR: {str(e)}")

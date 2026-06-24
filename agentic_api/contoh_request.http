@@ -389,7 +389,7 @@ Content-Type: application/json
     "soal": "Jelaskan apa yang dimaksud dengan teks laporan hasil observasi (LHO) beserta ciri-cirinya!",
     "rubrik": "Siswa mampu menjelaskan definisi teks LHO dan menyebutkan minimal 3 ciri-cirinya (faktual, objektif, disusun sistematis).",
     "stimulus": "Teks Laporan Hasil Observasi (LHO) merupakan teks yang berfungsi untuk memberikan informasi tentang suatu objek atau situasi setelah diadakannya investigasi secara sistematis.",
-    "image_path": "https://example.com/lho-concept.jpg",
+    "visuals": ["https://example.com/lho-concept.jpg"],
     "penjelasan": "Teks LHO harus memuat fakta murni dari pengamatan, sehingga bersifat objektif dan tidak memihak (tidak berisi opini penulis)."
   },
   {
@@ -397,7 +397,7 @@ Content-Type: application/json
     "soal": "Sebutkan dan jelaskan struktur dari teks laporan hasil observasi!",
     "rubrik": "Siswa dapat menyebutkan struktur teks LHO: pernyataan umum (klasifikasi), deskripsi bagian, dan deskripsi manfaat.",
     "stimulus": "Setiap jenis karangan teks memiliki struktur kerangka pembangun agar mudah dibaca dan sistematis alurnya.",
-    "image_path": "https://example.com/lho-structure.png",
+    "visuals": ["https://example.com/lho-structure.png"],
     "penjelasan": "Struktur utama LHO ada 3: (1) Pernyataan Umum untuk pengenalan, (2) Deskripsi Bagian untuk detail fisik/sifat, (3) Deskripsi Manfaat untuk menjelaskan kegunaannya."
   },
   {
@@ -405,7 +405,7 @@ Content-Type: application/json
     "soal": "Apa perbedaan antara kalimat definisi dan kalimat deskripsi dalam teks LHO? Berikan contohnya masing-masing!",
     "rubrik": "Siswa menjelaskan kalimat definisi (menggunakan kopula adalah/ialah/merupakan) dan kalimat deskripsi (menggambarkan sifat/ciri khusus), serta memberikan contoh yang tepat.",
     "stimulus": "Dalam merangkai paragraf LHO, penggunaan kalimat definisi sangat penting di bagian awal sebelum mulai mendeskripsikan secara rinci.",
-    "image_path": null,
+    "visuals": [],
     "penjelasan": "Kalimat definisi identik dengan penggunaan kata 'adalah', 'ialah', 'yakni'. Sedangkan kalimat deskripsi lebih menggunakan kata sifat (adjektiva) untuk menggambarkan fisik/suasana."
   },
   {
@@ -413,7 +413,7 @@ Content-Type: application/json
     "soal": "Mengapa dalam menulis teks laporan hasil observasi harus menggunakan bahasa yang objektif dan fakta?",
     "rubrik": "Siswa memahami bahwa teks LHO bertujuan memberikan informasi yang akurat berdasarkan pengamatan, bukan opini pribadi atau imajinasi.",
     "stimulus": "Seringkali pembaca menyamakan LHO dengan teks deskripsi biasa yang bisa saja dibumbui oleh opini atau imajinasi penulis.",
-    "image_path": null,
+    "visuals": [],
     "penjelasan": "Sifat LHO adalah sebagai referensi keilmuan atau laporan ilmiah, sehingga tidak boleh disusupi pendapat pribadi yang bias (subjektif)."
   },
   {
@@ -421,7 +421,7 @@ Content-Type: application/json
     "soal": "Buatlah satu paragraf deskripsi bagian tentang sebuah tanaman yang sering kamu temui di lingkungan sekitarmu!",
     "rubrik": "Siswa mampu menuliskan satu paragraf yang mendeskripsikan ciri fisik/bagian-bagian dari tanaman yang dipilih secara rinci dan objektif.",
     "stimulus": "Perhatikan bentuk daun, tekstur batang, hingga buah pada tanaman di sekelilingmu untuk merangkai satu paragraf deskripsi.",
-    "image_path": "https://example.com/pohon-mangga.jpg",
+    "visuals": ["https://example.com/pohon-mangga.jpg"],
     "penjelasan": "Penilaian ditekankan pada kemampuan merincikan bagian tanaman (batang, daun, warna) dan bebas dari unsur cerita fiktif/perasaan personal penulis."
   }
 ]
