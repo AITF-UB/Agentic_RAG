@@ -55,7 +55,7 @@ services:
       celery -A celery_app worker
       --loglevel=info
       --concurrency=2
-      -Q pipeline
+      -Q celery,pipeline
       --hostname=worker@%h
     volumes:
       - ../.env:/app/.env
