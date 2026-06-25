@@ -21,7 +21,7 @@ services:
     container_name: agentic_api
     command: >
       gunicorn main:app
-      -w 2
+      -w ${GUNICORN_WORKERS:-2}
       -k uvicorn.workers.UvicornWorker
       --bind 0.0.0.0:8002
       --timeout 600
@@ -54,7 +54,7 @@ services:
     command: >
       celery -A celery_app worker
       --loglevel=info
-      --concurrency=4
+      --concurrency=${CELERY_CONCURRENCY:-4}
       -Q celery,pipeline
       --hostname=worker@%h
     volumes:
