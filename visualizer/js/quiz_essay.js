@@ -6,7 +6,7 @@ function renderQuizEssay(content) {
     
     content.pertanyaan.forEach((q, idx) => {
         const fixImgUrl = (text) => text.replace(/!\[(.*?)\]\((?!http)(.*?)\)/g, "![$1](http://localhost:8000/extraction/$2)");
-        const soalStr = Array.isArray(q.soal) ? q.soal.join('\n') : String(q.soal || "");
+        const soalStr = Array.isArray(q.question) ? q.question.join('\n') : String(q.question || "");
         
         let soalHtml = marked.parse(fixImgUrl(soalStr));
         
@@ -22,10 +22,10 @@ function renderQuizEssay(content) {
         }
         
         container.innerHTML += `
-            <div class="quiz-card" id="essay-card-${q.id}">
+            <div class="quiz-card" id="essay-card-${idx}">
                 ${stimulusHtml}
                 <div class="quiz-q">${idx+1}. ${soalHtml}</div>
-                <textarea class="essay-textarea" id="ans-${q.id}" placeholder="${q.placeholder || 'Ketik jawabanmu di sini...'}"></textarea>
+                <textarea class="essay-textarea" id="ans-${idx}" placeholder="${q.placeholder || 'Ketik jawabanmu di sini...'}"></textarea>
             </div>
         `;
     });
@@ -46,19 +46,20 @@ async function evaluateAllEssays() {
     const questions = window.currentEssayContent.pertanyaan;
     const payload = [];
     
-    for (const q of questions) {
-        const ans = document.getElementById(`ans-${q.id}`).value;
+    for (let idx = 0; idx < questions.length; idx++) {
+        const q = questions[idx];
+        const ans = document.getElementById(`ans-${idx}`).value;
         if (!ans.trim()) {
-            alert(`Jawaban untuk soal nomor ${questions.indexOf(q) + 1} masih kosong!`);
+            alert(`Jawaban untuk soal nomor ${idx + 1} masih kosong!`);
             return;
         }
         
         payload.push({
             jawaban_siswa: ans,
-            soal: Array.isArray(q.soal) ? q.soal.join('\n') : String(q.soal || ""),
-            rubrik: Array.isArray(q.rubrik) ? q.rubrik.join('\n') : String(q.rubrik || ""),
+            soal: Array.isArray(q.question) ? q.question.join('\n') : String(q.question || ""),
+            rubrik: Array.isArray(q.rubric_points) ? q.rubric_points.join('\n') : String(q.rubric_points || ""),
             stimulus: q.stimulus || "",
-            penjelasan: q.penjelasan || ""
+            penjelasan: q.explanation || ""
         });
     }
     

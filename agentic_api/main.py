@@ -104,11 +104,15 @@ except ImportError:
 try:
     from celery_app import celery_app
     from tasks.pipeline_task import run_pipeline as celery_run_pipeline
+    # Verifikasi Redis benar-benar bisa dikoneksi (bukan hanya import berhasil)
+    celery_app.backend.client.ping()
     CELERY_AVAILABLE = True
-except ImportError:
+    print("[Celery] Redis reachable — Celery mode aktif.")
+except Exception:
     CELERY_AVAILABLE = False
     celery_app = None
     celery_run_pipeline = None
+    print("[Celery] Redis tidak tersedia — fallback ke BackgroundTask.")
 
 
 # ══════════════════════════════════════════════════════════════════════════════

@@ -12,8 +12,8 @@ function renderFlashcard(content) {
 function updateFCDOM() {
     if(!currentFlashcards.length) return;
     const c = currentFlashcards[fcIndex];
-    document.getElementById("fc-front").innerHTML = c.depan;
-    document.getElementById("fc-back").innerHTML = c.belakang;
+    document.getElementById("fc-front").innerHTML = c.front;
+    document.getElementById("fc-back").innerHTML = c.back;
     document.getElementById("fc-counter").innerText = `${fcIndex+1}/${currentFlashcards.length}`;
     document.getElementById("fc-card").classList.remove("is-flipped");
 }

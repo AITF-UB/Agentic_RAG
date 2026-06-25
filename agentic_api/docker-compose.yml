@@ -21,7 +21,7 @@ services:
     container_name: agentic_api
     command: >
       gunicorn main:app
-      -w 1
+      -w 2
       -k uvicorn.workers.UvicornWorker
       --bind 0.0.0.0:8002
       --timeout 600
@@ -45,7 +45,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 8G
+          memory: 2G
 
   # ── Celery Worker: Menjalankan pipeline PDF secara background ─────────────
   celery_worker:
@@ -54,7 +54,7 @@ services:
     command: >
       celery -A celery_app worker
       --loglevel=info
-      --concurrency=2
+      --concurrency=4
       -Q celery,pipeline
       --hostname=worker@%h
     volumes:
@@ -74,7 +74,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 12G  # Pipeline PDF (Docling + VLM) butuh RAM lebih banyak
+          memory: 2G  
+
 
   # ── Flower: Monitoring dashboard Celery ───────────────────────────────────
   flower:
