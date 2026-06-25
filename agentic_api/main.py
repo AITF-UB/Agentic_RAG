@@ -41,6 +41,7 @@ import uuid
 from typing import List, Any, Dict, Optional
 from enum import Enum
 from datetime import datetime, timedelta
+from cachetools import LRUCache
 from pathlib import Path
 
 # Mematikan handler Ctrl+C bawaan Fortran (MKL/Sentence-Transformer)
@@ -66,6 +67,13 @@ from api_models import (
 
 from dotenv import load_dotenv
 load_dotenv()
+
+# ── LangSmith — set sebelum import LangChain/LangGraph agar tracing aktif ────
+import os as _os
+_ls_project = _os.getenv("LANGSMITH_PROJECT", "beta-agentic")
+_os.environ["LANGSMITH_PROJECT"]  = _ls_project
+_os.environ["LANGSMITH_ENDPOINT"] = _os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
+del _os, _ls_project  # Hapus variabel sementara agar tidak polusi namespace
 
 from chat_memory.schemas import (
     IngestChatRequest,
@@ -186,8 +194,11 @@ class PipelineParams(BaseModel):
 # JOB STORE — Celery Result Backend (Redis) dengan fallback in-memory
 # ══════════════════════════════════════════════════════════════════════════════
 
-# Fallback in-memory store — digunakan jika Celery tidak tersedia
-_jobs: Dict[str, JobInfo] = {}
+# Fallback in-memory store — digunakan jika Celery tidak tersedia.
+# Menggunakan LRUCache (max 500 item) untuk mencegah memory leak saat server
+# berjalan berhari-hari. Job lama yang paling jarang diakses akan otomatis
+# terhapus ketika cache penuh. (Hanya berlaku saat Celery tidak aktif).
+_jobs: LRUCache = LRUCache(maxsize=500)
 _jobs_lock = threading.Lock()
 
 
@@ -445,24 +456,22 @@ def health_check():
 # ================================================================
 
 def _run_generate_task_fallback(job_id: str, initial_state: dict):
-    """Fallback in-process untuk /konten/generate jika Celery tidak tersedia."""
+    """Fallback in-process untuk /konten/generate jika Celery tidak tersedia.
+    
+    Dijalankan di thread pool FastAPI BackgroundTasks. Menggunakan asyncio.run()
+    yang lebih efisien daripada membuat event loop manual per-request.
+    """
+    async def _invoke():
+        return await beta_graph.ainvoke(initial_state)
+
     try:
-        # Panggil graph secara async dalam event loop baru/yang ada
-        # Karena kita sudah berada di background task (yang merupakan thread terpisah di FastAPI), 
-        # kita butuh event loop
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            final_state = loop.run_until_complete(beta_graph.ainvoke(initial_state))
-            final_payload = final_state.get("final_payload", {})
-            
-            with _jobs_lock:
-                if job_id in _jobs:
-                    _jobs[job_id].status = JobStatus.SUCCESS
-                    _jobs[job_id].result = final_payload
-                    _jobs[job_id].updated_at = datetime.now().isoformat()
-        finally:
-            loop.close()
+        final_state = asyncio.run(_invoke())
+        final_payload = final_state.get("final_payload", {})
+        with _jobs_lock:
+            if job_id in _jobs:
+                _jobs[job_id].status = JobStatus.SUCCESS
+                _jobs[job_id].result = final_payload
+                _jobs[job_id].updated_at = datetime.now().isoformat()
     except Exception as e:
         error_msg = f"{type(e).__name__}: {str(e)}\n{traceback.format_exc()}"
         with _jobs_lock:
@@ -926,12 +935,8 @@ if EXTRACTION_BASE_DIR.exists():
     app.mount("/extraction", StaticFiles(directory=str(EXTRACTION_BASE_DIR)), name="extraction")
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# LANGSMITH CONFIG
-# ══════════════════════════════════════════════════════════════════════════════
-
-os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
-os.environ["LANGSMITH_PROJECT"] = "beta-agentic"
+# LangSmith config dipindah ke atas (setelah load_dotenv) agar aktif
+# sebelum LangChain/LangGraph diinisialisasi. Lihat bagian atas file ini.
 
 
 # ══════════════════════════════════════════════════════════════════════════════

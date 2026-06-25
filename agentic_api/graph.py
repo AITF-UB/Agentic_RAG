@@ -14,7 +14,8 @@ from llm import get_llm, get_eval_llm
 from prompt_config import compile_leveling_registry, compile_subject_registry
 
 env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")))
-llm = get_llm()
+# llm diinisialisasi secara dinamis per-request di _call_generation_llm()
+# agar get_available_llm_host() bisa menentukan host vLLM yang tersedia setiap saat.
 
 async def _safe_ainvoke(llm_instance, messages, max_retries=3, delay=15):
     """Bungkus LLM invoke dengan mekanisme retry otomatis untuk menghindari Cloudflare 524 Timeout."""
@@ -229,10 +230,14 @@ async def _call_generation_llm(state: AgentState, usr_prompt: str, is_array_outp
         if jumlah_soal_target > 0:
             array_schema["json_schema"]["schema"]["minItems"] = jumlah_soal_target
             array_schema["json_schema"]["schema"]["maxItems"] = jumlah_soal_target
-            
-        bound_llm = llm.bind(response_format=array_schema)
+
+        # Inisialisasi LLM per-request agar auto-routing host vLLM bekerja dinamis
+        _llm = get_llm()
+        bound_llm = _llm.bind(response_format=array_schema)
     else:
-        bound_llm = llm.bind(response_format={"type": "json_object"})
+        # Inisialisasi LLM per-request agar auto-routing host vLLM bekerja dinamis
+        _llm = get_llm()
+        bound_llm = _llm.bind(response_format={"type": "json_object"})
 
     response = await _safe_ainvoke(bound_llm, [SystemMessage(content=sys_prompt), HumanMessage(content=usr_prompt)])
     content_dict = clean_json_from_llm(response.content)
