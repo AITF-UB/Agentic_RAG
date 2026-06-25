@@ -33,16 +33,18 @@ def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
 
     Args:
         hosts_env: String URL host, dipisah ';'. Contoh:
-                   "http://gpu1:8000;http://gpu2:8000"
+                   "http://gpu1:8000/v1;http://gpu2:8000/v1"
         timeout:   Batas waktu (detik) saat nge-ping /metrics tiap host.
 
     Returns:
-        URL host yang paling sedikit bebannya. Jika semua host sibuk atau
-        /metrics tidak dapat dijangkau, kembalikan host pertama sebagai default.
+        URL host (dengan /v1 jika ada) yang paling sedikit bebannya.
+        Jika semua host sibuk atau /metrics tidak dapat dijangkau,
+        kembalikan host pertama sebagai default.
 
     Logika routing (sesuai saran Mas Anjas):
       1. Looping tiap host dalam urutan.
-      2. GET {host}/metrics dengan timeout singkat.
+      2. GET {host_root}/metrics dengan timeout singkat.
+         (strip /v1 karena vLLM expose metrics di root, bukan /v1/metrics)
       3. Cek `vllm:num_requests_running` + `vllm:num_requests_waiting`.
       4. Kalau total == 0 → host ini kosong, langsung pakai.
       5. Kalau semua penuh → fallback ke host pertama.
@@ -56,12 +58,15 @@ def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
     best_load = float("inf")
 
     for host in raw_hosts:
-        # Normalise: pastikan tidak double-slash di akhir
+        # base = URL lengkap yg akan dikembalikan ke ChatOpenAI (misal: http://ip:8000/v1)
         base = host.rstrip("/")
+        # metrics_base = URL root tanpa /v1 untuk ping /metrics
+        # vLLM expose /metrics di root path, BUKAN di /v1/metrics
+        metrics_base = base[:-3] if base.endswith("/v1") else base
         try:
-            resp = _req_lib.get(f"{base}/metrics", timeout=timeout)
+            resp = _req_lib.get(f"{metrics_base}/metrics", timeout=timeout)
             if resp.status_code != 200:
-                print(f"[LLM Router] {base}/metrics returned {resp.status_code}, skip.")
+                print(f"[LLM Router] {metrics_base}/metrics returned {resp.status_code}, skip.")
                 continue
 
             text = resp.text
@@ -72,7 +77,7 @@ def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
             print(f"[LLM Router] {base} → running={running}, waiting={waiting}, total={total_load}")
 
             if total_load == 0:
-                # Host kosong — langsung pilih ini
+                # Host kosong — langsung pilih ini, kembalikan URL lengkap (dengan /v1)
                 print(f"[LLM Router] ✓ Pilih {base} (kosong)")
                 return base
 
@@ -81,7 +86,7 @@ def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
                 best_host = base
 
         except _req_lib.exceptions.RequestException as e:
-            print(f"[LLM Router] Gagal ping {base}/metrics: {e}")
+            print(f"[LLM Router] Gagal ping {metrics_base}/metrics: {e}")
             continue
 
     # Tidak ada host yang kosong — pakai yang paling sedikit bebannya
