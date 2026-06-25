@@ -70,7 +70,7 @@ load_dotenv()
 
 # ── LangSmith — set sebelum import LangChain/LangGraph agar tracing aktif ────
 import os as _os
-_ls_project = _os.getenv("LANGSMITH_PROJECT", "beta-agentic")
+_ls_project = _os.getenv("LANGSMITH_PROJECT", "agentic-workflow")
 _os.environ["LANGSMITH_PROJECT"]  = _ls_project
 _os.environ["LANGSMITH_ENDPOINT"] = _os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
 del _os, _ls_project  # Hapus variabel sementara agar tidak polusi namespace
