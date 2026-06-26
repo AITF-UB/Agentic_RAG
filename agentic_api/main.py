@@ -528,14 +528,15 @@ async def generate_konten(req: GenerateRequest, background_tasks: BackgroundTask
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/sesi/summary", tags=["Sesi"])
-def generate_summary(req: SesiSummaryRequest):
+async def generate_summary(req: SesiSummaryRequest):
     try:
         prompt = load_prompt(
             "summary.j2",
             req=req.model_dump()
         )
         sys_msg = SystemMessage(content="Kamu adalah AI yang merangkum hasil belajar siswa selama satu sesi menjadi JSON.")
-        res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
+        async with _generation_semaphore:
+            res = await llm.ainvoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
         
         return {
@@ -586,7 +587,8 @@ async def submit_essay(req: List[EssayEvalItem]):
                 jawaban_siswa=item.jawaban_siswa
             )
             
-            res = await eval_llm.ainvoke([sys_msg, HumanMessage(content=usr_prompt)])
+            async with _generation_semaphore:
+                res = await eval_llm.ainvoke([sys_msg, HumanMessage(content=usr_prompt)])
             return clean_json_from_llm(res.content)
 
         # Lakukan pemanggilan LLM secara paralel untuk semua soal
@@ -612,7 +614,7 @@ async def submit_essay(req: List[EssayEvalItem]):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/rag/rekomendasi", tags=["RAG"])
-def rekomendasi(req: RekomendasiRequest):
+async def rekomendasi(req: RekomendasiRequest):
     try:
         # Serialize Pydantic objects ke dict agar Jinja2 dapat mengakses field-nya via dot-notation
         available_dicts = [b.model_dump() for b in req.available]
@@ -640,7 +642,8 @@ def rekomendasi(req: RekomendasiRequest):
             "MATERI NULL RULE: If the source entry has materi = null, empty, 'None', or 'N/A', set the 'materi' field in your output to the value of elemen_label instead."
             "MANDATORY OUTPUT: You MUST always return at least 1 recommendation. An empty 'rekomendasi' array is NEVER acceptable when Available or In Progress materials exist."
         ))
-        res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
+        async with _generation_semaphore:
+            res = await llm.ainvoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
 
         # ── Post-processing: paksa nilai materi sesuai sumber di available/in_progress ──────
@@ -664,7 +667,7 @@ def rekomendasi(req: RekomendasiRequest):
         raise HTTPException(status_code=500, detail=f"REKOM_ERR: {str(e)}")
 
 @app.post("/rag/insight", tags=["RAG"])
-def insight(req: InsightRequest):
+async def insight(req: InsightRequest):
     try:
         prompt = load_prompt(
             "insight.j2",
@@ -676,7 +679,8 @@ def insight(req: InsightRequest):
         )
         sys_msg = SystemMessage(content="Kamu adalah Penyedia Motivasi Pendek JSON.")
         usr_msg = HumanMessage(content=prompt)
-        res = llm.invoke([sys_msg, usr_msg])
+        async with _generation_semaphore:
+            res = await llm.ainvoke([sys_msg, usr_msg])
         content = clean_json_from_llm(res.content)
         return content
     except Exception as e:
