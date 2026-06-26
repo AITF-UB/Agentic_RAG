@@ -768,12 +768,26 @@ async def upload_and_run(
         id_guru         = id_guru,
     )
 
-    job = _create_job(filename=safe_name, step=step if step else "all")
-
-    # Jalankan pipeline di background (non-blocking)
-    background_tasks.add_task(_run_pipeline_task, job.job_id, dest_path, params)
-
-    return job
+    if CELERY_AVAILABLE and celery_run_pipeline is not None:
+        # ── Celery path: pipeline berjalan di worker terpisah (production) ────
+        job_params = params.model_dump()
+        job_params["pdf_path"] = str(dest_path)
+        task = celery_run_pipeline.delay(job_params)
+        now = datetime.now().isoformat()
+        return JobInfo(
+            job_id     = task.id,
+            status     = JobStatus.PENDING,
+            filename   = safe_name,
+            step       = step if step else "all",
+            created_at = now,
+            updated_at = now,
+            message    = "Task dikirim ke Celery worker. Pantau via GET /pipeline/job/{job_id}",
+        )
+    else:
+        # ── Fallback: in-process BackgroundTask (dev / tanpa Redis) ──────────
+        job = _create_job(filename=safe_name, step=step if step else "all")
+        background_tasks.add_task(_run_pipeline_task, job.job_id, dest_path, params)
+        return job
 
 
 # ── Run Specific Step (tanpa upload ulang) ─────────────────────────────────
@@ -840,16 +854,19 @@ async def run_step(
 @app.get("/pipeline/job/{job_id}", response_model=JobInfo, tags=["Jobs"], include_in_schema=False)
 def get_job(job_id: str):
     """Ambil status dan hasil dari sebuah job berdasarkan `job_id`."""
-    # Coba baca dari Celery result backend (Redis) dulu
-    job = _celery_result_to_job_info(job_id)
-    if job:
-        return job
-    # Fallback: cari di in-memory store
+    # 1. Cek di in-memory store dulu. Jika ada, berarti ini job lokal / fallback.
     with _jobs_lock:
         job = _jobs.get(job_id)
-    if not job:
-        raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
-    return job
+    if job:
+        return job
+
+    # 2. Jika tidak ada di in-memory, baru coba baca dari Celery (Redis)
+    if CELERY_AVAILABLE and celery_app is not None:
+        celery_job = _celery_result_to_job_info(job_id)
+        if celery_job:
+            return celery_job
+
+    raise HTTPException(status_code=404, detail=f"Job '{job_id}' tidak ditemukan.")
 
 
 @app.get("/pipeline/jobs", response_model=List[JobInfo], tags=["Jobs"])
