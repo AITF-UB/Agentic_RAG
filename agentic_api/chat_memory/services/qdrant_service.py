@@ -1,4 +1,5 @@
 import uuid
+import os
 
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
@@ -21,7 +22,8 @@ class QdrantService:
     ):
         self.client = QdrantClient(
             host=host,
-            port=port
+            port=port,
+            api_key=os.getenv("QDRANT_API_KEY", "")
         )
 
         self.collection_name = collection_name

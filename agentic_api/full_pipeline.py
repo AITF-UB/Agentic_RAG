@@ -1545,7 +1545,12 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         qdrant_host = qdrant_host[7:]
     elif qdrant_host.startswith("https://"):
         qdrant_host = qdrant_host[8:]
-    client = QdrantClient(host=qdrant_host, port=config.qdrant_port, timeout=config.qdrant_timeout)
+    client = QdrantClient(
+        host=qdrant_host, 
+        port=config.qdrant_port, 
+        timeout=config.qdrant_timeout,
+        api_key=os.getenv("QDRANT_API_KEY", "")
+    )
     print(f"\n✅ Connected: {config.qdrant_host}:{config.qdrant_port}")
 
     if config.force_reindex and client.collection_exists(config.collection_name):

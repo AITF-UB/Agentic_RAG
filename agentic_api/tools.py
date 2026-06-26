@@ -35,6 +35,8 @@ if QDRANT_HOST and QDRANT_HOST.startswith("http://"):
 elif QDRANT_HOST and QDRANT_HOST.startswith("https://"):
     QDRANT_HOST = QDRANT_HOST[8:]
 QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
+QDRANT_API_KEY     = os.getenv("QDRANT_API_KEY", "")
+QDRANT_HEADERS     = {"Api-Key": QDRANT_API_KEY} if QDRANT_API_KEY else {}
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
@@ -123,10 +125,10 @@ def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_paylo
     max_retries = 2
     for attempt in range(max_retries + 1):
         try:
-            response = requests.post(url, json=payload, timeout=60)
+            response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
             if response.status_code == 400 and "Not existing vector name error" in response.text:
                 payload["vector"] = vector
-                response = requests.post(url, json=payload, timeout=60)
+                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
             if response.status_code != 200:
                 print(f"⚠️ Qdrant Dense Error Body: {response.text}")
             response.raise_for_status()
@@ -168,7 +170,7 @@ def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payloa
     max_retries = 2
     for attempt in range(max_retries + 1):
         try:
-            response = requests.post(url, json=payload, timeout=60)
+            response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
 
             if response.status_code != 200:
                 print(f"⚠️ Qdrant Splade Error Body: {response.text}")
@@ -222,7 +224,7 @@ def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
     }
     for attempt in range(3):
         try:
-            resp = requests.post(url, json=payload, timeout=30)
+            resp = requests.post(url, json=payload, timeout=30, headers=QDRANT_HEADERS)
             resp.raise_for_status()
             return resp.json().get("result", [])
         except requests.exceptions.RequestException as e:
@@ -259,7 +261,7 @@ def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_r
     }
     for attempt in range(max_retries + 1):
         try:
-            response = requests.post(url, json=payload, timeout=60)
+            response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
             response.raise_for_status()
             return response.json().get("result", {}).get("points", [])
         except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
@@ -343,7 +345,7 @@ def build_bm25_index():
         if offset is not None:
             payload["offset"] = offset
         try:
-            resp = requests.post(url, json=payload, timeout=60)
+            resp = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
             resp.raise_for_status()
             data = resp.json().get("result", {})
             points = data.get("points", [])

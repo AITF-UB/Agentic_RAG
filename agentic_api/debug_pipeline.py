@@ -48,6 +48,7 @@ API_BASE_URL    = os.getenv("DEBUG_API_URL", "http://localhost:8000")
 API_KEY         = os.getenv("API_KEY", "")
 QDRANT_HOST     = os.getenv("QDRANT_HOST", "76.13.195.1")
 QDRANT_PORT     = int(os.getenv("QDRANT_PORT", "6333"))
+QDRANT_API_KEY  = os.getenv("QDRANT_API_KEY", "")
 
 # Collection debug — TERPISAH dari collection utama
 DEBUG_COLLECTION = os.getenv("DEBUG_COLLECTION", "debug_pipeline_test")
@@ -93,6 +94,13 @@ def _api_headers_form() -> dict:
     h = {}
     if API_KEY:
         h["X-API-Key"] = API_KEY
+    return h
+
+
+def _qdrant_headers() -> dict:
+    h = {"Content-Type": "application/json"}
+    if QDRANT_API_KEY:
+        h["Api-Key"] = QDRANT_API_KEY
     return h
 
 
@@ -142,7 +150,7 @@ def test_health():
     # Qdrant Health
     info("Checking Qdrant...")
     try:
-        r = requests.get(f"{QDRANT_BASE}/collections", timeout=10)
+        r = requests.get(f"{QDRANT_BASE}/collections", headers=_qdrant_headers(), timeout=10)
         if r.status_code == 200:
             collections = [c["name"] for c in r.json().get("result", {}).get("collections", [])]
             ok(f"Qdrant OK — {len(collections)} collections")
@@ -298,7 +306,7 @@ def test_inspect_payload(collection: Optional[str] = None, buku_id: Optional[str
 
     # Cek collection ada
     try:
-        r = requests.get(_qdrant_url(f"/collections/{col}"), timeout=10)
+        r = requests.get(_qdrant_url(f"/collections/{col}"), headers=_qdrant_headers(), timeout=10)
         if r.status_code != 200:
             err(f"Collection '{col}' tidak ditemukan")
             return False
@@ -331,8 +339,7 @@ def test_inspect_payload(collection: Optional[str] = None, buku_id: Optional[str
         r = requests.post(
             _qdrant_url(f"/collections/{col}/points/scroll"),
             json=scroll_body,
-            timeout=30,
-        )
+            timeout=30,, headers=_qdrant_headers())
         r.raise_for_status()
         points = r.json().get("result", {}).get("points", [])
 
@@ -494,16 +501,14 @@ def _dense_search(collection: str, vector: list, top_k: int = 5, qdrant_filter: 
         r = requests.post(
             _qdrant_url(f"/collections/{collection}/points/search"),
             json=body,
-            timeout=30,
-        )
+            timeout=30,, headers=_qdrant_headers())
         if r.status_code == 400 and "Not existing vector name" in r.text:
             # Fallback: unnamed vector
             body["vector"] = vector
             r = requests.post(
                 _qdrant_url(f"/collections/{collection}/points/search"),
                 json=body,
-                timeout=30,
-            )
+                timeout=30,, headers=_qdrant_headers())
         r.raise_for_status()
         return r.json().get("result", [])
     except Exception as e:
@@ -518,8 +523,7 @@ def _test_scroll_retrieval(collection: str) -> bool:
         r = requests.post(
             _qdrant_url(f"/collections/{collection}/points/scroll"),
             json={"limit": 5, "with_payload": True, "with_vector": False},
-            timeout=30,
-        )
+            timeout=30,, headers=_qdrant_headers())
         r.raise_for_status()
         points = r.json().get("result", {}).get("points", [])
         if points:
@@ -539,8 +543,7 @@ def _get_unique_buku_ids(collection: str) -> list:
         r = requests.post(
             _qdrant_url(f"/collections/{collection}/points/scroll"),
             json={"limit": 100, "with_payload": {"include": ["buku_id"]}, "with_vector": False},
-            timeout=30,
-        )
+            timeout=30,, headers=_qdrant_headers())
         r.raise_for_status()
         points = r.json().get("result", {}).get("points", [])
         ids = set()
@@ -559,8 +562,7 @@ def _get_unique_source_files(collection: str) -> list:
         r = requests.post(
             _qdrant_url(f"/collections/{collection}/points/scroll"),
             json={"limit": 100, "with_payload": {"include": ["source_file"]}, "with_vector": False},
-            timeout=30,
-        )
+            timeout=30,, headers=_qdrant_headers())
         r.raise_for_status()
         points = r.json().get("result", {}).get("points", [])
         sources = set()
@@ -622,8 +624,7 @@ def test_filter_comparison(collection: Optional[str] = None):
                         "with_payload": {"include": ["source_file", "buku_id"]},
                         "with_vector": False,
                     },
-                    timeout=30,
-                )
+                    timeout=30,, headers=_qdrant_headers())
                 r.raise_for_status()
                 points = r.json().get("result", {}).get("points", [])
                 related_sources = set(p.get("payload", {}).get("source_file", "?") for p in points)
@@ -646,8 +647,7 @@ def _count_by_filter(collection: str, key: str, value: str) -> int:
         r = requests.post(
             _qdrant_url(f"/collections/{collection}/points/count"),
             json={"filter": {"must": [{"key": key, "match": {"value": value}}]}, "exact": True},
-            timeout=10,
-        )
+            timeout=10,, headers=_qdrant_headers())
         r.raise_for_status()
         return r.json().get("result", {}).get("count", 0)
     except Exception:
@@ -741,7 +741,7 @@ def test_cleanup(collection: Optional[str] = None):
         return False
 
     try:
-        r = requests.delete(_qdrant_url(f"/collections/{col}"), timeout=10)
+        r = requests.delete(_qdrant_url(f"/collections/{col}"), headers=_qdrant_headers(), timeout=10)
         if r.status_code == 200:
             ok(f"Collection '{col}' dihapus")
         elif r.status_code == 404:
