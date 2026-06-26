@@ -126,10 +126,10 @@ async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                response = requests.post(url, json=payload, timeout=60)
+                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
                 if response.status_code == 400 and "Not existing vector name error" in response.text:
                     payload["vector"] = vector
-                    response = requests.post(url, json=payload, timeout=60)
+                    response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
                 if response.status_code != 200:
                     print(f"⚠️ Qdrant Dense Error Body: {response.text}")
                 response.raise_for_status()
@@ -174,7 +174,7 @@ async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                response = requests.post(url, json=payload, timeout=60)
+                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
 
                 if response.status_code != 200:
                     print(f"⚠️ Qdrant Splade Error Body: {response.text}")
@@ -231,7 +231,7 @@ async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
         }
         for attempt in range(3):
             try:
-                resp = requests.post(url, json=payload, timeout=30)
+                resp = requests.post(url, json=payload, timeout=30, headers=QDRANT_HEADERS)
                 resp.raise_for_status()
                 return resp.json().get("result", [])
             except requests.exceptions.RequestException as e:
@@ -271,7 +271,7 @@ async def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200,
         }
         for attempt in range(max_retries + 1):
             try:
-                response = requests.post(url, json=payload, timeout=60)
+                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
                 response.raise_for_status()
                 return response.json().get("result", {}).get("points", [])
             except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
