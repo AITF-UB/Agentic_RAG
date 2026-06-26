@@ -888,11 +888,149 @@ def delete_job(job_id: str):
     return {"message": f"Job '{job_id}' dihapus.", "filename": job.filename}
 
 
+@app.delete("/pipeline/buku/{buku_id}", tags=["Pipeline"])
+def delete_book_pipeline_data(
+    buku_id: str,
+    qdrant_host: str = os.getenv("QDRANT_HOST", "76.13.195.1"),
+    qdrant_port: int = int(os.getenv("QDRANT_PORT", "6333")),
+    collection_name: str = os.getenv("QDRANT_PIPELINE_EKSTRACTION", "hybrid_new")
+):
+    """
+    Hapus semua data terkait buku_id tertentu.
+    - Menghapus chunks dari Qdrant.
+    - Menghapus file PDF yang di-upload dari folder uploads/ jika dapat diidentifikasi.
+    """
+    from qdrant_client import QdrantClient
+    from qdrant_client.models import Filter, FieldCondition, MatchValue
+    
+    # 1. Bersihkan host Qdrant (sama seperti di full_pipeline.py)
+    host_clean = qdrant_host
+    if host_clean.startswith("http://"):
+        host_clean = host_clean[7:]
+    elif host_clean.startswith("https://"):
+        host_clean = host_clean[8:]
+        
+    api_key = os.getenv("QDRANT_API_KEY", "")
+    if not api_key:
+        api_key = None
+
+    client = None
+    try:
+        if qdrant_host.startswith("http://") or qdrant_host.startswith("https://"):
+            client = QdrantClient(url=f"{qdrant_host}:{qdrant_port}", api_key=api_key)
+        else:
+            client = QdrantClient(host=host_clean, port=qdrant_port, api_key=api_key, https=False)
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Gagal menghubungkan ke Qdrant: {e}"
+        )
+
+    # 2. Cari tahu filename/source_file dari Qdrant/jobs sebelum dihapus
+    filename_to_delete = None
+    
+    # Cari di in-memory _jobs
+    with _jobs_lock:
+        for job in _jobs.values():
+            if job.result and job.result.get("buku_id") == buku_id:
+                filename_to_delete = job.result.get("pdf_file")
+                break
+
+    # Jika tidak ditemukan di _jobs, coba cari di Qdrant (scroll points)
+    if not filename_to_delete:
+        try:
+            # Lakukan scroll mencari point dengan buku_id ini
+            scroll_result = client.scroll(
+                collection_name=collection_name,
+                scroll_filter=Filter(
+                    must=[
+                        FieldCondition(
+                            key="buku_id",
+                            match=MatchValue(value=buku_id)
+                        )
+                    ]
+                ),
+                limit=1,
+                with_payload=True,
+                with_vectors=False
+            )
+            points = scroll_result[0]
+            if points and points[0].payload:
+                source_file = points[0].payload.get("source_file")
+                if source_file:
+                    for f in UPLOAD_DIR.glob("*"):
+                        if f.is_file() and f.stem.lower() == source_file.lower():
+                            filename_to_delete = f.name
+                            break
+        except Exception as e:
+            print(f"Error scrolling Qdrant: {e}")
+
+    # 3. Hapus data dari Qdrant
+    qdrant_deleted = False
+    try:
+        collections = [c.name for c in client.get_collections().collections]
+        if collection_name in collections:
+            client.delete(
+                collection_name=collection_name,
+                points_selector=Filter(
+                    must=[
+                        FieldCondition(
+                            key="buku_id",
+                            match=MatchValue(value=buku_id)
+                        )
+                    ]
+                )
+            )
+            qdrant_deleted = True
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Gagal menghapus data dari Qdrant: {e}"
+        )
+
+    # 4. Hapus file PDF dari uploads/ jika ditemukan
+    file_deleted = False
+    file_path = None
+    if filename_to_delete:
+        safe_name = Path(filename_to_delete).name
+        file_path = UPLOAD_DIR / safe_name
+        if file_path.exists():
+            try:
+                file_path.unlink()
+                file_deleted = True
+            except Exception as e:
+                print(f"Gagal menghapus file {file_path}: {e}")
+
+    # 5. Hapus juga jobs terkait dari in-memory _jobs
+    jobs_removed = []
+    with _jobs_lock:
+        to_remove = []
+        for j_id, job in _jobs.items():
+            if (job.result and job.result.get("buku_id") == buku_id) or \
+               (filename_to_delete and job.filename == filename_to_delete):
+                to_remove.append(j_id)
+        for j_id in to_remove:
+            removed_job = _jobs.pop(j_id)
+            jobs_removed.append(removed_job.job_id)
+
+    return {
+        "status": "success",
+        "message": f"Data buku dengan ID '{buku_id}' berhasil dihapus.",
+        "buku_id": buku_id,
+        "qdrant_deleted": qdrant_deleted,
+        "collection_name": collection_name,
+        "file_deleted": file_deleted,
+        "filename": str(file_path.name) if file_deleted and file_path else None,
+        "jobs_removed": jobs_removed
+    }
+
+
 # ══════════════════════════════════════════════════════════════════════════════
+
 # CHAT MEMORY ENDPOINTS
 # ══════════════════════════════════════════════════════════════════════════════
 
-CHAT_CHUNK_SIZE = int(os.getenv("CHAT_CHUNK_SIZE"))
+CHAT_CHUNK_SIZE = int(os.getenv("CHAT_CHUNK_SIZE") or "1800")
 
 
 @app.post("/chat-memory/ingest", tags=["Chat Memory"])
