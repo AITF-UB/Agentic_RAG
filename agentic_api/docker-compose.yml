@@ -4,7 +4,7 @@ services:
     image: redis:7-alpine
     container_name: agentic_redis
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes  # Persistensi AOF (crash-safe)
@@ -83,7 +83,7 @@ services:
     container_name: agentic_flower
     command: celery --broker=redis://redis:6379/0 flower --port=5555
     ports:
-      - "5555:5555"
+      - "127.0.0.1:5555:5555"
     depends_on:
       redis:
         condition: service_healthy
