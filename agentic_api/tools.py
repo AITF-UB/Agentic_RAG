@@ -113,7 +113,8 @@ async def embed_text_for_text_vdb(query: str) -> list:
 # ================================================================
 async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_payload: Optional[dict] = None) -> list:
     def _do():
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search"
+        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search",
+        api_key=QDRANT_API_KEY,
         payload = {
             "vector": {"name": "dense", "vector": vector},
             "limit": top_k,
@@ -161,7 +162,8 @@ async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_
         model = get_sparse_model()
         sparse_vector = model.encode_query(query)
 
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search"
+        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search",
+        api_key=QDRANT_API_KEY,
         payload = {
             "vector": {"name": "sparse", "vector": sparse_vector},
             "limit": top_k,
@@ -223,7 +225,8 @@ async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
     """
     def _do():
         if not point_ids: return []
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points"
+        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points",
+        api_key=QDRANT_API_KEY,
         payload = {
             "ids": point_ids,
             "with_payload": True,
@@ -261,7 +264,8 @@ async def _inject_visual_content_batch(collection: str, docs: list) -> list:
 
 async def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_retries: int = 2) -> list:
     def _do():
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/scroll"
+        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/scroll",
+        api_key=QDRANT_API_KEY,
         payload = {
             "filter": scroll_filter,
             "limit": limit,
