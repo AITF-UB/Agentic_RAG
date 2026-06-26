@@ -7,10 +7,10 @@ services:
       - "127.0.0.1:6379:6379"
     volumes:
       - redis_data:/data
-    command: redis-server --appendonly yes  # Persistensi AOF (crash-safe)
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-agentic_secure_redis_pwd}
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-agentic_secure_redis_pwd}", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -28,16 +28,15 @@ services:
     ports:
       - "8002:8002"
     volumes:
-      - ../.env:/app/.env
       - ../extraction:/app/extraction
-      - ./templates:/app/templates
-      - ./bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
       - ../uploads:/app/uploads
       - ../pipeline_output:/app/pipeline_output
       - ../chunks:/app/chunks
       - ../outputs:/app/outputs
     env_file:
       - ../.env
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-agentic_secure_redis_pwd}@redis:6379/0
     depends_on:
       redis:
         condition: service_healthy
@@ -47,26 +46,26 @@ services:
         limits:
           memory: 2G
 
-  # ── Celery Worker: Menjalankan pipeline PDF secara background ─────────────
-  celery_worker:
+  # ── Celery Worker 1: Khusus generasi chat & teks ringan (Paralel 4) ───────
+  celery_worker_default:
     build: .
-    container_name: agentic_celery_worker
+    container_name: agentic_celery_default
     command: >
       celery -A celery_app worker
       --loglevel=info
       --concurrency=${CELERY_CONCURRENCY:-4}
-      -Q celery,pipeline
-      --hostname=worker@%h
+      --max-tasks-per-child=100
+      -Q celery
+      --hostname=default@%h
     volumes:
-      - ../.env:/app/.env
       - ../uploads:/app/uploads
       - ../pipeline_output:/app/pipeline_output
       - ../chunks:/app/chunks
       - ../outputs:/app/outputs
-      - ./templates:/app/templates
-      - ./bm25_hybrid_new.pkl:/app/bm25_hybrid_new.pkl
     env_file:
       - ../.env
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-agentic_secure_redis_pwd}@redis:6379/0
     depends_on:
       redis:
         condition: service_healthy
@@ -74,14 +73,43 @@ services:
     deploy:
       resources:
         limits:
-          memory: 4G  
+          memory: 1.5G
 
+  # ── Celery Worker 2: Khusus ekstraksi PDF Docling berat (Tunggal 1) ────────
+  celery_worker_pipeline:
+    build: .
+    container_name: agentic_celery_pipeline
+    command: >
+      celery -A celery_app worker
+      --loglevel=info
+      --concurrency=1
+      --prefetch-multiplier=1
+      --max-tasks-per-child=10
+      -Q pipeline
+      --hostname=pipeline@%h
+    volumes:
+      - ../uploads:/app/uploads
+      - ../pipeline_output:/app/pipeline_output
+      - ../chunks:/app/chunks
+      - ../outputs:/app/outputs
+    env_file:
+      - ../.env
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-agentic_secure_redis_pwd}@redis:6379/0
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 3.5G
 
   # ── Flower: Monitoring dashboard Celery ───────────────────────────────────
   flower:
     image: mher/flower:2.0
     container_name: agentic_flower
-    command: celery --broker=redis://redis:6379/0 flower --port=5555
+    command: celery --broker=redis://:${REDIS_PASSWORD:-agentic_secure_redis_pwd}@redis:6379/0 flower --port=5555 --basic_auth=${FLOWER_USER:-admin}:${FLOWER_PASSWORD:-agentic_flower_secret_password}
     ports:
       - "127.0.0.1:5555:5555"
     depends_on:

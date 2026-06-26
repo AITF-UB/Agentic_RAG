@@ -397,17 +397,28 @@ app = FastAPI(
 
 import traceback
 from fastapi import Request
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import PlainTextResponse, JSONResponse
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+RATE_LIMIT_GENERATE = os.getenv("RATE_LIMIT_GENERATE", "10/minute")
+RATE_LIMIT_UPLOAD = os.getenv("RATE_LIMIT_UPLOAD", "10/minute")
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
     tb = traceback.format_exc()
-    print(tb)
-    return PlainTextResponse(str(tb), status_code=500)
+    print(tb, file=sys.stderr)
+    return JSONResponse({"detail": "Internal Server Error"}, status_code=500)
 
+_allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[o.strip() for o in _allowed_origins if o.strip()],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -481,7 +492,8 @@ def _run_generate_task_fallback(job_id: str, initial_state: dict):
                 _jobs[job_id].updated_at = datetime.now().isoformat()
 
 @app.post("/konten/generate", response_model=JobInfo, tags=["Konten"])
-async def generate_konten(req: GenerateRequest, background_tasks: BackgroundTasks):
+@limiter.limit(RATE_LIMIT_GENERATE)
+async def generate_konten(request: Request, req: GenerateRequest, background_tasks: BackgroundTasks):
     """
     Generate konten (Soal/Bacaan) secara asynchronous.
     Mengembalikan job_id untuk di-polling menggunakan `GET /job/{job_id}`.
@@ -692,7 +704,9 @@ async def insight(req: InsightRequest):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/pipeline/upload", response_model=JobInfo, status_code=202, tags=["Pipeline"])
+@limiter.limit(RATE_LIMIT_UPLOAD)
 async def upload_and_run(
+    request:          Request,
     background_tasks: BackgroundTasks,
     file:             UploadFile = File(..., description="File PDF yang akan diproses"),
     # Parameter opsional
