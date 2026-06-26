@@ -13,21 +13,27 @@ function renderMindmap(content) {
     
     const g = svg.append("g").attr("transform", `translate(${width/2}, 50)`);
 
-    // Konversi flat nodes -> hierarchical
-    const nodeMap = {};
-    content.nodes.forEach(n => nodeMap[n.id] = { ...n, children: [] });
-    
+    // Dukung format flat array (nodes) ATAU nested tree (root) dari LLM
     let root = null;
-    content.nodes.forEach(n => {
-        if (!n.parent_id) {
-            if (!root) root = nodeMap[n.id];
-        } else {
-            if (nodeMap[n.parent_id]) {
-                nodeMap[n.parent_id].children.push(nodeMap[n.id]);
+    if (content.nodes && Array.isArray(content.nodes)) {
+        const nodeMap = {};
+        content.nodes.forEach(n => nodeMap[n.id] = { ...n, children: [] });
+        
+        content.nodes.forEach(n => {
+            if (!n.parent_id) {
+                if (!root) root = nodeMap[n.id];
+            } else {
+                if (nodeMap[n.parent_id]) {
+                    nodeMap[n.parent_id].children.push(nodeMap[n.id]);
+                }
             }
-        }
-    });
-    if(!root) root = nodeMap[content.nodes[0].id]; // fallback
+        });
+        if(!root) root = nodeMap[content.nodes[0].id]; // fallback
+    } else if (content.root) {
+        root = content.root;
+    }
+
+    if (!root) return;
 
     const rootHierarchy = d3.hierarchy(root);
     
@@ -60,7 +66,7 @@ function renderMindmap(content) {
         .attr("y", -15)
         .attr("width", boxWidth)
         .attr("height", d => {
-            const textLen = (d.data.penjelasan || "").length;
+            const textLen = (d.data.penjelasan || d.data.description || "").length;
             return textLen > 60 ? 120 : (textLen > 30 ? 95 : 75); 
         })
         .attr("rx", 8)
@@ -74,7 +80,7 @@ function renderMindmap(content) {
         .attr("class", "label")
         .attr("dy", 8)
         .attr("text-anchor", "middle")
-        .text(d => d.data.label)
+        .text(d => d.data.label || d.data.name)
         .call(wrapText, boxWidth - 20);
 
     // Gambar Teks Penjelasan (tepat di bawah label)
@@ -82,7 +88,7 @@ function renderMindmap(content) {
         .attr("class", "desc")
         .attr("dy", 35)
         .attr("text-anchor", "middle")
-        .text(d => d.data.penjelasan || "")
+        .text(d => d.data.penjelasan || d.data.description || "")
         .call(wrapText, boxWidth - 20);
 }
 

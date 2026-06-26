@@ -5,12 +5,13 @@ function renderPretest(content) {
     content.soal.forEach((q, idx) => {
         const fixImgUrl = (text) => text.replace(/!\[(.*?)\]\((?!http)(.*?)\)/g, "![$1](http://localhost:8000/extraction/$2)");
 
-        const soalStr = Array.isArray(q.soal) ? q.soal.join('\n') : String(q.soal || "");
+        const soalStr = Array.isArray(q.question) ? q.question.join('\n') : String(q.question || "");
         const soalHtml = marked.parse(fixImgUrl(soalStr));
-        const penHtml = marked.parse(fixImgUrl(String(q.penjelasan || "")));
+        const penHtml = marked.parse(fixImgUrl(String(q.explanation || "")));
 
-        let optsHtml = q.pilihan.map((opt, i) => `
-            <div class="quiz-opt" onclick="this.parentElement.querySelectorAll('.quiz-opt').forEach(el=>el.classList.remove('selected')); this.classList.add('selected'); document.getElementById('expl-pre-${q.id}').style.display='block';">
+        let optionsArr = Array.isArray(q.options) ? q.options : Object.values(q.options || {});
+        let optsHtml = optionsArr.map((opt, i) => `
+            <div class="quiz-opt" onclick="this.parentElement.querySelectorAll('.quiz-opt').forEach(el=>el.classList.remove('selected')); this.classList.add('selected'); document.getElementById('expl-pre-${idx}').style.display='block';">
                 <strong>${String.fromCharCode(65 + i)}.</strong> ${opt}
             </div>
         `).join('');
@@ -25,8 +26,8 @@ function renderPretest(content) {
                 </div>
                 <div style="margin-bottom: 16px;">${soalHtml}</div>
                 <div class="opts-container">${optsHtml}</div>
-                <div class="quiz-explanation" id="expl-pre-${q.id}">
-                    <strong>Kunci: ${String.fromCharCode(65 + q.jawaban)}</strong><br>
+                <div class="quiz-explanation" id="expl-pre-${idx}">
+                    <strong>Kunci: ${q.answer}</strong><br>
                     ${penHtml}
                 </div>
             </div>

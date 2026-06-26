@@ -35,6 +35,8 @@ if QDRANT_HOST and QDRANT_HOST.startswith("http://"):
 elif QDRANT_HOST and QDRANT_HOST.startswith("https://"):
     QDRANT_HOST = QDRANT_HOST[8:]
 QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
+QDRANT_API_KEY     = os.getenv("QDRANT_API_KEY", "")
+QDRANT_HEADERS     = {"Api-Key": QDRANT_API_KEY} if QDRANT_API_KEY else {}
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
@@ -355,7 +357,7 @@ def build_bm25_index():
         if offset is not None:
             payload["offset"] = offset
         try:
-            resp = requests.post(url, json=payload, timeout=60)
+            resp = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
             resp.raise_for_status()
             data = resp.json().get("result", {})
             points = data.get("points", [])

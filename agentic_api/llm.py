@@ -1,4 +1,6 @@
 import os
+import re
+import requests as _req_lib
 from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
 from huggingface_hub import InferenceClient
 from langchain_core.language_models.chat_models import BaseChatModel
@@ -6,6 +8,91 @@ from langchain_core.outputs import ChatResult, ChatGeneration
 from dotenv import load_dotenv
 
 load_dotenv()
+
+
+# =====================================================================
+# VLLM AUTO-ROUTING — Pilih host yang paling longgar berdasarkan /metrics
+# =====================================================================
+def _parse_vllm_metric(metrics_text: str, metric_name: str) -> float:
+    """Parse satu nilai dari output Prometheus plain-text vLLM /metrics."""
+    for line in metrics_text.splitlines():
+        if line.startswith(metric_name + "{") or line.startswith(metric_name + " "):
+            # Format: metric_name{...} <nilai> atau metric_name <nilai>
+            parts = line.rsplit(" ", 1)
+            if len(parts) == 2:
+                try:
+                    return float(parts[1])
+                except ValueError:
+                    pass
+    return 0.0
+
+
+def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
+    """
+    Memilih host vLLM yang paling kosong kapasitasnya dari daftar host.
+
+    Args:
+        hosts_env: String URL host, dipisah ';'. Contoh:
+                   "http://gpu1:8000/v1;http://gpu2:8000/v1"
+        timeout:   Batas waktu (detik) saat nge-ping /metrics tiap host.
+
+    Returns:
+        URL host (dengan /v1 jika ada) yang paling sedikit bebannya.
+        Jika semua host sibuk atau /metrics tidak dapat dijangkau,
+        kembalikan host pertama sebagai default.
+
+    Logika routing (sesuai saran Mas Anjas):
+      1. Looping tiap host dalam urutan.
+      2. GET {host_root}/metrics dengan timeout singkat.
+         (strip /v1 karena vLLM expose metrics di root, bukan /v1/metrics)
+      3. Cek `vllm:num_requests_running` + `vllm:num_requests_waiting`.
+      4. Kalau total == 0 → host ini kosong, langsung pakai.
+      5. Kalau semua penuh → fallback ke host pertama.
+    """
+    raw_hosts = [h.strip() for h in hosts_env.split(";") if h.strip()]
+    if not raw_hosts:
+        return ""
+
+    default_host = raw_hosts[0]
+    best_host = None
+    best_load = float("inf")
+
+    for host in raw_hosts:
+        # base = URL lengkap yg akan dikembalikan ke ChatOpenAI (misal: http://ip:8000/v1)
+        base = host.rstrip("/")
+        # metrics_base = URL root tanpa /v1 untuk ping /metrics
+        # vLLM expose /metrics di root path, BUKAN di /v1/metrics
+        metrics_base = base[:-3] if base.endswith("/v1") else base
+        try:
+            resp = _req_lib.get(f"{metrics_base}/metrics", timeout=timeout)
+            if resp.status_code != 200:
+                print(f"[LLM Router] {metrics_base}/metrics returned {resp.status_code}, skip.")
+                continue
+
+            text = resp.text
+            running = _parse_vllm_metric(text, "vllm:num_requests_running")
+            waiting = _parse_vllm_metric(text, "vllm:num_requests_waiting")
+            total_load = running + waiting
+
+            print(f"[LLM Router] {base} → running={running}, waiting={waiting}, total={total_load}")
+
+            if total_load == 0:
+                # Host kosong — langsung pilih ini, kembalikan URL lengkap (dengan /v1)
+                print(f"[LLM Router] ✓ Pilih {base} (kosong)")
+                return base
+
+            if total_load < best_load:
+                best_load = total_load
+                best_host = base
+
+        except _req_lib.exceptions.RequestException as e:
+            print(f"[LLM Router] Gagal ping {metrics_base}/metrics: {e}")
+            continue
+
+    # Tidak ada host yang kosong — pakai yang paling sedikit bebannya
+    chosen = best_host or default_host
+    print(f"[LLM Router] Semua host sibuk. Fallback ke {chosen} (load={best_load})")
+    return chosen
 
 # =====================================================================
 # 1. HUGGING FACE INFERENCE (CUSTOM CLASS)
@@ -89,14 +176,24 @@ def get_llm():
 
     elif provider == "tim2_vllm":
         from langchain_openai import ChatOpenAI
-        
-        endpoint = os.getenv("TIM2_VLLM_ENDPOINT")
+
+        # Mendukung multi-host (dipisah ';'). Fungsi get_available_llm_host()
+        # akan memilih host yang paling kosong secara real-time berdasarkan
+        # GET /metrics dari vLLM (saran Mas Anjas).
+        hosts_env = os.getenv("TIM2_VLLM_ENDPOINT", "")
+
+        if ";" in hosts_env:
+            # Mode multi-host: pilih host terbaik via /metrics
+            endpoint = get_available_llm_host(hosts_env)
+        else:
+            endpoint = hosts_env.strip()
+
         if endpoint:
             if not endpoint.startswith("http://") and not endpoint.startswith("https://"):
                 endpoint = "http://" + endpoint
             if endpoint.endswith("/chat/completions"):
                 endpoint = endpoint.replace("/chat/completions", "")
-        
+
         # Endpoint dari Tim 2 (menggunakan format OpenAI-compatible dari vLLM)
         return ChatOpenAI(
             openai_api_base=endpoint,
@@ -104,6 +201,8 @@ def get_llm():
             model_name=os.getenv("TIM2_MODEL_ID", "aitf-ub-2026/ub-sr-02-qwen3.5-9b-base-sft-v2"),
             temperature=float(os.getenv("TIM2_TEMPERATURE", "0.2")),
             max_tokens=int(os.getenv("MAX_TOKEN", 4096)),
+            streaming=True,  # Bypass Cloudflare 100s timeout
+            max_retries=1,   # Mencegah retry berulang-ulang yang bikin antrean vLLM meledak
             model_kwargs={"response_format": {"type": "json_object"}},
             extra_body={"chat_template_kwargs": {"enable_thinking": False}}
         )

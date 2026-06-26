@@ -41,6 +41,7 @@ import uuid
 from typing import List, Any, Dict, Optional
 from enum import Enum
 from datetime import datetime, timedelta
+from cachetools import LRUCache
 from pathlib import Path
 
 # Mematikan handler Ctrl+C bawaan Fortran (MKL/Sentence-Transformer)
@@ -66,6 +67,13 @@ from api_models import (
 
 from dotenv import load_dotenv
 load_dotenv()
+
+# ── LangSmith — set sebelum import LangChain/LangGraph agar tracing aktif ────
+import os as _os
+_ls_project = _os.getenv("LANGSMITH_PROJECT", "agentic-workflow")
+_os.environ["LANGSMITH_PROJECT"]  = _ls_project
+_os.environ["LANGSMITH_ENDPOINT"] = _os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
+del _os, _ls_project  # Hapus variabel sementara agar tidak polusi namespace
 
 from chat_memory.schemas import (
     IngestChatRequest,
@@ -104,11 +112,15 @@ except ImportError:
 try:
     from celery_app import celery_app
     from tasks.pipeline_task import run_pipeline as celery_run_pipeline
+    # Verifikasi Redis benar-benar bisa dikoneksi (bukan hanya import berhasil)
+    celery_app.backend.client.ping()
     CELERY_AVAILABLE = True
-except ImportError:
+    print("[Celery] Redis reachable — Celery mode aktif.")
+except Exception:
     CELERY_AVAILABLE = False
     celery_app = None
     celery_run_pipeline = None
+    print("[Celery] Redis tidak tersedia — fallback ke BackgroundTask.")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -182,8 +194,11 @@ class PipelineParams(BaseModel):
 # JOB STORE — Celery Result Backend (Redis) dengan fallback in-memory
 # ══════════════════════════════════════════════════════════════════════════════
 
-# Fallback in-memory store — digunakan jika Celery tidak tersedia
-_jobs: Dict[str, JobInfo] = {}
+# Fallback in-memory store — digunakan jika Celery tidak tersedia.
+# Menggunakan LRUCache (max 500 item) untuk mencegah memory leak saat server
+# berjalan berhari-hari. Job lama yang paling jarang diakses akan otomatis
+# terhapus ketika cache penuh. (Hanya berlaku saat Celery tidak aktif).
+_jobs: LRUCache = LRUCache(maxsize=500)
 _jobs_lock = threading.Lock()
 
 
@@ -441,24 +456,22 @@ def health_check():
 # ================================================================
 
 def _run_generate_task_fallback(job_id: str, initial_state: dict):
-    """Fallback in-process untuk /konten/generate jika Celery tidak tersedia."""
+    """Fallback in-process untuk /konten/generate jika Celery tidak tersedia.
+    
+    Dijalankan di thread pool FastAPI BackgroundTasks. Menggunakan asyncio.run()
+    yang lebih efisien daripada membuat event loop manual per-request.
+    """
+    async def _invoke():
+        return await beta_graph.ainvoke(initial_state)
+
     try:
-        # Panggil graph secara async dalam event loop baru/yang ada
-        # Karena kita sudah berada di background task (yang merupakan thread terpisah di FastAPI), 
-        # kita butuh event loop
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        try:
-            final_state = loop.run_until_complete(beta_graph.ainvoke(initial_state))
-            final_payload = final_state.get("final_payload", {})
-            
-            with _jobs_lock:
-                if job_id in _jobs:
-                    _jobs[job_id].status = JobStatus.SUCCESS
-                    _jobs[job_id].result = final_payload
-                    _jobs[job_id].updated_at = datetime.now().isoformat()
-        finally:
-            loop.close()
+        final_state = asyncio.run(_invoke())
+        final_payload = final_state.get("final_payload", {})
+        with _jobs_lock:
+            if job_id in _jobs:
+                _jobs[job_id].status = JobStatus.SUCCESS
+                _jobs[job_id].result = final_payload
+                _jobs[job_id].updated_at = datetime.now().isoformat()
     except Exception as e:
         error_msg = f"{type(e).__name__}: {str(e)}\n{traceback.format_exc()}"
         with _jobs_lock:
@@ -515,14 +528,15 @@ async def generate_konten(req: GenerateRequest, background_tasks: BackgroundTask
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/sesi/summary", tags=["Sesi"])
-def generate_summary(req: SesiSummaryRequest):
+async def generate_summary(req: SesiSummaryRequest):
     try:
         prompt = load_prompt(
             "summary.j2",
             req=req.model_dump()
         )
         sys_msg = SystemMessage(content="Kamu adalah AI yang merangkum hasil belajar siswa selama satu sesi menjadi JSON.")
-        res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
+        async with _generation_semaphore:
+            res = await llm.ainvoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
         
         return {
@@ -573,7 +587,8 @@ async def submit_essay(req: List[EssayEvalItem]):
                 jawaban_siswa=item.jawaban_siswa
             )
             
-            res = await eval_llm.ainvoke([sys_msg, HumanMessage(content=usr_prompt)])
+            async with _generation_semaphore:
+                res = await eval_llm.ainvoke([sys_msg, HumanMessage(content=usr_prompt)])
             return clean_json_from_llm(res.content)
 
         # Lakukan pemanggilan LLM secara paralel untuk semua soal
@@ -599,7 +614,7 @@ async def submit_essay(req: List[EssayEvalItem]):
 # ══════════════════════════════════════════════════════════════════════════════
 
 @app.post("/rag/rekomendasi", tags=["RAG"])
-def rekomendasi(req: RekomendasiRequest):
+async def rekomendasi(req: RekomendasiRequest):
     try:
         # Serialize Pydantic objects ke dict agar Jinja2 dapat mengakses field-nya via dot-notation
         available_dicts = [b.model_dump() for b in req.available]
@@ -627,7 +642,8 @@ def rekomendasi(req: RekomendasiRequest):
             "MATERI NULL RULE: If the source entry has materi = null, empty, 'None', or 'N/A', set the 'materi' field in your output to the value of elemen_label instead."
             "MANDATORY OUTPUT: You MUST always return at least 1 recommendation. An empty 'rekomendasi' array is NEVER acceptable when Available or In Progress materials exist."
         ))
-        res = llm.invoke([sys_msg, HumanMessage(content=prompt)])
+        async with _generation_semaphore:
+            res = await llm.ainvoke([sys_msg, HumanMessage(content=prompt)])
         content = clean_json_from_llm(res.content)
 
         # ── Post-processing: paksa nilai materi sesuai sumber di available/in_progress ──────
@@ -651,7 +667,7 @@ def rekomendasi(req: RekomendasiRequest):
         raise HTTPException(status_code=500, detail=f"REKOM_ERR: {str(e)}")
 
 @app.post("/rag/insight", tags=["RAG"])
-def insight(req: InsightRequest):
+async def insight(req: InsightRequest):
     try:
         prompt = load_prompt(
             "insight.j2",
@@ -663,7 +679,8 @@ def insight(req: InsightRequest):
         )
         sys_msg = SystemMessage(content="Kamu adalah Penyedia Motivasi Pendek JSON.")
         usr_msg = HumanMessage(content=prompt)
-        res = llm.invoke([sys_msg, usr_msg])
+        async with _generation_semaphore:
+            res = await llm.ainvoke([sys_msg, usr_msg])
         content = clean_json_from_llm(res.content)
         return content
     except Exception as e:
@@ -850,7 +867,7 @@ def delete_job(job_id: str):
 # CHAT MEMORY ENDPOINTS
 # ══════════════════════════════════════════════════════════════════════════════
 
-CHAT_CHUNK_SIZE = os.getenv("CHAT_CHUNK_SIZE")
+CHAT_CHUNK_SIZE = int(os.getenv("CHAT_CHUNK_SIZE"))
 
 
 @app.post("/chat-memory/ingest", tags=["Chat Memory"])
@@ -922,12 +939,8 @@ if EXTRACTION_BASE_DIR.exists():
     app.mount("/extraction", StaticFiles(directory=str(EXTRACTION_BASE_DIR)), name="extraction")
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# LANGSMITH CONFIG
-# ══════════════════════════════════════════════════════════════════════════════
-
-os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
-os.environ["LANGSMITH_PROJECT"] = "beta-agentic"
+# LangSmith config dipindah ke atas (setelah load_dotenv) agar aktif
+# sebelum LangChain/LangGraph diinisialisasi. Lihat bagian atas file ini.
 
 
 # ══════════════════════════════════════════════════════════════════════════════

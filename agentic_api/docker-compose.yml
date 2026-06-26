@@ -4,7 +4,7 @@ services:
     image: redis:7-alpine
     container_name: agentic_redis
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes  # Persistensi AOF (crash-safe)
@@ -21,7 +21,7 @@ services:
     container_name: agentic_api
     command: >
       gunicorn main:app
-      -w 1
+      -w ${GUNICORN_WORKERS:-2}
       -k uvicorn.workers.UvicornWorker
       --bind 0.0.0.0:8002
       --timeout 600
@@ -45,7 +45,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 8G
+          memory: 2G
 
   # ── Celery Worker: Menjalankan pipeline PDF secara background ─────────────
   celery_worker:
@@ -54,7 +54,7 @@ services:
     command: >
       celery -A celery_app worker
       --loglevel=info
-      --concurrency=${CELERY_CONCURRENCY:-2}
+      --concurrency=${CELERY_CONCURRENCY:-4}
       -Q celery,pipeline
       --hostname=worker@%h
     volumes:
@@ -74,7 +74,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 12G  # Pipeline PDF (Docling + VLM) butuh RAM lebih banyak
+          memory: 4G  
+
 
   # ── Flower: Monitoring dashboard Celery ───────────────────────────────────
   flower:
@@ -82,7 +83,7 @@ services:
     container_name: agentic_flower
     command: celery --broker=redis://redis:6379/0 flower --port=5555
     ports:
-      - "5555:5555"
+      - "127.0.0.1:5555:5555"
     depends_on:
       redis:
         condition: service_healthy
