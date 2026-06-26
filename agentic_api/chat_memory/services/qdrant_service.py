@@ -21,11 +21,17 @@ class QdrantService:
         port,
         collection_name
     ):
-        self.client = QdrantClient(
-            host=host,
-            port=port,
-            api_key=os.getenv("QDRANT_API_KEY", "")
-        )
+        api_key = os.getenv("QDRANT_API_KEY", "")
+        if not api_key:
+            api_key = None
+            
+        # Jika host sudah mengandung http/https, kita gunakan parameter url.
+        # Jika tidak, kita gunakan parameter host dan port, secara eksplisit https=False 
+        # agar qdrant-client tidak otomatis mengubah ke HTTPS saat api_key diberikan.
+        if host.startswith("http://") or host.startswith("https://"):
+            self.client = QdrantClient(url=f"{host}:{port}", api_key=api_key)
+        else:
+            self.client = QdrantClient(host=host, port=port, api_key=api_key, https=False)
 
         self.collection_name = collection_name
 
