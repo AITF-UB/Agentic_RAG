@@ -44,7 +44,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2G
+          memory: 8G
 
   # ── Celery Worker 1: Khusus generasi chat & teks ringan (Paralel 4) ───────
   celery_worker_default:
