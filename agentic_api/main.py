@@ -867,7 +867,7 @@ def delete_job(job_id: str):
 # CHAT MEMORY ENDPOINTS
 # ══════════════════════════════════════════════════════════════════════════════
 
-CHAT_CHUNK_SIZE = os.getenv("CHAT_CHUNK_SIZE")
+CHAT_CHUNK_SIZE = (int) os.getenv("CHAT_CHUNK_SIZE")
 
 
 @app.post("/chat-memory/ingest", tags=["Chat Memory"])
