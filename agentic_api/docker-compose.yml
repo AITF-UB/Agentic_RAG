@@ -45,7 +45,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2G
+          memory: 8G
 
   # ── Celery Worker: Menjalankan pipeline PDF secara background ─────────────
   celery_worker:
@@ -74,7 +74,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 4G  
+          memory: 8G  
 
 
   # ── Flower: Monitoring dashboard Celery ───────────────────────────────────
