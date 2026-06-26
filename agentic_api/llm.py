@@ -201,6 +201,8 @@ def get_llm():
             model_name=os.getenv("TIM2_MODEL_ID", "aitf-ub-2026/ub-sr-02-qwen3.5-9b-base-sft-v2"),
             temperature=float(os.getenv("TIM2_TEMPERATURE", "0.2")),
             max_tokens=int(os.getenv("MAX_TOKEN", 4096)),
+            streaming=True,  # Bypass Cloudflare 100s timeout
+            max_retries=1,   # Mencegah retry berulang-ulang yang bikin antrean vLLM meledak
             model_kwargs={"response_format": {"type": "json_object"}},
             extra_body={"chat_template_kwargs": {"enable_thinking": False}}
         )
