@@ -1383,6 +1383,11 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
     Model diambil dari model_registry (singleton) — tidak perlu load ulang
     jika sudah di-preload saat startup.
     """
+    import builtins
+    def print(*args, **kwargs):
+        kwargs.setdefault('flush', True)
+        builtins.print(*args, **kwargs)
+
     import torch
     import numpy as np
     from qdrant_client import QdrantClient
@@ -1541,16 +1546,24 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
 
     # ── Setup Qdrant ──────────────────────────────────────────────────────────
     qdrant_host = config.qdrant_host
-    if qdrant_host.startswith("http://"):
-        qdrant_host = qdrant_host[7:]
-    elif qdrant_host.startswith("https://"):
-        qdrant_host = qdrant_host[8:]
-    client = QdrantClient(
-        host=qdrant_host, 
-        port=config.qdrant_port, 
-        timeout=config.qdrant_timeout,
-        api_key=os.getenv("QDRANT_API_KEY", "")
-    )
+    api_key = os.getenv("QDRANT_API_KEY", "")
+    
+    if qdrant_host.startswith("http://") or qdrant_host.startswith("https://"):
+        client = QdrantClient(
+            url=f"{qdrant_host}:{config.qdrant_port}",
+            api_key=api_key if api_key else None,
+            timeout=config.qdrant_timeout,
+            check_compatibility=False
+        )
+    else:
+        client = QdrantClient(
+            host=qdrant_host,
+            port=config.qdrant_port,
+            api_key=api_key if api_key else None,
+            https=False,
+            timeout=config.qdrant_timeout,
+            check_compatibility=False
+        )
     print(f"\n✅ Connected: {config.qdrant_host}:{config.qdrant_port}")
 
     if config.force_reindex and client.collection_exists(config.collection_name):
