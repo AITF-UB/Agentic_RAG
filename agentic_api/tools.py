@@ -29,14 +29,18 @@ get_sentence_model = get_dense_model
 # ================================================================
 # Models Configuration
 # ================================================================
-QDRANT_HOST        = os.getenv("QDRANT_HOST", "localhost")
-if QDRANT_HOST and QDRANT_HOST.startswith("http://"):
-    QDRANT_HOST = QDRANT_HOST[7:]
-elif QDRANT_HOST and QDRANT_HOST.startswith("https://"):
-    QDRANT_HOST = QDRANT_HOST[8:]
+from qdrant_client import QdrantClient
+from qdrant_client.http import models
+
+QDRANT_HOST_RAW    = os.getenv("QDRANT_HOST", "localhost")
 QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
 QDRANT_API_KEY     = os.getenv("QDRANT_API_KEY", "")
-QDRANT_HEADERS     = {"api-key": QDRANT_API_KEY} if QDRANT_API_KEY else {}
+
+if QDRANT_HOST_RAW and (QDRANT_HOST_RAW.startswith("http://") or QDRANT_HOST_RAW.startswith("https://")):
+    qdrant_client = QdrantClient(url=f"{QDRANT_HOST_RAW}:{QDRANT_PORT}", api_key=QDRANT_API_KEY if QDRANT_API_KEY else None)
+else:
+    qdrant_client = QdrantClient(host=QDRANT_HOST_RAW, port=QDRANT_PORT, api_key=QDRANT_API_KEY if QDRANT_API_KEY else None, https=False)
+
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
@@ -111,109 +115,88 @@ async def embed_text_for_text_vdb(query: str) -> list:
 # ================================================================
 # 2. Qdrant Search Engine
 # ================================================================
-async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_payload: Optional[dict] = None) -> list:
+async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_payload = None) -> list:
     def _do():
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search",
-        api_key=QDRANT_API_KEY,
-        payload = {
-            "vector": {"name": "dense", "vector": vector},
-            "limit": top_k,
-            "with_payload": {
-                "exclude": ["has_visual_content"]
-            },
-        }
-        if filter_payload:
-            payload["filter"] = filter_payload
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
-                if response.status_code == 400 and "Not existing vector name error" in response.text:
-                    payload["vector"] = vector
-                    response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
-                if response.status_code != 200:
-                    print(f"⚠️ Qdrant Dense Error Body: {response.text}")
-                response.raise_for_status()
-                return response.json().get("result", [])
-            except requests.exceptions.ConnectionError as e:
-                if attempt < max_retries:
-                    print(f"⚠️ Qdrant connection error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"❌ Qdrant connection error (after {max_retries + 1} attempts): {e}")
-                return []
-            except requests.exceptions.Timeout:
-                if attempt < max_retries:
-                    print(f"⚠️ Qdrant timeout (attempt {attempt + 1}/{max_retries + 1}), retrying...")
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"❌ Qdrant timeout (after {max_retries + 1} attempts)")
-                return []
+                hits = qdrant_client.search(
+                    collection_name=collection,
+                    query_vector=("dense", vector),
+                    limit=top_k,
+                    query_filter=filter_payload,
+                    with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
+                )
+                
+                results = []
+                for hit in hits:
+                    payload_data = hit.payload or {}
+                    results.append({
+                        "id": hit.id,
+                        "score": hit.score,
+                        "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
+                        "metadata": payload_data,
+                        "source_file": payload_data.get("source_file", "N/A"),
+                        "retrieval_type": "dense"
+                    })
+                return results
             except Exception as e:
-                print(f"❌ Error query Qdrant Dense: {e}")
+                if attempt < max_retries:
+                    print(f"⚠️ Qdrant dense connection error (attempt {attempt + 1}/{max_retries + 1}): {e}, retrying...")
+                    time.sleep(0.5 * (attempt + 1))
+                    continue
+                print(f"❌ Error query Qdrant Dense (after {max_retries + 1} attempts): {e}")
                 return []
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(None, _do)
 
 # ── Hybrid-only components (tidak dipakai saat SEARCH_MODE=dense) ──────────
 
-async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payload: Optional[dict] = None) -> list:
+async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payload = None) -> list:
     def _do():
         model = get_sparse_model()
         sparse_vector = model.encode_query(query)
+        
+        if isinstance(sparse_vector, dict):
+            q_vec = models.NamedSparseVector(
+                name="sparse",
+                vector=models.SparseVector(
+                    indices=sparse_vector["indices"],
+                    values=sparse_vector["values"]
+                )
+            )
+        else:
+            q_vec = ("sparse", sparse_vector)
 
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/search",
-        api_key=QDRANT_API_KEY,
-        payload = {
-            "vector": {"name": "sparse", "vector": sparse_vector},
-            "limit": top_k,
-            "with_payload": {
-                "exclude": ["has_visual_content"]
-            },
-        }
-        if filter_payload:
-            payload["filter"] = filter_payload
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
-
-                if response.status_code != 200:
-                    print(f"⚠️ Qdrant Splade Error Body: {response.text}")
-
-                response.raise_for_status()
-                hits = response.json().get("result", [])
+                hits = qdrant_client.search(
+                    collection_name=collection,
+                    query_vector=q_vec,
+                    limit=top_k,
+                    query_filter=filter_payload,
+                    with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
+                )
 
                 results = []
                 for hit in hits:
-                    # Payload Qdrant FLAT (tidak ada nesting "metadata"),
-                    # jadi seluruh payload diperlakukan sebagai metadata.
-                    payload_data = hit.get("payload", {})
+                    payload_data = hit.payload or {}
                     results.append({
-                        "id": hit.get("id"),
-                        "score": hit.get("score", 0.0),
+                        "id": hit.id,
+                        "score": hit.score,
                         "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
                         "metadata": payload_data,
                         "source_file": payload_data.get("source_file", "N/A"),
                         "retrieval_type": "splade"
                     })
                 return results
-            except requests.exceptions.ConnectionError as e:
+            except Exception as e:
                 if attempt < max_retries:
-                    print(f"⚠️ Qdrant splade connection error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                    print(f"⚠️ Qdrant splade connection error (attempt {attempt + 1}/{max_retries + 1}): {e}, retrying...")
                     time.sleep(0.5 * (attempt + 1))
                     continue
                 print(f"❌ Qdrant splade connection error (after {max_retries + 1} attempts): {e}")
-                return []
-            except requests.exceptions.Timeout:
-                if attempt < max_retries:
-                    print(f"⚠️ Qdrant splade timeout (attempt {attempt + 1}/{max_retries + 1}), retrying...")
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"❌ Qdrant splade timeout (after {max_retries + 1} attempts)")
-                return []
-            except Exception as e:
-                print(f"❌ Error query Qdrant Splade: {e}")
                 return []
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(None, _do)
@@ -225,19 +208,16 @@ async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
     """
     def _do():
         if not point_ids: return []
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points",
-        api_key=QDRANT_API_KEY,
-        payload = {
-            "ids": point_ids,
-            "with_payload": True,
-            "with_vector": False
-        }
         for attempt in range(3):
             try:
-                resp = requests.post(url, json=payload, timeout=30, headers=QDRANT_HEADERS)
-                resp.raise_for_status()
-                return resp.json().get("result", [])
-            except requests.exceptions.RequestException as e:
+                records = qdrant_client.retrieve(
+                    collection_name=collection,
+                    ids=point_ids,
+                    with_payload=True,
+                    with_vectors=False
+                )
+                return [{"id": r.id, "payload": r.payload} for r in records]
+            except Exception as e:
                 if attempt < 2:
                     time.sleep(0.5 * (attempt + 1))
                     continue
@@ -262,31 +242,23 @@ async def _inject_visual_content_batch(collection: str, docs: list) -> list:
             doc.setdefault("metadata", {})["has_visual_content"] = image_lookup.get(doc_id, [])
     return docs
 
-async def _scroll_qdrant(collection: str, scroll_filter: dict, limit: int = 200, max_retries: int = 2) -> list:
+async def _scroll_qdrant(collection: str, scroll_filter, limit: int = 200, max_retries: int = 2) -> list:
     def _do():
-        url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{collection}/points/scroll",
-        api_key=QDRANT_API_KEY,
-        payload = {
-            "filter": scroll_filter,
-            "limit": limit,
-            "with_payload": {
-                "exclude": ["has_visual_content"]
-            },
-        }
         for attempt in range(max_retries + 1):
             try:
-                response = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
-                response.raise_for_status()
-                return response.json().get("result", {}).get("points", [])
-            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+                records, _ = qdrant_client.scroll(
+                    collection_name=collection,
+                    scroll_filter=scroll_filter,
+                    limit=limit,
+                    with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
+                )
+                return [{"id": r.id, "payload": r.payload} for r in records]
+            except Exception as e:
                 if attempt < max_retries:
                     print(f"⚠️ Qdrant scroll error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
                     time.sleep(0.5 * (attempt + 1))
                     continue
                 print(f"❌ Qdrant scroll error (after {max_retries + 1} attempts): {e}")
-                return []
-            except Exception as e:
-                print(f"❌ Error scroll Qdrant: {e}")
                 return []
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(None, _do)
@@ -309,18 +281,15 @@ def _normalize_source_file(raw: str) -> str:
     return name.lower()
 
 
-def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, buku_id: Optional[str] = None) -> Optional[dict]:
-    # Field-field ini ada di top-level payload (sudah dikonfirmasi dari
-    # screenshot payload Qdrant: mata_pelajaran, kelas, source_file, dst
-    # semua flat, tidak nested di bawah "metadata").
+def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, buku_id: Optional[str] = None):
     conditions = []
-    if asset_type: conditions.append({"key": "asset_type", "match": {"value": asset_type}})
-    if source: conditions.append({"key": "source", "match": {"value": source}})
-    if mata_pelajaran: conditions.append({"key": "mata_pelajaran", "match": {"value": mata_pelajaran}})
-    if kelas is not None: conditions.append({"key": "kelas", "match": {"value": kelas}})
-    if source_file: conditions.append({"key": "source_file", "match": {"value": _normalize_source_file(source_file)}})
-    if buku_id: conditions.append({"key": "buku_id", "match": {"value": buku_id}})
-    return {"must": conditions} if conditions else None
+    if asset_type: conditions.append(models.FieldCondition(key="asset_type", match=models.MatchValue(value=asset_type)))
+    if source: conditions.append(models.FieldCondition(key="source", match=models.MatchValue(value=source)))
+    if mata_pelajaran: conditions.append(models.FieldCondition(key="mata_pelajaran", match=models.MatchValue(value=mata_pelajaran)))
+    if kelas is not None: conditions.append(models.FieldCondition(key="kelas", match=models.MatchValue(value=kelas)))
+    if source_file: conditions.append(models.FieldCondition(key="source_file", match=models.MatchValue(value=_normalize_source_file(source_file))))
+    if buku_id: conditions.append(models.FieldCondition(key="buku_id", match=models.MatchValue(value=buku_id)))
+    return models.Filter(must=conditions) if conditions else None
 
 # ================================================================
 # 3. BM25 Sparse Search  (hybrid only)
@@ -348,25 +317,18 @@ def build_bm25_index():
             print(f"⚠️ BM25 cache load error: {e}. Building new index...")
     
     print("⏳ Building BM25 index dari Qdrant (pertama kali)...")
-    url = f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/{TEXT_COLLECTION}/points/scroll"
     all_points = []
     offset = None
     while True:
-        payload = {
-            "limit": 1000,
-            "with_payload": {
-                "exclude": ["has_visual_content"]
-            }
-        }
-        if offset is not None:
-            payload["offset"] = offset
         try:
-            resp = requests.post(url, json=payload, timeout=60, headers=QDRANT_HEADERS)
-            resp.raise_for_status()
-            data = resp.json().get("result", {})
-            points = data.get("points", [])
+            records, offset = qdrant_client.scroll(
+                collection_name=TEXT_COLLECTION,
+                limit=1000,
+                with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"]),
+                offset=offset
+            )
+            points = [{"id": r.id, "payload": r.payload} for r in records]
             all_points.extend(points)
-            offset = data.get("next_page_offset")
             if offset is None: break
         except Exception as e:
             print(f"❌ BM25 scroll error: {e}")
