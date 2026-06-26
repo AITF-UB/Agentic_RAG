@@ -36,7 +36,7 @@ elif QDRANT_HOST and QDRANT_HOST.startswith("https://"):
     QDRANT_HOST = QDRANT_HOST[8:]
 QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
 QDRANT_API_KEY     = os.getenv("QDRANT_API_KEY", "")
-QDRANT_HEADERS     = {"Api-Key": QDRANT_API_KEY} if QDRANT_API_KEY else {}
+QDRANT_HEADERS     = {"api-key": QDRANT_API_KEY} if QDRANT_API_KEY else {}
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
