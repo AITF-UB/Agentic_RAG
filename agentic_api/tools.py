@@ -120,14 +120,15 @@ async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                hits = qdrant_client.search(
+                result = qdrant_client.query_points(
                     collection_name=collection,
-                    query_vector=("dense", vector),
+                    query=vector,
+                    using="dense",
                     limit=top_k,
                     query_filter=filter_payload,
                     with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
                 )
-                
+                hits = result.points
                 results = []
                 for hit in hits:
                     payload_data = hit.payload or {}
@@ -158,26 +159,25 @@ async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_
         sparse_vector = model.encode_query(query)
         
         if isinstance(sparse_vector, dict):
-            q_vec = models.NamedSparseVector(
-                name="sparse",
-                vector=models.SparseVector(
-                    indices=sparse_vector["indices"],
-                    values=sparse_vector["values"]
-                )
+            q_sparse = models.SparseVector(
+                indices=sparse_vector["indices"],
+                values=sparse_vector["values"]
             )
         else:
-            q_vec = ("sparse", sparse_vector)
+            q_sparse = sparse_vector
 
         max_retries = 2
         for attempt in range(max_retries + 1):
             try:
-                hits = qdrant_client.search(
+                result = qdrant_client.query_points(
                     collection_name=collection,
-                    query_vector=q_vec,
+                    query=q_sparse,
+                    using="sparse",
                     limit=top_k,
                     query_filter=filter_payload,
                     with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
                 )
+                hits = result.points
 
                 results = []
                 for hit in hits:
