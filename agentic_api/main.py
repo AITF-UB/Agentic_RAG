@@ -407,7 +407,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origin_regex=".*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -871,6 +871,7 @@ CHAT_CHUNK_SIZE = int(os.getenv("CHAT_CHUNK_SIZE"))
 
 
 @app.post("/chat-memory/ingest", tags=["Chat Memory"])
+@app.post("/chat-memory/ingest/", tags=["Chat Memory"], include_in_schema=False)
 def ingest_chat_memory(request: IngestChatRequest):
     """Simpan satu pasangan Q&A (user + assistant) ke Qdrant chat memory."""
     page_content = f"""User:\n{request.user_message}\n\nAssistant:\n{request.assistant_message}""".strip()
@@ -899,6 +900,7 @@ def ingest_chat_memory(request: IngestChatRequest):
 
 
 @app.post("/chat-memory/retrieve", tags=["Chat Memory"])
+@app.post("/chat-memory/retrieve/", tags=["Chat Memory"], include_in_schema=False)
 def retrieve_chat_memory(request: RetrieveChatRequest):
     """Ambil histori chat yang relevan berdasarkan query semantik."""
     query_embedding = embedding_service.embed(request.query)
