@@ -11,7 +11,8 @@ from qdrant_client.models import (
     MatchValue
 )
 
-
+from dotenv import load_dotenv
+load_dotenv()
 class QdrantService:
 
     def __init__(
