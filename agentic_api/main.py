@@ -415,14 +415,25 @@ async def global_exception_handler(request: Request, exc: Exception):
     print(tb, file=sys.stderr)
     return JSONResponse({"detail": "Internal Server Error"}, status_code=500)
 
-_allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origin_regex=".*",
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+_origins_env = os.getenv("ALLOWED_ORIGINS", "*").strip()
+if _origins_env == "*":
+    # Mode wildcard aman untuk Starlette allow_credentials=True
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origin_regex=".*",
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+else:
+    # Mode production: kunci ketat hanya pada domain di .env
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[o.strip() for o in _origins_env.split(",") if o.strip()],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__), "templates")))
 llm = get_llm()

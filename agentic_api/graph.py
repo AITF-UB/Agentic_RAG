@@ -17,16 +17,9 @@ env = Environment(loader=FileSystemLoader(os.path.join(os.path.dirname(__file__)
 # llm diinisialisasi secara dinamis per-request di _call_generation_llm()
 # agar get_available_llm_host() bisa menentukan host vLLM yang tersedia setiap saat.
 
-async def _safe_ainvoke(llm_instance, messages, max_retries=3, delay=15):
-    """Bungkus LLM invoke dengan mekanisme retry otomatis untuk menghindari Cloudflare 524 Timeout."""
-    for attempt in range(max_retries):
-        try:
-            return await llm_instance.ainvoke(messages)
-        except Exception as e:
-            if attempt == max_retries - 1:
-                raise e
-            print(f"[RETRY] LLM Error (Attempt {attempt+1}/{max_retries}): {e}. Retrying in {delay}s...")
-            await asyncio.sleep(delay)
+async def _safe_ainvoke(llm_instance, messages, max_retries=0, delay=0):
+    """Langsung invoke LLM tanpa loop aplikasi (murni mengandalkan Celery Task Retry di luar)."""
+    return await llm_instance.ainvoke(messages)
 
 def load_prompt(template_name: str, **kwargs) -> str:
     template = env.get_template(template_name)

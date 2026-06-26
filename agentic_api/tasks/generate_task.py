@@ -30,10 +30,16 @@ print(f"[generate_task] LangSmith project: {_ls_project}")
 # Import graph (setelah load_dotenv agar env sudah tersedia)
 from graph import beta_graph
 
-@shared_task(bind=True, name="tasks.generate_task.run_generation")
+@shared_task(
+    bind=True,
+    name="tasks.generate_task.run_generation",
+    max_retries=2,
+    default_retry_delay=30,
+)
 def run_generation(self, initial_state: dict):
     """
     Menjalankan LangGraph secara sinkron (membungkus asyncio).
+    Mendukung murni auto-retry Celery jika koneksi LLM gagal/timeout.
     """
     print(f"[generate_task] Started generation for tipe: {initial_state.get('tipe')}")
     
@@ -50,5 +56,8 @@ def run_generation(self, initial_state: dict):
         
     except Exception as e:
         error_msg = f"{type(e).__name__}: {str(e)}\n{traceback.format_exc()}"
-        print(f"[generate_task] FAILED: {error_msg}")
-        raise Exception(error_msg)
+        print(f"[generate_task] FAILED (triggering Celery retry): {error_msg}")
+        try:
+            raise self.retry(exc=e, countdown=30)
+        except self.MaxRetriesExceededError:
+            raise Exception(error_msg)
