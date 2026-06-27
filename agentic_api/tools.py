@@ -13,6 +13,8 @@ import asyncio
 import base64
 import io
 import boto3
+import hashlib
+import mimetypes
 from botocore.exceptions import ClientError
 
 from dotenv import load_dotenv
@@ -88,35 +90,49 @@ if MINIO_ENDPOINT and MINIO_ROOT_USER and MINIO_ROOT_PASSWORD:
     except Exception as e:
         print(f"⚠️ MinIO: Failed to set public policy for bucket '{MINIO_BUCKET_NAME}': {e}")
 
+_upload_locks: Dict[str, asyncio.Lock] = {}
+
 async def _upload_image_to_minio_if_not_exists(filename: str, base64_str: str) -> bool:
     """Uploads base64 image to MinIO if it doesn't already exist."""
     if not s3_client or not base64_str:
         return False
         
-    def _do():
-        try:
-            s3_client.head_object(Bucket=MINIO_BUCKET_NAME, Key=filename)
-            return True # Sudah ada, skip upload
-        except ClientError as e:
-            if e.response['Error']['Code'] == '404':
-                try:
-                    image_data = base64.b64decode(base64_str)
-                    s3_client.put_object(
-                        Bucket=MINIO_BUCKET_NAME,
-                        Key=filename,
-                        Body=image_data,
-                        ContentType='image/jpeg'
-                    )
-                    return True
-                except Exception as upload_err:
-                    print(f"❌ Error uploading to MinIO: {upload_err}")
+    if filename not in _upload_locks:
+        _upload_locks[filename] = asyncio.Lock()
+        
+    async with _upload_locks[filename]:
+        def _do():
+            try:
+                s3_client.head_object(Bucket=MINIO_BUCKET_NAME, Key=filename)
+                return True # Sudah ada, skip upload
+            except ClientError as e:
+                if e.response['Error']['Code'] == '404':
+                    try:
+                        # Clean base64 string
+                        clean_b64 = base64_str.replace("\n", "").replace("\r", "").strip()
+                        image_data = base64.b64decode(clean_b64)
+                        
+                        # Guess mimetype
+                        content_type, _ = mimetypes.guess_type(filename)
+                        content_type = content_type or 'image/jpeg'
+                        
+                        response = s3_client.put_object(
+                            Bucket=MINIO_BUCKET_NAME,
+                            Key=filename,
+                            Body=image_data,
+                            ContentType=content_type
+                        )
+                        # print(f"✅ MinIO upload success: {response}") # Optional logging
+                        return True
+                    except Exception as upload_err:
+                        print(f"❌ Error uploading to MinIO: {upload_err}")
+                        return False
+                else:
+                    print(f"❌ Error checking MinIO object: {e}")
                     return False
-            else:
-                print(f"❌ Error checking MinIO object: {e}")
-                return False
-                
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(None, _do)
+                    
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, _do)
 
 # ================================================================
 # Search Mode Configuration
@@ -175,7 +191,7 @@ async def embed_text_for_text_vdb(query: str) -> list:
     
     model = get_sentence_model()
     prefixed = f"query: {cache_key}"
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     vector = await loop.run_in_executor(None, lambda: model.encode([prefixed], normalize_embeddings=True, convert_to_numpy=True)[0])
     vector_list = vector.tolist()
     
@@ -219,7 +235,7 @@ async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter
                     continue
                 print(f"❌ Error query Qdrant Dense (after {max_retries + 1} attempts): {e}")
                 return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 # ── Hybrid-only components (tidak dipakai saat SEARCH_MODE=dense) ──────────
@@ -269,7 +285,7 @@ async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_
                     continue
                 print(f"❌ Qdrant splade connection error (after {max_retries + 1} attempts): {e}")
                 return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
@@ -294,7 +310,7 @@ async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
                     continue
                 print(f"⚠️ Failed to batch fetch points after 3 attempts: {e}")
         return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 async def _inject_visual_content_batch(collection: str, docs: list) -> list:
@@ -331,7 +347,7 @@ async def _scroll_qdrant(collection: str, scroll_filter, limit: int = 200, max_r
                     continue
                 print(f"❌ Qdrant scroll error (after {max_retries + 1} attempts): {e}")
                 return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 def _normalize_source_file(raw: str) -> str:
@@ -438,7 +454,7 @@ async def sparse_search(query: str, top_k: int = 10, mata_pelajaran: Optional[st
         if _bm25 is None: return None
         return _bm25.get_scores(tokenized_query)
 
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     scores = await loop.run_in_executor(None, _prepare)
     
     if scores is None: return []
@@ -595,7 +611,7 @@ async def rerank_results(query: str, docs: list, top_k: int = 5) -> list:
     if not docs: return []
     reranker = get_reranker()
     pairs = [(query, doc.get("expanded_text", doc["text"])) for doc in docs]
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     scores = await loop.run_in_executor(None, lambda: reranker.predict(pairs, batch_size=16, show_progress_bar=False))
     ranked = sorted(zip(scores, docs), key=lambda x: x[0], reverse=True)
 
@@ -753,20 +769,31 @@ class RAGEngine:
                 # metadata sekarang = seluruh payload (flat), jadi
                 # has_visual_content benar-benar terbaca dari Qdrant.
                 vis = t.get("metadata", {}).get("has_visual_content", [])
-                vis_list = vis if isinstance(vis, list) else [vis] if isinstance(vis, str) else []
+                vis_list = (
+                    vis if isinstance(vis, list)
+                    else [vis] if isinstance(vis, (str, dict))
+                    else []
+                )
 
                 for img in vis_list:
                     img_path = img.get("path") if isinstance(img, dict) else str(img)
                     img_base64 = img.get("base64") if isinstance(img, dict) else None
                     
+                    if not img_base64:
+                        continue
+                    
                     # Cek apakah image sudah ada di list
-                    if not any(x.get("path") == img_path for x in images if isinstance(x, dict)):
+                    if img_path and not any(x.get("path") == img_path for x in images if isinstance(x, dict)):
                         # Ambil potongan teks chunk asli sebagai konteks visual gambar (max 600 chars)
                         context_snippet = t.get("text", "")[:600]
                         img_id = f"IMG-{len(images)+1:03d}"
                         
-                        # Upload ke MinIO dan dapatkan public URL
-                        minio_filename = os.path.basename(img_path) if img_path else f"{uuid.uuid4().hex}.jpg"
+                        # Generate unique filename for MinIO
+                        path_hash = hashlib.md5(img_path.encode('utf-8', errors='replace')).hexdigest()[:8]
+                        basename = os.path.basename(img_path.rstrip("/")) or "img"
+                        basename = re.sub(r'[^\w\-.]', '_', basename)
+                        minio_filename = f"{path_hash}_{basename}"
+                        
                         minio_url = None
                         
                         if s3_client and img_base64:
