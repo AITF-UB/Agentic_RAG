@@ -10,6 +10,10 @@ import requests
 from pathlib import Path
 from typing import Optional, List, Dict, Any
 import asyncio
+import base64
+import io
+import boto3
+from botocore.exceptions import ClientError
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -46,6 +50,73 @@ TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
 
 BM25_CACHE_PATH = Path(__file__).resolve().parent / f"bm25_{TEXT_COLLECTION}.pkl"
+
+# ================================================================
+# MinIO Configuration
+# ================================================================
+MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "http://localhost:9000")
+MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER", "miniosr6admin")
+MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD", "minio_sr_2026")
+MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME", "bucket-sementara")
+
+s3_client = None
+if MINIO_ENDPOINT and MINIO_ROOT_USER and MINIO_ROOT_PASSWORD:
+    s3_client = boto3.client(
+        's3',
+        endpoint_url=MINIO_ENDPOINT,
+        aws_access_key_id=MINIO_ROOT_USER,
+        aws_secret_access_key=MINIO_ROOT_PASSWORD,
+        region_name='us-east-1' # Default untuk MinIO
+    )
+    
+    # Set Public Read Policy
+    try:
+        policy = {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "PublicRead",
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": ["s3:GetObject"],
+                    "Resource": [f"arn:aws:s3:::{MINIO_BUCKET_NAME}/*"]
+                }
+            ]
+        }
+        s3_client.put_bucket_policy(Bucket=MINIO_BUCKET_NAME, Policy=json.dumps(policy))
+        print(f"✅ MinIO: Bucket '{MINIO_BUCKET_NAME}' policy set to Public Read.")
+    except Exception as e:
+        print(f"⚠️ MinIO: Failed to set public policy for bucket '{MINIO_BUCKET_NAME}': {e}")
+
+async def _upload_image_to_minio_if_not_exists(filename: str, base64_str: str) -> bool:
+    """Uploads base64 image to MinIO if it doesn't already exist."""
+    if not s3_client or not base64_str:
+        return False
+        
+    def _do():
+        try:
+            s3_client.head_object(Bucket=MINIO_BUCKET_NAME, Key=filename)
+            return True # Sudah ada, skip upload
+        except ClientError as e:
+            if e.response['Error']['Code'] == '404':
+                try:
+                    image_data = base64.b64decode(base64_str)
+                    s3_client.put_object(
+                        Bucket=MINIO_BUCKET_NAME,
+                        Key=filename,
+                        Body=image_data,
+                        ContentType='image/jpeg'
+                    )
+                    return True
+                except Exception as upload_err:
+                    print(f"❌ Error uploading to MinIO: {upload_err}")
+                    return False
+            else:
+                print(f"❌ Error checking MinIO object: {e}")
+                return False
+                
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, _do)
 
 # ================================================================
 # Search Mode Configuration
@@ -693,10 +764,28 @@ class RAGEngine:
                         # Ambil potongan teks chunk asli sebagai konteks visual gambar (max 600 chars)
                         context_snippet = t.get("text", "")[:600]
                         img_id = f"IMG-{len(images)+1:03d}"
+                        
+                        # Upload ke MinIO dan dapatkan public URL
+                        minio_filename = os.path.basename(img_path) if img_path else f"{uuid.uuid4().hex}.jpg"
+                        minio_url = None
+                        
+                        if s3_client and img_base64:
+                            # Bersihkan string base64 jika ada header data URI
+                            clean_base64 = img_base64
+                            if ',' in img_base64:
+                                clean_base64 = img_base64.split(',', 1)[1]
+                                
+                            success = await _upload_image_to_minio_if_not_exists(minio_filename, clean_base64)
+                            if success:
+                                base_url = MINIO_ENDPOINT.rstrip('/')
+                                minio_url = f"{base_url}/{MINIO_BUCKET_NAME}/{minio_filename}"
+                                
                         images.append({
                             "id": img_id,
                             "path": img_path,
-                            "base64": img_base64,
+                            "minio_url": minio_url,
+                            # Jika berhasil dan ada url, jangan kembalikan base64 supaya lebih ringan
+                            "base64": None if minio_url else img_base64,
                             "context": context_snippet
                         })
 
