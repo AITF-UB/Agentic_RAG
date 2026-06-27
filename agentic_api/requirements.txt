@@ -15,6 +15,7 @@ langchain_aws
 langchain_openai
 langchain_community
 boto3
+botocore
 jinja2
 docling
 pypdf
@@ -29,4 +30,4 @@ slowapi
 # Message Broker
 celery[redis]==5.3.6
 redis==5.0.4
-flower==2.0.1
+flower==2.0.1
