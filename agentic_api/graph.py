@@ -431,9 +431,9 @@ def structurer_node(state: AgentState) -> dict:
             if "konten_markdown" in content:
                 teks_markdown = content["konten_markdown"]
                 references_to_append = []
-                for img_id, b64_data in visual_assets.items():
+                for img_id, minio_link in visual_assets.items():
                     if f"[{img_id}]" in teks_markdown:
-                        references_to_append.append(f"[{img_id}]: {b64_data}")
+                        references_to_append.append(f"[{img_id}]: {minio_link}")
                 
                 if references_to_append:
                     content["konten_markdown"] = teks_markdown + "\n\n" + "\n".join(references_to_append)
