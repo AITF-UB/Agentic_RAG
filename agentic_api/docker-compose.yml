@@ -110,6 +110,8 @@ services:
     image: mher/flower:2.0
     container_name: agentic_flower
     command: celery --broker=redis://:${REDIS_PASSWORD:-agentic_secure_redis_pwd}@redis:6379/0 flower --port=5555 --basic_auth=${FLOWER_USER:-admin}:${FLOWER_PASSWORD:-agentic_flower_secret_password}
+    env_file:
+      - ../.env
     ports:
       - "5555:5555"
     depends_on:
