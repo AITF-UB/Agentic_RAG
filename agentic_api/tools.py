@@ -816,8 +816,42 @@ class RAGEngine:
                             "context": context_snippet
                         })
 
+        # Setelah loop images selesai, bangun lookup minio_url
+        minio_url_lookup = {
+            img["path"]: img["minio_url"]
+            for img in images
+            if img.get("path") and img.get("minio_url")
+        }
+
+        def _process_visual_context(t):
+            vis = t.get("metadata", {}).get("has_visual_content", [])
+            vis_list = vis if isinstance(vis, list) else [vis] if isinstance(vis, (str, dict)) else []
+            processed = []
+            for item in vis_list:
+                path_key = item.get("path") if isinstance(item, dict) else str(item)
+                has_minio = bool(minio_url_lookup.get(path_key))
+                
+                new_item = {
+                    "path": path_key,
+                    "minio_url": minio_url_lookup.get(path_key)
+                }
+                
+                # Fallback: kirim base64 hanya jika minio_url tidak tersedia
+                if not has_minio and isinstance(item, dict) and item.get("base64"):
+                    new_item["base64"] = item.get("base64")
+                    
+                processed.append(new_item)
+            return processed
+
         return {
-            "text": [{"text": t.get("expanded_text", t["text"]), "source_file": t["source_file"], "visual_context": t.get("metadata", {}).get("has_visual_content", [])} for t in texts],
+            "text": [
+                {
+                    "text": t.get("expanded_text", t["text"]),
+                    "source_file": t["source_file"],
+                    "visual_context": _process_visual_context(t)
+                }
+                for t in texts
+            ],
             "images": images
         }
 
