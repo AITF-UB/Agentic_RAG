@@ -54,10 +54,10 @@ BM25_CACHE_PATH = Path(__file__).resolve().parent / f"bm25_{TEXT_COLLECTION}.pkl
 # ================================================================
 # MinIO Configuration
 # ================================================================
-MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "http://localhost:9000")
-MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER", "miniosr6admin")
-MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD", "minio_sr_2026")
-MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME", "bucket-sementara")
+MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
+MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
+MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
+MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME")
 
 s3_client = None
 if MINIO_ENDPOINT and MINIO_ROOT_USER and MINIO_ROOT_PASSWORD:
