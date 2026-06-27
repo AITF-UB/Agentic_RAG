@@ -53,7 +53,7 @@ services:
     command: >
       celery -A celery_app worker
       --loglevel=info
-      --concurrency=${CELERY_CONCURRENCY:-4}
+      --concurrency=${CELERY_CONCURRENCY}
       --max-tasks-per-child=100
       -Q celery
       --hostname=default@%h
@@ -111,7 +111,7 @@ services:
     container_name: agentic_flower
     command: celery --broker=redis://:${REDIS_PASSWORD:-agentic_secure_redis_pwd}@redis:6379/0 flower --port=5555 --basic_auth=${FLOWER_USER:-admin}:${FLOWER_PASSWORD:-agentic_flower_secret_password}
     ports:
-      - "127.0.0.1:5555:5555"
+      - "5555:5555"
     depends_on:
       redis:
         condition: service_healthy
