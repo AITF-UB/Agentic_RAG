@@ -53,8 +53,8 @@ services:
     command: >
       celery -A celery_app worker
       --loglevel=info
-      --concurrency=${CELERY_CONCURRENCY:-1}
-      --max-tasks-per-child=100
+      --concurrency=${CELERY_CONCURRENCY:-6}
+      --max-tasks-per-child=500
       -Q celery
       --hostname=default@%h
     volumes:
@@ -73,7 +73,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1.5G
+          memory: 4G
 
   # ── Celery Worker 2: Khusus ekstraksi PDF Docling berat (Tunggal 1) ────────
   celery_worker_pipeline:

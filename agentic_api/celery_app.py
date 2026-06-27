@@ -53,7 +53,7 @@ celery_app.conf.update(
     task_time_limit=1000,            # Hard: kill worker setelah ~16.5 menit
 
     # Reliability Broker: pemulihan cepat insiden server mati (< 20 menit)
-    broker_transport_options={"visibility_timeout": 1200}, # 20 menit (> task_time_limit)
+    broker_transport_options={"visibility_timeout": 1800}, # 20 menit (> task_time_limit)
 
     # Routing: pipeline task masuk ke queue 'pipeline'
     task_routes={
