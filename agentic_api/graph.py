@@ -113,9 +113,13 @@ async def retrieve_node(state: AgentState) -> dict:
             img_context = img_info["context"].replace("\n", " ") # Bersihkan newline agar rapi
             img_ctx_str += f"[{img_id}] (filename: {os.path.basename(img_path)}) - Deskripsi: {img_context}...\n\n"
             
-            # Extract base64 for frontend
+            # Ambil minio_url atau base64 untuk frontend
+            minio_url = img_info.get("minio_url")
             b64_data = img_info.get("base64")
-            if b64_data:
+            
+            if minio_url:
+                visual_assets[img_id] = minio_url
+            elif b64_data:
                 mime_type = img_info.get("mime_type", "image/png")
                 if b64_data.startswith("data:"):
                     visual_assets[img_id] = b64_data
