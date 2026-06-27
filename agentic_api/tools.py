@@ -37,9 +37,9 @@ QDRANT_PORT        = int(os.getenv("QDRANT_PORT", 6333))
 QDRANT_API_KEY     = os.getenv("QDRANT_API_KEY", "")
 
 if QDRANT_HOST_RAW and (QDRANT_HOST_RAW.startswith("http://") or QDRANT_HOST_RAW.startswith("https://")):
-    qdrant_client = QdrantClient(url=f"{QDRANT_HOST_RAW}:{QDRANT_PORT}", api_key=QDRANT_API_KEY if QDRANT_API_KEY else None, check_compatibility=False)
+    qdrant_client = QdrantClient(url=f"{QDRANT_HOST_RAW}:{QDRANT_PORT}", api_key=QDRANT_API_KEY if QDRANT_API_KEY else None, timeout=120, check_compatibility=False)
 else:
-    qdrant_client = QdrantClient(host=QDRANT_HOST_RAW, port=QDRANT_PORT, api_key=QDRANT_API_KEY if QDRANT_API_KEY else None, https=False, check_compatibility=False)
+    qdrant_client = QdrantClient(host=QDRANT_HOST_RAW, port=QDRANT_PORT, api_key=QDRANT_API_KEY if QDRANT_API_KEY else None, https=False, timeout=120, check_compatibility=False)
 
 TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 

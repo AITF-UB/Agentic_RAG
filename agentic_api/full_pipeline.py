@@ -115,7 +115,7 @@ class PipelineConfig:
     qdrant_host:      str  = _env_str("QDRANT_HOST", "76.13.195.1")
     qdrant_port:      int  = int(_env_str("QDRANT_PORT", "6333"))
     collection_name:  str  = _env_str("QDRANT_PIPELINE_EKSTRACTION", "test_pipeline")
-    qdrant_timeout:   int  = 60
+    qdrant_timeout:   int  = 120
     force_reindex:    bool = False
     batch_size:       int  = 32
 
