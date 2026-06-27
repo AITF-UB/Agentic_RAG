@@ -53,7 +53,7 @@ services:
     command: >
       celery -A celery_app worker
       --loglevel=info
-      --concurrency=${CELERY_CONCURRENCY}
+      --concurrency=${CELERY_CONCURRENCY:-1}
       --max-tasks-per-child=100
       -Q celery
       --hostname=default@%h
