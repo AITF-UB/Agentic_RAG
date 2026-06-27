@@ -493,24 +493,31 @@ builder.add_conditional_edges(
     }
 )
 
-for node_name in ["bacaan", "pretest", "quiz_pg", "quiz_essay", "flashcard", "mindmap"]:
-    builder.add_edge(node_name, "evaluate")
+ENABLE_EVALUATOR = os.getenv("EVAL_NODE", "false").lower() in ("true", "1", "yes")
 
-# Setelah evaluasi (auto-correction AI)
-builder.add_conditional_edges(
-    "evaluate", 
-    should_revise, 
-    {
-        "bacaan": "bacaan",
-        "pretest": "pretest",
-        "quiz_pg": "quiz_pg",
-        "quiz_essay": "quiz_essay",
-        "flashcard": "flashcard",
-        "mindmap": "mindmap",
-        "pass": "structure"
-    }
-)
+if ENABLE_EVALUATOR:
+    for node_name in ["bacaan", "pretest", "quiz_pg", "quiz_essay", "flashcard", "mindmap"]:
+        builder.add_edge(node_name, "evaluate")
+
+    # Setelah evaluasi (auto-correction AI)
+    builder.add_conditional_edges(
+        "evaluate", 
+        should_revise, 
+        {
+            "bacaan": "bacaan",
+            "pretest": "pretest",
+            "quiz_pg": "quiz_pg",
+            "quiz_essay": "quiz_essay",
+            "flashcard": "flashcard",
+            "mindmap": "mindmap",
+            "pass": "structure"
+        }
+    )
+else:
+    for node_name in ["bacaan", "pretest", "quiz_pg", "quiz_essay", "flashcard", "mindmap"]:
+        builder.add_edge(node_name, "structure")
 
 builder.add_edge("structure", END)
 
 beta_graph = builder.compile()
+
