@@ -411,7 +411,7 @@ def build_bm25_index():
             records, offset = qdrant_client.scroll(
                 collection_name=TEXT_COLLECTION,
                 limit=1000,
-                with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"]),
+                with_payload=True,
                 offset=offset
             )
             points = [{"id": r.id, "payload": r.payload} for r in records]
