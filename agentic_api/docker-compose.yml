@@ -55,7 +55,7 @@ services:
       --loglevel=info
       --concurrency=${CELERY_CONCURRENCY:-6}
       --max-tasks-per-child=500
-      -Q celery
+      -Q celery,generation
       --hostname=default@%h
     volumes:
       - ../uploads:/app/uploads

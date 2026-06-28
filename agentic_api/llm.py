@@ -1,5 +1,7 @@
 import os
 import re
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests as _req_lib
 from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
 from huggingface_hub import InferenceClient
@@ -13,6 +15,9 @@ load_dotenv()
 # =====================================================================
 # VLLM AUTO-ROUTING — Pilih host yang paling longgar berdasarkan /metrics
 # =====================================================================
+_host_routing_cache = {}
+_ROUTING_CACHE_TTL = 5.0
+
 def _parse_vllm_metric(metrics_text: str, metric_name: str) -> float:
     """Parse satu nilai dari output Prometheus plain-text vLLM /metrics."""
     for line in metrics_text.splitlines():
@@ -25,6 +30,28 @@ def _parse_vllm_metric(metrics_text: str, metric_name: str) -> float:
                 except ValueError:
                     pass
     return 0.0
+
+
+def _check_single_vllm_host(host: str, timeout: float) -> tuple[str, float]:
+    """Helper untuk ping satu host vLLM di thread terpisah."""
+    base = host.rstrip("/")
+    metrics_base = base[:-3] if base.endswith("/v1") else base
+    try:
+        resp = _req_lib.get(f"{metrics_base}/metrics", timeout=timeout)
+        if resp.status_code != 200:
+            print(f"[LLM Router] {metrics_base}/metrics returned {resp.status_code}, skip.")
+            return (base, float("inf"))
+
+        text = resp.text
+        running = _parse_vllm_metric(text, "vllm:num_requests_running")
+        waiting = _parse_vllm_metric(text, "vllm:num_requests_waiting")
+        total_load = running + waiting
+
+        print(f"[LLM Router] {base} → running={running}, waiting={waiting}, total={total_load}")
+        return (base, total_load)
+    except _req_lib.exceptions.RequestException as e:
+        print(f"[LLM Router] Gagal ping {metrics_base}/metrics: {e}")
+        return (base, float("inf"))
 
 
 def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
@@ -41,10 +68,9 @@ def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
         Jika semua host sibuk atau /metrics tidak dapat dijangkau,
         kembalikan host pertama sebagai default.
 
-    Logika routing (sesuai saran Mas Anjas):
-      1. Looping tiap host dalam urutan.
-      2. GET {host_root}/metrics dengan timeout singkat.
-         (strip /v1 karena vLLM expose metrics di root, bukan /v1/metrics)
+    Logika routing (sesuai saran Mas Anjas, dioptimalkan):
+      1. Cek cache (TTL 5 detik) untuk menghindari ping berulang dalam jeda singkat.
+      2. Pengecekan /metrics dilakukan secara paralel (ThreadPoolExecutor).
       3. Cek `vllm:num_requests_running` + `vllm:num_requests_waiting`.
       4. Kalau total == 0 → host ini kosong, langsung pakai.
       5. Kalau semua penuh → fallback ke host pertama.
@@ -53,45 +79,48 @@ def get_available_llm_host(hosts_env: str, timeout: float = 2.0) -> str:
     if not raw_hosts:
         return ""
 
-    default_host = raw_hosts[0]
+    if len(raw_hosts) == 1:
+        return raw_hosts[0].rstrip("/")
+
+    cache_key = ";".join(raw_hosts)
+    now = time.time()
+    if cache_key in _host_routing_cache:
+        cached_host, cached_ts = _host_routing_cache[cache_key]
+        if now - cached_ts < _ROUTING_CACHE_TTL:
+            return cached_host
+
+    default_host = raw_hosts[0].rstrip("/")
+
+    # Pengecekan paralel menggunakan ThreadPoolExecutor
+    loads = {}
+    with ThreadPoolExecutor(max_workers=min(len(raw_hosts), 10)) as executor:
+        futures = {executor.submit(_check_single_vllm_host, host, timeout): host for host in raw_hosts}
+        for future in as_completed(futures):
+            base, load = future.result()
+            loads[base] = load
+
     best_host = None
     best_load = float("inf")
 
+    # Evaluasi sesuai urutan raw_hosts agar deterministik jika load sama
     for host in raw_hosts:
-        # base = URL lengkap yg akan dikembalikan ke ChatOpenAI (misal: http://ip:8000/v1)
         base = host.rstrip("/")
-        # metrics_base = URL root tanpa /v1 untuk ping /metrics
-        # vLLM expose /metrics di root path, BUKAN di /v1/metrics
-        metrics_base = base[:-3] if base.endswith("/v1") else base
-        try:
-            resp = _req_lib.get(f"{metrics_base}/metrics", timeout=timeout)
-            if resp.status_code != 200:
-                print(f"[LLM Router] {metrics_base}/metrics returned {resp.status_code}, skip.")
-                continue
+        load = loads.get(base, float("inf"))
+        if load == 0:
+            print(f"[LLM Router] ✓ Pilih {base} (kosong)")
+            _host_routing_cache[cache_key] = (base, now)
+            return base
+        if load < best_load:
+            best_load = load
+            best_host = base
 
-            text = resp.text
-            running = _parse_vllm_metric(text, "vllm:num_requests_running")
-            waiting = _parse_vllm_metric(text, "vllm:num_requests_waiting")
-            total_load = running + waiting
+    chosen = best_host if best_host is not None else default_host
+    if best_load != float("inf"):
+        print(f"[LLM Router] Semua host sibuk. Fallback ke {chosen} (load={best_load})")
+    else:
+        print(f"[LLM Router] Semua host tidak dapat dihubungi. Fallback ke {chosen}")
 
-            print(f"[LLM Router] {base} → running={running}, waiting={waiting}, total={total_load}")
-
-            if total_load == 0:
-                # Host kosong — langsung pilih ini, kembalikan URL lengkap (dengan /v1)
-                print(f"[LLM Router] ✓ Pilih {base} (kosong)")
-                return base
-
-            if total_load < best_load:
-                best_load = total_load
-                best_host = base
-
-        except _req_lib.exceptions.RequestException as e:
-            print(f"[LLM Router] Gagal ping {metrics_base}/metrics: {e}")
-            continue
-
-    # Tidak ada host yang kosong — pakai yang paling sedikit bebannya
-    chosen = best_host or default_host
-    print(f"[LLM Router] Semua host sibuk. Fallback ke {chosen} (load={best_load})")
+    _host_routing_cache[cache_key] = (chosen, now)
     return chosen
 
 # =====================================================================

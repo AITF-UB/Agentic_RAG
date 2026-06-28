@@ -30,6 +30,28 @@ print(f"[generate_task] LangSmith project: {_ls_project}")
 # Import graph (setelah load_dotenv agar env sudah tersedia)
 from graph import beta_graph
 
+def run_async_safely(coro):
+    """
+    Menjalankan coroutine asinkron dengan aman di lingkungan Celery worker.
+    Jika event loop belum ada/belum aktif, gunakan loop.run_until_complete agar loop
+    dapat digunakan kembali (reusable) dan menjaga connection pooling tetap hidup.
+    Jika event loop sudah aktif di thread ini, jalankan di thread executor terpisah.
+    """
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+    if loop.is_running():
+        import concurrent.futures
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(asyncio.run, coro)
+            return future.result()
+    else:
+        return loop.run_until_complete(coro)
+
+
 @shared_task(
     bind=True,
     name="tasks.generate_task.run_generation",
@@ -44,9 +66,8 @@ def run_generation(self, initial_state: dict):
     print(f"[generate_task] Started generation for tipe: {initial_state.get('tipe')}")
     
     try:
-        # Menjalankan event loop asyncio secara sinkron karena Celery worker default adalah proses sinkron
-        # Pastikan tidak ada event loop lain yang aktif di thread yang sama
-        final_state = asyncio.run(beta_graph.ainvoke(initial_state))
+        # Menjalankan event loop asyncio secara aman menggunakan helper reusable loop
+        final_state = run_async_safely(beta_graph.ainvoke(initial_state))
         
         final_payload = final_state.get("final_payload", {})
         

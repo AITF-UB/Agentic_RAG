@@ -130,45 +130,46 @@ async def embed_text_for_text_vdb(query: str) -> list:
 # 2. Qdrant Search Engine
 # ================================================================
 async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter_payload = None) -> list:
-    def _do():
-        max_retries = 2
-        for attempt in range(max_retries + 1):
-            try:
-                result = qdrant_client.query_points(
-                    collection_name=collection,
-                    query=vector,
-                    using="dense",
-                    limit=top_k,
-                    query_filter=filter_payload,
-                    with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
-                )
-                hits = result.points
-                results = []
-                for hit in hits:
-                    payload_data = hit.payload or {}
-                    results.append({
-                        "id": hit.id,
-                        "score": hit.score,
-                        "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
-                        "metadata": payload_data,
-                        "source_file": payload_data.get("source_file", "N/A"),
-                        "retrieval_type": "dense"
-                    })
-                return results
-            except Exception as e:
-                if attempt < max_retries:
-                    print(f"⚠️ Qdrant dense connection error (attempt {attempt + 1}/{max_retries + 1}): {e}, retrying...")
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"❌ Error query Qdrant Dense (after {max_retries + 1} attempts): {e}")
-                return []
+    def _attempt():
+        result = qdrant_client.query_points(
+            collection_name=collection,
+            query=vector,
+            using="dense",
+            limit=top_k,
+            query_filter=filter_payload,
+            with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
+        )
+        hits = result.points
+        results = []
+        for hit in hits:
+            payload_data = hit.payload or {}
+            results.append({
+                "id": hit.id,
+                "score": hit.score,
+                "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
+                "metadata": payload_data,
+                "source_file": payload_data.get("source_file", "N/A"),
+                "retrieval_type": "dense"
+            })
+        return results
+
     loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, _do)
+    max_retries = 2
+    for attempt in range(max_retries + 1):
+        try:
+            return await loop.run_in_executor(None, _attempt)
+        except Exception as e:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant dense connection error (attempt {attempt + 1}/{max_retries + 1}): {e}, retrying...")
+                await asyncio.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Error query Qdrant Dense (after {max_retries + 1} attempts): {e}")
+            return []
 
 # ── Hybrid-only components (tidak dipakai saat SEARCH_MODE=dense) ──────────
 
 async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_payload = None) -> list:
-    def _do():
+    def _attempt():
         model = get_sparse_model()
         sparse_vector = model.encode_query(query)
         
@@ -180,65 +181,67 @@ async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_
         else:
             q_sparse = sparse_vector
 
-        max_retries = 2
-        for attempt in range(max_retries + 1):
-            try:
-                result = qdrant_client.query_points(
-                    collection_name=collection,
-                    query=q_sparse,
-                    using="sparse",
-                    limit=top_k,
-                    query_filter=filter_payload,
-                    with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
-                )
-                hits = result.points
+        result = qdrant_client.query_points(
+            collection_name=collection,
+            query=q_sparse,
+            using="sparse",
+            limit=top_k,
+            query_filter=filter_payload,
+            with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
+        )
+        hits = result.points
 
-                results = []
-                for hit in hits:
-                    payload_data = hit.payload or {}
-                    results.append({
-                        "id": hit.id,
-                        "score": hit.score,
-                        "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
-                        "metadata": payload_data,
-                        "source_file": payload_data.get("source_file", "N/A"),
-                        "retrieval_type": "splade"
-                    })
-                return results
-            except Exception as e:
-                if attempt < max_retries:
-                    print(f"⚠️ Qdrant splade connection error (attempt {attempt + 1}/{max_retries + 1}): {e}, retrying...")
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"❌ Qdrant splade connection error (after {max_retries + 1} attempts): {e}")
-                return []
+        results = []
+        for hit in hits:
+            payload_data = hit.payload or {}
+            results.append({
+                "id": hit.id,
+                "score": hit.score,
+                "text": payload_data.get("text", payload_data.get("page_content", "N/A")),
+                "metadata": payload_data,
+                "source_file": payload_data.get("source_file", "N/A"),
+                "retrieval_type": "splade"
+            })
+        return results
+
     loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, _do)
+    max_retries = 2
+    for attempt in range(max_retries + 1):
+        try:
+            return await loop.run_in_executor(None, _attempt)
+        except Exception as e:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant splade connection error (attempt {attempt + 1}/{max_retries + 1}): {e}, retrying...")
+                await asyncio.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant splade connection error (after {max_retries + 1} attempts): {e}")
+            return []
 
 async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
     """Fetch full points (with ALL payloads) by their IDs.
     Returns list of {id, score, payload} dicts.
     Uses POST /collections/{collection}/points for batch fetching.
     """
-    def _do():
-        if not point_ids: return []
-        for attempt in range(3):
-            try:
-                records = qdrant_client.retrieve(
-                    collection_name=collection,
-                    ids=point_ids,
-                    with_payload=True,
-                    with_vectors=False
-                )
-                return [{"id": r.id, "payload": r.payload} for r in records]
-            except Exception as e:
-                if attempt < 2:
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"⚠️ Failed to batch fetch points after 3 attempts: {e}")
-        return []
+    if not point_ids: return []
+    def _attempt():
+        records = qdrant_client.retrieve(
+            collection_name=collection,
+            ids=point_ids,
+            with_payload=True,
+            with_vectors=False
+        )
+        return [{"id": r.id, "payload": r.payload} for r in records]
+
     loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, _do)
+    for attempt in range(3):
+        try:
+            return await loop.run_in_executor(None, _attempt)
+        except Exception as e:
+            if attempt < 2:
+                await asyncio.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"⚠️ Failed to batch fetch points after 3 attempts: {e}")
+    return []
 
 async def _inject_visual_content_batch(collection: str, docs: list) -> list:
     """Menerima list dokumen yang sudah direrank, mengambil visual context dari Qdrant, dan menyisipkannya.
@@ -257,25 +260,26 @@ async def _inject_visual_content_batch(collection: str, docs: list) -> list:
     return docs
 
 async def _scroll_qdrant(collection: str, scroll_filter, limit: int = 200, max_retries: int = 2) -> list:
-    def _do():
-        for attempt in range(max_retries + 1):
-            try:
-                records, _ = qdrant_client.scroll(
-                    collection_name=collection,
-                    scroll_filter=scroll_filter,
-                    limit=limit,
-                    with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
-                )
-                return [{"id": r.id, "payload": r.payload} for r in records]
-            except Exception as e:
-                if attempt < max_retries:
-                    print(f"⚠️ Qdrant scroll error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
-                    time.sleep(0.5 * (attempt + 1))
-                    continue
-                print(f"❌ Qdrant scroll error (after {max_retries + 1} attempts): {e}")
-                return []
+    def _attempt():
+        records, _ = qdrant_client.scroll(
+            collection_name=collection,
+            scroll_filter=scroll_filter,
+            limit=limit,
+            with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"])
+        )
+        return [{"id": r.id, "payload": r.payload} for r in records]
+
     loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, _do)
+    for attempt in range(max_retries + 1):
+        try:
+            return await loop.run_in_executor(None, _attempt)
+        except Exception as e:
+            if attempt < max_retries:
+                print(f"⚠️ Qdrant scroll error (attempt {attempt + 1}/{max_retries + 1}), retrying...")
+                await asyncio.sleep(0.5 * (attempt + 1))
+                continue
+            print(f"❌ Qdrant scroll error (after {max_retries + 1} attempts): {e}")
+            return []
 
 def _normalize_source_file(raw: str) -> str:
     """Normalisasi source_file: hapus ekstensi, path prefix, suffix pipeline & lowercase.

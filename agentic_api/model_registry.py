@@ -11,10 +11,18 @@ from __future__ import annotations
 import os
 from typing import Dict, List, Optional
 import requests
+from requests.adapters import HTTPAdapter
 import numpy as np
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# Global HTTP Session dengan Connection Pooling (HTTP Keep-Alive)
+_http_session = requests.Session()
+_adapter = HTTPAdapter(pool_connections=20, pool_maxsize=30)
+_http_session.mount("http://", _adapter)
+_http_session.mount("https://", _adapter)
+
 
 class ProxyDenseModel:
     def __init__(self, url):
@@ -23,7 +31,7 @@ class ProxyDenseModel:
     def encode(self, texts, normalize_embeddings=True, convert_to_numpy=True, **kwargs):
         if isinstance(texts, str):
             texts = [texts]
-        resp = requests.post(f"{self.url}/embed/dense", json={"texts": texts, "normalize_embeddings": normalize_embeddings}, timeout=120)
+        resp = _http_session.post(f"{self.url}/embed/dense", json={"texts": texts, "normalize_embeddings": normalize_embeddings}, timeout=120)
         resp.raise_for_status()
         vectors = np.array(resp.json()["vectors"])
         if not convert_to_numpy:
@@ -37,12 +45,12 @@ class ProxySparseModel:
         self.url = url
     
     def encode_query(self, text: str) -> dict:
-        resp = requests.post(f"{self.url}/embed/sparse/query", json={"text": text}, timeout=120)
+        resp = _http_session.post(f"{self.url}/embed/sparse/query", json={"text": text}, timeout=120)
         resp.raise_for_status()
         return resp.json()
 
     def encode_passages(self, texts: List[str]) -> List[np.ndarray]:
-        resp = requests.post(f"{self.url}/embed/sparse/passages", json={"texts": texts}, timeout=120)
+        resp = _http_session.post(f"{self.url}/embed/sparse/passages", json={"texts": texts}, timeout=120)
         resp.raise_for_status()
         results = resp.json()["vectors"]
         
@@ -71,7 +79,7 @@ class ProxyReranker:
     def predict(self, pairs, **kwargs):
         query = pairs[0][0]
         texts = [p[1] for p in pairs]
-        resp = requests.post(f"{self.url}/rerank", json={"query": query, "texts": texts}, timeout=120)
+        resp = _http_session.post(f"{self.url}/rerank", json={"query": query, "texts": texts}, timeout=120)
         resp.raise_for_status()
         return resp.json()["scores"]
 

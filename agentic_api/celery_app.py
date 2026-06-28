@@ -5,7 +5,7 @@ celery_app.py
 Konfigurasi Celery dengan Redis sebagai broker dan result backend.
 
 Cara jalankan worker (dari direktori agentic_api/):
-    celery -A celery_app worker --loglevel=info --concurrency=2 -Q pipeline
+    celery -A celery_app worker --loglevel=info --concurrency=10 -Q celery,generation
 
 Monitoring (Flower):
     celery -A celery_app flower --port=5555
@@ -55,8 +55,9 @@ celery_app.conf.update(
     # Reliability Broker: pemulihan cepat insiden server mati (> 1,5jam)
     broker_transport_options={"visibility_timeout": 4800}, # 4000 detik (> task_time_limit)
 
-    # Routing: pipeline task masuk ke queue 'pipeline'
+    # Routing: pipeline task masuk ke queue 'pipeline', generasi ke 'generation'
     task_routes={
         "tasks.pipeline_task.run_pipeline": {"queue": "pipeline"},
+        "tasks.generate_task.run_generation": {"queue": "generation"},
     },
 )
