@@ -56,83 +56,10 @@ BM25_CACHE_PATH = Path(__file__).resolve().parent / f"bm25_{TEXT_COLLECTION}.pkl
 # ================================================================
 # MinIO Configuration
 # ================================================================
-MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
-MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
-MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
-MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME")
+from minio_client import get_s3_client, upload_base64_async, get_public_url
 
-s3_client = None
-if MINIO_ENDPOINT and MINIO_ROOT_USER and MINIO_ROOT_PASSWORD:
-    s3_client = boto3.client(
-        's3',
-        endpoint_url=MINIO_ENDPOINT,
-        aws_access_key_id=MINIO_ROOT_USER,
-        aws_secret_access_key=MINIO_ROOT_PASSWORD,
-        region_name='us-east-1' # Default untuk MinIO
-    )
-    
-    # Set Public Read Policy
-    try:
-        policy = {
-            "Version": "2012-10-17",
-            "Statement": [
-                {
-                    "Sid": "PublicRead",
-                    "Effect": "Allow",
-                    "Principal": "*",
-                    "Action": ["s3:GetObject"],
-                    "Resource": [f"arn:aws:s3:::{MINIO_BUCKET_NAME}/*"]
-                }
-            ]
-        }
-        s3_client.put_bucket_policy(Bucket=MINIO_BUCKET_NAME, Policy=json.dumps(policy))
-        print(f"✅ MinIO: Bucket '{MINIO_BUCKET_NAME}' policy set to Public Read.")
-    except Exception as e:
-        print(f"⚠️ MinIO: Failed to set public policy for bucket '{MINIO_BUCKET_NAME}': {e}")
-
-_upload_locks: Dict[str, asyncio.Lock] = {}
-
-async def _upload_image_to_minio_if_not_exists(filename: str, base64_str: str) -> bool:
-    """Uploads base64 image to MinIO if it doesn't already exist."""
-    if not s3_client or not base64_str:
-        return False
-        
-    if filename not in _upload_locks:
-        _upload_locks[filename] = asyncio.Lock()
-        
-    async with _upload_locks[filename]:
-        def _do():
-            try:
-                s3_client.head_object(Bucket=MINIO_BUCKET_NAME, Key=filename)
-                return True # Sudah ada, skip upload
-            except ClientError as e:
-                if e.response['Error']['Code'] == '404':
-                    try:
-                        # Clean base64 string
-                        clean_b64 = base64_str.replace("\n", "").replace("\r", "").strip()
-                        image_data = base64.b64decode(clean_b64)
-                        
-                        # Guess mimetype
-                        content_type, _ = mimetypes.guess_type(filename)
-                        content_type = content_type or 'image/jpeg'
-                        
-                        response = s3_client.put_object(
-                            Bucket=MINIO_BUCKET_NAME,
-                            Key=filename,
-                            Body=image_data,
-                            ContentType=content_type
-                        )
-                        # print(f"✅ MinIO upload success: {response}") # Optional logging
-                        return True
-                    except Exception as upload_err:
-                        print(f"❌ Error uploading to MinIO: {upload_err}")
-                        return False
-                else:
-                    print(f"❌ Error checking MinIO object: {e}")
-                    return False
-                    
-        loop = asyncio.get_running_loop()
-        return await loop.run_in_executor(None, _do)
+# Initialize client so the public read policy is set on load
+get_s3_client()
 
 # ================================================================
 # Search Mode Configuration
@@ -793,7 +720,7 @@ class RAGEngine:
                         minio_url = img_minio_url
                         
                         # Jika di payload belum ada minio_url, tapi ada base64, kita upload ke MinIO
-                        if not minio_url and s3_client and img_base64:
+                        if not minio_url and get_s3_client() and img_base64:
                             # Generate unique filename for MinIO
                             path_hash = hashlib.md5(img_path.encode('utf-8', errors='replace')).hexdigest()[:8]
                             basename = os.path.basename(img_path.rstrip("/")) or "img"
@@ -805,10 +732,9 @@ class RAGEngine:
                             if ',' in img_base64:
                                 clean_base64 = img_base64.split(',', 1)[1]
                                 
-                            success = await _upload_image_to_minio_if_not_exists(minio_filename, clean_base64)
+                            success = await upload_base64_async(minio_filename, clean_base64)
                             if success:
-                                base_url = MINIO_ENDPOINT.rstrip('/')
-                                minio_url = f"{base_url}/{MINIO_BUCKET_NAME}/{minio_filename}"
+                                minio_url = get_public_url(minio_filename)
                                 
                         images.append({
                             "id": img_id,

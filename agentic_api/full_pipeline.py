@@ -981,46 +981,16 @@ class HierarchyAwareChunker:
                 img_bytes = img_file.read_bytes()
                 
                 # Upload to MinIO if configured
-                import boto3
+                from minio_client import upload_file_sync, get_s3_client
                 import os
-                from dotenv import load_dotenv
-                load_dotenv()
                 
-                MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
-                MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
-                MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
-                MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME")
-                
-                if MINIO_ENDPOINT and MINIO_ROOT_USER and MINIO_ROOT_PASSWORD and MINIO_BUCKET_NAME:
-                    import hashlib
-                    import re
-                    s3_client = boto3.client(
-                        's3',
-                        endpoint_url=MINIO_ENDPOINT,
-                        aws_access_key_id=MINIO_ROOT_USER,
-                        aws_secret_access_key=MINIO_ROOT_PASSWORD,
-                        region_name='us-east-1'
-                    )
-                    
-                    path_hash = hashlib.md5(full_path_str.encode('utf-8', errors='replace')).hexdigest()[:8]
-                    basename = img_file.name
-                    basename = re.sub(r'[^\w\-.]', '_', basename)
-                    minio_filename = f"{path_hash}_{basename}"
-                    
-                    try:
-                        s3_client.head_object(Bucket=MINIO_BUCKET_NAME, Key=minio_filename)
-                    except Exception as e:
-                        if getattr(e, 'response', {}).get('Error', {}).get('Code') == '404':
-                            s3_client.put_object(
-                                Bucket=MINIO_BUCKET_NAME,
-                                Key=minio_filename,
-                                Body=img_bytes,
-                                ContentType=entry.get("mime_type", "image/png")
-                            )
-                    
-                    base_url = MINIO_ENDPOINT.rstrip('/')
-                    minio_url = f"{base_url}/{MINIO_BUCKET_NAME}/{minio_filename}"
-                    entry["minio_url"] = minio_url
+                if get_s3_client() and os.getenv("MINIO_BUCKET_NAME"):
+                    minio_url = upload_file_sync(img_bytes, full_path_str, entry.get("mime_type", "image/png"))
+                    if minio_url:
+                        entry["minio_url"] = minio_url
+                    else:
+                        print(f"⚠️ Gambar {img_file.name} tidak bisa diupload ke MinIO, fallback ke base64.")
+                        entry["base64"] = base64.b64encode(img_bytes).decode("utf-8")
                 else:
                     entry["base64"] = base64.b64encode(img_bytes).decode("utf-8")
             except Exception as exc:
@@ -1041,7 +1011,7 @@ class HierarchyAwareChunker:
             return chunks
         merged: List[ChunkWithMetadata] = []
         for chunk in chunks:
-            if len(chunk.content) < self.min_chunk_size and merged:
+            if len(chunk.content) < self.min_chunk_size and merged and len(merged[-1].content) + len(chunk.content) < self.chunk_size * 1.5:
                 prev = merged[-1]
                 pv = prev.metadata.has_visual_content
                 cv = chunk.metadata.has_visual_content
@@ -1059,9 +1029,15 @@ class HierarchyAwareChunker:
                 else:
                     combined_visual = False
 
+                merged_meta = prev.metadata
+                if chunk.metadata.page and merged_meta.page != chunk.metadata.page:
+                    pages = str(merged_meta.page).split("-")
+                    if str(chunk.metadata.page) not in pages:
+                        merged_meta.page = f"{pages[0]}-{chunk.metadata.page}"
+
                 merged_chunk = ChunkWithMetadata(
                     content  = prev.content + "\n\n" + chunk.content,
-                    metadata = chunk.metadata,
+                    metadata = merged_meta,
                 )
                 merged_chunk.metadata.has_visual_content = combined_visual
                 merged[-1] = merged_chunk
@@ -1464,14 +1440,15 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         return obj
 
     def normalize_visual_metadata(value):
-        """Normalisasi has_visual_content — base64 DIPERTAHANKAN di setiap entry.
+        """Normalisasi has_visual_content — minio_url dan base64 DIPERTAHANKAN di setiap entry.
 
         Setiap entry yang dihasilkan berformat:
           {
             "path"      : str,   # path relatif gambar
             "filename"  : str,   # nama file
             "mime_type" : str,   # MIME type
-            "base64"    : str,   # konten gambar ter-encode base64 (jika tersedia)
+            "minio_url" : str,   # public URL gambar (jika MinIO aktif & sukses)
+            "base64"    : str,   # fallback base64 (jika MinIO gagal/mati)
           }
         """
         if not value:
@@ -1504,7 +1481,9 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
                     "filename":  str(item.get("filename") or Path(path).name),
                     "mime_type": str(item.get("mime_type") or "application/octet-stream"),
                 }
-                # Pertahankan base64 jika tersedia
+                # Pertahankan minio_url & base64 jika tersedia
+                if item.get("minio_url"):
+                    entry["minio_url"] = item["minio_url"]
                 if item.get("base64"):
                     entry["base64"] = item["base64"]
                 cleaned.append(entry)
@@ -1592,8 +1571,11 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
     api_key = os.getenv("QDRANT_API_KEY", "")
     
     if qdrant_host.startswith("http://") or qdrant_host.startswith("https://"):
+        url = qdrant_host
+        if f":{config.qdrant_port}" not in qdrant_host:
+            url = f"{qdrant_host}:{config.qdrant_port}"
         client = QdrantClient(
-            url=f"{qdrant_host}:{config.qdrant_port}",
+            url=url,
             api_key=api_key if api_key else None,
             timeout=config.qdrant_timeout,
             check_compatibility=False
@@ -1679,10 +1661,10 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         meta    = normalize_metadata(doc.get("metadata", {}), fallback_source_file="unknown")
         visuals = normalize_visual_metadata(meta.get("has_visual_content"))
 
-        # Sederhanakan visual: hanya simpan path + base64 (filename & mime_type bisa diturunkan dari path)
+        # Sederhanakan visual: hanya simpan path, minio_url, dan base64 (jika diperlukan)
         if isinstance(visuals, list):
             visuals = [
-                {k: v for k, v in entry.items() if k in ("path", "base64") and v}
+                {k: v for k, v in entry.items() if k in ("path", "minio_url", "base64") and v}
                 for entry in visuals
             ] or False
 
@@ -1739,14 +1721,21 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
                 payload = build_payload(doc),
             ))
 
-        try:
-            client.upsert(collection_name=config.collection_name, points=points, wait=True)
-            ingested  += len(points)
-            batch_num  = batch_start // BATCH_SIZE + 1
-            print(f"   Batch {batch_num:>4}/{total_batches}  +{len(points):>4} pts  →  total {ingested:>6}")
-        except Exception as e:
-            print(f"   ❌ Batch {batch_start // BATCH_SIZE + 1} error: {e}")
-            continue
+        import time
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                client.upsert(collection_name=config.collection_name, points=points, wait=True)
+                ingested  += len(points)
+                batch_num  = batch_start // BATCH_SIZE + 1
+                print(f"   Batch {batch_num:>4}/{total_batches}  +{len(points):>4} pts  →  total {ingested:>6}")
+                break
+            except Exception as e:
+                if attempt == max_retries - 1:
+                    print(f"   ❌ Batch {batch_start // BATCH_SIZE + 1} error: {e}")
+                else:
+                    print(f"   ⚠️ Retry {attempt+1}/{max_retries}...")
+                    time.sleep(2)
 
     # Summary
     final_count = client.count(config.collection_name, exact=True).count
@@ -1858,6 +1847,10 @@ Contoh penggunaan:
                         help="Mata pelajaran (mis. Biologi). Dipakai sebagai metadata chunk.")
     parser.add_argument("--id-kelas", type=str, default=None,
                         help="ID Kelas (mis. X-A). Dipakai sebagai metadata chunk.")
+    parser.add_argument("--jenjang", type=str, default=None,
+                        help="Jenjang Kelas (mis. X). Dipakai sebagai metadata chunk.")
+    parser.add_argument("--id-guru", type=str, default=None,
+                        help="ID Guru. Dipakai sebagai metadata chunk.")
     parser.add_argument("--vlm-model", type=str, default=DEFAULT_VLM_MODEL,
                         help=f"Nama model VLM (default: {DEFAULT_VLM_MODEL})")
     parser.add_argument("--ollama-host", type=str, default=DEFAULT_VLM_HOST,
