@@ -10,6 +10,12 @@ import requests
 from pathlib import Path
 from typing import Optional, List, Dict, Any
 import asyncio
+import base64
+import io
+import boto3
+import hashlib
+import mimetypes
+from botocore.exceptions import ClientError
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -46,6 +52,14 @@ TEXT_COLLECTION    = os.getenv("QDRANT_TEXT_COLLECTION")
 EXTRACTION_BASE_DIR = Path(__file__).resolve().parent / "extraction"
 
 BM25_CACHE_PATH = Path(__file__).resolve().parent / f"bm25_{TEXT_COLLECTION}.pkl"
+
+# ================================================================
+# MinIO Configuration
+# ================================================================
+from minio_client import get_s3_client, upload_base64_async, get_public_url
+
+# Initialize client so the public read policy is set on load
+get_s3_client()
 
 # ================================================================
 # Search Mode Configuration
@@ -104,7 +118,7 @@ async def embed_text_for_text_vdb(query: str) -> list:
     
     model = get_sentence_model()
     prefixed = f"query: {cache_key}"
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     vector = await loop.run_in_executor(None, lambda: model.encode([prefixed], normalize_embeddings=True, convert_to_numpy=True)[0])
     vector_list = vector.tolist()
     
@@ -148,7 +162,7 @@ async def _search_qdrant_dense(collection: str, vector: list, top_k: int, filter
                     continue
                 print(f"❌ Error query Qdrant Dense (after {max_retries + 1} attempts): {e}")
                 return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 # ── Hybrid-only components (tidak dipakai saat SEARCH_MODE=dense) ──────────
@@ -198,7 +212,7 @@ async def _search_qdrant_splade(collection: str, query: str, top_k: int, filter_
                     continue
                 print(f"❌ Qdrant splade connection error (after {max_retries + 1} attempts): {e}")
                 return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
@@ -223,7 +237,7 @@ async def _fetch_qdrant_points_by_ids(point_ids: list, collection: str) -> list:
                     continue
                 print(f"⚠️ Failed to batch fetch points after 3 attempts: {e}")
         return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 async def _inject_visual_content_batch(collection: str, docs: list) -> list:
@@ -260,7 +274,7 @@ async def _scroll_qdrant(collection: str, scroll_filter, limit: int = 200, max_r
                     continue
                 print(f"❌ Qdrant scroll error (after {max_retries + 1} attempts): {e}")
                 return []
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     return await loop.run_in_executor(None, _do)
 
 def _normalize_source_file(raw: str) -> str:
@@ -324,7 +338,7 @@ def build_bm25_index():
             records, offset = qdrant_client.scroll(
                 collection_name=TEXT_COLLECTION,
                 limit=1000,
-                with_payload=models.PayloadSelectorExclude(exclude=["has_visual_content"]),
+                with_payload=True,
                 offset=offset
             )
             points = [{"id": r.id, "payload": r.payload} for r in records]
@@ -367,7 +381,7 @@ async def sparse_search(query: str, top_k: int = 10, mata_pelajaran: Optional[st
         if _bm25 is None: return None
         return _bm25.get_scores(tokenized_query)
 
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     scores = await loop.run_in_executor(None, _prepare)
     
     if scores is None: return []
@@ -524,7 +538,7 @@ async def rerank_results(query: str, docs: list, top_k: int = 5) -> list:
     if not docs: return []
     reranker = get_reranker()
     pairs = [(query, doc.get("expanded_text", doc["text"])) for doc in docs]
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     scores = await loop.run_in_executor(None, lambda: reranker.predict(pairs, batch_size=16, show_progress_bar=False))
     ranked = sorted(zip(scores, docs), key=lambda x: x[0], reverse=True)
 
@@ -682,26 +696,91 @@ class RAGEngine:
                 # metadata sekarang = seluruh payload (flat), jadi
                 # has_visual_content benar-benar terbaca dari Qdrant.
                 vis = t.get("metadata", {}).get("has_visual_content", [])
-                vis_list = vis if isinstance(vis, list) else [vis] if isinstance(vis, str) else []
+                vis_list = (
+                    vis if isinstance(vis, list)
+                    else [vis] if isinstance(vis, (str, dict))
+                    else []
+                )
 
                 for img in vis_list:
                     img_path = img.get("path") if isinstance(img, dict) else str(img)
                     img_base64 = img.get("base64") if isinstance(img, dict) else None
+                    img_minio_url = img.get("minio_url") if isinstance(img, dict) else None
+                    
+                    # Abaikan jika tidak ada base64 maupun minio_url
+                    if not img_base64 and not img_minio_url:
+                        continue
                     
                     # Cek apakah image sudah ada di list
-                    if not any(x.get("path") == img_path for x in images if isinstance(x, dict)):
+                    if img_path and not any(x.get("path") == img_path for x in images if isinstance(x, dict)):
                         # Ambil potongan teks chunk asli sebagai konteks visual gambar (max 600 chars)
                         context_snippet = t.get("text", "")[:600]
                         img_id = f"IMG-{len(images)+1:03d}"
+                        
+                        minio_url = img_minio_url
+                        
+                        # Jika di payload belum ada minio_url, tapi ada base64, kita upload ke MinIO
+                        if not minio_url and get_s3_client() and img_base64:
+                            # Generate unique filename for MinIO
+                            path_hash = hashlib.md5(img_path.encode('utf-8', errors='replace')).hexdigest()[:8]
+                            basename = os.path.basename(img_path.rstrip("/")) or "img"
+                            basename = re.sub(r'[^\w\-.]', '_', basename)
+                            minio_filename = f"{path_hash}_{basename}"
+                            
+                            # Bersihkan string base64 jika ada header data URI
+                            clean_base64 = img_base64
+                            if ',' in img_base64:
+                                clean_base64 = img_base64.split(',', 1)[1]
+                                
+                            success = await upload_base64_async(minio_filename, clean_base64)
+                            if success:
+                                minio_url = get_public_url(minio_filename)
+                                
                         images.append({
                             "id": img_id,
                             "path": img_path,
-                            "base64": img_base64,
+                            "minio_url": minio_url,
+                            # Jika berhasil dan ada url, jangan kembalikan base64 supaya lebih ringan
+                            "base64": None if minio_url else img_base64,
                             "context": context_snippet
                         })
 
+        # Setelah loop images selesai, bangun lookup minio_url
+        minio_url_lookup = {
+            img["path"]: img["minio_url"]
+            for img in images
+            if img.get("path") and img.get("minio_url")
+        }
+
+        def _process_visual_context(t):
+            vis = t.get("metadata", {}).get("has_visual_content", [])
+            vis_list = vis if isinstance(vis, list) else [vis] if isinstance(vis, (str, dict)) else []
+            processed = []
+            for item in vis_list:
+                path_key = item.get("path") if isinstance(item, dict) else str(item)
+                has_minio = bool(minio_url_lookup.get(path_key))
+                
+                new_item = {
+                    "path": path_key,
+                    "minio_url": minio_url_lookup.get(path_key)
+                }
+                
+                # Fallback: kirim base64 hanya jika minio_url tidak tersedia
+                if not has_minio and isinstance(item, dict) and item.get("base64"):
+                    new_item["base64"] = item.get("base64")
+                    
+                processed.append(new_item)
+            return processed
+
         return {
-            "text": [{"text": t.get("expanded_text", t["text"]), "source_file": t["source_file"], "visual_context": t.get("metadata", {}).get("has_visual_content", [])} for t in texts],
+            "text": [
+                {
+                    "text": t.get("expanded_text", t["text"]),
+                    "source_file": t["source_file"],
+                    "visual_context": _process_visual_context(t)
+                }
+                for t in texts
+            ],
             "images": images
         }
 
