@@ -979,7 +979,50 @@ class HierarchyAwareChunker:
                         if fallback_matches:
                             img_file = fallback_matches[0]
                 img_bytes = img_file.read_bytes()
-                entry["base64"] = base64.b64encode(img_bytes).decode("utf-8")
+                
+                # Upload to MinIO if configured
+                import boto3
+                import os
+                from dotenv import load_dotenv
+                load_dotenv()
+                
+                MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT")
+                MINIO_ROOT_USER = os.getenv("MINIO_ROOT_USER")
+                MINIO_ROOT_PASSWORD = os.getenv("MINIO_ROOT_PASSWORD")
+                MINIO_BUCKET_NAME = os.getenv("MINIO_BUCKET_NAME")
+                
+                if MINIO_ENDPOINT and MINIO_ROOT_USER and MINIO_ROOT_PASSWORD and MINIO_BUCKET_NAME:
+                    import hashlib
+                    import re
+                    s3_client = boto3.client(
+                        's3',
+                        endpoint_url=MINIO_ENDPOINT,
+                        aws_access_key_id=MINIO_ROOT_USER,
+                        aws_secret_access_key=MINIO_ROOT_PASSWORD,
+                        region_name='us-east-1'
+                    )
+                    
+                    path_hash = hashlib.md5(full_path_str.encode('utf-8', errors='replace')).hexdigest()[:8]
+                    basename = img_file.name
+                    basename = re.sub(r'[^\w\-.]', '_', basename)
+                    minio_filename = f"{path_hash}_{basename}"
+                    
+                    try:
+                        s3_client.head_object(Bucket=MINIO_BUCKET_NAME, Key=minio_filename)
+                    except Exception as e:
+                        if getattr(e, 'response', {}).get('Error', {}).get('Code') == '404':
+                            s3_client.put_object(
+                                Bucket=MINIO_BUCKET_NAME,
+                                Key=minio_filename,
+                                Body=img_bytes,
+                                ContentType=entry.get("mime_type", "image/png")
+                            )
+                    
+                    base_url = MINIO_ENDPOINT.rstrip('/')
+                    minio_url = f"{base_url}/{MINIO_BUCKET_NAME}/{minio_filename}"
+                    entry["minio_url"] = minio_url
+                else:
+                    entry["base64"] = base64.b64encode(img_bytes).decode("utf-8")
             except Exception as exc:
                 entry["base64"] = None
                 entry["error"]  = str(exc)

@@ -778,8 +778,10 @@ class RAGEngine:
                 for img in vis_list:
                     img_path = img.get("path") if isinstance(img, dict) else str(img)
                     img_base64 = img.get("base64") if isinstance(img, dict) else None
+                    img_minio_url = img.get("minio_url") if isinstance(img, dict) else None
                     
-                    if not img_base64:
+                    # Abaikan jika tidak ada base64 maupun minio_url
+                    if not img_base64 and not img_minio_url:
                         continue
                     
                     # Cek apakah image sudah ada di list
@@ -788,15 +790,16 @@ class RAGEngine:
                         context_snippet = t.get("text", "")[:600]
                         img_id = f"IMG-{len(images)+1:03d}"
                         
-                        # Generate unique filename for MinIO
-                        path_hash = hashlib.md5(img_path.encode('utf-8', errors='replace')).hexdigest()[:8]
-                        basename = os.path.basename(img_path.rstrip("/")) or "img"
-                        basename = re.sub(r'[^\w\-.]', '_', basename)
-                        minio_filename = f"{path_hash}_{basename}"
+                        minio_url = img_minio_url
                         
-                        minio_url = None
-                        
-                        if s3_client and img_base64:
+                        # Jika di payload belum ada minio_url, tapi ada base64, kita upload ke MinIO
+                        if not minio_url and s3_client and img_base64:
+                            # Generate unique filename for MinIO
+                            path_hash = hashlib.md5(img_path.encode('utf-8', errors='replace')).hexdigest()[:8]
+                            basename = os.path.basename(img_path.rstrip("/")) or "img"
+                            basename = re.sub(r'[^\w\-.]', '_', basename)
+                            minio_filename = f"{path_hash}_{basename}"
+                            
                             # Bersihkan string base64 jika ada header data URI
                             clean_base64 = img_base64
                             if ',' in img_base64:
