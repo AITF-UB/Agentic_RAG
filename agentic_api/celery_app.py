@@ -49,11 +49,11 @@ celery_app.conf.update(
     task_track_started=True,
 
     # Timeout: pipeline PDF & generasi soal AI max 15 menit
-    task_soft_time_limit=900,        # Soft: raise SoftTimeLimitExceeded setelah 15 menit
-    task_time_limit=1000,            # Hard: kill worker setelah ~16.5 menit
+    task_soft_time_limit=3600,        # Soft: raise SoftTimeLimitExceeded setelah 50 menit
+    task_time_limit=3900,            # Hard: kill worker setelah ~1,5jam menit
 
-    # Reliability Broker: pemulihan cepat insiden server mati (< 20 menit)
-    broker_transport_options={"visibility_timeout": 1800}, # 20 menit (> task_time_limit)
+    # Reliability Broker: pemulihan cepat insiden server mati (> 1,5jam)
+    broker_transport_options={"visibility_timeout": 4800}, # 4000 detik (> task_time_limit)
 
     # Routing: pipeline task masuk ke queue 'pipeline'
     task_routes={
