@@ -510,6 +510,11 @@ async def generate_konten(request: Request, req: GenerateRequest, background_tas
     Mengembalikan job_id untuk di-polling menggunakan `GET /job/{job_id}`.
     """
     try:
+        if req.instruksi_revisi:
+            if not req.atp:
+                req.atp = []
+            req.atp.append(f"[INSTRUKSI KHUSUS DARI GURU]: {req.instruksi_revisi}")
+
         initial_state = {
             "request_params": req.model_dump(),
             "tipe": req.tipe,

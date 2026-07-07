@@ -200,8 +200,7 @@ async def _call_generation_llm(state: AgentState, usr_prompt: str, is_array_outp
     mapel_str = resolve_mapel(req.get("mapel_id", ""))
     sys_prompt = load_prompt("system.j2", matpel=mapel_str, materi=req.get("materi", ""), level=lvl)
     
-    if state.get("instruksi_revisi"):
-        usr_prompt += f"\n\n[INSTRUKSI REVISI DARI GURU]:\n{state['instruksi_revisi']}\nSesuaikan dan perbaiki hasil generasimu berdasarkan instruksi ini!"
+
 
     if state.get("evaluator_result") and state["revision_count"] > 0:
         usr_prompt += f"\n\n[FEEDBACK REVISI SEBELUMNYA]:\n{state['evaluator_result'].get('poin_revisi')}\nPerbaiki JSON-mu!"
