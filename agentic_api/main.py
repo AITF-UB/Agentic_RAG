@@ -719,62 +719,127 @@ async def insight(req: InsightRequest):
 # PIPELINE ENDPOINTS
 # ══════════════════════════════════════════════════════════════════════════════
 
+import requests
+from urllib.parse import urlparse
+
+class PipelineUploadRequest(BaseModel):
+    buku_id: str = Field(..., description="ID unik buku")
+    pdf_url: str = Field(..., description="URL presigned MinIO / public PDF")
+    nama_file: str = Field(..., description="Nama file untuk disimpan (tanpa path/traversal)")
+    start_page: int = Field(0, description="Halaman awal (1-based). 0 = dari awal")
+    end_page: int = Field(0, description="Halaman akhir (inklusif). 0 = sampai akhir")
+    mata_pelajaran: Optional[str] = Field(None, description="Mata pelajaran")
+    jenjang: Optional[str] = Field(None, description="Jenjang kelas")
+    id_kelas: Optional[str] = Field(None, description="ID Kelas")
+    id_guru: Optional[str] = Field(None, description="ID Guru")
+    step: Optional[str] = Field(None, description="Step tertentu, kosong = semua step")
+
 @app.post("/pipeline/upload", response_model=JobInfo, status_code=202, tags=["Pipeline"])
 @limiter.limit(RATE_LIMIT_UPLOAD)
 async def upload_and_run(
     request:          Request,
     background_tasks: BackgroundTasks,
-    file:             UploadFile = File(..., description="File PDF yang akan diproses"),
-    # Parameter opsional
-    step:             Optional[str] = Form(None),
-    buku_id:          Optional[str] = Form(None, description="ID unik buku. Kosongkan untuk auto-generate UUID"),
-    start_page:       int  = Form(0, description="Halaman awal (1-based). 0 = dari awal"),
-    end_page:         int  = Form(0, description="Halaman akhir (inklusif). 0 = sampai akhir"),
-    mata_pelajaran:   Optional[str] = Form(None, description="Mata pelajaran (mis. Biologi)"),
-    id_kelas:         Optional[str] = Form(None, description="Tingkat kelas"),
-    jenjang:          Optional[str] = Form(None, description="Jenjang Kelas (mis. X, XI, XII)"),
-    id_guru:          Optional[str] = Form(None, description="ID Guru"),
 ):
     """
     Upload satu file PDF dan jalankan pipeline RAG secara asinkron.
-
-    - Pipeline berjalan di background; response langsung dikembalikan beserta `job_id`.
-    - Pantau status via `GET /pipeline/job/{job_id}`.
-    - `step` bisa diisi `extract`, `describe`, `chunk`, atau `ingest` untuk menjalankan
-      satu step saja. Kosongkan untuk menjalankan semua step.
-    - `buku_id` adalah ID unik buku. Jika tidak dikirim, akan di-generate UUID otomatis.
+    Mendukung upload PDF secara asinkron lewat:
+    1. JSON payload (application/json) dengan download link MinIO (`pdf_url`)
+    2. Form data (multipart/form-data) dengan upload file fisik (`file`)
     """
-    # Validasi tipe file
-    if not file.filename or not file.filename.lower().endswith(".pdf"):
-        raise HTTPException(status_code=400, detail="Hanya file PDF yang diterima.")
+    content_type = request.headers.get("content-type", "")
 
-    # Auto-generate buku_id jika tidak dikirim
-    if not buku_id:
-        buku_id = str(uuid.uuid4())
+    if "application/json" in content_type:
+        try:
+            body = await request.json()
+            req = PipelineUploadRequest(**body)
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=f"Invalid JSON payload: {e}")
 
-    # Simpan file yang di-upload
-    safe_name = Path(file.filename).name  # Hindari path traversal
-    dest_path = UPLOAD_DIR / safe_name
-    try:
-        with open(dest_path, "wb") as f:
-            content = await file.read()
-            f.write(content)
-    except Exception as exc:
-        raise HTTPException(status_code=500, detail=f"Gagal menyimpan file: {exc}")
+        # Bersihkan nama_file agar aman dari path traversal dan spasi
+        safe_name = "".join([c if c.isalnum() or c in "._-" else "_" for c in req.nama_file])
+        if not safe_name.lower().endswith(".pdf"):
+            safe_name += ".pdf"
 
-    params = PipelineParams(
-        step            = step,
-        buku_id         = buku_id,
-        start_page      = start_page,
-        end_page        = end_page,
-        mata_pelajaran  = mata_pelajaran,
-        id_kelas        = id_kelas,
-        jenjang         = jenjang,
-        id_guru         = id_guru,
-    )
+        dest_path = UPLOAD_DIR / safe_name
 
+        def _download_pdf(url: str, dest: Path) -> None:
+            resp = requests.get(url, stream=True, timeout=120)
+            resp.raise_for_status()
+            with open(dest, "wb") as f:
+                for data in resp.iter_content(chunk_size=8192):
+                    f.write(data)
+
+        try:
+            print(f"[API] Downloading PDF from URL: {req.pdf_url}")
+            await asyncio.to_thread(_download_pdf, req.pdf_url, dest_path)
+            print(f"[API] PDF saved to: {dest_path}")
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail=f"Gagal mendownload PDF dari URL: {exc}")
+
+        params = PipelineParams(
+            step            = req.step,
+            buku_id         = req.buku_id,
+            start_page      = req.start_page,
+            end_page        = req.end_page,
+            mata_pelajaran  = req.mata_pelajaran,
+            id_kelas        = req.id_kelas,
+            jenjang         = req.jenjang,
+            id_guru         = req.id_guru,
+        )
+
+        job_filename = safe_name
+        job_step = req.step if req.step else "all"
+
+    else:
+        # Fallback to multipart/form-data
+        try:
+            form = await request.form()
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=f"Gagal membaca form data: {e}")
+
+        file = form.get("file")
+        if not file or not isinstance(file, UploadFile):
+            raise HTTPException(status_code=400, detail="Parameter 'file' (UploadFile) atau JSON payload diperlukan.")
+
+        if not file.filename or not file.filename.lower().endswith(".pdf"):
+            raise HTTPException(status_code=400, detail="Hanya file PDF yang diterima.")
+
+        # Parse parameter form opsional
+        step = form.get("step")
+        buku_id = form.get("buku_id") or str(uuid.uuid4())
+        start_page = int(form.get("start_page", 0))
+        end_page = int(form.get("end_page", 0))
+        mata_pelajaran = form.get("mata_pelajaran")
+        id_kelas = form.get("id_kelas")
+        jenjang = form.get("jenjang")
+        id_guru = form.get("id_guru")
+
+        # Simpan file yang di-upload
+        safe_name = Path(file.filename).name  # Hindari path traversal
+        dest_path = UPLOAD_DIR / safe_name
+        try:
+            with open(dest_path, "wb") as f:
+                content = await file.read()
+                f.write(content)
+        except Exception as exc:
+            raise HTTPException(status_code=500, detail=f"Gagal menyimpan file upload: {exc}")
+
+        params = PipelineParams(
+            step            = step,
+            buku_id         = buku_id,
+            start_page      = start_page,
+            end_page        = end_page,
+            mata_pelajaran  = mata_pelajaran,
+            id_kelas        = id_kelas,
+            jenjang         = jenjang,
+            id_guru         = id_guru,
+        )
+
+        job_filename = safe_name
+        job_step = step if step else "all"
+
+    # Jalankan task di Celery jika aktif, else fallback ke BackgroundTask
     if CELERY_AVAILABLE and celery_run_pipeline is not None:
-        # ── Celery path: pipeline berjalan di worker terpisah (production) ────
         job_params = params.model_dump()
         job_params["pdf_path"] = str(dest_path)
         task = celery_run_pipeline.delay(job_params)
@@ -782,15 +847,14 @@ async def upload_and_run(
         return JobInfo(
             job_id     = task.id,
             status     = JobStatus.PENDING,
-            filename   = safe_name,
-            step       = step if step else "all",
+            filename   = job_filename,
+            step       = job_step,
             created_at = now,
             updated_at = now,
             message    = "Task dikirim ke Celery worker. Pantau via GET /pipeline/job/{job_id}",
         )
     else:
-        # ── Fallback: in-process BackgroundTask (dev / tanpa Redis) ──────────
-        job = _create_job(filename=safe_name, step=step if step else "all")
+        job = _create_job(filename=job_filename, step=job_step)
         background_tasks.add_task(_run_pipeline_task, job.job_id, dest_path, params)
         return job
 

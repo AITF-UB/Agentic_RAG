@@ -693,6 +693,7 @@ class HierarchyMetadata:
     id_kelas:           Optional[str]              = None
     jenjang:            Optional[str]              = None
     id_guru:            Optional[str]              = None
+    buku_id:            Optional[str]              = None
 
     def to_dict(self) -> Dict[str, Any]:
         result: Dict[str, Any] = {}
@@ -880,6 +881,7 @@ class HierarchyAwareChunker:
         id_kelas:       Optional[str] = None,
         jenjang:        Optional[str] = None,
         id_guru:        Optional[str] = None,
+        buku_id:        Optional[str] = None,
         extraction_dir: Optional[Path] = None,
     ) -> None:
         self.chunk_size      = chunk_size
@@ -888,6 +890,7 @@ class HierarchyAwareChunker:
         self.id_kelas        = id_kelas
         self.jenjang         = jenjang
         self.id_guru         = id_guru
+        self.buku_id         = buku_id
         self.metadata        = HierarchyMetadata()
         self.content_cleaner = ChunkContentCleaner()
         self._img_prefix: str = ""
@@ -1051,6 +1054,7 @@ class HierarchyAwareChunker:
             id_kelas=self.id_kelas,
             jenjang=self.jenjang,
             id_guru=self.id_guru,
+            buku_id=self.buku_id,
         )
         self._img_prefix = img_prefix
         chunks: List[ChunkWithMetadata] = []
@@ -1204,6 +1208,7 @@ class PageRangeAwareChunker(HierarchyAwareChunker):
         id_kelas:       Optional[str] = None,
         jenjang:        Optional[str] = None,
         id_guru:        Optional[str] = None,
+        buku_id:        Optional[str] = None,
         extraction_dir: Optional[Path] = None,
     ) -> None:
         super().__init__(
@@ -1213,6 +1218,7 @@ class PageRangeAwareChunker(HierarchyAwareChunker):
             id_kelas=id_kelas,
             jenjang=jenjang,
             id_guru=id_guru,
+            buku_id=buku_id,
             extraction_dir=extraction_dir,
         )
         self.page_range = page_range
@@ -1304,6 +1310,7 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
             id_kelas       = None
             jenjang        = None
             id_guru        = None
+            buku_id        = None
             if cfg_obj:
                 page_range = cfg_obj.get_page_range(filename)
                 book_meta  = cfg_obj.get_book_metadata(filename)
@@ -1322,6 +1329,8 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
                 jenjang = config.jenjang
             if id_guru is None and config.id_guru:
                 id_guru = config.id_guru
+            if buku_id is None and config.buku_id:
+                buku_id = config.buku_id
 
             if page_range:
                 print(f"  Page range     : {page_range[0]} - {page_range[1]}")
@@ -1347,6 +1356,7 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
                 id_kelas=id_kelas,
                 jenjang=jenjang,
                 id_guru=id_guru,
+                buku_id=buku_id,
                 extraction_dir=extraction_dir,
             )
             chunks = chunker.chunk(cleaned_text, img_prefix=img_prefix)
@@ -1675,7 +1685,7 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         payload = {
             "page_content":       doc["page_content"],
             "source_file":        normalized_source,
-            "buku_id":            config.buku_id,
+            "buku_id":            config.buku_id or meta.get("buku_id"),
             "page":               meta.get("page"),
             "chunk_index":        meta.get("chunk_index"),
             "mata_pelajaran":     meta.get("mata_pelajaran"),
