@@ -133,10 +133,10 @@ class PipelineConfig:
     # ── Metadata buku (untuk chunk) ────────────────────────────────────────
     # Digunakan sebagai nilai langsung (atau fallback jika tidak ada di config file)
     mata_pelajaran:  Optional[str] = None  # mis. "Biologi", "Matematika"
-    id_kelas:        Optional[str] = None  # ID_Kelas
+    kelas_id:        Optional[str] = None  # ID_Kelas
     jenjang:         Optional[str] = None  # Jenjang Kelas (mis. X, XI, XII)
     id_guru:         Optional[str] = None  # ID Guru
-    buku_id:         Optional[str] = None  # ID unik buku, di-assign di upload API
+    book_id:         Optional[str] = None  # ID unik buku, di-assign di upload API
     skip_existing:   bool = True
 
     def ensure_dirs(self) -> None:
@@ -690,10 +690,10 @@ class HierarchyMetadata:
     header_level:       Optional[int]              = None
     has_visual_content: Union[bool, List[Dict[str, str]]] = False
     mata_pelajaran:     Optional[str]              = None
-    id_kelas:           Optional[str]              = None
+    kelas_id:           Optional[str]              = None
     jenjang:            Optional[str]              = None
     id_guru:            Optional[str]              = None
-    buku_id:            Optional[str]              = None
+    book_id:            Optional[str]              = None
 
     def to_dict(self) -> Dict[str, Any]:
         result: Dict[str, Any] = {}
@@ -878,19 +878,19 @@ class HierarchyAwareChunker:
         chunk_size:     int = 500,
         min_chunk_size: int = 150,
         mata_pelajaran: Optional[str] = None,
-        id_kelas:       Optional[str] = None,
+        kelas_id:       Optional[str] = None,
         jenjang:        Optional[str] = None,
         id_guru:        Optional[str] = None,
-        buku_id:        Optional[str] = None,
+        book_id:        Optional[str] = None,
         extraction_dir: Optional[Path] = None,
     ) -> None:
         self.chunk_size      = chunk_size
         self.min_chunk_size  = min_chunk_size
         self.mata_pelajaran  = mata_pelajaran
-        self.id_kelas        = id_kelas
+        self.kelas_id        = kelas_id
         self.jenjang         = jenjang
         self.id_guru         = id_guru
-        self.buku_id         = buku_id
+        self.book_id         = book_id
         self.metadata        = HierarchyMetadata()
         self.content_cleaner = ChunkContentCleaner()
         self._img_prefix: str = ""
@@ -1051,10 +1051,10 @@ class HierarchyAwareChunker:
     def chunk(self, text: str, img_prefix: str = "") -> List[ChunkWithMetadata]:
         self.metadata = HierarchyMetadata(
             mata_pelajaran=self.mata_pelajaran,
-            id_kelas=self.id_kelas,
+            kelas_id=self.kelas_id,
             jenjang=self.jenjang,
             id_guru=self.id_guru,
-            buku_id=self.buku_id,
+            book_id=self.book_id,
         )
         self._img_prefix = img_prefix
         chunks: List[ChunkWithMetadata] = []
@@ -1205,20 +1205,20 @@ class PageRangeAwareChunker(HierarchyAwareChunker):
         min_chunk_size: int = 150,
         page_range:     Optional[Tuple[int, int]] = None,
         mata_pelajaran: Optional[str] = None,
-        id_kelas:       Optional[str] = None,
+        kelas_id:       Optional[str] = None,
         jenjang:        Optional[str] = None,
         id_guru:        Optional[str] = None,
-        buku_id:        Optional[str] = None,
+        book_id:        Optional[str] = None,
         extraction_dir: Optional[Path] = None,
     ) -> None:
         super().__init__(
             chunk_size=chunk_size,
             min_chunk_size=min_chunk_size,
             mata_pelajaran=mata_pelajaran,
-            id_kelas=id_kelas,
+            kelas_id=kelas_id,
             jenjang=jenjang,
             id_guru=id_guru,
-            buku_id=buku_id,
+            book_id=book_id,
             extraction_dir=extraction_dir,
         )
         self.page_range = page_range
@@ -1307,15 +1307,15 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
             # Book metadata
             page_range     = None
             mata_pelajaran = None
-            id_kelas       = None
+            kelas_id       = None
             jenjang        = None
             id_guru        = None
-            buku_id        = None
+            book_id        = None
             if cfg_obj:
                 page_range = cfg_obj.get_page_range(filename)
                 book_meta  = cfg_obj.get_book_metadata(filename)
                 mata_pelajaran = book_meta.get("mata_pelajaran")
-                id_kelas       = book_meta.get("id_kelas")
+                kelas_id       = book_meta.get("kelas_id")
                 jenjang        = book_meta.get("jenjang")
                 id_guru        = book_meta.get("id_guru")
 
@@ -1323,19 +1323,19 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
             # (jika config file tidak menyediakan, atau tidak ada config file sama sekali)
             if mata_pelajaran is None and config.mata_pelajaran:
                 mata_pelajaran = config.mata_pelajaran
-            if id_kelas is None and config.id_kelas:
-                id_kelas = config.id_kelas
+            if kelas_id is None and config.kelas_id:
+                kelas_id = config.kelas_id
             if jenjang is None and config.jenjang:
                 jenjang = config.jenjang
             if id_guru is None and config.id_guru:
                 id_guru = config.id_guru
-            if buku_id is None and config.buku_id:
-                buku_id = config.buku_id
+            if book_id is None and config.book_id:
+                book_id = config.book_id
 
             if page_range:
                 print(f"  Page range     : {page_range[0]} - {page_range[1]}")
             print(f"  Mata pelajaran : {mata_pelajaran or '(tidak tersedia)'}")
-            print(f"  ID Kelas       : {id_kelas or '(tidak tersedia)'}")
+            print(f"  ID Kelas       : {kelas_id or '(tidak tersedia)'}")
             print(f"  Jenjang        : {jenjang or '(tidak tersedia)'}")
             print(f"  ID Guru        : {id_guru or '(tidak tersedia)'}")
 
@@ -1353,10 +1353,10 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
                 min_chunk_size=config.min_chunk_size,
                 page_range=page_range,
                 mata_pelajaran=mata_pelajaran,
-                id_kelas=id_kelas,
+                kelas_id=kelas_id,
                 jenjang=jenjang,
                 id_guru=id_guru,
-                buku_id=buku_id,
+                book_id=book_id,
                 extraction_dir=extraction_dir,
             )
             chunks = chunker.chunk(cleaned_text, img_prefix=img_prefix)
@@ -1376,7 +1376,7 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
             pr_str = f"{page_range[0]}-{page_range[1]}" if page_range else None
             results[filename] = {
                 "status": "success", "chunks": len(docs),
-                "page_range": pr_str, "mata_pelajaran": mata_pelajaran, "id_kelas": id_kelas, "jenjang": jenjang, "id_guru": id_guru,
+                "page_range": pr_str, "mata_pelajaran": mata_pelajaran, "kelas_id": kelas_id, "jenjang": jenjang, "id_guru": id_guru,
             }
         except Exception as e:
             print(f"  ❌ Error: {e}")
@@ -1623,7 +1623,7 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
             str(meta.get("page", "")),
             str(meta.get("chunk_index", "")),
             str(meta.get("mata_pelajaran", "")),
-            str(meta.get("id_kelas", "")),
+            str(meta.get("kelas_id", "")),
             str(meta.get("id_guru", "")),
             str(meta.get("jenjang", "")),
             hashlib.md5(doc["page_content"].encode("utf-8")).hexdigest(),
@@ -1685,11 +1685,11 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
         payload = {
             "page_content":       doc["page_content"],
             "source_file":        normalized_source,
-            "buku_id":            config.buku_id or meta.get("buku_id"),
+            "book_id":            config.book_id or meta.get("book_id"),
             "page":               meta.get("page"),
             "chunk_index":        meta.get("chunk_index"),
             "mata_pelajaran":     meta.get("mata_pelajaran"),
-            "id_kelas":           meta.get("id_kelas"),
+            "kelas_id":           meta.get("kelas_id"),
             "jenjang":            meta.get("jenjang"),
             "id_guru":            meta.get("id_guru"),
             # Hierarchy — hanya field yang terisi (None di-skip di bawah)
@@ -1855,7 +1855,7 @@ Contoh penggunaan:
                         help="Halaman akhir ekstraksi (inklusif). 0 = sampai akhir dokumen")
     parser.add_argument("--mata-pelajaran", type=str, default=None,
                         help="Mata pelajaran (mis. Biologi). Dipakai sebagai metadata chunk.")
-    parser.add_argument("--id-kelas", type=str, default=None,
+    parser.add_argument("--kelas-id", type=str, default=None,
                         help="ID Kelas (mis. X-A). Dipakai sebagai metadata chunk.")
     parser.add_argument("--jenjang", type=str, default=None,
                         help="Jenjang Kelas (mis. X). Dipakai sebagai metadata chunk.")
@@ -1901,7 +1901,7 @@ Contoh penggunaan:
         start_page        = args.start_page,
         end_page          = args.end_page,
         mata_pelajaran    = args.mata_pelajaran,
-        id_kelas          = args.id_kelas,
+        kelas_id          = args.kelas_id,
         jenjang           = args.jenjang,
         id_guru           = args.id_guru,
         vlm_model_id      = args.vlm_model,

@@ -16,12 +16,12 @@ class GenerateRequest(BaseModel):
     level: Optional[str] = Field(default=None, description="Low, Mid, or High (Null for mindmap)", max_length=20)
     instruksi_revisi: Optional[str] = Field(None, max_length=1000)
     konten_id: Optional[str] = Field(None, max_length=100)
-    buku_id: Optional[str] = Field(None, max_length=200, description="ID unik buku untuk filter referensi spesifik buku")
+    book_id: Optional[str] = Field(None, max_length=200, description="ID unik buku untuk filter referensi spesifik buku")
     user_id: Optional[str] = Field(None, max_length=100, description="ID user untuk tracking")
 
-    @field_validator("buku_id")
+    @field_validator("book_id")
     @classmethod
-    def normalize_buku_id(cls, v):
+    def normalize_book_id(cls, v):
         if v is not None and v.strip() == "":
             return None
         return v

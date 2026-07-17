@@ -169,7 +169,7 @@ class JobInfo(BaseModel):
 class PipelineParams(BaseModel):
     """Parameter opsional untuk pipeline."""
     step:             Optional[str] = Field(None, description="Step tertentu, kosong = semua step")
-    buku_id:          Optional[str] = Field(None, description="ID unik buku (UUID, di-generate/diinput saat upload)")
+    book_id:          Optional[str] = Field(None, description="ID unik buku (UUID, di-generate/diinput saat upload)")
     qdrant_host:      str  = Field(os.getenv("QDRANT_HOST", "76.13.195.1"),           description="Host Qdrant")
     qdrant_port:      int  = Field(int(os.getenv("QDRANT_PORT", "6333")),             description="Port Qdrant")
     collection_name:  str  = Field(os.getenv("QDRANT_TEXT_COLLECTION", "Test_pipeline"), description="Nama collection Qdrant")
@@ -181,7 +181,7 @@ class PipelineParams(BaseModel):
     end_page:         int  = Field(0, description="Halaman akhir (inklusif). 0 = sampai halaman terakhir")
     # Metadata buku — masuk ke setiap chunk di Qdrant
     mata_pelajaran:   Optional[str] = Field(None, description="Mata pelajaran (mis. Biologi, Matematika)")
-    id_kelas:         Optional[str] = Field(None, description="ID Kelas")
+    kelas_id:         Optional[str] = Field(None, description="ID Kelas")
     jenjang:          Optional[str] = Field(None, description="Jenjang Kelas")
     id_guru:          Optional[str] = Field(None, description="ID Guru")
     vlm_model:        str  = Field(DEFAULT_VLM_MODEL, description="Nama model VLM (OpenAI-compatible API)")
@@ -307,10 +307,10 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             start_page        = params.start_page,
             end_page          = params.end_page,
             mata_pelajaran    = params.mata_pelajaran,
-            id_kelas          = params.id_kelas,
+            kelas_id          = params.kelas_id,
             jenjang           = params.jenjang,
             id_guru           = params.id_guru,
-            buku_id           = params.buku_id,
+            book_id           = params.book_id,
             vlm_model_id      = params.vlm_model,
             ollama_host       = params.ollama_host,
             dense_model_name  = params.dense_model,
@@ -343,7 +343,7 @@ def _run_pipeline_task(job_id: str, pdf_path: Path, params: PipelineParams) -> N
             message = "Pipeline selesai.",
             result  = {
                 "pdf_file":          pdf_path.name,
-                "buku_id":           params.buku_id,
+                "book_id":           params.book_id,
                 "source_file":       source_file_normalized,
                 "step_run":          params.step if params.step else "all",
                 "json_files":        [str(p) for p in json_files],
@@ -723,14 +723,14 @@ import requests
 from urllib.parse import urlparse
 
 class PipelineUploadRequest(BaseModel):
-    buku_id: str = Field(..., description="ID unik buku")
+    book_id: str = Field(..., description="ID unik buku")
     pdf_url: str = Field(..., description="URL presigned MinIO / public PDF")
     nama_file: str = Field(..., description="Nama file untuk disimpan (tanpa path/traversal)")
     start_page: int = Field(0, description="Halaman awal (1-based). 0 = dari awal")
     end_page: int = Field(0, description="Halaman akhir (inklusif). 0 = sampai akhir")
     mata_pelajaran: Optional[str] = Field(None, description="Mata pelajaran")
     jenjang: Optional[str] = Field(None, description="Jenjang kelas")
-    id_kelas: Optional[str] = Field(None, description="ID Kelas")
+    kelas_id: Optional[str] = Field(None, description="ID Kelas")
     id_guru: Optional[str] = Field(None, description="ID Guru")
     step: Optional[str] = Field(None, description="Step tertentu, kosong = semua step")
 
@@ -778,11 +778,11 @@ async def upload_and_run(
 
         params = PipelineParams(
             step            = req.step,
-            buku_id         = req.buku_id,
+            book_id         = req.book_id,
             start_page      = req.start_page,
             end_page        = req.end_page,
             mata_pelajaran  = req.mata_pelajaran,
-            id_kelas        = req.id_kelas,
+            kelas_id        = req.kelas_id,
             jenjang         = req.jenjang,
             id_guru         = req.id_guru,
         )
@@ -806,11 +806,11 @@ async def upload_and_run(
 
         # Parse parameter form opsional
         step = form.get("step")
-        buku_id = form.get("buku_id") or str(uuid.uuid4())
+        book_id = form.get("book_id") or str(uuid.uuid4())
         start_page = int(form.get("start_page", 0))
         end_page = int(form.get("end_page", 0))
         mata_pelajaran = form.get("mata_pelajaran")
-        id_kelas = form.get("id_kelas")
+        kelas_id = form.get("kelas_id")
         jenjang = form.get("jenjang")
         id_guru = form.get("id_guru")
 
@@ -826,11 +826,11 @@ async def upload_and_run(
 
         params = PipelineParams(
             step            = step,
-            buku_id         = buku_id,
+            book_id         = book_id,
             start_page      = start_page,
             end_page        = end_page,
             mata_pelajaran  = mata_pelajaran,
-            id_kelas        = id_kelas,
+            kelas_id        = kelas_id,
             jenjang         = jenjang,
             id_guru         = id_guru,
         )
@@ -974,15 +974,15 @@ def delete_job(job_id: str):
     return {"message": f"Job '{job_id}' dihapus.", "filename": job.filename}
 
 
-@app.delete("/pipeline/buku/{buku_id}", tags=["Pipeline"])
+@app.delete("/pipeline/buku/{book_id}", tags=["Pipeline"])
 def delete_book_pipeline_data(
-    buku_id: str,
+    book_id: str,
     qdrant_host: str = os.getenv("QDRANT_HOST", "76.13.195.1"),
     qdrant_port: int = int(os.getenv("QDRANT_PORT", "6333")),
     collection_name: str = os.getenv("QDRANT_PIPELINE_EKSTRACTION", "hybrid_new")
 ):
     """
-    Hapus semua data terkait buku_id tertentu.
+    Hapus semua data terkait book_id tertentu.
     - Menghapus chunks dari Qdrant.
     - Menghapus file PDF yang di-upload dari folder uploads/ jika dapat diidentifikasi.
     """
@@ -1018,7 +1018,7 @@ def delete_book_pipeline_data(
     # Cari di in-memory _jobs
     with _jobs_lock:
         for job in _jobs.values():
-            if job.result and job.result.get("buku_id") == buku_id:
+            if job.result and job.result.get("book_id") == book_id:
                 filename_to_delete = job.result.get("pdf_file")
                 break
 
@@ -1031,8 +1031,8 @@ def delete_book_pipeline_data(
                 scroll_filter=Filter(
                     must=[
                         FieldCondition(
-                            key="buku_id",
-                            match=MatchValue(value=buku_id)
+                            key="book_id",
+                            match=MatchValue(value=book_id)
                         )
                     ]
                 ),
@@ -1061,8 +1061,8 @@ def delete_book_pipeline_data(
                 points_selector=Filter(
                     must=[
                         FieldCondition(
-                            key="buku_id",
-                            match=MatchValue(value=buku_id)
+                            key="book_id",
+                            match=MatchValue(value=book_id)
                         )
                     ]
                 )
@@ -1092,7 +1092,7 @@ def delete_book_pipeline_data(
     with _jobs_lock:
         to_remove = []
         for j_id, job in _jobs.items():
-            if (job.result and job.result.get("buku_id") == buku_id) or \
+            if (job.result and job.result.get("book_id") == book_id) or \
                (filename_to_delete and job.filename == filename_to_delete):
                 to_remove.append(j_id)
         for j_id in to_remove:
@@ -1101,8 +1101,8 @@ def delete_book_pipeline_data(
 
     return {
         "status": "success",
-        "message": f"Data buku dengan ID '{buku_id}' berhasil dihapus.",
-        "buku_id": buku_id,
+        "message": f"Data buku dengan ID '{book_id}' berhasil dihapus.",
+        "book_id": book_id,
         "qdrant_deleted": qdrant_deleted,
         "collection_name": collection_name,
         "file_deleted": file_deleted,

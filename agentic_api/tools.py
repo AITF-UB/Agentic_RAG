@@ -295,14 +295,14 @@ def _normalize_source_file(raw: str) -> str:
     return name.lower()
 
 
-def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, buku_id: Optional[str] = None):
+def _build_qdrant_filter(asset_type: Optional[str] = None, source: Optional[str] = None, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, book_id: Optional[str] = None):
     conditions = []
     if asset_type: conditions.append(models.FieldCondition(key="asset_type", match=models.MatchValue(value=asset_type)))
     if source: conditions.append(models.FieldCondition(key="source", match=models.MatchValue(value=source)))
     if mata_pelajaran: conditions.append(models.FieldCondition(key="mata_pelajaran", match=models.MatchValue(value=mata_pelajaran)))
     if kelas is not None: conditions.append(models.FieldCondition(key="kelas", match=models.MatchValue(value=kelas)))
     if source_file: conditions.append(models.FieldCondition(key="source_file", match=models.MatchValue(value=_normalize_source_file(source_file))))
-    if buku_id: conditions.append(models.FieldCondition(key="buku_id", match=models.MatchValue(value=buku_id)))
+    if book_id: conditions.append(models.FieldCondition(key="book_id", match=models.MatchValue(value=book_id)))
     return models.Filter(must=conditions) if conditions else None
 
 # ================================================================
@@ -552,7 +552,7 @@ async def rerank_results(query: str, docs: list, top_k: int = 5) -> list:
 # ================================================================
 # 5. Pipeline Search Utama
 # ================================================================
-async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int], source_file: Optional[str] = None, buku_id: Optional[str] = None) -> list:
+async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int], source_file: Optional[str] = None, book_id: Optional[str] = None) -> list:
     """
     Dense-only retrieval: embed → Qdrant dense search → dedup.
     Tidak menjalankan SPLADE, BM25, RRF, maupun reranker sehingga
@@ -561,7 +561,7 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
     retrieve_k = max(top_k * 3, 20)
 
     vector = await embed_text_for_text_vdb(query)
-    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file, buku_id=buku_id)
+    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file, book_id=book_id)
     hits = await _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
 
     results = []
@@ -587,7 +587,7 @@ async def _retrieve_dense(query: str, top_k: int, mata_pelajaran: Optional[str],
     return await _inject_visual_content_batch(TEXT_COLLECTION, top_results)
 
 
-async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int], source_file: Optional[str] = None, buku_id: Optional[str] = None) -> list:
+async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str], kelas: Optional[int], source_file: Optional[str] = None, book_id: Optional[str] = None) -> list:
     """
     Hybrid retrieval: Dense + SPLADE + BM25 → RRF fusion → dedup
     → chunk expansion → rerank.
@@ -597,7 +597,7 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
 
     # 1. Dense Search
     vector = await embed_text_for_text_vdb(query)
-    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file, buku_id=buku_id)
+    payload_filter = _build_qdrant_filter(mata_pelajaran=mata_pelajaran, kelas=kelas, source_file=source_file, book_id=book_id)
     hits = await _search_qdrant_dense(TEXT_COLLECTION, vector, retrieve_k, filter_payload=payload_filter)
     dense_results = []
     for hit in hits:
@@ -633,7 +633,7 @@ async def _retrieve_hybrid(query: str, top_k: int, mata_pelajaran: Optional[str]
     return await _inject_visual_content_batch(TEXT_COLLECTION, reranked_results)
 
 
-async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, buku_id: Optional[str] = None) -> list:
+async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, book_id: Optional[str] = None) -> list:
     """
     Entry point retrieval. Memilih strategi berdasarkan SEARCH_MODE:
       - "dense"  → _retrieve_dense()   (default production)
@@ -643,9 +643,9 @@ async def retrieve_text(query: str, top_k: int = 5, mata_pelajaran: Optional[str
         return []
 
     if SEARCH_MODE == "hybrid":
-        return await _retrieve_hybrid(query, top_k, mata_pelajaran, kelas, source_file, buku_id)
+        return await _retrieve_hybrid(query, top_k, mata_pelajaran, kelas, source_file, book_id)
     else:
-        return await _retrieve_dense(query, top_k, mata_pelajaran, kelas, source_file, buku_id)
+        return await _retrieve_dense(query, top_k, mata_pelajaran, kelas, source_file, book_id)
 
 def extract_source(chunks: List[dict]) -> List[str]:
     sources = set()
@@ -674,19 +674,19 @@ class RAGEngine:
         return 8
 
     @staticmethod
-    async def unified_search(query: str, tipe: str, mapel: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, buku_id: Optional[str] = None) -> Dict[str, Any]:
+    async def unified_search(query: str, tipe: str, mapel: Optional[str] = None, kelas: Optional[int] = None, source_file: Optional[str] = None, book_id: Optional[str] = None) -> Dict[str, Any]:
         """
         Perform full pipeline search with dynamic chunk sizing and multimodal metadata capabilities.
 
-        Ketika `buku_id` diberikan, melakukan dua pencarian:
-          1. Search normal tanpa filter buku_id → ambil chunk dari file RAG bawaan
-          2. Search spesifik dengan filter buku_id → ambil chunk dari buku tertentu
+        Ketika `book_id` diberikan, melakukan dua pencarian:
+          1. Search normal tanpa filter book_id → ambil chunk dari file RAG bawaan
+          2. Search spesifik dengan filter book_id → ambil chunk dari buku tertentu
         Hasilnya digabung & di-dedup, dengan chunk spesifik buku diutamakan.
         """
         k_text = RAGEngine.get_k_for_type(tipe)
 
-        if buku_id:
-            texts = await RAGEngine._search_with_book_reference(query, k_text, mapel, kelas, buku_id)
+        if book_id:
+            texts = await RAGEngine._search_with_book_reference(query, k_text, mapel, kelas, book_id)
         else:
             texts = await retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas, source_file=source_file)
 
@@ -785,11 +785,11 @@ class RAGEngine:
         }
 
     @staticmethod
-    async def _search_with_book_reference(query: str, k_text: int, mapel: Optional[str], kelas: Optional[int], buku_id: str) -> list:
-        """Dual-search parallel: default + spesifik buku (by buku_id), lalu merge & dedup dengan prioritas buku."""
+    async def _search_with_book_reference(query: str, k_text: int, mapel: Optional[str], kelas: Optional[int], book_id: str) -> list:
+        """Dual-search parallel: default + spesifik buku (by book_id), lalu merge & dedup dengan prioritas buku."""
         default_texts, book_texts = await asyncio.gather(
             retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas),
-            retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas, buku_id=buku_id),
+            retrieve_text(query, top_k=k_text, mata_pelajaran=mapel, kelas=kelas, book_id=book_id),
         )
 
         seen_ids = set()

@@ -120,10 +120,10 @@ def run_pipeline(self: Task, job_params: dict) -> dict:
             start_page        = job_params.get("start_page", 0),
             end_page          = job_params.get("end_page", 0),
             mata_pelajaran    = job_params.get("mata_pelajaran"),
-            id_kelas          = job_params.get("id_kelas"),
+            kelas_id          = job_params.get("kelas_id"),
             jenjang           = job_params.get("jenjang"),
             id_guru           = job_params.get("id_guru"),
-            buku_id           = job_params.get("buku_id"),
+            book_id           = job_params.get("book_id"),
             vlm_model_id      = job_params.get("vlm_model", DEFAULT_VLM_MODEL),
             ollama_host       = job_params.get("ollama_host", DEFAULT_VLM_HOST),
             dense_model_name  = job_params.get("dense_model", DEFAULT_DENSE_MODEL),
@@ -154,7 +154,7 @@ def run_pipeline(self: Task, job_params: dict) -> dict:
 
         result = {
             "pdf_file":          pdf_path.name,
-            "buku_id":           job_params.get("buku_id"),
+            "book_id":           job_params.get("book_id"),
             "source_file":       _normalize_source_file(pdf_path.stem),
             "step_run":          step or "all",
             "json_files":        [str(p) for p in json_files],
