@@ -312,6 +312,7 @@ def step1_extract(config: PipelineConfig) -> List[Path]:
                             "type": "section_header",
                             "page": page_no,
                             "text": element.text,
+                            "heading_level": getattr(element, "level", None),
                         })
                     elif element.label in ("text", "list_item"):
                         text = element.text.strip()
@@ -616,7 +617,12 @@ def step2_describe_images(config: PipelineConfig, json_paths: Optional[List[Path
 
                 t = el["type"]
                 if t == "section_header":
-                    assembled_md += f"\n### {el['text']}\n\n"
+                    raw_level = el.get("heading_level")
+                    try:
+                        hashes = "#" * max(1, min(6, int(raw_level))) if raw_level else "###"
+                    except (TypeError, ValueError):
+                        hashes = "###"
+                    assembled_md += f"\n{hashes} {el['text']}\n\n"
                 elif t == "text":
                     assembled_md += f"{el['text']}\n\n"
                 elif t == "list_item":
@@ -686,6 +692,7 @@ class HierarchyMetadata:
     subsection:         Optional[int]              = None
     subsubsection:      Optional[str]              = None
     page:               Optional[int]              = None
+    page_end:           Optional[int]              = None
     current_header:     Optional[str]              = None
     header_level:       Optional[int]              = None
     has_visual_content: Union[bool, List[Dict[str, str]]] = False
@@ -718,14 +725,22 @@ class MarkdownHeaderCleaner:
     """Cleaner untuk menstandarkan hierarchy header Markdown."""
 
     HEADER_RE  = re.compile(r"^\s*(?:#sym:)?(?P<hashes>#{1,6})\s*(?P<title>[^\n\r]+?)\s*$")
-    RE_CHAPTER = re.compile(r"^bab\s+\d+\b", re.IGNORECASE)
-    RE_LETTER  = re.compile(r"^[A-Z]\.\s*\S")
-    RE_DIGIT   = re.compile(r"^\d+\.\s*\S?")
-    RE_LOWER   = re.compile(r"^[a-z]\.\s*\S")
+    RE_CHAPTER = re.compile(r"^bab\s+(?:ke-?)?(\d+|[IVXLCDM]+)\b", re.IGNORECASE)
+    RE_TOPLEVEL = re.compile(
+        r"^(?:rangkuman|ringkasan|penutup|pendahuluan|pengantar|kata pengantar"
+        r"|daftar isi|daftar pustaka|daftar gambar|daftar tabel|daftar istilah"
+        r"|daftar referensi|glosarium|glosary|indeks|profil buku|identitas buku"
+        r"|tentang buku|seputar buku|petunjuk penggunaan buku|kunci jawaban)\b",
+        re.IGNORECASE,
+    )
+    RE_DECIMAL = re.compile(r"^\d+\.\d+\b")
+    RE_LETTER  = re.compile(r"^[A-Z]\s*[.)]\s*\S?")
+    RE_DIGIT   = re.compile(r"^\d+\s*[.)]\s*\S?")
+    RE_LOWER   = re.compile(r"^[a-z]\s*[.)]\s*\S?")
     RE_PAGE    = re.compile(
         r"^(?:\[(?:HALAMAN|PAGE)[_\s-]*\d+\]"
         r"|📄\s*Halaman\s+\d+"
-        r"|.*Halaman\s+\d+\s*$"
+        r"|Halaman\s+\d+\s*$"
         r")",
         re.IGNORECASE,
     )
@@ -740,7 +755,9 @@ class MarkdownHeaderCleaner:
         t = title.strip()
         if self.RE_PAGE.match(t):    return "PAGE"
         if self.RE_CHAPTER.match(t): return "CHAPTER"
+        if self.RE_TOPLEVEL.match(t): return "TOPLEVEL"
         if self.RE_LETTER.match(t):  return "LETTER"
+        if self.RE_DECIMAL.match(t): return "DECIMAL"
         if self.RE_DIGIT.match(t):   return "DIGIT"
         if self.RE_LOWER.match(t):   return "LOWER"
         if self.RE_ALT.match(t):     return "ALT"
@@ -748,14 +765,18 @@ class MarkdownHeaderCleaner:
 
     def _target_level(self, kind: str) -> Tuple[int, bool, bool]:
         if kind == "CHAPTER": return 1, True,  True
+        if kind == "TOPLEVEL": return 1, True, True
         if kind == "LETTER":  return 2, True,  True
         if kind == "DIGIT":   return 3, True,  True
-        if kind == "LOWER":   return 4, True,  True
-        if kind == "PAGE":    return 5, False, False
+        if kind == "DECIMAL": return 4, True,  True
+        if kind == "LOWER":   return 5, True,  True
+        if kind == "PAGE":    return 6, False, False
         if kind == "ALT":
             base  = self.state.last_heading_level or self.state.last_struct_level or 2
             level = min(max(base + 1, (self.state.last_struct_level or 2) + 1), 6)
             return level, False, True
+        if not self.state.last_struct_level:
+            return 1, True, True
         base_struct = self.state.last_struct_level or 2
         return min(base_struct + 1, 6), False, True
 
@@ -798,12 +819,10 @@ class MarkdownHeaderCleaner:
 class ChunkContentCleaner:
     """Membersihkan noise dari page_content hasil chunk."""
 
-    VISUAL_BLOCK_RE = re.compile(
-        r"(?im)^\s*---\s*\n"
-        r"\s*\*\*[^\n]*(?:🖼️|gambar|diagram|tabel|visual)[^\n]*\*\*\s*\n"
-        r"(?:\s*>.*(?:\n|$))*"
-        r"\s*(?:---\s*)?(?=\n|$)"
+    VISUAL_LABEL_RE = re.compile(
+        r"(?im)^\s*\*\*[^\n]*(?:🖼️|📊|gambar|diagram|tabel|visual)[^\n]*\*\*\s*$"
     )
+    VISUAL_DESC_RE = re.compile(r"(?im)^\s*>\s*\*\*Deskripsi Visual:\*\*\s*(?P<desc>.*)$")
     MARKDOWN_IMAGE_RE = re.compile(r"!\[.*?\]\(.*?\)")
     HTML_BR_RE = re.compile(r"<br\s*/?>", re.IGNORECASE)
     HORIZONTAL_RULE_LINE_RE = re.compile(r"(?m)^\s*-{3,}\s*$")
@@ -823,7 +842,8 @@ class ChunkContentCleaner:
             return ""
         cleaned = text.replace("\r\n", "\n").replace("\r", "\n")
         cleaned = cls.STATS_FOOTER_RE.sub("", cleaned)       # ← buang footer statistik pipeline
-        cleaned = cls.VISUAL_BLOCK_RE.sub("\n", cleaned)
+        cleaned = cls.VISUAL_LABEL_RE.sub("\n", cleaned)
+        cleaned = cls.VISUAL_DESC_RE.sub(r"Deskripsi visual: \g<desc>", cleaned)
         cleaned = cls.MARKDOWN_IMAGE_RE.sub("", cleaned)
         cleaned = cls.HTML_BR_RE.sub("\n", cleaned)
         cleaned = cls.HORIZONTAL_RULE_LINE_RE.sub("", cleaned)
@@ -851,6 +871,35 @@ class ChunkContentCleaner:
 
 # ── Hierarchy Aware Chunker ──────────────────────────────────────────────────
 
+_ROMAN_MAP = {
+    "I": 1, "V": 5, "X": 10, "L": 50,
+    "C": 100, "D": 500, "M": 1000,
+}
+
+
+def _roman_to_int(value: str) -> Optional[int]:
+    value = (value or "").upper().strip()
+    if not value:
+        return None
+    total = 0
+    prev = 0
+    for ch in reversed(value):
+        val = _ROMAN_MAP.get(ch)
+        if val is None:
+            return None
+        total += -val if val < prev else val
+        prev = val
+    return total or None
+
+
+def _chapter_num_from_title(t: str) -> Optional[int]:
+    m = re.match(r"^bab\s+(?:ke-?)?(\d+|[IVXLCDM]+)\b", t, re.IGNORECASE)
+    if not m:
+        return None
+    val = m.group(1)
+    return int(val) if val.isdigit() else _roman_to_int(val)
+
+
 class HierarchyAwareChunker:
     """Chunker yang mempertahankan metadata hierarchy."""
 
@@ -864,9 +913,9 @@ class HierarchyAwareChunker:
     )
 
     PAGE_TITLE_RE = re.compile(
-        r"(?:.*Halaman\s+(\d+)\s*$"
-        r"|\[(?:HALAMAN|PAGE)[_\s-]*(\d+)\]"
+        r"^(?:\[(?:HALAMAN|PAGE)[_\s-]*(\d+)\]"
         r"|📄\s*Halaman\s+(\d+)"
+        r"|Halaman\s+(\d+)\s*$"
         r")",
         re.IGNORECASE,
     )
@@ -905,29 +954,40 @@ class HierarchyAwareChunker:
                 self.metadata.page = int(page_num)
             return
 
-        if level == 1:
-            m = re.match(r"^bab\s+(\d+)\b", t, re.IGNORECASE)
-            if m:
-                self.metadata.chapter_num    = int(m.group(1))
-                self.metadata.chapter        = t
-                self.metadata.section        = None
-                self.metadata.section_letter = None
-                self.metadata.subsection     = None
-                self.metadata.subsubsection  = None
+        if level <= 1:
+            self.metadata.chapter        = t
+            self.metadata.chapter_num    = _chapter_num_from_title(t)
+            self.metadata.section        = None
+            self.metadata.section_letter = None
+            self.metadata.subsection     = None
+            self.metadata.subsubsection  = None
         elif level == 2:
-            m = re.match(r"^([A-Z])\.\s*(.*)", t)
+            self.metadata.section        = t
+            self.metadata.section_letter = None
+            self.metadata.subsection     = None
+            self.metadata.subsubsection  = None
+            m = re.match(r"^([A-Z])\s*[.)]\s*(.*)", t)
             if m:
                 self.metadata.section_letter = m.group(1)
-                self.metadata.section        = t
-                self.metadata.subsection     = None
-                self.metadata.subsubsection  = None
         elif level == 3:
-            m = re.match(r"^(\d+)\.\s*(.*)", t)
+            self.metadata.subsection    = None
+            self.metadata.subsubsection = None
+            m = re.match(r"^(\d+)\s*[.)]\s*(.*)", t)
             if m:
-                self.metadata.subsection    = int(m.group(1))
-                self.metadata.subsubsection = None
+                self.metadata.subsection = int(m.group(1))
         elif level == 4:
-            m = re.match(r"^([a-z])\.\s*(.*)", t)
+            self.metadata.subsubsection = None
+            m = re.match(r"^(\d+(?:\.\d+)+)[\.\s]*(.*)", t)
+            if m:
+                self.metadata.subsection    = int(m.group(1).split(".")[0])
+                self.metadata.subsubsection = m.group(1)
+            else:
+                m = re.match(r"^([a-z])\s*[.)]\s*(.*)", t)
+                if m:
+                    self.metadata.subsubsection = m.group(1)
+        elif level >= 5:
+            self.metadata.subsubsection = None
+            m = re.match(r"^([a-z])\s*[.)]\s*(.*)", t)
             if m:
                 self.metadata.subsubsection = m.group(1)
 
@@ -1012,40 +1072,79 @@ class HierarchyAwareChunker:
     def _merge_small_chunks(self, chunks: List[ChunkWithMetadata]) -> List[ChunkWithMetadata]:
         if not chunks:
             return chunks
+
+        def combine_visual(pv, cv) -> Union[bool, List[Dict[str, str]]]:
+            if isinstance(pv, list) or isinstance(cv, list):
+                seen_paths: set = set()
+                combined: List[Dict[str, str]] = []
+                for item in (pv if isinstance(pv, list) else []) + (cv if isinstance(cv, list) else []):
+                    p = item.get("path", "")
+                    if p not in seen_paths:
+                        seen_paths.add(p)
+                        combined.append(item)
+                return combined if combined else False
+            if pv or cv:
+                return pv or cv
+            return False
+
+        def merge_page(meta: HierarchyMetadata, other: HierarchyMetadata) -> None:
+            if other.page is None:
+                return
+            if meta.page is None:
+                meta.page = other.page
+                meta.page_end = other.page_end
+                return
+            other_end = other.page_end if other.page_end is not None else other.page
+            current_end = meta.page_end if meta.page_end is not None else meta.page
+            lo = min(meta.page, other.page)
+            hi = max(current_end, other_end)
+            meta.page = lo
+            meta.page_end = hi if hi != lo else None
+
+        def same_section(a: ChunkWithMetadata, b: ChunkWithMetadata) -> bool:
+            return (a.metadata.current_header or "") == (b.metadata.current_header or "")
+
+        def fits(a: ChunkWithMetadata, b: ChunkWithMetadata) -> bool:
+            return len(a.content) + len(b.content) < self.chunk_size * 1.5
+
         merged: List[ChunkWithMetadata] = []
-        for chunk in chunks:
-            if len(chunk.content) < self.min_chunk_size and merged and len(merged[-1].content) + len(chunk.content) < self.chunk_size * 1.5:
-                prev = merged[-1]
-                pv = prev.metadata.has_visual_content
-                cv = chunk.metadata.has_visual_content
-                if isinstance(pv, list) or isinstance(cv, list):
-                    seen_paths: set = set()
-                    combined: List[Dict[str, str]] = []
-                    for item in (pv if isinstance(pv, list) else []) + (cv if isinstance(cv, list) else []):
-                        p = item.get("path", "")
-                        if p not in seen_paths:
-                            seen_paths.add(p)
-                            combined.append(item)
-                    combined_visual: Union[bool, List[Dict[str, str]]] = combined if combined else False
-                elif pv or cv:
-                    combined_visual = pv or cv
-                else:
-                    combined_visual = False
-
-                merged_meta = prev.metadata
-                if chunk.metadata.page and merged_meta.page != chunk.metadata.page:
-                    pages = str(merged_meta.page).split("-")
-                    if str(chunk.metadata.page) not in pages:
-                        merged_meta.page = f"{pages[0]}-{chunk.metadata.page}"
-
-                merged_chunk = ChunkWithMetadata(
-                    content  = prev.content + "\n\n" + chunk.content,
-                    metadata = merged_meta,
-                )
-                merged_chunk.metadata.has_visual_content = combined_visual
-                merged[-1] = merged_chunk
-            else:
-                merged.append(chunk)
+        i = 0
+        total = len(chunks)
+        while i < total:
+            chunk = chunks[i]
+            if len(chunk.content) < self.min_chunk_size:
+                prev_ok = bool(merged) and same_section(merged[-1], chunk) and fits(merged[-1], chunk)
+                next_ok = (i + 1 < total) and same_section(chunk, chunks[i + 1]) and fits(chunk, chunks[i + 1])
+                if prev_ok:
+                    prev = merged[-1]
+                    meta = HierarchyMetadata(**prev.metadata.__dict__)
+                    merge_page(meta, chunk.metadata)
+                    merged_chunk = ChunkWithMetadata(
+                        content  = prev.content + "\n\n" + chunk.content,
+                        metadata = meta,
+                    )
+                    merged_chunk.metadata.has_visual_content = combine_visual(
+                        prev.metadata.has_visual_content, chunk.metadata.has_visual_content
+                    )
+                    merged[-1] = merged_chunk
+                    i += 1
+                    continue
+                if next_ok:
+                    nxt = chunks[i + 1]
+                    meta = HierarchyMetadata(**chunk.metadata.__dict__)
+                    merge_page(meta, nxt.metadata)
+                    merged_chunk = ChunkWithMetadata(
+                        content  = chunk.content + "\n\n" + nxt.content,
+                        metadata = meta,
+                    )
+                    merged_chunk.metadata.has_visual_content = combine_visual(
+                        chunk.metadata.has_visual_content, nxt.metadata.has_visual_content
+                    )
+                    merged.append(merged_chunk)
+                    i += 2
+                    continue
+            merged.append(chunk)
+            i += 1
         return merged
 
     def chunk(self, text: str, img_prefix: str = "") -> List[ChunkWithMetadata]:
@@ -1156,6 +1255,9 @@ class PageRangeConfig:
                         "page_range":     (start_page, end_page),
                         "mata_pelajaran": mata_pelajaran,
                         "jenjang":        jenjang,
+                        "kelas_id":       parts[4] if len(parts) > 4 else None,
+                        "id_guru":        parts[5] if len(parts) > 5 else None,
+                        "book_id":        parts[6] if len(parts) > 6 else None,
                     }
                 except (ValueError, IndexError):
                     continue
@@ -1177,10 +1279,19 @@ class PageRangeConfig:
     def get_book_metadata(self, filename: str) -> Dict[str, Any]:
         entry = self._match(filename)
         if entry is None:
-            return {"mata_pelajaran": None, "jenjang": None}
+            return {
+                "mata_pelajaran": None,
+                "jenjang":        None,
+                "kelas_id":       None,
+                "id_guru":        None,
+                "book_id":        None,
+            }
         return {
             "mata_pelajaran": entry.get("mata_pelajaran"),
             "jenjang":        entry.get("jenjang"),
+            "kelas_id":       entry.get("kelas_id"),
+            "id_guru":        entry.get("id_guru"),
+            "book_id":        entry.get("book_id"),
         }
 
     def print_config(self) -> None:
@@ -1227,16 +1338,37 @@ class PageRangeAwareChunker(HierarchyAwareChunker):
         chunks = super().chunk(text, img_prefix=img_prefix)
         if self.page_range:
             start_page, end_page = self.page_range
-            filtered = [
-                c for c in chunks
-                if c.metadata.page is not None and start_page <= c.metadata.page <= end_page
-            ]
+            filtered = []
+            for c in chunks:
+                page = c.metadata.page
+                if not isinstance(page, int):
+                    continue
+                page_end = c.metadata.page_end
+                if not isinstance(page_end, int):
+                    page_end = page
+                if page <= end_page and page_end >= start_page:
+                    filtered.append(c)
             print(f"  Page filter {start_page}-{end_page}: {len(chunks)} chunks → {len(filtered)} in range")
             return filtered
         return chunks
 
 
 # ── Step 3 Function ──────────────────────────────────────────────────────────
+
+_FRONT_MATTER_PAGE_RE = re.compile(
+    r"^\s*#{1,6}\s*(?:\[(?:HALAMAN|PAGE)[_\s-]*\d+\]|(?:📄\s*)?Halaman\s+\d+\s*$)",
+    re.IGNORECASE,
+)
+
+
+def _strip_front_matter(text: str) -> str:
+    """Buang bagian sebelum page marker pertama (judul buku, timestamp, aturan horizontal)."""
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if _FRONT_MATTER_PAGE_RE.match(line):
+            return "\n".join(lines[i:])
+    return text
+
 
 def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -> List[Path]:
     """
@@ -1318,6 +1450,7 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
                 kelas_id       = book_meta.get("kelas_id")
                 jenjang        = book_meta.get("jenjang")
                 id_guru        = book_meta.get("id_guru")
+                book_id        = book_meta.get("book_id")
 
             # Gunakan nilai dari PipelineConfig sebagai fallback
             # (jika config file tidak menyediakan, atau tidak ada config file sama sekali)
@@ -1341,6 +1474,7 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
 
             print(f"  Reading   : {md_file.name}")
             text = md_file.read_text(encoding="utf-8")
+            text = _strip_front_matter(text)
 
             print(f"  Cleaning  : headers...")
             cleaner = MarkdownHeaderCleaner()
@@ -1403,6 +1537,20 @@ def step3_chunk(config: PipelineConfig, md_paths: Optional[List[Path]] = None) -
 # ══════════════════════════════════════════════════════════════════════════════
 # STEP 4 — INGEST KE QDRANT (HYBRID)
 # ══════════════════════════════════════════════════════════════════════════════
+
+def build_hierarchy_context(doc: Dict[str, Any]) -> str:
+    """Bangun teks embedding dengan breadcrumb hierarki: chapter > section > current_header."""
+    meta = doc.get("metadata") or {}
+    content = str(doc.get("page_content") or doc.get("content") or doc.get("text") or "").strip()
+    parts: List[str] = []
+    for key in ("chapter", "section", "current_header"):
+        val = str(meta.get(key) or "").strip()
+        if val and val not in parts:
+            parts.append(val)
+    if not parts:
+        return content
+    return " > ".join(parts) + "\n" + content
+
 
 def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = None) -> None:
     """
@@ -1602,6 +1750,8 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
     print(f"\n✅ Connected: {config.qdrant_host}:{config.qdrant_port}")
 
     if config.force_reindex and client.collection_exists(config.collection_name):
+        print(f"🚨 PERHATIAN: force_reindex menghapus SELURUH collection '{config.collection_name}' "
+              f"(termasuk data buku lain).")
         client.delete_collection(config.collection_name)
         print(f"🗑️  Deleted existing collection: {config.collection_name}")
 
@@ -1655,6 +1805,7 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
           page_content      - teks chunk
           source_file       - nama file sumber (dinormalisasi: lowercase, tanpa suffix pipeline)
           page              - nomor halaman
+          page_end          - halaman akhir chunk (untuk merge lintas halaman)
           chunk_index       - indeks chunk dalam dokumen
           mata_pelajaran    - mata pelajaran (dari config)
           kelas             - tingkat kelas (dari config)
@@ -1673,10 +1824,13 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
 
         # Sederhanakan visual: hanya simpan path, minio_url, dan base64 (jika diperlukan)
         if isinstance(visuals, list):
-            visuals = [
-                {k: v for k, v in entry.items() if k in ("path", "minio_url", "base64") and v}
-                for entry in visuals
-            ] or False
+            slim_visuals = []
+            for entry in visuals:
+                slim = {k: v for k, v in entry.items() if k in ("path", "minio_url", "base64") and v}
+                if slim.get("minio_url"):
+                    slim.pop("base64", None)
+                slim_visuals.append(slim)
+            visuals = slim_visuals or False
 
         # Normalisasi source_file agar konsisten dengan retriever filter
         raw_source = meta.get("source_file", "unknown")
@@ -1687,6 +1841,7 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
             "source_file":        normalized_source,
             "book_id":            config.book_id or meta.get("book_id"),
             "page":               meta.get("page"),
+            "page_end":           meta.get("page_end"),
             "chunk_index":        meta.get("chunk_index"),
             "mata_pelajaran":     meta.get("mata_pelajaran"),
             "kelas_id":           meta.get("kelas_id"),
@@ -1715,7 +1870,7 @@ def step4_ingest(config: PipelineConfig, jsonl_paths: Optional[List[Path]] = Non
 
     for batch_start in range(0, len(chunks), BATCH_SIZE):
         batch = chunks[batch_start : batch_start + BATCH_SIZE]
-        texts = [doc["page_content"] for doc in batch]
+        texts = [build_hierarchy_context(doc) for doc in batch]
 
         dense_vecs  = embed_documents(texts)
         sparse_vecs = splade.encode_passages(texts)
@@ -1783,6 +1938,8 @@ def run_full_pipeline(config: PipelineConfig, step: Optional[str] = None) -> Non
         json_paths = step1_extract(config)
         if step == "extract":
             return
+        if not json_paths:
+            raise RuntimeError("Pipeline gagal: Step 1 tidak menghasilkan JSON struktur (cek input PDF).")
     else:
         json_paths = None
 
@@ -1790,6 +1947,8 @@ def run_full_pipeline(config: PipelineConfig, step: Optional[str] = None) -> Non
         md_paths = step2_describe_images(config, json_paths)
         if step == "describe":
             return
+        if not md_paths:
+            raise RuntimeError("Pipeline gagal: Step 2 tidak menghasilkan markdown (kemungkinan VLM gagal atau JSON kosong).")
     else:
         md_paths = None
 
@@ -1797,6 +1956,8 @@ def run_full_pipeline(config: PipelineConfig, step: Optional[str] = None) -> Non
         jsonl_paths = step3_chunk(config, md_paths)
         if step == "chunk":
             return
+        if not jsonl_paths:
+            raise RuntimeError("Pipeline gagal: Step 3 tidak menghasilkan chunk JSONL (cek markdown & config page range).")
     else:
         jsonl_paths = None
 
